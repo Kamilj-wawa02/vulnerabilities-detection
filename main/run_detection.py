@@ -6,6 +6,7 @@ from time import sleep
 # --- Used models: ---
 # openai/gpt-5.1
 # x-ai/grok-code-fast-1
+# anthropic/claude-sonnet-4.5
 #
 # --- For testing purposes: ---
 # openai/gpt-oss-20b:free
@@ -13,7 +14,7 @@ from time import sleep
 #
 # Models available at: https://openrouter.ai/models
 
-MODEL = "x-ai/grok-code-fast-1"
+MODEL = "anthropic/claude-sonnet-4.5"
 START_INDEX = 0
 END_INDEX = -1
 STRATEGY = "role_based"  # options: "zero_shot", "role_based"

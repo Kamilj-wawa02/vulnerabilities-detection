@@ -2,8 +2,9 @@ import os
 import json
 from typing import Dict, Any
 
-RESULTS_DIR = "results-gpt-5.1"
+# RESULTS_DIR = "results-gpt-5.1"
 # RESULTS_DIR = "results-grok-code-fast-1"
+RESULTS_DIR = "results-claude-sonnet-4.5"
 
 BENCHMARK_JSON_PATH = "../data/CASTLE-C250.json"
 
@@ -34,6 +35,7 @@ def load_model_results() -> Dict[str, Dict[str, Any]]:
         base_case_name = file.replace(".json", "") # e.g. "CASTLE-22-1.c"
 
         content = data["choices"][0]["message"]["content"]
+        content = content.replace("```json\n", "").replace("```", "")
         
         try:
             parsed = json.loads(content)
