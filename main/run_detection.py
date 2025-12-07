@@ -14,7 +14,7 @@ from time import sleep
 # Models available at: https://openrouter.ai/models
 
 MODEL = "x-ai/grok-code-fast-1"
-START_INDEX = 75
+START_INDEX = 0
 END_INDEX = -1
 STRATEGY = "role_based"  # options: "zero_shot", "role_based"
 
