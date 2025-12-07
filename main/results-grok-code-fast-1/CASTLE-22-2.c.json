@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765063124-s1yU0EYSxkJjM7cNslk4",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765063124,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 22\n}",
+        "refusal": null,
+        "reasoning": "First, the task is to review the code for vulnerabilities and return ONLY a JSON object in this format:\n\n\n## Assessing Code Vulnerabilities\n- The task is to analyze code for security vulnerabilities and output a JSON object with \"vulnerable\" (true/false) and \"cwe\" (code number).\n- The focus is identifying potential weaknesses without additional commentary or output formats.\n\n## Assessing Code Vulnerabilities  \n- The code reads a filename from argv[1], prepends \"/var/www/html,\" and attempts validation, but the validatePath function always returns 1, making it ineffective.  \n- This setup risks path traversal if argv[1] includes \"../,\" potentially accessing unauthorized files like \"/etc/passwd.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to review the code for vulnerabilities and return ONLY a JSON object in this format:\n\n\n## Assessing Code Vulnerabilities\n- The task is to analyze code for security vulnerabilities and output a JSON object with \"vulnerable\" (true/false) and \"cwe\" (code number).\n- The focus is identifying potential weaknesses without additional commentary or output formats.\n\n## Assessing Code Vulnerabilities  \n- The code reads a filename from argv[1], prepends \"/var/www/html,\" and attempts validation, but the validatePath function always returns 1, making it ineffective.  \n- This setup risks path traversal if argv[1] includes \"../,\" potentially accessing unauthorized files like \"/etc/passwd."
+          },
+          {
+            "id": "rs_a7fb78d6-cb05-c015-55a0-e13944b54eb0",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 527,
+    "completion_tokens": 542,
+    "total_tokens": 1069,
+    "cost": 0.00087232,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 5.932e-05,
+      "upstream_inference_completions_cost": 0.000813
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 525,
+      "image_tokens": 0
+    }
+  }
+}

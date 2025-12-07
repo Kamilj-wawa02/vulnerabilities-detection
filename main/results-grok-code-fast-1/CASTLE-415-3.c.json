@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765065859-R28lQiqBN3TQ5TY386aP",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765065859,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 416\n}",
+        "refusal": null,
+        "reasoning": "First, the task is to review the code for vulnerabilities and return ONLY a JSON object in this format:\n\n\n## Reviewing code vulnerabilities  \n- The task involves analyzing code for security weaknesses.  \n- Output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER) fields.\n\n## Examining code issues  \n- The `square()` function frees the input pointer `a`, leading to a use-after-free vulnerability when `main()` later tries to access it.  \n- After `square(a)`, pointer `a` becomes dangling, creating a risk for invalid memory access.  \n- In `main()`, `int *p = &b` creates a pointer to local variable `b`, which is later involved in pointer swapping.  \n- Function `f()` swaps `*a` and `*p`, potentially causing `a` to point to `&b`, complicating memory management.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to review the code for vulnerabilities and return ONLY a JSON object in this format:\n\n\n## Reviewing code vulnerabilities  \n- The task involves analyzing code for security weaknesses.  \n- Output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER) fields.\n\n## Examining code issues  \n- The `square()` function frees the input pointer `a`, leading to a use-after-free vulnerability when `main()` later tries to access it.  \n- After `square(a)`, pointer `a` becomes dangling, creating a risk for invalid memory access.  \n- In `main()`, `int *p = &b` creates a pointer to local variable `b`, which is later involved in pointer swapping.  \n- Function `f()` swaps `*a` and `*p`, potentially causing `a` to point to `&b`, complicating memory management."
+          },
+          {
+            "id": "rs_a30e64b0-8a13-3100-746e-623410e8dec6",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 451,
+    "completion_tokens": 897,
+    "total_tokens": 1348,
+    "cost": 0.00138962,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 4.412e-05,
+      "upstream_inference_completions_cost": 0.0013455
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 880,
+      "image_tokens": 0
+    }
+  }
+}

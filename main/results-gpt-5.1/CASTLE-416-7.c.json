@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765055598-CwKs19SjK4uCM5Rz8uqx",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765055598,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 190\n}",
+        "refusal": null,
+        "reasoning": "**Identifying overflow risks**\n\nI'm considering the risk of integer overflow with the calculation: *a = b * b. If the input is large, it can lead to undefined behavior, but when I set a to 5, it\u2019s safe. However, since the function is generic, there\u2019s a vulnerability related to CWE-190 (Integer Overflow or Wraparound). Another aspect is that negating INT_MIN also causes overflow. Overall, I think the static analysis should detect this overflow risk, marking it as vulnerable with a return in JSON format.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying overflow risks**\n\nI'm considering the risk of integer overflow with the calculation: *a = b * b. If the input is large, it can lead to undefined behavior, but when I set a to 5, it\u2019s safe. However, since the function is generic, there\u2019s a vulnerability related to CWE-190 (Integer Overflow or Wraparound). Another aspect is that negating INT_MIN also causes overflow. Overall, I think the static analysis should detect this overflow risk, marking it as vulnerable with a return in JSON format."
+          },
+          {
+            "id": "rs_0a1d711dff7f3d6f0169349c6f36e4819699fc02d3a5bb7d39",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpNJx48m4C9OgLP5Wo1gA8S1tEJSMJHHrkB6CeXyjWPTtDAddsWvMLqssjxzP1FQ0RyZ10gYszXPZnZJRdHKs1dpks98TX02J3t4ez2OI23JctZONf0wx5nVkT-VAO9lLA1gUG8R3vvwa0nEj8-Qa1sI6D7Wc3fJ1K-SQ3b8p2ucOyNxul6DLFv6_ngR6m6gQaHY3LBOvh0uEWi1QwKqXE_Gani8u0s8xkb192aR5sgdP_XFHqAbtmn4BR1lTTSmZK7Vj_JP9Gx-QbDzYrdj7DAcpLr0AXNZgclOE6g_qhb8JjQgDs33JnD0O8c3VQSLls7rTBCLe4mKIn6sBd8u8SSNmIMwNGGKwF2UDB4GgI6qjgtse0G6Loz8DhPBnYYdr1Vc_qEUFEmsdSKB7cnOijocDqwGtrS2gkqLx6YAN5r0P7vUB4l8O9RgVFKCtXpwXkHmlhD6v4iDxkxAY0Lln0l-fGCHzgUQnuKpdIIRaQKSRUo7Fu5XuThA9CzQh0cuPnorwevODKi4wRsGZmdkeJIbek6ihSnfL3Rebo9XrKS_5CUIpalvC8sSwcA_RK0kDTjcF24kw--OnX0y_t7de67pIg9l7JSnTDycNggEK249nu6cTlhYIkdkHcgKYIkSo3pv3oyl3Px5_q3-XTGgjh-PXNnqw1Cx81Hw4sG4gSKjTtR0CYdX2JpOSYWkFA_UtnIgp_SvTZXld-yWC73l97j95xPNG-PC8xIohjlg_uTvKxc2c2Obgn8fhjX5ZPoTysSm1o5YXMXjKHGu0oRVXvhCYbR6lOuKD-JoXuPt9xhQl4UmVY-lmUr28YpahwFteKZaz0206wSNlbFMw44lMvtS-VomrYJhGcvF5hognVgePzK3kerA-fao2MtZQKeFLH2JYYulAqo2M16IA-HVq7f9ihciCZIc1-5WqUijxqkkEJO8arpKi-v09sQY_N0vaR0r4Q8zxWYAM7MzX5Eymt4GkBD_JB0iK0jCQ4oUwj1QiYgJ4vXN9yrkNVNfsRQ-P2ougFoFf2Dy2o8k3jbcamLeMJDPzbADEkA78fYsVLL3XIjH5r-biBPUmwKIoix4qkg3RsxGLxWmNzhSYAU7yepSI0QXmOv3FAJYktqqflyBUSKOAvLwwNeBI1-28dK7y8_giwyVBCwaxB5RpSatHXq-rcFfW0_kYaq7w8ll3Cmt1MReYnMD9SDWFPNzv-R41S093y97fPiD103RQssCCDFld-vO-ZL6Dfsq_bCIm3gKxIkA8vifUXxSsXJCmLSlzQIArqnZ-J5ZZu_ltTsWSG8XnPgi_hHS0CinHYbX8J8htjngXmVGn39dkT09riWz79j5-OVtzpzeE_uU4JMqoMAQxElSUdPCHZucx9oBXSDrBXP6VOEOyt-ItZZxu1EWC75zyfKAT3-qdnEKDesQ6_ClX52R4GG3KrGeS86YzrzZZD97fKJHk7nKUc7MeN18tszHQyFBzzcg2BhopNNXWmWLa2TP-KjuoGMex1aZh07MZjfQd0OZJfP7n33yxeVWzwhUefm5oYmH65sJH72nYJ03bq7f-T60IK7AwcIuYj8rQ5eRmxGEd23c9titHxS3HOpWSn-4X8qG6jPbQQwUZRocrMbFY_ByYi1-AMtd8XUS4NgfHUwEKwYSbvSrWyoVhph6km5PBlSMUWcOOCg6jiQrk_koBowx1RwFX1EcY5k485B7DmN1zNUmQdgYZzw3BOuytYUce_aTPKUHlayM6o42_Y-7K2wyvE4PLtvR-Lnu5_Rv9xGvTnSzV9a8dBwu7L4Zas27w6JTuF0jbBJjx52taN_bNMvanPgMROSB-fKxkLFREF-_Y926huUZfQ7p99Z861fG7N9YX5nv6waf-z1NKFLm5NAiiC582d5OklHDPm7sXRif1hUUuW7TVTlnnSk6f1Kxc1MdzFxSkm8F_OaM59EeoeZp6UT7kxPRtdfJtAE6rP66pPzNXdz82UxucODrSlBGUZJjK5xNP1Nq9BRJ0NQ95uUczkNASUdzY8bfz1ql1XVexzvduYLoRcqm21LoCHRiTBezMDn9px4qsbK5uopWM0uLzWBueALakoazknta3RrzCGutU985QtXDVykDQZdi5u9vZxlCI8bxJFdf2-VsNoULMnJ9vVjvrYPw9DBFssNNZoIEqjNQpLlE-9sn3tTxNZ5lYeWDTK1y2xS4Et8B1CZSO7yw4hRLMsIFMYbOy7_si28j0R5zGut8wgVm4H1b5GvCsYGoFdNZIoK4YN-f80gL8lhyqZmJTx_EuVxzwjeotylDCxdhaz2RMO33xaLECjSxjuSeINumKkp7WSYl6YLy3QRLqf0QaytdJ2Qzcv2BDlnJ9kb0u0tAltkeF4IqmI3E3b5dVUFNwmr32j6-u_QvfDl-94R-y6R38s6mCYJpwjyOLiPa3skWugojoNoFnMbxKMZXACmfOMaS1uOdj0Xn3vYK_tQ1kDxr6zsUHWyo_u6XPkPf4c2avjXwLm1nmYi6PzMYso1ywUNJ5Bqbq9nc9teslFwFqC8uqQI-NjmYjDwcY61unMPcPze0TUbXVeyuejPcjEB5Yd7g5JRdL96p7vD7v9wLb5CKj9cXnetmos5VZ69_ZINlRzMWmKGd49bwAJvHFMftzY7XHS1tdioWZ6-MCSrGay04L33y2hRCkQFg7k88CawGaQkcLX"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 360,
+    "total_tokens": 658,
+    "cost": 0.0039725,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0003725,
+      "upstream_inference_completions_cost": 0.0036
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 336,
+      "image_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765055374-YLwVtntacy8h66zUNxoO",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765055374,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 401\n}",
+        "refusal": null,
+        "reasoning": "**Identifying vulnerabilities**\n\nI need to figure out the vulnerability in the code where I allocate memory for 10 integers, then loop through and write into the first few indices. So, while there\u2019s no out-of-bounds issue, I realize there's a memory leak since the memory is allocated but not freed. The print statement shows A[1] is okay, but A[0] and others are uninitialized and not used, just the leak matters. Yes, that qualifies as a vulnerability, so I'll set vulnerable to true.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying vulnerabilities**\n\nI need to figure out the vulnerability in the code where I allocate memory for 10 integers, then loop through and write into the first few indices. So, while there\u2019s no out-of-bounds issue, I realize there's a memory leak since the memory is allocated but not freed. The print statement shows A[1] is okay, but A[0] and others are uninitialized and not used, just the leak matters. Yes, that qualifies as a vulnerability, so I'll set vulnerable to true."
+          },
+          {
+            "id": "rs_02896e537c916d050169349b8ea5a481979afa11a8d15c44ee",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpNJuSAgVUrVmpD1z-UDxke_VtsBUR7iuEsABuOBXz5pwLupQGmMpnZaZi4PyLXSm-z45JXCq1RvYqSh6QMbtoZkxHDrpWcRsRSkHKja6LLw1JCd904_CJ6AuSg_Oa_2t6PgbmNCwA4tSBXUzIuIQ1hQYOOO-ld73BDcxZyM2JId9bzjoM8qqfrIK-1WI36JH194rTmOcvO0aYjVfWepMTKDamVAbOuapZxfkdQ5rAmpcPW9nf7fbbxLbUt2s4HYNdCI8z7cM7zWey0BebD6TAAbYz_tfZt50f85fBcFr7pZVp_Lqh-YNZBUIsbbJW21EYfFWchyBwCoAoWsm1CCBLhHZweqXuvZ1dNIj9iX3KhV80XAvHfTahq9kic2GI2ESLoMcm11xu6UWGYd2-rWxUq4Bwgiwy__yqMhnerpyNYc14cWqZ46xURyFxaYwooUBetEQHYeN9iSQZnLIYHW33m7ZVL7C6_AdbNCQ-nwbxCEABLriOTyrprWV-iM4Q-ve_4TAySkdgC0wXp_su2PJernRJSDvP8HdMIsib0mKOsQPK1g0f0kpQn5VZF-ifqR1q0eiBeeLdrSGAa0-j2kAWJXGiobvTiuiULHV7DOnIAspehGFKIhPjq65gYS3ovaqrhK5qX5CsvjDj7077sHg8UMNta77f89KDFIDuPkXPhyNc_FstAsSOuNuj1tTCrsq9k5WfZXso3BYoztlAysSOPONoEjaieW1Ep8gLbQzs65ZDxQyaJ1z3vAqgUDGud-Md_NdKo1UhMJ1SGTDhiiOL3SajTFv9pbjJL-k_1WENLSdKKdgXe8hg_TyJ43JxatMR1od7yf9Me9uAWNnM8VY62u8HmNOimXs3afTV3NGvQrMIfsU_GFI9ysn2moLIFt13DLv3df-WwZx3u3DswH0Vcwt2Cg4rkyJzeodcNh96x0-FAW8EQ8NSojDVwaR2tl1TP4cLwyP3oqxrZiIxGkeLS5DtoyB2GVaer_1qMVTXEAbnzV_SYcIAPCB3pArips0i2oZUuuWMohoOHTbGV9MXpRrW-eiPmeeZxWIUbuFAL7bSb84MsB-YyPAleLfkiQNHPv-C1kYEVvj4BN4Osr7E1oO2toK4Jod1u2oyZH9RR6PsEn5hiePHT9maMTaW5tpmip1w2EVF73U8tdGiQIHkC6Kx3jY8ZDATjJxUY_z9QpRv1iAv6YA1qI7pkwZe2N3ASeOafnrKlg0pLAN9AaCHa88vBZTCIlI2xWXpfIRHRMqnFT943z6A4v4OAxggT70twMieCLLC_krczeBufMiM64h31lPpCjMlyDsRH_xLarS1rlc="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 178,
+    "completion_tokens": 132,
+    "total_tokens": 310,
+    "cost": 0.0015425,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0002225,
+      "upstream_inference_completions_cost": 0.00132
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 108,
+      "image_tokens": 0
+    }
+  }
+}

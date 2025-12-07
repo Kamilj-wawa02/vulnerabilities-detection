@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765057006-vwrClwR36V8NxnJOQwvy",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765057006,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 758\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating vulnerability in code**\n\nI need to check if my code is vulnerable, particularly looking at the macro `CHECK_AND_RETURN(i)`. It takes an argument and treats it as an integer pointer, which seems fine for integers, but not for floats, which involves type punning. This violates strict aliasing rules, leading to undefined behavior. I'm considering various CWE categories like CWE-758 for undefined behavior or CWE-704 for incorrect type conversion. It\u2019s crucial to get this right to avoid potential vulnerabilities!**Identifying security risks**\n\nYes, I've concluded there's undefined behavior due to strict aliasing. Compilers might optimize incorrectly, which raises security concerns. If I'm thinking about vulnerabilities, CWE-758 seems like the right choice to classify this issue. I'll set the vulnerability flag to \"true\" and ensure the output is in JSON format only. It's essential to present this information clearly so it can be easily interpreted later!",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating vulnerability in code**\n\nI need to check if my code is vulnerable, particularly looking at the macro `CHECK_AND_RETURN(i)`. It takes an argument and treats it as an integer pointer, which seems fine for integers, but not for floats, which involves type punning. This violates strict aliasing rules, leading to undefined behavior. I'm considering various CWE categories like CWE-758 for undefined behavior or CWE-704 for incorrect type conversion. It\u2019s crucial to get this right to avoid potential vulnerabilities!**Identifying security risks**\n\nYes, I've concluded there's undefined behavior due to strict aliasing. Compilers might optimize incorrectly, which raises security concerns. If I'm thinking about vulnerabilities, CWE-758 seems like the right choice to classify this issue. I'll set the vulnerability flag to \"true\" and ensure the output is in JSON format only. It's essential to present this information clearly so it can be easily interpreted later!"
+          },
+          {
+            "id": "rs_049936782506f225016934a1ef5cc88195b1262e567988cc9b",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpNKH5uTEMRI2qxXn0MmndeyslqqGBpdm--6y8X8pzyxG-HmePmeeAieCwuPZV0GGzKFPFON3-5nF7FMf0LunD7EKx62L4ocC0cDfTscY3zekkwIgpOMYRD3VT5h8tRCbkE_bnwQRdBB1g1W8hEcHASiqPtUrsgPGoWQy-w7-tOw-PHhueMczo4U5qmdJzXfop5YUiaULZAUxG-vOZ4UDYL5yasVtIfneq9XuALOcfet3UsHJF2pTOR9Q76IV-chS46VyBNIzYQkqqjHT5ELIwCoOu1wh_2OXsONQMZBdWjjYzejPBIzFwAyJnRLxnEraS52xTTOr7Es7HFBd2WNlUSVeqSTVEoRuF45LEgBMKJ2Zc69CQl_iM-eL4J4NCablrmjwBidMF_dEHGj2UjALST8-WZq3RRiIO3LFRmrevJaZhEF7snAnvXPSZrlngubCvlSOqO_sRVyhM22saQzQ_MkeQ1QgrsYObyo-4p3QuTgHzIi2bBk-Us5vWkG_hlkLGLUkgAryVPFFVO5r__3EMi4ZIEWZY4moa1Mg1SgJHMzI5YRaK-ixE8M1Vn-lA0IqHDnYvWdC7mQdiEuF6T_8jwnO6btxbmNAa2DWzQUyZ43O5oxo5bHiy3RlcyMWQcRgPOUdnkW03sXM7UpEnqlL2ZkOVm0LMwRITowx1IBKRjnH9re3XpoV-wiHOL9gqqE-gnAXH6jLavkz3AYTFgwpEcTxSsckQghybp98JpfWijHr5LmcXV16MhdfEBXsu87rqpXHblNA_aZ-7nWZypxL95HpJOBAR1UszIREpOWY7p0AgS3T3T-RpNs0CZUx8yg9NS-V_S4IsqovOo4qcZ4oAfgwPHg2fi_nWwqkmlf18LnHXFB_IU97PyKaMuRUjEr1j4eeMqgOoBLTKa8aARAMuCchHrZfxYa7_4DIwq9xgf2MR5v-rPS0r5ik0Q8pb3Z22gLcQGytRvWvRuN_1PFLB_7wst8eiWrCqMnG03-rg0npDrtdQamIt8Gq8ClTRZHZDpAFHUwrE5fJ3yHZjdzlVtezU0zjmvFEHxBuPWhhFudncP43KVH5cpW992Qx7fwugZaqTgybKHrgzrdi7ng0J9cmAMa0BhrZ7stzrbHOgRDB4TqQOITKRtOALuo2klFAFupUHM7TbDzdB0FLWtSVNmt6o516zKrp2yp1TSe39YQcwNOChUmZ-UDhLamoyfN6Uhhoew0IB8TL6oZUAVEc4rtN8iXrvKVK_tAtiiB1elBoQpwjKLuEj32Hr6zPo9GXSigg7DDqjExCLGMlxdBLAuB9IBvDw8d_JoO40JzmwH2b4tEVj-71pWkWM4NshBHGl4cesC6TpcHGqNdnDLTo4AQK8WTXuGkQIL4YGICg4WjBjk6hPPJJifFMY8yaNK3INzAlka2YbXCIGCIae0NhRwUzsP4qYOIcV4epTkiOV6VDTVc4rk_Dad1EfWBuQOwyFZCmAYyTdCi36izXAL4KNo-HlF4W_b80RyWkJb6XZYEWSXa2aQdwvKopHjhSbfCzEybT-vQDxDGdk1ADBuCIl2qF6ZQUtkVlld_-wCNIXiOzBWBvYogY2goipl9TWgM3Wa7jmF68jtpMi4jFq9WOjUTz53K7SDFKVyLGSRuwNBqEoBjesDhXVBbRz831jn5atY5VHUfCDByHaXAlQuxK94rZGhMRMd-9rkFHoP5A-J1ySmPVRcA47YaTmMuK1mDYUtyn_ptQ3aS8AvObAYjhSVHLnvxi75fZL8VCi4M6JacZRwrFWK2OkNKYGeDSJSTPxFcuZl7qxyVnkMdbjIFXB5giML0GH4jwByuiZ-dnStmhnvdyspjpURJVu5M2j6HuFk4LKaa391OUUtd9-5SuDNwf2-0LCO9_q2G07xhxlifSIof-rVxxnxyeH2MV8P2TabRpYzp_f0CPvBgIBvDnuYwo_wLoMHm4E00zgZiendZVZld6LmGP88p9XPKsj773K9Oqw_mGshQBCHMKhkbmBQmtiZKbusViL5NHGLBe727x36XQMZn2o3s6IGBL4U2HVDboKCCjS3YrvF-BHHr3cZJwAr6cnzAe9H61vXqu-c14F2SRHdXWLghA2C1jfdQujUsS5Nco3IoW5m7FY_4H3FY8ahz5P8nq5Tjcb_PBq-Tw7p5G2EDtJjKCzXrwsTGo_74LV3m0mYwoQ_TbEkLQ3qGhHiX89DmJ58TQet7_ZVsywt8K85QrLHhSDAH5YpeySvijJQjcttod0FVRutCS16kwlbE2tNEe22L62q4EEf6lGscKe3_dDmE3uw6wXxuX9qE4jTuZsA8IY01R9eC6WCc71GZ3EoRPdHpkWd2aJgVewKFJse_2p137DpaHTbIjuZk-jT3nDZ1rlo00pB9DQZ9aY3Wxof6NuE_r0C_mmwdlTyFM="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 303,
+    "total_tokens": 454,
+    "cost": 0.00321875,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00018875,
+      "upstream_inference_completions_cost": 0.00303
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 279,
+      "image_tokens": 0
+    }
+  }
+}

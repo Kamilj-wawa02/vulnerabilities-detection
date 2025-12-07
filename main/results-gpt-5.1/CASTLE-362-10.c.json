@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765055298-TbT4IJ4G817zHMzkqeMD",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765055298,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 362\n}",
+        "refusal": null,
+        "reasoning": "**Identifying race conditions and vulnerabilities**\n\nI need to focus on outputting just JSON while reasoning through potential vulnerabilities. There's a data race due to all threads accessing the same pointer, which leads to a race condition\u2014specifically, CWE-362. I\u2019m concerned about using `sprintf` in a fixed buffer and how its format string prevents overflow. The main issue is the race condition caused by sharing a pointer to the stack variable. So, I\u2019d classify this as a vulnerability: true.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying race conditions and vulnerabilities**\n\nI need to focus on outputting just JSON while reasoning through potential vulnerabilities. There's a data race due to all threads accessing the same pointer, which leads to a race condition\u2014specifically, CWE-362. I\u2019m concerned about using `sprintf` in a fixed buffer and how its format string prevents overflow. The main issue is the race condition caused by sharing a pointer to the stack variable. So, I\u2019d classify this as a vulnerability: true."
+          },
+          {
+            "id": "rs_03bb772207e35dd40169349b43124881959a002542bd85d983",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpNJtJUZBRjR1-RsTlGtgOYJIOD9O69ZTVHq43kbDIx19u7e0wATbEyPNrA0HMkM42xNk0kZxSLnIMmRKL7-P1zQXervzqbIwJHcO7_pJRAiiYn98RZBG1477LziEgpPKPfvuZAepej5_kmUA9fxvfrimxomE72GUjhGMycA0NhuQmw-9gOfFIsWN7xzcabvQEWimxVAozF63zzeHDwDbGKo1gOPwcDWX7UfFXV0f4tQDFkB5EcU0kejLEfGjCRk6Tw0JgnKrmcPRoEgUmw15XtutbmOhFY4A2Q3ed-uFuIkMvjJ9ctOddk7EtVRIHc7Lw__-FoExAN1uRcdOKFxtd0kt3j539X8s8qFc3CpgfxqtRUZ4HjFMj-oJrGw6f_kwe9mS-SfoPqBV1W8MgEWU3s4XdM4-uiQVJZKCH-riYP0emB3dZfCPX31Z3hZbyKP_ojIK0D8KhKLKXzxu8XFyvtl5CfxJTyxlQ7-TX-pRj_t7XWR6BD5gQtAZAeGp92RsKaQChvWso9g32PVqYYfDW9rbkzWjL2qXpz3Z5350YDzqnyHnScujgkjWJI-k8rNBCgef2UVtCwJ7E9YDm4GJLRjwsNlCHqMt0n3p-TOCx4-fzNa1MTiQa88wKWuPsx2HDdC8A3khCxEN5kGlNblmFHm-rv6B_3GSc9VRmLJ52d66KFtfI3Ix1sJ6517LccDSuMly5iIh-2RQ7GmxtMDg3jaVDshPy9QnCOA-C-BqFhuKBiAkioR14G52HzxjTHxv8vnqSickM0GWzwxYjmyGroXSRAzyBoIOPXZPKO7V0BbyX3uJKCLfmiIW9kL-8pIw77UharWFf3rIdMEE5x5rigSY27KMLZOCIjIKA2fWem-SlfIoPxjO6DPpoFFyskmyHjFnxumLr3Kb1hWi-1m4uXgFlCtbL9gT1z8rQsy3H4e6l-H0Nu9oh4-yk1Ulx63tn1aeXKvQPDWdU4UOawkgxjMco-beWvTvhMpwuIbO8_p-CywqMVFV2vsiy6bEUTx05hYXO4sUKVIdotdsXnKkS6iSPC86vPADtIj3cml7gIIfvpT8dgs6WtpXJ1BfONwKJr4zg_8vbvn4_i4jmbijzFoMJX05u_QnkLWK5Sp6aitbUM-uztwO1SSPA9eIjEKClS7x_-6ZPsCzq_ZlkvCsoONcnGYWLj35_P2nYC7FqSsIaNuLa9lZYfiTA-DcEWG49TSEqmpRNXQ6T_UQeMx_DzurVpvHktCRbW_2ISvsWBQUD6SqD1aueOWtbjXvoABYzRnSy1Mi_JRpxBrM5FXylItGAn1j_FqFQudAboPpnczQtJiAiVWI_5MGqMmsePles_m5IPG9buBK4e1cHNjGv5qDtZ9N3XalWi9ufsOstG3C0N6HqQ5qkR2PqMbnGCpP2LAzx1rrkrrKg7mvIvhyrzBTU03qWe71SSC2Ky2UxyE4AhILHb5cdulVABwJgrzO9U7_GoyZKLEEt1O25LmSDQXlLY9t5HsnXrlUeb8ZHemUyqsQAid7zg2VNzyxTU7gVkA6iaW7QWG6sU1mCir-ws0_bE3bhQqtumEm8b4aywYNJm-WSmm1KBQ9YA0DUVexKkCAW7Qv-IDXnnIjl4p45BYeJH7zMVLSVDwZygnpI8sBjK0KZVzFOt_-kUXESxCvf2xkarjh-KwiU86FZPyKup00Jug-ynoDP5gntlGACwLzZD5jBK0Nf_c23OFKeAg3GAW2bAgMQSFT671fU-nkgMOTGKuXPyGGOwOxd2Fc2N5YmON3IG2Dsj8H00vVVSIhzMulgSAF6tZ0vEVw03NeDIrrPQIcA1v8N2mfGkh0ckIlVAQbWYehjMYYN2ZMOVRxPPStShjr389XzQ6TcOpQxLxsNyLRUO8b1Ccm__xVg7GkQmTylM9hO3slNqJozycuRgdo-DPXe00cLvx9arb0KJX4swXBcoPqWDS4Gs7ejC7hoHB6hvp9crnykLnogRscmIy8LWZmXy2PD5MsVO7Exw_o1k79u2d7_PVEBV3mNGDVvcto="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 335,
+    "completion_tokens": 219,
+    "total_tokens": 554,
+    "cost": 0.00260875,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00041875,
+      "upstream_inference_completions_cost": 0.00219
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 195,
+      "image_tokens": 0
+    }
+  }
+}

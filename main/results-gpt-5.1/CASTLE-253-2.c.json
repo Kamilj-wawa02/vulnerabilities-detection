@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765054947-0DpycsYN0yfw4O5ASdEi",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765054947,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 476\n}",
+        "refusal": null,
+        "reasoning": "**Analyzing potential code vulnerabilities**\n\nI'm checking the code, and I see that using `malloc(sizeof(int))` could fail and return `NULL`. The `checkIntPtr` function casts the pointer to a long long and checks if it's odd, which seems like a strange approach. The real issue here is dereferencing a pointer without checking for `NULL`, since it's risky. While it's technically possible to cast a pointer to an integer of a different size, it can lead to undefined behavior. This leads to vulnerability CWE-476, highlighting an ineffective error check too.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing potential code vulnerabilities**\n\nI'm checking the code, and I see that using `malloc(sizeof(int))` could fail and return `NULL`. The `checkIntPtr` function casts the pointer to a long long and checks if it's odd, which seems like a strange approach. The real issue here is dereferencing a pointer without checking for `NULL`, since it's risky. While it's technically possible to cast a pointer to an integer of a different size, it can lead to undefined behavior. This leads to vulnerability CWE-476, highlighting an ineffective error check too."
+          },
+          {
+            "id": "rs_006d15039786c46c01693499e446a88193a96362e2bd4ac342",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpNJno1qFgebAr3JTZacS0JriVGBXfRVpS9IHeH10rhKPAjRcIyYUHQFyfGSUYkvItqDABb89zvvZERKxDVlfJv5ehECR6PzASLpy6gvGZ6RAQMuvalxBv64m2idm7khNz8PaRdAr16AsUZ-wkYOV8r1CrozQSS0rbsmTlG5ZamKbvwhc5tIyc1-ICxHH382TaUFC0jwddVsWOHiM_qKE3ZDrt0rCK1uqT9ltS0HSADZoz9JgSnwgfNecevxBtyk-06tIKGDC8b8eFPfQX-ylY2B0pnYMCVqRWL6N9-6f7SaK6cSNavMo-lOQiHGf_67bhGiGFfnnZ9VXkBbkjepaGO3KCjX6ZObe89fp3e2ppLJRs56dJp4U4W67z1e4bbhtgk124FOJLucICAZoZhR-mI5-dL3iLPM4JAi1g8WxPkfPbV7FuqJP4pw6lDVIuaMBXAOhq7x121WkxjoPGVKOVLG4s2jc1JKQoIpKcwfHvl7EAoZWGIVG9k7lRo6aQpf7fIm0vL-kT6d01PymKXheU1VBU5uSi4_4swYcKywBPp2lrLVJ5dhUUq7VxnE2P9FJJBxQ6eMtl6cpwaEPhEqVGjvKiB-8USWls8B6BoiwzGHH_MsrZjzbwTiOYd5oHOc_n6b2A5b667HbW_E3zwhy80mzPykWjtHTlZ_ctw1DlOB-kRJUjFzG2Q7gpFvI7_wP96GKAMazi5NRv6uVqowRQEvNTLWStIvuLUb39BBo8y1Xj1xKGrcqH7yGSyaORPiZRH7jbdJ6iHFen5-1AAizlMlpGutQ6JXdKEwqZYUCDP9jh_2335pzStbjjSFqAHQgnwdw6gBo4yW19kkTsys9MoZovYQWFzrG90nNut9Y3DEgkPkViYEteuHFm0Ax2MVKAsPu5Z0g2zUcMxiVwBh2qpi2BeRLuR_jaYwSUYRYTAyVdqWlNF8AB7IZxMtF_STfL9hHSJ_ZQ5iINdCDkjYwI-29cM6W2S6VozaXaHLyIqQHGZrMnKYU2bSX1jorwZw0y41IARoTycVUu2FC2QRyQ2YZ5gbRmPvjGEEdqoUyvOEorqloa4rWseQvh59_qlYm9CXX23DR_UcLEV8OqRiYns-vszNF_4GVBYLsdKBCVKEUC4NBP5sIvDxjW1Lo1P-L8l35MIxsv5Qw2f-PKtLHvLik6m-L5a5L6LZun4xN5mNs4ajYhoOCrMKchzoIzNY5Td2QFDTvwvDqbDUwPZXuwNa9V4TyPBVv257SUJeYT364OWX3h59WlB47j1w50VFGUn5tt-jTxtwCXS5E23MZI9no0AcSMiowwdTJJxVAhVaHeDxu9WETrIKba2OtSialjBfB-r_rZwl8269OxaFH3vUKOWMlYxK5LodvZZ7MrP0Wsr8Wd7qTqI9poaWU7xI6u_J04IzdPPOBnsP9DqJr9VuAPPGSsKh5dPvXNPMHuzT8d5TeRH_I9WXGILYjF1Eh94hgh0BZkBM1vhb9oRIvNgOrhhAMlvXU4bxsx3M4IV2nzVodkCHhXJEgFNygM0Vxu9OsNGYQCQG3mClw86yBE2Wk5AQ=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 191,
+    "completion_tokens": 136,
+    "total_tokens": 327,
+    "cost": 0.00159875,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00023875,
+      "upstream_inference_completions_cost": 0.00136
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 112,
+      "image_tokens": 0
+    }
+  }
+}

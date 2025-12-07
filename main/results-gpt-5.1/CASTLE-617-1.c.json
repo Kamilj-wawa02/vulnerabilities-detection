@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765055942-U4glw18lXuMYcEemQ9uP",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765055942,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"vulnerable\": false, \"cwe\": 0}",
+        "refusal": null,
+        "reasoning": "**Assessing vulnerabilities in code**\n\nI need to detect potential vulnerabilities. The `correctLengths` function only swaps local pointers, which indicates a logic bug but no security issue. The function `isValidUnitVector` has a logic flaw using `== 1` with floating point values. While an assertion could lead to a denial of service if compiled, it\u2019s more about logic than memory issues since pointers aren't dereferenced. I might conclude there's no real vulnerability, so I should set `vulnerable` to false and use `cwe` as 0.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Assessing vulnerabilities in code**\n\nI need to detect potential vulnerabilities. The `correctLengths` function only swaps local pointers, which indicates a logic bug but no security issue. The function `isValidUnitVector` has a logic flaw using `== 1` with floating point values. While an assertion could lead to a denial of service if compiled, it\u2019s more about logic than memory issues since pointers aren't dereferenced. I might conclude there's no real vulnerability, so I should set `vulnerable` to false and use `cwe` as 0."
+          },
+          {
+            "id": "rs_08e14b37c0063ec60169349dc6933c819790652a88c275da15",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpNJ3OtTg8Mcxh77VgNbWYHGbK7p0FIwyfzhl5Ttf_jMoazO5lq0FCIRxPSDa7qX6a8ybStMxqoDntG928tPiaX6tLDY_2its91Qpd0uBe3qFI2KrXg5ZnWWZLWGJzFHpNWJXkZDPvzG5zdgx-niNaJ52pI1_38fgaxoo583G62VGfjj1fGIuElT_Nfy2sUp62kP_kY6kUayqjEf-B6V1XbG-KezjdlwwW05Ix5ztFqbHTrpXWRe4FMvraHTJ8pFB27Tl3i9FWNINbATCltet3bO9oub8DhroTYv07LF-j04Q7DB8psTYGcREdJ48pXsZnsTlFuzepgd4LWsCjHDFymQqZol29o2Pczde8ihe4yuS2J3jYbn2D0xVeCUZVzlINWboAEDHWAy1jqG8igkShPVo4Dg4Igcefl9KCtjRa-J2Jut99cG6aj-W1HmstC9ipbQWxMzTtSWS7_ezKZjlpjBDSlGHi4xSSs5NNz-umH_pJ0tFYlNAhtplijwpDZyZXms4U3eaJM3sfeLg7l4OGsTPsvRcKZ_jDiVhU9Uo9rO4JD5JUnzxabwz2S44_Bbdr4zxgCY_ntZwV0tZdNX4qugHiycW1aI8AHNbLs1MNxh_ehwUEADebD5kQfQT_3OWZYosNzRslkne5AgNwrXr5hY4PLcjgJsb2CgZw27dO4zGtb861QgIdl3g5OIbtVXX-Qfkp_zKdcTl4zY4U6uZl_w2GQwDNCIQhM_x4H267gE0xXjIjyXXXVGEiSGR9-ko989gkKa6D3aZlV6sL3gmtmM-UY6cnA2uZDruKTiFSIWIQvOb5ZS7G4fIWPq-SHcodJ06HDGPFHMQYtivu-rhZcSftLXKto7PFxIiySaNSm_1ToAAv87cofJF55TQqYa5ZSFpG7qsXxSkMqJ_b9juETBqBFJv9NFi4v2fJWLKal5rgFNEbqRNXHw5iC0Tf5ixx3nVBbtjlEWcH55jAokThb0CbYlUXyR8YQiDjs0ewGK1648kP-KJVsGcGQGPt8Rklhaz_xhve06X0bGH_vL2PQsUX605XBJN4AwIiU25FP94bvY6jglpl34hdo6KcYMt4jqQrk6D6pjnyl7bq7Nfmaxf5VJTMCzeivdBMG_Uz8Xig_fjp8KOgRs7Oj_dHS8vo730iGzqchFEiJkPHaj74Hc4LcO2hOEi5UoxJo2FiMZaLVu4rAG5KBPdf1r-PtxOmRQsJ2BLOmEsTgQCZdyUfObIpdWtF1-BWGJAr2hOdMTzokmt4M6iob4QtxmBQSqI5J4N6X2sq0V-PFrgFdJZY532A8NYDRnEQ9Mf7p91EiOekTDNWhEGGpdYhBR8tmd9enzbEtKDr-mv2CjSlCylsj7bRTXDAtxg1iDAISyfQYcmZgOguh2OgF4UzrR9oCwl2rLlD0crfQBOaMnwyOLAXYYryg-x9ORErugrN0AlSXQbdK2mpu7ruyjND4qsfbfqBe2NX6508z1hwAWpTKcS85i_RI-wjw45oIBxmOASgJjhStP_Ecwf-rPh0Ou2WfBvK8yCrNQjmu1W7eRpnA67Za7kBxBaeHi5cdZZyuD3bQxqkecBGmhrw3Lm0F3zF4iWvR04pt06Hy10Ay6wSjngrapvazduLG5FGEfxI4GdVyLcLLvSvkOgUQOXCSqCl2OTQixJXF14WvCOoJKUBEbYHLgA24vMB3t-Qtpq0kNLn4FG_DtVigb4chdTGVBxAFvtn690O"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 288,
+    "completion_tokens": 172,
+    "total_tokens": 460,
+    "cost": 0.00208,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00036,
+      "upstream_inference_completions_cost": 0.00172
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 152,
+      "image_tokens": 0
+    }
+  }
+}

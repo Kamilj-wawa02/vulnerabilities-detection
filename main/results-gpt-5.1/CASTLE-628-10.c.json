@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765056171-5iD8JVZZa0IUpkkCQXVg",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765056171,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"vulnerable\": true, \"cwe\": 457}",
+        "refusal": null,
+        "reasoning": "**Evaluating code vulnerabilities**\n\nI\u2019m examining vulnerabilities related to SHA-256 computation using OpenSSL. There are potential issues from using sprintf without bounds, but technically it fits within the expected length of 65 characters. The function sha256_hash_string might face overflow risks if a larger hash length is passed, like 64 bytes, but here it\u2019s safe. Still, I wonder if there's potential for misuse. I'm also questioning if there could be uninitialized variables leading to undefined behavior.**Identifying potential vulnerabilities**\n\nI'm considering the risk of leaking stack data if EVP_MD_CTX_new fails. In that case, the digest could remain uninitialized, and printing it could disclose memory contents before it reaches a null byte. This is a classic case of information disclosure, which qualifies as a vulnerability. I think CWE-457, \u201cUse of Uninitialized Variable,\u201d fits here. There's also a design issue with the lack of error handling in sha256. I'll keep it to JSON: {\"vulnerable\": true, \"cwe\": 457}.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating code vulnerabilities**\n\nI\u2019m examining vulnerabilities related to SHA-256 computation using OpenSSL. There are potential issues from using sprintf without bounds, but technically it fits within the expected length of 65 characters. The function sha256_hash_string might face overflow risks if a larger hash length is passed, like 64 bytes, but here it\u2019s safe. Still, I wonder if there's potential for misuse. I'm also questioning if there could be uninitialized variables leading to undefined behavior.**Identifying potential vulnerabilities**\n\nI'm considering the risk of leaking stack data if EVP_MD_CTX_new fails. In that case, the digest could remain uninitialized, and printing it could disclose memory contents before it reaches a null byte. This is a classic case of information disclosure, which qualifies as a vulnerability. I think CWE-457, \u201cUse of Uninitialized Variable,\u201d fits here. There's also a design issue with the lack of error handling in sha256. I'll keep it to JSON: {\"vulnerable\": true, \"cwe\": 457}."
+          },
+          {
+            "id": "rs_04595b3816fcbb110169349eac6d6c8197a54581ac4e3c36fc",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpNJ63LQRgQbPAqOJaTQCOMNW3TjaEiTdUSiLsYvsknWxGiyIx9KPrflQwp1Ep5CuM5P5Gsdu8HjiC-Uh48l4Wveub8jujS8hBIu0ax4J2FpaRRbXKOh7BWE-7TequT6VoClPTaqOI5xph7S3Of31jWMb-cIV9jEQq3a3cgKAuHW-P23HxFs_D2Z8SLobzC2g8MDXDnOroQwBXk3lcQHMGNvvTOxiePSHzFR7IPYkPcWVPUpjKtoY4yVzuwI-sgofCe8gvWIT9gPzxhWLL_wn6ZKrE49m4dcNKKawgQZCcVntaeXKjZYIUtueOJgp12anE88FFKxfIi-P_MzkyNB7_bOycrSUDODu6MJtCuIpsHhrFesyFp_KL74W9xXXLjT11N_EuVECTDJjg1_CBWbRJnsWnYSGqv9ChBo0CgdH6QlLL27K9F4gSOgalW9NRoQYEuOsMJidDD7DkIDmQaah63TKAPK8s8fWVe-MMuyh5thgz0sjZfhncEJ5XhFN2TF54sf8sd8AHX23CJsiwuv8eoYNxVH965l9Do7ggIOjMGIiLfyrStBo4q-74t7aa9aEx1PNLXyCKvZDVGIT3SHXntdpT96KQEzsiVRx8zCosAyqQtH_C9pK4grJ-JNCwrQG9lPC01cQCmwo7eu8jKSU4SwcRBqdKlAaGeRToLcfXdX5ZjrkACEm5VAmLI65iBV_XGulymrSPvhTmH2ti20uhjo4EAscyecX-nkfgNyKROgsIlARfpwxaZcbVAkDgCbJBZPfzfhJRs_NH1dp7DsmxKVCH5n4jwF0cI-DjtwQ6bbJUhU91h2DhU18ufG1JQvBiJ1f-AgM0J43ExOQR66z4OjSBck3f4Ih6q9Uwf71cczhhgxweM1MdEm_GaUWe061OyKd5out1xpQqMev5Oox-pEgQqx-_6gn9zP4_yUJ2tRWse6C4BOG4jFGVb_t1HosIHdm356B9YF8HqZx-6O92d5G4mwD4v2sb9mlZL_l5tb-xnqCHiOirANJWeJD__8nufkxdLm5oXjmvTW-XGRLMF3UydakhPVeTFgNOGkF5-_-ynDK58gB9L-sq47NG5WoJvD0XLDihqwHQMCVT1XFzJeu6yuAeEW76eCi86voggOslDv-olYrLlS1ARjSWNDKV66ON_kLj8MdfHFeWc8yX-X0wFqTOfU7syf0B4rvMGLJTKr2TCa66fQlH4e_sE-VUFo4YO8KE0r1KxhWqiLbdqW8KZfpqUzTCnYB6o_kXUNE8DH3BOHky3Q__qDEfvMhsPcZik7m-nXX4N7k7kzJ8PRXAkDxj32NeuYJcZT5BK977dMaN6wNZTqBX9WUBK5Tq3POnsReZbbICl6ezXNK72qsa4YGYOzTGINWJe1RAqgsXRwUQua4F0jalSJo1EtQt4Guxls1lBe3-8xCEJyhq2UfU8nJjqgEiOZpw0-xBOEKo-r1HkYWiYCLqwRodFP4u52b2HfPRmHI-r-80WYrwnzWAfKS7KlO0R5_5BNSUIBATZHd_R-_Ad78jvbSdbNR6WnswC0OveyvkppbYGNJmSa7rHb2K0OTG76sgChraqfBuhkBp-qsY5HMRgXlpe32kMXCVAKtbfvyk5NaP8lW8042US_ytfJDbbmqsSPY88yK8a_wFThSS1NXvuS7hf5TGfz9xXPY5c_oHhU-K_XONp9fdxPxq1KnypyhuA0SPccnpae_NPhpqSI8RXGX3CsP2ZeINIZ7P1yQxGNtnTkMJK6kdiHmGJzZUQsGSHWmwnPeSwE0rYsNotLtMoSd0kqehkp4xGrXHcUkeYWPpe8mw2JLJsGN33OdAo83R8oqsNK2uz8qjgOPh6X9IEA1TKg8fXz805yhitciT7jpFult54zL1_Kz0LpGbPJAC0UE0OkDpKuZYy7uBMM1bk6KBmZr0laqFrnxIlAmLOGWmPVc2DUFKFIgzmaGJJOPTL86xb7oDiZbRwUJ-13JeRAkaPW2TsxGnFLKlTf1_bjbiZf_-E2iamctWMkG_wXVKg3r5najLdOVlYLbJtVSZYFrUorV8bNtpJOZaydx15lzA26A64Tx6vznIX1x3oGn0uXpCMl6sIDarfPYqgYMB0nfQQkxbfu5MEJXXbFJgZ3mhwmWIYbL42x2IkJ5Big0PS1c7Zcl6o1ju3w7Jz91GugGDXZmsogVc-vSMH43u8ubRheu3K3k4JoIQdo8trgKzjrdUuddQAnQ_ZQ1HPwetdy3mgkVYKiOqccQjjJMU3EQ5N3Xjc84z6AvgIhGvvA_C6DLCsaRhCS6fopgXdnj-pKB3Xgp4jL7qKVkiGUfDQJH5ZXGIbIBZJv_e8rVVfJJVE7UxGsf0Jo3NXtoQBrp-jlONw3zoClAx8Bv9Fhh62CsLcJ5BWsvtz5-lL320k9NZrHcs7EPgQERHoklZe_6VnwMq9Kkw3_-9UzBLqGBuWYq1_3IiauJonkqcJtSf6q1iYUfiDCNTFKuklsrLhmRX82xAriTgnQs7MYFAYtAIjUfP7KE9BxRQ8rTIZsnNjTq8fIXhAR08R_fWat2i1GI9hJSuilOlK9tN4uwhSSuCzaUui0vVtPNDFIEFZJPgaJ3D3fIfuu3NETEqqUDxppUorFfLFUOpu-pdjjfRuD1F5iQUuU91iUOhgpXDgaKf_J5fvvPb36jvU61PNvNrn5bXy0DLrGyigT5zNAiUMnBAjBL4QZj6ZfF8AtpQ6ge_UrlhHXNWw1ZWY3Z4MR9GXozcZ29UGaUsRzCICrpmS9ZyqNDhYh-i2tFLH0E_-xEP6x_tBg2hsXAMGupzzWeomWMuj43Kuqafm1sYm5Ks2EDxYiqndYVQ0Um9qG6nxiNHvfN67Nb2vAzOp267qyLeYQmgDUFL3ZHzYFA8XCPzQiIvP0JYSQcwfV07WK014PqbRkt8_7WYRTZT5veuA9XOiEXjvYpM7sz5XmVh32nBT7OklW3P5wxgmkZ9tvDCzkP5YEZHLXAAWHUTiC_HivziffWC0osIormnzhLNjJo6XfLUbaJ10BaeJyhKTWg0mxhoJOK_L9IEPCxXQDzdUrjfMc7fkj87uVf5qM1DyrKMqtklu_6nt9LTSg2X9mDgTsqlxnupFIskJ49wxA6FwJYwbIbD-JOTy5D6G0pY"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 486,
+    "completion_tokens": 420,
+    "total_tokens": 906,
+    "cost": 0.0048075,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0006075,
+      "upstream_inference_completions_cost": 0.0042
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 400,
+      "image_tokens": 0
+    }
+  }
+}

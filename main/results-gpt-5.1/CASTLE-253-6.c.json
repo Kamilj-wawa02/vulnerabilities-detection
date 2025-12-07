@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765054992-Pzi4XtaXY5E8Jq4rQe5D",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765054992,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"vulnerable\": true, \"cwe\": 476}",
+        "refusal": null,
+        "reasoning": "**Identifying vulnerabilities**\n\nI need to identify potential vulnerabilities in the code. The main issue is comparing FILE* to FILE_OPEN_ERROR -1; it should be compared to NULL instead. This is a logic bug, not necessarily a vulnerability unless it leads to dereferencing NULL. Actually, fopen returns NULL on failure, so comparing to -1 won't work as NULL is equivalent to 0 in C. Therefore, it results in undefined behavior. It is categorized as CWE-476 NULL Pointer Dereference. The extra newline in perror isn't serious, as the filename is a fixed constant.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying vulnerabilities**\n\nI need to identify potential vulnerabilities in the code. The main issue is comparing FILE* to FILE_OPEN_ERROR -1; it should be compared to NULL instead. This is a logic bug, not necessarily a vulnerability unless it leads to dereferencing NULL. Actually, fopen returns NULL on failure, so comparing to -1 won't work as NULL is equivalent to 0 in C. Therefore, it results in undefined behavior. It is categorized as CWE-476 NULL Pointer Dereference. The extra newline in perror isn't serious, as the filename is a fixed constant."
+          },
+          {
+            "id": "rs_0253cb08e69730720169349a10930481938bd086871537e765",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpNJoVX9Dh5ajnEZ1ljfhMOYN5miQkojuQDc1eqW8gGpGqPHLipwICLAeExWjcEdk2QYl-IOamg96icR3rsBGlIUjvDe6XMAMOWPb3dBnxB_zUE-F5sloqK8XwAvPz2V7_6LsW5GNAxOF0IfJi8DwoZFkwJRpjX905Nw8_C5KcmMejRtXJ6GRPZsnE_LTYrq-ACdsZmGCdM-FBmrRvNPsX7T8LTPZXoifCGH_YvUAtM_AGGuixFsLvKTIqEzVDraxS1BhVEeF46irPghjP1wOAz0VwYCsKMYw3AI_WLkjXzG6UJQMpATamQBQ4zEULRxfOqKcc8nIqYgVcm_4nOEXkD-8Pvgt2t05Nq6OLatrN4-m1hrbadlcDn109nTpviXiWYYKQJEjTSflh0zBW6NhfhvCTphWd10D8iA4pT6Pqelp2gNvmmPEwnsloyx6EOlgXfRKsCi8j3QKkDAk9uLR7jB5mW-Q1KkLAxbzFBVmu4476citjoo-_nH1BhAlPxUVsuSyL2snWVEbFP_z8rYnCzR0Sm5A8MGUJ8rXblkbdgUfti3LSoIWc_rVr4b2zmmAnIGz78CeRYVtX19Azg3dEB7TrINJGFNzCAMabRvsEx82X_eezijYSieHyUeYexlAGT8CmPl-t5aS6HjUYGTqxgJLyHve9_rD02k-KOJ4iybyPdn6I7rwDW92Qfhqm_anyS2xBBdh3mf1lJeJxEUq4gNO0rrB1tqgQ4ABqbjpyAG1DY1qt8qIdylXfRguYC9qoA1v6Oj6If07rTqJSbD38xlW7i6KL4naWe_pMYYdLBzIw2OXtcW-U8swk-7FMdfaBl_D9XK-2GWHiy8llEuCxUvuq7kRPgatiIIk9knvF6Qe44vul_x3PAObhvNV__wp2U2xjPhGiQ04GDDzNnS_ZX9FhJwr_AYPeHn3fjVAdGtIjrKCeBwE007cV2QS6A2G29IY0rh8W1SecAXnpo7ofhGRablGLtQ7gpYbBSZ-eFiAQTBBB-7SnS9PAfzCYyzvrFYg2IZ3Je9GJyY03K5A0F4c1nbqBrzJIzniHudM8EWO4-PFFujImP6QUqoeMH0NtQaF7gLnOhPWV0VutQi1Tlq-VNg3TAPcBukz6xsEGrbfD7jV8vNXr76NySDk98THOtRKdnY4Zt-ZrEt-7DFCdLlmHo4awZFvS3Zi7IwzqFOMnNm7cgkaT25N48v3joJ3t4rn28DA4nc6jMRggOhjbm-L0YeVsdzLIJ4fQO0GBt4adYmlx3pwDYcQxgxZ5NTHk5SEbfV0bXSlg_Svij2GovPqIm-9yOrt6SxQyDnF0gpA3eyp4Wz8ktsDdvPmJwgDrEDObD21twhghRx1rok1BNr8cIoKF882dynIYX3jM05I6Mygz6Wz5vmu_SdI-QgxGYoSOVUhQ_ZC759Jh5_aE0pSB6RugAD8l--nN5aex8ngAiaKHZQ56eJ9erAFCiQLPfiQ4E_dPOVWpFiTSnRyDcaiIBuARBzO4Sv2udrDp3CbOYsTyKanBQQHPT2Qj8rlHX9Mn8T-hsahffAkP7TV1E_Ud1DCJHxU0SbdtZzq5pER0u0-G9T0HlWcRATGgVp-GHYpLj4i2G-ifP6eu0CbLDvxW5tDiCSXlGIFnS9YwQpPzcztrHkyrd_2kQ9EKa4LQ6mWZB_SFSpJIpW5WbfOUI3QPFXuSlfPiRKdeLWRXDHzrod-hLOtHGlAdt9HqK3f0XG03v6uP6DJDQVmv-Dq90wwBzuugC5PaKz4Ez6toP3JjBEA9x7GYry5abc7L1DXp9hvwzy-HtbSzia8SwoGCagnjauWHQVRd4As8TesBvSoeK41WeD610w8GwO0AIfNNcTiCcl0D41JvU_WbiGgcgLHlWK-lnwsR3fde_RKP9LjAt6DgEg9avNog6UEO3-AXHQ7V"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 206,
+    "completion_tokens": 194,
+    "total_tokens": 400,
+    "cost": 0.0021975,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0002575,
+      "upstream_inference_completions_cost": 0.00194
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 174,
+      "image_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765063128-3jlsgfV6ByHu9OCs8p0Y",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765063128,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 22\n}",
+        "refusal": null,
+        "reasoning": "First, the task is to review the code for vulnerabilities. I need to return ONLY a JSON object in this format:\n\n\n## Reviewing code vulnerabilities  \n- The task is to analyze code for potential security issues.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER) fields.\n\n## Reviewing code vulnerabilities  \n- The code constructs file paths by appending user input (argv[1]) to \"/var/www/html/\", potentially allowing path traversal attacks.  \n- The validatePath function checks if the constructed path starts with \"/var/www/html/\", but this doesn't prevent traversal beyond the root.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to review the code for vulnerabilities. I need to return ONLY a JSON object in this format:\n\n\n## Reviewing code vulnerabilities  \n- The task is to analyze code for potential security issues.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER) fields.\n\n## Reviewing code vulnerabilities  \n- The code constructs file paths by appending user input (argv[1]) to \"/var/www/html/\", potentially allowing path traversal attacks.  \n- The validatePath function checks if the constructed path starts with \"/var/www/html/\", but this doesn't prevent traversal beyond the root."
+          },
+          {
+            "id": "rs_bc59d3b9-d141-82ae-9c3f-76a80cfb60fb",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "FkaTNZ3l97k5BfFiN6fyrcNU8Cg9k8P1rpmZZDHjItKnXrRY3BCDu9CgxnqrGIOGJfa/HI82o0u1moS//ABgnTRgqoCQGIbfccsPicOJr3Xht5y1ijyMBOt6kgNc8GQemiCeb0hGzwSyaeFhCVVmNAWoT7E6OwrXJUeOF3yiH9/FuEYsElPTk5mS0vM2gh2s004C9HzrGdupxVEXinSScxEXNdmfX1fdz8YIIrXFmwjvGYVTIaaB00EVLIU/L96uwEQFJPeLoITw/2n2d1Saq1YIO5Vci2c02/6xTQC9JrXAEqrdWH/dEgaAAwpVFbOuy+dC61ljwbWHaTwc2ZTMKwH9xNcAmxRGGmSv1jkCbWpWBWMc74A8d4huSk0dORbFIzZmJ17sJNCLrs+sbvoLW6VSq9n3pLILlPAnPXGSCN2JFIBCLzYDCLRsn2dm6RlJRYyP5I/yWa7kFNptkOPS14CbIMxEzsQ0axI+42nExFENduCx3ZewM+bUEQuYGozVrNye25Ss+5z9Erp/aTUrbFshi3RiA2f82SXqjH30mt2pzK2E4b9eZ2X3nmEyHu5RIdPrpJm3d/DKu/C6P6n/5g4eIGVdORpszn/E7csPyxJpV/gBSXPPXXjrxEigwUDLXSjIccQYFbiJ/G+pcr4fylyWqKI3Jql4AFwNv9dJnZTqkHrSxsS2NiaUupnDm/aXOJRIqc3lj4SggnVVlEjN8bevqk7N0QlyAravub7CNoPY/Vyj1B8wD74uNfTifZCVJP5+2CEKK1jcV59npOQm1sxzWJpEXF+mq5QGTrt1E0NNvu+iQYIMM++i6I6TO+g2qjCWTQfd8OwDYiN4RGNzv4XgtRSTC8iIRpWKoldtq62GCDqc3rNpi1b1+hd+qjntUvbFtiBRN9kSkym7NBaqaaPE7JTEbXX9LhTLNPdyDQUxjdsYv/t8UHKIptY8FEPLDfXJWsktM56vYrfw+UbDnF0ZSQ/oUGnixSMpfgbaaw9MhNX4k+FKoP2J9CiPIVol3/Api7OVsDEMU+V3NNFyltSGUYsX4Q8aLPa//mh+LgrmH7wNmhkOr8BwEa3hvZ88nJ5etsvdRqcEqw27dOby3Fo6ahGI966w9U+S5A2qh19rkWXyi7p3I2UHw0ScasUjNZFbqhkc2fN5enLWqpNPuQbhXL9UC3H+AWr/mRmZqxtasbgRhAwBxtSFqq4LlPSRlsr+180kCJCSSY9gUz8Sfhsj6TfmwBN2HGA5qkSLJQ+mGTyUctJ6JkQ4xRVfiN3NIx/4sOS+U7Thx1uuAYpZa0SRJZs58St/vhLxJfjNoanQ+dbJCpSCu2nsxURjGoT31dubbvkiXBybRqCHbf8vQ3yKRDIUJazDF0EeJQezf+qjVdvGv9eGU2VH3+mNllIVsE3gwYpu6DRmqG3hyDljE/GT1Mrq8gE3tWy33Psb7WwubP8Pg/W4aZ9GmFwJ3BMnOc9n7v+vyZw5hssFkdqCKjfjoGymDveYxDfxd38tqOpnSL1WGC6gFPNhNjCZ57gnJiGRP4OocfArpoUdz9G3QSB/nBiKiR6fXv2+KLQ4qIznMPoGsxNncBz3/CReY2SVY0+o35BDglmoNqmW/NzWCVotMSEoreDpMTplrBo2gERVYEfKEsn+zts+MWgOYX3A9jQM4kajbVvCsJBIvW9sq2wdrzz+14G2JjTDgVlhzDLZXiqG7sKvin4ZLtpy0bv8JM0U+D6Z+48S5U6Zr6sUYw2lDVfOr5/Nyb5i1TybOyyiXs7vDnbWMzZH6x//f4cNaX5bC1PIIFHirYTgFT0PDMhrKYInvOH6xxyqs4RQBhZCkppys3DvIEyG9yKvLy9/vrkSqqQAJbmZvpJovZpfq8Pi8+bxV3enUlz1iA5Xu8ALSGxtMVwaTywHDa8ByDQeLWHtk8ZN2WDqaRq6Wdg18qwKg9Q5VQgSRvq0NDxb2Lpc4QH0RwmN+q+k+EpT6VRsjxR7RF2o7boA//54cFEKjgmAe2v7DYrZYKSnPv5H9mF429gI6P+SUuJpqdIX8olT6CT098xE7fWbYGbzMdo6L+k1lCKVC/hlwbPX2XSyx0Cl+yer4OyGZM0/uDq34GqCFkUJa1oEnrEq3C71c0/sgV/GdtojHErO86YzPjTysJhg7r6720DsQrNjT+AgeQV2tYHRvj2uGpSJCZyyMZ7nF2jBxq6Ss5IRYIFmkjBiYPQR4zz2Z7C4PttBXGUiqF434dmgD5TWcxoL/11F4IfYUhXjqbCwL+YCT1Jzih5vob0loBc6cIh3zC1xwCfhkYT9el2/XOxda1h/BgX/2f32ygPe7yEEbtold+NweF73oV3628MTfSM1VxUShvAqkOmUcmBO5Y9E5hRr1MqlsvMr1gnhv+PdoT7is1gNICrOrA2X3tid+oPe6DxAag5TDm8uDQBTN59QT98Qep6Yg3QNymciXbSw1lUlfCr2XiO3UwmO8IQGKH97vZpLnzlLcD26NMUPd6tMNjelkMjH/WZfaLLzUI2H7s3fgMovvxrYG4lscMvMcPxmDzcaNqOS1zUAsuSofq203+OsYQldkZVSYbqWkXEXweWol4Lnwc0uKAqKeOc0Xg7GuJ+3zjPY+qFx4hyfMqwtX7DTO45n3jZe/1ovETkCBAVQ87oJdSMjYeRwNslTFDXBnfwBZA0uwy0"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 553,
+    "completion_tokens": 478,
+    "total_tokens": 1031,
+    "cost": 0.00079304,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 192,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 7.604e-05,
+      "upstream_inference_completions_cost": 0.000717
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 461,
+      "image_tokens": 0
+    }
+  }
+}

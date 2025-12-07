@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765063706-RFJW1eyoNpWeoWaiYCXT",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765063706,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 125\n}",
+        "refusal": null,
+        "reasoning": "The code snippet is:\n\n#include <stdio.h>\n\n\n## Examining Code Structure\n- The code includes a main function with an array `nondet` of size 2*100000+3, suggesting it's designed for large data.\n- It initializes the array with values from 0 to 200000, where each element `nondet[i]` equals `i`.\n- A second loop runs up to 40000000 iterations, but its purpose is unclear as it lacks an associated action.\n\n## Examining Code Structure\n- The first loop initializes 200,001 elements of the `nondet` array, setting `nondet[i]` to `i` for indices 0 to 200,000.\n- The array has a capacity of 200,003 elements, so the initialization fits within bounds, leaving two unused slots.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "The code snippet is:\n\n#include <stdio.h>\n\n\n## Examining Code Structure\n- The code includes a main function with an array `nondet` of size 2*100000+3, suggesting it's designed for large data.\n- It initializes the array with values from 0 to 200000, where each element `nondet[i]` equals `i`.\n- A second loop runs up to 40000000 iterations, but its purpose is unclear as it lacks an associated action.\n\n## Examining Code Structure\n- The first loop initializes 200,001 elements of the `nondet` array, setting `nondet[i]` to `i` for indices 0 to 200,000.\n- The array has a capacity of 200,003 elements, so the initialization fits within bounds, leaving two unused slots."
+          },
+          {
+            "id": "rs_fab1780a-714c-db51-aa29-a26a5ba8a2e5",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 356,
+    "completion_tokens": 635,
+    "total_tokens": 991,
+    "cost": 0.00097762,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 2.512e-05,
+      "upstream_inference_completions_cost": 0.0009525
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 618,
+      "image_tokens": 0
+    }
+  }
+}

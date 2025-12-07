@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765066759-bwIJ2VEA386obqc6sTSs",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765066759,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 674\n}",
+        "refusal": null,
+        "reasoning": "First, the user wants a JSON object with exactly two keys: \"vulnerable\": true or false, and \"cwe\": CODE_NUMBER. Nothing else.\n\n\n## Defining output format\n- The user needs a JSON object with two keys: \"vulnerable\" (true or false) and \"cwe\" (a CODE_NUMBER).\n- The output should strictly include only these two keys, with no additional fields or data.\n\n## Analyzing code for vulnerabilities\n- The code involves a recursive function, sumArray, which sums elements of an array starting at a given point.\n- Need to check if sumArray has potential vulnerabilities, like stack overflow from deep recursion or incorrect handling of array bounds.\n\n## Analyzing code for vulnerabilities\n- The sumArray function is recursive, taking an array, size, and index, but lacks a proper base case to terminate.\n- When index equals size, it resets to 0, leading to infinite recursion by repeatedly summing the same elements.\n- This infinite recursion can cause a stack overflow, making the code vulnerable to crashes or resource exhaustion.\n- The function calls itself with index+1 after resetting, creating a loop without an exit condition.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the user wants a JSON object with exactly two keys: \"vulnerable\": true or false, and \"cwe\": CODE_NUMBER. Nothing else.\n\n\n## Defining output format\n- The user needs a JSON object with two keys: \"vulnerable\" (true or false) and \"cwe\" (a CODE_NUMBER).\n- The output should strictly include only these two keys, with no additional fields or data.\n\n## Analyzing code for vulnerabilities\n- The code involves a recursive function, sumArray, which sums elements of an array starting at a given point.\n- Need to check if sumArray has potential vulnerabilities, like stack overflow from deep recursion or incorrect handling of array bounds.\n\n## Analyzing code for vulnerabilities\n- The sumArray function is recursive, taking an array, size, and index, but lacks a proper base case to terminate.\n- When index equals size, it resets to 0, leading to infinite recursion by repeatedly summing the same elements.\n- This infinite recursion can cause a stack overflow, making the code vulnerable to crashes or resource exhaustion.\n- The function calls itself with index+1 after resetting, creating a loop without an exit condition."
+          },
+          {
+            "id": "rs_7a774eb3-ee30-62e4-cbb5-9279acb62983",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 380,
+    "completion_tokens": 607,
+    "total_tokens": 987,
+    "cost": 0.00094042,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 2.992e-05,
+      "upstream_inference_completions_cost": 0.0009105
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 590,
+      "image_tokens": 0
+    }
+  }
+}

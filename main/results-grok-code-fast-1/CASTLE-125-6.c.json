@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765063722-hvP23fKxjF2n2jUf3Kmk",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765063722,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 125\n}",
+        "refusal": null,
+        "reasoning": "First, the task is to review the code for potential vulnerabilities and return ONLY a JSON object in this format:\n\n\n## Reviewing code security  \n- The task focuses on analyzing code for potential vulnerabilities.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER) fields.\n\n## Reviewing code details  \n- Found a struct Country with fields: char code[4] for country codes and int population.  \n- Noted getCountries allocates space for 9 countries using malloc, initializing codes like \"HUN\" with strncpy, which seems secure as it handles null termination.  \n\n## Identifying potential vulnerabilities  \n- Discovered getNumberOfCountries returns 99 for non-NULL input, but only 9 countries are allocated.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to review the code for potential vulnerabilities and return ONLY a JSON object in this format:\n\n\n## Reviewing code security  \n- The task focuses on analyzing code for potential vulnerabilities.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER) fields.\n\n## Reviewing code details  \n- Found a struct Country with fields: char code[4] for country codes and int population.  \n- Noted getCountries allocates space for 9 countries using malloc, initializing codes like \"HUN\" with strncpy, which seems secure as it handles null termination.  \n\n## Identifying potential vulnerabilities  \n- Discovered getNumberOfCountries returns 99 for non-NULL input, but only 9 countries are allocated."
+          },
+          {
+            "id": "rs_f2b230bb-5fb4-e8ed-f31a-6802dfce7a9f",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 705,
+    "completion_tokens": 576,
+    "total_tokens": 1281,
+    "cost": 0.00095892,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 9.492e-05,
+      "upstream_inference_completions_cost": 0.000864
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 559,
+      "image_tokens": 0
+    }
+  }
+}

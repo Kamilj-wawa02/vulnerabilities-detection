@@ -3,25 +3,39 @@ import requests
 import os
 from time import sleep
 
+# --- Used models: ---
+# openai/gpt-5.1
+# x-ai/grok-code-fast-1
+#
+# --- For testing purposes: ---
+# openai/gpt-oss-20b:free
+# meta-llama/llama-3.2-3b-instruct:free
+#
+# Models available at: https://openrouter.ai/models
 
-MODEL = "meta-llama/llama-3.2-3b-instruct:free" # from: https://openrouter.ai/models
-START_INDEX = 0
-END_INDEX = 3 # -1
-STRATEGY = "zero_shot"  # options: "zero_shot", "role_based"
+MODEL = "x-ai/grok-code-fast-1"
+START_INDEX = 75
+END_INDEX = -1
+STRATEGY = "role_based"  # options: "zero_shot", "role_based"
+
+DEBUG = False
+DEBUG_PROMPTS = False
+
+JSON_FORMAT_REQUIREMENT = """
+Return ONLY a JSON object in the following format, and nothing else:
+{
+  "vulnerable": true or false,
+  "cwe": CODE_NUMBER
+}
+"""
 
 ZERO_SHOT_PROMPT_BEGINNING = (
     "Examine the following code snippet and determine whether it contains a security vulnerability."
-    "If it does, specify the type of vulnerability and indicate its exact location in the code."
-    "If it does not, answer 'No vulnerability detected'."
-    "Code snippet:"
 )
 
 ROLE_BASED_PROMPT_BEGINNING = (
-    "You are a senior security specialist with 20 years of experience in detecting and analyzing vulnerabilities in C/C++ applications."
-    "Your task is to perform a security audit of the following code snippet."
-    "If a vulnerability exists, clearly specify the type of vulnerability and indicate its exact location in the code."
-    "If no vulnerability exists, respond with: \"No vulnerability detected\"."
-    "Code snippet:"
+    "You are a senior security specialist with 20 years of experience in detecting and analyzing vulnerabilities in C/C++ applications. "
+    "Review the following code snippet to identify potential vulnerabilities."
 )
 
 BENCHMARK_JSON_PATH = "../data/CASTLE-C250.json"
@@ -41,8 +55,12 @@ def load_benchmark():
         return json.load(f)["tests"]
 
 
-def sort_tests_alphabetically(tests):
-    return sorted(tests, key=lambda t: t["name"])
+def sort_tests(tests):
+    def extract_numbers(name):
+        parts = name.split('-')
+        return [int(part) for part in parts if part.isdigit()]
+
+    return sorted(tests, key=lambda t: extract_numbers(t["name"]))
 
 
 def build_prompt(entry):
@@ -51,56 +69,55 @@ def build_prompt(entry):
     elif STRATEGY == "role_based":
         beginning = ROLE_BASED_PROMPT_BEGINNING
 
-    return beginning + entry["code"]
-
-
-# def send_request(prompt, api_key):
-#     headers = {
-#         "Authorization": f"Bearer {api_key}",
-#         "Content-Type": "application/json"
-#     }
-
-#     payload = {
-#         "model": MODEL,
-#         "messages": [
-#             {
-#                 "role": "user",
-#                 "content": [{"type": "text", "text": prompt}]
-#             }
-#         ]
-#     }
-
-#     response = requests.post(url=API_URL, headers=headers, json=payload)
-
-#     if response.status_code != 200:
-#         raise RuntimeError(f"API error {response.status_code}: {response.text}")
-
-#     return response.json()
+    return beginning + JSON_FORMAT_REQUIREMENT + "\nCode snippet:\n" + entry["code"]
 
 
 def send_request(prompt, api_key):
-    print("Mock send_request called.")
-    # print(prompt)
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json"
+    }
 
-    return {
-        "id": "test-id",
-        "object": "chat.completion",
-        "created": 1234567890,
+    payload = {
         "model": MODEL,
+        "messages": [
+            {
+                "role": "user",
+                "content": [{"type": "text", "text": prompt}]
+            }
+        ]
+    }
+
+    if DEBUG:
+        return debug_prompt(prompt)
+    else:
+        response = requests.post(url=API_URL, headers=headers, json=payload)
+
+        if response.status_code != 200:
+            raise RuntimeError(f"API error {response.status_code}: {response.text}")
+        
+        return response.json()
+
+
+def debug_prompt(prompt):
+    if DEBUG_PROMPTS:
+        print(f'[DEBUG] Prompt: \n{prompt}')
+    return {
+        "id": "ID",
+        "model": "meta-llama/llama-3.2-3b-instruct:free",
         "choices": [
             {
-                "index": 0,
                 "message": {
                     "role": "assistant",
-                    "content": [{"type": "text", "text": "No vulnerability detected."}]
-                },
-                "finish_reason": "stop"
+                    "content": "RESULT"
+                }
             }
         ],
         "usage": {
-            "prompt_tokens": 100,
-            "completion_tokens": 10,
-            "total_tokens": 110
+            "prompt_tokens": 690,
+            "completion_tokens": 599,
+            "total_tokens": 1289,
+            "cost": 0
         }
     }
 
@@ -122,7 +139,7 @@ if __name__ == "__main__":
         exit(1)
 
     tests = load_benchmark()
-    tests = sort_tests_alphabetically(tests)
+    tests = sort_tests(tests)
 
     total = len(tests)
     start = max(0, START_INDEX)
@@ -147,7 +164,5 @@ if __name__ == "__main__":
             exit(1)
 
         save_result(test_entry, result)
-
-        sleep(0.5)
     
     print("\n\nFinished!")

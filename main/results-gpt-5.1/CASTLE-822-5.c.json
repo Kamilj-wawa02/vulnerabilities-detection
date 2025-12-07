@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765056839-inPzGf0l51Ohx4iLBypv",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765056839,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 822\n}",
+        "refusal": null,
+        "reasoning": "**Identifying vulnerability**\n\nI need to determine if there's a vulnerability in some code. It's using an environment variable as a pointer address, which involves casting a long to an int*. This could lead to a user-controlled pointer dereference, resulting in arbitrary reading and memory safety issues. Considering various CWEs, I believe CWE-822, related to \"Untrusted Pointer Dereference,\" is the most accurate match. So, it seems this code is indeed vulnerable, confirming CWE-822. I'll return this information in JSON format.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying vulnerability**\n\nI need to determine if there's a vulnerability in some code. It's using an environment variable as a pointer address, which involves casting a long to an int*. This could lead to a user-controlled pointer dereference, resulting in arbitrary reading and memory safety issues. Considering various CWEs, I believe CWE-822, related to \"Untrusted Pointer Dereference,\" is the most accurate match. So, it seems this code is indeed vulnerable, confirming CWE-822. I'll return this information in JSON format."
+          },
+          {
+            "id": "rs_04dd6f7e404ee1d9016934a1484c0881939bc86121d39275ee",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpNKFOhqCFT8LGefFR69IMJ05a9vgkqtTUX5x48n2NFc9xMp4cpIzkQ9IEEUc9hgNh9Th-f0S0QBWPwwUX8TeSPYk-HgliimBRfsPcPBPGRbPs3Clama3AWpQEjAgHXMw5rgo3IL3WRXcdWD1-tlkWj3VntLBP6vehMi_RV6gNpCB1NDj6Z0gzt7sl6VM1z8jUmU1itWTQSTanFXvuqB0705t7A0rXRRsWwicKNdvoLHXz2gfzdQZkqS4WQ1JaIv4Lg531Bch6NUA5r7CTlk8rweQdi5EgfVhsYr8SL6BPVbLxRhvmoiDf5doXDzB18CTVp8_YNGaBzB4P9BZ7k9V_9mo5MjlEyBb0UpvlFP-lNph3yf_9C1uMpbDDBjLuvvQ2D3eG5XCCEcJQ42dqcrXpIjD28vQyX2fFxpwWkMG6d9U12Jt8qVamAHZoXly1Bj3p-o_9yqEp1YzBkCHe1si34tdjUPjphd-6WIORF1QDpN7FvNMDhX_CuaSRICuex8J1u_nDVf29hsWZ5NmlOFptnYQN2IXBqQbPML2SqbW2VxYlECOOj3H6F7PHfKL738vA61XRLidLEump_oMusmS6DWqYYC26MmVLrTD173_itxyfAwArO8HlPley233qJTEVI8yJh5UzjdvJzXzA9k1PJco3n_RvMqYbio-1D_FF6wMAdBhyzrGNAv_y_4g_mBvtuMj1vw_w2Pp58s8fMIllhKUora1aaJNqQ-4TwBT7cFM9ee2d88qlDyehn4bUWl8H2RXSAnJgHGgs7JeDegr2HaVqDjiBfnSt9fzRNE0JT6NNf57eBAdTx8M1ibzJRDMusd6jueNJgq1oAQ5KrYZhfxNtXQlT3AF39WCjai4L_BMzajgqsrfQQe2J8F-HObd7dFr717ZP_J3Oabbwyt9166z7vug2IbPv7PQ7UXmm1ByGJEpo3f6ccCGoVydXpiV3w1JhifyP90jPfraQiUQ3rEEc5zYAgwyHuUxOTPin9X-yDbNrJwFRZoMdjmv54nIj2PMTjbNZkdfF0RyQeTO8Lru2m8yHLyk5uMXAj4r8oHwc2b7q5Jloj2waUNgnstKkcniGu6Q3YIMod-Yqy-uOB1X0NQyfTx0A-6MEH5afvldwWOdy5fLQn0LeGClpzoOpMnPH9LDNNKF8G15gyDGUYcfzQtDmm0w68hHbxhAyby4JNwQdyKzLmoz9IP9ItrqjMIfvBqFBfTXZyZ-WygHs8JICoBvkcr38NRjdu-J_jixbjkm0oIdfPZVUVEntSpek8hYhTDy4qbQ0Z6rlM5tKFOsA2ZfUwIjO_08INVIASLoL8UncqxbE9yA5ArN48lfeSt84zJXfmatAQiM1jVwiaqofNEA8w78YmC5ZcgnljEJAqLswRCZGKGSl3msiAdjLCrCrx4kRNRAfHQ7ICEMcawYC2Gx0rJsIQiz_6mhQAV96m_RkAnERUFl3Sk2kZS2Mlv9VRTZyzrjONrfAfYACddfkBFX-sYBJKTH2zlrRmIO_tlBMF2eHVbKJA9i-jEHE5DuzIgPz1uiI-mNbByPGbF27BJeBf2OrYCvGfXfOzNBCy1rIFThDaLXDFkOezTot4d28mq4XetuE9wTKCeyiAenhntpuzT9jz8fFv5qq40f6btsE07sB6PjCLp5s7AQwu-9Xcbh0ZYwK0RW3MC2b8yDffLYzyg3nMxNNL3ROCnUtqSU="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 275,
+    "completion_tokens": 175,
+    "total_tokens": 450,
+    "cost": 0.00209375,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00034375,
+      "upstream_inference_completions_cost": 0.00175
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 151,
+      "image_tokens": 0
+    }
+  }
+}
