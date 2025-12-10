@@ -2,9 +2,9 @@ import os
 import json
 from typing import Dict, Any
 
-# RESULTS_DIR = "results-gpt-5.1"
+RESULTS_DIR = "results-gpt-5.1"
 # RESULTS_DIR = "results-grok-code-fast-1"
-RESULTS_DIR = "results-claude-sonnet-4.5"
+# RESULTS_DIR = "results-claude-sonnet-4.5"
 
 BENCHMARK_JSON_PATH = "../data/CASTLE-C250.json"
 
@@ -37,13 +37,26 @@ def load_model_results() -> Dict[str, Dict[str, Any]]:
         content = data["choices"][0]["message"]["content"]
         content = content.replace("```json\n", "").replace("```", "")
         
+        prompt_tokens = data["usage"]["prompt_tokens"]
+        completion_tokens = data["usage"]["completion_tokens"]
+        total_tokens = data["usage"]["total_tokens"]
+        cost = data["usage"]["cost"]
+
         try:
-            parsed = json.loads(content)
+            parsed_content = json.loads(content)
         except json.JSONDecodeError:
             results[base_case_name] = {}
             continue
 
-        results[base_case_name] = parsed
+        results[base_case_name] = {
+            "content": parsed_content,
+            "usage": {
+                "prompt_tokens": prompt_tokens,
+                "completion_tokens": completion_tokens,
+                "total_tokens": total_tokens,
+                "cost": cost
+            }
+        }
 
     return results
 
@@ -51,6 +64,11 @@ def load_model_results() -> Dict[str, Dict[str, Any]]:
 def evaluate(true_values: Dict[str, Dict[str, Any]], predictions: Dict[str, Dict[str, Any]]):
     TP = TN = FP = FN = 0
     total = 0
+
+    total_prompt_tokens = 0
+    total_completion_tokens = 0
+    total_tokens = 0
+    total_cost = 0.0
 
     for name, true_data in true_values.items():
         if name not in predictions:
@@ -60,14 +78,21 @@ def evaluate(true_values: Dict[str, Dict[str, Any]], predictions: Dict[str, Dict
         predicted = predictions[name]
         total += 1
 
-        if not "vulnerable" in predicted or not "cwe" in predicted:
+        content = predicted.get("content", {})
+
+        total_prompt_tokens += predicted.get("usage", {}).get("prompt_tokens", 0)
+        total_completion_tokens += predicted.get("usage", {}).get("completion_tokens", 0)
+        total_tokens += predicted.get("usage", {}).get("total_tokens", 0)
+        total_cost += predicted.get("usage", {}).get("cost", 0.0)
+
+        if not "vulnerable" in content or not "cwe" in content:
             print(f"Incomplete prediction or wrong format at {name} -> predicted: {predicted}")
             continue
 
         true_v = true_data["vulnerable"]
         true_cwe = true_data["cwe"]
-        pred_v = predicted["vulnerable"]
-        pred_cwe = predicted["cwe"]
+        pred_v = content["vulnerable"]
+        pred_cwe = content["cwe"]
 
         if pred_v and true_v and pred_cwe != true_cwe:
             pred_v = False
@@ -84,6 +109,7 @@ def evaluate(true_values: Dict[str, Dict[str, Any]], predictions: Dict[str, Dict
     precision = TP / (TP + FP) if (TP + FP) else 0
     recall = TP / (TP + FN) if (TP + FN) else 0
     f1 = 2 * precision * recall / (precision + recall) if (precision + recall) else 0
+    average_cost = total_cost / total if total else 0.0
 
     return {
         "TP": TP,
@@ -93,7 +119,12 @@ def evaluate(true_values: Dict[str, Dict[str, Any]], predictions: Dict[str, Dict
         "precision": precision,
         "recall": recall,
         "f1": f1,
-        "total": total
+        "total": total,
+        "total_prompt_tokens": total_prompt_tokens,
+        "total_completion_tokens": total_completion_tokens,
+        "total_tokens": total_tokens,
+        "total_cost": total_cost,
+        "average_cost_per_sample": average_cost
     }
 
 
