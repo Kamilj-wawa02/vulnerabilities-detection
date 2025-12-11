@@ -1,7 +1,8 @@
 # vulnerabilities-detection
 
 ## Results for gpt-5.1
-```
+
+```text
 TP: 89
 TN: 48
 FP: 52
@@ -18,7 +19,8 @@ average_cost_per_sample: 0.004081345000000003
 ```
 
 ## Results for grok-code-fast-1
-```
+
+```text
 TP: 81
 TN: 34
 FP: 57
@@ -35,7 +37,8 @@ average_cost_per_sample: 0.002277291279999999
 ```
 
 ## Results for claude-sonnet-4.5
-```
+
+```text
 TP: 87
 TN: 29
 FP: 71
@@ -50,3 +53,14 @@ total_tokens: 111695
 total_cost: 0.4128089999999999
 average_cost_per_sample: 0.0016512359999999997
 ```
+
+## TODO
+
+- chain-of-thought i zero-shot
+- tanszy model
+- temperatura
+- analiza bez cwe
+
+## Article
+
+rozdział o użytych technologiach
