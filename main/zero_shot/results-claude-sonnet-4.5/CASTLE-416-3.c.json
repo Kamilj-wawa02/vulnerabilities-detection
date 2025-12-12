@@ -1,0 +1,42 @@
+{
+  "id": "gen-1765536825-P4YDI7fKJS0hnYg4hH6S",
+  "provider": "Google",
+  "model": "anthropic/claude-sonnet-4.5",
+  "object": "chat.completion",
+  "created": 1765536825,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Let me trace through this code to identify potential security vulnerabilities.\n\n1. Two integer pointers `a` and `b` are allocated\n2. Memory allocation is checked properly\n3. `*a = 5`, then `square(a)` makes `*a = 25`\n4. `*b = *a` copies the value 25 to `*b`\n5. `free(a)` - pointer `a` is freed\n6. `swap(&a, &b)` - swaps the pointers, so now `a` points to what `b` pointed to, and `b` points to the freed memory\n7. `printf(\"Result: %d\\n\", *b)` - **This dereferences `b`, which now points to freed memory (use-after-free)**\n8. `free(a)` - frees the memory that was originally `b`\n\nThe vulnerability is at line where `*b` is dereferenced after the swap. After `swap(&a, &b)`, pointer `b` contains the address that was originally in `a`, which was already freed. Dereferencing freed memory is a use-after-free vulnerability.\n\n```json\n{\n  \"vulnerable\": true,\n  \"cwe\": 416\n}\n```",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 315,
+    "completion_tokens": 290,
+    "total_tokens": 605,
+    "cost": 0.005295,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.000945,
+      "upstream_inference_completions_cost": 0.00435
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0
+    }
+  }
+}

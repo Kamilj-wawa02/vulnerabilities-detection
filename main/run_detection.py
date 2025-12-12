@@ -14,7 +14,7 @@ from time import sleep
 #
 # Models available at: https://openrouter.ai/models
 
-MODEL = "x-ai/grok-code-fast-1"
+MODEL = "anthropic/claude-sonnet-4.5"
 START_INDEX = 0
 END_INDEX = -1
 STRATEGY = "zero_shot"  # options: "zero_shot", "role_based", "chain_of_thought"
