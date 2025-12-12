@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765537731-4LxFXiSUszznCLTh75ew",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765537731,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 134\n}",
+        "refusal": null,
+        "reasoning": "**Analyzing code vulnerabilities**\n\nI need to analyze the code for potential security vulnerabilities. It uses a logger function that prints messages incorrectly, especially with untrusted input, leading to a format string vulnerability. The main function improperly calculates buffer sizes, which could cause buffer overflows because it uses the size of a pointer instead of the actual allocated length. This could point to several CWEs, including CWE-134 for uncontrolled format strings, and I'll mark it as vulnerable while choosing the most relevant CWE. I\u2019d lean towards CWE-134 for clarity.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing code vulnerabilities**\n\nI need to analyze the code for potential security vulnerabilities. It uses a logger function that prints messages incorrectly, especially with untrusted input, leading to a format string vulnerability. The main function improperly calculates buffer sizes, which could cause buffer overflows because it uses the size of a pointer instead of the actual allocated length. This could point to several CWEs, including CWE-134 for uncontrolled format strings, and I'll mark it as vulnerable while choosing the most relevant CWE. I\u2019d lean towards CWE-134 for clarity."
+          },
+          {
+            "id": "rs_07c38159e98102e101693bf7c374248197852f07a51dadcc86",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_fJ2LsWmzlcXD87hVNYLaNaPeKHQxzM-k7Job22nbFZfrvRIBgs2h2FMSaYtJJmLmOJ5RKNHA6ywRbWC_4hblNG755f2ehaD-oyuSYPUb-orqv_4P3Hgngw83M5-HfTTIqhkYzpUIlObUwd_7VQUzy8mvZk8v0gso4HizuKKDLddx1FJ-akZOQx-44MhH_ZNn8rqqwtoGL1bKiz5NIFXZo3BxUgI1CySg1mVilmw0i3nq8Yz-aeHInmYKqQPd102agV2OsO7UFFgMFeK3ypJ0beTfgDafgzlYv7SDJYw0XsMWBXXC8dLzvWsnZEIMsGVYMZSRqgQfJTwyg9S6gCVAlK1AzeUcU4eVzpYjfXYLPB4Nv6xvhwyocdPukFgHDTMg5mGXuu7Duxk6vcr2xcHk1g3ZK40_xzwonpkW7K-oRGpcwX5IDl0_tL9NMecfzBDoTN3qVF67N_emsw6Kyol76nP8u45H2k0bA4OlE2aVl8dcFcwCXPI7wfeF34Fez0rgzoTx7r7epWQo1E6FrzOGyJLo5_buv9Q6zeEVL2Z0UR7ajKpvpiT_ojxWZDVCyVrIGo5IhjNYY5yfydz6FKdqfmEiwgZO9wbmtIC0g3s5PnQ9rIMZxxyav0DF3mSQ9bwZBAJH8qOqHyGk03XqoWH_cPHO5Bz-kd2JNmrX9hmRswmTgDShWBiAWYEACNtKTpMyoXXXVtYHX4xMiiKPSiVJ5JCM7-C_d2ZmK15SK30ocw0vAYuuP_CwK2Nvqgg5aEu9ty8hUBXLVqIR0O_ztzXe30YffvKWg-K_0RnRJ3pAdShcmTKT2ivBENqcQNMe0iGJ3oxBWTsKbvDAM87Fgmbl4S6jilEiE6V-9avVmNdiQ4uMalnm2PjzdOOLCZogm1YWMndOzaeT70et5KFT4SEaWR4NVdUNTAQ8V0dvPVWQpfr7BLnEbULJ49zVz2CE9sHoeyKGo4nOpnA1veeJTuZSSN1MQ8BbmbuLGGQFXq5FC3HZL9blCquSyMWdPx4ANGcN8nYVfmIN7q18SHBlpLslA_828vbE5vgcflMRlt-21NAkvseABrimTbVdtLCo8_hdiM1ynAK31FkdHD_-VUA-iT3oik66W7MajrtQjSXYtaYa_0CDm1SwAI_6Wn8z2Aj99U41SmdWvi2h4kXxl7YUDfzVumE-f8NTBr8sdaxuChcAIjfkA05iPOHi3nCVBWGwRQf50KEl5zAss9NPG63RWIOyjecuhNc5F5S_JEkusorRZAv87B4chsyOfcrvFgqE0A3Kv0yN9cqeKIRziiclpmbVnob222Lts9AxYydwAih6w7MHPrK-QKhYeQ6QCzV3weO9i0tvpWHy8ygAbhSXFvTB51W0LoouvVhS16BCEPJvu1LUp5LZEteCUOp0T-tNVNw8Oa334YKdKO1NVksQKsH2rrAOHpQchjv_NKlyuYNcmyyFHOpHxJjNNqYvL8qHavW66_JIENeSehl0OKu3Wfd2Tcd5fucaDBROO_JBYpTd1NS-rgWvxKcEurd96EvW_gpG_rNeiU5LIVl2Cm7oq9CbNV-dAIwgRnD3HOVk_xrwKp9_6zIXQPcuk0a7sOAbBmEZcOOTV0VaXyVPjJM8pzZOKnhjNOIwJ0BVI-9SIxvTT4PXxk7sYFKtPFPm1c3k3lyxVx-zYjUhjtJOs4BmbTZCBBKzacRmQCq5MrHChEFBJXqchBZzmweElEox7edijTvM3uZiVmFbNbRxLexSZcGK9KshbxvqBtmY8gC7Ui1dXgpZL8IELvqTXyf_P6NtYtezkC3g_5Lr2iO0v3AnYboWI3ZUqq9eVTT_-VDSn_mINU_8zWZZbOCNhUN0tHWRYWIth5CLjkyKps0w2U66W5w2KcRTJqSGJWhyroldGkypY="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 215,
+    "completion_tokens": 202,
+    "total_tokens": 417,
+    "cost": 0.00228875,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00026875,
+      "upstream_inference_completions_cost": 0.00202
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 178,
+      "image_tokens": 0
+    }
+  }
+}

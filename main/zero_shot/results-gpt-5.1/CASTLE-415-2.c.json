@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765538283-5t96ql2pG0osYgfTqQQT",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765538283,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 415\n}",
+        "refusal": null,
+        "reasoning": "**Analyzing vulnerability**\n\nI need to see if there's a vulnerability in this code. In the main function, I allocate memory and then set it to 5 before calling `square(a)`. In `square`, I dereference and operate on that pointer, and then I free it. Back in main, `a` becomes a dangling pointer. \n\nWhen I perform a swap, I risk creating a double free vulnerability if I free the pointer again under certain conditions. This confirms there is indeed a vulnerability present, related to double freeing.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing vulnerability**\n\nI need to see if there's a vulnerability in this code. In the main function, I allocate memory and then set it to 5 before calling `square(a)`. In `square`, I dereference and operate on that pointer, and then I free it. Back in main, `a` becomes a dangling pointer. \n\nWhen I perform a swap, I risk creating a double free vulnerability if I free the pointer again under certain conditions. This confirms there is indeed a vulnerability present, related to double freeing."
+          },
+          {
+            "id": "rs_0d43be7b9606f58f01693bf9ec3344819594d6d729c302ae13",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_nxm6a8tLey9JnU0pX-FOmC6WLF8toMvKOTPOY9hcAcq95sbed_fpM0KxkRUsfg-uUI-E1gOiBkSONiLSFzrp4HubqfJh9v09s41CD8rnqhB63tDbP1zD5nnA_mvKOtoKwk7_knAr8YQzxZrHJOknKUEkZf0bui5Av8QUptY7vNAoHf0t1GWopBZX9cq7y22WcbZQGS4SqTaIgc_y1i-6E8yizjvoLpXxoZGBS-JlYq30OxU8ioelk5S5lQ3XqgT-KaXWKWivQZgWyhsR0KXL4dNmpiO__FAqV7UWt35Fw5TceK-mjsYHvsnSJaaAiZls_9EQsSoV_YTcoLEKVl2qNvXEPbCiuLTAnCInJJZHvUmu-cFQB75nDOF3Z5Vs_qaWc4OKCm-Hg29-hzA2V7hbtddFQ0PPwfMdWQNjLw1E00AoQrpL5TD6urzzdUweqU6UcZUHrHNMm_Dz87pVQPAX-AdgjOrOYPz1BHE7PLiekSJ-e4Poa9B0hsnaKefkUOkf0SmaHdTC_ZYQCELkZDtdF04zz_vL8fCgYArnwN0SJg7baugJ09Fjn10gN8e98ffg0bpQTfCSOcGwO1ia1PnVXPkbpAdMBCE7vXhGD7O2cqdNMTGBmGycjB67fo_CpSyMUJLWlJWimR2Sd-jX8hqtcLh-XTuaTYNJbeQOq3q9R_V4lfOyCB8UG3iMwBce7eb-2gKJMI6-hdqMrYDiruYwO5h9aKbwPUMzKCZ4zrNEuet-pOny6YLucPDpXSImUcWCP4KRFBqZBjGUeRx5KCuaGKbQa9eY85qHjQJEOUwhSnVn5bzd1pHvsINgY5yUmgAcL1vD5LJjx0HmZUEepI4Is63YauWLIKb5wfJgGJYO5jqlKAeEEqSBEYWiGYfmBS9IThA9V8eSQtHa7SiCiS9DpqKyjd3LdnVSOH8k31Dn5txdJ-15MwP67kpR85M8WBJZLOSphiLqcvpdGGoKYHqPpm9keQw4Prx0gYP9H6RcxZ6QYM3PYGnFO0pALIjxHfl24S-fKmvr3Xoqal3qDSw8FFBUWGG4Eh8PbmFsxChmCi0NyiPgduceMATRSMCTPErojwCP1uCo3svvEBcj48XviHi_1dCKgkUgRlUerQcvizgodjuCLUI71wOEirTsbplY4p5yvE4NlIq01v8VIxYCkbCVGtgzZ43lUi_VNZ26J2nLKpHVCTR2htnZ8K0opBLI3FED8QsNK7EyNuUjUstOD9-SaRF-qB1fj2UqLn2bSx5CcurbvRUWAxYYerSM0rcu4et8TtIxroBhuzb5jkqUnuv-4doUu7Xkk4YX5_RgWGFnpkbUTgY5RgL8BZhFGS6CFDKRM7pnPZReHQEkt_L0wkoONzv8nsUi52fCn1XGRttjYbIEQPmcgdsoVEn0PgdCj2w_iMvAeRmXaaypGyUuTtSFIUuB7gs9hiIUSWEMKE7pQXEXj6LZX9JDBXnPgeGTgZRo6inq6ExrEhY0IDFAdFFzJtAgel18nq1rJiKa_lq1TJGgH1cIivzVxqyN1p2MXkUWze6ZKIpvQHQ8JhboCCo-XZ1t2KY1DLfq4t7DSeOImqgujpXpfqOIcc5dUc3Z18krGqg6_hqDQsm0T0SBtkA96UEfo5e7sope9sOaTtZb4NlaN_4b6im6Q_DyOyqe9kGhJFNvQhelc672NDKBJO49mCkuEnUUqfWUsDZzi3HGrmqEfZhKXTIhtwRvedXlXX2x9JncgpLh8EEXNqEf8r52FKejgbR58KUF3r4rQu6kYHV78_c53sUXTcsk5SSEl-TvEJEznJ2wserkr1_Qg1ZdbV8wiFVoRaAvwj8fI8bbito48KIGsbpccmPTcGF6rK"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 237,
+    "completion_tokens": 239,
+    "total_tokens": 476,
+    "cost": 0.00268625,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00029625,
+      "upstream_inference_completions_cost": 0.00239
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 215,
+      "image_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765539126-Ntb888KAo1RydYjPqapy",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765539126,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 400\n}",
+        "refusal": null,
+        "reasoning": "**Analyzing security vulnerabilities**\n\nI need to investigate potential security vulnerabilities in the server code. The server socket is created but neither bound nor listened on, indicating a logic bug. From a security perspective, each connection forks; the child immediately closes the client socket. However, I notice there's a risk of resource exhaustion due to failing to properly reap child processes, leading to zombie processes. These issues could relate to CWE-400 (Resource Exhaustion) and CWE-410 (Improper Resource Shutdown). I'll conclude that it is vulnerable, categorizing it as CWE-400.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing security vulnerabilities**\n\nI need to investigate potential security vulnerabilities in the server code. The server socket is created but neither bound nor listened on, indicating a logic bug. From a security perspective, each connection forks; the child immediately closes the client socket. However, I notice there's a risk of resource exhaustion due to failing to properly reap child processes, leading to zombie processes. These issues could relate to CWE-400 (Resource Exhaustion) and CWE-410 (Improper Resource Shutdown). I'll conclude that it is vulnerable, categorizing it as CWE-400."
+          },
+          {
+            "id": "rs_0e4ad386f4249a7101693bfd368d6c8190b3e7a7fc476346ac",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_09oZDyRl27mLBv4y58VKlbWVa9bYHwS50R-aIxCSMrOw4awTEHggN_Gs8NkPqVxxee7EqOdMpRbl48EjUEwkKGCYcA_trt7u2B34R9NYmfqkFl53YsjlVzySgJsXVpY5vygBzqeL96wu6MslqNXbY_9ANqMoWDyRz7DCvq-MqZdz9CoCJqutrxfzEYD8CLIXvpppB5bge9lFz7fxAWDDv7TEr5zFJYPmL4Q6Nqmebxtun5cne3gB5myDJdGKAJxnN1czhuMrklEMcRFwxInfCVWWIUJCziSq8xA3IilYoWbw5EM6XIuY9IVnLcc8E2-mG2KSje5dGhRoBughA7wN_MdNi4Qfs_imoknKLBn5Mu-3XBJEOPhRW79lNvSvl4iodPuXNjP0bkKeanTR457ZcVeJw-LAKgmguniBb4IjhZQm9P7gcwr3cW6Xr3EXWBbaMV0swaI_F8K3q5Q6TYkG5mOl1QulXkkfgLtAoNpyk0DWf7ClGgQeF_HyPhPXHf80KlvQJkm6eFYYyRrbwuB-Bf2QDcqDkmFadkeCfwdA4EX8CrpsZUyboUbQV-soFk_5mjdezArIeJoz5Xyatm6ePkjXLyisx8azxnezjQMP-GIYNY63aQqKDPF_a4KC3OS40-scwzjUa9PMNgP7F28wZpwYNwbp3TSe_MG3ZsCToxjlOJo5HnTv-_lrx8WrptGa6r3rMGjxghNSiqBB5wx44ARsRrVlxwHcnfArHDY31b5nxAW1eoVSh54SBjTsl7xRMFNHqV28Q0JsE9uNnXgQlJMItn9G6b9vNlRxNGObJgekEDF6nV6h9FIAZBZcYtWwyYI8MAvbm8fEFjidIR59esyfyhYJGen_yb5bssWmIB7cYnlhAlmM3OF83NumSLHUs-NTmHpOq7o32yihqzKGStjLEmNmgmEZQrIL_vykteO7iSSobXWw4nLh50P3069yMHN4koPl0Jd4tjDCPhUsWElYrLDg1lQazEDIiccTm_fty4jt3kVMC2OnY5ZTYoGUpLwy-YhrSGudse-VzPgICq2ZIHfkqvZjnCubOuo7k7G2ZJXPdjFrwHHA1_vkRr-PckvrJkx8QeBjh9g2kPllZs7Ce23YNfS6MlzcJQbB77_VSoeYBcoAHUlMGa-zw6Nu6wRMmONK2yaFb3-hW8v61qbmOpnXhLsDQPH7-1JoQIlZrMv3shhOfjc7hrcl_pWtpuQIDixRMKalrsDpt5wKyPKxHKE8xhBhFcSskoWYKvtBNzW7PBPn8Zct8QDyNzmvqf_IK17QjIF2C_6MfMc2bIbaq8R8HLu1bKer2czsi1609ko3hM9IOj-u3Y-801HNsueH0pBsJGS4qKauiVGaCJkAsBMK1jILxgSXg6z7x8kJKGfHRaeuiDX3hq9F16jfeB5ObnXJORmUtr0-ylaaVk7RzMBTNnLHZKQbn-pR3ohh3qpEmOLfRi53Yir0l5bWC5uNnwnPS3ZK06wKeK5L7_KkJkAIaRJnISmDo_0p-SHOidIke_QFwHm37i4OZiBk3CdAc0UrwATyAgwVXQE7fg1WpJ_cPQd3dBtkhC5KLK72sttUDO9Guv8-2fMM6KQI02lorQzlMNdBAd3O6xXAgQDzWmLFyLAIyXemSEcy1MDwl6r-mHdFWlEsUbkRli0Tvvx3LBZROjisYU9aOMVOxUd3dRQooL2E9s8ct162qfy-aGjASHbk4wtiPAh9-lPh4pXq5yWdQentj1RrQfyUP9LazIPxTDDYrRJ4iLrCDnvym55LG8KZlQNKow3QjO2GBssWK2hcSqawGCMAyIKU5-W0MCJOmhAgDa03TEARs1roNhUJab5fnwLw0InPDCkDzfq584-N8b-_U9qZ52vpFPBwgWb9wibfo0l4kQCF9OFan_YaDlFItc6w2WuNfcv9ih_UEOrSkGry5mr1yDK__odc66zpYszpXDRIHd0p8tZ-RLEGvFkaAEO3JIY1qRpFJtjyJ70Ly9Nq8iwMAL33I_Yg=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 267,
+    "completion_tokens": 217,
+    "total_tokens": 484,
+    "cost": 0.00250375,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00033375,
+      "upstream_inference_completions_cost": 0.00217
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 193,
+      "image_tokens": 0
+    }
+  }
+}

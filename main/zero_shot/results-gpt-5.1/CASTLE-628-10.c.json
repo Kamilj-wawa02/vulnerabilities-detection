@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765538809-85aFF7Xyfzymc5iLLRWQ",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765538809,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"vulnerable\": false, \"cwe\": 0}",
+        "refusal": null,
+        "reasoning": "**Assessing vulnerability checks**\n\nI need to examine potential vulnerabilities with the buffer size, which is set to 65 for the `outputBuffer`. The hash length for SHA-256 is 32 bytes, and since `EVP_MAX_MD_SIZE` could be 64, I want to ensure everything fits. Looking at the loop processes, it appears safe despite a slight overlap. The `sha256_hash_string` takes expected parameters, and hash length issues seem minimized since it always uses SHA-256. As for `strlen`, I'm not finding any uninitialized use or error leaks.**Evaluating sprintf security**\n\nI\u2019m considering the implications of using `sprintf` regarding security and whether it falls under CWE-242, which addresses unsafe function usage. However, since the bounds are manageable here, I don't believe there's an actual vulnerability. Static analyzers might flag this, but I feel confident in saying it's not vulnerable. For the JSON response, I think I can set it as `{\"vulnerable\": false, \"cwe\": 0}` since they didn't specify otherwise. This captures the situation accurately.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Assessing vulnerability checks**\n\nI need to examine potential vulnerabilities with the buffer size, which is set to 65 for the `outputBuffer`. The hash length for SHA-256 is 32 bytes, and since `EVP_MAX_MD_SIZE` could be 64, I want to ensure everything fits. Looking at the loop processes, it appears safe despite a slight overlap. The `sha256_hash_string` takes expected parameters, and hash length issues seem minimized since it always uses SHA-256. As for `strlen`, I'm not finding any uninitialized use or error leaks.**Evaluating sprintf security**\n\nI\u2019m considering the implications of using `sprintf` regarding security and whether it falls under CWE-242, which addresses unsafe function usage. However, since the bounds are manageable here, I don't believe there's an actual vulnerability. Static analyzers might flag this, but I feel confident in saying it's not vulnerable. For the JSON response, I think I can set it as `{\"vulnerable\": false, \"cwe\": 0}` since they didn't specify otherwise. This captures the situation accurately."
+          },
+          {
+            "id": "rs_0ac3d44f94812ada01693bfbf9c530819793f17a23343a58c2",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_wEwKaAROQ8UGM-Rgt6K-k44LqNGZxiR8-yjXcEF5XUN2nztjFBlJaQdqL6yjuT-DVrOIhvLWEXjFn_pMGwS8p-CrIlBE2IALG5N-TLY6fIsTdQuRo6D521DS7RbSlshShBe4P9Uhy3xP_zvSRER4F-z7TwiNPJmhxhnN7LIhapzVPHYALnB3xug-ydjNRLMzlZDyMoD7s_rVftajP7Mof9-knB9P2437AOB3KTsIi-ARHpFCdOBaOLsE8F5M1MavmIdXIMyGlOs1NASOu72Dg3wrLeeoTqDYbaHjIKJejJZMrqxBe3Bgm6HZPxJ1N0HiQMeEHc5R-hLfmmjYYkNShiN-n_HikjBdw25lnhhFGtZEQU3dUe8zIBlPEwup1LxSMG-GYyDOHWe0DtK0Q2EVDVU99NxO8soiAiOVcau4EgsWMM_Jzr-u-G96IpqxAGOuZm_7hgVH593H0E7Emdc-5Xq5DiojvjFIP9A7UYS3Yi-L_Jn5vTUF6vt7AtDOLV723pdNDkKKpaFhng2GNyuOoWXKeyrjkvUpzgqm-3ERkR7rsVLEt7JFcjyQBsPMBAX5XoL1ZhGLe6ThOuyzQ9WUoTSAJSXc6CccY0AjY2Nk-khN3BP669X4bWwC5bgzBpg0jmq1QGJKS9-ohSX8GihJGbEKswnAu6HC4_0Nn2tk_30pQr-GOP-YD8xBzoOoJ10tZTbrhDB4Mywej-AORRJFcC2zu3FHdP-Mym0wdiNt9kfUgMQ9ICexxP-lHVkTmdzDPMPX1YbxskbdgxlxVA7eKjtuppD8tg2l_sBgGHlc_PfUI8hmR372xd4fSiFkR4Gjkb5Un-TtuIBvX1af_QT6odbbt61aIlJYS0Nto21pqyP76WRHA-cbV1aybUUvSy7778zCQFrzng3p9SjpERg6PQkFCkG0JiKGcj-EQoF7LQLTJBaBWT6-KX9DZdRDq-B29BhkaJqYoV362Mc9QkTJ0T9pCFeWAQMj9OtcBud7xPTSKYiWuvIZps0OO2qpD5F_jbtqQmJzf3HZv61S6Qm9MC4d3pqwXzU522IEOUSmuZprV6VKYJw5L2oh3lKXp7pVNwE89ymtnJRakmx-UtpP-CUP2LGSv6BUATmIS4YgXflvNFto5rO9a16HOFWxejUoLkKFgqzZP4m8T1dzD5Ery3n0CyI4dbfdAce3pyFjI1BkalSFoQ06HM-6RU-3hcTPr5t66TEt8dbsoyVuRHgpTOruxa_LudNkVfuT2-3MROs2OFF4DtwFukrWRd8Pweed37ACA2ga1wLIzxAoa8g_z67PqryOk_kGJ6NgzHNB0-FlN6V9eymoOtr9UhS4L1ZDi9a2pX7pVEEp5pbK4gul07u9gVhvsnaVdD9iwGRARSvouc1PyHTFza7LExl_abwaNVNcCs0abFYJNFFkiYTo2PPPXFST0Z8etlIYVDMh0Mi_9E4k1WBGNtA3-CLd2hUQCCekfkbWH-HIQR7zmm0VH-NshNe34V2c3802PPDlr2Ar5rvsgZ6NLvdKB2W1X-o-KtC__dk_yQ5rjn3WWmQOy6nADEDZP9rc7rcZfEMGSqRZ9q1cq16AWVKuI28T30wnn9uskEQ1LOcAOqHFuX9aZHlM7yQQ3Mrq5T20L6xj1VoYCynQCI7LYZ5ED7Pr2VUeZ7CUOQNxw7hNFaYmqxlAIFIMgwDVv2jJjqdWYHGqff32VIFmhu7AkeyAcxckwMpXbJZIc-Xp5I47hw7bpy_ItiAoKxJU0fsahOw6_QlrEW_NR_YTjdPMRsQ4HpP1r8rLEl5k22Te2fW_golOUnX9jRNgNvbIGQrYaXw-xy6AvCU-hPeLH8i18I2Pz8awnVqrCWWZiVihSb4lfsigNVc0Ypkrjl_kUSzGAWyfx4gaU_hexboaUhzJkT0XoF1gzYlBPH6gUAyQzsaChbaAcGqCJKpUwRv79iWqYn3XpZIa8vd59iKCG0CdaJBfAiYLB4n7ftqJz2wkrTZdfxJI1A24Vhzscu2Bz6u1LjUncsxGLwAgOpd1rY2l3nuX5onuJxnKm_bj72xuzSzuNHrE8BL7g06alBbSZJQjMJCG0e9GUXirfsiQFASvIh7b_MhXcx1nkZv3nrVIFkWOEwbch14RCai6Oq1W3Z6HO7H9fdB7wFIJbzkQlVhPypEXmkz5FlG1Lio6tPYW_kWmx9vPpkNgWDa6Lf40aa085MfehQftZyMzrBr7lmBjCBNw2K3JBLWmHrdJhWjgbBQh-YAd_cSX99sEKSt20n2k4epN1AMuu86gvv-aTOeymzUlz_GUiQQECIdnzihR__5KPF1Tr23c9Rgoigwfwc5ZAKPiNjwf4LJ-QObGUJStbNyGT6YxnELwqHPp51Bly_GskjibLZ2dve2asmXncNHrrUfYCxac2RLtGkXqLsa5oQ1oiuarrDO5HJaBD5-LtCnBZcQogch46lGeja1oZGnYH78en7_9VF2ayDuzu9W_Gh-twXFGwznk12SaR6ZgGpgos_sgq1xvMNSDSXzp_zp5mP86U2HivJXUc8uYkE1FlyKjiiNIs-_-NyLobZXM9znjGMdwAz07Kdkj1ghCiOUDS2VBwphaDVnRQ="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 468,
+    "completion_tokens": 349,
+    "total_tokens": 817,
+    "cost": 0.004075,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.000585,
+      "upstream_inference_completions_cost": 0.00349
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 329,
+      "image_tokens": 0
+    }
+  }
+}

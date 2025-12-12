@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765537737-Bgx6OW3ZAMoexriIEW8B",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765537737,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"vulnerable\": true, \"cwe\": 134}",
+        "refusal": null,
+        "reasoning": "**Analyzing format string vulnerability**\n\nI'm digging into the code that uses `snprintf(buffer, sizeof(buffer), argv[1]);` with `argv[1]` as a format string and no additional arguments. That\u2019s certainly a classic case of format string vulnerability (CWE-134). It uses `snprintf` to write into `buffer`, followed by `printf(\"%s\", buffer);`. The risk lies in the fact that an attacker might use `%n` in the format string with `snprintf`, which could write to memory locations indicated by pointers on the stack. Even without extra arguments, this poses a real threat.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing format string vulnerability**\n\nI'm digging into the code that uses `snprintf(buffer, sizeof(buffer), argv[1]);` with `argv[1]` as a format string and no additional arguments. That\u2019s certainly a classic case of format string vulnerability (CWE-134). It uses `snprintf` to write into `buffer`, followed by `printf(\"%s\", buffer);`. The risk lies in the fact that an attacker might use `%n` in the format string with `snprintf`, which could write to memory locations indicated by pointers on the stack. Even without extra arguments, this poses a real threat."
+          },
+          {
+            "id": "rs_01eab12d3b97248b01693bf7ca79b8819682fb2bfbb3253542",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_fO39XUHnYssFi97ck91Zi_3GSsqT9Ocwyk4wDjbJRcNCKz84jTo3nzMMFxAiIPTjkzOmfbRUERZOgv0b-M3MWpNRqGV6IUuZAm7DUryLqjihQd7qkpRh-qlt4fsvr321cxv8oVYROFKOUjWfnpMUzu1Lu8qQ9fh_qA4ZBWJhnRbZN6AnnOclBEDnPB7z4zacsN1LtzdCZVFa0V_4i3jL-Q-FKgbWBCasPbtMNMpHwKhTs7E1E5zinLScRVt90FUBAJ7gOVBP-vY65hJpyE2sKn0LaoxOVbL-mWbmauK6325M8J0p-Qx5bZZd3FhYrVZ2w7BHEZGXMvtB1LC_nOOP9d9Aij9165Kw2kZ_wVBn_JTUyRbbWRVVtVs5ZEWvVtojnoWZA5nzpeserIknya_-Dy9SElB-76Rzet6L8DCMjwpFG2PGCJ62TtEoXrDRAng6LG5F9LUKePsL3roU_2ZhX5WllRI4rvULVhZhvnhGjPjcW634B7L--7gnQhnttzo3o8JVzU3KEsrDkRmGpz9zARGoCI8yZbWf6K5LmyUYI49bOxz8GKxMr1ZvfGFiW9Gz-YtC1U1wqNb3r3I_DkI7Yjvz-ql-pPBTVPDYhC1NgadK2HjhFpts8sKZf4kSJaa1tBJm1JGIUpwm7rhqUw2DAatt8Ju44lO2CvpNJxBMCLqCYDK910gA8PavpXAf8vd0c6svNTmuuTu4AijySlh2MF6T3DmKBPkeDaGA258SFwHNMYWofSvYoP2_M_i0itaFww0-cmiMpe_1L8o8qxMobcCOInRgwX8RmNeU2xtdqk-OG9Q2m-sRrWtpxZcZ2IWCspi3BZcOckDjhGRVdT7qvFLbnb3_N5ib5q5BJt5IyqHPRoUSohy9rv2JoRVbYgHQq-jUwlSYQHpSz3nMRJXxxdV9KA-tdphAEVsYeSyANYPTCd8P0TyOLSQeqg6-ob9QKgFoPVKRsdC1jMMVKIklIVUvLz4HSJUFN6FZEUaNaUzpcyvEG60czgEx-1uyfBKtPyJQXPo_-hNUgRWk3GPdBlM_G2cjVpzOIQvSN03Ac7mupamYtUrjyD1ml4P5JlJTq9qldOZgeX0Haemwh5vU_Ow8wikq-K4xPbg1lVh5NFp1J3O4pK3xpqNU3roOUTwk6I0nAhIwbmaSbNA2ooj9y9rxm1hwrs_Ugsw8sNgNvVPyAEtJbwTeNqjrrh4wFosFXGNrbloxqoT3PqUJD5JzXQgBlvTGoQg2Vq-NtyqijoVWe1mE2Lt3PEvK5j_M7otnmDoYbbmCn5tq9vobpMSv2xMa710X7si7ooZ8rcG3UkGSF_RS8GTheG4aZ5nRlbGcbZ0YQ8_8jrRiyJWX7OWHbDK19FcgEfXUe5h2pktl07s-BqrJb3pUikgQeyiMcM1YYC6i0NhiMLzQdVwDzT558ISpUaijHb1ngKNcwFNkfI8Vn4icMY8vmQx2WVKcp4mX2zI1XZqvdno333W7ds3F9BMHQmrCenh6cwqj9nJC7F95FInowF6FrocdVxdubRgKYXuRVioyzWC_JbQDT-pt2BpoqH2jANc07zXTELZio1g_jZzE_grwlDr-BTmXry0OLaAqak_3JlqhWU588DKGIApD_CRYB3mQ4my0ZkMThCYx7zXQhzq-5Kb-qQi90lO7bSDlUw9jP2br_eretBqeYHo4uY-lCeyTNMFUaTuAdqM2s="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 115,
+    "completion_tokens": 166,
+    "total_tokens": 281,
+    "cost": 0.00180375,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00014375,
+      "upstream_inference_completions_cost": 0.00166
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 146,
+      "image_tokens": 0
+    }
+  }
+}

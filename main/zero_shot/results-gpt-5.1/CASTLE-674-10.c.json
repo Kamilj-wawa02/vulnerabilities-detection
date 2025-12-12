@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765538880-j5n0OtRWAH7mwl3ajevP",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765538880,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 674\n}",
+        "refusal": null,
+        "reasoning": "**Analyzing security vulnerabilities**\n\nI need to determine if there's a security vulnerability in the provided code snippet for a recursive Fibonacci function. It appears that using `scanf` with a width of \"%9d\" into an integer `n` isn't an immediate buffer overflow risk, but not checking the return value could be a concern, albeit minor. The real issue arises with the base case in the recursion: calling `fibonacci(0)` results in infinite recursion, leading to stack overflow. This could allow for denial of service attacks, so I will classify it as vulnerable with a CWE-674 identifier for uncontrolled recursion.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing security vulnerabilities**\n\nI need to determine if there's a security vulnerability in the provided code snippet for a recursive Fibonacci function. It appears that using `scanf` with a width of \"%9d\" into an integer `n` isn't an immediate buffer overflow risk, but not checking the return value could be a concern, albeit minor. The real issue arises with the base case in the recursion: calling `fibonacci(0)` results in infinite recursion, leading to stack overflow. This could allow for denial of service attacks, so I will classify it as vulnerable with a CWE-674 identifier for uncontrolled recursion."
+          },
+          {
+            "id": "rs_04ed01374318e19001693bfc4143048195b34719ef7698a817",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_xHVSDxh7NTN2y9RGVId9bXOjbteG5B4T4pmd8-QhIaEZxTysxGEqvnkm_Z9whUggdg5pBbP03RLGUmzUoWs3ap6iEA_BteIsMlkvMYy7e5mN71NBRlfZxnM-vMHbLEXwi-6XhpIiSuJtY4JV60vlHtfSoXfFcAztB_ad6I-2-ut0R9WZwQ7zazNHDkBH3GKQiqAWFRZFHP0p0VveoTi5fmtdHRrg_dsfW82pAzQLU_s6jBaJchDkNVmZQoeOgTY7WE_Bpai3YHC7Q9UClHM6gcgT-0iq4ExNK32HGr_2MehzlC3dHj6EJt_Y2IFE3Dv0LtwKDkpia1XPGC13V9laKRAV_Gj-RO3vwXOcY_bvQob_3jMqkLcxpPmWOGzBcJrsDgSpgW6uijchjpXKWXut8u-pNnU3XxM0L7x65J7gsPAl9xQ5ZzM1IYPX8FYy5NboIurO6XmxDR29yiaJYN4tXAQMc_TTgnYwFe-qVxIT4dJYB6uOMzF2p1JKlwDQENd_0ls1H7dBoGF525a9c-BTOyRW0Woz2eX3f-DhmhNceUtORLQsiIotbXGjhkSietexqHkesNSr8PwFewKF7cM5hsgGAtdUwx-27HdeMsrzqMEUVocgeAglxsAP6OejkSCOCu8b9fkYkh2a22wFyn1Ya1sA0lxqxNhUVAUk4FuVJtMHDjzGVXsiZKeCa3R54XwKxrb43zPHh1iOYxVJPuYDteGq3UghAzvpPrNV9dsvqAhh8fHyA6gBLKcscn4z0H37pcAhPOPV2z9tvPJ7Jt2ZQyy9912EAB5AmcEAGFe2wsgODG34RgO5yL02Ogyfcbu9VM-VtgSSV37C2Ig8cQbfPfu55mPSJKiMRZPWEldDAn-fAPMt8UdojwB-AWPGAwiAppqqO0hSlqeyLvBlrhrv9JN2KWRVtxD5-fYrbvPKgclNJEvknsE2t1yEYFyQWZZ81K7o-AC38ZvXOj33oBx5KtUUQnbqLpQL-fzRcio67glh9s_LpFfANiSLlj6IxEY-1LzgjK79ySL9ZVrhkhL_XGx4P5f41IBtT8vuuhY7DVD8hrOQR1MEUYKZkFXqv3Vk16qlhNUaQcuKxzXUx2TAVSc5iTZI7Jv_JN9CBCRFYaK7PwN6KglvvebxyycR3xhBLp-xuNEu-ki97hQ7HtH6qHagHw1BDNUYlt7hLVVeSepQLLG1G-1Je2V8R80V9b-h2h1PjSbK5bl92nBTLGeCWwWK67WXOtkjQRY82sHJvVYUJ-opxLdlEelX01lXYfLsruHkKGOqlaOPrqNnokJxlxsw7iMn-M10KjWFkkYR44LYDvMDXUJVSHdVJjA8dplWc9hDuKwqwd-YEw6D9B1U4iP7eUSj3Nw2ZgH0cTdkRuGDcdUGKjeV0SUSIk4Pxu7kTm6BU6nUMnhQStYlfHUqwCo11NFeyHy4Ni1h6Svx0ymaH_Rwq-dFm9OW5seAD5MmKdYOVRV1VSqWT6baixejYiu3L0AszMb_IDvbqtOrd2LVuVAquxA_wYnHqKriYmcAiGGg3JyRkpbl1k5WDfS41oW69LAlAwe2lSSdvQUb-Ng_WQpzaSVlkyqnybejjPLn2mAcpkpE85GL3lJm8RgmQ5LYW8eQubbuipMLHORBx4BwoRwhqTF5tCJ7GlxFjbD5xuIZEXHP92jJ6xf9kRsIdEUsh2UySBxHA9RuphEEjDdkuwrfYnjN_cJcYt2kXlSEqrpHREPiG1AeghP3scFh30EqTL9xh5B3cxQhSrxV1K8NlWoc-_ERHACNBNndXQJda_Vqy88bgtyHxbYt2oI6ly-RLHQQ87Ve42Q--L8BCGbRkgxWLBqoimWdUEixXdM1dNtAsdZvjGIteff0eikz1CBt3SiueHLtixBNrZXG5w2MS-DWNHYHXdr9P3r2P9Eg9l1AXdHVHLz0Btj5J6oc7Vg5EgevPBpnAAcTCKc9tOZZrg8CbbTExaq1kVmMxU4t9krPl5qFt_TDmJ92lCV2umXpeSjIqJc8XcDymuUnHjh3bw30KpsZXHaxAN0nGB-gxJ8tH1X4wjjkhLY8YYQDhwUD8y-DLKkImhiqHJkAYQE-TqDcSFwPdqDi12Svl4ItY0Pq4Hcjk-XgNZoNel7p8tPA=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 220,
+    "completion_tokens": 241,
+    "total_tokens": 461,
+    "cost": 0.002685,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.000275,
+      "upstream_inference_completions_cost": 0.00241
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 217,
+      "image_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765538967-LKTqzIKXnI3MZOfe7px4",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765538967,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": false,\n  \"cwe\": 0\n}",
+        "refusal": null,
+        "reasoning": "**Assessing security issues**\n\nI\u2019m analyzing whether there\u2019s a security issue with some code. It allocates an integer array and prints the address after casting it. There\u2019s a macro that uses an alias before its typedef, but that seems okay since macro expansion happens after, and at that point, the typedef is in scope. \n\nThe security vulnerability mainly involves address printing, which could result in information leaks, but here, using %llx with ulli seems just fine. I think there isn't a real vulnerability here; so I\u2019d say \"vulnerable\": false.**Deciding on CWE code**\n\nI\u2019m considering whether I need to assign a CWE code, even if I determine the vulnerability is false. They mention requiring a \"CODE_NUMBER,\" likely an integer, and I\u2019m debating what to put there. I think using null might not work since it needs to be a number. Maybe I should just go with 0, as that seems like a practical choice. So, I\u2019ll settle on 0 for the CWE code.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Assessing security issues**\n\nI\u2019m analyzing whether there\u2019s a security issue with some code. It allocates an integer array and prints the address after casting it. There\u2019s a macro that uses an alias before its typedef, but that seems okay since macro expansion happens after, and at that point, the typedef is in scope. \n\nThe security vulnerability mainly involves address printing, which could result in information leaks, but here, using %llx with ulli seems just fine. I think there isn't a real vulnerability here; so I\u2019d say \"vulnerable\": false.**Deciding on CWE code**\n\nI\u2019m considering whether I need to assign a CWE code, even if I determine the vulnerability is false. They mention requiring a \"CODE_NUMBER,\" likely an integer, and I\u2019m debating what to put there. I think using null might not work since it needs to be a number. Maybe I should just go with 0, as that seems like a practical choice. So, I\u2019ll settle on 0 for the CWE code."
+          },
+          {
+            "id": "rs_0914290728939aa901693bfc982cdc8195b74a3f434baa0cd5",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_ygrEjtVwVJAYi34kuqkJk0jQbJXWKTKyNUUxc1fZj-DbaVyfgVpH52r216_6QB5xNnRZo0GwX_1aJ1IIp0i1432oAZ7SM7NhSSPTtHlgNvqkuk0m72270GexvE2yH7-9LrmB3bVplAEp3KK1COuFgf-q89dT12X_kM0fmQE3rxySkOUkFsh2briusfknMonksjZ7tg4LKGhZGXBOPOQ1-1HV6lqP7FFBlDnx8yXzX14KbgsEXsWcSWjQvC8sojvPYRstUFkH8owBbpWs4UEGA453xW9qjGJzopxgt9Lki-IuTBfYsHiZAJeMdTToNeWZMLbn-28bkrA3k7lDMacDjlrMkM8hHz3DI_C7FYJca_cuSXDIdmHY3CYVA5OYhbl8pQ6NbPmU20bV_rKsP0aSc8lbe7u3KCjOr7j2thMOqzTKr8L53jlMDBr0Squ9pTl2w9YfYEjMBpigRuhxtVJ4Gx3qnMD8legimHbt1LeVSX2y4TIYYQ2MGmNV0bU9rpfbqDHs804JLN28_kf5B01sSKUGzDZwaIh3s0TeKrAPw4FOXMZRgF9MUG-JHnGJqrVVTycbUrrDio6-0WhLXTheVxu8sxlL_11HFLLHzdNxEWy-OXSqS-j4jxIOlAZvuRLJMC9KF15RvTJFtP3YeiT9a7Skt0cs_tg-T3uP3HdgtxNiU_j0kUdFpiXSLGusqR-aXSj23gC9R-BtnnhLVSIbVwbcaCTOU-ajxjZVEhIHVJNOpxR_AaFQ_OD8l_4GdShIK2nXEwHNdEu1hXyiFZUGUKKXxkfybMQKX2G29lXnHLZbOM9Eef3sww3e0bbjYcgC52WMSYfptshpU9tIEAMh_JwMxAS5xlvrYfyRXtxwiO0vCkLHJVP_WOlOZPFk_uMA6TqM36XA9TB-gr9FW4QHfKUhndnZtq-vjvSnKhBSEmUnrhP73KfQWFaVY8EjQCPoBdcwiPDEVd7XkVru1mIMLpt10zWbf_yrcGEAgi45CwfFO9ouT7K6cMRzEyfb_FR9HQJOKzmoagHmGBUFijGXuIPNUFIYsTMVtn7dIV5yGDUxk4Nm15X_NlbizUluSjfCTtovmIm27hAmi_MR1_xiYU-lASAxz5TljDhfCJ65NKtVV6XFG3zo1Ddpod1htmMY9VLNhqpg3rA8KPC4ZqheQvUQqz32S5p4lYO7WRZxaufm8VIu0ZrcNcgLIwriQKLg0RwrRRBacQ91R3UHMEmiWZwN6SdrpEazYAVbSECqphX2FNRAX8BEjY4TKpNVlvjQkZBvITP4ulqgjkEeitucO3-w7BAGIblWgc_jz2HgxiR9VXl0eM12RoEw2bU_eNmSn53uLiTAIKzJ_0AxoNS4cKREa6Xz4LjdxypWYq6XDEMVbW14gEOZjQavJ2w0idj91Qy29SqFp5bvZoLsBId4RJvhoZJbX3UHOZyhjy0M-LOOmhipWawTe5yalrvhrLGdqcxIIY6NNYncQ1smfYTeQpqIYTFyuTJaCs6nGQmTuEBMppLP7PtIN_0URGpbpKiKdV5uumiAKPAb9ytn1O_lKA5_zspNjbA8UMYCVjqHxortVpGdRqCn6OP7LCE8lieCXvbGD7EVLPCjjv-RhbyOOpg7nCDV5hjg8CaBv_4ZrFb_Hm_0zcY1DcGRmmg2up9ZDQx5ZuUYtkxY0zp1v_8qzLxnCr6ALADw-cvYSNkyl2-w2jZJP6Cvn5f7EN1NmwP0ag11mF93WINwhPDernfTJJi7DcA-8KCMJthA3Ta1cso_4fONWbWroK6vVv_w8a11BK1pKwUX60gUSGxLygih1aLhIJxI0yAQK7WKTXIydpuJ7hAW2a_9pwKrULSy7nNGHbJClrH79a8QWI3EdQKqMdxy2CGF6Q90lO-7ik5T9JrnfLgf9LDzeVxiqnzEYd3R7q_TV3dQCiXymTXkO9F17Qo6NCrRItChFr4qSOE2gibSlsS7LncI4TGL6zXKuRdANKQ7uerIsGNfdN_wpkOO3e0jl5cCJfzzgGop5bfuYwAyAiXBvt-1jcLlbwP9u8Y15DMyIW-VnYV7FbrAJ7gufeFIj8X_jU8lSByjFGinSfRioXadfrupJAXJoh4-rXVTCXU_akHJnMkzDoO-bxl7ZtZA8s-18Mhy9-CiRFHjorPWWn-Pc3LAJ5QFT0vLhf8XA5MHi1DmwWORh8MbSyebFmwiZnzmr-HVrv3H1ZVtYAMp1gBDAgQDCrcZ4zP0XcR3_7gfa77P-wMdvpcP3ORvIigrBVgNsfir5rpVRUl8NjAM740AEMvlfVpXuCg4QxiTkpm8kKxIxmaLAa2yVlwlCHADn3tBDx-ayYIdQPSi2IuzXC7UcdzQqoxChBEcvWDi2f"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 167,
+    "completion_tokens": 273,
+    "total_tokens": 440,
+    "cost": 0.00293875,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00020875,
+      "upstream_inference_completions_cost": 0.00273
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 249,
+      "image_tokens": 0
+    }
+  }
+}

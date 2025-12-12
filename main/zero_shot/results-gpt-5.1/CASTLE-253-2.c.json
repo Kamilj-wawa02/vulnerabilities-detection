@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765537853-gAlAdFWsqhBdihSdthKD",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765537853,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 476\n}",
+        "refusal": null,
+        "reasoning": "**Analyzing a Code Vulnerability**\n\nI need to assess a vulnerability in the code snippet where `getIntPtr` returns a pointer from `malloc` without checking for NULL. Instead, `checkIntPtr` checks for an odd address, which seems nonsensical. The real risk is the potential for a null pointer dereference, classified as CWE-476. The check could lead to undefined behavior, and if `malloc` fails, the code would still attempt to dereference NULL, causing a crash. So, yes, it is vulnerable and should be flagged accordingly.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing a Code Vulnerability**\n\nI need to assess a vulnerability in the code snippet where `getIntPtr` returns a pointer from `malloc` without checking for NULL. Instead, `checkIntPtr` checks for an odd address, which seems nonsensical. The real risk is the potential for a null pointer dereference, classified as CWE-476. The check could lead to undefined behavior, and if `malloc` fails, the code would still attempt to dereference NULL, causing a crash. So, yes, it is vulnerable and should be flagged accordingly."
+          },
+          {
+            "id": "rs_009e6669e1aab7e801693bf83e2b288190af7f28e58a15ee31",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_hCmMlNM13ZIVT0Zsn31KPZ6zlEg91QKe_3St7svqI-NXkifobizvUCJTuX5c92mmlWgIHS5aBshV7_m0543sOeLuBl03zrUmdvLN7WbJYZ_NnxizZkatSB40DSLiRl7Q4VoQrS5t22N4bZjrdpaGGZh2DlrBSm9uFrhMc8_9qybszTYIStilRL9Zwm8HjJf1z2gMBKbjGKEW4GpZOLkwet-_FmEf2pv9LVs8wVkcsDC5O359jBwVd-xej8tyefGJvgH2HLlNZn2uOltI1LsB0Pk6-glra5s53wWOVpKjzSjUtxRBsGbOMz0P9SMLVdRIMFfsbU6sW9gxxO35gb5ZqqDXYrjar5wtyqHtqZdNQsztn1Gzp8QIvOo8gqx__LkYW1T6gLAGnttev0KmilLJTl0mmjXtvlWfvsMPJzE9qJomtSQFViwIKo0z9339gekhDU2kk_c1wzRl8C67s-1SClR97ezHl78kk9nPmhLbwFixH0rWWvOwK1OU5TpPKjCEMe4NoX7bBYGc2-E4i0IMByMTfuFphWwX6A3CJhVO--tP1oggNrd-jB1lRg-3Nm5xF4PjkEiozb3VJqjN7asH2MMob_GZjzytwX4egjEP_7aiGIsh-43Pqe2IjXVJxawGzSzL2Z53tPc2cttiEQnkvWKZ1sd_nwSyAkixm2uRBgNhBWMT-0Iu9APPL8TZ1lowW-O9X3yf0FIOkligIzAwvw6yHKbunLSW61fU8OcO3ouMPJFnHKG8G5HsgjujuGHZEAEh3SUPZWMZaXPbkjhwQiVuqLSBq39B51VK2wc-HvWtIVcCo7O10D8CAIiOZGUGK5UFB2A_Yb7No1EPwaqBu5julqVhXgg8RNUlKDS1Md6DYbIgk9jViSKgyVNP-n2NOdlu5T85_qtNqfTaWKVrYNgAEb41ZUQh9QOjkGGCqd96jEtySXgy3gDZxoLtrkvl7GIHlM_zTOFILTWvPPO5k1DhwhE6Y1epcPyvyBXs-DaAzjcg6ATOZMnR3kaS-8vd_kTrXinT2wCB_zrebnFo_2yeYT08PEqVOc6sPBWEvjfeh63BRGqiftZT4XNjLyz0xLp3KFjKCsuXIXv1LholDoimJ61fFWR7TnXGNrnSB1inyko81xbmN1dHtWbHAVONSjrZzhsU1TcAnrh4_tHQ4lQIYmBVdVhUIvMKtMCA59nZzrbwPOZPovV-qIomqzhjqzX7A3eAJwQm-JWfq8ZzFeRyprZXJq3h74mLGRxYLGN48XSq32aMqudVo8a1OA3f8fic__BJ4aegzUnC8zpwW7VUe49G-5_TkaIcixl9aZ3KekZU7VV3l2tLp2On_bh0tyHc495HM2Tt36YTh-rT9NCfwIxJl7DVY0K6lci9Ymt8Zf2xJZUeS-hU1NJenK5anObJsAjyoO7lLCXZ7h0ubi3ZfTdhUclGhxxpjNR5-kwky7o14oX0QDMj9ajJcH84YMx41vKpfufsP2e1gwIkzDNYVQ9hSRBUooYdAjm_3KzcgyJ2IPKeNKS_lWsEj2GeyWQCG_BH2HknC6WnDvi1QG8GsC4HBzUEN3JLVhQ0SkfIsLnPJHkHh0IJiHJ9XHFezWn4547lt1w1Fry2KaDo3SiCdvnjO0Nxfp7Cr7ySd5lRr7GPvenmdIqb_NDikdViRkdIm_FrxxGB5X_5csFA_DcLBWpyICvfqfp3o_ornEf4hm8ltBsLJAXHRZXlSDScT0y__FoxJ85osO9zDbddG7sPvkgi8JnZ5fhm0ipdVtM8VuecKf0ZOAsZSh675QHSxx7ac66bVo2qtHQ7GGpK8pZ7Ic0ClFVrawIsf3PVgd1vs="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 173,
+    "completion_tokens": 195,
+    "total_tokens": 368,
+    "cost": 0.00216625,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00021625,
+      "upstream_inference_completions_cost": 0.00195
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 171,
+      "image_tokens": 0
+    }
+  }
+}

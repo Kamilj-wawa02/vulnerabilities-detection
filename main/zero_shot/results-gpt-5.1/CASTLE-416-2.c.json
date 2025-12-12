@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765538359-noccBADk76a1lbldxL28",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765538359,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 416\n}",
+        "refusal": null,
+        "reasoning": "**Analyzing security vulnerabilities**\n\nI need to analyze a code snippet for security vulnerabilities. It starts with a `malloc` for an integer and sets a value. Then, there's a conditional that can lead to a pointer being null if a certain condition isn't met. The function `negate` tries to free that pointer, which could lead to a use-after-free vulnerability. This is classified as CWE-416. There's also a risk of null dereference if the condition isn\u2019t satisfied, corresponding to CWE-476, but the main concern is the use-after-free issue.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing security vulnerabilities**\n\nI need to analyze a code snippet for security vulnerabilities. It starts with a `malloc` for an integer and sets a value. Then, there's a conditional that can lead to a pointer being null if a certain condition isn't met. The function `negate` tries to free that pointer, which could lead to a use-after-free vulnerability. This is classified as CWE-416. There's also a risk of null dereference if the condition isn\u2019t satisfied, corresponding to CWE-476, but the main concern is the use-after-free issue."
+          },
+          {
+            "id": "rs_003287a6713e84c901693bfa37cf18819384b3c687ba35014e",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_o_sjRcSXbpvPG02HoLKsLfXxRt4H60X12ol9tC90xwRkoO0d6ebopaFpudOMU9QlWSdAKGutCBpHFMZeEj1gN_oejkLqOPbnZgIryo4JC93FtGgrQcQyeCg3fHWLu4aJ1S-q916cVtS1Na1fbFvZk6EGz6mLKB5mw5X8wiErZU0zDPt-LvBOZgKU2dQEa32eFpyu83Tw-PIrvc7nfFyM9y0ATmyleE4o-mmQg48yC3Rhs-LsOqRt51NfJDArMeDu1xB1cutoP4ghth_ZT_KPuW53l_FIBqGE-KNcVx9JhlNvEesEbbsFC96PPlu6yEyouxJViA-4TzV7RCpPtl-CJqR6Ntia-Ch5XYwsK1VsaLzYrsWSzYgNmtdmoj65uyVr5GBc_Uh43DNUbJ7ER9CigYM6dnsKH2aenOZfF8QpA3lVzZ5B9GhREBCvy7xltnSDmybfDOYNDwBTwxltPh-KHpLm2YEnQtvLQ1koFbCZ-sHlM38-sTv9JN841yYztZSFdvD4hdVoGXNROyVhP_b9UyYZPSsHwkdg8v2rOZjAAyZAo3AZtw7a2y-dealO4QErLhBf9ispPjHDuNLqjJMO1_XF6dL5_UNv9TMBlgcNLhlMgtEeeebTNniLBic6z7xzxmBCtBe4VBEobIhhPgK_E5KBe0N9EmwltALOVMvYuTJuoPv8OZvD6cxIWkslEHmUCt0I1jsG1kCHjBxslOM7jhEsxvdC1Hkc97hml00bAhibl0fVp0caNZHWXdyCeN8lb32AQQzhb59OQIIKZKppIYIN0EuoT3YWBOW0IYOQPVtnNRTvnH0LFnFRQsOrwKlxkRAr3wyepEHKWGkp7_NObKUHnrfPZoOtTTO4_hPjYO-P7CJYmf8WuXiUKYSBC0o8X-eY8CUYRoxOzBbPPWoEi-3ixzo5_colgkQhNKTP-wv6GufxnvYbkzRfMJKFFD5UNqFunfEWlH42MGx5MOSxx-XcR4aoxAnUjiz-iNh2EVrH0aPGRltRkC-NOzp6vaJNTUfVLiopgymWmplzAAfLxYBby6Sb51rXZ0Bmco_ERkOFvqa0aolS3SCvWsRsfPpCb4kYkpmjp5sOtlbPuBFvNbTqRtty13zmeIHRcL5FmWLO7yFioivrkknsSu85ZYWGQgDvMu3EUVE4U_GF83xB9Plkiowzf1Ah2BoGbuPu9J10ao00zm_VqbKHfCXiHm-vyD6CcDwl5GfLLRvcYHim3VqlIl4LwRr2WUAgGWkS5z4SooIhyDbmm_-mwcIP8yjQ5zcSb1BBknujSD_8TN207TarT5Qt9XP_1Dti4HbcuNdKHv3UNEz8w71KcPZkkaU8tgYeWXX0RO9AWz2luZ8r331CI73SZ-CaFmTCufhA3U-Sn7rzMmr8-9gDoDulZrle-VWxfpBt0W47RJmY3sZ0Oz93HBXK0ZR-ExRatloQUo0F7PnDtT6w533DOcDwt9GK5kms3Oa-4kL1mr958EB1gXFqdUq4UEBboC7fxVYXqXzxYHSgeEv_y-ABqMjNmYdJ7g7cu8bdWKo-R0AAU1oD2r-sVfDBx5UtQMApy2ztmNALVF9p2x3DiC_IMayMYKR9wheqQiIuBOsmFiEWEbWLYc4uff1tbxnhQQ6VorX-vM7RWGE82wyh9Dwpm5M3jZqRI8s3sOLPLhBKWIO7sL24uIFw=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 227,
+    "completion_tokens": 217,
+    "total_tokens": 444,
+    "cost": 0.00245375,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00028375,
+      "upstream_inference_completions_cost": 0.00217
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 193,
+      "image_tokens": 0
+    }
+  }
+}

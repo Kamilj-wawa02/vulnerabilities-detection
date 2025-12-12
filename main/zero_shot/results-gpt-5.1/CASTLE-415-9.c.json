@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765538343-RwrE14FKd3HhadRFWryT",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765538343,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": false,\n  \"cwe\": 0\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating code safety**\n\nI'm examining a code snippet to see if there's a vulnerability. The function `allocateArray` takes a size and uses `malloc` without an overflow check, but the main function calls it with a fixed size of 5, so that seems safe. Still, there could be an integer overflow concern. \n\nUsing `scanf(\"%9d\", &size);` is okay because it's bounded, but if the input is invalid, size could become uninitialized. However, since `allocateArray` doesn\u2019t use that size directly, I conclude there's no vulnerability. So, the JSON flags for vulnerability would be false.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating code safety**\n\nI'm examining a code snippet to see if there's a vulnerability. The function `allocateArray` takes a size and uses `malloc` without an overflow check, but the main function calls it with a fixed size of 5, so that seems safe. Still, there could be an integer overflow concern. \n\nUsing `scanf(\"%9d\", &size);` is okay because it's bounded, but if the input is invalid, size could become uninitialized. However, since `allocateArray` doesn\u2019t use that size directly, I conclude there's no vulnerability. So, the JSON flags for vulnerability would be false."
+          },
+          {
+            "id": "rs_050341d32aec032101693bfa27ceac81978b5ab4cf24228a1d",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_ouwwmmAZEurjqkabeQBwg5R2_Qyq6kV5OVp9LJus3aA_pzJNMRVyubgvePbN2RIdjfm20-yrD11HCS-vbIPv3_ydEWLoxPNqDLYHdWQAkHMgQQSR4ac4BRKcOGOy8n8IYJlxTi1r3GstjH6nxJ5Dahs476CYbkC3EAha_WZFYsFt5pb66bOixkBvzCnKSrTg9aUHghRkVZ3IS93pXBLMnT3OWlroNEs2RfuFElPULmzFe8luPCAtvN5TFqSglDxfETr59-ZvcvNeaEH2tq4Azt3OYOw_3-8D1Mkv-17pqOyzcFxVBBqjEKtfL5WDYCQc9aAKn0t6TBl-Tmm-6cwP44YkY7OuKy5j6zVo9PmTboXTHo0Fq9j6CkwkN-YA2eseiscNo3wEQ17NzX-zH7aV_SGRcKUgPRHgMWWHwH75eUCEL2O-vhiljMQolROuM0ApuKa6hzhFUyWv2Q2F2eIcuIXEHDtpYUakejre6OBJRfYzDlDtKutBInCtWiENdXu1a4xCBnRdGc8h0DSmnwNb6htmoUNYWWvZk6bedcd3y4c8fFokkrfQy-AcfQDw482bAL-GheRY00ol1krX51olkNfSyBlM3xLYzrHsRggU4KC9KijwBprQCO-4Z8WeuY_fZMxHaY2xpt7OGzopELWJBVQYcB5U2uCa8s0OfPAuITbKnYg9qsErBH3d5g4wn0rn4aJY9gO2nNZ471ZV7UDvn3o-OUp7RDbqxr2M_QynmRGN3hPWltqUVZnXS5UQRaICrz9zkogISVF2__t5RPZTaG4xJic1fH3flQJmNEtpgngDWAo6LUH5TngYvqZUlj48Ek-R37PEj1JqXh10w7XkkYju8l3wEjULCUgQmcaL-kgs0mGfigQ7FFUNzjyAL01wEjlCThzW3e4dWLCRpjJcEIZZmRfCeMqjJ5I6Nxh7M_mSUqIFQ5kHt5nWVjJlE8jjxD5kvqmZue7X93WdICQN3HUKATmyDb5mtDlSqfFOkWfNHczT3slmL_bzrXq2PUgQXYhJtAOL7jCmvx5cimXPmy-LZRYW_Tj0q4qVkUkZWm3oHl0Qn9Dg7oZdXLDzs75AJMEWF47BDT3NEjFgJbDtuZ39Kce4WVZ3bpjucWDQWDFvKgYfpxXDk_0ZZRl8ZwpdKsIE4Fqx31YFjZC8-8UdQPzsLUTML8x8B7qqOc82fop7fofsSZSjUHAdxJZuafskbiZjb2m-_uFVPMkM5nnFmv0Uo2yxTKKtxhMMBrFLKu29qp2HJ46DQkmo6vdpagMYRhUGOtVtsdG4YWWQDR5-3e-e26XcbQVlrZPbqHpAjBUj4KdNGK4tMDo11_ecYxxZCEPXaY96eeTdm-HLSbVBMMepqnvl56GXHh3DIbbg1-i6wKVay4HINiJXCeZ5DCXaDPsdzAUavZI9LiUwPyzNOPhQP_O6SEv1yr4M11URfTgrk_kdpJ5-T_3B4uFxR45rg01uMW90y5LgplojBEY96THiX0OxqQ-9KlzESvC5pE4jlSLSU3lE9Q96i4NhJDE3ikjzXhciyjnT2UFOc_IHnJ57aTi9-uEL_cbHLEiY-V7UjaNX7XO6rFeF7mavTTt-4qrD5yUeKO30LvcvkeWqiHUAeEgc79eO02E0cHV5isongQ8CmthhSuVOL49Kvabv6zdapV3mrcYSuIRU1YXnj5qzY3HNKgw1lfR17G0xXhX-IF7Qdpo55HavJYGhQyxYSzSe0XKpSdxpiZXGnopKRHeWTnth3FwhzK5v-7nS2ZKwiMX4UfdW9HHd3PNxHGDE3u_N_D9bmkn7HMmWlBvptGvO5T3E2SjqKoNdlAp2tow5u7ysvZwTxTrNlfKgLimLoBL9FM6OuYMqjWt77cFxJG1NzoOqyzeO-jK0Ig_b6FHR8gitCixX1s8H-MNu8OohC_9OpV4_sabJAdf8JvOSkUcpvApIjoftRTo9bwSyAjEGaNEGF-ijTf-phnTcehKLixAK6_dxRedYsnI4y-3eYr97jGRUT0CclmOeebnQifdkHHz2PfYKkGH7y2rWcmxGlMuYrXSS0ecpkodgux70JEF9-4BHLCwwxum7-vj0f1eGyR0Z6Jvfd58AE74wV7UjkF_glQ5aEsqd_KAqPQ9uY1jweTwDMennOOAAN1NSQu905NvKZoQw6-bujJa2k-D9fxy67gJgGDmZupRaCH9z6p2g=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 234,
+    "completion_tokens": 249,
+    "total_tokens": 483,
+    "cost": 0.0027825,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0002925,
+      "upstream_inference_completions_cost": 0.00249
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 225,
+      "image_tokens": 0
+    }
+  }
+}

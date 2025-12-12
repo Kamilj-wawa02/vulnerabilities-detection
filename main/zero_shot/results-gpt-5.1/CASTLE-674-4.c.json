@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765538845-qx1vozOQ7a4Yr1tG1IRx",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765538845,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 674\n}",
+        "refusal": null,
+        "reasoning": "**Identifying recursion vulnerability**\n\nI need to investigate a potential vulnerability in the code. The code prints an array recursively but uses post-increment for the index in recursive calls. The old index is passed, causing infinite recursion until a stack overflow occurs. This is a case of uncontrolled recursion (CWE-674) since the base condition to stop the recursion is never reached. While it doesn\u2019t involve out-of-bounds errors, it can lead to resource exhaustion and denial of service, marking it as a security vulnerability.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying recursion vulnerability**\n\nI need to investigate a potential vulnerability in the code. The code prints an array recursively but uses post-increment for the index in recursive calls. The old index is passed, causing infinite recursion until a stack overflow occurs. This is a case of uncontrolled recursion (CWE-674) since the base condition to stop the recursion is never reached. While it doesn\u2019t involve out-of-bounds errors, it can lead to resource exhaustion and denial of service, marking it as a security vulnerability."
+          },
+          {
+            "id": "rs_076e7bcbc3da824501693bfc1e0a608196bbf29115a62e213f",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_wjkR02JgMx3Xkftt3K2TrDYriGH5W6yYkTdWF8UEF7-v4vIFGGhgVBeIPJ_iCS7YdfrDigDEvx_MWNXh63SrShcHRuIdPniL6FX0FIWiyIsPb7lv1kmcJ_0jlYnMgjt4wI6ohG00eQzkPnkWU8zl_WOe6zND873fvMZTzA85WLLq2ZsbW_9N4q_EiiPgFrAARvkVTOSwVJA1PL3e5xAAU76JpHlt73O4p9NO94qCe_cYhy7BCUF604xEv0HTEU-ePu2vbBTGhPf1LSiPkmdPx0JllWyCPJKXM3EnHqLGlT-J-HT6S3yecwVNkruLiIYjWaPctD6ijOz6I28jAHG6gWTmasAS2M51gwVD1R9LCLHeEJkam4t21rbdV4pT5-Pfx3zIq7WZjCATNl7LhDM3TKRWVHjl2A_bvlDeRqOgfp4-9o8qvvID97kja-tH35Swsg2kayqiNfvcUm5ivl79FKVgSv8YC3xRSecb_ryCWDSSSBjGGdC_kaUTh-qNijZ2B6SFHeDAPWTiutHXpZNmqHEGKDOf7lI59sJKPDFKJOAKiL5kHiVqH7-9euW8v6NjzNafvSK46-A4u21Sm4UOardA2nRvO5nP6u7wCChHMyciSdbOeA1-xLraI0VTfYlLpTAyLRVoSzjWVCMEb04XS8nMpiwre7RnhhMnvAFyqPMF6M7hm5k_NAw4sqnYush1cwFPahYlqB2EYb6-GEs8faE3v8qzId4bMmf5VuJ1iuH7-M7zfSMWgQB_CqLMJnCG8fF2N9dnjAtkbpGeEnq2tzmNhOFqqOxhyNNXx2masmDrPADHEMK4DUEZmSIH6tBRYepU1pM5lh_9S4nl4lbdk29XXFzetv-gBK5BQ5d1zbRAz1ky5lb2Qc4r9FJm59JWblBJZmNAwP6046ayFJoD9qoxJLl0YRrANwXxd3jui2WFTd2BZ99oD2lQ9C_tHhAEr8MudbAqqT_HEK3nRmtg9152dSPGKLekL6nfPQMnw4gwRZPChQfykDeGXr1rWJES8G4Oa3_hrhH6TsfHAX7pVIN93GT-KmB5auMGPSndoQFXgjKkCie6fxO45q42qew_CrkfsNRdtXvlf6WT7tqt2Rh7X2B2uw7r3-NDH76aNfNCQWZ2pLf36z94Y9lthrsZUxtDgNUQAEIR6iPxx6VBZLQyWx5oosBawqUXd-IREmcaCle38k2sIO0Vwai1Vs5QiVV8kQcadjJ-EBR4XFfv19kFMvxSqmLTnfF9bC-mjat0-jhbk_u307qzG9Xrng1qbL82Q-rCxT7-jOUUd-hUoIfbqhAics4db8d78WfjjQBlukYJhwTfjgFNaGZxfMO2JRiCki0ylpneJQOTvEMcGsY_ds4Q-KrmgSn-bTugJXpzn0cnY07lZS0OoY0mzuL9ANTPkwvmgf1af5Ar1iHm8LE_50M745gglQ8nw66EVhJklfSut_9b9pRilbYACD9BFzNt0kBOcdMniv4wEHa1pSAMAoVXyam3yVMFQkvyZnIp3Gq6_A7Trj1dwrL9Nhs2QLBya7WU99XD4YKPIn6ahQPuo-wnoSqtGCump_BHVYd4KWVGafXlSo2iAA6_emjpCR1GDLsi5wQcchTMLeEyosesjsB8n6q3PqB7qe3sDbu9V6T9fFDAYoYEbEq9eFkZeVkSYD7ih1drGH0ns94yhTUxdxVGASxs7OQvl2fXLuhEeIBKOhk9hbmA54gxz-Dccq"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 170,
+    "completion_tokens": 161,
+    "total_tokens": 331,
+    "cost": 0.0018225,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0002125,
+      "upstream_inference_completions_cost": 0.00161
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 137,
+      "image_tokens": 0
+    }
+  }
+}

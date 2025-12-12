@@ -2,11 +2,17 @@ import os
 import json
 from typing import Dict, Any
 
-RESULTS_DIR = "results-gpt-5.1"
-# RESULTS_DIR = "results-grok-code-fast-1"
-# RESULTS_DIR = "results-claude-sonnet-4.5"
+# RESULTS_DIR = "zero_shot/results-gpt-5.1"
+# RESULTS_DIR = "zero_shot/results-grok-code-fast-1"
+# RESULTS_DIR = "zero_shot/results-claude-sonnet-4.5"
+
+# RESULTS_DIR = "role_based/results-gpt-5.1"
+# RESULTS_DIR = "role_based/results-grok-code-fast-1"
+RESULTS_DIR = "role_based/results-claude-sonnet-4.5"
 
 BENCHMARK_JSON_PATH = "../data/CASTLE-C250.json"
+LOG_ERRORS = True
+
 
 def load_true_values() -> Dict[str, Dict[str, Any]]:
     with open(BENCHMARK_JSON_PATH, "r", encoding="utf-8") as f:
@@ -61,9 +67,11 @@ def load_model_results() -> Dict[str, Dict[str, Any]]:
     return results
 
 
-def evaluate(true_values: Dict[str, Dict[str, Any]], predictions: Dict[str, Dict[str, Any]]):
+def evaluate(true_values: Dict[str, Dict[str, Any]], predictions: Dict[str, Dict[str, Any]], check_cwe: bool = True) -> Dict[str, Any]:
     TP = TN = FP = FN = 0
     total = 0
+    correct_format_responses = 0
+    wrong_format_responses = 0
 
     total_prompt_tokens = 0
     total_completion_tokens = 0
@@ -72,7 +80,8 @@ def evaluate(true_values: Dict[str, Dict[str, Any]], predictions: Dict[str, Dict
 
     for name, true_data in true_values.items():
         if name not in predictions:
-            print(f"No prediction for: {name} (missing file?)")
+            if LOG_ERRORS:
+                print(f"No prediction for: {name} (missing file?)")
             continue
 
         predicted = predictions[name]
@@ -86,15 +95,19 @@ def evaluate(true_values: Dict[str, Dict[str, Any]], predictions: Dict[str, Dict
         total_cost += predicted.get("usage", {}).get("cost", 0.0)
 
         if not "vulnerable" in content or not "cwe" in content:
-            print(f"Incomplete prediction or wrong format at {name} -> predicted: {predicted}")
+            if LOG_ERRORS:
+                print(f"Incomplete prediction or wrong format at {name} -> predicted: {predicted}")
+            wrong_format_responses += 1
             continue
+
+        correct_format_responses += 1
 
         true_v = true_data["vulnerable"]
         true_cwe = true_data["cwe"]
         pred_v = content["vulnerable"]
         pred_cwe = content["cwe"]
 
-        if pred_v and true_v and pred_cwe != true_cwe:
+        if check_cwe and (pred_v and true_v and pred_cwe != true_cwe):
             pred_v = False
 
         if pred_v and true_v:
@@ -120,6 +133,8 @@ def evaluate(true_values: Dict[str, Dict[str, Any]], predictions: Dict[str, Dict
         "recall": recall,
         "f1": f1,
         "total": total,
+        "correct_format_responses": correct_format_responses,
+        "wrong_format_responses": wrong_format_responses,
         "total_prompt_tokens": total_prompt_tokens,
         "total_completion_tokens": total_completion_tokens,
         "total_tokens": total_tokens,
@@ -132,8 +147,14 @@ if __name__ == "__main__":
     true_values = load_true_values()
     pred = load_model_results()
 
-    metrics = evaluate(true_values, pred)
+    metrics_with_cwe_check = evaluate(true_values, pred, check_cwe=True)
+    LOG_ERRORS = False
+    metrics_without_cwe_check = evaluate(true_values, pred, check_cwe=False)
 
-    print(f"\n=== Results for {RESULTS_DIR.replace('results-', '')} ===")
-    for k, v in metrics.items():
+    print(f"\n=== Results for {RESULTS_DIR.replace('results-', '')} (with CWE check) ===")
+    for k, v in metrics_with_cwe_check.items():
+        print(f"{k}: {v}")
+    
+    print(f"\n=== Results for {RESULTS_DIR.replace('results-', '')} (without CWE check) ===")
+    for k, v in metrics_without_cwe_check.items():
         print(f"{k}: {v}")

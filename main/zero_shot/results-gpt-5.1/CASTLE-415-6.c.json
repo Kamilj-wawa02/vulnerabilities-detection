@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765538307-qIQ6MMIRu00ejNRnSGe7",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765538307,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 415\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating security vulnerability**\n\nI need to check for security vulnerabilities in the code snippet involving the `allocateArray(int size)` function. It uses `malloc`, and while the input size read with `scanf` using `%9d` seems fine, there's a potential issue with a double free vulnerability (CWE-415) that occurs when the cleanup function frees the pointer and then the main function tries to free the same array again. Also, the cleanup sets `ptr[i] = 0` but doesn't handle null properly. So yes, it's vulnerable. I'm thinking I should return that it's vulnerable with code insights.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating security vulnerability**\n\nI need to check for security vulnerabilities in the code snippet involving the `allocateArray(int size)` function. It uses `malloc`, and while the input size read with `scanf` using `%9d` seems fine, there's a potential issue with a double free vulnerability (CWE-415) that occurs when the cleanup function frees the pointer and then the main function tries to free the same array again. Also, the cleanup sets `ptr[i] = 0` but doesn't handle null properly. So yes, it's vulnerable. I'm thinking I should return that it's vulnerable with code insights."
+          },
+          {
+            "id": "rs_023cbec11f9dfed101693bfa041f688190bf4b00d3b72d58a7",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_oJapXVSjAWJOINTAbXoO3huLcbYp2oPiu2fA3ssMPGH7zdlIBB8ev1ejET4aAp_KveTc98cPDqlpYl5cOwP-ckiDlNjTHzr5gmtDmG89AUwEqqEawwscjLyEJb4hANEuNCtTz_lT4E7OddLKjWMpcE9ARRdwc5UYBVdVkcb8f5V8ccy0xUT0-g51RA6JxN5dx71PV44S5nr7l4EGVoApJk3itFav64fmUZgzxmaCopdUQzaT5UoDNpz5h-5wBPU43Y1S6uxoFcyk0eDR8qBkkc_Vcbr9aA3wNiRFvmtPBJCbBQsSlkBS3vZU3iXEPcVCFVL_TF1bwjtSPsgedQRXJIhBJJthIXIoX6hsOw-MlDxOc9ZDLzdrchk1QhYYI0cozKmlHrlaYQ4AjGuVgLZ4V8dj9ImvJAC_BR5GxzA61b9pL7sNGkg1QR-OyCX3wWVoljRtEXRQ4Gp_ocPvYH9-Q48sX9s_jLmALGdxC_7xW9lugeN1seedNNn-Wx_AY8rD9f8_jp5DH6fZaFX8QMUBDgT08MhwNfpgf0_0zBb3A7vlUAaKttnHUBSNGmUsAHcnfr9MdlDCkc_TiIEpRyPkr4ZdoAZWF_MJqyuvcNBCEgpwFqkV84l4x7R_Si-fZU-zcwpaKF_fS3mpScCCBHtyEKiG3OJsToGxgiT-Ie9Cc9Vmlk2sgamEdSeab_jakaKu5JHLXGE-0UePywQ8SWb0iCo8ilOC4X6bNFtNznYBmOIdxGo_MVvjmWi7joMoGwO40u2hRKRbgLSgdjM_OEmBAjoVScrRuC5GFSvXzhMi3ejLY7fXD7sdxgAgqacmmlSjKe8p5LxrFlSmQCGeVXdaIJdY-xw0Jpqi6d2OyyNdVyd6oNeXVzZp_t2xK9m7rrmLOg78edYJWQ4J99OI-j59wifxi8PO2ue6kfM1vTmGHLU27WDjNiYpleBfbhK1QNf8Hb_-PPF7zzK6c-L-3uydH4YdwnXHf0ZdVBE0Zt76zCQztXLZDWSh9cYUMbU1sWWzz9oQjh1mk3rA6XCtnwVyKH7N6mxy131gYF9C_8dBCzenBCTKAX0QWcU1Gilf0qAROXaypkW7jo-MNXagqxetmtEkZKVm4hHZxV02JwTZ4aT2j4PO6nRD5QtuKYpYrvIjjFwB2bL-fTqPNJdA9DTUmuiwk9Mp0qS5GhkfVUSZF_rYa_jgHbeA4uTC_nV_tGPGVhfdpwAMrs_CZbsLOqjKnLzOQKqvkzEA7Hu1GMOxtGCR0yz19B_TLi5QLYnVco579JR341PemLQflL3PaSy0xKkexuIstZX-1DeKQlhmvbdzyRutDrsbaPY75fYTTDLrRALuNkKL0RkpUFZ4Vzi6_s10jQPw7mncmfm69BarR-Zd9kAQvhiTptBOSFYDF7SQwdpsiG86-iz8dixRH3nuPTKZjF7PAGEVKG2OY1KsMSD_bG2LuYOeSCPBTQaUA3v4Un1B0YsPPlCnRo1hyGv7dPQliSzmBxv7zuiCAQrH9LFrI4tpSJmk8aHDAYlDt1J4emV-Q_6Fl1jJEvHwtjwaFTwL8fvd58GU296EIwz6UWEgbyNWL3nTSyMczGV_8aXplBlWFPp6glWeC1PEpFGdeIKgkxqyZGKoIbCktfp-IdDTouAAZn4WbIqfzPxMZlOq4c"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 238,
+    "completion_tokens": 175,
+    "total_tokens": 413,
+    "cost": 0.0020475,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0002975,
+      "upstream_inference_completions_cost": 0.00175
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 151,
+      "image_tokens": 0
+    }
+  }
+}

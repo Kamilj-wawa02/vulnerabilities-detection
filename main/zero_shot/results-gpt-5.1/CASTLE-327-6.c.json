@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765537967-SIzdUm9rbVQeG74Vm6HL",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765537967,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 327\n}",
+        "refusal": null,
+        "reasoning": "**Analyzing security vulnerabilities**\n\nI need to evaluate a potential security issue related to the use of HMAC-MD5, which is considered insecure and thus weak. That relates to CWE-327. I'm also looking into their use of fscanf/sscanf; using \"%32s\" for a char[33] seems safe, and \"%2hhx\" with sscanf appears fine too. HMAC's passing NULL as a buffer poses thread-safety concerns but isn\u2019t necessarily a direct security issue. However, key management in a file and the presence of hard-coded constants raise alarm bells. The main takeaway is that MD5 presents a vulnerability.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing security vulnerabilities**\n\nI need to evaluate a potential security issue related to the use of HMAC-MD5, which is considered insecure and thus weak. That relates to CWE-327. I'm also looking into their use of fscanf/sscanf; using \"%32s\" for a char[33] seems safe, and \"%2hhx\" with sscanf appears fine too. HMAC's passing NULL as a buffer poses thread-safety concerns but isn\u2019t necessarily a direct security issue. However, key management in a file and the presence of hard-coded constants raise alarm bells. The main takeaway is that MD5 presents a vulnerability."
+          },
+          {
+            "id": "rs_0286628c6ec5b0fd01693bf8af9c448196a1dbd75018278442",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_i0zPTU-K7wotruDF7cJ-KXTO5uo75K9iKTmt5AjzWup0tpc2go-frzN-sUtLOjwAsDJHJB6Wl5oXR9xUmnmvaKRoVj057S1ZKnJ1iIPam-2AJ6QUo4bY45H6aw4aGiaTwnI-DU_T5lvXpevRKtVVPcdOurheY3KlHelxGtFWNruJlT7LbJLXrGH4bExkuBsxHVspXxMCmePaz-bhOcBrfPnXapJf2Rx8uGS-Zx2ktzMRx5sfOdCN9y0TJw0HwRqXVsAPcj_ywpn1hvIcxxk3icGKOc8Yix4ljPWHlvsMFMSFT8QS38zOhb-5UQmjHrmvQT-kVoExZvWCOFYMc8GkgHIOV_ReN3wK9N1AIjzktFdK7dHdh3jvd3LZRCFXEjNXXYZv_GAvHzaowPqMtKc1cngDGoohEXZZExysLDnAHozdn1y7ISroJnHHhtWDE1XSsELdlQsaHkUVL2M0Dr1FAUjWxMV-mrHmYoAnrjf2Txo3SKBb5Sh6s2wc_CLOlltaMiLbZipTL0neuVOHrhkGr0yvXaJ1xr4VW3KClNINAdSOMDEcSUdyUO9ohHI894399GZJ3QupPlOxR5SXttxuZ-n5QpC4kNn1XOaEM_-42psiyKayV16WScZhB7-4X-EDokUPK4IitsoWyodPP4QVhq7ayQp-AjdMClsFmLZ24jzGhbG7g840zigKRfDLBYNjUyI3D3DqvEWv3bHy1plENq5JSTJPJKIbgYWvojMNmArVy9jYaDwangKkkC7rXpr4g6xJubCHWOGxjHNye6tfUBTM1PqDUNb9WEGbR3OUzNHRKaN6M5IFXZmY-xwZ72dRDI5GLrwtD0CfjlU8VyrFyBndIaKuG09ZWi5rBUsfqjJgPhjx-eCo8dLoGxVA_KTuG9TM1rBFAUZkbxLzP6L41nXVd8_Ti5xasVeKGbPDoapf5jinZM69_qL8ke-U8wn7Wz2odIT2lWNhnkL7lonE8VjUDBAWe_XT5wPH_ak0P32FlbzMstAfo4Af2SuHaPy1pGO_A6r7lXul7Gx2oaQZ6CWQUlT3d2tuHUXoW9oxymftTaWdyMquNqkUK0x-rnwankmLz2Xpx9Y7wCyHsf8c_LdyKbnvFL9Mi5DGmm3heCIho3F2lFnYUQ7dXanJaNTm6qnF64dlgtufdON2BPITk9ovjwTGm91D2MwTj5e9qCHwzMZhq0pDXmXDb0AHO8mSShairQOeOdFnUMCognPO5fZj_YZuEy-vjTd34RvDStENhy-IDz1zACVYQvRgvFgy4b_BMeSXSV3f6xwsn071e9VEQZf7GZxPnhb59F6dkkyuUDLSxCQnzwiCHq2s5fiKZJU6fmD4VK4RX2ACnaHHY0B4MXyqxtkZuO73oZ6oU2kMvdQgro9bB8AJWNBN0VSyNhgBZTmRiMo1YzQ7dK4iv8t3dylXmx8Fu2kD3UpkBKKvyDawPxuTU-pcK6H9JX9P3JAz4hlq6PU83ArVmkevudX50PYSApZDYl059OFapN6mhsiEZ9aqBBkiZ_OL1Z6JF5J3FypJA0iKELr89iagroRA_lV7ecCKkrnzTEld0SIYzRpnYOGIIID8itkYisaZZ5"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 649,
+    "completion_tokens": 159,
+    "total_tokens": 808,
+    "cost": 0.00240125,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00081125,
+      "upstream_inference_completions_cost": 0.00159
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 135,
+      "image_tokens": 0
+    }
+  }
+}

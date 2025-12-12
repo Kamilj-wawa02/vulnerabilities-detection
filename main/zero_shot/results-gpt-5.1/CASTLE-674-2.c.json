@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765538828-aDWLyBWfI9wsESieyg8e",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765538828,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 674\n}",
+        "refusal": null,
+        "reasoning": "**Assessing recursion vulnerability**\n\nI need to assess this recursive countdown code. The code uses post-decrement in its argument, leading to undefined behavior since `i` is modified multiple times without a sequence point. When I call `countdown(5)`, it prints 5, then decreases `i`, so it calls `countdown(5)` again. This creates infinite recursion, as each frame treats `i` as 5, causing a stack overflow. So, it's a reliability bug, which could even represent a denial-of-service vulnerability.**Determining security vulnerability**\n\nI'm considering whether the code contains a security vulnerability. The question likely wants me to recognize the infinite recursion as an issue. While a stack overflow in a local application isn't usually a typical security risk unless under service, many static analysis tools categorize runaway recursion as CWE-674. So, I'd conclude that the code is indeed vulnerable and mark it as true for CWE-674. It's interesting how some things get classified in different contexts!",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Assessing recursion vulnerability**\n\nI need to assess this recursive countdown code. The code uses post-decrement in its argument, leading to undefined behavior since `i` is modified multiple times without a sequence point. When I call `countdown(5)`, it prints 5, then decreases `i`, so it calls `countdown(5)` again. This creates infinite recursion, as each frame treats `i` as 5, causing a stack overflow. So, it's a reliability bug, which could even represent a denial-of-service vulnerability.**Determining security vulnerability**\n\nI'm considering whether the code contains a security vulnerability. The question likely wants me to recognize the infinite recursion as an issue. While a stack overflow in a local application isn't usually a typical security risk unless under service, many static analysis tools categorize runaway recursion as CWE-674. So, I'd conclude that the code is indeed vulnerable and mark it as true for CWE-674. It's interesting how some things get classified in different contexts!"
+          },
+          {
+            "id": "rs_04ce9806ac6e2e8501693bfc0d1f5c8197ab17c82a4a2c3146",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_wWmYO6KZSZ_EtNUj2-f5m8axuUHWg-Imhdbap_wy7zk6jtgwcNH9EMRjv5LaRmLBBUqoIgYgJXwUJ0IuBthERubE0D81KA5_Z7JXYwwwMK6mkpxFo3MEeRFM3AWkICtNJpnOrEn23PaaZvermGtjPgcIk8muFYfeSJYEP4VyPvXq8zWNVIIbiD7n5tjxOWaPCjjVLFmDf26lEqnR6AJUXfdKx25LyymEi7u4OdfXP5xrcwvpinbwvInxJOA0DpJ3-ZrM1_Tcw_si1DIOewZjHQfOTZQdV2R4iz6ztp7siVaEII9Og0RqbvqNECkAEOXgjuKThOKRq-od-p8zOuLrpVxSHTSghB2Dd5Qrz4lTy_rgcvFrwIFc8TcsRaDlv2KXSFxMOgpecqKY-Nh_8CNbDTXtlPEk0h5yTmmyQucv4EeM9ENwN2vOFq8LaOnvGu0TYBsw0rI9xXOrszd9lISHxt3s-kHsIh7Nt4esUn7flKE9rzEW7p9KqSq_4WctxFTd2zzJCBfBtM72Ic-YjCAuNvKQAVGX_oZCR3j7Z3_m-MAUuVdrKEVmR2qYjyJRBCYPwjxqKeCL7k0ETZoH3PUPuEmBJVBVJl-fcARh4iQzBwzq2SICnIEHIGmFUxGBh7ZQhcVu33x_RkwrC6xhHhuzISbS-7ECSVxVWI8qTTz35jjSTgzobeDENM9EGEhRTkpKdyxO81Rqv9P9nCoOz4olB7wSQqJOPY8qKck6nee8XfeAECjh_Ge_IgtEc5quBUW_E7lKWfBM9CA2pzT_eDVTz72mxn6bTDqYzrJ4scpepgzeCTSwbBbyqT1IrLf6jjl9zPuTk4wECXZ5g0C9HeCjrES33tqQLxhBjdXavDikgjjiv-Ks4m67sjhKOh-U0BWBtLfp5v5uR0ehWHDCyJjkD-e_dDelFu_KzMKqjHqzkZhThyaQvGuUAYkOywEfew5bSe3sbks480K8F-7K6okF8vgkqLkOX9ZRhx2caIr4i5EVy588K0SAck2hYU7OtwfMpkNza9qVdSiLx9Jeo5m0vBxn208ktGp1k0jjFdRRA2tlxDSfpfVXoBbDER4J8kaAIMOrqAYcQE2A0JMqQ5LBNYVyQtdmyiShoBDqdfS95HCywoX4mlGe_F0vf_hcXVex2RixCB3tjLdHsgukN02xGMqOG4B65Edq0uNg-H94nvR_MdVhzDDMicIROJ3bTF88BnWiqt_fvgYK8hid4pBj4G7faGKJJ1Uah86HEYuQHxgObUNPc3Xpitkc7TPiibwhw6YAib9ZB08Zr_EjX-xEqzrTZFAHNY5mUexk9YsZ28yQzEOC0PA1y4Ij8WPeW0MUi4S3j-XrUuJEZU6a4IvOCXd2ZPW8WZ1DzQGyT7X4tUj16w0LrGIBnqo3WuV_Jnib_tq5mQX4m47t3uRkW_SyMffwUUXsmdGbo96Bw4vSM2NEp64snyyL9P9TclOD2xBlNPTmdQqDcUWis2w373Vtg5RuVLaM8hzXxJlEswLGfxQcBGMgbTjHFCwAtqXjPWnRxz3ubZzYGzFusNXzFdtp1DnJFEwQK1zBnbYZIJFFnmFOFckhI3znGsrkc-_R-IXwb4bvEsT2ovN1wtWh21rOyXdKQqWgCxMcoon87AGOKky-kcrBiONKl8Pa-aRuj1ANutWMNgRmQ09aylK8Mw4f_Hw3jkmmZ0wC1WpUU3cSMEV-LS-YyyS96xEMAyof_3ntwcF-IjOAh2YQL0fmpYXt51ZhZr506Z8D_HSCJUf5zaAyfqzU53WFAlpDZJSYmv-sIAT2HhwvIbgTAA9CHNZaP47rQ0dZ_wqOAsk83ixc6uBTHzSb0P52MFK47dkm0sNtIbpb1C66HqF8BH_aqwti-_RmJIxLI0x6oAsWrzsbTL8gfNv12mJwP2dzhqquJWYVjA-hVM1Yb_ZTq8PqgETt4syTXWXuTdiFB1w_Qmjbxthb7ohCIu-r3GNVUOC-eyq21cNPxLJEPJUlzs5axxw7dorzqV4nmQ6aEmk-5lsGMI72K7RciKxoccxJ6vB0yt064b_UyK2px_kfkke28qXui7tU69s598unil9A4bKccBQmkxeIJk0ODIxjlmAG44KFL5YrTseJ4p8DBrXQf_i2IpIAX0l0KL2cc9w6PjkqcQeHRovZbhCsz3BbeUVggIZNu1LW3SoC2gN8lxh2xNUG1Td9fllZplXqiSoFCdtFsUhk3_Wjm-mYGtKqLa9qKI_OPXxizp9hADtSntSv2ZINelyhzoOK8seSGknarV-uZZsVe9zA7yw0GPynRgdDWhvrSub3kotxI63u9eB3l6rY0ld6RYkt_AiKogE2bCg3bbxY3YeyeVPNTt4CvRYIccbjZ1fgSIZAEzJ3lPvYEesidBFQ_QKe0YcTGSPrCEXmf54eklubtLxTlZL_p_qU7HjyC6sgqzm5SFMKfSETP2oz7MeY9ah8pjB3q9QAAg3i7Bd21pyEiu0YFPtss7rR3o7cdqZHATORbmMVY2ixC7QnhNG4O-3eQNZ6IXUOYX3xKbHO04Df1svpK_shs3g3qfEXBgg9JK7dR7qkDe_5aTQBNzHcSMwM68aLn07aMmorjkq7ED5im4PMs46ERXlgsliRgn"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 113,
+    "completion_tokens": 305,
+    "total_tokens": 418,
+    "cost": 0.00319125,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00014125,
+      "upstream_inference_completions_cost": 0.00305
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 281,
+      "image_tokens": 0
+    }
+  }
+}

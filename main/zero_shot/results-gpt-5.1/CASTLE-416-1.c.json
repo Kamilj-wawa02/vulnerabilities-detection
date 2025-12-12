@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765538354-rBrGehDB6Ro7v3VIZz9A",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765538354,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 416\n}",
+        "refusal": null,
+        "reasoning": "**Analyzing use-after-free in C**\n\nI'm looking at this C code where the function `square` frees a pointer but the caller continues to use it after it's freed. That's definitely a use-after-free situation, which leads to undefined behavior; I think it aligns with CWE-416. I also want to double-check that it's freeing a heap-allocated pointer since it\u2019s malloc'ed, which looks okay. So, yes, it seems vulnerable, and I should return this information in JSON format only.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing use-after-free in C**\n\nI'm looking at this C code where the function `square` frees a pointer but the caller continues to use it after it's freed. That's definitely a use-after-free situation, which leads to undefined behavior; I think it aligns with CWE-416. I also want to double-check that it's freeing a heap-allocated pointer since it\u2019s malloc'ed, which looks okay. So, yes, it seems vulnerable, and I should return this information in JSON format only."
+          },
+          {
+            "id": "rs_0ecaffade5b9bae601693bfa32ead88197bea503c41c810aca",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_o38YsLmgt8H5gqM7SDaNhVuhK3-Xa0DfwHzszIMvyakfw98GGqVp0KKqVDL4aun-D4FoCK8B19NlPv3tRpbfWRESVnwu_0TrXTeennA9b0-jDTvOvEwuXa-CWGOlQk37uAKgoepHQW2dL848c_vXV8wQODqOVc-K_q-krGa9FwURFfAKjRoiWjRm-HeQ5LL13Rw0oa9ffMf3ahRfF-AhIZ35-hRWkF_a2cyLc-4xw5XKcwc5C8MUCXm9KPQcf4VthfWnVpZXxRcfdigT4Y_0LJ0vYVPaoq7hcE3FlLxTtjN8xyLrldbzh9YxnKUH4cpwuzpnOLAgRss4EsECXGUCb5fxkdZpEhpWBIOhHBSFIvCJ_GXSHEwBhQf55C8wfojkrzsjKL1LCH-xlQVieJt11yHfNGWP5rcr6TPkheupkLNf9qoSnsalA_dxupFDjs3OjiGsiJ9LmCAf5IOFomMvn3t0u4DsEyvNl_SsS5oqZToBFCQ4T8rqozIPhqYfJsiHnEPn-qOXSdVzWnOg1XCaLb_V54k9wTA1ks0QNeRq0pjdeClW3oyPclBWyy29qCsHyjQV0hH60uVdzvKCuEstZbZINrUo-j1EFfUHyVq9ot4pQGJ1WqPRLl1nsU0h_Nm2y5L9lBCCWj4dUMGiRw-eRd-k3TBbooAsNgy2MxrJ_M7skko_Vqc2AfaYTq7MtDxNcbT4HMG6atP1ph-tkvcV0ovO9lWUo_MhLUAhuGYbhkD8Vq6LHhe3zDSOEkws9yUcsnbIMXw8PWppyzqtpFpQ6sXX_SEGHoy-C2av31QKyq1ovEzPp9L3lM7Tk-aTzQU8xrZsyS4JiocCRUYA6u-wZ3O_tKg8U48UfNeVupgMWWSWjReDyVZXAfk07MOUIXwpCfGHVvXpQDVV_vYEfacWk0aZC8sCKwfmh2h45EdCPard432ZaYnRq75BkL66dVI_GxfrKYMoQ4beT0lARJNQNl3lCK0Vj-dXm8VsNxPf9gwUwNzb5QAzoZ8kGHr5_8c1HT-ygrliY4pWNX6Y1bp0e0XxZsNmzrxUbmhrsXRCmMeBA31tGQDkstqKAqgsB43knDxGeatu8IA5EwANLmzof2aLYvozj_8Y1gzxjvkxrhBz3H7Kbsn8UN4ekwNAPPnKuNMK1D224oLhBHzKhiLcy9tboy5e2UPysrQb-EqqZoNW0="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 172,
+    "completion_tokens": 90,
+    "total_tokens": 262,
+    "cost": 0.001115,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.000215,
+      "upstream_inference_completions_cost": 0.0009
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 66,
+      "image_tokens": 0
+    }
+  }
+}

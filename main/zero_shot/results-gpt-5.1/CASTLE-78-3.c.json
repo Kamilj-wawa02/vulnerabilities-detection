@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765537447-AuG1v4t2U1Myzzj2IbOG",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765537447,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 78\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating command injection vulnerability**\n\nI need to check the vulnerability regarding user-controlled arguments and command injection. It looks like CWE-78 applies here. I'm also considering if buffer allocation is correct: does commandLength include a null character? I think malloc is used, and strncpy should copy \"cat \" correctly, while strncat would ensure a null terminator. The main concern seems to be the injection attack, where an attacker could manipulate the path with something like \"; rm -rf /\". I\u2019ll need JSON output only.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating command injection vulnerability**\n\nI need to check the vulnerability regarding user-controlled arguments and command injection. It looks like CWE-78 applies here. I'm also considering if buffer allocation is correct: does commandLength include a null character? I think malloc is used, and strncpy should copy \"cat \" correctly, while strncat would ensure a null terminator. The main concern seems to be the injection attack, where an attacker could manipulate the path with something like \"; rm -rf /\". I\u2019ll need JSON output only."
+          },
+          {
+            "id": "rs_0cd343475cec71d001693bf6a82e588195bff3ea0acbfb27dc",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_as_qPvOYPgf4bTYCcdYB4A1WtIb_i_wlNPI-yzjaHn6ojDUfO7B8Lll6wjz0UNH7F-ZIbtHW7GzXcS7eGwrFmv6a2og0ZORU_esRtBzwVbpOkarbHrm8VI4QSZS-0mll3L5OmmP5440sryAfKGeqvOwrqifQ6vpmCBOt1ulJMcq3eMA3fLIAthyaA6zq2CVNbMFuZ1FzTW99ICmYpi16fjYMpkgNfLTCktcwz7-3rH5E5bBDkKZrsPtuY43nyyVzq_-iCgB4TzdZrxJKS-cCD0ddxtUByunXdw5olsvwmx_vq--Dx57bwpfWaTmdkcAC-wD2qY8C1Sa_Zsg3ZG_3i_5NeptZoJ7d2tDq-Is_fXmJfExYJIl9UmK8IEMEwrbt9Cr8EnHkgT1Pto_fJI_TpjlCzrfNaX8cz-w4mmgSRuZr_NzZjGCWbczwUhuQYjrBYCeuEaTq7x5Bsf-JYhX37ws02fQE5GLH0rOkkYiTWtUA0I3auqU8thP_By3_uUE1uACdAvyCbQknQSRoLVw_-MZgqueXgpZ4kZVYP0aa6loDnA961qQYGOf1CkeCwXAo7FZCkoWtJuiQq7zUNJWmypqNRnuI-Cj0MeEaomMaqze1D93T4cTF7J2eeu1_tb1kGzaT2RQBVulMzrq6ja-_Fo8IprphllvRPXkWw-azcBY_QhEuFukllq8diYf6XUSfZjTSUZrATOk3FUSDC7yH7BY6UlXHiTCPyDFZ2FtKiIprlc1mtXUY6Xy39bMYAPaBPc9NNHnVyMdFEPVWeDqwCqH_zVdIoYycdBfPK5guSD-zvMZt1fRwKiZJmtKwgzggrXppuQh_5pHXYDCMupETyv9JEfpcJsjdsulc9M5w0nweT3ZJpcU-NJAH73-n8DJJn39XiXTn1xYuJzzKj-3aW1iWPxQpsXts0KjRju5giKsZHQMU0AXtO-t5TBwI8NZod5qsSnohrn1dM2TqfRVnNOGMoRjqUFVtCD7a29WuwFSSAa6c3sC1e-h14XaaRZNuRUxIIQjUP-OVhwsLXN9eSwIKpHWNeMsU5nhCGE-Cjyu1Fss_znPHLQWWZ_AlqZg2pSmpdNG6ZdXxGTQ5fep-XHnxkIY6IYlWOXHxM7FRT1wL_A0uRtHTb0GGotfrY7_Tvau1Gt6p3-9dwOlt0NCLulg9f8qkUbJYMFZ0NSXp14ZqzoTIPc2irXUEhfzp9ECBRKKWniYUjWnM9mn9EEYdDwkwltZoWg5FTJ_23XyGffRjdGWMQSZwRw8N42I-WscotNtMGmv1R1rQ4cAs0eA1qIhSGPLxc8F3y6BaFhfsRtdIXKQ1IMmStmstrtfsOSSGzV"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 225,
+    "completion_tokens": 109,
+    "total_tokens": 334,
+    "cost": 0.00137125,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00028125,
+      "upstream_inference_completions_cost": 0.00109
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 85,
+      "image_tokens": 0
+    }
+  }
+}

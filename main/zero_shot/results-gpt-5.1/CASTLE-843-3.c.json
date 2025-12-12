@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765539619-7tstuxcDAH7pDwgJdY59",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765539619,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 457\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating vulnerability in code**\n\nI'm checking for a vulnerability in the code that uses `strcpy(buffer, \"!\");` into `buffer[8]`, which seems safe since it only takes up two bytes. However, treating `buffer` as an `int` pointer and dereferencing `*intPtr` could lead to reading four bytes, and only the first two are initialized. This results in undefined behavior and a potential info leak, even if it\u2019s within a local stack. I think the relevant security concern is CWE-457, related to using uninitialized variables.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating vulnerability in code**\n\nI'm checking for a vulnerability in the code that uses `strcpy(buffer, \"!\");` into `buffer[8]`, which seems safe since it only takes up two bytes. However, treating `buffer` as an `int` pointer and dereferencing `*intPtr` could lead to reading four bytes, and only the first two are initialized. This results in undefined behavior and a potential info leak, even if it\u2019s within a local stack. I think the relevant security concern is CWE-457, related to using uninitialized variables."
+          },
+          {
+            "id": "rs_092685abf345837101693bff2426cc819784de6459abae0238",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_8q128OfXRw7R0rVfJsrz7iSxH7oZjVQjGVSln-0bZR0LYuYnhhST8UMtFSa2uRXLx99ZGyXXBfI_Ab2WgWDA4RaUr2GWPfbOH98xoJuUbrt45PUE4Y1bo4vHosVpOFjNNkXfQ0_mK7XnY4nMIX4RR-3DxsBYSavhP4AvXP-BYjIpHcMD-se02RFQJmXatsZRDiGPCof2_dIZuXjtzBX8fE2Uf1Z6orQN13bkXQ_EEICJFr6OgDQIifeEP5J3AnpaLS42A4ajYWN_vjRfTPZo8u8WYEGmpyib-XAEkRIMketCbYLcxlIuZn5n3pfG8K77SPeA6oW0SSayF1amqrFV4gQY5CUC9gKPud54J4TZCsPpzNwfCBXj3AoWxh7KpRXZ6rotkv_BRZDnedrRoRCsqggmVT-im2tG04DWjKWl_kx6NUM7GSkEHd2OKY7bGPzEyLi_bZuhLCNRdUrW0uoaEtStiFSzZqYZUiJRFtSLW-Mv0k-L25if7jxDJVhPYBJLIAiUbk4-Xl0MMZHPHLpJIYeZmv5SivPke-0QlVuEOQWDFSpGBE_hEKE8JJlGQerFeY5xTLTR3Tasi7cb8nON7Di7C6bvsYng1gYfDcUZp2p78FzK2d-9Vvf8Sz9qpmKvkdjpqLgLERxACqlQmAdsuqSEWeX9Dv9HG1qKhWLqIrgqyEzdH2FFIGjroMzTe0dKNx6FG1y08NmhhGHbJ8N5H4RWh4s835TJWCOV3cLGaeRFW7ruLWYuBH5PGElHZr7sHLCaI-tECPONmcrBhUDlY8WMUA-2sT9U2RI-6DlZ06KQCw6AbRnG2Lo0QZaeoZGd6quMGBKtf7oLcY2opGWLHkp20-VOC56cQ5ffTOnTrNSvWmKorHd8U-ezP27Zts3-GW15zUXL9RcP70B9bnucx97OX1vwKikel5-6R7NvDMqrKfsU622op-NPXYqveCpcnIsc6ulCzA4NQDexGY8hEdbqwMmpyA2W4cAem7GqlWzVPvVQ88DStez2MtVGBBUZoYvQKI5ceW4KKOVwbhfIoDeFbdQ4KsP8Qb0P84tvxrVvnsm6ZYpe-v8s1bhcXYTp3db71R_I2F9AyamiZB4itnTbXACQ3no5BWmI86pWWVnqgFI04S6BIHXxB2v9r7mEYCRZ1fx2EL1yLOBjFer3DwEDDnpFTPjJUcXPxDSr7ocQmWKBbKE5N8W6GC0x99A1wJCcH71YNoEJAaE0wwEzzZFUc9aaLQMZNugn9p0sMv8v6htdVF6XYR4l2b0IaromYVyY6W2ivA4ep6ZgV76dpCFUOPY9BY6kLCrQQ7_2GUn9NKPeN_QhuFw-ra-zCsliWGcHUwcIVu8xSn48F9Ky3anMQoTpxuQy_BFxbPUxGwIjdpc1zrOK6f_UiT4qyRBVLcur4jKIJQ-twPgjGKx5h1tgf6V50kbUkxaD8zv-oE21PbyTy9FZ3KQOUy5MweedlPVX4m6YGb-K48EAsVV14ABn01ptt6AUeQ8e_V8tvoadHiLVSB8DQZvF1axHXGvNKJ5nm9FHL6b8wKwbfm67EyZw=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 124,
+    "completion_tokens": 145,
+    "total_tokens": 269,
+    "cost": 0.001605,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.000155,
+      "upstream_inference_completions_cost": 0.00145
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 121,
+      "image_tokens": 0
+    }
+  }
+}

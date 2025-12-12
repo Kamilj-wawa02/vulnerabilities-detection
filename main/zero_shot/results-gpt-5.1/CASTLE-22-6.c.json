@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765537386-hZtSgSnQcLHzKFNm5z8y",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765537386,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"vulnerable\": true, \"cwe\": 787}",
+        "refusal": null,
+        "reasoning": "**Identifying vulnerabilities**\n\nI'm working on identifying vulnerabilities and the corresponding CWE from the code. In C, the call `malloc((nbArgs)*sizeof(char **))` should actually be `sizeof(char*)`. The bug occurs with `strncpy`, where the code `strncpy(fileNames[i], argv[i+1], 255)` mistakenly uses an incorrect index when assigning `'\\0'`. Instead of `fileNames[255]`, it should be `fileNames[i][255]`. This leads to an out-of-bounds write, indicating a heap buffer overflow and matching CWE-787.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying vulnerabilities**\n\nI'm working on identifying vulnerabilities and the corresponding CWE from the code. In C, the call `malloc((nbArgs)*sizeof(char **))` should actually be `sizeof(char*)`. The bug occurs with `strncpy`, where the code `strncpy(fileNames[i], argv[i+1], 255)` mistakenly uses an incorrect index when assigning `'\\0'`. Instead of `fileNames[255]`, it should be `fileNames[i][255]`. This leads to an out-of-bounds write, indicating a heap buffer overflow and matching CWE-787."
+          },
+          {
+            "id": "rs_00d85e1b76333b7f01693bf66be4048197bde5180336ed2b69",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_Z0cwaMDx9KIca6AVFaXDwLaKVZtyehej1JN4hVYXVGcy7eIv5mMy40J9SNmDWaIEvyj5nTf9rAQWcDRSLXkxNMiCkB6RSTIrg9quuDjjz50rbsGelvrd6yElCQbRrHuKqD0GBuUioZt4sz2yHCcDG1s1UAxuNZb6rNgMH7cfBpiIcAKXc_CPMPqlg7Vp0q7oMEDFHgdFRPTDHXWk4VFn_nQirRTfRIYUNbJOhRXa6mr4mu4hNXSs85laoI9ZRqAfT-tmBB4NcJ0nc4FIIoFkhiPXcf2BrfFQtk63UbTcA8bj4HKka-TgFlztCt88O0PJWiU-ZTGcN6_ZfVlCTHQ6m_1TPYjurBQ0KjA-7GQzDtT82OIbjfkdB6tYPlrou_T-S3umHxcrNJxQvkvbP26iIR-Z7hUfXJc27w-Fg1qxCE733iwBNdxqaEharsqZZ9xUkH0WsbaDLXJyUdyjET5GvVnNVG11bjR0lYDtgbAqVYOHW8oWky5Eoh-kFzxyJ_wFq9LvFGB0Sy90N8w2ypx8StiTddCmeJHGY9XITr_-Zl6P6eM90ajKR498QLjGrx46OMo2NnZLiqGhgggOltd5Mi3sL7U2Y5hW3QMhJZUvV30kRcSGCvmy3m2YquioFEDmSH68MkSnNXA2eTEiY5kmZtlY-YihABD-VIvRXPUcNa-0vijF3XWc0DGctoqTXK27Js1qYyP_yEFpdeNBg5cM-MKZ5VbkXqRosudEvQKB9wTBzVSfnOiPP7hJL5LH3rJf-ZHQsb0EMPTHGkFHZ88xHPZb2-bh2w_Wo565q0Z_RqbVW7OEJqMZ51fUCrfYUjACUOyyrez3PqOw9RgECv1H0EHJTZblm8EQIJBgGN_xyDgK6y7cBDmtMleb4wBTepOOFNozZwctp8anNF8fiTbPY4JJxC2CxY6ki1uulTELJ26hUspBmWy9nb8bvE9f6QXTnx87QF8nPdAxXj8rYK02_aD_W_MN892HB2zz6-JuSeBbMOGxxRZM6UjatIjg4LPe-VuOV-iR286ShWj0u-ZeQosEI9You40iy2Srh2zyuGdQxTDNctHs4rrTRLU1-rO-iUAqCBcGiE_ws46T4yF9G9FRLKJGpD4Z7meQYhJcP0NDhWU38CSTz3mci75RYhNJt0U9Q7vX0ip4NEU5MJu4xfMOthambPnKMDhrDGvLJ65zISZdDq0fwjemMiba0o0xFK9WT2yPBYRZzia3JLLayRfs8HV_gaPROHtj6t5s0zV6lY8Rxu68LqzeZWP35oANP8PZWdqTZcBWbT6TVN0ephVdUh6INFXClG_jq4PAja5Cl5XAcbe8OmSljTDLnNbb42yQI3FfcuCY5R4SiaAlYP0DJpclZUxxkY6KUzznlC-E3RDdWOvOW054hW2DSIz0k4PipmGiNvs4-V03io5bmX18h9LitShg1a85_y1MFEzPrbpz7sAJJe1GQGoCMz3qW5DSScqxA3u4vHjsjvcoNJMgMWw3AOIqICQztwhF3_yW3NBk2s0x7KhVn3yLSC77phh3Guz4T2tQp1ubS-4ELDRGe6eEzLBtxiejuje2zeUZ2CVct2rdXkOz9JmdsdVpp7IuD9k1I8DNIEiruHmz0Zos7MxLSJz7dnc7QH0MN8r7QE0KNuUsDIeT0NQTeGZHCFszAnvWIeUhK99Acpev9NcEl7-Ca8O1kic8fqiM9xiNyCWm0L4NBjZJk4KxswtFqdFr3koisZQJGognBDEH5MFWQb8JHEpuYiz6JAeljVvNqYzjuqJyscbSaO_S6nRfqGFKAe-nPBB78papiI5cLho9qWLgWAdwE7Y7aDJ29f2OkO9XD5Q89p7i6ya2NjI3tNMRRvjVaKEEyzE_RU0VRrRvjnC4rsbOtfdXg-GFEJl4OAWl30hGzFE_kffteED4HFYc2z-9ZIg2Hwx0HHu_1wCulvI1GBT1CyPSkORLcp30Mca65_OAyjh7XGYJtK3d6-gOTmbIeG4fMy33V6tZLw0g3MUN8QR7eOlxt3pCdelM1J_ClD5FMUXiksxLQvziGkdx5EoXbhoSZVcNa_TXNHSm4OEDmtkrHXeZTJ9DN12I7GQPSoDoxvRT_sBnqihg6rWjavGTdkiB7Yx09ouopijLIs1vXV3UnX-NycK0nyqec8GET8H5yL_fEHeTLfu1ckBzSz-n-0AL32T_dEHkx0NkUybHSNwRwBFElD2co-UHSowh8H7QNkmem4_hFicFck9rK4X4Xlh5x-z0_KKXIkvQ=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 445,
+    "completion_tokens": 292,
+    "total_tokens": 737,
+    "cost": 0.00347625,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00055625,
+      "upstream_inference_completions_cost": 0.00292
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 272,
+      "image_tokens": 0
+    }
+  }
+}

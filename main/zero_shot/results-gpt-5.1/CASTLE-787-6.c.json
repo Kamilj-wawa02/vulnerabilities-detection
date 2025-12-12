@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765539272-AKKjqnJVWUMQzx7HU3Bj",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765539272,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 131\n}",
+        "refusal": null,
+        "reasoning": "**Assessing code vulnerability**\n\nI'm analyzing a code snippet where I notice the declaration of `double a[200]` and a function call to `fillArray(a, sizeof(a) / sizeof(float), mySin)`. I realize that the size calculation leads to a potential buffer overflow because it's filling an array intended for 200 elements with 400. This is definitely a memory corruption issue. The classic classification for this is CWE-119 or more accurately CWE-131, which relates to incorrect buffer size calculations. I'll mark \"vulnerable\": true and set \"cwe\": 131.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Assessing code vulnerability**\n\nI'm analyzing a code snippet where I notice the declaration of `double a[200]` and a function call to `fillArray(a, sizeof(a) / sizeof(float), mySin)`. I realize that the size calculation leads to a potential buffer overflow because it's filling an array intended for 200 elements with 400. This is definitely a memory corruption issue. The classic classification for this is CWE-119 or more accurately CWE-131, which relates to incorrect buffer size calculations. I'll mark \"vulnerable\": true and set \"cwe\": 131."
+          },
+          {
+            "id": "rs_09e8853c20a5d7c601693bfdc924f08190a99c1a6b0663ae65",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_3PBCC5WseOSy5liVmrTkNZV_dfpRPnFMNFdlcvtQMbmLXq_NfTvMOR92it4zxVlY9R19lgtatD-LCYW31C8pD0y8v6CMJbLD500mRNGY55cXWaIyHb_PEGVurY5jLEby4oOJSV1DN9dUoU-CxksGCtzb2AkZsQmwDECFmFy0JXNRyL_rq511SNHF2Zg_ZKHTlRlK2tmIBH06nJ0_JEccp3sHqQRDuzpik7m7-AH34rP71WfMuWD2wm_zb8n7dLSNKozMMMB5L52DE2O_6P1XPw7yZ_V8tEyBJ1oBL9ssrZ6HS0E4HhGLDwX6rCgxkkoZafezpDXXj1r_wYtU_jgcTIRUdCRAbBd0yyVhiAmoxt75zCYpv3bkhsRpBr4iOx5XmK93MZbwkGs0cGLZl7zYvoS4BrfpJHtPok4Z9H6ZyYqNMS4_o9omk3sjthLMPKbqsJM4pWbefEUA1PZPCxcE4xPntxlOGwfSG4zcQgcQ-POmDQtT8ExjOGeJi4w12W8yXzwVOumk5nQo3hIWhzWjcPwVYtcf2NL7x77pY-5bLXOtCE_u1wHcipPEUakr6xbOvVuyzfIhb-_O0YuTPnqIUOkmkzmZwIESSZanLF4o2kl19zSIKWl8M1D9dwvCIOHSWPK0_rqQRZhofssNcXHZ6CICvYIkax9DTUBBqCzRyWQubvMd4aMSkM4PNjfkEL70vQb5Odxf5wHkT8N_wXTXJF7YichQdKPZUdfjp6yXF4VtbElMBpK63cIYvWBBMMqPYM_w1NGTfBP_loiE5Jxgwsramy_Ec1KSEtmDtBOGv4BcGaRpvH8BkMPqQMs8kkN5fJNPVLBLul28tINFuiIyr5XR6sO1lwFU52A_SIku_0KtllXrLdYSu2ndXeXpu3qAvAefZ1CYqa7ZIbyevywQQxqx7HerhGzEY_Z9PHoiO6xPMoMYR6Gf4eVVS-N2-OYQ89mBIReUsikYqMrmN4PmsK7RhZ3j8t1ZYpApWa9vRCY0RtopH1o1Hm209tAymPctiZ5ke2abRzqSdanXoQmHx2ilC9pdVLJjhLTameIXek6xNpvO09EUdfAILkM0cegOcjtiWs87e4E8-NaGxXQn1nGHrYuW5psMYNeS8A_Rjbhcs1DeDee3hQlTNk3ggCmXBOntgxZ4OBWozArhw3_Up0TpJh6PyEceNtX4Y1ZcLy5GJ0_HRK8k0aWe3J8hMMoZJX34yWF9qAYE0e198QCg7t-TlwMMiMz7lFOTZnOYW23t1nh5bbwA2UWjWq-8hDhHf9OS3W7ifI3zcfpePVE7-rDgtQ3EE5BkJYNt8ebYdBNhGivmMXjYvc9mmRF4q4Aiu6NZslheM-UnQViETco0MG6u2CKPbSxOHDpe1l5KZ3eo1Bnn5fTAcaTqgtSemFDsYk8J382iy__it2WsFHG2Idfxv3N8KUK_cnJlcfH4nE1sEsd3V0ajDxasLe4WOhL2_OFCs7lyTqKsMSYOrQzq73PqpjA8-X6XEBKSEkZwpZ1aM7AzsAr9NVyTehexjNQ_ffQRO2G-vReV14dWgHPsVEJErSofQi9oYF5T-Fvw01pQHf-C07V8jqEiyieAPUXkExZugOUEjehwqGzZ0Mz1f_fNZ7ONNfPI4FNUY8OgxkeWUDO_SDKsv4JiErbieplR95g-tBJDDV3NNMAhabMEHtQYXvL6w-dJ5D1SheFBWfMPe5sULWFv2XVcgQJKeEocwhOSCcwACTKpTw_gLq6fH8rnGSAz0zwWGJYGmGjJZDzvXIDZJnhfJ5aw-ChpUtxsWeWAaWsn9wy3x3ryviixWG8J2IHT_jjfdZLLr1pp8kbe1LfcYxp0jH52A2VnRrpirWRs52ws3Vq4ljpDshce_07PGIzzOeCE9-GDGJ2rOM1tyDOH-999nTW24GhjTeRPxm2lRV5lAkFwwfz1jBUb-PJ0Bl02oJQtOA95qJXhAUSGd6AcIwxMVgv3z2L-iStsgoPhRb8CIFgJaE0RDOg9Bz1prTwYZQZvV9CziQ1nBbii8="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 196,
+    "completion_tokens": 244,
+    "total_tokens": 440,
+    "cost": 0.002685,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.000245,
+      "upstream_inference_completions_cost": 0.00244
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 220,
+      "image_tokens": 0
+    }
+  }
+}

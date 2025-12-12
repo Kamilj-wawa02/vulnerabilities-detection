@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765538707-7oqlGC80TjoQD1tZCt9Q",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765538707,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 787\n}",
+        "refusal": null,
+        "reasoning": "**Identifying buffer overflow vulnerability**\n\nI'm analyzing some C code related to a SHA-256 function. There's a notable bug where the parameters for sha256 are reversed, causing the function to potentially hash an empty string. The output buffer is supposed to hold 65 bytes, but it receives a user-provided string, which could be too short or even read-only in some cases. This misalignment definitely creates a risk of a buffer overflow. So, I need to confirm the exact CWE classification for this vulnerability.**Selecting CWE classification**\n\nI'm deciding on the appropriate CWE classification for the buffer overflow vulnerability I uncovered. CWE-119 (Improper Restriction of Operations within the Bounds of a Memory Buffer) is applicable, but I think CWE-787 (Out-of-bounds Write) is more specific and fitting for this case, especially since it involves passing a non-writable pointer as well. I need to make sure to return this information in JSON format only. That should clarify the issue well!",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying buffer overflow vulnerability**\n\nI'm analyzing some C code related to a SHA-256 function. There's a notable bug where the parameters for sha256 are reversed, causing the function to potentially hash an empty string. The output buffer is supposed to hold 65 bytes, but it receives a user-provided string, which could be too short or even read-only in some cases. This misalignment definitely creates a risk of a buffer overflow. So, I need to confirm the exact CWE classification for this vulnerability.**Selecting CWE classification**\n\nI'm deciding on the appropriate CWE classification for the buffer overflow vulnerability I uncovered. CWE-119 (Improper Restriction of Operations within the Bounds of a Memory Buffer) is applicable, but I think CWE-787 (Out-of-bounds Write) is more specific and fitting for this case, especially since it involves passing a non-writable pointer as well. I need to make sure to return this information in JSON format only. That should clarify the issue well!"
+          },
+          {
+            "id": "rs_025ff3c3418d935f01693bfb9457ac819386529ca2779837dd",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_ucPzjb230O8HEYq6zMNn2whyvLZaB-Txjhde04aFUYURZbQCGBb89zkARicRFAtpNAIR2NqK0BBiChUdxgufEaLrAMg8gsRtt5eHNzXvTjHOkC19vL-H3osUedTNNJDuxjziSbUZ2sLkhFbzg51j1XXYhffmrxOqWFJ28P8x9QfE32zndmyQ6k7tGG8mYQMuT_BeRdsgqyKUuiD07SCuFrVksUAqxhosvb1BAlcr0gzfPo6NnF3vBKmqt9bLM03dxLLbnq2w5ONm1drWAs1VEdmNnadGWzfJLnIPKLBGIwYP4rzWJTCQNdLrTTKcnlqmUlbKzjkQseY2u5QvXdf2xcutHMA2dIfkPs5tN0w3qsxBWhuece61c1qltL88179YWENOfxXHHftNXbGNOQo06_TsPqyWs32j5zZLlPZ8QrjibJgFZ3tNCpuDhKrx7vH9YQKkcB_87K9sYvT9sXBVOOf1Xgx72BTdl8KxxXc9r-fm8Jsn4aL2hGMgcsqVUJx9SXsd36np1p_DZ45ZTumCqFu_jhQwd7ITaeqtXGlB5d4sMzlY8stJSG5DZ0stba15HpuuBkDhK2z8WdrrRlTF2clplFJiYV09mbIj1rOu4zNbk9KUy3nBkniI2EqGxVWvnKJ3sZRtIxJ4u0nwPOFKCc32jvRUSuBLIhLeAbcOH1S0gg4wRbngd5tGNBfm5P6QYxIT3qI1lZ5EMOJE0-1UWaGB7u3KVTeP96qvijh5qA7314RvuPtHO1O3e7ttX18n34_kJR5WrNz0w8dbGtABFyAASEJkeC8Yc9BLebXvitvngqnPItFjF3ussZaeeWatgrQgp-YEwazd-r_NEw5xckYPep09spuw8mTcb5ffARwLWnoxd1TZOCwxqThrsWxlJeXGc-wQTGusxaxWFfQYad8BaapVy8YZHonppFgsPtZ6wG1SkPFfp0V_UTl6_mN7EBEWgolbpQ2Ygcgp8_O9FDy_aSa0dKstnc65Z_hM2R1NkZq71OOsFQTkdRDE6yaiTXfI6qY8zM3IXiB9HQldIidCt86v7HD8Fq0jc-pjZzRFMFZrpwVLmH1-6Nspvsofz5yV6oZ1IsgZeVnoeiiAbeODpJNmKcbw5Obgs0dsDfZSqucFcqC8sHp8bvL6Lsf_0rPStbuOT7otnH_V1Uzl95KsM0Fwf46QI1NkCZ4H39ye0i3uq6i6_-o9ANAvsAZgL6g-9dv21KM9mSnRJX2Ttxtf566kyTQv16t2SeX7_pnbAo6aORK7QHq4BE1cSpwnYvU5Cjj0GWcVIgux4O5JvewSmmobEz3MHw8EWI6WvuB-7nGSaKh2Z-hVQ1V-8g_Nqo4_vqRi3hYObjDTwl5cPZnRH4afPv9RDZwn4vd1gmTcFeDieGrTCVENmYtizy_rATn5MzR1gZX0V8FYbQCi76tXHGiHN8GgoEE6Mj4cIVqNy6LGsD5inNxwSeQquy4v6QZFIkyrcTIYyL8A0OaHRtYZMovufmA7l4y9OttfIhJBmIWqjbTFejGg3kSXRW-5DBSov3SSBlgXCO29eYt6XvYA4E_Ppdv6aCdH28zZs8JeSTKExWLOiSUwlkV3VOpbpn4v4Ad9yJjSslIfV3OF2OIaWTZAWjETuMgEizvxPkKlGb2tsAarsEzhe-sj7YWZvcF3SGCLSYsqwRqtGmnJKXjfAzhiQs3FJDr0pgOfI2uSK_0mHHSliV12w6uZE0w8om7GOzzbIA0xNSsWmkst12bgoBa0qIKULj-1dzMIc6vsuNyozL9S44WQcdCoQUHX7jRpkRvj1nrIjW-Z1Im1pnlV-s3LnEC4iKN5Pz3LlqAiQy3t0CCPPrPK1WwO4t6VmBoEUSi1Xx8TMhSypu8pRL9do2W2KNKBPADGsW8-IM2J0n0gEI9EXony3QBR9mU9IitfjVxx4DsaMlDbpv7ovU10zf3iXPeCwqdAEvJA0cd_zZYvDWfyT7WYYhXemPaeLvmiK8sd1s3jeiupQydCy4BtqqOY3yg3q0DI8nQlmEDxTwdX3wXWFIq4SkBc4_7CnaMTfktQLg_Kxgekg6Wd9MZQKM8lFxQspSg1tT22nlqKqUUKmXiYK7K8XHzf-kzdnQJo1eyLupqTWPEZsKhK0_ophYWJrNdP2pszSmKG5v9TN2uL6O6eQLbk-K-eDaZuvv6_7rJMAFEpN4MqX8LSrSGp1F5xnt_UAJtU6OCkkmveqkseqL3BCWWNUvpVCXQlkxf-6WIyVdBzw-ZuZjhtM_R6xafDRKGQJYG7HfuoPsXaurpJCF8HeuiPgYevEGA7EqLGTm6-IxMoAkmFovIj8M4Eb_nI5pxGk422AAS2K-HTzXDLtLakxj6muE1FCDiKSiDUQOmtMD3rao8Gkk3E-8Pw=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 473,
+    "completion_tokens": 287,
+    "total_tokens": 760,
+    "cost": 0.00346125,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00059125,
+      "upstream_inference_completions_cost": 0.00287
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 263,
+      "image_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765539133-00RXMf65tZ5lph13qGU9",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765539133,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 401\n}",
+        "refusal": null,
+        "reasoning": "**Assessing memory vulnerability**\n\nI\u2019m analyzing a code issue related to memory management. It allocates a 1MB buffer per client but doesn\u2019t free it after closing, leading to a memory leak \u2014 which can be a vulnerability (CWE-401). While the server socket being unbound isn't a security issue, receiving data into a fixed buffer with an appropriately allocated size is fine. Nevertheless, the main error lies in not freeing the allocated buffer, potentially allowing a denial-of-service attack through multiple connections. So, I\u2019d return JSON indicating it\u2019s vulnerable, with CWE-401.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Assessing memory vulnerability**\n\nI\u2019m analyzing a code issue related to memory management. It allocates a 1MB buffer per client but doesn\u2019t free it after closing, leading to a memory leak \u2014 which can be a vulnerability (CWE-401). While the server socket being unbound isn't a security issue, receiving data into a fixed buffer with an appropriately allocated size is fine. Nevertheless, the main error lies in not freeing the allocated buffer, potentially allowing a denial-of-service attack through multiple connections. So, I\u2019d return JSON indicating it\u2019s vulnerable, with CWE-401."
+          },
+          {
+            "id": "rs_0596371ee27a593501693bfd3e41c0819387b5cf6f276b6c96",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_1F8IVCI1pcPaXeWiVE5n3aGRlU3qAsSw3xq2zV_bkl0TqiO_NVqOZfIN-bZRyZaLB8xDSXHK2NMSz2uvE_pvybYoWRemfTGEMmJeaLVfTQSrPnwNvAwdLHuine0uip7Z-4KJML_gA65RhWGWDhU_aMR0Ll5KQMZNm-xNG-Y5yivPEeohHLN1SrBnKJLuHJoH2Hu0epPCeP2H6RU7f5WWl1wPmFO5Dq3kZLwcIdSo4BS0qZsDhsGoNoytrsJRD3wPKv9DpWq-dQ3l-dgZGg76ZEOo0f1D-yJojJIaUmj_0jtuOj2VaSWWwd6ybnPVSyE0FQ5k7zRvtCkyNKiQpNPCy8pQZol5gILz6JCzT1PPNTXiMXuJG-y4361jqATRa4c-ov_puIFyx1TBEoaPrAW6Rhrn2T452uk20UpVh8RHnVkBjen0iYTLfn2Ldlnt0xFOAxPu27Nts3ulsyls5xytN8aTireRMWXhEuG7qMbDQyD_mLFedgOZ4NFoVolYRoW6Ikms4ztXvNESFKk-_sWver3_Us5Uyxh8zHWDNmaT1wQezoRZDJ4Vszz_-Hz794OzpcgM8XwsjxnbUE8p0GdIBPa6sEMoKMnbxxogyikchI0LPK1B9jIGEAFLDp7Lugdad6gVoDGScswHvWo59NG6qk6HeLP6UdYmNXdRbi7uyFZMIUItDQ2KrcsjIUeRw0sH7qKDQi4VjDckBrgkUaXBys24g2jqnC35NFYcXyiH2nSWMIQEIu870DAcR_a5WoDDDlVao7gnw7poiHCa4uVO6dbxv557K7ZbpHOZ2Ns79QnUVWG9msPsi7D_uPwPp1m2S1Tp8B2n7h3Hk9txJ__eNnifbLFzkbrwmtPEojcB1Q14ZEiGhbO4AgN5AlKg7WfTED4hi7pBwAcBjyHaL7h_uXSlVwlLYlAS-VMmpZnOaLgxw9xMwbgZQvgeSSX3Q66CHFCK_gbWViAn2hhQQ9yuEJlJpqcLmrInpwCa0olvYsosEwIbcSjUxoPXBul-ESYnQGzpJLViCffg_VQrY8iV3wbM6AM2hUra3czY-Q13_C1DN-kLn8eh7ECfqI3zQz1aVP5DzKRIxI1i2D1ahV7sR7q9H5e14wrCPHlZ5IIo4HOYwO2rUzMR-7fmVmYOwmbUxUZlKzQ1C19eKkRsGeofm-GD7dlGWr7VBy18xuTzEil3lVMtkEl0oEtx0Bk83swBmg6UH23KbLgdm1JeGCAnXAjSEitC867fDxYjvkP3DrLrV1cHC6uJJDq8x6LI5X7Pjbt4Ny0QKbRrhCivohvyeQEKPqQ7PdoT_8GUo2xizRsVfmLdBQiJ_LMg09ltpmTKoR1CdHMcR6inzqKmKagEfBKUtma1-MtI2960fzCKGQs8TXWUpIzsDldhG6Mn_ZsWABKK9megftlhR6xbioIKleqOamZaVccbmGKWBK-uijJ48ztnebazfUNXKYnGq8Oq4QUhm0bZ9tOvx_f8BCAVus_-48I90bTGNgmafoJWT3cAPumlkd7snDj6F4CcE0H_8GH3OWKO-ivb9cC-KVvsNOXFc0YKMlfGp9Al0G1p-9aKcwzVdK4VulXsBZPB20dKHYQaaOvZF5qsVLFJ3ZYLcUti1q4ZKDBREwlSzAnOXkjwIYHP7Mgk3gvzuALd9kR0gV"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 305,
+    "completion_tokens": 158,
+    "total_tokens": 463,
+    "cost": 0.00196125,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00038125,
+      "upstream_inference_completions_cost": 0.00158
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 134,
+      "image_tokens": 0
+    }
+  }
+}

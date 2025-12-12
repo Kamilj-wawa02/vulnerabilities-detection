@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765539265-F0qZJYTHHYHAsplDQq2V",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765539265,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 120\n}",
+        "refusal": null,
+        "reasoning": "**Assessing code vulnerability**\n\nI need to analyze some code for vulnerabilities. In `main`, it has two character arrays, str1 and str2, where `fgets` is used for str1, but `scanf(\"%s\", str2)` has no length limit, leading to potential buffer overflow (CWE-120 or CWE-121). The combination of `fgets` and `scanf` can create newline issues, but I'd focus on the overflow. Also, there's a risk with variable-length arrays that could cause stack exhaustion. Ultimately, I'll conclude that it's vulnerable, particularly picking CWE-120 for the standard buffer overflow.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Assessing code vulnerability**\n\nI need to analyze some code for vulnerabilities. In `main`, it has two character arrays, str1 and str2, where `fgets` is used for str1, but `scanf(\"%s\", str2)` has no length limit, leading to potential buffer overflow (CWE-120 or CWE-121). The combination of `fgets` and `scanf` can create newline issues, but I'd focus on the overflow. Also, there's a risk with variable-length arrays that could cause stack exhaustion. Ultimately, I'll conclude that it's vulnerable, particularly picking CWE-120 for the standard buffer overflow."
+          },
+          {
+            "id": "rs_0d46ab737e1a4f3801693bfdc2031481978bf59e1c2c41e34c",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_3IUEIu1q_B7kBjdXwGwoZsosVekKba44shXAouB5jdz0FEEgzmJmy97yV5xBcYTYibWHu0wvvKs8Y54CPZY4qIxRDm6NFjHLpnZVYYkit9UaCM_9jTTk-zax4e1ZkfMqIrkEtymXBszYLdB5XHBvtKYNgA-W64OprbtOCMnKtQANUG99hXXGYrHjRNm4TgOSrrMiaUmKCsZS_QmkiFA4KmQoNI2wTvXmME_8v3hgJQ7AqIgc7jtDWg9uppbP1vjKSKvDrX95HQqsgcTPY_4tyYaaFD8IkeSRgLCfbIZ3gcrPqd1gfW1nZXN5NQOKYUMhaIoOS6CWjQsU8ffHuItskopUOuHW_NN_hJAWGUCobFHUz7ibCzMeDtU9kH71cbkLjXOThyr3FS0mNnWsWxw-20q1Im-cD8la7TzSSXPEPR_qeBtpo695uD4sRt_FK2GV5F1iiXNV7FS5JU1ujkWlWNw6hGGiKn2r7JDEmOrzqNYqgAh6E2sS_SZ-lR64e3awUq2YMsMsUcZD6f5GG0JxJGn9QHcY-vMG8FFh6IOLdsbtIzsvWsYH_pexk8HkIG-K7JIu4Vcgv73ViDC1OXyBp3BBOuG5imrp9PNeOjpYLozDpMJpaVbAA8J3upyu8-KqSTiUIr_YlKPNjwkDOr5p7nvP-V37oB-fzhtVuIHQN7CSUT6WqDi9sY03STMgoADhMSnyg_kC_MRn0NMVswn7h8n0OCJMJtLBtC6lp1MP0JdqM_9j5ZaiFB4RnxVHf5mNyVHupc90rXY3nGWdnuDrxeK3QCsEyk5uERU0UQgrYrYrIryhTmBzzy7Cra2Z6aWz38vbxxEuTcxYk_39NnDYVMCcftG5R43xWDUI9Uf_nI0KFs_fjNIPrRvS3ymZU9YIkUtJASZ0gB1T2dJFMi0VWp18wrejcUU4kpmFzN5Aco426TBvAAPVVgfRnWDKbDakLdRD7OdemSYZwX8mbihZuhFqsEjvr8xW0cG_IoSIdPJGc6G9IDo-g-d4ZiyG-_wc15FUAfKDLgAVdoSCTTkJcUmIWoNDN0dvA_o1XPVpLvXPdGavrRxosVfNE0LzNC0m48C7uYPryS1ShOnvmNdsepY-p0s7Cmjfnuv3RcJv_23hzEfahG39pxeLyKpXrJz5UAcf_0vO2Pc9N6VCOo58c2Z3GqDeoamCtGoLnXgXUb_RyfETqUaIJIDQFi-8MBDxEq781ZnGXEJfSnlJV7sk1YZk-bhvjK1GTwNwQMn_nP2KBytQMK265DChfb42kw_pmueQmJyBuavaQBQ_fMZSJayLJ-hfnKphusOocYLodtY4o6G28cjm9PGEo9JSAFobrEb75kK7B3CbAWLT-zZBJYr1oWZ0vNnHOVnWmMsAbhyTEC2zSpygcKfpX6TAecUCRQV1ie2pgnzFVS5_2_FcJmWZVmvqzaHeovCqHOB07N0dgZyLOdXdRfH71vAwylh2cDzyumvxVGynBPMy_ZLQUd6EaumJ4WA8-WtYqyIqR-XrU0JfXegf8S0jHAkTc-ygSsNkibR7K1jO_dVMVcltw_GVLSQ5gMc8xBhIVpznnsSM6VrMlVEWoZXIzgooT84SxhWAWXpi0KfswhlofR1-PAYoN7j75AfCGdx2-Ct95ydcz5UPErpxFgKGIjcc-CEtTayT6rQSnGozunt6n5NASKiNRamYM9plOkX29KYQ_qeQcSnULaANmFMpkch5QHcQpcYDJil8l4oyY0D4VmysZSlEdo0URqyACEg2ziGXR66AvVB2MUKIZsxtTFIFexsZ-V--86xo25bYO2AjED72FPAKdHof0oRxkRRep13iej2zlLWWohHyPdOMu8Vhha5LjLWc9AkDclaWltI0qZ2lzDVA=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 548,
+    "completion_tokens": 220,
+    "total_tokens": 768,
+    "cost": 0.002885,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.000685,
+      "upstream_inference_completions_cost": 0.0022
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 196,
+      "image_tokens": 0
+    }
+  }
+}

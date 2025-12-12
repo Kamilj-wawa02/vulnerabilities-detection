@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765539501-hOuavGadTg7ybaEhObFb",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765539501,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 822\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating security vulnerability**\n\nI need to determine if the code has a security vulnerability. It reads an environment variable for a pointer, converts a decimal string to long, validates the range, and then dereferences an integer controlled by the attacker. This can lead to crashes or information disclosures, or even remote code execution. The relevant CWE here is CWE-822, which stands for \"Untrusted Pointer Dereference.\" So yes, this code does contain a vulnerability. I'll return this as JSON only.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating security vulnerability**\n\nI need to determine if the code has a security vulnerability. It reads an environment variable for a pointer, converts a decimal string to long, validates the range, and then dereferences an integer controlled by the attacker. This can lead to crashes or information disclosures, or even remote code execution. The relevant CWE here is CWE-822, which stands for \"Untrusted Pointer Dereference.\" So yes, this code does contain a vulnerability. I'll return this as JSON only."
+          },
+          {
+            "id": "rs_041c2e6c43c022fc01693bfeadf11c8194b3d4ce756f7e47e5",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_63qGDI58dEYLG7V4C8KF7OoOrxyysPK4oWRkqXkc8wXE6Tk_WbET6GkfvCYG3-Yvd9StlwrNa9gfH3LPhp3owxRbxxOlLiLc-5-zLSZTlWJupLPg-7qZk7iRolJg4ICF3w1uaqnrYB3UxtqZJ3XgHPxZ7QnbM_i0WZBw43yOxGJVqr2xXqwjXm_3xpL2PNS5lgp7AE8kZ17s279Pz9aLmj_T33fCcTMJJEwHLY_yTeY35nyafdOS4mR7j6_M7jD2XNcGnmzM0wk-Y0CZab4Ur8zUo3Qt5ismRaij7FJQl3Ky4C7EiFWRrIYVq6FENmq-wywOhcVjNv6NBRI0cI589mkSC3HPb3NrAE7bUdUOAYCbOgc2U572pvgFhUFfQ2kCOS8VlON-cPKtA8QvkIsR2ep0f1MtN9SNC30NtrV3WgBX7vMPPdMi12mKs0EuWcS8MZFgrfZpKgTpv2qmighVJKtTTPjxPp-9GnTEqc0Sm34fQD8fg_Tzq9K_wmT8Krbo9UpGh2qBxiJpKThpMFm1BKagmHHKEVRl7gRp1i0YR0ssWjKm51SSslT4T-xafKaIYtwcQ6hwC1Cv3K9TejILZNxBB3MRqCKpeRI1qNVKjng70Mv1DwPOf9ySsTkodLgbFE7K1YRqQk3rpBa8ROt1jgDXNyVSdoz03xwNHRYF-pizKUenuEwbYEuW2mQd7dLJyLUpownmYe-GIhhsGb1kRK4878mWSe74jquAvYGaezpbJk5qRBqje--lCh5htVknNfmt8aO85gwXcwTImFIOgXEoUQcWg7cTUD0wiaDzBFnLekxEI0e0HRjIcivQrLPsNswD6pBYuRK6oe6oD4scEktxl3u8R6pFPJCKMGHAyXwqtv38cngcyC5LJ0zMye_lRagvqfkLDr09mTwdaIHqdOCRdfQwsRLKWRTjjj1ug_qQgaT6QgMuOL3r6DnhiCRnfx2C-eAhkXikKzpO1DGQrd-xJoti-J2T4bxCQ6e57u3KnRrFvDCtCWggje-WM_yV075Q6oZcmCwa6QHjQB5qk6nP_cs1-yxKHDJP2h8R6XJ7azDszrRplDovJ1qf6F8rjYD9m99xMeAUJnOx0zxwFsqsOBlb20OAbOARJuwyETvPzKpJ1s0t9LF2675YrvcaPAZ1Kja8d7XpbN9tVZhkV0McANZQ9Q-qr2lp4g5TLPswW_242IRYSxEgCaCt6fwSYvEU8LvfVdcBpHRURLSRAPdElyrkIF65qzylrUjAvZNuj56Hy3Hmh6zRg8MkYE4OZq5Fofpr7WcpFUF06qoZmVNowWT6XQ6ubwgpBgcQt7kL8Fl_NFSFzxN68IM6LGpxuvBX729OBOYhiAyZQq6rc7Cid9Oiuy96DmkZ1kR1o6sWQ2cDecm603F4YSijHWHAMGkEOOZl817RZ8FhYsSVcTysBnUMqVLde4YLWSfBlaIfo32hf-sEkqQnmf54d5PbbqF8xvd8b9tHdfAC-x6Ln6a9dEIk3JF3i4LwgWY3Y5CAhM3FSyZ3VPbBkVtmyQ6vq3KmQSNIPa-RawUuHsdgM3gQfL3KN7taJMueoSabzLbFIx7ocnhdkmvvYxc_Y_hxNfQ8I20TVXgnY2Eu-QduZ7AIV-Z7_AY4GYp6kbuQPNhvRZl4knsCCUmRMMe1nCGUlovlkKW-O6ONVAliF62zo77HGyTBTeZxsPaxmojTVKhwhzf716ry4dbdXFBYnzZC6V-mWN6I32SrvxuzEQ7q0hPyyrFsnG2ngOhY55vNaJ03dU2B6Bw4WJBgEj9lXl9bY-rj_fI7Z_bwq26MC9yHQd0b95YQ4tYJ5U3OT7IVQgeB5uT3ZbfisRODFvS3mUjRyRztMI1e5wLe03kAHtttlImdcdfDvsxXfqxvhLc28Mc3xx-M7APRXSW4U-BCRKKLzpDi3VEE6nsDGnIQmfK18qcg=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 257,
+    "completion_tokens": 208,
+    "total_tokens": 465,
+    "cost": 0.00240125,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00032125,
+      "upstream_inference_completions_cost": 0.00208
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 184,
+      "image_tokens": 0
+    }
+  }
+}

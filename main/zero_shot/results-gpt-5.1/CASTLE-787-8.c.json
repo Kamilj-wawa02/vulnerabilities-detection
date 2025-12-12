@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765539284-w7bUImqQ6LMEjGSUo4sX",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765539284,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"vulnerable\": true, \"cwe\": 457}",
+        "refusal": null,
+        "reasoning": "**Evaluating code security**\n\nI\u2019m looking into potential vulnerabilities in the code. We use `malloc` for three integers and read input with `scanf` using `%3d`, which limits the digits. But I notice a potential issue: not checking the return value of `scanf` can lead to uninitialized memory, which might cause an information leak later if printed. This seems like it could be classified under CWE-457 for using uninitialized memory. So, yes, I\u2019d consider it vulnerable, and also note the minor issue with `printf` lacking a newline.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating code security**\n\nI\u2019m looking into potential vulnerabilities in the code. We use `malloc` for three integers and read input with `scanf` using `%3d`, which limits the digits. But I notice a potential issue: not checking the return value of `scanf` can lead to uninitialized memory, which might cause an information leak later if printed. This seems like it could be classified under CWE-457 for using uninitialized memory. So, yes, I\u2019d consider it vulnerable, and also note the minor issue with `printf` lacking a newline."
+          },
+          {
+            "id": "rs_0a33130443d8bb1c01693bfdd536e48195b7c0683dd0afe0db",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_3bR5azIM4uE6Zia9ldjqkxW4780E8-B2UgUUs3s986IL_HasrMNG1B-lhJrF9ZL54CUOe9zuDezV1Pv5xmvWEDbNZTtVD07PLXKVRVeMvPJ_I-h3ys7EpD0PavYN8qSAhmQw05SzDUet86H_F4Tckii-g27mMpaJpNw8lufDiyqJNadb39k7vbIkqui3cVojbiiqym19qNQo7ooKfJJ_UDvhn_j8hG_Ma4PMxrehwL3amq9h9ILUKQn1eGIEmKVffuJZNWIe38WUYFyUifNXuDk_GnzyGkYw6w5bB66kACs6_6woOwbABMe0ioXR0mn7R6lqypunfbC6y4sinV0jTK8jJvnIUd9kTTqHgGYVrqwX3nu73P-VchUVFg_3vtHc57VhxFY5evl8UCFx9XSmPbDBc5eMTK6I26ZnErA6eE4VdyJHj7Nx1m-pLhOu0FQToDvwp-ZOWBzv_wG4D2vtHUtRlL_gT78DBhFWDHnbRn8Ap2Xivu4MFWMzfK_G2ffn8In-1xHLqWaw91895HTkJgALdIXZSBpsA5Q3uXiMTQzKbauMtuJI3tCd6VqShFh5XBZYAnPNCyayOR_V4Vck-aECj2wOPLFVAUs9HKpRaRBk6sZzY5hGzBSAGZc_gwvjUlIVe8pYSxWO88ATLSnA8XrZBVESLuQZ-Twb84cbb1IZbeTaLw3PESzN3f-_RyKjnIQ42K7--M5maMHfDQKcYWJ6qezq2lj5sLv61JfQ2MjMCrRZhqw-wrlI2LEXZZa-RUSmk3cOvsz9JNl0VCbNrs5zOJZniTxaWRcXbdiWIVLBRLN9rfLgPgsj0ncQIaRHKB6sC2_aknMeT6AeWpDo5sa5GmTiBijv0rJ7qI4Oah1iuE4bpXPrODi4IEcoHC79XSuaXrzD4ztLjVrntrL0WCTXv0z6wnEfbATGbj2o6uyiw64vrqoo6vYtr7a0Eka3VNk_2xEBC_q9tTsxEFyavUI00-JX909g2AjE_xHNkLTlq9Y1H5x7F3UWhlNxOT2SeBlQWFDEZoDgLdPopDfuo6tdp10RnCjm9hcz2y4RzHYbtKiBjEZ6Msk0HbWwx20ASUpkJkijRB-OFqF-Kn0JxwPf8HFzLCVHVGCMnNVCM6RjC4EDOn4b0xGNfqewicSIqPtJKdtGUbvpDSh1BVjV8sQR2smfrysKq1XndEvHUYHRNRT43kK_YNe9VEx4_hEfc4a4DTtUxaZsgE8nWk6547c9oEvKKNrqGLtU8mhWwayJX6pJx9i42lPQi5ffewrPgKCpo78bOL3KXxGq0cqYwl0zx3gUOtfcuE1wLTTBrJhcCL6K5seSDXDQpsX4GDzQQFHiUpuVawX1y-4UnR3iS2ZeH8vQ_BiCWFB9tWJgKvyz3cyt1wosTyQ3_w7QilJOwiBhL19QZ4JkEbdJGm6cPDWIh1ATZSSDzDXzI7hLJn0BZk1QvCn4rCeP9dWolPFP2yOPUhZjFiDzsTTDDk4DCHBQeE82tzBRbRyDQ6pZoKin8d7yxoXq7KoAj6FcfYGcxVhoeIVLyZuw8AdX6T_qXl4C3lFIHTKyl5C81sNpn72nXiLfnGdUgi700TvbozOTCxjIKuhNPxT4vwslBLCbXZqVZjzL8K8Z8X9hur0iX5jK98R1oxlco6YHNxjYCXyRwvNufHpEdim-mmNXIBUQ1fZL4Htdc-hukQZ8Uoo9fpHQ4041AqBDHA3fTYbj4kNLpYLJOsL4hkOgm-dHqVbKvv1V825DMnud29B3LjYncMq-yM3UDDNIw6uFsOPCG0GYqmptFGoXsk95JMgGCXiOCrNuUNMyZ_-voEHMrhNjfxPlvUdO0pvg3U39ukNUqI2eFnMU459q9L2YN3uhMOdpgoJdiNYuuWoWp5jjrEgLHnFdSuCwESQ-5lGCQZUoIUP6j_ZooZeSV---BZKZw1skwJNR7ympa_www5dUmDcqAV8jzVTyjrg5gmf7KDo4SbmpYXC1l8NTqcrdHQFAh1DZS5-3YGzu4qULskDVbZjvtHCY3B-2CPxb4e7VljkJ94XdSbVYMBU0HiohEaBTl-hfap4w=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 203,
+    "completion_tokens": 214,
+    "total_tokens": 417,
+    "cost": 0.00239375,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00025375,
+      "upstream_inference_completions_cost": 0.00214
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 194,
+      "image_tokens": 0
+    }
+  }
+}

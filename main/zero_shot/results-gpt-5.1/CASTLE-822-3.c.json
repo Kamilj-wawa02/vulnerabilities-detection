@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765539491-RFJzcQJeP6BzMffs0u74",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765539491,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 788\n}",
+        "refusal": null,
+        "reasoning": "**Identifying memory vulnerabilities**\n\nI need to check for a potential vulnerability. The code allocates an integer using malloc and performs pointer arithmetic with `ptr += number`, which could lead to going out of bounds. Dereferencing and freeing `ptr` could result in undefined behavior, thus indicating a vulnerability. In C, this aligns with CWE-119 for improper memory buffer operations. I\u2019m considering CWE-788, which involves accessing a memory location after the buffer ends. I think CWE-788 is the most fitting choice. I'll prepare a JSON return.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying memory vulnerabilities**\n\nI need to check for a potential vulnerability. The code allocates an integer using malloc and performs pointer arithmetic with `ptr += number`, which could lead to going out of bounds. Dereferencing and freeing `ptr` could result in undefined behavior, thus indicating a vulnerability. In C, this aligns with CWE-119 for improper memory buffer operations. I\u2019m considering CWE-788, which involves accessing a memory location after the buffer ends. I think CWE-788 is the most fitting choice. I'll prepare a JSON return."
+          },
+          {
+            "id": "rs_0e4508cb06c0687401693bfea3e86c8197b7c05abe5963de3b",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_6pMvNiDMgEXtah4RJ9b4YMLlJwiLXYOqFz81fTLK2APWk74QL9-DXPCPEwL4dKyKL7jfFt-_CCUcX0z-mxFdud5RZNc6GFfN_G0ywbC5EQlmBQ_K2XvF-I54rb07-yZufYcfntaMJX8Att8BENdNlyk6cfFc4Cv9RhK5FKjHdLExoddoa7pc1CK5TfHhF60qILIjv3PS6UaJ4wGF5lQNrrasg5oNE0uSbbu1YziFjBQU9XPY5jy3rB9mbEa4Q519YYlef4VtJagVXOnAjG7n7ZqempstDKHh38cjL6itrE4sOaxQdLD4VC13AvB7SvFs_E7nhpo6sinzJ_CIaRDkPx1qdJ2NHAP28uGQcHq0EtxAOk_OGMhAOFYif9it6jtzsZbHy31ikwTi5p5AN27XiiI4DOwUuG-PzONeYq5mhMJpzRK5xL_rw_myEW5yZ4iPKEOTwVpKlhEctUIG1FujehJ02Eoh0KbpiK2XNQxvp_UQMC9MtBQrI8O5GadTOy7n6XDgnfkUsUhEOMEC2Gy60BdI2CkmY30RpgYHEpWWFaFFzbTiZ3AksIbDKdifOTGJmw1GNLqsxKOzmiPbNRrIXpleQmX7wquMAxW_fymBXLp7sQWvJAZG8AYBHtxK-SXzoPOVDtbxuJr1spykq9r7k8a0z906MUwo7Rpw1uWIny0kBGy0JzMB-p-kYxSGQl0lreMuS_TccitQikYAcTZQdEz-yXgG3zWXM0y79f7RETllR-etsBuPXVPx5aTHBc-eb_uRnKX-6sdXlj1CZDJ2z7vt0AsIWLEOJK1VQcsp7IAvebKobYT7tLiS2OjiY1oXLGjjScWnwqxJDYyOTmfTKhS6eoc1ObqFS7P5cgUZFPllaj2sQ_Lll3JHxUnN2l2NB5ytjtz1bwm7BO8V2_WwIrosGL8xn-1icjtgkwhiv6vw7NBAhN9WICR9aiRozw1TAGydStrqnPm0nX-e28Vj1-QXCwZnTpZVLfbP3D7FGuJp5QIKpxkjQ_kJtKb25FxKtiRdlSIjHRES636a2cgrL7eWZYyH-i-GXaNBnGp73yKj1VMxaucyM8357eSJKC9YYUTYXqHSQJEjeeMdCEbgRjwpeok_JV_AIM6CX03hxypnbd5ZuvOTCP5np0RjzWWom5SjL9jlBBQSPVV_FMR1jydpX5p8HHdeX1Es0JEU5HG5bB-iZTuAKro_aIG_tWfVJyGagxObrIT-Pzo-zdMVXXOmd96eLnqGoozXIc-51mDxLOqm5S67Q_qnM_WMSZe42jGeGSu8FaLEKPV_yF4DzGPfNds3NzpPnEZeRkyXD_J_e3BtgKxjlFF2hkeaCS6FB1ei4wmCRJKLOAIC16QkD2T6p9_geOWih0wIdQxcWmRGcdYi-kxG5-pCwVHrvmZmBdf4oHxDiviw-nODPhh-CHBK26xL0o6-rIgUwIDHWSrisoobX7E_ryvoK5wMQZSEwtHu3Fkho_itQAMuwq4gNjKdBMqOpDiOTF32QGLnApSbe-suf5FMH9y2c-vAZEoeJ2JcQ3Yish8zho6zZ6DQgrD4DHJNKiX9Jn5PMOi1ENEIVTH10PGBdyIXYTcImPOXdUoOoYksDAq18DCGt9eUohLU6Qqbbs3pYccT6BrCgYGYjKTKmYA5e2z8-fbcVvUAjo3Ho1g6_u3gUFgquJUS6oIriUqAjR8xL1cMCjUiG0I_I_VJghlsn0ST7C3fIGpNhcmwcQCJBbdsxpX_fKmccx0-JTWRNTovgt8Ep3Mubh5GhGWDgTJ5rsOV32JWGK7We2"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 264,
+    "completion_tokens": 189,
+    "total_tokens": 453,
+    "cost": 0.00222,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00033,
+      "upstream_inference_completions_cost": 0.00189
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 165,
+      "image_tokens": 0
+    }
+  }
+}

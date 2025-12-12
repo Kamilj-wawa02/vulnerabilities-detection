@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765538610-wqcKTprFfzYEVHqGppel",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765538610,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 617\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating a security vulnerability**\n\nI need to check if there's a security vulnerability. The code uses `assert(a >= 0)` and has a fallback returning `0` if `a < 0`. When compiled without NDEBUG, the assert triggers on negatives, which could lead to a denial of service if that assertion is reachable. This relates to CWE-617 for assertions used for input validation. Since `safeSqrt` could be called with `b = -2.7`, a user could trigger the assert, indicating a potential vulnerability that should be addressed. I'll return this as JSON.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating a security vulnerability**\n\nI need to check if there's a security vulnerability. The code uses `assert(a >= 0)` and has a fallback returning `0` if `a < 0`. When compiled without NDEBUG, the assert triggers on negatives, which could lead to a denial of service if that assertion is reachable. This relates to CWE-617 for assertions used for input validation. Since `safeSqrt` could be called with `b = -2.7`, a user could trigger the assert, indicating a potential vulnerability that should be addressed. I'll return this as JSON."
+          },
+          {
+            "id": "rs_0683bc017080c3a701693bfb33567881949d82c7d22fb5c7b3",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_s3w_cDuUPkYiivdCxogotOyThl36vEYDjmSdWV2GNbxxBp3ldH-UrheSMsItCznuo16GfJTxqJCZ20YMTsZQcziGwlU03wQAFO1Z0b-pXcjiktbUabvJBh-a1z4LszLnzrlfD7l8i7la_xIHqv7K6jW30TLwp4UQURsZK-BrImqZYg8jOFj5f9yu9fMLGWr5XTQPB2I2_vWGoAPQHbqwB-Ra-Jy9XqEJyBuYy7b6eAIOrWDlPHSwyYehq6IhnQ3zTI_cnOc_YoKdjOqNO_G9OZ58LJkOvZojUxdSGSTaKLdEQmq01Jza3pfEs7hH3COWAuKjyIwrfvZzNJ81-XpQXHw7MwDkrkr4vl7H_mv2jbOrIiQKy_SWHRZX8NaC3JxrvdhCBj4Ta49lFgTdNLWpLZF5E_fXkmgs31Wfsd3nAm8AJOGxe50YAECvU0uxAQX4hQs_y8CddH9wYNHYbqPr_ueh5uMFth4Z6UvGp4Ejf1wXDaC-NHWe08sZH8SIIHo4w5-NwWs3BqrI-rHinY9NYrk4gnN0eLf6WczISBbVxy6_mpJhVRv4WQs0EjvfTR_j6BemzwTflD4VoXw9Hk2P_SIa1ujb22YRbyBCNEeFydE_smX-FElzlTYNY2nT_zvlY_pL2TMEE-a_GNUBqqgHzOxSkEUb-rrcmOI3IgQJMKxf-X43bByIB__pIKDWZJmaKwD0e66GL-zdReDXPfOeYb4gWmDDWFV-KpRWURYPZEJGt9UboJIqxMRcC68mP4ykvW5aGH_UvJBF2dFzInAP4mxDeWq_ccDJEciGDDn03f_3bnIKU5BzxN4G-h3mn6i2BgBMXm-8X53bFvlrmymH4TQpuLUAIzaz3sd5nDMvshM0sNmmJz7l-Ns0g1jKeZOXqwrZdRaMm6YAursXyu9VFdp2H-37kQCcihsSBdrUYeYDygIjtgI9VbwO-4jg3b_fcFSN-xRL5fkqvqZyIWM5QIfQ3HpG0TFvuOP3R5ylmbPXrA_O-MAj_tP_bUy6mghbVZq-Ziif1H1zEXUEShk641lsg85N-Qgp7ZdC3T1t4TzjmTvzTAh2c7hBa9QnQ1eWkvR6F8Qtrb8FHh0FKpV54h2ZO-W9ZLgrvLS9UvvYXFrFYgP4_B9WJLl4BJlNSIe5U7RZNqaqHEOjPM_ZEMZqNB-QSmuMvNQja6bzPYbJRIPUuiRNHmKO82y4UbppUHkLwh_mnVAkruRHKvFGbP26EWTJ5y15EnUpbHK5PO_j83Hbme-AMoAQYn7rarugVBTDPKsuxlJIm-udPKirxpp3yj5322bQlponBHlaShFsi2EEkwqKE81pNr9UkL8APGdRX72CwMPFDeSyDa7xnjgwzYlxk2nwGE5hnhpoL_dvRFPXis3cxptaB17g5C2_NqBK-VzQzMAoO6ZiTpqGzyT6hQ-IylWXF_b9WvFm3VacPkyf_-zfRihFy0h0X_qlvM1nup"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 182,
+    "completion_tokens": 132,
+    "total_tokens": 314,
+    "cost": 0.0015475,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0002275,
+      "upstream_inference_completions_cost": 0.00132
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 108,
+      "image_tokens": 0
+    }
+  }
+}

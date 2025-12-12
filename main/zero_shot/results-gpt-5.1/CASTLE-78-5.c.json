@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765537456-YlIL4y10Jw7Q4CLYbSwm",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765537456,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 78\n}",
+        "refusal": null,
+        "reasoning": "**Analyzing buffer safety**\n\nI'm thinking about how the `strcat` function adds the length of `buff`, which can be up to 497 bytes when it includes a newline. That leads to a final calculated length of 510 bytes, plus a null terminator, requiring 511 bytes total. Since the system has 512 bytes, it seems safe from buffer overflow. The real concern here is actually unvalidated input being passed to the system, which points to a command injection vulnerability. So yeah, that's a CWE-78 issue.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing buffer safety**\n\nI'm thinking about how the `strcat` function adds the length of `buff`, which can be up to 497 bytes when it includes a newline. That leads to a final calculated length of 510 bytes, plus a null terminator, requiring 511 bytes total. Since the system has 512 bytes, it seems safe from buffer overflow. The real concern here is actually unvalidated input being passed to the system, which points to a command injection vulnerability. So yeah, that's a CWE-78 issue."
+          },
+          {
+            "id": "rs_09d9f3b3880b396a01693bf6b175ac8195ad691c7d3e654d2f",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_a7PRwIDFGqSf1oO5NSE-5sPyM9QnjXqI_7zdmrQEDHFsk0tmjJRKRNfcm8iOSK0wspuZE4B4qPTsSyuoLZsDZO2fDadT5DdhQogRmbcsqZUkqHIH8h3KRZhoZGt5mYd6ADh3gPb_pe7Jc10x9rolBOrCI64mJaY10YYjv9Gp5xA1m5NMGB0SDKQ_gxSUzd82qmh4ZM5LTebQm6dNlhnESV98I_JfKEbTFqS_sJl1rn0r1uQJEXXHIBjvWfL8e3cMGvrw0I90O6WtswS5ji8LZjAGIfPI-pPoakDZ4DbySyvQurUSzzL3sfVv0NpX7xpg-j0xWgRGuhKE0ng6Gu1wKK6fP5EpbL0c2UyqPCMuwOMmYoswMB1_NPP9TyVjKjK67cHhgNCj33_8b-ytfBC3ZZNu-oJ1bYrtuTHs6Mo0YBafkWrsCQ2X33D6VMDluWz6_sg3-kjqr9D3mBF2_q77nm6IvX68DKoL15FsoYL13m_23Ui7KVsSayH2P4FWtZdAWtap7BuSP9xU33wCgNzR2C3BST92-61VTkLLyLjLZrN6CoZdEWLrim4gdOCZUPecH2HcC3o6f0IQ2dCQa8FZGe_XAK8bT8FClxcc9kiLA6uqipiUpbOZiSUF9JZAyVuPd1lsVaBh0F3nhmN1YXXSayvNN4zpNkc0Wo7yFDuvWNZkaNGjJdlarbi33wznN-xE7WryHBmPbx5l4Kmgfrnjvq7meKyO_ANgSUsWU5dR6AhbCOQ0npZC1LNOrFfseTAYdWey_ry9ziGJW3TbiO_5D_6oakUYlieJzZuAQ069NHsi57G5jemlS2YF9i2Fy4VJGW1JzmlvO_G3B6PjMs-XeReh6XjitmIqL4HDoqC_5y3YWVXFnnLWo5C4h5n4CrqrEVNzxAxcdclamu9I2pow-RmwlQLJ9FfKkVn8sUTUanrg8wraz7k3XfWARsrkyJBA6Qx8ZN7UTjQING59UChIzdLSQ-T9YN9HS17zsTqCEGfmxatULBuQj0IML5ltY1FUAYuwfpPczdjNS8ksmpcLKIpYWbTN-5kmWX5mWd60JK7Bvw-3KZ9U3bwavrVCozoTgShbMbpfQmqKTEMPB7QjSDRG1ROCAQiG3_GJX88iKd3RMB5CXlJcjxbeOOF_hzX5exVXzFHhVyV6UF7YCo_IOFB32Z9F4OdgTRwimg94qf7KpRyoqy8d_bd2PBobmK4bKHkRLaG-x5Ykx_JHlTT7lyptThOzvTfSGD8e4gSjp1L1XmppAuEQ7C3fE5TrWKBWsYBIXJzRq_6G_6Koo6tVXg8Vl8cDxBsNBWBCwxO7PHOTCVqrAWgEKXxklmJIelFjlM33lBl1yX3qRzW1Ec0cNJ1AOmPQ8qsEDyCjsuIAzT1Q81Z6PJzGKCq7LNNSgXWxQq6WQaEXkahlxR9WDzdvQhY-Z9RUBe-TwBf-v748ahEMObCtrPZouz4v8tajas9hidKFw-wc9J9__pBGTp2axPVjk9Li-DzHHjP5sXGPwn_rSpnERa49smO9iXDj31nrdhzVzk3thl0a2WSLIzYu-1fCYdKQ3q7ED1QF6ywTExw2e9b3T24AEGbhQfFq_3XIREjrKu-F7AnqjtYUNOo89h2mCgoNVmp7izJrupmyeaDMnuhPyXnoYv-u_nILTKHBfkDvq-SmlteXc-vPNPj6z8tRfTmHvZ9ytg1sj2BR87AUAP2VLsWEu0smT3tvjPPAhBe2zBzwTQs6OWJoJ9MIFEGYOETrISPPEaZMJbb6ZXjMVX7chU6WqDYwDCTAmd02ZEf5O3BFjAacAkQR7awzwcd3-_Raagdn2TuTn-eWq-6sz7JDVdiUJuRY6nXwSD83SByODmSh_19eTeQufW_3nu8Fjhk0zvrDvuoaQfmeqTLwvvFQulzZ3-PygRh6FUsyR6LHRdP4emYI1B3-HKEk8jYIBGoCjCP_bE8AdokVSTN5o7Okkxik0W3KGPXsRBr___a4TaW-AIPpn219tySXkL3Ofuwpbox3uZdguTbglxpuu9OWg_HV5jc73917idKhhHuiaDKHyii7xcU-1gu2lzvi25rCnrSOkc6vk13uPKzeIVnF2sy-Ne7Lb1XLhffCFq2dTCMF_4nkJWTC0gi56Ht4z3jiBmSGu-HAzvtSB6R4XZgh5vAKxG3lwPeQK2j97blO62iB5GeK6xpgepUpf5jFn8MFaBGLMHQKc8ZBXpATZ4iPUctUCw3Rd_kPnC--6iBL7_5J521ljFyGsmzm_sEVgHDNxPzdjEX52UyYhsAk1x11rULUVcrYfHIiZExbnyvDdAiYKIA-FTtergt9h7xJq8DfGUgTrXIOWAWydYsAi5rPaIB9IWszLW16-dZYxNwFbD9QwUI5EZWZpxw1dw_xDrTVtP2G2tFXKIr2PTVFWTS3qsHxP0JffYPqtIWjYR_uCk_BXrXnmC-wjZ-4Z5n7cTe0qhMlMGOHpH85Fcv526HTuar9Ch7o3-M-ZHPyt9RXCj3sCMkKNRBilwCLkidomCI8fcewQajhzmMiG14LKalbMYnLbz33UTpT0GbfX1"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 178,
+    "completion_tokens": 383,
+    "total_tokens": 561,
+    "cost": 0.0040525,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0002225,
+      "upstream_inference_completions_cost": 0.00383
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 359,
+      "image_tokens": 0
+    }
+  }
+}

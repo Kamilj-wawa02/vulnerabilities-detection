@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765538191-cAwgSSR64qiIPiaNvTE6",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765538191,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"vulnerable\": true, \"cwe\": 401}",
+        "refusal": null,
+        "reasoning": "**Inspecting vulnerabilities**\n\nI'm inspecting a vulnerability regarding `createCleanBuffer`, which checks if the size is greater than zero. If there's an early return with negative data, it leads to a memory leak since `malloc` is called but not freed. This relates to CWE-401: \"Missing Release of Memory After Effective Lifetime.\" While it may not be a major security flaw, it still presents a weakness. Despite the memory leak, no data is accessible to an attacker. I'll conclude it's vulnerable and mark it true for CWE-401.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Inspecting vulnerabilities**\n\nI'm inspecting a vulnerability regarding `createCleanBuffer`, which checks if the size is greater than zero. If there's an early return with negative data, it leads to a memory leak since `malloc` is called but not freed. This relates to CWE-401: \"Missing Release of Memory After Effective Lifetime.\" While it may not be a major security flaw, it still presents a weakness. Despite the memory leak, no data is accessible to an attacker. I'll conclude it's vulnerable and mark it true for CWE-401."
+          },
+          {
+            "id": "rs_0a070356399854c601693bf98fed508196b811e5aec3841205",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_mWBwMNRH6sv-HAy7y0EQRIiVCtcpLtn9_KJAdn2CpSIkGGP4RS3u5C7qeOmRVMl8WCPHREg2ea192Qw3HoIYFk6Va3xsgRtqD37-GY0XLRvgqCoxjI-3y5sTJpMkYqXDc9htG9zIMcLFfXrR0ri3gdknR0pJrg2b0JQGg12Taf4E-DbMPRTtTeD0RtIZ8qkolJVQwGsRdhUxrQAivRXzQac0ZGXdxPbVKmtgnLl25AZRYQRN8Y97IOSSVYeIdNC6L-Sx7XWFz8i2K22AjF0CfmIn17ieXgzsN4XsoJzleibfqbF1PMzIlLhMH6Flq51qI-SLOm3gH7woNzM5z6wfWKGQMrHEewtD2WLPYo7tm9Ryza2_N2LdEEpP3C5l75kKyxOQv8pgP7EcsNOP9YKGBv0vEGdJUb2HJjQO-knfRdQu_9P5_xeSjORbRKPaBcCkPse99sEG3bwleYzQhPeZSKlQs1a_2x5wGNjIJ9vTVG0rq39iwXhP9lRsFyQh3dg8FqR0S8UN-OpRO5sSKs64jwC226YCrjopiSpML1dIIeL9z6UQSXUJ5vM_NozgP3gigIe75pEnka80gy9sDBeuhfPaFCj3j5R8CMFcL5bveaJ4wHRs0HLCH7VHONkcl2F99dqXJBq8rRvBiFjLaCBFtooRYMgaiOOG71F_n0N9435N-HCHsbyG0tKYrA-mLBhxIItffT0c9ImkPVmhAQ7BaagnUmGJUJRC8xRh4021pdFx46KlUUH6T-uyZR7hbRt4-V3scwr7zdxVCpiIIWbqptL8nehDX7igcYHHlDh-U7xzximFsSxemXaOwg-XlOKFRT-udQAEuILBq6vV-wtIapnIX-q1R-yDKpDFZEJN6okg9efRWjo5Ds18iv6e1ze_0doDjgCl9btSI7XZJMR5KcAMqjt5Aii_u1vRCazTjoHR_Il6P1NACjlObygs8ZUJVq0AtLxCikXpOVZEYTZM95YcIvFo8uyoI0R0zwKdeANE3e9_upQj4HIwZ-BCse_ZOQeO2VsJYtYUyzouOKDFCvz4amxtHGWBGS8ePGZcjEcD-XjopBfLIFZzoUM79_C_l_dQJ9pUan66D-TaPTRy-MyLbSOK176wDHgCoZz2kg2sLjPiq1sO-kgAaPqMNY3S2ERFe0AOt6xbW9yNdoeE5XdLgw3l-RRfUIqQnE41DR0F6cK9trVdiE9k0x6nex38RRcpnpwViFENGA2EF7anrf4pxtLN24D_KgOdsaQ13XReR8Xo0IIzUc0BDQwFZXpG9OpT1M0CgNwQFnn8b3C6NIZMdIgnN1aP5fTX1XhuoykJSwoy8KG1kehXFILJYR9vJYs3v-a_mC4XNg0wu0PXiXJ8JiLhgkWzbzm-b7_Af1E5H7rBQNDduS3oY00LatUFHKzLzMKDFXGIE49bhkoRR51fhrFJ0AEqzTCN_6Wz3m5okBCEOXLrNC6gWIzt__o-M_5Zl5DH34L9edJCXvpWJ5FVv105sxqwDmXtmh3oGGVC4wLF73yKQya5_d9KfCEIhGgVrce-ppqdnri6JPXxdTWb4alD67-RR9yxDmhSLrRrc_SGgKR8OZYg2IDyZKHs_Z9JMYVSw2Bsf9moWdwi9SkNA4BN7CdAagB8a1P1OyWXMKnybRWyiH1-hymTOTN7F88f1ZOo6qXHfQCkrFQPLeP_Drp-BNlbC6CdTpdhZ60g41wGHCmdKQQqdJxD0mwe21D0cHk9zVJdw3Nh0oxw4For91CY1ZXBAeIUdl8AVVTFLUHgOPDFuVojEGAAQn48yjWKyp0p1uYZ4CD_9NmkaGzYBNCAfVrpvmMAqwFlJFtPNtuoyBytVh39_mx2avWSKeQkd2GNcPk-dz6csnT5VVC85h9p6_wD2PG9rCqtt5QkzlIcyw14Ck0qjt50KWTo50"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 240,
+    "completion_tokens": 191,
+    "total_tokens": 431,
+    "cost": 0.00221,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0003,
+      "upstream_inference_completions_cost": 0.00191
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 171,
+      "image_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765537591-2tgNqUbrT0McbKMsj2tt",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765537591,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 89\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating SQL security**\n\nI need to decide if this is vulnerable. They validate the ID by just disallowing single quotes, but the SQL query is written as `SELECT * FROM tokens WHERE id = %s`, meaning it expects a numeric type. However, they don't restrict the input to digits, so an attacker could inject something like `\"1 OR 1=1\\n\"`. Since single quotes are disallowed, it would pass the validation. This looks like a case of SQL injection, which falls under CWE-89. I\u2019ll return this as JSON.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating SQL security**\n\nI need to decide if this is vulnerable. They validate the ID by just disallowing single quotes, but the SQL query is written as `SELECT * FROM tokens WHERE id = %s`, meaning it expects a numeric type. However, they don't restrict the input to digits, so an attacker could inject something like `\"1 OR 1=1\\n\"`. Since single quotes are disallowed, it would pass the validation. This looks like a case of SQL injection, which falls under CWE-89. I\u2019ll return this as JSON."
+          },
+          {
+            "id": "rs_0fd671b2ddc8138301693bf73807bc8195a4a54b2d950df0d3",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpO_c8EekBIEKASjpvI_tgUiUxvnj6DWBMNo0720gAhNqZ6K1LrhJs6fjqNkgwBLm3J847tvGpnIcMkHqUoS7a3Jnm2kPAbwMBv_KLW6yVdK-j4iO7RsgtN9CuLbPUH8XyZEGqLeuFLx5IeWoIkLiXVrw041njFOWuca4CiOLxW7Ha8bsOzPAiCxy11vCTm6sgJ4pNoDjrpde2kJ_0pMOkm3s-5rOmH9OPqb6radiBLOhZA25mh1eNQUjX5SaYNip7iTRd3nSnrUmTjLbXOCScha5CrwfOU6z5nYuILsXn3lk5HkA0Ch4aoyHUKsu_9EDiF97BuFHfrLVHkxaY6yDefhOrSJUgjNqRk8N46fgqQAdNVs-Broo4xnjCGfSUoATpF45aJ6h_XHX36-4cuJjH9PrlUwVvLNoUElrQlkTwW-qD5rZYMkowQB-QKX-eo1vgEe0jT1b7O04WJqPL1PdO1DyVUJSrrzCuFJcvBs-ZIdDV6nPHDA7etzBog1c6oFBCnY9bf64lQs_JUTN6-ZEwrof2xP-qYWdxy_MJBaOIAfo3sKh-2Dss54Si7AsrRA9e5OaWktmi0_YX_bj0sfJ9QyIKxSHu5JvqKBeDzPn6fdUtxp61o4UKosA0ST72pIlsWqh9bbhWoNUfoxPAteQaEJRqu3t9rcOh5fQrPv5ylieQ8BmkkiSeECh2AzmWYtpaYIRhaw8SzbsEH2IeEEtao9aWeLzevyM--Ts59m7ySW4AxudCoMaiT-G7BrrmnqzzLRNPdqB4hkHp-bxPnKs_hpbSv2opCdPzOh--092tjtlJHFd_vj8jSzQjs6wdpyjPbEETBqdKB4Mx4B4hU6xpvUFcJLVSU_rztytENjfsKWzJYjEb1dRm1b9zbSTNMdl8z_mtF1gwdWNf-eHGqnPIGce6-qJ6BZT8MYr6_P_vWtRHJcHGNzvefX_khoZqOOUBoYtvEJvZtQp1pigmCd-MCvRKRbhQsNF6030lHzcYzebEIErLeiAICsxYZHca-vb-IgQQvXBYfNrm70Uxeq2OsT9A654DoselimePNclEzf57EeJTI8_gnmxsxqTPqwUy6xH2SqWRfiQSoeDLnGx8ww5vNFcvkODeheRc2SIRG8APY0MDpjg2cQjxEkZqdb2XyHPw4WioCyfWr20OvN_kxJVEVNWiynhUJbPHG0bGQ6L1tChTzhrqhv8GmnNjoDAuJvjoKGWTyGqpTbXbYM9k1PKhSZXZRUZIyyQnARdiRzPV93f1NMdg1HtAG_Amr_GO_ErF"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 582,
+    "completion_tokens": 104,
+    "total_tokens": 686,
+    "cost": 0.0017675,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0007275,
+      "upstream_inference_completions_cost": 0.00104
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 80,
+      "image_tokens": 0
+    }
+  }
+}
