@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765499338-vRvqiTdSa0cInFTw6HwG",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765499338,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 369\n}",
+        "refusal": null,
+        "reasoning": "The code snippet is:\n\n#include <stdio.h>\n\n\n## Examining code snippet  \n- The code includes standard I/O and utility libraries, suggesting basic operations.  \n- It converts the string \"2\" to an integer, multiplies by 500, then subtracts 1000 to get nn.  \n- The value of nn determines what, calculated as 1000 divided by nn.  \n- The result is printed using printf, with the program returning 0 upon completion.\n\n## Examining code snippet  \n- The string \"2\" converts to the integer 2 using atoi, then multiplies by 500, resulting in 1000.  \n- Subtracting 1000 from 1000 gives nn = 0, leading to a division by zero in the calculation of what.  \n- Division by zero in C causes undefined behavior, potentially crashing the program.  \n- This issue may trigger a SIGFPE signal, indicating a runtime error on most systems.  \n\n## Assessing security implications  \n- Division by zero is a bug that can crash the program, raising questions about potential security vulnerabilities.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "The code snippet is:\n\n#include <stdio.h>\n\n\n## Examining code snippet  \n- The code includes standard I/O and utility libraries, suggesting basic operations.  \n- It converts the string \"2\" to an integer, multiplies by 500, then subtracts 1000 to get nn.  \n- The value of nn determines what, calculated as 1000 divided by nn.  \n- The result is printed using printf, with the program returning 0 upon completion.\n\n## Examining code snippet  \n- The string \"2\" converts to the integer 2 using atoi, then multiplies by 500, resulting in 1000.  \n- Subtracting 1000 from 1000 gives nn = 0, leading to a division by zero in the calculation of what.  \n- Division by zero in C causes undefined behavior, potentially crashing the program.  \n- This issue may trigger a SIGFPE signal, indicating a runtime error on most systems.  \n\n## Assessing security implications  \n- Division by zero is a bug that can crash the program, raising questions about potential security vulnerabilities."
+          },
+          {
+            "id": "rs_29ab274f-7df2-8c31-90a1-e7f9c88f6d96",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 307,
+    "completion_tokens": 597,
+    "total_tokens": 904,
+    "cost": 0.00091082,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 1.532e-05,
+      "upstream_inference_completions_cost": 0.0008955
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 580,
+      "image_tokens": 0
+    }
+  }
+}

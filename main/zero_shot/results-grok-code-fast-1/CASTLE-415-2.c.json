@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765499599-NmilZg3d0qbkJaR9G3gL",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765499599,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"vulnerable\": true, \"cwe\": 415}",
+        "refusal": null,
+        "reasoning": "First, the task is to examine the code for security vulnerabilities and return ONLY a JSON object in this format:\n\n\n## Assessing Security Vulnerabilities\n- The task is to analyze code for security issues and return a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER).\n- The output format requires a clear determination of vulnerability presence and its corresponding CWE code.\n\n## Examining Code Behavior\n- The code allocates memory for 'a' using malloc and sets its value to 5, then passes it to square(), which frees 'a' after squaring.\n- After square(), 'a' becomes a dangling pointer, as the memory it pointed to was freed.\n\n## Analyzing Pointer Operations\n- The code sets 'p' to the address of stack variable 'b', then calls swap() to exchange 'a' and 'p'.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to examine the code for security vulnerabilities and return ONLY a JSON object in this format:\n\n\n## Assessing Security Vulnerabilities\n- The task is to analyze code for security issues and return a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER).\n- The output format requires a clear determination of vulnerability presence and its corresponding CWE code.\n\n## Examining Code Behavior\n- The code allocates memory for 'a' using malloc and sets its value to 5, then passes it to square(), which frees 'a' after squaring.\n- After square(), 'a' becomes a dangling pointer, as the memory it pointed to was freed.\n\n## Analyzing Pointer Operations\n- The code sets 'p' to the address of stack variable 'b', then calls swap() to exchange 'a' and 'p'."
+          },
+          {
+            "id": "rs_7f07f0b9-1d53-5f3f-83e1-23ff64bc811f",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 432,
+    "completion_tokens": 625,
+    "total_tokens": 1057,
+    "cost": 0.00097782,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 4.032e-05,
+      "upstream_inference_completions_cost": 0.0009375
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 612,
+      "image_tokens": 0
+    }
+  }
+}

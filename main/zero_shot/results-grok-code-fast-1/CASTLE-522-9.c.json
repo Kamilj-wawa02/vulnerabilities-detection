@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765500045-wvhCTqI9c66fYeDB2Gq3",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765500045,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"vulnerable\": true, \"cwe\": 200}",
+        "refusal": null,
+        "reasoning": "The task is to examine the code snippet and determine if it contains a security vulnerability, then return a JSON object with \"vulnerable\": true or false, and \"cwe\": CODE_NUMBER.\n\n\n## Examining Code Snippet  \n- The task involves analyzing a code snippet to identify potential security vulnerabilities.  \n- The goal is to determine if the code is vulnerable and map it to a CWE (Common Weakness Enumeration) code.  \n- The output must be a JSON object with \"vulnerable\": true/false and \"cwe\": CODE_NUMBER.  \n- The code includes a connection mechanism, which may be relevant for vulnerability assessment.  \n- Further analysis is needed to check for common issues like insecure data handling or authentication flaws.\n\n## Examining Code Snippet  \n- The code connects to a MySQL database using environment variables for credentials, selects id and token from a \"tokens\" table, and prints the results to stdout.  \n- Using environment variables for credentials is standard but could be risky if exposed in deployment, though not inherently vulnerable.  \n- The query is static with no user input, ruling out SQL injection as a concern.  \n- Printing tokens to stdout might log or expose sensitive data in production, potentially leading to information disclosure.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "The task is to examine the code snippet and determine if it contains a security vulnerability, then return a JSON object with \"vulnerable\": true or false, and \"cwe\": CODE_NUMBER.\n\n\n## Examining Code Snippet  \n- The task involves analyzing a code snippet to identify potential security vulnerabilities.  \n- The goal is to determine if the code is vulnerable and map it to a CWE (Common Weakness Enumeration) code.  \n- The output must be a JSON object with \"vulnerable\": true/false and \"cwe\": CODE_NUMBER.  \n- The code includes a connection mechanism, which may be relevant for vulnerability assessment.  \n- Further analysis is needed to check for common issues like insecure data handling or authentication flaws.\n\n## Examining Code Snippet  \n- The code connects to a MySQL database using environment variables for credentials, selects id and token from a \"tokens\" table, and prints the results to stdout.  \n- Using environment variables for credentials is standard but could be risky if exposed in deployment, though not inherently vulnerable.  \n- The query is static with no user input, ruling out SQL injection as a concern.  \n- Printing tokens to stdout might log or expose sensitive data in production, potentially leading to information disclosure."
+          },
+          {
+            "id": "rs_706059c4-eab9-3d10-7172-5ef0cfd9d9cd",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 648,
+    "completion_tokens": 581,
+    "total_tokens": 1229,
+    "cost": 0.00096654,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 192,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 9.504e-05,
+      "upstream_inference_completions_cost": 0.0008715
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 568,
+      "image_tokens": 0
+    }
+  }
+}

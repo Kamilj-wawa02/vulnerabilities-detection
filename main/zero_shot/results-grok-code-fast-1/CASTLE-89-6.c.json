@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765498480-zN1OGKQASnAU0NuyMuJ0",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765498480,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 89\n}",
+        "refusal": null,
+        "reasoning": "The code is a C program that connects to a MySQL database and performs a query based on user input. I need to check for security vulnerabilities.\n\n\n## Examining Code Functionality\n- The code is written in C and handles connecting to a MySQL database.  \n- It executes a query using user input, starting with \"SELECT * FROM users WHERE.\"\n\n## Examining Code Functionality\n- The query uses \"firstname LIKE '%s'\" with sprintf to insert argv[1], creating a SQL query.  \n- This approach is vulnerable to SQL injection, as argv[1] is not sanitized or handled with prepared statements.  \n- For example, if argv[1] includes \"' OR '1'='1'\", it could manipulate the query to return unauthorized data.  \n- The vulnerability aligns with CWE-89, confirming SQL injection risk.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "The code is a C program that connects to a MySQL database and performs a query based on user input. I need to check for security vulnerabilities.\n\n\n## Examining Code Functionality\n- The code is written in C and handles connecting to a MySQL database.  \n- It executes a query using user input, starting with \"SELECT * FROM users WHERE.\"\n\n## Examining Code Functionality\n- The query uses \"firstname LIKE '%s'\" with sprintf to insert argv[1], creating a SQL query.  \n- This approach is vulnerable to SQL injection, as argv[1] is not sanitized or handled with prepared statements.  \n- For example, if argv[1] includes \"' OR '1'='1'\", it could manipulate the query to return unauthorized data.  \n- The vulnerability aligns with CWE-89, confirming SQL injection risk."
+          },
+          {
+            "id": "rs_effc27b2-047b-cf00-a834-362a9e6b87c9",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1029,
+    "completion_tokens": 584,
+    "total_tokens": 1613,
+    "cost": 0.00104724,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 192,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00017124,
+      "upstream_inference_completions_cost": 0.000876
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 567,
+      "image_tokens": 0
+    }
+  }
+}

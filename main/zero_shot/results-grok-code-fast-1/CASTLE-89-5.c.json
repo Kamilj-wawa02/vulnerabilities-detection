@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765498473-2RBYwHXAskqXA5lWRI3m",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765498473,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 89\n}",
+        "refusal": null,
+        "reasoning": "First, the task is to examine the code for a security vulnerability and return ONLY a JSON object in the format:\n\n\n## Examining Code Security\n\n- The task requires analyzing code for security vulnerabilities and returning a JSON object with a vulnerability status and CWE code.\n- The output format must include \"vulnerable\" (true or false) and \"cwe\" with a code number if vulnerable.\n- Found that the JSON object needs to be complete, ensuring all required fields are present.\n- Noted the importance of determining vulnerability accurately to set the \"vulnerable\" field correctly.\n\n## Assessing Vulnerability Details  \n- The code is a C program using MySQL, taking an ID input and validating it by checking for single quotes before constructing a database query.  \n- The validation function rejects inputs with single quotes, returning 0 for invalid and 1 for valid.  \n- The SQL query is built using snprintf with the format \"SELECT * FROM tokens WHERE id = %s,\" directly inserting user input without escaping.  \n\n## Evaluating SQL Injection Risk  \n- This setup suggests a classic SQL injection vulnerability, as validated inputs are still inserted directly into the query.  \n- While single quotes are blocked, attackers might exploit other methods, like using numeric IDs without quotes or server configurations allowing double quotes.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to examine the code for a security vulnerability and return ONLY a JSON object in the format:\n\n\n## Examining Code Security\n\n- The task requires analyzing code for security vulnerabilities and returning a JSON object with a vulnerability status and CWE code.\n- The output format must include \"vulnerable\" (true or false) and \"cwe\" with a code number if vulnerable.\n- Found that the JSON object needs to be complete, ensuring all required fields are present.\n- Noted the importance of determining vulnerability accurately to set the \"vulnerable\" field correctly.\n\n## Assessing Vulnerability Details  \n- The code is a C program using MySQL, taking an ID input and validating it by checking for single quotes before constructing a database query.  \n- The validation function rejects inputs with single quotes, returning 0 for invalid and 1 for valid.  \n- The SQL query is built using snprintf with the format \"SELECT * FROM tokens WHERE id = %s,\" directly inserting user input without escaping.  \n\n## Evaluating SQL Injection Risk  \n- This setup suggests a classic SQL injection vulnerability, as validated inputs are still inserted directly into the query.  \n- While single quotes are blocked, attackers might exploit other methods, like using numeric IDs without quotes or server configurations allowing double quotes."
+          },
+          {
+            "id": "rs_3edf45cd-a048-625a-5924-64cc2776332d",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 778,
+    "completion_tokens": 890,
+    "total_tokens": 1668,
+    "cost": 0.00145604,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 192,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00012104,
+      "upstream_inference_completions_cost": 0.001335
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 873,
+      "image_tokens": 0
+    }
+  }
+}

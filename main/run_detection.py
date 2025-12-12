@@ -14,10 +14,10 @@ from time import sleep
 #
 # Models available at: https://openrouter.ai/models
 
-MODEL = "anthropic/claude-sonnet-4.5"
+MODEL = "x-ai/grok-code-fast-1"
 START_INDEX = 0
 END_INDEX = -1
-STRATEGY = "role_based"  # options: "zero_shot", "role_based"
+STRATEGY = "zero_shot"  # options: "zero_shot", "role_based", "chain_of_thought"
 
 DEBUG = False
 DEBUG_PROMPTS = False
@@ -37,6 +37,11 @@ ZERO_SHOT_PROMPT_BEGINNING = (
 ROLE_BASED_PROMPT_BEGINNING = (
     "You are a senior security specialist with 20 years of experience in detecting and analyzing vulnerabilities in C/C++ applications. "
     "Review the following code snippet to identify potential vulnerabilities."
+)
+
+CHAIN_OF_THOUGHT_PROMPT_BEGINNING = (
+    ROLE_BASED_PROMPT_BEGINNING +
+    "Think step by step and explain your reasoning before providing the final answer."
 )
 
 BENCHMARK_JSON_PATH = "../data/CASTLE-C250.json"
@@ -69,6 +74,8 @@ def build_prompt(entry):
         beginning = ZERO_SHOT_PROMPT_BEGINNING
     elif STRATEGY == "role_based":
         beginning = ROLE_BASED_PROMPT_BEGINNING
+    elif STRATEGY == "chain_of_thought":
+        beginning = CHAIN_OF_THOUGHT_PROMPT_BEGINNING
 
     return beginning + JSON_FORMAT_REQUIREMENT + "\nCode snippet:\n" + entry["code"]
 

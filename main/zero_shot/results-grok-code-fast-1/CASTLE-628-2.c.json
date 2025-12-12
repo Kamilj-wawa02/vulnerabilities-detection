@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765500249-FjkpESnKB4hEJZuZFm8W",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765500249,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"vulnerable\": false, \"cwe\": 0}",
+        "refusal": null,
+        "reasoning": "First, the task is to examine the code snippet for a security vulnerability. I need to return ONLY a JSON object in this format:\n\n\n## Assessing security vulnerability  \n- The task is to analyze a code snippet for potential security issues.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER) fields.\n\n## Examining code logic  \n- The code includes a `gte` function that compares two integers, returning -1 if the first is less, 0 if equal, and 1 if greater, similar to strcmp for integers.  \n- In main, with a=55 and b=6, `gte(b, a)` returns -1 since 6<55, triggering a print \"A is smaller than b!\" which is incorrect as 55>6, indicating a logic error.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to examine the code snippet for a security vulnerability. I need to return ONLY a JSON object in this format:\n\n\n## Assessing security vulnerability  \n- The task is to analyze a code snippet for potential security issues.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER) fields.\n\n## Examining code logic  \n- The code includes a `gte` function that compares two integers, returning -1 if the first is less, 0 if equal, and 1 if greater, similar to strcmp for integers.  \n- In main, with a=55 and b=6, `gte(b, a)` returns -1 since 6<55, triggering a print \"A is smaller than b!\" which is incorrect as 55>6, indicating a logic error."
+          },
+          {
+            "id": "rs_5d286844-3009-ef72-18a8-5156ebe33dbb",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 366,
+    "completion_tokens": 735,
+    "total_tokens": 1101,
+    "cost": 0.00112962,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 2.712e-05,
+      "upstream_inference_completions_cost": 0.0011025
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 722,
+      "image_tokens": 0
+    }
+  }
+}

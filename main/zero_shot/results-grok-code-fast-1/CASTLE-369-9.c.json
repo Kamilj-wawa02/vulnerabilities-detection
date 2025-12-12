@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765499445-4TRMV4NUFpUPRRRCuqdS",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765499445,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": false,\n  \"cwe\": null\n}",
+        "refusal": null,
+        "reasoning": "The code is simple: it prints the result of 0. divided by 94553.88423. This is division by a non-zero number, so no division by zero, no crash.\n\n\n## Examining Code Operation\n- The code performs a division operation: 0 divided by 94553.88423.\n- Since the divisor is non-zero, the operation avoids division by zero and won't crash.\n{\n  \"summary\": [\n    {\n      \"## Evaluating Security Risks\": [\n        - The code prints a simple floating-point division result, with no user input or buffers involved.\n        - There's no format string vulnerability since the format is hardcoded and %f matches a double.\n        - Floating-point division here is safe, with no apparent security issues.\n        - The program lacks elements typically exploited, like memory manipulation or external data.\n        - Overall, no vulnerabilities detected in this straightforward operation.\n      ]\n    }\n  ],\n  \"vulnerable\": false,\n  \"cwe\": 0\n}\n\n## Evaluating Security Risks\n- The code involves a simple division of 0.0 by 94553.88423, resulting in 0.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "The code is simple: it prints the result of 0. divided by 94553.88423. This is division by a non-zero number, so no division by zero, no crash.\n\n\n## Examining Code Operation\n- The code performs a division operation: 0 divided by 94553.88423.\n- Since the divisor is non-zero, the operation avoids division by zero and won't crash.\n{\n  \"summary\": [\n    {\n      \"## Evaluating Security Risks\": [\n        - The code prints a simple floating-point division result, with no user input or buffers involved.\n        - There's no format string vulnerability since the format is hardcoded and %f matches a double.\n        - Floating-point division here is safe, with no apparent security issues.\n        - The program lacks elements typically exploited, like memory manipulation or external data.\n        - Overall, no vulnerabilities detected in this straightforward operation.\n      ]\n    }\n  ],\n  \"vulnerable\": false,\n  \"cwe\": 0\n}\n\n## Evaluating Security Risks\n- The code involves a simple division of 0.0 by 94553.88423, resulting in 0."
+          },
+          {
+            "id": "rs_640c1162-852e-e0e6-65f4-6f38097bdeff",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 289,
+    "completion_tokens": 770,
+    "total_tokens": 1059,
+    "cost": 0.00116672,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 1.172e-05,
+      "upstream_inference_completions_cost": 0.001155
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 754,
+      "image_tokens": 0
+    }
+  }
+}

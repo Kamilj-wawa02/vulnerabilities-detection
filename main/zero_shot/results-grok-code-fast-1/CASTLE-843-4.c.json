@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765501500-Xab9fbkWC5KZwFwjpU5V",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765501500,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": false,\n  \"cwe\": null\n}",
+        "refusal": null,
+        "reasoning": "First, the task is to examine the code and determine if it has a security vulnerability. Return ONLY a JSON object with \"vulnerable\": true or false, and \"cwe\": CODE_NUMBER if vulnerable.\n\n\n## Assessing code security  \n- The task is to analyze the code for potential security vulnerabilities.  \n- The output must be a JSON object stating whether the code is vulnerable and, if so, the CWE code number.  \n- The reasoning focuses on identifying specific security flaws in the provided code.  \n- Limited information suggests checking for common vulnerabilities like input validation or buffer overflows.\n\n## Examining code behavior  \n- The code uses a union to store either an integer or a float, setting and printing an integer value (5) first.  \n- It then sets and prints a float value (5.8) as an integer, accessing shared memory, which shows the float's bit representation.  \n\n## Evaluating for vulnerabilities  \n- Type punning via unions in C is allowed, but misusing it (e.g.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to examine the code and determine if it has a security vulnerability. Return ONLY a JSON object with \"vulnerable\": true or false, and \"cwe\": CODE_NUMBER if vulnerable.\n\n\n## Assessing code security  \n- The task is to analyze the code for potential security vulnerabilities.  \n- The output must be a JSON object stating whether the code is vulnerable and, if so, the CWE code number.  \n- The reasoning focuses on identifying specific security flaws in the provided code.  \n- Limited information suggests checking for common vulnerabilities like input validation or buffer overflows.\n\n## Examining code behavior  \n- The code uses a union to store either an integer or a float, setting and printing an integer value (5) first.  \n- It then sets and prints a float value (5.8) as an integer, accessing shared memory, which shows the float's bit representation.  \n\n## Evaluating for vulnerabilities  \n- Type punning via unions in C is allowed, but misusing it (e.g."
+          },
+          {
+            "id": "rs_a59ce3c6-76f2-9102-880a-c3d779762c1e",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 341,
+    "completion_tokens": 555,
+    "total_tokens": 896,
+    "cost": 0.00086614,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 192,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 3.364e-05,
+      "upstream_inference_completions_cost": 0.0008325
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 539,
+      "image_tokens": 0
+    }
+  }
+}

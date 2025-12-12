@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765499380-6jsIziFXs0hDLasfnWxV",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765499380,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 369\n}",
+        "refusal": null,
+        "reasoning": "First, the task is to examine the code snippet for a security vulnerability. I need to return ONLY a JSON object in the format:\n\n\n## Evaluating code security\n\n- The task is to analyze a code snippet for potential security vulnerabilities.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER) fields.\n\n## Evaluating code security\n- The task involves deciding the \"cwe\" value for the JSON output when no vulnerability is found; the format requires \"CODE_NUMBER\".\n- If the code isn't vulnerable, options include setting \"cwe\" to 0, null, or an empty string, but JSON needs a valid value.\n\n## Deciding output format\n- The instruction implies \"cwe\" should only have a number if vulnerable, but to keep JSON valid, setting \"cwe\" to 0 when not vulnerable seems practical.\n- Ultimately, if not vulnerable, the output will have \"vulnerable\": false and \"cwe\": 0 to meet the format requirements.\n\n## Evaluating code security\n- The code uses scanf(\"%9d\", &input), limiting input to 9 digits, which prevents buffer overflow for the int type.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to examine the code snippet for a security vulnerability. I need to return ONLY a JSON object in the format:\n\n\n## Evaluating code security\n\n- The task is to analyze a code snippet for potential security vulnerabilities.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER) fields.\n\n## Evaluating code security\n- The task involves deciding the \"cwe\" value for the JSON output when no vulnerability is found; the format requires \"CODE_NUMBER\".\n- If the code isn't vulnerable, options include setting \"cwe\" to 0, null, or an empty string, but JSON needs a valid value.\n\n## Deciding output format\n- The instruction implies \"cwe\" should only have a number if vulnerable, but to keep JSON valid, setting \"cwe\" to 0 when not vulnerable seems practical.\n- Ultimately, if not vulnerable, the output will have \"vulnerable\": false and \"cwe\": 0 to meet the format requirements.\n\n## Evaluating code security\n- The code uses scanf(\"%9d\", &input), limiting input to 9 digits, which prevents buffer overflow for the int type."
+          },
+          {
+            "id": "rs_99752d7b-6fa9-a392-71b7-31436288c2f9",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 352,
+    "completion_tokens": 950,
+    "total_tokens": 1302,
+    "cost": 0.00146084,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 192,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 3.584e-05,
+      "upstream_inference_completions_cost": 0.001425
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 933,
+      "image_tokens": 0
+    }
+  }
+}

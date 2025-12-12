@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765498581-xGhUfak7YE5CRrNmxr5D",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765498581,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 119\n}",
+        "refusal": null,
+        "reasoning": "First, the code snippet is C code. It declares an array `int a[200];` and initializes it with squares of numbers from 0 to 199.\n\n\n## Examining Code Details\n- The code snippet is written in C and declares an integer array `int a[200];`.\n- It initializes the array with squares of numbers from 0 to 199.\n\n## Examining Code Details\n- The calculation `arrayLength = sizeof(a) / sizeof(char)` results in 800, as `sizeof(a)` is 800 bytes (200 elements * 4 bytes per int) and `sizeof(char)` is 1 byte.\n- The loop iterates from i=0 to i<800, attempting to access `a[i]`, which exceeds the array's 200 elements, causing a buffer overflow.\n- This out-of-bounds access is undefined behavior in C, potentially leading to crashes or printing garbage values.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the code snippet is C code. It declares an array `int a[200];` and initializes it with squares of numbers from 0 to 199.\n\n\n## Examining Code Details\n- The code snippet is written in C and declares an integer array `int a[200];`.\n- It initializes the array with squares of numbers from 0 to 199.\n\n## Examining Code Details\n- The calculation `arrayLength = sizeof(a) / sizeof(char)` results in 800, as `sizeof(a)` is 800 bytes (200 elements * 4 bytes per int) and `sizeof(char)` is 1 byte.\n- The loop iterates from i=0 to i<800, attempting to access `a[i]`, which exceeds the array's 200 elements, causing a buffer overflow.\n- This out-of-bounds access is undefined behavior in C, potentially leading to crashes or printing garbage values."
+          },
+          {
+            "id": "rs_a9087aed-ccc5-bfc6-f800-65a73a82464d",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 350,
+    "completion_tokens": 583,
+    "total_tokens": 933,
+    "cost": 0.00089842,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 2.392e-05,
+      "upstream_inference_completions_cost": 0.0008745
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 566,
+      "image_tokens": 0
+    }
+  }
+}

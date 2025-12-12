@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765499064-z8zoM6pV3u8akVmmbtuh",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765499064,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 327\n}",
+        "refusal": null,
+        "reasoning": "The task is to examine the code snippet for security vulnerabilities and return a JSON object with \"vulnerable\": true or false, and \"cwe\": CODE_NUMBER if vulnerable, nothing else.\n\n\n## Examining code security  \n- The task is to analyze a code snippet for security vulnerabilities.  \n- The output must be a JSON object with \"vulnerable\": true or false, and \"cwe\": CODE_NUMBER if applicable.\n\n## Examining code security  \n- The code creates a SQLite table for users with username, password, and salt fields.  \n- It registers users by validating inputs (alphanumeric only), generating a salt, and hashing passwords with SHA256, then inserting into the database.  \n\n## Identifying vulnerabilities  \n- Found a critical error: #define EVP_sha_256 EVP_md5, so MD5 is used instead of SHA256, violating security standards.  \n- This issue aligns with CWE-327, as MD5 is a broken cryptographic algorithm for password hashing.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "The task is to examine the code snippet for security vulnerabilities and return a JSON object with \"vulnerable\": true or false, and \"cwe\": CODE_NUMBER if vulnerable, nothing else.\n\n\n## Examining code security  \n- The task is to analyze a code snippet for security vulnerabilities.  \n- The output must be a JSON object with \"vulnerable\": true or false, and \"cwe\": CODE_NUMBER if applicable.\n\n## Examining code security  \n- The code creates a SQLite table for users with username, password, and salt fields.  \n- It registers users by validating inputs (alphanumeric only), generating a salt, and hashing passwords with SHA256, then inserting into the database.  \n\n## Identifying vulnerabilities  \n- Found a critical error: #define EVP_sha_256 EVP_md5, so MD5 is used instead of SHA256, violating security standards.  \n- This issue aligns with CWE-327, as MD5 is a broken cryptographic algorithm for password hashing."
+          },
+          {
+            "id": "rs_d9c9a685-7d51-f648-839b-71717a459707",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1412,
+    "completion_tokens": 627,
+    "total_tokens": 2039,
+    "cost": 0.00118834,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 192,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00024784,
+      "upstream_inference_completions_cost": 0.0009405
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 610,
+      "image_tokens": 0
+    }
+  }
+}
