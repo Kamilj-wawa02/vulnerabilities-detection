@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765065735-wiyk7K379O0HsjndrIlx",
+  "id": "gen-1765649209-kzwEdMIFVSd3Wzo24pzn",
   "provider": "xAI",
   "model": "x-ai/grok-code-fast-1",
   "object": "chat.completion",
-  "created": 1765065735,
+  "created": 1765649209,
   "choices": [
     {
       "logprobs": null,
@@ -12,45 +12,45 @@
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 119\n}",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 122\n}",
         "refusal": null,
-        "reasoning": "The code has a function addStrLength that takes two strings, concatenates them into a buffer, and returns the length of the concatenated string.\n\n\n## Examining Function Behavior\n- The `addStrLength` function takes two strings and concatenates them into a buffer.  \n- It returns the length of the concatenated string, suggesting a utility for string size calculations.  \n- The buffer is allocated with 2048 bytes, limiting the maximum size of concatenated strings.  \n- The function initializes the buffer with `str[0] = 0`, likely setting a null terminator for string handling.\n\n## Analyzing Buffer Safety  \n- The `addStrLength` function uses `strcat` to append `str1` and `str2` to a 2048-byte buffer, starting with `str[0] = 0` to initialize an empty string.",
+        "reasoning": "The code has a function addStrLength that concatenates two strings and returns the length of the result. It allocates 2048 bytes for str, initializes it with a null terminator, then concatenates str1 and str2, and returns strlen(str).\n\n\n## Examining Code Functionality  \n- The function `addStrLength` combines two input strings, `str1` and `str2`, into a new string.  \n- It allocates 2048 bytes for the result, initializes it with a null terminator, and returns the length using `strlen`.\n\n## Examining Code Functionality  \n- The function assumes the combined length of input strings, including the null terminator, fits within 2048 bytes.  \n- Without length checks, `strcat` could cause a buffer overflow if strings exceed the allocated space.  \n\n## Assessing Vulnerability  \n- This buffer overflow is classified as CWE-122, a heap-based buffer overflow, posing a security risk.  \n- With given inputs (\"asd\" and \"::\"), no overflow occurs, but the code remains vulnerable to longer inputs.",
         "reasoning_details": [
           {
             "format": "xai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "The code has a function addStrLength that takes two strings, concatenates them into a buffer, and returns the length of the concatenated string.\n\n\n## Examining Function Behavior\n- The `addStrLength` function takes two strings and concatenates them into a buffer.  \n- It returns the length of the concatenated string, suggesting a utility for string size calculations.  \n- The buffer is allocated with 2048 bytes, limiting the maximum size of concatenated strings.  \n- The function initializes the buffer with `str[0] = 0`, likely setting a null terminator for string handling.\n\n## Analyzing Buffer Safety  \n- The `addStrLength` function uses `strcat` to append `str1` and `str2` to a 2048-byte buffer, starting with `str[0] = 0` to initialize an empty string."
+            "summary": "The code has a function addStrLength that concatenates two strings and returns the length of the result. It allocates 2048 bytes for str, initializes it with a null terminator, then concatenates str1 and str2, and returns strlen(str).\n\n\n## Examining Code Functionality  \n- The function `addStrLength` combines two input strings, `str1` and `str2`, into a new string.  \n- It allocates 2048 bytes for the result, initializes it with a null terminator, and returns the length using `strlen`.\n\n## Examining Code Functionality  \n- The function assumes the combined length of input strings, including the null terminator, fits within 2048 bytes.  \n- Without length checks, `strcat` could cause a buffer overflow if strings exceed the allocated space.  \n\n## Assessing Vulnerability  \n- This buffer overflow is classified as CWE-122, a heap-based buffer overflow, posing a security risk.  \n- With given inputs (\"asd\" and \"::\"), no overflow occurs, but the code remains vulnerable to longer inputs."
           },
           {
-            "id": "rs_c28370c7-f39e-9369-e3b8-ec8040ff9396",
+            "id": "rs_4f453119-5464-741c-ca71-1474d7db9182",
             "format": "xai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "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"
+            "data": "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"
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 409,
-    "completion_tokens": 483,
-    "total_tokens": 892,
-    "cost": 0.00076022,
+    "prompt_tokens": 402,
+    "completion_tokens": 584,
+    "total_tokens": 986,
+    "cost": 0.00092184,
     "is_byok": false,
     "prompt_tokens_details": {
-      "cached_tokens": 256,
+      "cached_tokens": 192,
       "audio_tokens": 0,
       "video_tokens": 0
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 3.572e-05,
-      "upstream_inference_completions_cost": 0.0007245
+      "upstream_inference_prompt_cost": 4.584e-05,
+      "upstream_inference_completions_cost": 0.000876
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 466,
+      "reasoning_tokens": 567,
       "image_tokens": 0
     }
   }

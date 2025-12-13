@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765054984-YnfN7wd2N3VTb0XD1BWG",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765054984,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 476\n}",
+        "refusal": null,
+        "reasoning": "**Identifying vulnerabilities**\n\nFirst, I need to spot vulnerabilities in the code. There's an obvious error in comparing FILE* to -1, which should actually be compared to NULL. I realize this is a logic bug that can lead to dereferencing null. If fopen fails, it returns NULL, meaning the condition will be false, and fgets will be called with a NULL file pointer, resulting in undefined behavior, potentially causing a crash\u2014this is definitely a concern. Additionally, there are issues with using perror; it expects a string without a newline, but otherwise, it's fine. The use of fgets and printf appears safe, but the null pointer dereference signifies a clear vulnerability, specifically CWE-476.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying vulnerabilities**\n\nFirst, I need to spot vulnerabilities in the code. There's an obvious error in comparing FILE* to -1, which should actually be compared to NULL. I realize this is a logic bug that can lead to dereferencing null. If fopen fails, it returns NULL, meaning the condition will be false, and fgets will be called with a NULL file pointer, resulting in undefined behavior, potentially causing a crash\u2014this is definitely a concern. Additionally, there are issues with using perror; it expects a string without a newline, but otherwise, it's fine. The use of fgets and printf appears safe, but the null pointer dereference signifies a clear vulnerability, specifically CWE-476."
+          },
+          {
+            "id": "rs_0da02551759a3ef00169349a08f7708194b6e6abf9626a9818",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpNJoPmtZhrLqMIJwVSZTh_rJD4NtYsMpPtnB3S_zpwiSN-fRVZytA4qIu4hDtJAZnj0W6vD6J4N3u-dbnRO0BoyNaIT4uEQMAQYFRQGCkOpmvIhghh6U91Plc47aWFoO53NWqwNp6YDrkLm6iZybwFgtOKk0ODOuYevgbh6DKP9b95yGKyjP-KRGWwW5JZWsWd5ebxpT0Uo-GdIHHMRtchko02pfy8IEox8r5CVwUqx6BipSBJeezfZEWwwWbtbMcIW9pZdf1FYXNyg3jAE1rvboO-POaWgNuHkwqfqWkRjYx4WmGiDSzm2kIUPVmYGuAU6Lg5PVSv3tF--rnuFQSRIV56_tgObSmiSk8wtft1dThVjhdJk57067ci5_C4gIM5DdvsSFtGEOAGMpt8u18LemDlgwJ-51v5fBXW9qK56eWJWPU-hDrA7jnXH01haa9rMfNfa2EwTJnNqpZGg3RCMkwZIX6jZlA6xHwIohx7oTUDPvvQ88xSXUf-Fzcr9UaDWN3p3YQhpGEZf_tj3qW8k5SzAaTtwqvJY-S7r3ycnVKA3nRKtjaMaZV7POonUBEAayU3S6NEIUHOjPcpG47hvL1NzfG8LeQO0inGMHQA_2xe4CPvYqNy03VKwWcdZK_MNgTSeuwxEJkvohkJkQBUAcgH6-pFYfgT-xy7cP2L9Yt6IsnUmCgIMW91R1IF-FQXcXEd7YyuM78guTnASs-_ZZR5Swi2VtkGvqTHSiKF6yCn0J8ipKNOhOEoZBj2EhZBSDsNsRa0b7zOmzvQKyZ3TB09cMGfCD9FHeWatxuoobQvrBdN2KqZUIwWJEUBWy62AeNPz3naT4r4mHM2YF_boXIcXsybbPsXcCDJpH-Eh7rvvHaP_758mxjAVCCv3Faj54pNhaPo2RHS7LCVD9HuF6oEgyZlYzAWqaNvV4xIZbpzRgYpJiaqE6FhQGOOar8gWZouS4QpbK0mKjsgNeJCCq_xMAis5YAWff2Us433b9sSMIgPG_bzoj3mdAVpVk0f7W5mg5azVx8SqjZlfDG4Dt4dgLZFGvPtgcAsMAuJ4syDemnqGg-Q0vTta0L-hiN6rpCcy2eukd7b_zwAiKqwRvB0pbBe_s3jswUhsV3of85s-BCq2FlPYYbUgCBhHHA-1kbPwKPB3uQced9mEJyBhIns5J6Wg2hZ0kkXZagkoNJWox_quZ_ZZyMJ8nl0geitxeh1OozlWq_Mwz_WiplJni2IGmAiriU-5Xh2A-CFja-kFIc1c_DjKewRLXlmF-cznKDC7s1bI7dAofdO4w8_uGfNLQQLJSczyLSrzO2BxQ5jtJy741MtRD3d-BTvy54sv1FssTOVb4_EifhIpnpHKVAvgvsJoqOuqvh3vtN7IoBxPLDtQCZyzey07HTxl9eEYthEFyCtHDp12RyAoohrQ17BfWxDwVov62W_Gu5fnorkE_GYH4e38qX5dN5kfpP4dEx8L-yH5FnRMTiBnl4OCsfJYecof7jiXsHRiExFj5kxHmmXDq6zHdD2xeHGpFWwOL7tQEhPYanQboJozYPOZl02xQZrjvWFj4dWBui-X5PY9-rQ8zqlstbjJc3RlNpPEZBH2sufJKlhkVydQ3dKiNx8xXk302s9SbtVuZtDKvA_F1ynu9a_eqxcyzYOSTE_WnbK4jFho7L5jO2MuGC4uyX1X2CxD4DOpCbbl81ScfOcr7dLSFBOSB3FGH1DkMu_lCnbbpmVbbQwbQi-Leoayv1XAQttm9nharfYatGfaYL318D0rsGSddT7XxVOMZZBu2-7wcbmzX_DhNiglwt20qluWTvtExYDqJKXpiAsNQT4GOB0Rhgsf8HEEPqTlEXgV09L9fjcvTS8Y0VS6F3dMh2vc2XUH-cSd3tvCGNAIT89vxk9OtVC8QLSiDClpNgjkrvmywSaEzePvrSbKKEvoynX-ndOwfbiQT6AocoLnMMri86WXFE00VlLb-6-xSaUn5EgZi51A0LkcEh0VK11NYw7IWCI2A6L6ybitBbRei5hVw="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 198,
+    "completion_tokens": 221,
+    "total_tokens": 419,
+    "cost": 0.0024575,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0002475,
+      "upstream_inference_completions_cost": 0.00221
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 197,
+      "image_tokens": 0
+    }
+  }
+}

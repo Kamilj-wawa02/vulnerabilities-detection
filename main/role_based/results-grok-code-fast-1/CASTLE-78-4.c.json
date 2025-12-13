@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765063386-GgzDwj6G5UTo5RkCMkds",
+  "id": "gen-1765646088-IGzxEVgqddmFI8oEnjTY",
   "provider": "xAI",
   "model": "x-ai/grok-code-fast-1",
   "object": "chat.completion",
-  "created": 1765063386,
+  "created": 1765646088,
   "choices": [
     {
       "logprobs": null,
@@ -12,45 +12,45 @@
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\"vulnerable\": true, \"cwe\": 78}",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 78\n}",
         "refusal": null,
-        "reasoning": "First, the user asks me to review the code for vulnerabilities and return ONLY a JSON object in the specified format: {\"vulnerable\": true or false, \"cwe\": CODE_NUMBER}\n\n\n## Reviewing User Request  \n- The user asked to analyze C/C++ code for vulnerabilities and return results in a JSON format: {\"vulnerable\": true or false, \"cwe\": CODE_NUMBER}.  \n- The task focuses on identifying security issues and mapping them to CWE codes, ensuring a structured output.  \n- The code review will check for common vulnerabilities like buffer overflows, memory leaks, or improper input handling.  \n- Planning to examine the code line by line to identify potential security risks.",
+        "reasoning": "First, the user asks to review a C code snippet for vulnerabilities, and return ONLY a JSON object in the format:\n\n\n## Reviewing user request  \n- The user asked to analyze a C code snippet for vulnerabilities.  \n- The response should be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER) fields.\n\n## Examining code for vulnerabilities  \n- The C code snippet uses `fgets` to read user input into `userInput` and incorporates it into a shell command via `snprintf` and `system`.  \n- This setup allows for command injection, as malicious input like \"; rm -rf /;\" could be executed, matching CWE-78 (OS Command Injection).",
         "reasoning_details": [
           {
             "format": "xai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "First, the user asks me to review the code for vulnerabilities and return ONLY a JSON object in the specified format: {\"vulnerable\": true or false, \"cwe\": CODE_NUMBER}\n\n\n## Reviewing User Request  \n- The user asked to analyze C/C++ code for vulnerabilities and return results in a JSON format: {\"vulnerable\": true or false, \"cwe\": CODE_NUMBER}.  \n- The task focuses on identifying security issues and mapping them to CWE codes, ensuring a structured output.  \n- The code review will check for common vulnerabilities like buffer overflows, memory leaks, or improper input handling.  \n- Planning to examine the code line by line to identify potential security risks."
+            "summary": "First, the user asks to review a C code snippet for vulnerabilities, and return ONLY a JSON object in the format:\n\n\n## Reviewing user request  \n- The user asked to analyze a C code snippet for vulnerabilities.  \n- The response should be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER) fields.\n\n## Examining code for vulnerabilities  \n- The C code snippet uses `fgets` to read user input into `userInput` and incorporates it into a shell command via `snprintf` and `system`.  \n- This setup allows for command injection, as malicious input like \"; rm -rf /;\" could be executed, matching CWE-78 (OS Command Injection)."
           },
           {
-            "id": "rs_2b25ab17-9d57-4fac-6d18-06caadd02d0e",
+            "id": "rs_007c2b16-c02f-2871-0a0e-138a4a3289e7",
             "format": "xai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "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"
+            "data": "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"
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 355,
-    "completion_tokens": 468,
-    "total_tokens": 823,
-    "cost": 0.00073844,
+    "prompt_tokens": 348,
+    "completion_tokens": 481,
+    "total_tokens": 829,
+    "cost": 0.00074502,
     "is_byok": false,
     "prompt_tokens_details": {
-      "cached_tokens": 192,
+      "cached_tokens": 256,
       "audio_tokens": 0,
       "video_tokens": 0
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 3.644e-05,
-      "upstream_inference_completions_cost": 0.000702
+      "upstream_inference_prompt_cost": 2.352e-05,
+      "upstream_inference_completions_cost": 0.0007215
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 455,
+      "reasoning_tokens": 464,
       "image_tokens": 0
     }
   }

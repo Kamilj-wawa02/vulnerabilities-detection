@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765056662-DU9NSd8jBE8vHmRUeguO",
+  "id": "gen-1765666641-533MkSwZ40pHSIlfOfr7",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765056662,
+  "created": 1765666641,
   "choices": [
     {
       "logprobs": null,
@@ -12,32 +12,26 @@
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 457\n}",
+        "content": "{\n  \"vulnerable\": false,\n  \"cwe\": 0\n}",
         "refusal": null,
-        "reasoning": "**Evaluating uninitialized variables**\n\nI need to analyze this scenario: defining INT_MAX as 255, creating an array a[300], and using a loop to write to a[0..254]. In the second loop, I\u2019d print 0..254. The issue arises with \"Special elem: %d\\n\", a[INT_MAX], which accesses a[255]. Since the size is 300, valid indices are 0..299, but a[255] is uninitialized. Accessing uninitialized memory leads to undefined behavior and represents a security vulnerability, CWE-457. Yes, this is indeed a vulnerability. I need to return this in JSON format.",
+        "reasoning": null,
         "reasoning_details": [
           {
-            "format": "openai-responses-v1",
-            "index": 0,
-            "type": "reasoning.summary",
-            "summary": "**Evaluating uninitialized variables**\n\nI need to analyze this scenario: defining INT_MAX as 255, creating an array a[300], and using a loop to write to a[0..254]. In the second loop, I\u2019d print 0..254. The issue arises with \"Special elem: %d\\n\", a[INT_MAX], which accesses a[255]. Since the size is 300, valid indices are 0..299, but a[255] is uninitialized. Accessing uninitialized memory leads to undefined behavior and represents a security vulnerability, CWE-457. Yes, this is indeed a vulnerability. I need to return this in JSON format."
-          },
-          {
-            "id": "rs_0e2777bdebcca1ee016934a0973be081909a81f434e565285a",
+            "id": "rs_097827026b0bfffd01693def51d8048196bbd974cd7eae6269",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNKCcvVhdb4LT5726xzfWUMimG4_C4vH7WOKaHD1uuQ5L5BFBy8QXp6-LDsAsKdbUXI3F1qrbdfIcH5nvy3buAjz2IVOhzUE0VxMVgbR9U--6tOeWeYi9XF5ApT2rJrJWteXWIadyXsIlHDtPhXR8UeAzEj93lxCQDdn_pVMwwFhjB8XA1oBCDGCcJL3bT1OA7odzsTUyU1i7SnXIKKex_e9GumjzRH3j-BvcRunYJFaJVqgW9UgGroUIqBJKDrBrdYb4iUGzb04aJdMo-gKgX9zgES0vJgQRCZ2alSew-wK1GCytoM-lZFR3IKRYIyMB7OhyMl4pt74KJEteQ-Wfwoqy46ipMQEcM2z3Grwnr1pq1XDfbgpMAdBEVKVmeMoP_jDWbmI7K0FhY1hYSYywNQzVtciHPy2YbWp2xRRkbdTFUUXWIh1Edp6fonzwCU6hmBktvahQJzYdB3USiThNE343qM8HG9ZFZjKkicyTCWyucLLpqejL5UcWMznmildxndBNlcKrXNx5KnnULq0LG18rgc013CCrwg6DTW8WIKxvKywUS5Egq6a97IyQcMHFbYCfxEq5bRhGubJEjbuQl2_cXbbPx5RfJ-IAj-dZZxh_PVkfpzuVX6s4sSjboHq51i5oD6GCosiEVuXRVaYZYHoo0b8vg4jNvU7wGcgKlc4Oq_fmuTI-vCmsMj_eOGqdZAQR-TaLzCZzcRoJJV3Q7ayJfd0T77nM95SF5_THG-4b2zouvmrxO12ZVG8mgTb7adE69181MzPzUdGqXq9LfpZkfZvsMMol6F9df7U-i63lFn7wS-TOEJmP1K1TShHU_y_UKSktPjH2ht_2RVmZVTc4sv3-06P4_nf1-1E8vtF21OA4USgDiH-clkRZaeyyqOkaw9pqSFAx75Hn1Ubheo4QvdV3GzgQvweU_PKfLnni0Cs04L5raekshhNpNvltcTmGWgqz7gVzJQzOTcGqHldmivVT-A0w0TQeTLRJ7L0EzeGN2-dOboA0w0mjEO8dZesR-YFrTaiCTx_Ws8m1hXs2KsBBklQ1MYgv3aJV8Nct1XZyjlxJkcjpzVug8gnXwqpj5_AF_yWpoVg3LTtz8h4w3hld7ifiAfRX_ejsaY59C_99yyERR2CQcyCStRX0LO54n66IrLNT6Gef7umuUbcadeeQT39lqzsVzrt5hJm7kj6qHmbKElZgaJeFacYf9gYFb-JpevI3UU15XUs4s67eTakI3Wus6xuXAtT9puEkc96Gap4XbF8TgUn1lM_6lucMWHUXG8r8OZBJEbeHlmGARxu4UpdB_2GNGRkXcusBFcdVmZ2ZDP-U539J4MZoGwq7hXPp8tUoNBPQTv6Bi6irwl2zkOJLkHhrET6FJJhejBWn8Ylg3WtncHvEYnTtX-XxLO4ADGMTl8Sw0LsI1_IZu7dQMcTqLICuCaYwLWED-Os6QHcCubt1YiASWpJecXzr"
+            "data": "gAAAAABpPe9UbenevoZq9SPduFZ-ItuQJ5LS0COo4FteacxId5KmecJoz6CowPMW7ImRqQ4ofaE36WpoRBGRxpahZ4pWc6Avu9c_sTFlXGoCyjHTRmjuEKauTrk23FDEmDsr7IqW8AdOIjidzuKAdnQKG_A1r2toLUmKOdglP9pH9HrcnZhKxOrUckqdvVyQcq_1Xwmq139k0CMmvflukxxQ4WrBOfD6COens4zpcSGBGhgbAG_ZCc0K5_pi21_Fblzzqk7TLBHyKHnZkzQWjc0z_vq-FJyBgyhPpYf1Fbnrn4bh4jgUShQtSsA7HyZgaZsvKFkEFXwTWlzEX6CJOJxpoSVgcP-ERkjCVUa5DapsoC_RGQbmo7t14soSfWP9BIICDyaVqQohq_W4NPrBrvk0Pv2B3Ij0hWUoTYqKKLnvvlgtRAvM50VKdP0f9YTc1LAVY6xOG-C04jK7I61zXDypO5jFWdCNDOGKB05tqVpKImBtuOMyiruyzYtykxo0cMeK1_Xzmh-Zl7zrCLHAG-AoctWqkQ7Itlg9hUyonZ9TbbJ-LwP--7BLvYyMaf1MF7BJ_Sj3jHqvn4fiOUFGPuJUE_--ZAgFWTK9HyzMpThuX9G7UKOvH8rCedz3YRYF2ORJEJLYDu4bRXZMydpsTc7yMvJMe6ZeqlxNVuFyyp6gGy9S5kkgq-K601MJGlLC5UqSUS7QRS9ONgY8U7n7x38kpdARcW101nPWbKMXsC4JAbpAfSON0w_TsLIFWat-hPmlAg-CGmGDsKiWpuXNve5ayeeRj-9yhMmLhItPJtV7XjUi4ZYbtAMJItVS76H3c_rE1YVX8dCtB-6NV1T6d8jxWfQ-Lz3ky8fmAOgxWRkrTPbTLW_X1QeKXxuJtOaNgCgZjANfylgr0o7U4bX_RsKvrfYmnmZ2QDLTX2Ir790R7_Yfeh1jh_77i-svODHT5Pn_mh_-ZhGbpXbrCT59-YtEG5Nx4pLA_I3MW_4YRQP3mn6WtV3Ppp6Akr1zisxoQ-f5rKs2zML9M31Bd9-gQQHE4SuT9zMtsDg2AkFIcTTRSogt5aWW15aDpBRZjtGisHzIDp5Chgf6cR89vLCo-J-8OBJGJeRMGScfHVj14YsEOqU0jnG8x6g86Ys1dhyuNcWSh-E2QJmAtPkpKRHzK4nMdZVnM0xr-VPplO6nw1rH3alRT4Y_ATfsvxZ2-Zgruqhj3rfH4JkqcehdjESmwMp7QU1EJNXVi-M-JA-ia0WGkUavAv-LG3kqT1XwivFH6j3rOk8Nc16vGsVLSS5rIF4u5ubg_b8khzHvPCufk1AEq8xz6iAnkvRBhR7NVC9bcOmWIUwMKwZBVHURP-uoRnRffAFxcLjqstNKq1czcKYuxkhSSJ39fGeUGs3TF222FuesjQgH_TvDkhmVqlrf6cq0JV7nto4o0tKPQL_yzDAnHzW4c2PQm1JT8chN0BwKDtbPh_tSM7dw5rJviZvX02BzHoWPveupAK1TwkMR6gx-_0XwRiLacbuxA1G3GjDGwikBR1DyPUaATkjaIZdLNmdUojdGwwrKTzwVLo4C_uMxcAYWJyygIehwkQJAiJEGedK8Hup4qYPsghueXtXUSPpyQnng4TRkDj60BrGfm8ojJ8cGiHAr6SFsFm5jNcwe_ULPuA30FIvEmZB7fIhh4glmgr3XLWCSBeC9kQLVUvraPmJ9NfvSI-I="
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 185,
-    "completion_tokens": 144,
-    "total_tokens": 329,
-    "cost": 0.00167125,
+    "prompt_tokens": 178,
+    "completion_tokens": 198,
+    "total_tokens": 376,
+    "cost": 0.0022025,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +40,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.00023125,
-      "upstream_inference_completions_cost": 0.00144
+      "upstream_inference_prompt_cost": 0.0002225,
+      "upstream_inference_completions_cost": 0.00198
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 120,
+      "reasoning_tokens": 174,
       "image_tokens": 0
     }
   }

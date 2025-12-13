@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765054507-K6vl4foH9qiZ7ljhuq41",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765054507,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 78\n}",
+        "refusal": null,
+        "reasoning": "**Assessing code vulnerability**\n\nI need to evaluate a potential vulnerability in my code. It builds a shell command using \"ls -l | head -n %s,\" where user input is sourced from fgets without any input sanitization. This creates a command injection risk, as a user could inject harmful commands. Specifically, head -n expects an integer, but a user could input something like \"5; rm -rf /\". I should identify this as CWE-78: OS Command Injection and prepare a JSON response with vulnerable set to true and code set to 78.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Assessing code vulnerability**\n\nI need to evaluate a potential vulnerability in my code. It builds a shell command using \"ls -l | head -n %s,\" where user input is sourced from fgets without any input sanitization. This creates a command injection risk, as a user could inject harmful commands. Specifically, head -n expects an integer, but a user could input something like \"5; rm -rf /\". I should identify this as CWE-78: OS Command Injection and prepare a JSON response with vulnerable set to true and code set to 78."
+          },
+          {
+            "id": "rs_08b92c4fc8a26249016934982bb1b081938267800cbe79e0bb",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpNJgv_OQHUsQ3tQM3HG8Y5L7eNJ1l5tFMKqAaFUwjgoiQSi9bs1zdHFvi0YqbLwQ5IKv-Jvuf3cupxDshERyjzVV1YWwR24enPoZgYXGJaxY2Y6o5no7NSZgqsVdxf0ipeagr235bDeF4HI9LKAxC_jzGVRGRJ-ztWcDdXtDob0otNLWsJrxeDTsTZYgBhmH0WvbZ0m9D3isiU-f60O3P2IlA8EeY9ezjFasMgVSUxDM6t3AcCq2jiTbV4SuHZ3-sMgYBeG2eCwz9kC19YltJEYo6kr5uoApG28FqYLc6VkpOZyValh81V1SqE7M6JyDTpcq_OBcsc6Vl7MN92xyvyAzI4IlEdnQs1Ypiro3yYscNfHpmjJVwgBxo1UClEKK9puHNtxhUWRSiV49tSOkL-HKk1sazUmTt7p4SaPNfqBVJwEyJj9W_aGndZFqcFXRt1t-nM6J06Fs1s-TKAWgjyBjkoqLFk5L3LoRES82xfbKePv-f1W2tax1wrLDtp2htFbSyXFopT5_O4_EsEC5LC4LIVp0StLP_wmZDhCgHjAlyrC2Z0R7ASCGlzwLWH1cB2Gvj1fGOwUqQB5uvnU1oN67nyIDsyIi5soi3gVLhOgZkPEFOb89Id9IFxm20ySIjb9qkG7kPN0RuHRJLLs3oNWhtqch0ASBKJWf2bYJ1Nt9FB6jTDLVEbNUdzTkAdYH35BfRwOVG9Bw3N2bo-9HtZ7ih1VaCQiv-k8TPuSYKBgOuhcz2CY9vp2CZeqlc4KbMKwDziY6u50_Cgn8L-aEH82Leb5JWY8re6n1wIz8beOVZ8ADRMp1DqFhTxuQPE4o7mPceCE5VgOgl5NS_s9TAFpvy8klymSDiljJo6mu19AcZxg1_sKFlkZHdxOVjFWEdR9v9rBf-VLztuoSrim71XUT9RHsbMb3pBCPtx8-JWyNrkyRmIDzkZxgWBZZakpluRKZCs9UKGWcLD0RLtm2xU-HvbpzZgX21J5d5n8cATz_B0S-59brD68fphuwUMHI17IDVK65Ydx-42jGCLGJ_3FRTaKWoDwQ8suYOmC19Nv9xCz9NMVCh1P9M14mpPf7ZgYmKYPNX3Cx7FnMcxLrnWL7DLpUfiVvXmDI2FwbzrVCxB4CuQJH9uUtN3ZjzFJs7CKZYZu0NLp2060IZ-Wvq0pADzAKt8-OkNxwb8BPjNljiyC6zaTZKrkzY1Czz-oh9712YOj7WolEkZV3Rs-ybKtqq7rh5k6wC5KTEwmHNojIuiTU2Jb9SprUXieJkbKcz3_W27Ay-2_Ero8PlndoRGpilvw=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 157,
+    "completion_tokens": 111,
+    "total_tokens": 268,
+    "cost": 0.00130625,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00019625,
+      "upstream_inference_completions_cost": 0.00111
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 87,
+      "image_tokens": 0
+    }
+  }
+}

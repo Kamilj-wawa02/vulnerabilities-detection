@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765055450-mN1PQv0F9N4OL9yMo9ME",
+  "id": "gen-1765665864-F9onwJ3FXYkOvA35WKax",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765055450,
+  "created": 1765665864,
   "choices": [
     {
       "logprobs": null,
@@ -12,32 +12,32 @@
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 415\n}",
+        "content": "{\"vulnerable\": true, \"cwe\": 415}",
         "refusal": null,
-        "reasoning": "**Analyzing code vulnerabilities**\n\nI need to analyze some vulnerabilities in the code. First, I notice the line `alloc int* a`. When the function `square(int* a)` is called, it squares a value and frees the pointer, returning the result. However, after calling `square(a)`, `main` attempts to free `a` again. This is a case of double free, leading to undefined behavior and falls under CWE-415. So, yes, this code is truly vulnerable. I'll return the information in JSON format.",
+        "reasoning": "**Identifying memory issues**\n\nI need to detect double free or use after free issues. In this situation, if I free the pointer 'a' in a square function and then free it again in main, that's a classic double free scenario (CWE-415). However, I'm not using the freed pointer after, just freeing it twice. So yes, it's vulnerable, and I should return the result in JSON format only.",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Analyzing code vulnerabilities**\n\nI need to analyze some vulnerabilities in the code. First, I notice the line `alloc int* a`. When the function `square(int* a)` is called, it squares a value and frees the pointer, returning the result. However, after calling `square(a)`, `main` attempts to free `a` again. This is a case of double free, leading to undefined behavior and falls under CWE-415. So, yes, this code is truly vulnerable. I'll return the information in JSON format."
+            "summary": "**Identifying memory issues**\n\nI need to detect double free or use after free issues. In this situation, if I free the pointer 'a' in a square function and then free it again in main, that's a classic double free scenario (CWE-415). However, I'm not using the freed pointer after, just freeing it twice. So yes, it's vulnerable, and I should return the result in JSON format only."
           },
           {
-            "id": "rs_06a858ec3ed865cf0169349bdb2cec8197871a0895ac4e1d37",
+            "id": "rs_0e1994bd70dec41b01693dec4921f48193b5869ed7285e08c0",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJvfPQf6fQ1oZA5AopB4zApV831NHkzX1ommJpDWDf_xmVnEFrIFJDq4AYFvlkdZl7eE4LMk-Ecy_XXPhM8U1bzzutcQKFyDNbGaRtfV4qDyXHwt0g-TGeMRs9s6AGfgaQ33zyg_C8oQLC42TVJ8VLvRcXyyn7DaTZcKYPdkLOJDYZB0s7jI6TH1AO37Z477TwH-xry3Gvqur-74bEJpTOV6J-lvTaOu8WFe6c6H9VS2Ycz30IPy23Fd5fpvhr8Qt00y-GjA7-yAxzHXhOpDTvldnX7OFkbHEwwegoDelNV1cQjM7jTHpeHqiulUIHFermmEaImL22YdebPaWHKU3KJrFWDS96uuslKmvB_2XjC577U4xn3NZYIXNuY5wDfM7KgX_5cf3TX4PAUW5Y6rSlnwBC_jMHO663hqx-KN0bDdlF_W3XGphv7V1MXOuhwLHjZhQsQWqOg-rCyobJ0iPro9iHYDJ6C_fGo05qNzbzUoZuVpRz0SQXbR0lp1HBcun8otzsr_ewAk0Dz0WAOdWcGtNd5qweljRAgcg6W0_awaL9W36hjREIMYcLt8Ygregi2pm6CIWqyLdBGoJKCNxLrGxloa3GscCwmjba40v-sc6Mq0km6oXvs85r0jfG0wUfBkGqbS6EfQOVgztX4WI1NytZ62eTELhD6BDC_GMeJKYG90-d0g3fWks2xQUou24RnKmbjtcDHbOk8BabY7L6_rrrG9_f7H5famS6VPMwffHNbd88sCblIY26eneN6EUvwT-HyG_DdB2qP6dkETsmoNBxXKmEuNYKY2HJ44_mkbxmxZMeQurRcugyY__BvQN0dL5euC9_cZzoc9PhEfr_nZvSNhVlKYUCJz_FDMY0_83348B6QrZ4eydiqy3Sp-OgXzMe7IWCDjmfNhSIesBYRBELXytSqzsmzs7fFzPlc3w-vMWyB_PI9d2K4yq3xYfm-6C9W23EFTKtGTsEWwAerUSAdrLFHaFVbutpls9B9qM6Aitv1JtBqzBNEO4gSkLD-zrKYalrXy7Y2yvyNzg0qqFcWPXlU2rsvyTrH0y_u4eXss9Efr1cBhBGGlkuysuIw3Kla4RXbI46b2GnDIlidz1AJK2yjTSN0A_E8nMQYYRD8bSRUdKSKedYe9G3Kl9VuLWa8a0pRdwEABBLNuEjovgyipFDoP78rwr-waV3A0V-WNP64hnwbagWGAXOyp7b-a2WxXFR1iovXMf2083PIYCILxBjIF_x476R-yokmZAoIWzwq-sK85SFNx4M5OhmZ4A1iwGp9n9e2gZ8apyf5ALgGusJq71g32XTnpj4B1TQH237gFh2KMkrtnmv-xJ4DfvIYSpEk7xh0PQef4bfyH-Q=="
+            "data": "gAAAAABpPexLfAk1UI_LXKdKINjSdGP0PtUJHJupWEb22v8e5NjlTUDFp2TlNr5SZC_kUo-93ucusoOPmcCgeZik9xAUv5RZtmWMVTcQyurY57jsfKUllkIByyFb47BDpgypy9S09nhypJEIJpzw0f676tt7I1X7zl-0fWUIrJB7BIaDkaJ9i0Q7twNt2ULmUmz5cy99bc7Phn0EtySxqRIBOo7JDAKkGnKJXyg0WRLB6QDpldoHP0FTU3cVKbvK5_Q6GvfSTFAIdAuV6noorL4Qa0zldUimgpEVBk70ljr4znxgw85PTkMEhvH9WBv0xPTgldqgQwfOmzn9l6K_nyhlGHNOyqZwphwbQ2ZQtDxlK6yD9YTrgunUXBdK3cVjQM2ZFMhfuqaWgV8V96XPG6v5_2F0UReMOh1DF18qodueqTxzwBb78n_tYBB2wLYfPVtrXkZ6hRWTwnN6qvkg4Vyjx-rKzbnIxAfyGHlhcxBJD8Tfwl2Qj3Owc8FirbWMYsAHQ1mbOjgrGiXFbdeOGnAeCdDyFzEU1EGYdomr2a3vEd8dBWORYTG_TLqcl8ckQDzD0QeerqBxdk7JANglUm-pZkZFlhGBn9yCGU-sabKpD-lFnj1iHL5GGlaNb18K3loeMbKiUKVxK8eaZQas0VoJyLKJ6fy_e1ydhtxRxTufe3dZOv48UkzDDkG6H8imbR7TfsAExf0Bsg8_m5x3ehsDeXPDfmC12hdNh-op13zGR95szANgAFcNddSUZTG5qNXkAJ5Gqs2f59xqnS0wiJsUsDqfdeF__FUPJdnvrRA2s_9WNkoRqH5y5w0-cOb7K0xzHDB00JcBvr7M6fAej0PBhKQ_GHQ8bvvYq0-kX4qzjQ9FHXk0kxUrTPd17uXlD8wp2-BP2tA6V8TW_fFG3K9dp-q4BFHPTzIIwFZjULzoj644LZVa9pDLcmLfpbaOWtpUOGp8K5tLffpSoVhGxuDQ2WZk8I3Fa7kwgllEonWUW3HLDGgwnQHxYahVjIcc62tQ8zNkCbX46vVSbo9gOdb1ZbrFlARk7F3-KG_MMI7NxHXgi4FI3_tCHpMmuWSUwayvswXQruRPZfpx5FGPBGajzAMRZMChFLmIGBFnj7L6FpFpy0u7GNs="
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 195,
-    "completion_tokens": 114,
-    "total_tokens": 309,
-    "cost": 0.00138375,
+    "prompt_tokens": 188,
+    "completion_tokens": 80,
+    "total_tokens": 268,
+    "cost": 0.001035,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.00024375,
-      "upstream_inference_completions_cost": 0.00114
+      "upstream_inference_prompt_cost": 0.000235,
+      "upstream_inference_completions_cost": 0.0008
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 90,
+      "reasoning_tokens": 60,
       "image_tokens": 0
     }
   }

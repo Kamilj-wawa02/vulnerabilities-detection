@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765055455-TIDJK1Esu9QzCZglDp4G",
+  "id": "gen-1765665867-edNAffrFPrgZJc4CVfxj",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765055455,
+  "created": 1765665867,
   "choices": [
     {
       "logprobs": null,
@@ -14,30 +14,30 @@
         "role": "assistant",
         "content": "{\"vulnerable\": true, \"cwe\": 415}",
         "refusal": null,
-        "reasoning": "**Analyzing code vulnerabilities**\n\nI\u2019m looking at some code that defines a function, square, which takes an integer pointer, computes the square, and then frees that memory. In the main function, after calling square, the pointer becomes dangling since it points to freed memory. If the value is greater than 20, there's an attempt to free this dangling pointer, leading to a double free or use after free, identified as CWE-415 or CWE-416. So, there is indeed a vulnerability here, and I need to compile it into JSON format.",
+        "reasoning": "**Identifying vulnerabilities**\n\nI'm examining a code snippet. If b is greater than 20, it frees p, which points to freed heap memory\u2014this creates a double free vulnerability (CWE-415). While using the freed pointer 'a' in the swap function is okay because it just uses its value without dereferencing, the overall situation raises a flag for double free issues. Changing the code could introduce risks of freeing non-heap memory too. Still, in this context, the double free is the main concern. I\u2019ll need to represent this in JSON format.",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Analyzing code vulnerabilities**\n\nI\u2019m looking at some code that defines a function, square, which takes an integer pointer, computes the square, and then frees that memory. In the main function, after calling square, the pointer becomes dangling since it points to freed memory. If the value is greater than 20, there's an attempt to free this dangling pointer, leading to a double free or use after free, identified as CWE-415 or CWE-416. So, there is indeed a vulnerability here, and I need to compile it into JSON format."
+            "summary": "**Identifying vulnerabilities**\n\nI'm examining a code snippet. If b is greater than 20, it frees p, which points to freed heap memory\u2014this creates a double free vulnerability (CWE-415). While using the freed pointer 'a' in the swap function is okay because it just uses its value without dereferencing, the overall situation raises a flag for double free issues. Changing the code could introduce risks of freeing non-heap memory too. Still, in this context, the double free is the main concern. I\u2019ll need to represent this in JSON format."
           },
           {
-            "id": "rs_096f093c3697c1e30169349bdfe0bc819490b1e0b2372c7d10",
+            "id": "rs_0f3a1b15a003ecdb01693dec4c4b1c8190be6b20d253380dee",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJvkYt_1BluUK8uUvk7NOvn8inRrt1iYzJORrxWNL-imOf8GpJkT7PAgz4R9yvM_x9dfWhvjaC4QCmAWkIdL1FPFTAkaF0FRCQNCQvgzBTp9cKarXUvSI1GPPXp0ftqUBTR5Q0uR0I6PYawMc3yE4n5Sh_2RWKv_LyXf3qxTA9FFuDq3IPaq3webw9Kh9zqF-f-oxiYc0WOpNWGErRvQXV5RSzUvguwq3Bxhic3aUFIxxsKxfVuk-xLCbV15IikNxSODc-Hi6_5me_aAj4l7UroNC6UMr78QTvx_hxlGwhEoat60nRKSwQRa3WUHgz37meLY1Tnrpd2jq6h8XwFVyCXrAgvlhi_vi0RFAyog1jbvdrjQTUXUaz3hHpx_e1bPNL60NkXO2YSmUQx5tvKH4iCl9OfHVdh8JxbUHwe8SUWSNSvrktJw8mtzb-1e30Wqn6BpkecVDTmPzthX_VfzGkHjRnsl0El3ocyOGFDFNxxIv1HlRIx5SibfJY2_2nQL9mRkS8P1OrnNXIPDk_JlE_-hvslXGxFj1-kqpdE1VsJbo66k_m-C4UJsPN0dKsB265kd3WyKPnfhMP5YwoZ2pLBNhdreJint8YrViXePf45_KZQqM1pDfdL1hGZQDrYaypaHpY-qcBet0pLYRrbEUxB0UYQYTOLEycQoasJespCWInc-jSDTZquwnVn5mPNadCGRYFvI97SgbLtIsEyK04LYW1qWOjVpeD41cyoqJ_35bKp9pP3YvxV1cCa5ruooua2kZ38UMVF7vcGoRYriqPwhjxoSVZ84BJWylwEvP7KlKU4wRt-MmrFUH51jA2Fjh3xd6nyQjEjhPmRykSh0lwUp2XZBF6vEDE7Vb38ZPjulWJAN8AL0vhGxJUab-fMgmotoUCnYlxInPHqqZ11cHYD5WBnQnt9OlhN6QLKsTQ4AQKfWmFu-jvYC3tHqJpkwg9KucyFrQYKroOrvIo1TFFPRPzrH6QyroH3JviZw69RU34IZWLsRCOzTMF_2g6K52TZ6Kz3He0UbMnzpg0OOxUUgph0_ev_4xZKUCD19-VeuI5-iHM8ri-tadSgyul-JlNljYQOI-8MqRQzgNxfeVSMYRTGKGhssiS7GQnfXFOf9i1DiXh1w8PCLCmiUb_1gJrj6Mr4_2QA3WHUFHSrVlMbnTj_gFKBsk6BJQjdC3WKSjT4t7J9T7073dz7nFMr1VVMP5IGbu6LY_5YlkXx35BAY7v0AhJHTVT2vea9UBKHPqiXLQEl_eVwwBOK2gKvacCFZuH1Cr2Ibt0G4JKheg9Vm12C6Ngzw9PmmzYyoOcwkuOAhl9XKk3rn4iOvnp3KhmXgd2tgOnFbn15V84LJxuSlhproP_STeViavPVKtOUs9aZlWwbVx5l-Lm7qSoF4Vp-NJawSpuWwWCB82GApgz66zm4LyTr20p_ko1LpHrwRTQ1PGBT1hNEkMJNqx_teypnwwNFysR8F4E8tpOzLus_E3AMPDRKzBTxv0rw9LsrW8IHBERNUn7e_p9f7g8KFuBtZJnzUPD80RNeFxBrraHagajAYZVosLcncBGMIROdJ-2MRLqA2PpGSre9h9FpxzAJQ79aQHkQjcvR9VQwllwdC9w=="
+            "data": "gAAAAABpPexS8NR1WpDLJamJpwsdzKLAAvIZY6pbUKnmjRJ_gB5TQCghfEAGNDziWyBb0hmhBLi0OO0IOdlsLf_igNiekNhm_apY_0J-0y7LNOxTJbMp8JGx5qg6SKh5cEeyroiwbeeOyXjgz8aIJUcx7GYLkbbu0b1u5n29s5wT-AAIQoFwOPUVPhbHkvs6d9WR5_N8nxfuWwAXPsMpIcWhe71lG8xnom_Tx9l8cQqFIEX5H0FwoclVdpz-r-bGHdW68798ZIOVAKOKI_nostKDLy0PuKfFqnkUQh_3cYnHJzjYDrZ-A7qFaNDL7Yzu8kIPLkRr24I_2cljxkHixO2FVkXFHhbgoxywe1WYaNYO9DUe1MoLoMJv9mtdB8wkyy9dwHfIvttja0SwG1FxDOPul_mQ1yUzy8FKvcMFFdQE5_3BjBO5Sk_sM-WbZG2g2-jU8Fbl5UTvtvHj7Qh_Z6dIMcsCLmQjDp1zTtqBPeW4CejLGIyAb7PMXXz6AKpJps3Zy9doPtBdMbAM6o2xnmtRtjdSj3RDxxyjTBtbxKcUMAwogcW_zQ3c6sbRv153t7JCKa9D5ItIULtQfqUr3cEBoZSsGYS3RVW8oemK26Scsfb3RoDuO-fdgvC3kvyPqhkFA4ChEvEKhSaFLGsHBitabFD0d_7IwjQDuBPnIphzdFXufv9e41gxMfQaNAuabWopx4JFDWGWcN-_ywk3hY1qt7YlTwa1KQMuRywlyU0YWV_sxHXxy70ndKjTHpnqS3ivFSuoRS1sLvEtrsEd4XyRPMudviEFqH-HYt2u7aV6VoR3aB8qkHvCqp5vrlT8bVx8Eg1dvk3Dqy3m6-j1OA3qcXgaBFZSTJ1M496o2ewu9dOQztEOlrM3nDMpNLh3f195N1S6EDFEqfIdX1UkR7k_GVk02xsP505Aj44BAQiDs1cBtYwZvp-5zf32tqsGbTag9FK2P8X0Kps1JtcnQHK9KccFHlxYQO5VWGhkqEmwQZzMiH9R8UAEjKi8QH9_RefbhOSWfLcXrmWCCG_Zr3oCxHv9B9cQeBm7Y76A58l8J85eprkElJLGDOJQA249Sf9tKBoBK1j22yGSBOS2glZnBby9F0wMTGdOrBs_ocLqTjLUcztuOTQcQDe656vCXnFX8eXGf2UKcZZOpTtqKvhZumvNo9QLR1azW73h-4VlgE6dWf53I1TX742xtgY560BVpcgEUZEIYr-9kR48ZKKqsNFey-doITMLFwp7Ois5Gf5SAJa5Frcg3McWndmdyQDBazctSImuVlmrcvBmW18Vq-kXFQKqlZqyseL96kcXJE-1iPzloJFge3j4CFJXDygZ6tU9rMhxDRCTVNMr7qMsZdWF2Pnxg2AlNyPxdCsZauqNAULLCBqo1GAiqUh4DQfqoR6rH8wn-JDhoZuFQzp65Wisri9HJFjnm-R2Lwpe-xN9QMUyqM4bwqGktWcFBWJPjX-k_RnbCKPmq0snbVzet1dXg-AILWsA0lnQfH879ZpRAQge3Tj19x9Wmc3atCtJLBZpkuzsv8XYKlA4gJUG4aLH5jQc1-0iCHJCdVemlsnRvcICCO7jQNYetDYJHLl1QgPitzM84Fg7jy3b5qIu1IaXr7yGmmtgTuSGA1wMYcefCmDkhrzuB4qlUq9N58K2dr4m9fRFCjTlRTF9xCajSTmEbwy_W4v-A-AO3HUN7srwQ-M2i_GLpQls0EmgyHYK1WCCjyV0KFEj31NjbfAMc62oNA0Ea8u87js_lYUHV3Buvd-WXq8UTzS42sMrc4ecyEXXZ0iImPgDZX4-2lQp4ZM4_XCJJ9ekGeDySlFk7PbwZJbRPy7AUA3V1rsEhRczJE_Z04guYinMietqYUXsfzRSQ5GjljQbtbqL3_kyFslFs5vySADTMi79EXAuZjzZOqPqheZgZ6t5oXtOCHpCDEFnsftpUv9zonx3ZB8KK_IJzOovkei-GO9EsjjmiHQ0qGi23tej0DW0jyJcKiZzBGVheZwAm2JO0-qbSaYJc2cAFn82cIMlNZCJmZ7Nc6GQea970Dwh4wfUNunNztu6uYiz5tsrH7gXaKhwecKsO8ecra9k5hKwj3MCd0dmLBUfVk8B7c_34izK5VU3UHLyICx-WRjQ9cl3ro0DbeJAKROb-kefY-MblFldfMCrGESQX_3ZLr9y1V9gTz8QZtvgsg8GNXp7l-O_Bpur9KwVlGJ-EyBNt5rtmKg8ayxLLF1a0RAj1Wr99C14Ku2mar8w8wI7nIV9U2-amKyK6_H-DEkr_KnWmLL42kpVnC14bZuXbEFxPDgjeAtNhbax4_9yJ3nLy-o0EhfsvZEmyDqQqUCGIaSxUEH6O_8JKa8N7m5-tGrKfeBtiOs5F8dCZkfJmzJ3OazDazf-SIcP8akACIGWAUb03-DeE3esKsg-Gv4tiALD3OOU"
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 255,
-    "completion_tokens": 177,
-    "total_tokens": 432,
-    "cost": 0.00208875,
+    "prompt_tokens": 248,
+    "completion_tokens": 330,
+    "total_tokens": 578,
+    "cost": 0.00361,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.00031875,
-      "upstream_inference_completions_cost": 0.00177
+      "upstream_inference_prompt_cost": 0.00031,
+      "upstream_inference_completions_cost": 0.0033
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 157,
+      "reasoning_tokens": 310,
       "image_tokens": 0
     }
   }

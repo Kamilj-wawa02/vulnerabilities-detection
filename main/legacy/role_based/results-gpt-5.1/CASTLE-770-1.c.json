@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765056354-dM0wztAUmsRRuCE5RTxJ",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765056354,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 400\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating server vulnerabilities**\n\nI'm looking at aspects of a server with no authentication, focusing on issues like the handling of clients. The child process exits fine, but there's a missing error check for writes, which could lead to issues with partial writes. When reading, it ends on EOF or an error. The accept loop lacks signal handling, creating a potential denial-of-service situation due to uncontrolled forks. This aligns with CWE-400 for unbounded resource consumption. I\u2019ll return that as a JSON format indicating vulnerability.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating server vulnerabilities**\n\nI'm looking at aspects of a server with no authentication, focusing on issues like the handling of clients. The child process exits fine, but there's a missing error check for writes, which could lead to issues with partial writes. When reading, it ends on EOF or an error. The accept loop lacks signal handling, creating a potential denial-of-service situation due to uncontrolled forks. This aligns with CWE-400 for unbounded resource consumption. I\u2019ll return that as a JSON format indicating vulnerability."
+          },
+          {
+            "id": "rs_042c4e6de2d7b72a0169349f6329c081949d429d332057c34f",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpNJ9yb4XCFCGRHiO2IsiOYdnJQzM1ROmYHyLOv8_xqsATXiCrGQtk3x-cHmWtYV-LnnUrdupWpWXwXA4HZLyRhVtw4a4XR41pyyttUBsMxyM9_ou4_Iv-Lbl9JesB9ElUMi28QVNKUIQlqt0pGWCKsbGREWK5fWViLbEdESRk0x44jAVOcMwCVoNl4Z2JUdXUFbr0yhlOnl-lLQYL1TXoOPH2leseIT0G4fxa5p-jgtlUYG7RbMKmQ-dQzj4_8SBsp_sI_yvJKKCxgGbmyua0ZoAi9QIQiIoC1e_zNlAHhrcVRlLIvFPR8Tq0W2iWqbabuIBhb8CaA2XKeRpVZ8jELEd26H53Wif381thBPyQ8ZyMqyBUkORhfi_SQEvC7PyOO9fok-VQ9HkAG1-7c6I4EDHmPCK1BM4nEKseyqOZIFv60ePW7p-STtP_XyeiHjPpHcSX0TO8VEXqKZxZ61wOTO27byF9bLtLYYD1jm8jxW_q8WGWe6p5kkSsCdKzCgXuzgYWtXADoKK186IvitJNSY3TPfqJmCN_OE4AfTlzfeHWTBahuhOr16oY5Pc6iOin15fN34M_c-NY6vD3P0DmB4SFwWn7oerK06AbVW3oZo6HSM0k45aKJR7-vEQ0uxNi02vzZrduK5AZcLySSkYIvsAFGE_WJflwiBEONeo5kN3wp2bftgJt48tZxvHObVE3iinUGKJqKdeP8S6OEmoY79YLJtUzTCqDfTNXyx_FS5GA6qmHOfdSIrF-3Tw6ZumqYbsaYkiUWLtJSakCEKVp5ty2qLr8hD7Re2_8dH7QxTPQflRq8ZEdn9D6kvpC7PIG0QoQdQmWAYnrsInEy0nXb9JYio9R2bBmsZbcWUF6Nfvqk4mOYa3wfhR5SxfEF2AC_Y1yEI6HqK_br1gq9-8_v_LB6IOvN7OnHT7LcwpidlBJ1cqA99niumfd7wNKcQ4NJ7RH8s6acESpZtSAvP3iYtl6HPqCjlOh19cTeHKlhTcLHkWwQW1aiGD94KVdQ5h8o_abX-CUsH_zwM_aC8YQkngzuWluqimt2uK5DmKoOGDLbaTdL-RNFBAXhdJsMxhtfjL6aaE37NAg4rAnlH7cMqA34bWbPjNm7P8BhPN5e4Jq85rrXVRHUuFyPE-MD9bwqc816bSCFPQ9rIE6j_twY6gYV0iuyNFO52BScSFx8JEmDREC1CTm-n6l-9ETLXWjcq1y31QN6QB6htaVr16iE7Zv2xh_8aPuMe6EviGqCFPOVs92lS4n4nfHXnHuLaW6bT6VIj7n-0Z4_1BC01xQSegNjLpzLT6N_crpIWN3RdSXdQa2wix869SzYZH0S_sSC0-UZ32hNl4MWaI5dDwHK6XHRQLUgnhPA8s5PgVEdDeW-9e_r1S4YeUJBhy3wGmikoTy38dDNvmQdmtSWB_HlDuwJQZmJ7DVFQtq_da7GwNG6141SQ4hLTxuQtKrSzlqT6Sfyf6ZDqpdgLUT729b6KEtHjiczYhDJRbda4OH4Am_37Htvsk-PLtp0tqYA42EVL83GPLng2-MsJSk6OPpHjciHRNqvHnTS_TQo5d6_lO82qxYtqaquud7lIUGBGeAMfd9NvyKb9rEsRe_RH_Zp4YLCd76_ZgSymYyHHRWJJT7P8cRAjEHLBWuLe6-a8KqorDg5VLAnasVFllDpbhbdDBMctO9eecjmh1zGUZlt-c-LsOZ0IXpCFXLPRXxspGp1_xjpkUVlT0ZRejgoROtaSKQoI7obr36lr4bG_QdKNeqYosF1EjEd9ssfqpGn5iPn_roOaeX_JuqZknrbDAovQqDMoEqeUkVXluGWxtsbNQKQfI8KOdqOOf7QOIkY9Bv7dHgsPeX0LytFAmKISG6O3L3KCzOIWJqT_7FKQrFnEeM_baupCiAZSF4oLAPvBrBtV76X6GkVWknAQbfRTT_NjhSmcO0s_ve6WTfttG3t1W1HhgF_lZ9z5e4H1jUGeAuVV9Bmft-tu2Uy9uMtgTtEYG8DnLf_A0TLol_lHalqyHrkv6ZXxoRw0hlMlOySkyWIGC4tnlj02zcleHAjmineKNKs4ekqHV7Zy1rNKmzuFkYoRqpu62w805TckVoMKwbAbzD0YeASNdiC7KKKYnanlLMpaanUzqiHQzGY7ZQHuka6shVNvNtSDkwKsm1CiE7DL4MpzKGXjr_9TvZI3oDvU2Y_grqlzEQwFqBxc4CAJb2G7E5jEV-db15o9_CLTbvRGKyfooRJQn6vLtvgAF84N8qpLKEkD88lxFj-99aOmSNdvDhp_mM3NcLmyuiTKF6NxMFBI_NkE_XYIa3gaNHkiXF0UjY9e0_V3cei2WlsqIPAYp3WjFkLb7aPsX2sGj2sNbjKW1ZUSr2ozPuR-nxv1k2F7EekqHhVQz8fet_HwCgfhQET667Ld2_v20ABsUSQ7oIQHb2fYzgHMByAk8QoWSnLtY5wFgIp94S8TJpUIlqALQaFzisTzh6GZ2KdD2QsmFvHxAfZ9eVgDJIyDiH6Dq-_pUm3T_xrhVkX68_8-q7elBKkbegMhdDMOsfS5MVXi6Fm6uFvJzM5ARe3AzEWzd1dvW5kKEo2OFnSBU0jOFZKZwOyFa8VjRJ0GxcDwnS10Xd_dpOwP-rUXGhgfDkc5FNrSMyMMYx-jQoreXejfWD28mQq9vEMlwU6w5yiwQ6jFlFkzag-36LcJ23GBeOj5fDhkfIykXh0UeyvDmyJPlI5FmO7RbPg9v4Nc2wP-YtVTexQYUJkk1F_IA1hhabjgNUaRsVt71oRTbynaXrzPK6wFe2z7Q5iYxmxwSvFMBJvr7KPiQlml7qWon2RrjwuG5mVicUL6rQtPZIQZJnW55CcwWPMHTWv8n9J-5hm_ZXIyDtDQNbllXShJ0zUM4gq7BwR2PfSTe0M7jHz8V7yoLgtlilrdabPF9mFqctEXq6pmA_ZgTLIQYbD-QW67A0hW-KNpWEw5jOZkZd-Fli5Ox9IFc9DqSXB0tXAhcSMtgWgbQ1sW4HK1hnpccRXM0ki3q2wg=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 641,
+    "completion_tokens": 374,
+    "total_tokens": 1015,
+    "cost": 0.00454125,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00080125,
+      "upstream_inference_completions_cost": 0.00374
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 350,
+      "image_tokens": 0
+    }
+  }
+}

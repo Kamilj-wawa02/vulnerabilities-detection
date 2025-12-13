@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765055549-pGAjjZV9NLMgXwuYPZIl",
+  "id": "gen-1765665931-bUkPFv0HxDVyjXx2rkMa",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765055549,
+  "created": 1765665931,
   "choices": [
     {
       "logprobs": null,
@@ -14,30 +14,30 @@
         "role": "assistant",
         "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 416\n}",
         "refusal": null,
-        "reasoning": "**Exploring vulnerabilities**\n\nI need to examine a potential vulnerability related to freeing memory, specifically when a square frees a pointer that's already been dereferenced. This is a clear case of a use-after-free scenario, which is identified as CWE-416. I should also check if double-free conditions exist, although it seems there's only a single free involved here. So, it looks like this is indeed a valid vulnerability under CWE-416.",
+        "reasoning": "**Identifying vulnerability issues**\n\nI need to detect vulnerabilities in the code. The line \"malloc int* a\" allocates memory, and the function \"square(int* a)\" sets *a and then frees it before returning. If the main function uses *a afterwards, that's a use-after-free situation, which is identified as CWE-416. Regarding double free, it must happen only once. In this case, it seems the code is indeed vulnerable, confirming the presence of CWE-416.",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Exploring vulnerabilities**\n\nI need to examine a potential vulnerability related to freeing memory, specifically when a square frees a pointer that's already been dereferenced. This is a clear case of a use-after-free scenario, which is identified as CWE-416. I should also check if double-free conditions exist, although it seems there's only a single free involved here. So, it looks like this is indeed a valid vulnerability under CWE-416."
+            "summary": "**Identifying vulnerability issues**\n\nI need to detect vulnerabilities in the code. The line \"malloc int* a\" allocates memory, and the function \"square(int* a)\" sets *a and then frees it before returning. If the main function uses *a afterwards, that's a use-after-free situation, which is identified as CWE-416. Regarding double free, it must happen only once. In this case, it seems the code is indeed vulnerable, confirming the presence of CWE-416."
           },
           {
-            "id": "rs_0f0ff105aee3b5af0169349c3e73cc8196b61700663df7b9a2",
+            "id": "rs_047dc3799bb2c51201693dec8c55cc8190bdb7c3dbf323010f",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJxBzDlkrE34brXMcZxQ9WRcc0lyR8LJ_ymXjNZpHWFmidgOcRccw_42RfsfWFp6NAPSBFNQI4snf6jYf23jI3UCEfGtCaZ6LDd1U2o9OFdUh_1gAxWmqz5xRTLh6mALIncjFJD29oIyZYhS_Fx6j1_WmlcOKWrKMa6BVsg4dagenla2pmeLf3TqMFGOwGprQIzBdPwx9z1DrpuuNf-KEcKRxnPhgddp8xsKGggZbPfb0eGzbfe7GWbPU2YUue0quIEzLzr_9vGYA1SAs9mjHvSTes3UmSwEvuPaL8gBuxp2F6ItO2TgA_8zOZ0rZDIJy42P1LKH7GbAJtRm_rQG3cjorVKAa-kBvJhqCgsT73fdRohVL_AqSHtU3rlRx2J_w457A93PW5-l6MREXJs11tndh1mJLNi2C7GeBWyL5i7AduJSHFyL9lADwyDgasfpJjSmzPfI2KdrQVCIDrPhSB9ETU2MaJk7sr785kZNSrS9sZSlot5nPAc0MzXb-xcd3_2CUKeedLPaKbrQs5hj4zy3SQa29AuAxQ44cfEz8g0B-0xxbarVi4IZAH07kBX4lOhNeVp9Djbew6tH9xKI5VpijUwaYVr6_uLUnb9M4mMXf0olz8mnDAbkl2Fek9fECjxcSYv2yYiBTR3sC3iLGynK8jtbSvlNYf-W8BB15-h5PylfTyGUcXqJH96xlUfMQqyLpxlJRvEKlqKxVxAMfU9SZYVCXKPSr4OaPO1cwho_7-8repHCG93OcSYznhCplOAB8TpeArwbeGN7e4kz7Pf8nuAQz-cOMHmm7uVvZLNoLUwN37iGjujPHm1YRoCwPZSfpT1sE-o-20R7BKsC3slE82nP06XE5H0jcHDX9dDgU7ROJho-q2CXtzAGriQls6R53XiqZ3KAZQebpTkEwDW7Vs_Sw5mWZNHD774MTmqdW8SkLWEt26sZY5iN2haAGWTsbvnJqNFeK58cj47zwOwSJ-eNszgHZ13TqDFvCMKm5MVlxEkG_ZvNhbJBZlxkcYXBUMyCeNisKgzLOo8zzR4uMcg8fmlZM8rumw07USF9NG0="
+            "data": "gAAAAABpPeyPgOPeO9jMmrtr_hHe61w5Ot6C8nWaiR61CfZ7KV7p7-QwkBlrNIxe_bhWdq37fZK3VbWTQnJgjXyreMeOqy36eOgdmeDn0SDOiO7zF3D5wmM8kdcQxl18LXIPr1XsoYecIvUKf4bz8f18Vg2X-zUeu1O67xw0jOxsd904WIwIRfVqdwBibVzfOeIxQmuZSvWXDyvloVNLMMzicILO3PgjVHgevvai_ybQoPbg3OgDPVxyHPWLIGe4JH1QIvane2Nw3k2hZQ8RmvurOyL_7z8d2971U1IknusqWVzcvSDF1fksWTGvbZMv3apNyFsuBufkQp7aCCozlBfz4jinymU0qvvxrPAfYcWLnBDTqHp7TGHjvQWCeXJTpUzKmX9erTvw-0kHyOYJqU3OqUVrAeVAscKtE6pXHRaq9JUi2B1MVMQi5yC2lL5FJowqXG-krHoFKPg2z9hgu7vy86wm06tsFtlRevY9VInYvfQdCTYKdkfa9DS3YsAOspCeBYw7gKOHVCW0BU7ZZ0oD-s4jJzBpgWRfBCA00QefJe0uCY5Og2VpccdXGOD7_QpGDJedi8SpVu1Ag1kiuwC8u9bTia5OFuD9bUYbMB9DCsGuHCVpSTP8kR4ItN62nuWt5FQQ21Gbil9hEmpj5JM2zvvY8fQ7E8ex3OqV-SrtZ_kZuyVUUByxaaGS_VukTT6MiwaVkcTbH3ekZJwcCugxTofrhAHMD0MlYC4H3uCaqzOjHlCexJjwtHUAv_Rd-E2J7VaVNuRdZ9OrH-MUJkobtc5nTlf-VU-fWij_csK-UnPAJqYdeOLEdgpjq3mi5PFfOazMudFWk4wHoBOHcfAz3s-GULPGk-CnnTTutXnJa_MhrbEoKZt1JbYT5HxySJou09VOVU6Y_TQV-o_j36tgt-CT0e1m3xe_nXkHpHptSS4dncWS0BxOPlmk58LnEjeFNi9NJ5HZz_eNzBRX15wXekHD24pjNFRc4NUR9NRSjZ9F53san-k6T_G_njq3_Ch_MO-Kbgfc6EtJ3oWI3Ik54qXGQT-2lh22Zu7GOcoPHifukG405KUs__OHiKdP4cDNnkKPo5eSrGL8U5kTyLTeMiKDQzVZEjp3sBkvmOZqbeCEqnBRRQQ="
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 190,
-    "completion_tokens": 66,
-    "total_tokens": 256,
-    "cost": 0.0008975,
+    "prompt_tokens": 183,
+    "completion_tokens": 87,
+    "total_tokens": 270,
+    "cost": 0.00109875,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.0002375,
-      "upstream_inference_completions_cost": 0.00066
+      "upstream_inference_prompt_cost": 0.00022875,
+      "upstream_inference_completions_cost": 0.00087
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 42,
+      "reasoning_tokens": 63,
       "image_tokens": 0
     }
   }

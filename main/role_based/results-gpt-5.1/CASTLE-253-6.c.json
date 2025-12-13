@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765054992-Pzi4XtaXY5E8Jq4rQe5D",
+  "id": "gen-1765665474-sCftC9TycUMOBaxGagx6",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765054992,
+  "created": 1765665474,
   "choices": [
     {
       "logprobs": null,
@@ -12,32 +12,26 @@
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\"vulnerable\": true, \"cwe\": 476}",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 476\n}",
         "refusal": null,
-        "reasoning": "**Identifying vulnerabilities**\n\nI need to identify potential vulnerabilities in the code. The main issue is comparing FILE* to FILE_OPEN_ERROR -1; it should be compared to NULL instead. This is a logic bug, not necessarily a vulnerability unless it leads to dereferencing NULL. Actually, fopen returns NULL on failure, so comparing to -1 won't work as NULL is equivalent to 0 in C. Therefore, it results in undefined behavior. It is categorized as CWE-476 NULL Pointer Dereference. The extra newline in perror isn't serious, as the filename is a fixed constant.",
+        "reasoning": null,
         "reasoning_details": [
           {
-            "format": "openai-responses-v1",
-            "index": 0,
-            "type": "reasoning.summary",
-            "summary": "**Identifying vulnerabilities**\n\nI need to identify potential vulnerabilities in the code. The main issue is comparing FILE* to FILE_OPEN_ERROR -1; it should be compared to NULL instead. This is a logic bug, not necessarily a vulnerability unless it leads to dereferencing NULL. Actually, fopen returns NULL on failure, so comparing to -1 won't work as NULL is equivalent to 0 in C. Therefore, it results in undefined behavior. It is categorized as CWE-476 NULL Pointer Dereference. The extra newline in perror isn't serious, as the filename is a fixed constant."
-          },
-          {
-            "id": "rs_0253cb08e69730720169349a10930481938bd086871537e765",
+            "id": "rs_0d39a16910b2756801693deac32b6c819594f19c84b0d11861",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJoVX9Dh5ajnEZ1ljfhMOYN5miQkojuQDc1eqW8gGpGqPHLipwICLAeExWjcEdk2QYl-IOamg96icR3rsBGlIUjvDe6XMAMOWPb3dBnxB_zUE-F5sloqK8XwAvPz2V7_6LsW5GNAxOF0IfJi8DwoZFkwJRpjX905Nw8_C5KcmMejRtXJ6GRPZsnE_LTYrq-ACdsZmGCdM-FBmrRvNPsX7T8LTPZXoifCGH_YvUAtM_AGGuixFsLvKTIqEzVDraxS1BhVEeF46irPghjP1wOAz0VwYCsKMYw3AI_WLkjXzG6UJQMpATamQBQ4zEULRxfOqKcc8nIqYgVcm_4nOEXkD-8Pvgt2t05Nq6OLatrN4-m1hrbadlcDn109nTpviXiWYYKQJEjTSflh0zBW6NhfhvCTphWd10D8iA4pT6Pqelp2gNvmmPEwnsloyx6EOlgXfRKsCi8j3QKkDAk9uLR7jB5mW-Q1KkLAxbzFBVmu4476citjoo-_nH1BhAlPxUVsuSyL2snWVEbFP_z8rYnCzR0Sm5A8MGUJ8rXblkbdgUfti3LSoIWc_rVr4b2zmmAnIGz78CeRYVtX19Azg3dEB7TrINJGFNzCAMabRvsEx82X_eezijYSieHyUeYexlAGT8CmPl-t5aS6HjUYGTqxgJLyHve9_rD02k-KOJ4iybyPdn6I7rwDW92Qfhqm_anyS2xBBdh3mf1lJeJxEUq4gNO0rrB1tqgQ4ABqbjpyAG1DY1qt8qIdylXfRguYC9qoA1v6Oj6If07rTqJSbD38xlW7i6KL4naWe_pMYYdLBzIw2OXtcW-U8swk-7FMdfaBl_D9XK-2GWHiy8llEuCxUvuq7kRPgatiIIk9knvF6Qe44vul_x3PAObhvNV__wp2U2xjPhGiQ04GDDzNnS_ZX9FhJwr_AYPeHn3fjVAdGtIjrKCeBwE007cV2QS6A2G29IY0rh8W1SecAXnpo7ofhGRablGLtQ7gpYbBSZ-eFiAQTBBB-7SnS9PAfzCYyzvrFYg2IZ3Je9GJyY03K5A0F4c1nbqBrzJIzniHudM8EWO4-PFFujImP6QUqoeMH0NtQaF7gLnOhPWV0VutQi1Tlq-VNg3TAPcBukz6xsEGrbfD7jV8vNXr76NySDk98THOtRKdnY4Zt-ZrEt-7DFCdLlmHo4awZFvS3Zi7IwzqFOMnNm7cgkaT25N48v3joJ3t4rn28DA4nc6jMRggOhjbm-L0YeVsdzLIJ4fQO0GBt4adYmlx3pwDYcQxgxZ5NTHk5SEbfV0bXSlg_Svij2GovPqIm-9yOrt6SxQyDnF0gpA3eyp4Wz8ktsDdvPmJwgDrEDObD21twhghRx1rok1BNr8cIoKF882dynIYX3jM05I6Mygz6Wz5vmu_SdI-QgxGYoSOVUhQ_ZC759Jh5_aE0pSB6RugAD8l--nN5aex8ngAiaKHZQ56eJ9erAFCiQLPfiQ4E_dPOVWpFiTSnRyDcaiIBuARBzO4Sv2udrDp3CbOYsTyKanBQQHPT2Qj8rlHX9Mn8T-hsahffAkP7TV1E_Ud1DCJHxU0SbdtZzq5pER0u0-G9T0HlWcRATGgVp-GHYpLj4i2G-ifP6eu0CbLDvxW5tDiCSXlGIFnS9YwQpPzcztrHkyrd_2kQ9EKa4LQ6mWZB_SFSpJIpW5WbfOUI3QPFXuSlfPiRKdeLWRXDHzrod-hLOtHGlAdt9HqK3f0XG03v6uP6DJDQVmv-Dq90wwBzuugC5PaKz4Ez6toP3JjBEA9x7GYry5abc7L1DXp9hvwzy-HtbSzia8SwoGCagnjauWHQVRd4As8TesBvSoeK41WeD610w8GwO0AIfNNcTiCcl0D41JvU_WbiGgcgLHlWK-lnwsR3fde_RKP9LjAt6DgEg9avNog6UEO3-AXHQ7V"
+            "data": "gAAAAABpPerFQRJuQIdNLtJYDZIieWBWuyyJu19a7jeEsnpeX9dAnpbjPjZFbykKfRi0j7oBTvy86DlcyxHGzux8S4z_Lqxqe1xuTqEav8rOw_Ftg0rOSZV8gD5ZDaJCDSfAlUoUWE7_nSjNAQHjd3VWmWqvaJl18Yc1J7_6FN6fsGuM-z1f0zzRaLyAu-LEEd0wvAOkD73Cbgj0BisgNBLecuqUsqMQwTKYeQngBeb3D1IjqhZnBZm8mi53VK76XbGZDoY-ad4jdUE_C09koeAGsLpILtXXkjx3m1l_ofOy7Pgb7NDtS1MaAo_WalWx-88A_J0d6qx7SoKDQK_hGpcZHmii5xNQ41T9gpQQjNP5zf9yZyv6LqKEExdFNhbib8UsqaxcCISWZu0MXadyEKE52eFX2r4Zco6r_jFsvu5qt8lgHP7R7OD5ZuEIIrXNRo8H_rg2-bvqrJLx0gE7DcSRUUR9evv9bnnY7ZcNzSR-JBWt0aPxGnPbeo6w3gLzfY8lJimxYuihic8opekID1EnwdP2SeLhGEhVG2Xc1iVRSqnRGUmd85P8hbDDlewQtmftGuvKUbrNclSH5P5LHlqn8ykcZttXNseGQIrhRzlRyDLcn_JQTjVX2vZm9WnbUk0lppo3IEUK5MRqIA3O6M-oPHpyavjI7Mv1Hi8ZRSQjvhfg_GGSmGbDvGmX3KaUXvH-BKUmQwSrujYCqnM_INhfgI-69N23MEDeDYjbApzDb3B8XhND9WWjz4hOuezjRcC9JP0N-xH4lrDwlBfJATMEP3tJZ8BDWzOmLJiRZYAyr3SG5KQ6bOgxvzPJcpnOffyf7s8jCJpP1IrfoKh6VIV03Y9T5MA3hsd-0a7Tg1RqbCCdS28-kZDQY0MdppmwhHV-OiQ-2Gwd09NkPRm0afM6kn1Y-3F0fynjchPmPAKDlGN53wjW8MHLS5G0DavpP6FM9QxEEPki-_tAOJ8q0OST-UJFgORqAxULjS_oso1OuohxFDubDYwxp2L3l3S_2Gmq7Ut47Lxm9Ur2K-LsMAtLIyWOWY5x9V40mYCdOVpTK2T16uLGpKYiA6uzyGW-ZFF64fYkcxEf20dQSNe2YM1rcTzDRe7udTHpmeNJOJnoaA6X_6cb4BHDvuJLmqS5YEIvoo8JlDqvv_CfHe4pIrvgJh6h8AZZsz-YZvbnhbJSlQSZ1RJwOCtRnCFVO3tHehWj-jsbsu88Fx-R12lw_sWjrnm6N2ZoxsbNYhbobTABxMPU8aIIAAFLihutcbqOSY0jhEscDzh8hgHca-GX7-FDJTVYz2TkriEjVA8bwkhg_tGo5L-W6H84wBF6GyZr3yXWiHvb5eT_5zFXW_YmTCrgZhsfwye6jgEzBOvD-sWub26t0i5Ic-9_Xd8MWM6BTLaFqmIswvCq4kovhy5-EoOLUZFcca9RvEGszKg8RMtfmhZnicdr2tVoRdmz8KdNoX4R3CcjJNJAxMp4AxGSGxcbNwxgY7kTiw9aUwjMibDciQWwndghWayw26PS-qie5w1JWMYN9qpYvo7yQg7nnqwqXpDSoBd03SGOsKyF8s98MmokWFspHcjRuB6oAPUcaOThSWuNjAmduBOursL8_Sn6QrTrh_bNLbug5Syv2eHqUN1wNI7dSYhB0WoCVo1Wv2tkqTqepDKL"
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 206,
-    "completion_tokens": 194,
-    "total_tokens": 400,
-    "cost": 0.0021975,
+    "prompt_tokens": 199,
+    "completion_tokens": 171,
+    "total_tokens": 370,
+    "cost": 0.00195875,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +40,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.0002575,
-      "upstream_inference_completions_cost": 0.00194
+      "upstream_inference_prompt_cost": 0.00024875,
+      "upstream_inference_completions_cost": 0.00171
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 174,
+      "reasoning_tokens": 147,
       "image_tokens": 0
     }
   }

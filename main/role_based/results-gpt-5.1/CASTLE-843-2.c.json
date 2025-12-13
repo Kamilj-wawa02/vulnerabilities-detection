@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765056957-DonP5CdyxJ6DKmkiBvjr",
+  "id": "gen-1765666857-myFmpv8CX66wJ0qzROyp",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765056957,
+  "created": 1765666857,
   "choices": [
     {
       "logprobs": null,
@@ -12,32 +12,32 @@
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\"vulnerable\": true, \"cwe\": 843}",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 843\n}",
         "refusal": null,
-        "reasoning": "**Analyzing code vulnerabilities**\n\nI need to assess some code. There's a function, printNum, that takes an int*, but I see that it\u2019s being passed &b, where b is actually a float. That creates a mismatched pointer type, leading to undefined behavior when dereferencing and trying to print using %d, which could be risky. \n\nIn the context of CWE, it seems like CWE-843 (Access of Resource Using Incompatible Type) applies best here. Using a pointer to float as int* could introduce vulnerabilities. So, I consider it potentially \u201cvulnerable\u201d: true.",
+        "reasoning": "**Examining code safety**\n\nI need to analyze the function `printNum`, which takes an `int*`. In `main`, there's an `int a` and `float b`. Passing `&a` is correct, but passing `&b` (a `float*` implicitly converted to an `int*`) leads to potential issues. In C, this is a constraint violation and can trigger compiler warnings. If this is forced, it might dereference incorrectly, resulting in undefined behavior. This could indicate a type confusion vulnerability. I\u2019m focusing on potential memory safety risks here.**Identifying potential crashes**\n\nI\u2019m considering that the code could cause a crash on certain architectures due to alignment issues between `float*` and `int*`, which could have different alignments despite being the same size. This isn't a classic vulnerability like a buffer overflow, but it still results in undefined behavior. So, I\u2019m categorizing this as CWE-704 or CWE-843. I think CWE-843, which relates to \"Access of Resource Using Incompatible Type\" or type confusion, fits best. Therefore, I\u2019ll mark the vulnerability as true.",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Analyzing code vulnerabilities**\n\nI need to assess some code. There's a function, printNum, that takes an int*, but I see that it\u2019s being passed &b, where b is actually a float. That creates a mismatched pointer type, leading to undefined behavior when dereferencing and trying to print using %d, which could be risky. \n\nIn the context of CWE, it seems like CWE-843 (Access of Resource Using Incompatible Type) applies best here. Using a pointer to float as int* could introduce vulnerabilities. So, I consider it potentially \u201cvulnerable\u201d: true."
+            "summary": "**Examining code safety**\n\nI need to analyze the function `printNum`, which takes an `int*`. In `main`, there's an `int a` and `float b`. Passing `&a` is correct, but passing `&b` (a `float*` implicitly converted to an `int*`) leads to potential issues. In C, this is a constraint violation and can trigger compiler warnings. If this is forced, it might dereference incorrectly, resulting in undefined behavior. This could indicate a type confusion vulnerability. I\u2019m focusing on potential memory safety risks here.**Identifying potential crashes**\n\nI\u2019m considering that the code could cause a crash on certain architectures due to alignment issues between `float*` and `int*`, which could have different alignments despite being the same size. This isn't a classic vulnerability like a buffer overflow, but it still results in undefined behavior. So, I\u2019m categorizing this as CWE-704 or CWE-843. I think CWE-843, which relates to \"Access of Resource Using Incompatible Type\" or type confusion, fits best. Therefore, I\u2019ll mark the vulnerability as true."
           },
           {
-            "id": "rs_03297aadd6587962016934a1bd9e2c8196a03ebbcd42c82c7d",
+            "id": "rs_0f623c395a3e799f01693df02a05148197a5ef24995ba48f15",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNKHFgGuuBgNmnMerzrB9u8M9PvjSUxJgritzRtcqa7e8fhR5BiznclNZp42FR_awQmTMQAU5A9SIRPzLGjWpDXzEtUKLLSjjpt88SoSnX2JjBCXh2daaKJE1FcmXspplmAqemz2PU8m3m-jsdWimDL9DMCqYlw_kB2LauB-EeLf2n9ZoknWoWkQ2y61Tte1AY_eRQja4NPndUUo2-ZfkvH-BqYQeAIMakpX0SEHUqeERoaAsbYFwWHLuaXba-7t4t5c8shkuWavQ-5cz6maHYeajbpcxS7cODcQJcoQs6YPJBPxR-NArEsgk3AeoYywCwr2E5ziJf1Rk9gO459ch55mR325FtwTgq8Gvcn4yYdbYnhD2LFJeVBQVqec-7pHdXHiAOd2wS7jnkVanlFKCwhbtb-slx4MawOnt3Wv9GpRwIBozPJ2bdbzMMAgbUeICGvubaUS9kVYmR3i_Ci1XcaGQtqAqj3A1WRuIQpE1s1LUbEgqv2HEI74Obu2z1wZaZWkSOX_vOOY_DmW_A9PvQyZn2NtFMhzN7cifBjHZr8TJZyQJ8hfRe_Zsmv0Ae94PORB4sj9M20Y0WpZqghfc-CwEwoF-0nhuazEv29hhGJ7GCwHcRRc4AKjU6jlJeB9RYVEZvZLtqCJo2WGXt_7XdhBFhES4Jr3SDqEvtVf2HVba0f8D_0Btff8VNnACc629YfL0ZZpzPF5XK6a8MtS8_8zjuBPdIosJlS_Xtelc26eOfaaHQaOmRzczIbpythA5q9RbNNoMzw0NFri2lFHtYk1P_O8X6j-eiE49fiNrUUxCfZqGto0oQHPFvKvYhmR9LzunRoJJSuyT8tzqq4I7VMTv1o_0dfOWiOUYXNrdDsqzSYl89sgx8gPpYhq8diuVYnlRSx8nDNBzO_0sJmSGxU-IcbcMFxFFJQQTgNKuVtGhtGKKqVvk7NeRmXVFtOC0Tk0ksN10Q2MQKDWqXdrJxz8UXNJX2JUyFdcLJc-Cv-qXeX-7c1cvZFCOv3J4BcpsiRf9-O0OStTPIaU1EXGC1sL5yW6LmjwKTdawtLZi6vnA1Eh6NUnFPH3WPoDzQNwyEnleJy6UariC9XJw1yfbuHur3ETGUJjQBEGZYwBYHDb3YfDE0zIGVUmxCih0y6PF9KSYp41h_uhID5dLSsoEn7s2MbVI2r1TEc71LWgngp6Ti2kJmAS6rWlJcAm13b8ETSfiLJ1wKKXloGdQHzQHFyIhHUt6fjnGWrGde89iHbaE6amgV_-0U2LsLfUMbEI_cpW0Jv12IzUXhvT-QhsIzSzsUGHcwmgIIraxD9qQME9j2Tl1_01QseR2Nhv-rKGykV6AMYI9c2q7-4lOgjCXySEoR3gfW5UTLSn1bBfSmslNj4qqHzoW7NIDkJbfng7KWrQBE7bM9VpLqyJEWhLzdfM3eZVy1mCjdEendzW8ZfIyyNRibFFRZHGDa53MdFM54wIJGAoptpdHmPiFllJ9xeXunIDS8WV8JrbuRfr8DByCKdfL5AUMaA27uwM8SVvzIfegvgrAbfgTxV1UTDF4IenfIl0eGWYNfK9so0HCYv3Rvs32EoyOu3VOCgkz9a-N9KbPlFIAa4dG7JV25-6o7_N416AhoLoRJhkj_WUWmybmKOaHcm8Kll-jICLx8Re39EsT3lR_RCE7b0PeM9wmweQ5fD9aHJiwzlaGO5dFOJiv-0uU-v9Da3U_UWQotZ2XPBYSF1Gdcn0XzNGgDekF6IQhEIJAbQu-0LEjSDMLwBtWD2YurGGxaf3nV0yI5L1aaqYRzm2OnPP-nt8Q2PFHN6ic_FqSvIQJXqQoGGceXAccOWrxer8HyIrGCOAls9JvLaJtA2oVjLCDX1M7M8MIKzg3bc2F8q-gFflYO-SkILS1c9058XsT2LLfwk5oGCpjwcaBLal6VQ9DnKvOkZ40xTiSg8vgJkvo7vyZ2fyESn-mq-A="
+            "data": "gAAAAABpPfA0995EmaBLIXhO5EHN0FeMbVPlD1UUrfKlGZAyOAQSc0SR6tbVIiS_DODH2djsd98GbgA_2UikWbxZ6wUKvwlHWDJkiNdErSQXY2FM4MgrXNJjLo41QwDsCWPR4c-vSZcS6dDEd98z2BnFYy2_bh2WLF1UooeF57rjRBQi5cyuWg_XwqgIDcn3furHgqn4je7lBacI17-f9pdkaX-rUldQPg3EGYJUkSQHOJNUYAV6R0W1xOZ8X3ZG4XkZHM7EEon4dffirLIUihMZmJuxzsOtJg-f5TIoiQDpfqROuB0iXzg1VudaDM-NFG2OGrcVnjmtlS7qCtDecEsEOXxf-OPQe7rCP8_V2ccHvMqgdVodDCwJN1ucKXARuYdwLQZ75w9DGYYnFBQ72TminEZLytE43akbn__1x8Esh8mefDz9HX7XSG8Bi7xKyC0qw-HwBQO_s-qxBcgyYQwjqH01Xt9Rzsp0BfIZUsINm38QrTfDge-cTyEMCDmSPZvrGN0IVkd-BEf1tnaKgSz7imEYslXlvXQXJyRHry4h7JL4XeXPGlD6pCeHuaCbmkiw0IKagjvzV2HLNDfHi-ayZR3gN8JOoiux5kehYodMcwpXGT17IZPxQcWpgJD9lERIK9XTpsPXfPiYMroy19UJoJ8HNhbn2oiAF_KKaqdyoYgIPCA1QOnBiVSB3e28GqSq-NhyR1E9e-jnsBwz_VOHpupzKJMz7Wlk8i1GNkvdpTjB0PeLXU9enSAxfqdzkyf1ipMSuMvWOzlKNbAkhwo2YwDmVQqcN99t69KGT996ROqthwlFdv1j4Q4QUDoD6vepMJJucP9Eag5YZGav-NOdZIOLP2mN0WnliASmrvrASgVpSVeym9LMBMufHTPBR06C_gT6NJqG6L1rqQpS_qzvADY8ERxF4KCQjHaf_Iy8Art5lmOKMgHHDSFF0XnfOiai5mNaxoZrbNQyreE6bafMeH3AFWlJ3gDreeoXn8_F8Ga7wJV8F8BDMcUOX47Bacz5iKJQRjfaB-8gfYr8x4hrIiNIrNJwDwBMHAfvbdAZw7maYQsT9dunso-dca9RRPYVCQHWB-2bcXfak9CAoNNaNA3afClxvtt_6sRmyfNHb6t0oWGPMYyY4Q4ANR0irxk9WcKgNHWEISg1Gk8x0xK4-X_3YC-VDjXXSBLlxRczwaSoUUHc7kox0H5Teh4LBN0X-6tPZDpMFGExCvMuReMQXPmCYBVvHVl7YVbPQbHL44QznJLvSsJpk6oIu2wP9OSsTA9c9RBPxmMPCGMOOPe7taHjslVQyzsCptUn1YZsEFjI-WSlXjNx1iBe-rK9HNvuerPgOy8TeloBwmvLKp8NpAD38McUSnPoyfQIvVQWe-VImtu-TjTiHW5_GYcjgwZslW3z3VO54fWbHMU3GZJcPxv_HSVmLN5TSjrbJN1W0VKGFYPtn7JV84gWMxxdY1c4LI2YsdtNrSy-5IM43q6gZgnsxamTEdcxKvYwb73uZoJ9rsm_s920sf3fU8fXjg0Phfel3jQGl1GAHdsmWqGLQivqlGhRpj4QkiJOCDtlWM7AgHz0V5R9L_yvgYUZNn9H6IGgLngdEGntYCPsE-C1KBlTY4XBY6vS60hjMmmH5X1JsSUfqmk8_VtU4enxpi872L1e9ZwzxpbtuXlop99FXcuWWo5M7ujp9zcIgI7sKSDWIt29rsr0Mtel_lIawlpPWITnfX6i_23e4E7NiIWblo8gP89EdjnK4hTrxG-k2-nqepedalxdzTx30uU0hpvpFTambPvqVpkANyHI4olBasYdeZernq8S3ohJFDVyIE6rm5xQsH4KX4NQiiKWgLe2NhGE7T42hjv5thDcFMFXAxNJ9VF2LQhwGBRsk1X1QabWgVpQRxeF0EMatQuCnbMH9B97CQkv9gCm8Ob-mQvr0TMT7mPkZR3uJ9PKIBtWLj8NYojawAiWM37bALjLjyMUSsXYYfGqooUMG1hFwDJjaB3JBUDpANbowFHy_iVzRWwfipsjmCb9OVgO5Shaf2RuTy8sYP6c7ijyshSGo0Ie-TxkSLwlgYa5fJyFv6q0PAQtOegKKR9P-S7H_T5-gleSxS6in-4dR6MkG91m0srHAaYzEuLqYkqXLOsXXSU9mfG879SI7oUJ7CtbMVfRKnoX9onQB5qawAjMwVABQFjosTBLk1IWlRbZfWLgRz8Ajfjhym5HagU80bvgAaH3eLQiTvd2n1LYgmSc-EzPyf8GDORZQv5Y7X3-jK6kcbj5dmWX5ouECyCn3oyY968lQSidajY6p9lyR7FzhI_N28oEo5vounKJQIcyjnhRU5Z6J1Hlmmj8QkUKLWZoO2_CFhSBym6JJmLUv3SlYEUHwlyyHcNpp3ucDZ89EJHW61-mNgSrG8E684Is0yLxJJLImw_sCSx03VkKjAL2HPJNQUdaAPgIPh6pp4HnO31CRgY0aUt6AgmEKBA="
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 141,
-    "completion_tokens": 199,
-    "total_tokens": 340,
-    "cost": 0.00216625,
+    "prompt_tokens": 134,
+    "completion_tokens": 291,
+    "total_tokens": 425,
+    "cost": 0.0030775,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.00017625,
-      "upstream_inference_completions_cost": 0.00199
+      "upstream_inference_prompt_cost": 0.0001675,
+      "upstream_inference_completions_cost": 0.00291
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 179,
+      "reasoning_tokens": 267,
       "image_tokens": 0
     }
   }

@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765054687-U7v3cd7vFwY5Wf3RfQfY",
+  "id": "gen-1765665242-1O7ZcxLxtDIZJ9hTG44C",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765054687,
+  "created": 1765665242,
   "choices": [
     {
       "logprobs": null,
@@ -12,32 +12,26 @@
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 89\n}",
+        "content": "{\"vulnerable\": true, \"cwe\": 89}",
         "refusal": null,
-        "reasoning": "**Considering password security risks**\n\nI'm thinking about the getpass_r function, which uses a fixed 64-byte password buffer, while fgets uses the size of the buffer. Now, DB passwords can be longer, which could lead to truncation, but that doesn't seem like a vulnerability. \n\nI also notice potential SQL injection risks due to unsanitized data. I need to choose a CWE code\u2014definitely 89 for SQL injection. There's a worry about buffer overflow in sprintf if lengths lead to integer overflow; checking is crucial. And, oh, the evaluation order in C function arguments is tricky!**Reviewing evaluation order in C functions**\n\nI\u2019m considering the evaluation order of arguments in C, which is unspecified, but all arguments are evaluated before the function call. This means that while using `my_memset_s(password, 0, strlen(password));`, the first argument is a pointer and safe. The concern arises with evaluating `strlen(password)`, which could theoretically read modified memory. However, since there are no side effects from the pointer itself, I feel it's acceptable. \n\nI should focus on the SQL injection threat and document it like this:\n\n{\n  \"vulnerable\": true,\n  \"cwe\": 89\n}",
+        "reasoning": null,
         "reasoning_details": [
           {
-            "format": "openai-responses-v1",
-            "index": 0,
-            "type": "reasoning.summary",
-            "summary": "**Considering password security risks**\n\nI'm thinking about the getpass_r function, which uses a fixed 64-byte password buffer, while fgets uses the size of the buffer. Now, DB passwords can be longer, which could lead to truncation, but that doesn't seem like a vulnerability. \n\nI also notice potential SQL injection risks due to unsanitized data. I need to choose a CWE code\u2014definitely 89 for SQL injection. There's a worry about buffer overflow in sprintf if lengths lead to integer overflow; checking is crucial. And, oh, the evaluation order in C function arguments is tricky!**Reviewing evaluation order in C functions**\n\nI\u2019m considering the evaluation order of arguments in C, which is unspecified, but all arguments are evaluated before the function call. This means that while using `my_memset_s(password, 0, strlen(password));`, the first argument is a pointer and safe. The concern arises with evaluating `strlen(password)`, which could theoretically read modified memory. However, since there are no side effects from the pointer itself, I feel it's acceptable. \n\nI should focus on the SQL injection threat and document it like this:\n\n{\n  \"vulnerable\": true,\n  \"cwe\": 89\n}"
-          },
-          {
-            "id": "rs_003b5d909d2ecb6601693498dfc6c08196b1cf4eae4d14343d",
+            "id": "rs_0e278ddbeacca09101693de9db058481969fe492a4e90322ad",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJjx2AeYsBFQ42fYZzP-30KlGaJd1Jz0oQ-yFcLSX6EeLKqpSLhhnTuyRmPF1p_hFidGBEBx7inXm82fDXQKcWaYfZBQvwJzAzIEGEox_d9IhMbuncE9kVQgmSf-ruBy5mWL-uD_71HREbLDCiuIK-QBD6hczysBzaG-umbaue8PyAZ7fNHxHXfcMbkKdONu09vBw-IWfZFm9FzGifKxIYwOrKsPpwmAI5KCkXGDlqC4ChPhG3D4fbWuag6qhuRkIhEcJGEQSqnBnZafsHvlwTURaqBWlthBOXOcuVfz6wFwmsuRuq44mFEIXU62WnbvgSOEdO4o5ZuCHGqUz_Xapbn2lf5OV3YSOaAFgrbo2WK_DFgd4Vu50fqgSxZwYvcum3d-WOJkb5HLP3PDMQgJBzLAjJHw7t51r9XHqomu0lU9mil2PVJj6Ersx7od2RAo9YLaRSXXOnMq_dudCrnrtaLLJNMeEc3wrU7R2dEIVVe95TXn5U8rExj2I_5bcTIk4OBAJ-ioMe4ZDr8ziZk44jYPuX5NrUlmO9btYT7OAJP7mX0F_1vxNJm8hEhfokuJcuSFVcDZFwF0_kwuheakIc9s3vUXaLS7tMYMXckSiwGjHyEMqr3vfMM9pQxJ6pqkSCPNTOH8tVQavJ7vqnRl2Py2_ijfl0NgEqHi899uH33u4lqbL20joM7Ky9s1Hgx6fo51Ku32mGy96CtfruxPkA2nzmIlAg6FviZ_1sKyvcmfRZcmdg6aiqGERkJJ1HsTyQ23YsJQFm9-Suf5sWHVJ7X73FVBnSqm_omAiXXYNQN5d_Y6_oG7upo6WI2yawunQMxdWYlp03FHp6xNPb2E8jx8I8uBEQmeq-Jfubrq4BWs_m5vfg2LSfMGzKfNJa0_ncXiBkg2SDZBQN_vbWECIP6XtywpkUuzVMds_5kZhUcVWQO_O4Q_Qb_s_n6oTy_SFbmI1EkCRSyKandn3uoiUsou6ZaRq0S9bqjBJ-LLPt838GqoV7ui8rdDxgK6SsvGvkmDiRjVdbJlihRgmGD-QEaUiiK73v1mw9HyrO3Qk4kqGjthiSVOo4XuV13ZQSX2CrLz13cEi7KEmNgas-hvmItbBJSbUPim-zrP7Xqzg2lri2DNMEHoEM7F7LX5-GUIEECsL_bHE5cRj-5xmjLw80665bN3jbIJT4ogLjWAIUZBwH3aI88jn9EkzyVDW3OX7pNWjkYxH1BFmRO6tKlzL6l6DyuyxkIrtGw3qsjj-Sts2MZh8J4yFSo4jxtynXyjkF1eVafmD16PnzKqtPlE0bWakR7aUeFAbLbNLuTGKj2Z9OhT7tVDd7YlIQwL_f_56WTVaIn6bFxuOFPI7e_5iFww59n_8Y1blYFc2ZV_yZhYn4qSDuHPNweYnFABD0k-5H5caH5yYnagMdFtVPh8VbHEnRkDkY7txrWkyv0Jwu87CWlJE-EsIeAjWrCJiT-hktFkDw-7F5XzLpON7AJWiWODZZ5AxCprspD9_a-II58LuNf3IKndSbDWb3fbf8-VnkyKbm1jLJDDx3oz2r2H7ltip_OkJlJd-y-s1qwYtPnIZlxX58bTDhUF33PPdaRp2n1xd4TCmei57GcSzKVdNZ9WPsYLQmVrNsB901KNzlkdmMTOwnUJ7ZrlWMgH8UDe3Q6nJ-jbuLtsd247duoS89vNCFN5jHUXLdMCmm_QQFv4gwIo4FD3M0LKq9ND4dxX0nm4vEcILOjIAjnPgJF8SBkxdZsGCgHrx3yBi1zvCBtskWbPrrK-G0qVk24rY8thEAaE4R1489zkgwdOsvIciko_vskPY4uCtv4u9dXq-OwCurgNp3dF7axw6aXkadR_0JxTtpD4vE5gG46Ed8YXdbE8YE2_kJPivRzn2GqzyNcEsWhciMh73_K0OZadRcrQBtS-MsswAvFnRvKBafM6XeNWD2VDHPFn6aPSMBocRCVlkYjWGzYDbh8cqOC76NdlSJAVYknSX_C2PYVpO7YTsohyzPWT2EbhfGVfauh-hoCMt16buNtPK6_zVNijLCxCitPV24w9fRWUQhg7f_0NJnpT00g_du-Zfdg02MOz1chNHOARsfM8F8f94cjCzOSVYdx99M_cZWqct7VIxArH4YyDd7JokztVsE547-pQgPuvyoQ5AkJwWE39WlExcnoX2b4lduF6ir-xfhwXymfVn5gpGbEb_pcG5ugJ-UeLBLQJ9b2pO5Q0R9Hv6-NM6x7osAwZn8BPxPjgeUO3AFuzhZ9E_HngUEGMt2h5LafFxq4yDkiGRadrRczpRa9ES3yFwyT2HQzCBKj7_X08VKmW1gbRx9Q4ta5Kt4iSEVoZ7bVGQ8J2vO4Q3Z2jjenC6FaiPBn8hU0YTDP5Yqmrib9pkhb-SnGsT5GQexPlCtf-jSGzPe1SjG2pYPQbU_4HnN19kj2ZNOXhg7oOwiTxhHxeNg_dgFeojc6wLv666-gTg8tdEDKBw39tdi3vF2IQAl5elrWxv_FQOhMJXghBCURAQQ-vYoS08ZoBzHTxWTLU0aZUxXBm9lnqZ7UExhRMRgBm09rvvyrWLAjdKcz4bk7A7ye2rgqKlFihe2nz-s8GjXWwlThcOy-Ig44gUIO6czeZ8_msH7dIQM8IHvRNAtK35QySgPrnEsOEs0sUF-GjvBj3VXay0dwT8i7x6TWIZtlos99GgM2Advg6iI-WSrMQXSV0vYiScT4oUH-Q4IMKPZxK6ZbX3HkgbWtJwsS5EreBEJOB6j5Hphkd_TiXMIozgznpSel3ziPTLVf2ctIfBpA7JHTXQJo-B7Z7yyFjezJRnVv6CSz9FfFfbko7DmnzNi-6Cz7gDUl1a1uK8XOX7EfUZRSOPiJdCg656ZreraJcnJhaBO7rBA6sjHOfWfHV9uQbpkrT340ZVc_0_Rqm80gwUaTjcNdMan7tZMFRM3M4wCnCRavefeNVLTCjWhU7LZpabE7fJDYCb7DzbQnwFWVh2aPLUO0psOwTCgtEoX5a9IzPZD1ySnLlsAz-aLCaRufcRoYQ4i4MMoNbZPEZoYvwuwD337JQydPKAJK3__LdAdQesSYqEA-pvd56krc8gu7HV3QLvHGbchjGVPlbQ2aNeKLJpbwwKRlMIC9fgVxXXGTQxjz9BxLmJQVF4WR7vFqj97fMtdcmLw6QeDMTocLXsDhHWtRQ4_vXFAghTTG7wG-Q3wkmf-WM8OGro9Dy4ZHJCQU_9J3tCtoJuamUyHzbA8OMc7OZmZ612NQ-Fx2ct2oIXUWuPLVTmF7PTLVucTsb7R9zKPrUz-mBYuCiO8fmlYj8exVeNK5AB9JI6QHZHqMp6TvwK8ISOdtc05p9KtDJFSiZIhMZzPhEEOBkpX5Qv_5AA0G8nW71nrI-hBaFKPSBVzQDegow4skPoVC51kzrXn3H2poKC4BkokpibMuoe4Xz20xNy-NFZT529BR3tJ7f22W0hxZHkDFAYn649XiCnawH54EbYPonPkHXWT49UqFFMDFAu-P24xcObAN7s1pe_ZCtPJCyNhcGYfx9eNkqtd9I4OT6NnsmUe9UngqM-p8xvwOQIkXSaogEbVl_QFs2fqkh2WyIeNXV6o7CSQsfKQLR2NMFUvJcto5tLJITLfZw16VdmTv-AvN3r5bfND9w0fP98VGX642NcyKfsVOL_0MYujIf-al6EAICP2yNod91ASVgwHdhcIsX8erPoGZrBrxat5EswXj9QifvwTAyW9S7MBzD7eYKc7HUSYdGX5hkoXkGK_kuG-HKiUVQCFEAgy28wYBbXYgwos6YMtAQBZuu-JGvjgtenzq29ttTpgvYDXzQ2bdoDfOfdMONa-AuaCRwutsJcMsSLwl8q8-8i6wZxrfZYYlBAXXJG4ot5gghjSp-DXgvUk3oQQV_2SyYWbr_sRWYka0Y1kMVxPmBQJsTUlOK27ehDuTfPoUuV3H_UNZXxwsszHaiLnWm1xOng56iSsmuT0wNImanvuCyUScXUceX_MfzjPOUZUKrzK5YlteW_T5trPC-aVYiepfmjYyPmeItL85fe4IiPPgtK0gmu-GaFCicIPD0rtibkJ6aYPcqCD83jvli6tpEgYAC12Z5vYbD6IcT1IDBFNMGce0HLJHqE1cvFp8WB6PCbQMVXo50ggoB0EWzZV9tBMNsFCGfeXSWrtIHTK7ixRtvgG2HbMq8lUaK8CWiuWQPslst07RJEc9-vrZJD4KUA_xrO1tJ3NMTTjCrqJQkg53oPev9HYklkOLlYCUZZt4rku4voWdhqx-tMpF3DDipCq5TPhVnJMzZZmMfKgnomRjq5jLj59ab4XL7OnL6SoZySylg0f22wdUqQ9i-06tnHS3INFamWfrvqpzjxBQabuMD1hUY0dJxe5rjf0st9W-LTQq5NDVRJSFmSv1-bVAoJE3BjDaHufYkgEPbYpBZo7YZ0hkzDH45IgPHgRJvJcpfF4dFVrvbl5MrKIGrmhblPsqYcQeox5a5XViyYhUcISZjvYNSiY3QMclIUyiTMdHoW2EPYPwXkaPxfFBeRQisxpaCHWf7RK5w3QCR0cCPkJdZhHQw2Kchz67ORpjlGytqxSTcefTr4SKSfcwDRNcxjYtbTpVK9e4oIheaZCbtj_aRtPRuHyXInExO8tKlv6T4_6Z8MgLG8v8-_lfaO2XRCqIyMuJMI3044QO5KIZy-ysezONaj3NKCllI41YEumNyIleRjmnQaW4l_lcL_b3ATyXDvCCsQJZNxM-2onHI2vdU2iO4C2ge_xNbGIkTaCNSrc77V8icYSGsZwnPnkdB6lO40qtoGTtFRkPcH9pqxgjIGSmSGRodjw4-Rsv56jIxokJ0iaJAdLkZwOhMzo5SakABlorAYFtfBsrBbT016lHj5x93WPTfIb4FOAzmQf4bdyoJiJlRiAXfnnUZ9OO6_C0TEF-jTWqM6n5ZFzlLT-9bUzg4NfhFec8Np1Iysa2OjYZOHydqUH-S-tK2buWka9-PIVwJHyoz4Xg2ni42jds7UH9-qwC4bYjo58gEWal2zH1Q_e2WaU8tNhObLZ-9lSV2Onj0Ya7qBSG-epiB7KffwvT1k9kVaDB9FEuYNA9KqyanOccGrlWajVDr2ANva1TAeIM44mHA8JhhSe8mC5xrkiHJCb2Mk3f5aXGBfTax0DbVB9xG_6kN4vUxxqDx8MzpP9lzIpgN5IdlkEFDGU3DJxrInMCYW_5WQ-szHp8I3BydgLpngibv9I75XBQQilkKEnb8WF3pupGQ2kcTW7O024oQOrsrXH9ajHowpZSwZ2TBVRH5W-un0aeijC8lRvFjh8wW5HfW6x6gF6J0zWl4Kt017Ewlu7Xz_McRFSCyOBSnjdTSUUb4PEhW9rN4CRPkKFRIxhPrSKf6nVsAOzXnhRGOhCH37rBzuCYLZskjxX74uprNzzSUQk9J5zxPKXnk"
+            "data": "gAAAAABpPenfBBb2KJNnXmC66Mc_YFMVwYm_0zKDD-F4Pk7g4yr6Y0kLaWbD2Pc_HHkqfLQgA3Nwk0tJOs8y1lag6vAfxJIliY0eFsXPR_7UzBQti7krxBOknaL1J5dqarLImyNimDgnIymBAt2kqHemrMSpCsdKgo0tcWHIRlwFgYh7HkjxH1zMas7L-naCRzGRahtATAdJjQRgBZQnppFBistPXTaT1Itx1luP8cN7DC49TYuSpugrA3hlDzLgogKVGnItnhfbd4lwWUSbxeQdAJswtf596992OCNT3l3sj1avfQGL3_cqh8SSaCG809s52b69114aR320550eC1VfNuE9jSFBfHeJYxuYsJM077vll8tD-AqWIN3ihlsNhsjS0d9B5pnI_DSYlA2Af0ybj2XdqHllQw6LDr7-4fkB-2K6msCtZ1_FP5R2-JlVSiThsx2mPbWJWU83wNUaKGfMRNWJ0ktMawNsKlBaJGdq5VXB2FgUUhgOyPCi0EiIQ8NgdLU5NbJGXfMl52RY2-oQMsq7xDnxKm9jBbaG3nxvG5R-xB1MTR9S_OQf5MXB5JU411wJIHVu90iw6yDMKu6chWGrRXv7O4KYkmxF86tOAd-ypgaZTMZzTb_o3vZSBAc_EQzwSz2Xlk02b4Unbgrlhlqp-8UacWM7HCx6k_7cQt35Bfa9NThUtW_epIwAchkkyrjXfLCxNlWN1BjLpSjFSGcRx0oXE9H1o-zWcngmuxfnhAa5Nx1nBOjCtE71olRxFOVa8-3F9L8UhHTiZFdIZYoWU4-tqN7JZYko6pZDoqDPSROnQGSTFKafG7lCkGGam3E1VnijA4VgsZ6uOT0LbuGEJsRSDqo53BtysyANAu2XCXJpglPwL8gUSFDb3bqNcsxyajVz54jer0UeV-FfUWRfMRNcJJL6V-AWeC835OhJDSSSFw3y0HpCdAglG3BJv4fy0y2lgn9lokxbnPzMZWHuX5Eo0eFpS2yEeGSIdyMv_IzfhO-_aJKrnouOo_VBrylrT-2zJgG0i9Y-5tSh179KRx3Nezppj8USQ3VGdiDXBTNd4a-_Gu6TkV5dNWdSWz0IlbHKftw2xjTC2uWOKFgX1tk0oo6EH_6Gi8lR4_xi_oGtpfiPtDO1YF4UDIKTyq0Z955qr9Ic9mvH39iMenlS9B1ipEP8WvPVWZemhG_48lRkFt2UA60pHvdVCwm5fbI7oHG9ZhygIv8lew33gvsq9mkW8Fq7pN41dTHFrXmzR1ugOuyvzwlVnpLS3wKhIFeOLJSYMfOauUldYrxuxyB1Q4aJ6AoedZkF4SQHxqrHn06JT7-jqPXwv5BDM6zUW9PtyrnFSEZUA-XDJ30bTaPuMrhVIl5-0YtPpL85qh-XWKbrUPtkhDcoyJy1YLNifIU00tIMERYF6EotkGT2MTX64yLwy0Qg6m4LNca7YNwOFFYisr1DbB7e1PdwsEgbkM-lqyoCpBDFqdF4gRzupa9emAeJZyGBkQJ0fmtX6J5j52dqcwTUWx6aDUBAx7yXKVqrQJwOIH1bpeXi5R6vENhSUYWRY2ModIAMkeJD9dsdf-YuLoaeyOivQlgGnCb5F5-m8T1hM5_sPKWK2yzxOCAuaI87c9Agc5H-colhF_2EP6PtcI6NzZ6uwG3VkMJrXeQdRu-aHfr4Dltg0fKLqJABVcSw7BIUnDyI_zTY3QWPNrcqs753B0bzceHk5sPxmGhVYDOo5JWHK2VVMjASF0PqvD-6qlascLVT7Sr64l98InscVnXZ9jTWdFTZUJIU_uwbvgZk53K2aMWKQzHOXdjXfZw1c7Gcl55Ynfv6I3_TOkUJgtjT8_FBenww3aiZ2X_zPnUZsQmt5pMOCfhjGDaO_f7tlorhlLx-OefGnQtDgKPr6JY9nVmBd1Nx3wcjEo6Z22DErBsAiJsnocsT_8wC0_ppiifvUPNmsKpxxtLn2cgC2DGHv7hXuHEJEwTgeZQVBno2ze6FECrYU1zWna8UFNbsdHUO5y8VgC4oE0sVqIPXmlXteXB7ZIROf8UqUtgIbPeyXUJSY3ik917pJrVQbFHCzIqQPvPDFaG9CqNzc0S6y5qlhUKV3b-qUMvLPOQ6OxOw4HC3c3VV09-mX5iwf9IOfjU557sS7FRLsJOjs2wTTML5E9cn07pqTtEtFe-08eCgJuv1jlpU3Hf3ft1VMv_d14PBgz2Zk3EKtKxjUF-JDYVHHLOlwDzbvKVsR4PA2wSo1dSyR_3gWYifcg1jH4elVuK-gq1353OxlZdX2iw63nVMb0BtblNCpoSaKzT4smNUmrJORMstH1LUJ9jL2wz_-zWf3DZzBmfBJggnAKgAWfiaGKAmxidTL191qMlJlwwAkYdLNEBb294bITfKshkLKZ2tFgIlYom3a1now9qMVXYOJL_x45ZOnMc74rEu7npSFTMufcoZSV5ec43Cujs7b6yRn10yWKc1s2R7_v4xYPv9R0qzukH3xxLzVmJksd0Thlxz5a3mhZyottvG_5rJI3a58kBIM-gz4MiplrNb1X_VuhyqqnR73HQdt8nuE2UxHk_7wec5cRDUL06OgY_v4UBMkwPrpUb7hh4tO813IsWHDUtBBZIfHHsI_BAzgqn1pyPy-iMp77K3Q9oZotI6a3cpXjLDttK7e5JM1ODp9hhxMgnRTCbYvpyCwPBmSwiY31tgyDyweEXAVR0dGHDul5Onorg56ot1CJaGDWP70MXKAOW6n9oLTpL9WATyPNNPI3kbYgPn4FJXyGjfH0vFo66qz34uDwe3pTfaYLtSFzuybLHylTfV2xUQNRFhMSreh5R_eCuN2VN0pv8g4kn9LM84sJtpUgngHdS3RO-NK6D4WvrGPJCKpMhicWhOyqAubkA55rt8faxi374A_0h6VQMSf5UorgWOzorUEUvORXwicEeRdLqiZ5Xp-ngwodhQUd-T-k3aU5b8PFiw8EWMrnO_wyqxZGiSsdYQchtl08CHjeKJ5u_qIVa400FSOe3NB4LxyiHRoil8PFTYrQgjggTYAJQaIJO_vzQBSKwUz1dunXmFgwFSdN4hkqUUlFkQjo379SmB6Pz0I0IMqu2W5sGREON5LsMr1qQjhB5hqCnoZH-im-uzuUfRa7iUHXTHfb64upZmAB5wx9_LX8T1i5jS8JtQvZlQISvGUFodZFvQ5kvbKLwS-M1cim4fZB2noNrqxNZJEyUuvhhAXF8rjw=="
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 845,
-    "completion_tokens": 814,
-    "total_tokens": 1659,
-    "cost": 0.00919625,
+    "prompt_tokens": 838,
+    "completion_tokens": 445,
+    "total_tokens": 1283,
+    "cost": 0.0054975,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +40,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.00105625,
-      "upstream_inference_completions_cost": 0.00814
+      "upstream_inference_prompt_cost": 0.0010475,
+      "upstream_inference_completions_cost": 0.00445
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 790,
+      "reasoning_tokens": 425,
       "image_tokens": 0
     }
   }

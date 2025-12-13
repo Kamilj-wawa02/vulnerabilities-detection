@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765056140-y6dBCPGVHvnMoeT8Qmv9",
+  "id": "gen-1765666291-sNxopxJ9oxWBMr3WC6E1",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765056140,
+  "created": 1765666291,
   "choices": [
     {
       "logprobs": null,
@@ -14,30 +14,30 @@
         "role": "assistant",
         "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 190\n}",
         "refusal": null,
-        "reasoning": "**Evaluating vulnerabilities**\n\nI'm looking into possible vulnerabilities, particularly around integer overflow during malloc and calculations based on n and m values. While n and m are validated to be greater than 0, there's no upper bound, which could lead to an overflow from their multiplication, causing too-small allocations and potential out-of-bounds writes during iteration. I believe the core vulnerability revolves around integer overflow in array indexing and allocation size. I\u2019d classify this as CWE-190 for integer overflow affecting malloc.",
+        "reasoning": "**Identifying vulnerabilities**\n\nI\u2019m thinking about some potential vulnerabilities in my code. When I use `malloc(n*m*sizeof(int));` with `n` and `m` being user inputs, I need to check that both are greater than zero. There's also a risk of integer overflow during the size calculation. If `n*m` overflows or is zero, it could lead to issues like heap overflow when I run loops using `n` and `m` for indexing. This is linked to CWE-190, which describes integer overflow problems.",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Evaluating vulnerabilities**\n\nI'm looking into possible vulnerabilities, particularly around integer overflow during malloc and calculations based on n and m values. While n and m are validated to be greater than 0, there's no upper bound, which could lead to an overflow from their multiplication, causing too-small allocations and potential out-of-bounds writes during iteration. I believe the core vulnerability revolves around integer overflow in array indexing and allocation size. I\u2019d classify this as CWE-190 for integer overflow affecting malloc."
+            "summary": "**Identifying vulnerabilities**\n\nI\u2019m thinking about some potential vulnerabilities in my code. When I use `malloc(n*m*sizeof(int));` with `n` and `m` being user inputs, I need to check that both are greater than zero. There's also a risk of integer overflow during the size calculation. If `n*m` overflows or is zero, it could lead to issues like heap overflow when I run loops using `n` and `m` for indexing. This is linked to CWE-190, which describes integer overflow problems."
           },
           {
-            "id": "rs_00e8d2e52f3617680169349e8d4b048193a3ece42dc153eee3",
+            "id": "rs_030d0a2c228aa70001693dedf47b74819793de338f691a131d",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJ6T-KoEDnylwiR2kSdhUtAC6yBJsYS0X9AmFmbIsrFJ6NIbFxlMeA1GtBvZ7rOQoEPU-0fEuPCOuyKH2lp8aQAG6isNf8hGgi6lIVNu99fquuWuKs-u8PHFlEaCZ4bTdh3tV65FudDlJePZIUbNwQZfkdl5dQOqWDx0PsfYkXSoIbWbBYXcKwH8RWwuDqyI7FNptGAyrAiwxZi372Yqmyu4cdGK595Ftg2zTdJEV3lU5jTLg33LlGv76klFPUw7Lxe1Hv2rQ5WY61uLqCCwUDbq7RQIWVU7Xxm0bwX50wrcHxdMJNd9RH7Mpq1C0__VTtRvqilH55c55G8lQgwV8CnIaMO9PqFM_R7mhnc5zVEUvzd83P8Iwez6X5VHwqrScFam_B5Rr5OwE5AlJc2g144qE2ayubTBeRpY8bk9tGt6FfkORKKOOfpeFmd3fuQmYr1AUQHeE_LgNoRVg-U2vYzH_qdL1U5NLsssvv1O3Pwu0grUccV1nNnjxgus-KrThy8rvcD678aKdgZGRT8SAlHmVLf2TNUE_Ibs92dtPhPwYslh0TvP0jzpQlpA5eMxPn97RPLMwJW8yMe1WDzReGZcKCltEujAM2qwjWhSy_Ukph8BfwlFJvJU3dThuo2yWYJeCsqKHn8BRQuxgDLECYB3TB1PszahAR2bQ3AjMwT67UE_XIEmCnMU2QaTWghmHnu8k4PJKJ7m0pNkET6J9AtyF63P3cgECxDwvTFFXlq8CD7lkIB1S79Bgcm0lTFB63d7J-OW5grbo074Ot9hGi5FujL9icrJ5P4o3moONzW000RXRWFHW3Vl9iaxy16pr45n8D9Hq0HhJY3eCbZnDy-TnazhF9RFegapw6yo8_2EE0SGEEbPv9L_OcFEMomk6nx_FHRsOewdGwSKAug2AFA6cCbV1pOUMZ960RS8nQJMeCXTHKlNh2CJhF_BMjXbpXbKXgGZwq-gZX-nPXCLet0WC8NgQ8wBJymGcVxgBtOI6lXuR__--m6H77KIQ_sZtePn4TMUxhp-QbG9dgzQvvP1WceGvg6mmixFmQdCbpA28e6yX5AQvaUTs2q5E3DJwemSXiD-lc2lPofqB72fU70-vU_1iVHsrZFVh4CjNmQEvuQqwQnwNKvUJT-rKZ5jc8AAwBRWayhNxY9nNdUIfTFosw_CnRyFw8bL8Hj_OMkj3wMZQqjq-gSCGIuvaFjvncw1ezgLJZZ4LcMWPZc3sLcTP1uYcqlRUzRPQD2tRwohLKSR-oTW1-dHh063XQp2ITpnuTeMS1vrVRj54d9zQJl6TT0ZxAA8ZyDqecadR-0lt95Hr1aazBNCiJEBEjvi-pjILeFP2Z9f8EnvCbCwayoZ2baQ-adC267DwOrcpEar89GyYPjSoTt850QPkAXYxjLkDwa33PFVMvjyix3WrfJ-QQ26vf1LKuFC5ijacHCcp_lpYCm9bUEBO-2ctiHl6BxxLmNs6NlcTLRoUmRjzxq6Fv6S3GN0p7fvboGipaWzekx-sTVK7-oNhISkBGUoPjoOLM0qjEy23G85vYqNpcM4TD8fmqj55aUZaE1DYZ6dau91FY87psPNEie2F3YJcbtG-YwrzecW3fRYC4PyW5ehCYnmps0RILhmTOPHae-DFDxo2r1Jxt0R0h2KqaTfjhSeP3wRwuyOj3o9oKR3WHjqH5iHIf-8OD8kg7sXHGMaT2hmf60lrlRzEztQdBOhT89QlHh3mTN7xalUqnQ_ied-CcWixm9iNoSXPewHUh6WECqkZh4UqTeDl_zkpho8OApQvXure4DQ50L4iFZWUpTVK7X8ZmW_pqz3nXxN0pr5cCiyc9CHyxesRr6sNC07BN40ZJZz-AlQlV02XFTbNn374BFVc1DmG_UCxZ4B5OW60kU="
+            "data": "gAAAAABpPe36_lKreMFaM_n9ZxKs-GEKf9in1L37AAuM0csP16NPO7zyYfBmMWNohqVf87HWe-P7w28t8S0H69bQJD0s7NFogmjMKvXo449Z_ZhM4nYQo5-BeOAsXSxZ5SX3Apjk1-vZXStruKJKDPKOmjnFGPcN2SluT9KBRcXVcQwx_buVJos0az0e23pmC0vI6yXlnMl2i5bVIPykDQDwesPBomjHrV8IPcU60kYN96ZqSGf_2Vv6g7Ri62kK5PzqyQ-TeCiSpIbRXgz0cPls9q1OHcNfy-g2mBuxQZdfFS_Na_S7y9UDxdxqDp-r7q4iKFdEelPM0dPbKSOOhTKuWplCizpwpfi4v3CsRhVd7Vqgp-6kSWn1jAYdJ5OVi3qeA_uw4_DKMxfHbFxpDnmIjj-uLXw_bgXOqNuSbtnsLr3J7bJ-dqQW1JnmOmFe0h4rXHj3t5xwXdQw2nmUV5iG5j2zxareF92hLRx03Qu3lflQqwBivV85eDNSTsEyvLsFtIzO-Tnv6jb9pLayhXhP9YBLIeELFq_BL2Ze5GWa1bKrmDZxN7Wl3cZNv_zjWSDvEiEytdJy0ZRLngt5a-yin-oc8sCiBm8JbYNdWW9vEEJrixRF5IkHI7hWiaNuiuKpVJpOhHJMf9-KkIec1Yv0FHzjqqC4sLJJ0udrKiF31DGMLyCBY84yHblh5DfZtSz31HQcbBscaUL4v1uBQKZ4x3xi72liHXbG8bivYEnfqQGMaCSYgUYVOzic-H9UPZhVP7XWNbjzsB9KwWPCnzbuaUBOpGG6EEZmKEKlXLIFXYyoqwPuJ8opPN8Z-Q94aHxrr4acpZqQ3jXjFo3i3pWEl7G701e5Nsq3DBBVs8sIU3UDkApjFdUEwidRzKFCD-vZ4SPkVb_y3DaRMCUX_vnV4cw8fncx1uey5jnTyO3gnEcuzd4VjNtlsJcmlTthJeYgmhhZhOHmfM38xs2H9NJQEnPwOGjjIyJdStBWZA1Cffr6flbseueSU-OWw-zxNavnvVll7MgoqQGq7OcH6wf0OHfKOr2tBfP8vn4dmfm76BrqmD7rFzTmYdGEvq6gKivsYkRVDrOWDsf-GJyLDLlaPSN3VnMue3lgoCnOlkZToVzlOuAf0UNESvIAA3bBC_doOBrMNGW0dRQe6wSum2HnGaKLfX5NdD1gU0hhcUw7ULA1kGQMk4b63E_QOFqHU2GifLIuRWsybh4RSgxABlgNskhjUw-fHqmTeksNGg3V2pbjUn-CAe6CP0Sq6WFqcSc5YwzqvvdB2LZJnr4r2EmubRvrZ0m5OcPnbWb-aOjHS6BMDpJhhYbuDRJuIr8FlFhwb-TjSEu9mK1ruxW8mNXa0807422Iq85XL7BGVnoPO3znOFsy6_AaaV9coY6PR6s-vBgQbb9hMu9XJqFyD21kDqZuZuDQUlQoEDGuXP4ZeXd7BQRWVCqjhvmwQa5SoKIE-YN-I_UyWKl7kMDY-15_4LtagSCnc6EC-R_SV_9BpNyHuzKNTExb5rN7ZfmvPuDAogeWNxNccjZsZIRUyjXaJB6G4z-qX2YYVgJ27sESD136u4w7VIkxP8nGtqxbIEjI7SzsRmkeHCSXn30GcA2RDwDSWSMIs6jSkZvLHhVJwXeQh0oPHpRtXP_aHhcoThGIknvXMTzqHYu4UcghUcciZOaAfwpL7dFeVcvwei4tXKYqSIQNkuKiBppxZiMNXAcZwrzj90hPwVkNkUxwgkhKTj5de5_CLzi_leFIPmFDHGdwGgfxGpd9h-khMsocVlxImasmbcuho7VHCQRl2q90a-mrt4r2mw=="
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 319,
-    "completion_tokens": 192,
-    "total_tokens": 511,
-    "cost": 0.00231875,
+    "prompt_tokens": 312,
+    "completion_tokens": 188,
+    "total_tokens": 500,
+    "cost": 0.00227,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.00039875,
-      "upstream_inference_completions_cost": 0.00192
+      "upstream_inference_prompt_cost": 0.00039,
+      "upstream_inference_completions_cost": 0.00188
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 168,
+      "reasoning_tokens": 164,
       "image_tokens": 0
     }
   }

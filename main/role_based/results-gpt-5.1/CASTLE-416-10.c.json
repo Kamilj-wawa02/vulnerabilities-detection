@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765055629-rdHgNG7b4CJSszw1p2s0",
+  "id": "gen-1765665976-kUPQX88wsjNzltSWWeQi",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765055629,
+  "created": 1765665976,
   "choices": [
     {
       "logprobs": null,
@@ -12,32 +12,32 @@
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 416\n}",
+        "content": "{\n  \"vulnerable\": false,\n  \"cwe\": 0\n}",
         "refusal": null,
-        "reasoning": "**Evaluating pointer behavior**\n\nI\u2019m realizing that the C standard indicates any use of a pointer after it's freed leads to undefined behavior, even if it\u2019s just a copy. That's a bit tricky. Strictly interpreted, accessing an invalid pointer can be seen as a problem even without dereferencing it. The typical vulnerability associated with this is Use After Free (CWE-416). Here, reading a dangling pointer and using its value definitely counts as use-after-free. I\u2019d mark it as vulnerable and return JSON.",
+        "reasoning": "**Evaluating memory safety**\n\nI\u2019m analyzing the situation where one pointer is freed after swapping. It seems that only the second pointer relates to the first memory, but both are handled correctly, so there's no memory safety vulnerability. I\u2019m thinking about potential leaks, but they both get freed. It could be undefined behavior, but it looks okay. I\u2019ll conclude that there isn't a vulnerability here\u2014probably setting the CWE code to 0 since it doesn\u2019t apply here.",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Evaluating pointer behavior**\n\nI\u2019m realizing that the C standard indicates any use of a pointer after it's freed leads to undefined behavior, even if it\u2019s just a copy. That's a bit tricky. Strictly interpreted, accessing an invalid pointer can be seen as a problem even without dereferencing it. The typical vulnerability associated with this is Use After Free (CWE-416). Here, reading a dangling pointer and using its value definitely counts as use-after-free. I\u2019d mark it as vulnerable and return JSON."
+            "summary": "**Evaluating memory safety**\n\nI\u2019m analyzing the situation where one pointer is freed after swapping. It seems that only the second pointer relates to the first memory, but both are handled correctly, so there's no memory safety vulnerability. I\u2019m thinking about potential leaks, but they both get freed. It could be undefined behavior, but it looks okay. I\u2019ll conclude that there isn't a vulnerability here\u2014probably setting the CWE code to 0 since it doesn\u2019t apply here."
           },
           {
-            "id": "rs_089e27f7ee52d6120169349c8d80088195bbccae613244edf8",
+            "id": "rs_002937e3b03271e601693decb951448193af7d2d5f7ede7c1b",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJyayhgHJvO_OHCl2EmqPmDL4Xh4Pc6tEMqil9DVkiO32APva0t-hNtzmOQmnoBQSDcz9VEEZGPdyZKsntuXgHcM88uaGg-pKgIjRPlFBxqmt7HnqoACIG8XUtCWoQQ6XzMXF93opX373iFQRTjis6lgNHGjXprLd0c71mUW56ZZvzxL9jALpvJC7fkz-6frZKvrMY8yxOTFP7AZLoJBOmvK2AgNcQLi2h7S8glx8tJyUsKtHos1Ng2xnM_x7k7jNPsHPwuRhrmGa5CHNaBTI6Q_DOx62XMDF0392OhGUcM6gbhugqmXZlz-lcLSfnKACO6eIWa6is1XePub4PxdZxyCuajFJYfDesEcMmTxoVubCl83icZ3ZtXyNDsa20QoWNwBvncrPPI3G9MmvqhOekZGwp2ecVaO6ITo9iPWDA7RIwGc1P3BxSWSXme6P5WHUI6Y6WdLZZtdt-NFFSdzD_hftgOUBqRHz4293CakERgRl1J9f4Pn-bybjYZRjUvNEhl1d5BQy3lSSvVq2FjAB08qV25gnmm-aqxWGVpNIzx64lKA8Hv529_U0XDktXPCoxv3NJKxHT9_LKPzfp6Y2uNpoh9J2YRnya_Wzz2JBp7AQ_w-08q_6Vc9G9M6Cyj_2cKhJ80y2YpLwOmha_1G_elSRt0LxB9iyG3s1HWMCxYyllu3B5TzzD3w_z-ETZ_XU6g2HikqARLeMWdu2v8O8QprJFpTQkaNDgXSVeIEzkEVHbYtS2W7RydM1xXDSJGmGx8zvjX9kohVNEk9vFgn6ERCY7O48elVIdxYpqg7UOe66AprHADmVAX6aHRpy5kcqTb78Qhd3I56cEUk-wIBSoCdnOVPA3FKahRaC44YcSuUzicNUShlTLSUyvGTQcfBvWxTCKb7VciKHIhv3rA16XovsS_WkrDKTmIOPtUfNs4qMJ8cDdifwD_QRmduY4JdGXGqtqkDceLYDvRpDBN7mK7q-t0V3matrnCGl0LmOvEIx9Cac_ofgrS9QTqfdoby3p2tIpJTd13t3o_LIoBrKO4YuiyP6ewP6qcYAJ91z4aMRylHQdNa6lqz0OfMD-rPFMkq17oFFSWtXSJAsswm29ErHLw13ASj_-FuQnW--5Np_CNtHoPALW-D6yNFDl9Wliq5ZcpXinMH1Vbzx79PDNvDL1ejYGZO57Z-bkBi9YYH0Hsn-Mm-TwXpP4KK0CVJyzlNcMMq0U3XtltIZDUxCRWPGRWRiKHlNbLl0cjNnJ6tkSgpAoa9JHqdSUJWdFHazXLaAu_aAdRRR7gNgaKpPZrmHn04bWtgKbU3HwH1LN_Hj_8AnkKbExraEMvFTbkZDZOMswsvr5CVoSFQhkm1o7f2pRvRvI8aL0O6TL8eKgHbGEOv4bILDmvmwgr54Ws_taAoVj7RkpAO0cqHvXLSaTcM_j0LncTwEn0PGoQZ0P2mlNCuLjY-FKB86vDYHtB31tJAdR8DPjgmk_FkOwIlY3E24CnDBBvQFjy-rUmjhvAGsoEtmgBj_mth0LqTRIMkHRnkWlKJ3vr8-9uD8HV5WQrfHycW5KPdVEjuT2WHn74LlR-DzCoXJVwBLo2_NkoThOqoNvD-LNXgcoR7xxsAGvUSFcsdXFGvi4I9_RyRAWcv1ng4CtbnpWtAJyujtDxW1WPl8aAzeUUvkFqrnJd0GTKPQAvgs3AWLUSJPk_x0klCXFkHfdAI6z_UwZoQ3W8xZf_ae0IDXUf5T3kL67hxql4b-gEzYAUKBVy1QS7r6bspwZNHcLqo-W7yFo-IYgI_jVm5HKPKtzTvB7v_EEbERCyxSFN8pgVzCUZwRpm8tZ-kvuawTdSz9tYmsYzTVZivzQ4cFIydICkBBb8ErfxEaYy3BukbnZZDhGUELdYjC5wm5i1Fomc5p9xlAKZP-v7TQBSQmRZE8LmtFar9_8yDhwU4QdqpILYOC5ONL1bE6tQEENjoviTX6rz1aSDUzGYLdAHf38WaWA5D6wFNp27g6zf-yyBEW07uLJ1QiA-_EuyjJMn7psWRq4la9jLPAvj1bv4kJeCo1KqBY7i1hhjWj63LSiKRcDz47j66qJ3QpQOIZNh2XjXGGe0lKwVxvMDwv-MtmdCvhv4Dxh-dH_JihWJrzc0FqoiAltBfUD9c-Zv-8-lTtKKIyCRzKzWc_7k8fXj8ner9nJ8k9XWabtsfdLV4CTOK_SRzIe5E1lsIjYM7xFv1nyzVprNFH8Tk5sQIZPa-Nm8v5DjvvELrWHybZhXwoWa9Qwoe9MUPDlwuIBF0LICWVOTjJRBLi-Qti2oVdC3AaKwuzUhptK2wGz5zTUxxQiiFZXYljNnxKRbzgA5M4tVEJJJecgh_uc5_rWgp5myg_ERD640aHY2YShWhFSTfeF57cPIwdSS2v_ZnblKK983BoGMe0cSoiekVhVpEp0GhNJBspuBIr8A_RxttUJT8KfNzwIkw8fooFypAaN5_afo_tgghi4uvVtmgwuRMvq4cUJWMbMs-Qvpfxo6uTXjArRvCokI4MWE1wujuATWmIrBey4JrCihLq8WIY4OBkmlPw55Iv-W-2IFPDPaRqN8VQ2F59Wv8A9QWfOCGmzlFgjnGRaYKE4hMGrrTML7zKd-gXBcv0sEyzHE3y-xJCowMlzs3G-kKMaRcvGmBWcp-mwp6EyrEGcg3-dcbKySxYb8DUw81dn5A8p16VjMCQ6qb-qMmigCKkaWgw9YpB9j964Em0IA7FyMMk3t6shdUobf9ShRNEaOQxXGgQtxI8EXYf2ueYcZyPeJnLOL5rLuJANiFT1TDKKL0rrRjR5k1ceg3DJhO4fLsLWIB-s7UP2feEOmJCBlqQhIWqY5Qu2-B4ddbJszRtm7iGHHiLwQR8twz6Cy85b5sxIrr2IfFUTwXUyv39Zb-64nbirF9TeJ1Wd1ntzNxu6UB19EIHTx60ZeQcjQRCtcADpOGsnSuATWveavYPRZVej0GVKe1GOgjP1CxFeafxYktTt2gnLtO-URD3UFUixZEVcx5mgFOD2J1q2tzR0h1JGFuvyOuUOzV4NgLX07SVYuzWtvTQ8NF0lNWlQedY3hLV0_wk8doYT_Bfi1MvDmiyLvWheUxfnMCyWYKFVhrjs5GKJ36EOEzZAVKrucKKqBezPM2cOPlSENeJ3O_3qLr_DAASP9JsXaMlCbXyNwKxZEE76GeZvlz1Vo7cEXsvaxSn-tWzGheQ7CYYGXf636zfYq8tImFrO_CcnuMozIs6zCwUf4kKLJQH_F-d7Cd-ELn7xOav1uwVqpQlu0Y9gkP0cYXcCpGTX95a6rvXFeVJZKOWgCbxwicUGnq2tY6bVvlEp59t3iYZYGRtSHcom7OJV8mSTrRhWL_4HDS2wr4ujXpNNMhIhwNthXh8aZuvVSzytS174fQIqVy6EpUDDmG_l2pvd3JYqlkmqrdcE0iS8Rj0ljRWs5gEdcS6dVzh9y5lT-ajtAgwSR1ewj4w_TZZQDMWiH1zfh_TubIpYg-KXQacj08u_t8zoMMObLPn1ydmZqUgo3TH5neBli_AboBnv_SGyfekwbf57DVpijoz6EdVXbROJ37Tt758V6kPXNLouoonXKHDDt-PJ9SUrXJIoLOJaxK9zk89qsPgRl0DbBQDGgwSpDnq-kS-gXmOUQxB7xtsqZsnaNf3SKGEMlURWbD-YqCMtw9DLJ8SUYVrAM-bwuO0OkryPp2"
+            "data": "gAAAAABpPezBfNqdfB9Wvwupv6i8F37RqNti2w7BAKpGd8MrVobYATYhsPiactgT2wB63V81ON2eBPd4RKE2wtP5kbZaZQLTYYm70Z_1Yg7fysuq7E3-30zOzVzjF2ztWh3rEHtF5vymUN994IM5LGHS5v7aUJ7mE3C9Y1pTfIKl14xWmN139_J5Z6JTPjLlPGRP8z84nNRP2X_UEOVNd7YwbEtf46ZAi5DDIUy93C4Y_M1ysgPn8WWFHa2wj1MwVd5WLtLTc6NhN7Hsi7kZ-Y3oMB6NxYocb3NwklBFq6zm4N8qDqycxehtE6qjce9iBmHphJHVWzzZGKifb6RZOrASKAt6GpbSroyxInJWZlwydcp-fkkl86r2CYwjhtkoVy67pdvV7o-8LkuCYTqW0nck5PTJsVyp-vqbptt-X-bo38qm7T9PXEJZIz3zwn2TujV-iJUEDWaVeeFt3VO6-a9a1UUUmZoosjTsBN76BCqkJcoemxVEBwWBGg5EFTqodmoXNe7wS5cnSKdL6QDjzYpacmbqTw6O550WzSfo_GR_31FVuAuRQeYfCa5-iQ6AFwxX-EnV8uOACo91xTIjkQ-n1NORnb38ZVZSqchX_RKUAcLmZQhkpcWtqZvL5M8sEeaVPHwxOZO6NYvP2oHwsoOrq4O8VDHgVvIYj9nG1d9roXs52nUZX_YvfzDGle_CO564HCKhI-tcPlWPASp2KTWIOBAiFkMdF2u3PAmtvaDnjF9RQWRy5yuxc0psbJhfkaJHXdBTMjBOBZHpqh7QYc2FUVTethgNB5pEq4VuGMbBUroV08k1A8-PCLtRcLI92Rm2F9DFETEXuSZhI9zpJhkrKNm_tQVwFpJ5IXEPKslu1u04p381iI4NOwNo5-sioRv_2hFPz9F5uB2Kq4mvE6u3CPeGSsvqfAmVEFG8wCRJxRUIaPMFjaBVnD0VmQhG1v6Ei49EFEsC4l-pth5swTHKz5XoHr0-UUCwqqlbs70t1mBdjyMFzFcAGqGwm8M_H0jsE5tIsWTmhHNApmMlM9k6dqSonC5xNjYfjckzhOQlBZuoSCjmjwaF25snmVQCjLZO39McoDmjSROE9975rlvAtSXoNzlduV2NmCBxY6r04HY3OjIfi_9UAtabXbGzoGEs7gYjW-TMY-wEsHvXyqySQt3t1lt9SqzvpursRADtVRdCTHq6WOfMz7RwAiOVRp6__zNDczVFV8trnohSFzLamfZ-qr_Ed6OR0nYMhGcsrWAqghdpfepqHQLpQlYQel6j_hIH218yo5-ApMwY0TxCSQ1pbL_2ZOL2kLm_pWwtoXIYhZ86j0SNa9kSCa3DWjsoYe6kQc6irHB_cjcjZVjhowyqtXsJJYaiJ3dIHhUnlVfZ8zN0f2N8Fu5z0nM6T_JRmwmP22MXRAfM-kiTWe7EADydHnSUmpaQUPhg9dPM4J1G2lEYHi_Acbdi4zCM77JubeEuEdFCD4QLzIeq1kKpTxI81GCYW0dTcOe-5JyQr0gZiFlCONCivcAkieOU9z8_AiVGXvSV8eLkcPkj9M7Eg3ZMJ6HVWbhxtIJsTBVGvkNsUpOjXrtoGIhK75XJcwY1OYzHwPyJ0bORUUIfoi6nJl1F3IkDFGVqPWFqySbfD1wlP0zE80HWMbbHqI0PIM0V4KrwiO9BE9ghPZa3di55ItfNaNH-o2ULk2QZLQo2XCL3lrOesxcdAmBTGQG1La5rZUHWITxpIVgAt5fcAh-_-HpQBdMJuSwE3SigwAZ0AIWs0DwoOLeu8WMJKONpWPWE6JAO38CtBEmlXqqNanvP-Ca8uO3pUI7uAWIy9HVX4A-A8o0bFcOHjTdtU2TKpv3N1ZU8miUajrsc4PhNWoLs47Xg_gt_W6vq9tWLbtdzzArpBpr9rZXcsFEc7rtLQfQ5I40fnRG4fb1aWqPToC5BUrXQWonV7mz1_YSYkSHu-Srn8gD2KgpKxUDRhtbieG6thncKDKd0_sVe_nHPQecDf54spgPz_AH3rGBObDb_anNAO4-NkNudgvjfEey1__1fjEX1wmXniO3ZaCV_95erkhcAtzcx6WGC_iR_em4IsadbXxC3NlV92mAUA2ct67qADK6wm19ImWBqy-YHqwk0dqBDpFob5ZxI1KRCh0lEO6-xkwIjhK8D3rwFomCTMLT7vJ-smxFQ8budUxDaVzxDx9X3C8o_zgesp7UVwYFKFShLLeLwiRax3m7TZoUhglL5HYA_pKfaYJqecRG4sWDE4KUj21AuohMvsjdIteaJGannUKy-839jtOJdJWym5_ekHDhaN6Hb0dgnJccz4llYNghRyIeZFjqsAONd2-xRDAlvRmi1lDBSIv6ZR2hZTK0oEzZvlyVdElN3oxhvkxc75CIe5wFS9WwBttvJieP5GyXkX-5Zx68hrRulL5arBwRsEU-2L7AY7V8aNZ8McqN-KzwNIbTlfX0A10omRNvJFTdsqjp1-8nW6zK29YeK-HVXGq1wm_cRFjn-cQBrYXIvSJyntzWUyoCS9JFtfdARSF2a3Ma_moXvPTUVnMbO2-IQueJoS7cY1VF0MT-O_0cJm0abF1x3vhNi-vXd4d52Q6zZZinZWQ_OK_-dE7FhhftEzIXhMjPPjAuJX24dWHYVui8PXQ0Q0flBWI9ss81KMlumiVb09r1EkWjNG9IysJhDDAIVG27IEJpQEvflfk5LHeG1HYge9g6Ik2daorI7WRjEBzbkNFxJVYlrN2lLhO1hSbBhOc3Zd3XSVMzsBlqbsnB1fQQfUqqGajK9iOzJcKfmN4ewgV4xK8p_FzgnYGFrxALXEvNRby1ApC8mu2RQTVXJ6v_pd3kDN8t3ALct8U2nGeHcpnGdqf_llzW0urpHCryehdemU4eTstmEQDQ6yI97xwvH8d2lJnx2w-ctwmFRcf4UXPa_JjnAySMTocc-Zy_PHp-_m063U64UUmH5sR90Y7FizlLxaEvU2AsQnw9KSpGZc28cwTSA9Pf3cHpTi_EsQvP2FYI0aaLSszqFd1DAK3aIAxxu3BDMe1upQhG4WYbVDF8mhcgy5auoIEMhLE6gVWNV"
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 266,
-    "completion_tokens": 559,
-    "total_tokens": 825,
-    "cost": 0.0059225,
+    "prompt_tokens": 259,
+    "completion_tokens": 453,
+    "total_tokens": 712,
+    "cost": 0.00485375,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.0003325,
-      "upstream_inference_completions_cost": 0.00559
+      "upstream_inference_prompt_cost": 0.00032375,
+      "upstream_inference_completions_cost": 0.00453
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 535,
+      "reasoning_tokens": 429,
       "image_tokens": 0
     }
   }

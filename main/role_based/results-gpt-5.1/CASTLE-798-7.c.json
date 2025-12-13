@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765056733-J5nu61v37L0hi6ONL24m",
+  "id": "gen-1765666694-UgObj2fbVto0NwQjddVO",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765056733,
+  "created": 1765666694,
   "choices": [
     {
       "logprobs": null,
@@ -12,32 +12,32 @@
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\"vulnerable\": true, \"cwe\": 125}",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 125\n}",
         "refusal": null,
-        "reasoning": "**Evaluating HMAC vulnerabilities**\n\nI realize the length argument to HMAC should be 32 instead of using strlen. This points to a potential buffer over-read issue, categorized as CWE-126, but more accurately, it's an improper handling of the length parameter, which falls under CWE-125 for out-of-bounds reads. Additionally, there's a security misconfiguration with secret keys in the environment variables. They also have a bug where the Authorization header isn't formatted correctly, which might not be a vulnerability itself, but certainly a logic issue. After weighing these factors, I conclude it's primarily CWE-125. I'll return the JSON response indicating vulnerability.",
+        "reasoning": "**Identifying security vulnerabilities**\n\nIt looks like there\u2019s a buffer issue since it\u2019s not NUL-terminated, making calls to strlen potentially unsafe by reading beyond bounds\u2014this relates to CWE-125 for out-of-bounds reads, which is a clear vulnerability. Another concern is with the custom headers in curl; they miss essential parts like \u201cAuthorization: \u201d. While hard-coded bucket and region might expose info, the main vulnerability seems tied to the out-of-bounds read, making CWE-125 the most suitable choice.",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Evaluating HMAC vulnerabilities**\n\nI realize the length argument to HMAC should be 32 instead of using strlen. This points to a potential buffer over-read issue, categorized as CWE-126, but more accurately, it's an improper handling of the length parameter, which falls under CWE-125 for out-of-bounds reads. Additionally, there's a security misconfiguration with secret keys in the environment variables. They also have a bug where the Authorization header isn't formatted correctly, which might not be a vulnerability itself, but certainly a logic issue. After weighing these factors, I conclude it's primarily CWE-125. I'll return the JSON response indicating vulnerability."
+            "summary": "**Identifying security vulnerabilities**\n\nIt looks like there\u2019s a buffer issue since it\u2019s not NUL-terminated, making calls to strlen potentially unsafe by reading beyond bounds\u2014this relates to CWE-125 for out-of-bounds reads, which is a clear vulnerability. Another concern is with the custom headers in curl; they miss essential parts like \u201cAuthorization: \u201d. While hard-coded bucket and region might expose info, the main vulnerability seems tied to the out-of-bounds read, making CWE-125 the most suitable choice."
           },
           {
-            "id": "rs_0bd1d03a2cc2f7ad016934a0de7e64819389a904be954f412a",
+            "id": "rs_046956587210597201693def86e05481949aaf6f4293a3ab9b",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNKDrBZuKG4y-dd_EJAtdhO9s2dHh1127tD-tYAcgn9qUIShtnJcWx9SQIlRrWAAh2081VHlBvTQQhIIhWGptrrKNwkRvm9gqG2ki_Xq2QzIKTEjIq2nkdEyw2qhfoEC5lcnExnD6ijCZbFSq4jCjS99XRfu8zFRfN1N2XhR-XIAdIcZkLB0etJHcc5sK9_q6lfkLRFgjPz2X04BleO5Fl-ialyW3N1GEXdNkrDf8iFOmCtDlcGBlWHiW2fO744cNFTJDxBpaMrR2X7ufHlhOAHcPhIexb9WMjeKiGEoFPSpIG3_uT960gpDj29USIF1IC_VpZnqnTkMHU6h3rxAwGJ0_LK5L7UG5aqb-5ym8TBaBez4k7tG6_mbhnxe9Dc0yFfcBJVKrVaZuBqNcPIoJTEuMBJIr5J7Fry5JWBsWNdxyFy_sxehmqKnGt5xNIDOP7E3HEmiNnNFsKd0PX7h3NxFssLpC4UjfySwtZfPtmwsM3cr82nehujD00dhuRz9YZJ4VSCd447gfam0946jcf76azf1ZC6gP919KwCO8vhGCf4TiqXyQFW2EBHHaLHqv8r67ylu84WDLekPZIUXr0TEhjV_8WZS72465flOfcB-f0mRhnECsNPExRYj47yFhhZzpqP5P2MUb2O8ZKatyHKVo8Y6AT8NCVtoXz9vkHqxXlPfHiFcxgprOe8F-bSqHi7Ac4pEbzL5oudWpJf4tfSZv5kzYk9hbol2T9xSY3RjRVKKY0kMSwOwGS9kjK-_lk_SdA5nqFBeAGmP6Hpah22Hyxyzra9w3yQI64yUsobqsosEmh63xweohHM9fIFEiVpTwOz71gdKBYiTtn3gsNVBafSI0Fqaf79YWo-m7QR1UKCoJi2MwWdg6wbxkzDRWL-riXaIWIPcsGEBmW_bQ57w-CEQ_23nutLrc635I-ohzuuqALNyi5rd7qycv4a5ZCYKHYlKhqc5rLZqSesKq8kTJiwgo22Wv1xlb50lp-ZhjSYthjAgDB7GVO2F-YBpGO9q39D4LOYugESipyiKF-9V33H23UGCNvJ12DQ2x6CnF3FCyvE8XRuow0GEFbuan3LTdMGfqXS9uUp5XBiSz_InZg6b0A8iOOBAg0Ugpyy5NjyEPEjyhFejrz9rbfsTpCqEFajPXK3oJWju2bxzKmxf_WK-UCphqUgym6Dbr9TxGIuu0iUBsxMh2y0BFaVMSYHtJMceKVPC9_OTavyOabAPYHovaCF3satmdZhCO9cM_1USR2tNhlf8t7mQpWZ2j1U1v78PDLFReR5FAGbTRsG_2L5j85NKoVpeauIvnPdVZyYOH06ApOSHeq8t6pwMs4GtLXbKdpmqbqY46DnLOZsEKdQxvqB9ARyrTPgBfS5sgT3hXJj8oYnz3MiWa9JDSNFreHCvugBfT2XWoL_SzUDJLs9kasSdTz4RAX7ATINu2RFOaLmkbMBI9aAC8zkWYykG4iJFdImMfQcldEPeY1hzkMxiW5pelZFOSWfRzkteuHcyUTIwc7lAtyXaJtLZJc9pK9o730sCjte-6tsR4jq8Fyqy1U7mKyOy1Y31wVfeTqr7G9bjgPLn8zjn8onD7Dpu7Tn4bZ7Co2OMH7h5t4J2GLlEFaTPEuaud3vA-1jlaQLCni-tZ6IPPmAjOFReleCJvJXUtR37JoIZrgkDXigzZBadw_UiJ6seaNUYF3AikWWU4VKOJFeO3CK2fDNfVSaD4eH9WN2DT5ywOR-g13ohGwEnZRNvLFGVxiHWr6H4InHyNzqUZQ8-RLCxGC0Kswbb6ycgNWBEwB95vc0lXupUdPLR51N3yNASnl5FmYkViyyKi8HtPVCWJrb3S680lfyfrqhL7a9yNNKqeZNSIiD9sVG52OPAfQ2uNxsgntGhsHwJHo3S2yUtPeY-eQcjRwhO8X7TWG4WoW1NCoYLQ81n6MJaEZf3rzOVJjwg9-HjE6qcw4n5XHjgwq0ueRNa-yyI0R3j554E_SkhVLA050M_i5bzcagLgLkizOY51DLCdMKtKwWWwUc5ZrsfX2r-EU2Az-CRvkkJ2sZt0vGlM4URq2gnrjhyMisj7Yssq_MoIMYlxl7WBMpkqX40pxrc0MlOWJDzyFOBdQSUHsyEvhu2bEvpG6K89lyobO-h7BPvGAVdYSN9G0k_KiBWbvzHSsO0LRHTInGLKhssJ5nfJqTz1LXtQFYouAKDUBNvZawxUFv_5-zsIyQbCKBZpkwl_c-7aLoSYZVpva1A36e-9PA8m5FXUfVGJegkaL-Wwmag0Ve50_vm9KjjQp_v-8JOUp0N8eK-mQCriTRh_IdRnPTSWu0kOPUvehU1MGVPyvB8H7Wd9C5Og6rqOqsyem2sVpLtgFhCLciUJLTMiqaQ-VGZBt7InRokMXSy38onNO1tk7kllJt9TYtxtlNyNsGSlp0UFEJk2eQY2J5kIsyUV_-XfseeqSVXBChGzHTnJsGC2nGi4aTZSrzbXD3bN_c3-1FYyTaNZuXC3Kpk-wA-C5a5L5uWmrbpKWgjJyAYjJkvbV4x5NlA6dpC1uueXPHlHUWoivBne89u0099QmNpWA68oeCkChw2c882dfGo44UMPha29msjg6M0pVvDny-oUXFrbBHb8laoBNu5cng6c6Mts79RAjMPQdNDKIt-cIbcytAZAnyS8ZuDqGNjYCMhVXLSRtDp45VCXsTP2-XK0GGqhc-CtsxeKIRjZc8fPPsbpVDLSepe-0uSkKG9NIZt12uwsxsD33ARbKJ_TYNup30RqPAJD0Mk4KzOWUbWdlPblY5IvxYUVwbI9iPMrhmoClHnCljrYrWHESZ5A3jE2Ba_EPU2WwiK65_XFAePxVubXj9cqNMp3ll279x1X9O5_tomx_K3FQlGBckhGYv9tt6HBpoqAzxqr7O3aKnAgV0a8sgBo-yC4wiM6GEgLzhtAvpP-JQAElljZNo1iKso0AutsFWTvpSOiQvwCkEHARm0cTFERVGGWLHY_ugiftjMxm1IY-b5nJd4k3t0RjaJ93U-DDrbCxjd0mHc8fKQTi8WXUMGhI6fkBkEnBJUJ4kB011zcTQN02LgOvbpJ4i5-f3LntJg81JYCWdB0QHwhatMshW5b6C-OPyHmweOT_P3kD6MVJMFnrmowGlLm5tuULBgebDQrpWnXlOMcrpVQOVtriysa4JYQvT2jGB_EIAMYEJsOGqI1jCyn9ambGUrj-MlxTA=="
+            "data": "gAAAAABpPe-T9rwet6Z_zUX6UVu5_l1_LKBg1yzfrHmnk7xPzL5FJ5DVxIjEWE7fVae_lOhxG1E3hhvL-qkgwDrihX2uoeY4C4U6VHFEx6vk1AKOXeslBbf0vnOlNxWBQlnqCxLM_BA632ORKaLW9Q10CYTgXL-EQbmSjeokMTi2ouA8GD_co6FbbKVjlke7mJogiUgcZkFn0TdWSRwfvqwXs0D61RaQK5A5mY13wn3Ym2B3WLsHbdh642GMYkTZpcz_haRiAOowvsQa92G_81aFaPn3Vo4hqMpWZQeP8NPSDTiWk2YHjVtSlY3CsqmQ9s5zlubPWvkcx92fytTvN6cwiX7Iqqn90xh1GhOo1wRxi41X8IGlBA9eOK_jlQ9GTecKVvfh6ibKrGzJrCYDUM1YkJjJL-uWC3LqTmdPbE4CO2e3VKf2FGrFtdjWPLye2pBzrXsnzFpklsSYRzXeRfn9dLiZ-Poz2hTCBR1Y-Z7f-yv3ZpqiVmNBupvt2CUvEax5boQKnTl81F3nFi77wLesqxQgYk1uEuC5MslxMIgr6a2VB9Mm21z7sHxcS8LA5QEjbqntCbL558dxhiS6NtmfTdJLGeif8kDzynpZ7jv1pqtzEE0xT-mYhcuXIvpL-_-AE4MfnQMxkWqQgDCSWnAVBYLJX7T4BYgSb6D-uUMQvtCNGhT_p2oAi5W1AaQ1CfKsG0vWdTKEzQEuDWuXX6QrElYv5kSSHYQWW5Hy6UmRArUA9b39v2dM8iNGFSvhRAP84xvt27JBp1Jp2dVdWtO8vZC5B7BHp_t9ZdbVyBPvC9KlMZFQMSeU4DjHb6I7V7addnv_2m1vBxJVD8lSLanA2hFqSqbWuLE91PEE6h2cNe6w7I2Wbr4BIG6iyZMm17w8tNT5nshd_LXUcGG5ENUL5S3tmVmQUkCR8WsuxfPIzlvbK9tsGFd7jnt2-uHW-Utc7vB_MjWn7zEzccWg5NR8vk8HNQFkEmNV_TvQLRYe5QXVOEPuR449qdki9ZCdcXqlmz67zlOcLKq4QrHtLw_QNd7zR4fuqn5RtUOvhcVKVq53vVY24zqF3zL8TBip2N1DHzQLemj_4PJgYgcMLxRTYT091gyy4OPVqeLqvoe1gsEdyLkcPVM_0WmgT_oVDMV9_fqRuK3szhfx-qlnOT5j39VzvMtn8AfwO1e_m0THZO92VVcpErfN1Qxfoa-3YEmWTz-Zp5QZ7mjTeBBfBl7TJdcQGZm1FP7_TK07UNFmdyhrCOvtq76OgS4AMGGvEZsXMbrydVRxPhm_A9yaKfqtGX5co10rOXGHTNUSRLEBSJz29cFn4FnCyC14cU4S9IswEyPfSrDpw9ebZ-QxbhK-EVfYZ_Np-W8DJPH5kIF9ZqmOyudTQU8Wj_AijCkMGV9NjnIybTRSbGlPy8I3h_QHr2FtPU8wDc3YwLAe-V9DtYR5vBtADydtLvqOAWGPykpm24V0FZobfbroRU9KKQaeGfIhGWn9EfxNKv_SGgHG_xDgd5zZPb_ae3ooS4rX5aNySE37h6pg6I2QZjS1OeawYkBPJN0zT9SM2FcgofbYfgbBiVQQOeisJVlK6R1kZDA5vsjWI4eJJH44s55Szo3sy4LySHdQmMVYY83-3yGo3hJCnYYGi3V06Sb6j7BG4SYhA4bLZJR1UslfUzJyPkxOmOjBEBgPj9SPvz5O4qraqll1nsxObOyGIS9THk9WxmmEn7Wn08FYqYZ1qHCZ6l4heqcVi0euBYzMC6YTIpjB548SClPqsTzP4EHDMibB2iofrhhJOaJUtTT31nJZI8vgf5CLk6ppI5bRCMKdOuZyRH-fWJd9F0AFVCjDDzcIDBfoBgw7l5wUGoOAuvHGiicmJzEcWkgl5rRMyL1MEbQHUOpcp6NVf9nUNP1JQMOs9cVdHHuvBZaPrMTAP_FP9W57uYyhbG5qy-A1o0-RxxwWFO3rXkNE7SIu9jjXkmwnZkQc-kPBqMcQ_RA1L0XbU1HV03ZfrkKoWAfasfNNGUYaABq0ItwiVw3aRyBLT25yER3w7mtFLLOwFtzhDlyh8i1wRSj1H27ZwFlQvv8F7rxHY63wS_5suoPxqm3viPkHdUE9cI0qB2BDkuX0tRn5tB6blxtAkWcRbWoFZXA6RVHIPMrQSdAaPNR_5fmcSWIxTwnExBwjb-w1aXvpLPgrptNgemqjgAx2e5piSxpmGA0ex94HqBnLrCnkCrKhDAlf3vg4-ZkMrghSHiwsXpkbIk7eVd7MLlQym5Y1hI-LDnxkSR6q3kzyn5NFi10PePPSzlMgeUhm38XmFit4twfFAbhU076AMzuIilkyW-D-ucNBaTzphk3XYkMRnK6Gu5JBzf3Hw0hUrlYlSGtjEXw93bXp7ki4ZzmK6WRMwqLuDC-Z4oJqVmo9jnUmcKj49JFy_2P3xNd4Z4E1QzZg8M0tKOwwuJbGOHrCTTLEecEDwmviwqeQNsY437HtJwPEovVbltV6MM1lF2rblPi7WoDYoZWoWGvnLetHdXbBXYbtgZiL4b6UWy30tLbXnSmYvw1EiCSM9esfg9-qpT8Rv2f_xjOawxccREZnYX9yxF8kKgVAu5TbKv_ox19cTv6HU79zgI5jg6X7qYK_QYj85dRibXXScyhkzc42FUmc0FHBAro2BwV70VbGDfdb8T-QuKWN2p8Rd0ZYa5yyB4AW4bvJjGc8mrgT_nVC8jntm9vdjD0HCQ6gwDmX_oDYsvaGxKMjD5OUrkbgt5Qd_3CgScMRdO7MBQNM8dmRftZeEkhr2mXEwpHg_7ntN9xz6c-bUIk7toapIDbVhm0WX0XbPWfjRFfE36nu-uqaf_a3MhfG86OgCn_PVrI_YXsl2xDq_Lg9xaM7Eve9ciyNV0rqd1SyaP23JGAjWYLwMbWxv9x3wZWDUMhB_CZMRhbR8ldIqMv5gNVMTf-fZ1obKwdmPcEDD8P8Y6EQ393glwLHGpwUJzyHOUf4qB7KWd5uUKb5qlemd2b5NZdv32tRk_EZR2rR6Vyp6K-ORP2o-BTSWqtuDb9YMRq8WmIcuiU2VWZOVu486BTYdnmJ8p0ig2vyfUKMncx2gDKMG6YWdowsuTC9NkLVfiAAMKxDyVeNRnT2_JujKysSBMKDkG3zyVus10WJVkWnLFnWmdjTpyMrcOcCudQ5G_Uewbw0Fd8NiDN0QVWgcwmdUYhheo9HfYz4XwidINvfyI33XPEuaz_0KisK-V-AY9jJbkIC0bqBGH6sr2A1dY6-Y6j9U2mvPpwy7DhG0MWmRgOhfkh7DQUGuTFyiqGVDuajADeVhxPhRV7Ujomlon4UrQufVMpW9viBkO3HFyC3o6iq6OozyynIJoGbMJSE_bZXOrnzqN5kp6dm3ldQQklqPeuzpWuka8w31ELa1x9ZvGCfJcxgzClr1RE1IdonLRZF1PqJXLl5qoyi-fmrOVAI-_iurhuRWhs-RXCXEiaxf8-VXkeOnHDFBe_sTZ_5DBDZldBMJTIyWE3tVX8clOKozZt-c0q6i_yaLX5rgQFIGOQoLq47FErtV8OJKEbP4VCQyQlH_8nV0_NW64kol_zPtNw8TKJlCfQhrpesrVyWll9DZ28v4fOH0s4WBx22GS156r1vGU6N5xwuBxBNYMhAMaLJPf-NUhC-k9Oigl_PMtQ7QFOasseqr_FLQk7ais95v2gJabRJiomgQzaRMZRyn6xbS10eCFSps2C6BrWSLRgaYhSw974PagOlnc0WQwx5-KdWvZ2qtbJeTuCPaqJYG21wXN-V6Hpbt9nvoLZ-sLYOkuXZI-_F1FYkkHU10iRMmSqtTHdINGZfLZbAwxRhMS6yzMvGDwTWegpiWW-Whdr64Cxg4wdNHL7dzUg73_igsTVP3tsJ5XZxCrBXEhxe_IP3stYKErDJJOmF21siEeyGXpomjoD_aKfuXqodbS6IOZFVE4OYxPsrC2WEyV2J_7gVh5fhqzGzCcv2cYH-1OP0MArZQhAyRM5NznEGBCaAOB6fp2fC-pRNMKTm0rGJ0Tf-XfUai1KgWmOWlG7BlM3hN33sao-d_BNMgqr7sL7ZSXPWMCQTwKVcXZm9aWMZJJWzGxxtfgENd5Wp-KAQvBtdgkG9ckQCFs1bZ6CAU8laFckn1khazcyf-YDLG1rPDpMJGqROiBCilZTuRntLXoPM6g1xvIqoVc40Q0NwNYRrgxoQIu7cINIAfHziFAnl6wJYDO79JZ1xZgt6Pu_3ceDn0tzU_c464NYbvOXxwvRdEdpJobYfwxKYAogsBA4mMtp7talxAgnH7IEN3zCWpcXJQksDwt7trj2xUX7nIqNZqihJLx8EBVrddy4po3--YjTqYbX_HM6eZkYb0JEG3c6B-raq7qtqaQDaqU791qB1jEoWRgl2kKIc3cXd4MfT8JFsYHnJeDjb7q3mNinZ-k3TdY6IdeVbiz6gt6fK0Y8Ra6grlWODxZsy9YEp2qtcVVB4ZDNHZYmp2d-CCjA0NNPBHwVsGlB--kW4XvxMZN_QhK9VbJPkEN9GKEzzwtUodahm_iC6F0oDcXz-5Jk-Mi723P1TSYDSg67CZES1hR_45SRd3tY97du-Rq0ZKF4qpIpugS1fgJ0L0qsTN3plH5SN8eoocclXFHrEfOfQ0dTpevzwtEpqHCL2oF-JzEXWtYlqxJkvvLWzP-c2rIs62VU2Lvnh9X8NggbGQ_ULlgRXF7c-m352N-vNALAskv5EvF4BnacHjDUrAVv-QlpBou0muvaiuIoUHcLnPK_jNn8RtR7LKF8CJ3-ikt7WbzAFAe9RHlneKkEtlxy9uDnK3WRXtcTtjfhvXMu2h783R9Rmz0sBHp5xMb7Ye6y0keT7wPZwX8zPcplcDIIT143s2PpD_G7xfYabv7x6THNe-OsrXYH632xpEkdU9UtVP2alJoJiwUTeMi653iIrSYSLH2xbsufzPeFaP3ixvrk-3kDnZRpxy7vmTx25CUod5vmNftlMsaB62mA9CTUfdScMiZfvzMP8pyP5_WYVjzbIeLMHK8p825ldAVXdHjXwy7O_pDt35LTGkGWDY0gvj81CbaiYfqpqYubt8WCe6bWIPhz9MhyXq1O4Sm3xh5sCdG9a6zYe2qd3gNTHW4kyFVROog2AoPZot2Th2UU5wNRLe1-mmO_ACZmn6Nzwiz1RfJeW5XaHvpGcl4xA88fV-L4LOnuQo7LOBTLP8wdiJaoKLGKS7dVn4DNC8TMeLDrgleZkKzBZtdfjunpE2qUIUIUCO4vK6L3WA8uqmNaLOamUFrsbO3j2wEuK5UMYETNrXmqre2HRzfQJ-maaVVLI5o--EAEaBa5wwADZZTAiX0XXk3UpITUuoZtxUqCrNRhabNsqt3sYMqaLCTLncW4vkzMTzk7ad82QhjixTDDlp4YV8oAgpOrph874-JlJ4BmXSV6Ook7kIQRYsQEFkBG5jopL5tm9V-Hm3TrtB__3jKuoEA5FHR9Mplg="
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 1217,
-    "completion_tokens": 451,
-    "total_tokens": 1668,
-    "cost": 0.00603125,
+    "prompt_tokens": 1210,
+    "completion_tokens": 906,
+    "total_tokens": 2116,
+    "cost": 0.0105725,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.00152125,
-      "upstream_inference_completions_cost": 0.00451
+      "upstream_inference_prompt_cost": 0.0015125,
+      "upstream_inference_completions_cost": 0.00906
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 431,
+      "reasoning_tokens": 882,
       "image_tokens": 0
     }
   }

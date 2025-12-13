@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765067327-uQARH8T04p1JCC4tF8Lu",
+  "id": "gen-1765652023-3SzP9kQEc256wIAgZ5jk",
   "provider": "xAI",
   "model": "x-ai/grok-code-fast-1",
   "object": "chat.completion",
-  "created": 1765067327,
+  "created": 1765652023,
   "choices": [
     {
       "logprobs": null,
@@ -12,45 +12,45 @@
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\"vulnerable\": true, \"cwe\": 457}",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 457\n}",
         "refusal": null,
-        "reasoning": "First, the code snippet:\n\n\n## Examining code snippet  \n- The code is written in C and includes a snippet defining INT_MAX as 255.  \n- It initializes an array 'a' of size 300 and fills it with values using the formula 350 - 3 * i.  \n- The loop runs from 0 to 254, as indicated by INT_MAX, suggesting the second loop may be incomplete.  \n- The purpose appears to be generating a sequence, but the partial second loop raises questions about functionality.\n\n## Reviewing array access\n- The second loop prints elements a[0] to a[254], matching the initialization range from the first loop.\n- The code then attempts to print a[255] as a \"special element,\" but this value is uninitialized since the first loop only sets a[0] to a[254].\n\n## Assessing initialization\n- Array 'a' has 300 elements (indices 0-299), but only the first 255 positions (0-254) are initialized with the formula 350 - 3 * i.\n- Accessing uninitialized elements like a[255] to a[299] results in indeterminate values, which is standard behavior for uninitialized local variables in C.",
+        "reasoning": "The code snippet is:\n\n#include <stdio.h>\n\n\n## Examining code snippet  \n- The code includes a C program with an array 'a' of size 300 and a constant INT_MAX set to 255.  \n- It initializes array elements using a formula, setting a[i] = 350 - 3 * i, in a loop up to INT_MAX.  \n- The loop runs 255 times, potentially causing an overflow since the array size is 300 but INT_MAX limits to 255.  \n- The second loop seems incomplete, cutting off at \"for (int i = 0; i < 255; ++\", suggesting missing code.  \n\n## Checking potential issues  \n- Array indexing beyond 255 may lead to undefined behavior, as the loop accesses more elements than allocated.",
         "reasoning_details": [
           {
             "format": "xai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "First, the code snippet:\n\n\n## Examining code snippet  \n- The code is written in C and includes a snippet defining INT_MAX as 255.  \n- It initializes an array 'a' of size 300 and fills it with values using the formula 350 - 3 * i.  \n- The loop runs from 0 to 254, as indicated by INT_MAX, suggesting the second loop may be incomplete.  \n- The purpose appears to be generating a sequence, but the partial second loop raises questions about functionality.\n\n## Reviewing array access\n- The second loop prints elements a[0] to a[254], matching the initialization range from the first loop.\n- The code then attempts to print a[255] as a \"special element,\" but this value is uninitialized since the first loop only sets a[0] to a[254].\n\n## Assessing initialization\n- Array 'a' has 300 elements (indices 0-299), but only the first 255 positions (0-254) are initialized with the formula 350 - 3 * i.\n- Accessing uninitialized elements like a[255] to a[299] results in indeterminate values, which is standard behavior for uninitialized local variables in C."
+            "summary": "The code snippet is:\n\n#include <stdio.h>\n\n\n## Examining code snippet  \n- The code includes a C program with an array 'a' of size 300 and a constant INT_MAX set to 255.  \n- It initializes array elements using a formula, setting a[i] = 350 - 3 * i, in a loop up to INT_MAX.  \n- The loop runs 255 times, potentially causing an overflow since the array size is 300 but INT_MAX limits to 255.  \n- The second loop seems incomplete, cutting off at \"for (int i = 0; i < 255; ++\", suggesting missing code.  \n\n## Checking potential issues  \n- Array indexing beyond 255 may lead to undefined behavior, as the loop accesses more elements than allocated."
           },
           {
-            "id": "rs_1bdc0d48-b8ae-81eb-947a-9e46b1d6cdb0",
+            "id": "rs_39fc9778-4939-e954-8012-b0fa89477627",
             "format": "xai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "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"
+            "data": "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"
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 382,
-    "completion_tokens": 841,
-    "total_tokens": 1223,
-    "cost": 0.00129182,
+    "prompt_tokens": 375,
+    "completion_tokens": 653,
+    "total_tokens": 1028,
+    "cost": 0.00101994,
     "is_byok": false,
     "prompt_tokens_details": {
-      "cached_tokens": 256,
+      "cached_tokens": 192,
       "audio_tokens": 0,
       "video_tokens": 0
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 3.032e-05,
-      "upstream_inference_completions_cost": 0.0012615
+      "upstream_inference_prompt_cost": 4.044e-05,
+      "upstream_inference_completions_cost": 0.0009795
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 828,
+      "reasoning_tokens": 636,
       "image_tokens": 0
     }
   }

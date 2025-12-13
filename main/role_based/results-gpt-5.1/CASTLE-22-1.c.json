@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765054359-B9PzQ1gK9Q2zkVnJNBry",
+  "id": "gen-1765665034-BzCiPB8aHcNSRVj5sxEx",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765054359,
+  "created": 1765665034,
   "choices": [
     {
       "logprobs": null,
@@ -12,26 +12,32 @@
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 22\n}",
+        "content": "{\"vulnerable\": true, \"cwe\": 22}",
         "refusal": null,
-        "reasoning": null,
+        "reasoning": "**Identifying vulnerabilities**\n\nI need to assess potential vulnerabilities here. There's path traversal with a user-controlled filename, even though there's a fixed root. They're using snprintf with that root and an argument from argv[1]. Without proper canonicalization, things like \"../\" are allowed, indicating CWE-22 for path traversal risks. There's also a potential issue with `fgetc`, where its return type can mismatch when compared to EOF, leading to brands like CWE-676 or CWE-686 due to incorrect function call arguments. But the clear concern is still path traversal; thus, \"vulnerable\": true, \"cwe\": 22.",
         "reasoning_details": [
           {
-            "id": "rs_016ac3881a7aaabb01693497984ae08193a8363d82daf34017",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying vulnerabilities**\n\nI need to assess potential vulnerabilities here. There's path traversal with a user-controlled filename, even though there's a fixed root. They're using snprintf with that root and an argument from argv[1]. Without proper canonicalization, things like \"../\" are allowed, indicating CWE-22 for path traversal risks. There's also a potential issue with `fgetc`, where its return type can mismatch when compared to EOF, leading to brands like CWE-676 or CWE-686 due to incorrect function call arguments. But the clear concern is still path traversal; thus, \"vulnerable\": true, \"cwe\": 22."
+          },
+          {
+            "id": "rs_0757add89453132701693de90a83e08190945feecdb3285949",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJeajHTvDddOkpV4Ty9nmJiBHgo6KEkEcx2FcjbkGidmZ-T2UQ4N1A1MSP6gc5bD5jfpnno3siqYCVL2yONmluJV_uqzvQSASGmCXwupT0waXi_q-G1rqQp5w0k4eiIpif7NJfY8-r7bj61h0MYEeLNvkGf8RiVvMyVtOcmaTw6ARqHCcywUkvsM1xYk2lZioYVyjeFRcIP2rney8K9bNYuRpeeeANzkn9goDT3wTx4hSqgZKoOrlZvajdh70oWjzY-VHPvtWXChRFUpZQL7W_inZva2C0xYMm42GZRwTdJKmVFxS1JWJYNjuN-Esvt7NvamwkF0WJnC02FRaY31Bxc2g7Pe37avm0UcpPhI_-gI8X3JgBYlIlZIh7pr3B_qWs2btbZ4R5Evxp9BdeOm_8gq2F-ycC6oInwehASexthiB1K-HQEqROz88MLvttCEHPnoFeIdAuSI_snN2H_UNYeZugzzSMUPw73YJqajhSalxAB0kPaN49rWeu4vzr8PNqGvKYeotVcnxaHufSPcoBkgW8BFYcFICkpMUmDSl57zgUTorRobq61rPr8CZTsknXwiIoU0320E1xe5KUmcuj2AOj2hILpoQRtcLJpsc_qt980xEQrlNBLcs7khuxLKmNRB0VJqYJrEEFTuHvnariABKBd109IiB4yKRMZBSRMoq-rW6Eqgx8AsRRaBaPNBWwwnlfT5lbsuXO8qxcbR--bS9XEAbBK-3X-wHDhR2y5LWCi5F_I3j86Yynu7PE-ZiTM12I72SB0e6yVlwajj-90FZ4AIrlV8iQvsa04jIqllxdWIB-AY6hBm0PEOPacObzuwkNEYaEtxVXd-a-aMfTEM1bbKxc9GnIwuz5YRcS2LmQhSWV904jsSSTYSZAaTdyVL9so65_zvJHDbkJ0gkXuTLO9tPvBIYbkl7lTUykE6FHNQfeGeKMPb7ObmnuYf_8S4LJotqiheqQ5Ebqh8eHbMLniJnFp9eW5uHS6KDUB0667ZMWQGsxoizu-_nw1gY1v_3vpdASHJEfxeAACln8o_76tf4Jy1FfZtJOb5CKp0uELcJSQvHbCszO_XHyr_TDRMdUqo7xg0Kbs1qLhRrJz-zHZrTpzKrmaVNYHjbsjTLNtvniQ-F2Bi7HoL0pbqmjU4HtKbEI0rxaWQSIEmGrqW2sRt34gEi1HeV78BQJdSkgyK_bXZqln1QhOijS5arHWZ8hOIVAWrlF2biM5J9TKxPvojFGcluZIb0jKcvk87jE4bVxvYEiAjEuQdQ1qzYUWzulGizZtbTDy-g80z-oHoOQP04a-YlI4FeYxoIhnkkYz8wifdGKnIGhqFk9COIy03KOJta_c4GLpdewNjrIV4DujlXbLX5auTOCqyHu6RvPnvKmwXN0xRMwK9qHr7shbtiB-_AUUyi2QVs9z1iwMrPt_nLg8TJrabD7nggNRjsH4="
+            "data": "gAAAAABpPekOu_uxJEhtLXGddwAlYXMfY3NK5d0GVzW7zTGI9VWgVioixhScU04OL2uScW3rkVv8qS3ucdyoPr1rCa8WpptLuVM1x-q5LaIUsfprfvvqQ6fIZ0Lu6PCYfrX9IMKQV0IHPF9UHEl6CyPhOcxJ-F1Fd42G5Aj5xhmICxkw3gQk_O0YUR36Kp8oRnizwORaWZVYVnLH-x0DJYpjmWHxIreZ-sKukkObVbcYcVdH31ruI2RweFyeV_CvknWjDuQFhKVVIt8fjh4e2JfgQHGBVtQKfmSM5QKBIjjpQHYsiL_0AwR9bOrAPKNkNS_mbgO0EPyZwWH9gYnX-v10nvpIqDsHMWMsZHbwPiLq-OIMK58-aoQzAg5OkEKmSQhrP6dNrQuEAKDa2JhAI75-gjm6EKEZ3Tl_lnh02O6pMIV4ikV3oilecb5KH7OhWFJuTXySoAJ9iiL-MaqHOB1mFMqnR1MEpdL4sMYd0RLgLuYgjsnv780-flForx9aTXz5POQFfn5SYg5VuHp7jWDklD6hRNLHMh272OOgU1dAR0aEpka6IOJ2L5PLoZWPKjKSjfSV9IzWreNE6OVs_ElvqSrmcIem7664whL2ukPXGdcT1YJ9eDyd3B-knASz8SmPpps4_sfajW6v_kMj0qdSJ8O3m75KA6HHzTRadNB_P6Er_1GEjt4ivhK_ih_8QuuOa_5UtMelCbOM6ikeGqJubP09sp9_WgBv6HthBvjQpWVgtiSY3UNDHrOHwgU-zvGLIVA7qDG9fTIAJwE3_vRHqJHH9MDRyT1MNK5DJVEpUockqeel7CXvXDjsEutnRDpJrimWXaZhtc7DQDL4UIeKLLe5HJUbYOPPPNDqGCNujB_MDdh5bi4UINwAm9Brb-B6Vc4q35OP0N-3mEvdvaxpbCSRkc5nzD9l1LdVZoxlfbqTxv7uvQkym-72SKyEudR96lt_i0VveieljgPGLHPeEWVrBywzqX1nNGoDOYtxxxuo2JQCSJbwcLyfc0L1l5SJWkTupX2yBPKSWHxStdwfKCgZLZhykj2ctSi194syVn_uFug4QwHBrEFq2gStGzgwOnLNnrGFTk8z4-jQXt_xkO7TKakcf8FBNJmP2jqRPnzsHItiSRHb460mKcF9C1X9BoV3_HMNbvI2dMHQKp_aHIjAx0MwU97KVigA-vCMDYqFCNp9eVGysrsiD-cjnzR8rMTOWW7oOIEFepPoOCvp8nPFbLTxjTM0XBdeAYVhyhJPpla6WHkOknlTm0vX7lRz0RNx8jaGkA6gpdv2plGOnQX0BFgOc5lZ8cU27ibdev2vTRRsn_lDa9iZPsKTGpn-lAk5zfKhmnNkyVZidyioQVU8m6EM92Y1mqJQjZDmIIEPKzTVnHnja0_2eYLz6aETuo4jL1yx1uDZ-8hy8ete0Ox7WISFY056eZ_aM4SmYVrDDXZ_1IbHPt-6XhfL07qv3wXi_wCjpZcPM-WyFiv3q5KPorMoKiYDQu8961wUp-kuZKK0XRD4zz9kjxn3nZFA_hiMp6SLz3w5XwZIhaniSGDUmxTGP_kd2zqJ9eAeP74cjanyPJ4="
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 271,
-    "completion_tokens": 125,
-    "total_tokens": 396,
-    "cost": 0.00158875,
+    "prompt_tokens": 264,
+    "completion_tokens": 152,
+    "total_tokens": 416,
+    "cost": 0.00185,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -40,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.00033875,
-      "upstream_inference_completions_cost": 0.00125
+      "upstream_inference_prompt_cost": 0.00033,
+      "upstream_inference_completions_cost": 0.00152
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 101,
+      "reasoning_tokens": 132,
       "image_tokens": 0
     }
   }

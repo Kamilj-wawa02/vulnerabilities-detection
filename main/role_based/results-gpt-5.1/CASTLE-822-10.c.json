@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765056875-rD25to48MPFHoJwZdTe4",
+  "id": "gen-1765666795-S4taXQdgIuFw2GpfysSi",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765056875,
+  "created": 1765666795,
   "choices": [
     {
       "logprobs": null,
@@ -14,30 +14,30 @@
         "role": "assistant",
         "content": "{\n  \"vulnerable\": false,\n  \"cwe\": 0\n}",
         "refusal": null,
-        "reasoning": "**Analyzing code vulnerabilities**\n\nI'm looking into the POSIX requirements regarding addrlen and its initialization. It seems it should be set before each accept call, yet it\u2019s only initialized once. For AF_INET, that\u2019s constant, so it\u2019s okay. There\u2019s a potential issue with sending \"true\"/\"false\" and a lack of error checking, but that doesn\u2019t seem like a vulnerability. The server prints a buffer as %s, which is null-terminated, so it should be safe in terms of text handling. However, I notice there's no buffer clearing between reads, though bytes_read defines the delimiter.**Assessing potential vulnerabilities**\n\nI'm considering whether there's integer truncation when storing the result of the expression message % 2 == 0 into an unsigned long. Since a boolean assigned to an unsigned long can only be 0 or 1, that seems fine. However, I\u2019m worried about using the returned value from strtoul without checking errno. If the input is something unreasonably large like \"999999999999999999999999\", the result might be clamped. In that case, I don't think it's vulnerable, but I still need to add a CWE code. If there\u2019s no vulnerability, I wonder if I should put 0 or null\u2014though perhaps you need a proper CWE code to indicate none?",
+        "reasoning": "**Identifying potential vulnerabilities**\n\nI'm assessing the code for potential vulnerabilities. It reads from a socket into a fixed buffer of 64, ensuring no overflow and null-termination. However, it uses strtoul without error handling, which might be a concern; input validation could be an issue. Integer overflow seems unlikely with the modulo operation. The use of write for the response appears safe, and there's no memory corruption. Yet, there could be a missing length check for read's return value. Uninitialized data isn't an issue here, and the printed buffer to stdout seems acceptable. If I had to pinpoint a vulnerability, it might be lack of checks for strtoul errors, which could be classified under CWE-20.",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Analyzing code vulnerabilities**\n\nI'm looking into the POSIX requirements regarding addrlen and its initialization. It seems it should be set before each accept call, yet it\u2019s only initialized once. For AF_INET, that\u2019s constant, so it\u2019s okay. There\u2019s a potential issue with sending \"true\"/\"false\" and a lack of error checking, but that doesn\u2019t seem like a vulnerability. The server prints a buffer as %s, which is null-terminated, so it should be safe in terms of text handling. However, I notice there's no buffer clearing between reads, though bytes_read defines the delimiter.**Assessing potential vulnerabilities**\n\nI'm considering whether there's integer truncation when storing the result of the expression message % 2 == 0 into an unsigned long. Since a boolean assigned to an unsigned long can only be 0 or 1, that seems fine. However, I\u2019m worried about using the returned value from strtoul without checking errno. If the input is something unreasonably large like \"999999999999999999999999\", the result might be clamped. In that case, I don't think it's vulnerable, but I still need to add a CWE code. If there\u2019s no vulnerability, I wonder if I should put 0 or null\u2014though perhaps you need a proper CWE code to indicate none?"
+            "summary": "**Identifying potential vulnerabilities**\n\nI'm assessing the code for potential vulnerabilities. It reads from a socket into a fixed buffer of 64, ensuring no overflow and null-termination. However, it uses strtoul without error handling, which might be a concern; input validation could be an issue. Integer overflow seems unlikely with the modulo operation. The use of write for the response appears safe, and there's no memory corruption. Yet, there could be a missing length check for read's return value. Uninitialized data isn't an issue here, and the printed buffer to stdout seems acceptable. If I had to pinpoint a vulnerability, it might be lack of checks for strtoul errors, which could be classified under CWE-20."
           },
           {
-            "id": "rs_0504fe2eefbc6831016934a16c55b0819598eb0a99cd842fe8",
+            "id": "rs_00702f4edbaa431d01693defec09cc8190ab6f6691e896506e",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNKF8xJJ3n7Re3za9BVdAIUsL6wOt24A8NgcXGmdgrLrlX9G-jFknpr1SIUzjea7xJIeA-yoAwxG9xOuCtIvdCynKKhvr6JZZrEuTI7j3Bn-vwDnn_IO3qfkOMH7bpmt9a3xdXLnqaupCCQtI4wz4XLExnWq1vjGm7AFx8ejPtwaH2Z1YQ44lzhGPWP7fUQpT9wQAndN3D2rummXytlLBut5Thzi8DP0IFryu_28axm-kgPPkJdHOjsHQ4nEwjwMpKLJpXL8d0wUaqOrj1X5O8nk2FO0_aWUHcGlaWivSir_ZKoWvDMfV-4DYk_v9YA8EWTDiXuhssFG-bKOMtScUJpGTQHI02SRODvNRfK1mbCHAybUR_QV9Dki0pFep7jiXldxhQV-8i8NvewVukAFp1ZvDJwkzmAaSkaNe7vQo_5kg9nB_3apKIrO2cP8sojjCQXu9UbuV07Typ2-oexEjumFlnXkDTB87LIbzlZAzb6gv9uehtk8kIvzpzBggcZcOJNX7jw61NLOa6vNX7uZjHh3Wl4mrCq7VrvvFs615B3ylgqnDCI9FqZuOmBK4VSuNqftEaJxSncbycS4D3zwySPu4vB8Jv2h4uF9D6t5Tmo8UllKX0WIfEsj8IVVcUeZ22vuf_pXiaHM11m4drM_pNtoZUp7nExY_FzQJ4MKowAmw-JRADaqWg_O4zl_hooGnt6eiaseiB9h7gCc6DMWNFQeGSCORsm5fEzGKchfEED-N9e0BVnr4DU5Y-1RSH9nxoG8qWFtnJx0uEZ80d2QqpKXKHgKRTHd7QI3tkDyl38plTGR1r6x9pTfLc42tW-XBVLnd319nwxzPlwkkqka8o8-tSdvwdz3CMewkOH8ENygFsRU9OAaJ1j9y5Vl25EhHBTCsB7MgBty-CVS24t--ybHjHqptIXbdCa2rii3AbEB7fn1BbkBjJgNgXNC5iRv8A2oCw15egFt83OodyzIWHZqdyyTgmD6pOkdZp6HkJl-KqDphDI3fY_7WPqfe10mxAlIMgmA9LpcD9qfaHttZ4-f3xchVPqN89HEmj4WE4z-xyj-8Hzu1mZRtSIRtlQpD-fTF66rf4GxAAcdFukTXHqtskmWZcd1YGf3kgBJ0zLd7d1L214QzR_KfJ50iDEUVbmFJCSpH1XEhHhTxDC9pXrxweqw8O0aXgwPtPg-o1oi3P5aRwD0oamBL_InyTD1b-HnaNdbcUtVbI-nL-OZMow7P80Nun2rMpqspjoosRNCQ5JP9fn7KN0Sx2c4gm4CTgEY7v1Wn2Q6cctLGZMRRfME04wutt9UTnLp9ZNykQFvNgJfXwe062wImYp1b3wc_tudjUECaMEJE6o_DA9gh5Uhwf1XMp2gwpK_d4ruoiCd5aOAOImAmxxxNGnke4J0SJvLJYnOe5ygQu4-CAd3ZXx1-vIqLOzBF1f9OKP4i8X9iNhKPt9Jd38aOZvTdiPU2LY_Iu2FUz7jcwy0nMDLHPGev7sizWIdH_eaLn8w2evyBl_WSLFnW3r5zJf_JJ3-YAXzrh8OBl46Jwr72_AkEA-zUEMbD5ZIAQx-o71fXACMSyAkxu1S9KygdQPmVHmwsNv-J2hWJIHppVPCXnOoxrA2fbBh7yYUtrjRh89r7AQumfOOJcsGz5A7A9WzI6xCM6aZnktfrxoEjyLz-nap422bogIRRXK_8TJ4D2JBufSJk7YLsGHUizsTTApmU9BII8hQMaOQSTMbFVbtqtzXfH9HorHU63oXX6tN9PjoIhTNUpX0tFIPwUlU7vynOQmgqx7GCPJyBs9nHy9KoMtkmA8rFHOch7PD2yuvZ9YucWy1ZLwvzMnNjI2Lqcb00ZRgfKUR5B9rqR1ggCui5UjG7UL7zwrsZoJsibyRx6CskH2CWbiAhe9AqgtiM_FFD7G0NG5NjnzwoCoOdjk0lAPmEN2zDrVB59p_D0886R6oRK1YvW8k6kDfh1AJQtjZEWcvwm7zuH-w-R5suTNK0XrWJogSTewRi_wyCvKz3spwm3WYjBnbxBKSY0zRmGgMK45qESMS5OhHFSJNPlVDY3svnwHYU7qeYvzf2qhCgzNrk7dzAccMvaH_pzAeVFuFiVNc5hI3DdQeT6iRQWqXVLKlCP6CEuvEF_sBgick7Q7iJLEh3a-PO_eu8rbnPZqsDpIV5j9QDPvf4mT8tpJnVYWDHhhlt7C-Ts5nRmGr93TnUkcZjxplJOxE6fXLVepCBcguDgE5waVztdJnYVbp61jIwnblpPHnJqABVhRnhoTq_QFhfnow0ds1I0y0gbMXUFPKq0GQ7AnA6LH2qIvlOYLeR1BZKleB1WJKWC9hIYE9Hamxjgn3KSoeWokFlfBIgiM8smi4aFBrvSb89UVVXitNDg14rsFrYl_8lSc7udE9X49c-9dxoOWSB0Il6S4t0Tts_VPPW5bDehXe_FAnZeLAl8oWnMhqKxCoDmCg7ozwu0LNPJbYeOn1qlkVaL4LjweuHKHEHTpEPH9FBQzVFRsvBRDwtjR7pNa0QZKrsESv3Sw8TieoEz9-TUyHKUYocD3JswyavTdWd_GEfVfp74OZE17KFdNQL_SsTcxs3EaC7wy_VVHY8UFBJwzgGH_1AmWNLobllqtcWVnim30OVO9Xsfk5-WicStZDew4oM4wRqgcSWqu6LNPvtqA2xlwBdOAD2PnGatoYDl4sVIv9QvWXP-D0cUWwF4-QUD8XCX1uJ0_HYoNtDvZwrWlFSfUuoBoufgaReyomoPTnI5QrwMTDeC6Y4A5nREOffmHRoQ7a0Pf3RF4PurTjrv7bkxesP4qyR1cALTInbuBg4PcHp6rqxETH2oWrXWlwx3vSWLdybr1KnnF4Y7QB3yOQUNRroJbY-8GaNvzOq_5z31ys0_Rn50Y1gEJ1fskrWM-d1BRSLvCjlJkUhG_dABX-xPe5rbfndMMW7pNpvXJ6rlZIbltOki2BalbsZW2xkz3TaKbsnOIbWuoIbpMDi2XAcOJNeavyJPbl-BjEQnJ6dQ6DaagzEpbL2LzE9UWUy3OtDtRtMpm9HHk_GMpYsUMgxa-ZqOxuGGEvr_dfn0-36269TbiUlHBPXVtajAz4DgF-4XxFhIjj1bfaN8jnSUvRVO3jCXqqOu26NF5DYbyOXrXB0xn41f_JYISUX4OLrA4urmqohvm3D-rlfmEA8tXxOd1LyK8Y9q2Fak6Zbh9KuKDX5s0tQioiPmI1P41PMaqHe9T8zDap9FwaEpP05rj1-MQ974jRI9axBsHfKGXA_Cie9gJgwdHhGOYwN8s_atSNI4nVgRJ210GejI_SKnDeHdT_nJkcXrmdrDe-TfBpnbjvZL3WYzZwZyZzj4Iku1asJzGyQFs710KV4mJY4J4-SY3JvgbbMoNZzZQeC6vhmC1CihQ7C5lVtnVxSKVZKrlIHV8_XIKe9HhEdHmnvlHxa_N31N3QYj55yQ7LJtz6lNPVQFGFZyek0KoNqhCd0FOhjkOY52INsHFf0h4MBefAu23zv_aGWHS6QFpSlE8W-GI76Vfmkf-AYYmexZ1zmLHB5yY91uzT9u9bxP1lVIRn_COfeOIyF_FPqf1mLWySTBvgf05abce4ixGu3jSPFRRQM4zokRG-bItgUGHTIuzjKLGkoUQVMylRtE0l3-LFY_RxH_wKOO_7lw7nYy53v_KWRFTPaBozl2bDyxx0L2A0sgSMDnUVRRTkQui_vaVF-cUJxJlJhFdiot4ARF8JG1NVe5IEx7_VHhACWUfKiPa8LXCx4BWMtQuMWrJGznMCK1kt_V9NIszI2jk_MJDRixnjzuG3UyGXrIV0x3OcTIrGR7VzH5H1YNJl6vsxYR3KuLZvyopdqpsI1YSBOCr_ravFglRNnhNT0hkvBmOSRpiC5ojwOmH5C6ch36vMd63qbLBw4F8j5P1guFT5lQY8OaxuskPaJhXjUSHmiek3IWLXlHf816QJ7on1OyQ0ajKILBl5PJonAdY6LWzo4Ex1y3nFe6ElD09Mhw93Nr92L7W53prdc-puyGMNOKKkl-M7sdIIBmk5UPQI_u_SfyBzwddgxFlN13MlCXDYeEiQGA552Sy_xMTWJUA7zTnhaJoxoc6GIlnwYHPDpt3UmA87qKkUrN4n47puwLaIDZVODUT8mi8OxKGQ78YH9f05nfOX7PzB3T3Y8szYRGLr0ZL4rsjtusnoPy4P7MJDb1QSeXXXGauuhkP70alDI4bYMl8Xi1rQrP6aizpUrCBLYDVGivzM4EdMsO9FYf-Waz3yrH62zPH03MSgDFB0jo_jhGyRMtNzNpyzxQFZn-Uz56gbx75S_AZXHPS9vbzw="
+            "data": "gAAAAABpPe_x7lQgALjBhu-pLPymPq_FvkQh4ivKhzxDZK2DUpjZLcjVUpr7ahWtwU8446Wm8Hzx8rZG-mJGz5HFa_7TsxRldpYVgPaWhh-0nmnr03zdC-z716e-IiywjTNsBGpo5HZhMD0lWyUGOauwZ1QeO08e4ds2Tg0yxwcWvhhJyI7Rbk7O-is4jEV6MbREgJnQZCWoxeoetw2hH1jG_JeAnyLvN8ib3OT1Qv_-QbFBiUfUCIirHwJFoxhn1AxcQqriyYK2gWFU8E2ZC6r33U7Pvc5febNO3Y-PFLy7AnTDvhIk4peeEQ-Z8fNRoAaSjdMT15Hvt6XO8HxcAwZgfo96GohT0ESXiYEDT009B6-7sAnvQHaZAD8Kpjih-BvNDESjfH0ybP3_m6reRDUAfS4MrdzsKHdVmY7DQneTBQo4AggBr7xOngI9bUmxzdp56RRJySJfC2QGwrMLMMArpGFYcPCIO3P83C64yTTRQSSCI7q6S2Tmtlrh4PeU4mfjrCLWvCY4e3OdJ4zvkzPKhsJGMuMvnbLe3o8L8GzIcD5vP30Bj5jHaecuhnxT8KZM_w2DB-Us8F45sCOsM5eFxEkPm8zYjAg3HN1i_UZIZFpNeoXi9miSY_e0XfstQqlCShVinRwVTWhZkW5jv920jZsT7vtgdtD7pdxUJra9qEq015pug_2ptOAakNaNWfOYM_8rk1fvf2tgMPnhjE7xXbXxohrSZPgDWPQDzyGGhdLqQsMrGD2NR--46ET4mXe7Svu5T6twGihr1cZCJbd8l2QJLDiotNKJbS_CGs2nCkl47x-3ogvSBDFGur2uPvsRethk4ubNSCHPyvQ4tre0tq5AEyubFlov-2cdpNfij-9E2LHid04uA-AyS67gULkXE0KKJx6cLUbhuXqyysk1hP5tlz5wXngtGg3AoWj6EZGJyf0_qKeLty_MAEo9tEfe3hVpkWO132aZXmGJNlflobbekuGKiRDDvvLkMLikv-OEaQAtBxDoQJX82Yf31e-CBKM36_hJRRnsthX1VDY6Tdio_Al5jCXYthh1Ccm-I1AEtYzh4GEaB9nHSeZFHgPyb2pDrtnaCv1jcWVL1GZaNRoy7QRnQWXLFSrBYARi2ReJzzbnFGE6k5LnGpwDEv0aLRhcRSqXHrvWOeMn0Hm6Xvu8B1PxfhIwV1Dx9iPamiXEyRzhfCL7RnsYNHDSRbO1xs3z3UHh5scKVg9FqtAA95asPzkWiiTNtSjZ6Kx8EQeFoqV9V-AWhz_-rtpYIcmsFasOFpqTJQ3qaDP0MT62dev0abWOKhFCixlAznEspBO632GY6xn2gZUFhYRzVFX7YwMQNvjZ2S_JXifOftaPHCpmh4TuLkTPNMI7GWN73_kuQ9uSwEOKAskrYN1JzL_1vCj3EMP7QBQ0bhisq7Cbht_m3wHMnbroE6CjIP1BQMdjs0Y-nvIHDvEGv2k7mRLpFqK_XxYrVdfxFWN70S9vblhIbXk7hny65IAXiEjA3moW0dRrhgEwKloytyR-pivL-DAevs0FEfXhtLaz6f7aN7oBUnsrFIeq8Od9z1zOXL3SPPVdHuA8MOB4DVQW9_sjvaO1UXeBgt_N-TmDZJyR3oHom4r6gODUIYdKUOfbMrkRwzUgBpSJzroxun-UigsKqmNPJgzPza6QcaS2JOCvKzkndMP1CMAfQpJ_V9WGliItvFU97NQIAsSJmyG26S_chfk1bTB8Hd1nOl5vcmiP47TY9pFZvEVtZOWwdsovYc5y8rzi3Yq7mOvIv-yHEzXKvo5yCriPK4BUIufjm9LdYLWfn5C5epqePwQOmLb6wyJjW0ojW-HkWacTCMcoYZaUCfh1syy54IXfN9qcVVGaQ5Lc_fyuGdksG9KSSrc66x5Njd7VZ2SSXOxm5VdINuDJH1VlYcAMyxmpzg0UTmXD6QeVRp3MMpFG7jHmQqLFKU0gorDpLGpYZJVaU3PzU_1A2f6w44FMTa9pM9SDPOH3zMoZhJS88NHsFWMFjFY-267B3S5kve9WG-5S_1eDCil7OJR9QCFJgEgykDzLN4y0EymMH4XJFB0eV3C4gYgxI4qBaSS7tgcjQUksjkZYat2UnSqDbwkZfIPvTWXHb4tGmEyF4W14R2ZpMCND1nwg_THAem0SvRdu97vkB0Rw_vjz1l3U9phJRPhg5ekI03rzrW1aoDCDzyPGLB29dVNMhsAzoETJdHroJGa7vDoC-1XtaO5SWi4F0WXCamu8MNEQqDHqMrWk1TU5YWCkWbSMShDxotrHtSewgu131aEDkK5hir6AKigvW754j_Z7hOC-fnjnxeD1P-BVhSYrPEVf3qhSmQ72Zi4lNcUx7c5hm2s-fr6pSQ_Y9do7LSjs4QDx_Q0uurqKQZQymatvkLkanClvxeOBP3TXPW2dtPveeZc17z63F8JQ"
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 568,
-    "completion_tokens": 622,
-    "total_tokens": 1190,
-    "cost": 0.00693,
+    "prompt_tokens": 561,
+    "completion_tokens": 288,
+    "total_tokens": 849,
+    "cost": 0.00358125,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.00071,
-      "upstream_inference_completions_cost": 0.00622
+      "upstream_inference_prompt_cost": 0.00070125,
+      "upstream_inference_completions_cost": 0.00288
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 598,
+      "reasoning_tokens": 264,
       "image_tokens": 0
     }
   }

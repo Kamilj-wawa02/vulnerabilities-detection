@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765056059-Cg7JZQVSeZlOEJqnQnUD",
+  "id": "gen-1765666233-P4qCcihS7vtZmUhCfLGa",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765056059,
+  "created": 1765666233,
   "choices": [
     {
       "logprobs": null,
@@ -12,32 +12,32 @@
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\"vulnerable\": true, \"cwe\": 628}",
+        "content": "{\n  \"vulnerable\": false,\n  \"cwe\": 0\n}",
         "refusal": null,
-        "reasoning": "**Identifying potential vulnerabilities**\n\nI need to detect vulnerabilities in the code. The function `write_to_file(const char *filename, const char *text)` calls `write_to_file(text, filename)`, swapping the arguments. This means it tries to open a file with an invalid name, which isn\u2019t a security vulnerability but a bug. However, it does relate to security through CWE-628, which involves incorrect argument specification. If user-controlled data were involved, it could lead to vulnerabilities. So, I'm considering this \u201cvulnerable\u201d as true, citing CWE-628.",
+        "reasoning": "**Evaluating code vulnerabilities**\n\nI'm looking at the potential code issues here. The function `write_to_file` has the filename and text arguments swapped, which might lead to an invalid path in `fopen`, resulting in a failure. However, this seems more like a logic bug than a security vulnerability. The use of `fprintf` is safe as long as the text is null-terminated, and since there\u2019s no user input, there's no CWE-related vulnerability. I think I'll respond with `\"vulnerable\": false` and `\"cwe\": 0`.",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Identifying potential vulnerabilities**\n\nI need to detect vulnerabilities in the code. The function `write_to_file(const char *filename, const char *text)` calls `write_to_file(text, filename)`, swapping the arguments. This means it tries to open a file with an invalid name, which isn\u2019t a security vulnerability but a bug. However, it does relate to security through CWE-628, which involves incorrect argument specification. If user-controlled data were involved, it could lead to vulnerabilities. So, I'm considering this \u201cvulnerable\u201d as true, citing CWE-628."
+            "summary": "**Evaluating code vulnerabilities**\n\nI'm looking at the potential code issues here. The function `write_to_file` has the filename and text arguments swapped, which might lead to an invalid path in `fopen`, resulting in a failure. However, this seems more like a logic bug than a security vulnerability. The use of `fprintf` is safe as long as the text is null-terminated, and since there\u2019s no user input, there's no CWE-related vulnerability. I think I'll respond with `\"vulnerable\": false` and `\"cwe\": 0`."
           },
           {
-            "id": "rs_0d16b76569e6ece80169349e3c3770819684f5e2a6db49174e",
+            "id": "rs_01b1346a3b0f8f0c01693dedba65c08195b44a7f48112ea76d",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJ5FSbEfjCHgQFXu1V2A0HQ3qIi1hjzFFCZ59h1pLuRSSd1rUTX-aQdr-aiZ_VkBQzeTIhjphRBdlvKJJAsSKEYK6vrX62DNrzqfCESIm1IO4FPFvHF77OHleiaqyRQxal-Da--z94sOUo-Oa0TBKgms7TDwn23xuc-uQBfR74MBdoRg7Ap4eRzFNHDo4Wbk4S4NWrUkZ2myQOQXBw5KEkh3-lAd7dAgA9kxI-3hWu1rBUKyDrKXEna4m3Bm4d6mMwko5LRTFCehjLjrSf_yl11Q94A576R0uo5Ut6LXwRVQHDpPfVfCR8RtSvnfQnwztFpbAD7sItXO0VGJiqKniMaCH26mp1Aw3cbnDMG4_3xjZ5caOmGQK2ImRsXykloInsSjsr2al8f3_9sFvuK_3_ErkpbDHhPnzoODYkeURVRATG4rFkYx7T9d8iClGvPKwbeGRWwPtBAPltwkskFZ0d1vctFiMrkd54AHiq0hMETdyRcQyN4_3_vLv4moBuRGAIOr4vlv5knqTqitzcA4iN3h5mY49JFIWzouSwlmBXYTSIwF7_tU7YqAOYbfDstJEtoRAnYesi2chc7U86HA_xEUJEz7afex0AXO-GMBRRkRtn20DRryfosiGcPAahIac7-8hkQ19qJdkqMVx6ZbsSeZs4Fj8xS83zt2EcTjtGytO7rKgL7Z_pYbIXpkP7xMr_5hsqIJytNMvkceQjQ-5_7tDl3whER7o2tfog051CqsHNjEqZntlUa8DainMPBq7WECrdU39RT9gdLAc5-oNsKGm8dghBOumUsB9tpv9v0yGNSqSzIXj2ZThLUjThjCV--Cl_RcNc7T5_vopDhWw7Ot41ZaGNOQMROG3SPnYoA6rdTDKkkD9H9ucHh4dMRfP4ZaXlSDc_mzd3FPyRdl4X8-ago68fyQFXQg-fI_qHJtkcFryTE72hFEjgYEuUvs2MFyetQdjbZn8G3rmR-Ly-9-Q8hZiqMazr3Ob9OPRZlj0b9gzw2tcPIrcgQE1bUrC7hloQKUqwlMa5ATq08NW1IXs7mEMa12F-dzweq1yzBieJXtAbazKHEWkdXbg214IeAo0RPjOHfmZONER8PfmuVUP4Oh7fQA4EWabxBdi9jd164ZJ4y_Qkvldrgc09EjHwfVC8w7ngJWOhxouhljb-aPaCKPxzg-ZlARn2o9Ka8KSiUFMXHdBrZ-q7ZLk-HG0q5HWfmJm0KQ1_oJwnrTekwszhJvfngt_RWPTnNqtRi_tuY-X1NVCHJoY064Zw6aJIvAHD9WtiAgcTkqUzomq3I-BPCCjZL8joAmdCzKqVCBWHjFwidpjrIUSgtjHndI3ggfbmtkbU4ujg6JJ7Nvhdykmjx1_QXmBuDlozt2CrNosoNNhvyKpjFTMG6XRW7dcgf_66qDi8WjaAMZKUdd4NRZTeNfFPElQA1BR07mg2E0RhH0PjgRYFpzGQcWPOFTd7tCoMoiSjCawamZZKAfDNk7yDpfT-xEjqnGhscJzsDlN2doVl-pPk54l8sRLDS-0T52tSQ8zfAXvHcJCYBRscmixU-7Yy1vZ0HclomI4v2I2SsSZxQ_MlsrY-Z4xvdZxHCwVCVkobgdKYH-8EkNngsLg5_5xGNdXwQUnioIZRu1HQ9XxdYDd6uFcIr6BGha24cke8YBRULRbHoL2NOMchnqyXalPljdydUTKxkfAQpI-xj1X0fpgQvEP7K3V-VhtOEwjvhIpFCfyODgOkg_7k34STkecPIpHa1YJ6Rw7XkFBoeOfw14PdnIRtNhrdJr2wgOnbk_p7eL7yMaCo1hRG3HKm5yg2PyQo2sVdULXUTOuXUDMR8Dp2e8GEWF1TgT57ph"
+            "data": "gAAAAABpPe3CwIxE1RE08cJOxfacz9Wd3QK60Rxv-uVTp0JK3bhMjVq2bVfI5hyLCRTJXNgPrzlF0Y242tBbLXHUUjPIkYcbWWaJyjPzyk3aO97kOm-cme7WEUism4iQD_arAyhGpy-GHPe8d5d3B9sDP-4ZgzzotCG9kBvDXU3_vPLe0nVnb3uYGr23x_mxshfWuYvIOyQHHVsE-diDhfL40xGmjg4afUa6gXkliRuyOmk5EGgx7CUG_q3a362MD7CMjps4xvKptqxs2pwdJEOrugJlj58SmWCUtMp-ieBFLvMIEQ8IC3kgOWycGOnPuiQczioK_f5GQIyVproL8rvuAaeb7iizEgQN0y43VO1nnufyzMMF4rtCn0ueZfhIfajpJduDT0gEWAZ5Y4IvbDcCkpFlY3WTIh9CY3qEUEYfjEm3uqixQg42oMA8Kcv7XMYZHfEVTo-J9aICjGSx2YzBrFzX5y8AL2Msasaj6UnCeh4nn6ETOJ9Of8edBIM4R7ZRtwsQ3Dw1VIT_Zt4eKhZTXoi2c_Z0W5-1qU_JKIHFKhDh0Ds2BwkkcppN3BWUFddDwItFhMiiV8G-wHXWMRc-4a6pkM2S-0AwbVDlNcV6JVlunjCH56G7gQ7C_tsvozI0JYDLv05duMf9ez0KrlXKfEvIsoBGWIWAKXjHg9eym-5rDEovotpfNA-pbEGVkZ7ETKlxeR9nlZdFNhvkqXnZ4RQii_K_jqLETlyLzio0pcs69obacLSb6__YJaGR012GHgd2PrDUv50uEfveUK-j6qpV9qYd3q32BRqpqfIC73Dw_d9TGlhKK5klAEJc7SyM4GQdlZSV3lrsvir1ocOR3ki9ieStU8zFJq-HxbBUWAUBQV6atD5vJnOyo2TILjA0I8efzbfeYhNkIE55PcFEjYhRt0uhEQV_DQ--uZYhFmhCwYMEufh35KLkcnqiIPEYpPLRXbBa4DQlTvc_4m62VesSuXCS90YcrcvIYtdR8O5DTS9UppsX1uec_4xbsTK3od3Nlk6YjiMxn95AnGYEy7GkUEIVFGA5BQRfGldPWzyoXb0T29k_T3cSCVs_qXQo7_YwGvl9YwO3gS8tZ5BupngaTUx4Hb3cfQ1m_jyAyg29kgCR2XwP6djaORX838DGO3VWT9mBG795VaE30Eg5Q0mYK7I1uY-uXsh9dwUjCxSZWgs7CJbHqB1QonQcJEJMnvYg-J8uIjOB_mHQ83S-yBwI18HPLwndY8YqtlUHfw-UTa0915qZ9qhkQxNc8y1kQEGvlzIX2o1LYRLdITwktLiPs-3DJIF5K1qSX5n_1sRoRVY14m4zWTm6SQ9TczAWjB51QQhH-L5pChj9C223N2RszQdgClxIRHFaftIF2cspKtJbJfqz3p6FuQJugMdXxDHCGJJpfx6G0yh0YQa4GJ0mvDJnoBImY6yRlZ3oP3ycHhfoYjzUT-EwFwDEHaeuptw8LlpqoKeyJnQkmK8IOreUMPTr2TKjT1Ux_iwvGqh-qIkb35yU72yevtpJRDmzAT8BXZTGVU_Ag5y7avd8_T61MmEaHy8-hogG-CZ9fwoshTNPqEyBVLY2wnOgro2DuO_x6g8ydYbVclOZgvB8_bvEqDbH76Bgh_dlkPBZh0_PSY6RPdsviCHPZdL0PYrf1jr8b5xp7uC-67ZTkXhnDFtjhEJ5vmV7BMj9O17r0Ur-O8IwF3vxyUIzRnJhfko7cX4Am0gyToYO-tAj4enfHW-RtpKzewyAd4i8o5OGrQkYBd8psyM6xv8r9qCTgCbjy76X_IYGAOXiu7UJXRq-IkqDx1_TaOzJlTQ8oU1JDuQqsdEq8kg6ksz6iVGi27QTyuX_1YiPv9PDvSA3dZQZ8WGAGqcFlx6niVMDNaYZFmU7VPS_g1NnQecMOibdGnjpNZ2_aPyN4U6X6f574kGA3eei7xkgy0U_D0hDDp7ttezNdHmTVVZm599a-PLrh4bm8Pgl8p1T3-Xe1UNiVi0oyuxRlv34k5RMRkyjdAXHukFOJYX6OWmuBg60w7dokHq6mov6faUI"
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 205,
-    "completion_tokens": 186,
-    "total_tokens": 391,
-    "cost": 0.00211625,
+    "prompt_tokens": 198,
+    "completion_tokens": 236,
+    "total_tokens": 434,
+    "cost": 0.0026075,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.00025625,
-      "upstream_inference_completions_cost": 0.00186
+      "upstream_inference_prompt_cost": 0.0002475,
+      "upstream_inference_completions_cost": 0.00236
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 166,
+      "reasoning_tokens": 212,
       "image_tokens": 0
     }
   }

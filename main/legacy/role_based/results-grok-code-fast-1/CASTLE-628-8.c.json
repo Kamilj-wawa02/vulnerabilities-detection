@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765066689-7ncEDVTnsLyDPO7i5zx5",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765066689,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 119\n}",
+        "refusal": null,
+        "reasoning": "First, the task is to review the code snippet for potential vulnerabilities. I need to return ONLY a JSON object in this format:\n\n\n## Reviewing code snippet  \n- The task is to analyze a code snippet for potential security vulnerabilities.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER) fields.\n\n## Reviewing code snippet  \n- The task involves identifying potential security vulnerabilities in a URL decoder code.  \n- The decoder processes %XX sequences, replaces '+' with spaces, and copies other characters without bounds checking.  \n\n- A buffer overflow risk exists if the decoded URL exceeds the destination buffer size, set to 1024 chars in the main function.  \n- If the source string is long and decoding expands it, the function could write beyond the buffer, overwriting memory.  \n\n## Assessing buffer overflow risk  \n- Invalid '%' sequences are copied as is, potentially matching the input length, but valid %XX decoding reduces three characters to one.  \n- This could lead to a buffer overflow vulnerability, associated with CWE-120 (Buffer Copy without Checking Size of Input).\n\n## Assessing buffer overflow risk  \n- The destination buffer (dest) has a fixed size with no bounds checking, risking overflow if the input URL is longer than the buffer.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to review the code snippet for potential vulnerabilities. I need to return ONLY a JSON object in this format:\n\n\n## Reviewing code snippet  \n- The task is to analyze a code snippet for potential security vulnerabilities.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER) fields.\n\n## Reviewing code snippet  \n- The task involves identifying potential security vulnerabilities in a URL decoder code.  \n- The decoder processes %XX sequences, replaces '+' with spaces, and copies other characters without bounds checking.  \n\n- A buffer overflow risk exists if the decoded URL exceeds the destination buffer size, set to 1024 chars in the main function.  \n- If the source string is long and decoding expands it, the function could write beyond the buffer, overwriting memory.  \n\n## Assessing buffer overflow risk  \n- Invalid '%' sequences are copied as is, potentially matching the input length, but valid %XX decoding reduces three characters to one.  \n- This could lead to a buffer overflow vulnerability, associated with CWE-120 (Buffer Copy without Checking Size of Input).\n\n## Assessing buffer overflow risk  \n- The destination buffer (dest) has a fixed size with no bounds checking, risking overflow if the input URL is longer than the buffer."
+          },
+          {
+            "id": "rs_02c9612d-7070-9bf5-b3be-021bb5f35bf7",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 668,
+    "completion_tokens": 940,
+    "total_tokens": 1608,
+    "cost": 0.00149752,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 8.752e-05,
+      "upstream_inference_completions_cost": 0.00141
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 923,
+      "image_tokens": 0
+    }
+  }
+}

@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765055559-cIox1WM9IQo4hTgwuCFa",
+  "id": "gen-1765665939-wYj17QvvgeFxxx8wNUKP",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765055559,
+  "created": 1765665939,
   "choices": [
     {
       "logprobs": null,
@@ -14,30 +14,24 @@
         "role": "assistant",
         "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 416\n}",
         "refusal": null,
-        "reasoning": "**Analyzing pointer vulnerabilities**\n\nI need to look at how malloc works for my variables a and b. If allocation fails, I correctly free both pointers. But when I set values and then free a, it becomes a dangling pointer. \n\nSo, when swapping pointers, I'm not dereferencing a, just copying its value. This may seem okay, but the pointer value now becomes indeterminate, leading to undefined behavior. After the swap, a points to what was b, and b now points to freed memory, which could lead to a use-after-free situation. That's a concern!**Identifying use-after-free vulnerability**\n\nWhen I free a, it actually frees the memory that was allocated to b due to the swap I performed. Since I've already freed it once before, this creates a problem. The main vulnerability here is a use-after-free issue. \n\nSo, to document this, I need to create a JSON object indicating that the vulnerability is true and referencing CWE-416 for clarity. This ensures that the risk is well defined and easy to understand.",
+        "reasoning": null,
         "reasoning_details": [
           {
-            "format": "openai-responses-v1",
-            "index": 0,
-            "type": "reasoning.summary",
-            "summary": "**Analyzing pointer vulnerabilities**\n\nI need to look at how malloc works for my variables a and b. If allocation fails, I correctly free both pointers. But when I set values and then free a, it becomes a dangling pointer. \n\nSo, when swapping pointers, I'm not dereferencing a, just copying its value. This may seem okay, but the pointer value now becomes indeterminate, leading to undefined behavior. After the swap, a points to what was b, and b now points to freed memory, which could lead to a use-after-free situation. That's a concern!**Identifying use-after-free vulnerability**\n\nWhen I free a, it actually frees the memory that was allocated to b due to the swap I performed. Since I've already freed it once before, this creates a problem. The main vulnerability here is a use-after-free issue. \n\nSo, to document this, I need to create a JSON object indicating that the vulnerability is true and referencing CWE-416 for clarity. This ensures that the risk is well defined and easy to understand."
-          },
-          {
-            "id": "rs_0db3aba66ff9a45d0169349c47bd3c8196b404b7e56b7509ff",
+            "id": "rs_0656305c8a5a962801693dec941f7c8193b749843c87de793b",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJxV3PqDOsDTSqe8xcT1L8O8eILB-FWKV1CiHYdu8RwvUiiHQRWg8EL9JcNMn7vVhMiOdJ_V0pAU0jxXKjmJjP6UKj4pt9IFWEY7nofmh2mbGBCalH9hBu_NC_RzKZ3Y5ZYT-6M3UEaplZgRa_d2U1iWN9KwL2oL8XnN_5iTbX6eRs8k7ccLEQJFR2H20uA399HhgY47Sb_MmNT1t927pPXWOpbfHCMHtjeMBDG78ZEHOfMiSU4Kbl7uIBOdMLTVQZHN_tuIGCjxTlyyBHQaLJfuBxxQJPVEsFe7XvnZFnGOpzkh9JGLg0b0MzdsL3XafJ0ZDCGl_O9AUw9R7o37ghIi5hodyd4j9kR_488cPuSH_QJD7VwkmXs2MjQfqnL89wKhzQDs0cIj4uB5D5FtZ7zfvN6h7kx-j4SC-ss0C9avvazuojTqurDl1R0zpsF0UslGzmkQTFeixHfBZYQu87uQkafEAD8-PCuSCLQHuVQHYivDom0vcoZfCi8zkJh_D5K9vkiplzkbSF58dkk8F13MhjFpIJe5u2nddpu4tb7W_-lxrAYTAkZVGsGrNB8yXsRuEN44svwgNmS8vXDYkUwYV3pea1-OlB3_LiHmF3T7WYVTiQER86bRlMlG8bcQn5rUCaj22zUrrwejr_BYib80NtrhfYOE3KgACi-3y1QTh_k5YIME14AtM0tdLWW0b6HdsI7d-Vg5xnyFkgnAFa0MGlepap1LRNPcg8J8PLQGqecSBCGMyNjxrCCncmJFM18WGxNj7UBqU-TjhTOQf7aw1BYZPAl9Igji--Z-m8eYijp9FP0ztcXLqqyQ_rW-Fd_InI2hHNVUetq93FdPbAegaM7LNxpeKYZmRDbNomyVYd4bi8hO-vWJqCePJw7FdiI20ZNdP0wiRvbwFXUBCqBPX72g3u-BkHyMOQlFVmpu1g-P08BL3jgO7XO39avLzHvf1SN9cCe2EtAj-GylLrigme_6rv9vGd93qcSyqU7Q9iFRcY_Dr5g1vhxd7hUYQ0gEdoVPiSMAloGW5swijfMkkmL9hnuTchTFWre5Bk12pd8AWaYB_41ZaCHmOKbLZRq9pcQZ4Ra1LASKLmE001IkxbyAi63Nn7lNHyYmoUSOvcypUhTbgHCv_o8l-VzQLmRCJgeEpn6dNJqPTRdiWO3sRkYnSg2LCWFocRS_1LZmXgS-eUKKCfYMOdkNF0_wgmNLqryPjo59kW-dOmOSVzTVuBjyDTtDvsJxFYtoccLHk_hJxhoV8A9FN7_YMC5KIACN2JTKinzvtnHEm5Ln14J_4-ewU_iofsqgjNx8uH5wyZn3Lv92murGNLJJa6stifV7F8xYFoMjds4w65kKBJKIfBHOfJ8GwRnj-0jfic2xXqRkLo4R2SmMXTTV5g0HtapidsQXtm5yfIdPW1NCXMLGMAFlXHfwzWFmsLvSBX3_gz4mYN_zT0R-OcuhQDyzXR4fDXv9fos2Mpl15JLAZHFrZsuHrWMXl1fxvGkJk0AA_UtGTzjQ00ng664YnabJ41V0oVI1WD2O-04Jc4tIjsgqR3qkaWQJ1ishtYUeLCzFI3H81zDMINozS7KX-VgIA3_dpagEYgEonBBP0QHwRpDJ4pwDTyJ9SLMeKa8-tckolOUcNi5sE4PitZpnJ13-5ekC3fqffYZclJ7n-lPvMZW7XT5FSXyo9i8eYCApz641f0NX_rH7VGPqwchjGq8RetW4gS68Ppvknkhxit14znRtqAiEEf0G1Sg5TOuOJYRb1vqgo24vfNEQXTPx1aNtV-77qGK2HZ0_o0aQfzE6ZN5j8Q5wUdXpqzXfGM0Z3VNtSxPHNIiFnCbsNMPAu1_h51inFRqsypZ68-MXOqG9RyZEm1rE5lusCIqwGdkHo2iGZiLECQasVpZxAi5dJL25qdmReP34A-1uYSLeDl4IhRfqbgKHmNAK-vcK3hDBOy9jcOfY9-EKw9kSSf4niOcDTafhiOaCR5Re2Vbvzsfdmt0LHaIFPrNA8aU0roIzgh7X6Cy6W5sVA5uOt4HbhIiZOLwaM0nxkjAobek9UbwiG-x-nxkfQ9GPRpDoFeFEmxBa9MH1eys9BjJU8_Gk0DkbSwWJPE7mWpsVNadQlcIA8K2LYAn-SNTk-Unq5aPZJR5lVz46jFzW6zEPKGVKcTCtciim5le3eevsGpIh-1abSU0IDtGFb4mM29fQUJNQxCKqNa_hkXZnj14WGMIX7IWkNW52G9ln6Ifwt9fNZhT-rXiaEA=="
+            "data": "gAAAAABpPeyXKX2b0kKPN57wWLuask2fYZz6CEr6sX6ofipDSY7ecTMV4WbNBqiAliBVUjbP7kLhIwNMdFw5KJszR7r9SqDm2DPwRMEtlE9Up4zRXObQ13SObkacxfjJ3yccYuEh149Haxbamz3CwP70R8aT5ff9ZC3HYs3dVsy1IH4vhMYDPu6T9inNCTSfGFOt_SubbNONpmAXR7uu9UYNM2Iw--zjvWB5GqLkORnlFiOZ3zcDr5H95sy1eBXdMQ6YsZg1grLjwnLNcev785oBvcn0B3Rvmi0F4e5CB4ogHtSvp13-nSi1FWYj1qy_CVGDCWrIaDHvVF1U-RaHjvcPLmFVPaYcBvFEDIdNN_j4TRb8J_EG5aTmbIIpJvovK8TzpPPkoDtfeuqT8TNNnr1eNxg3AQ7oPx0nHX3y_ORMfNEiQd78zI73m4I_iur_vMY36YS5uVET_sj2UXbKT1KQP6UGzby9eUKipwFDnwS40ganGstY3AGYtDHU_g3DomvLfNFY8qh4Aa_6Z46UjmbcR5GT1oWq5HdbiUSIV_YcQ7JlfjMnO2pD8wUvIO62W0Wq7ublnevFl4fBrgLuVrtTmiKQFreYBIpaXzdTJGeaCJYvUBJplZJYZ3XVnEihQNGeMgeSvprcsbI84RYY9cJXkWJYwPBlhNsdR5jusD7_TK_ddEhxPfCj7axB-H1gUcQ8LTD3emRnGb8Rk_FZ7PNedpCjrGSJbOLhV_h9XQZ5A_WR8obOrG7IrTm7CWn_IvdC7MkdYuYRy0wpUE3uqbHPZ_yQf-5FDiys9mTPKH7NagqPEOvegF12BMkDztF2J655s-BZiKEtjfrG8SnNaPFcA91YClvMQJhVA4BkWrKM6M7kEefW9Zupr_364ZkuqSfNMH9u19flCi-yxZ3jy04QAAgESg1RQT0-FUbEHzbpCl_D96yaIreu2a1X9RNCI-rGatGQ8RiUosofIJJExNgqsx-J2lJf4Z6Fi0bonTdvR-ZLsqpiKrOl7mXe3Xm_Z5543mnncDjTD21tz5DYxyI0qudZCpRlvo7ELZtxz3T-KQlnOsK4QSZv4JWWqhY6InmBBoj3djCfd64FfYslgQ5G-iY_m-Cf_pTWtlCy3jk2mUDCTw-agJq4Bwgk9D6tmB48CH1L7SgmPCz9oRSEAQZl5gmSoScauuMaLiGD6c60G7LnWqqXHGLU-_ywVV0qtk74jDlp79IsvZUSjgw61q310T7gfrqJ2jVaAp6Wc733kqAP20KSaXm6Hi9i5-zPcgJ1dYlcfCqEMKAC2gah3sVFKlD1rV28r99of-1gU9oIOMu6_S49kLiMS2uC1lDxKnvCZIPmTDq_gp94kB2E0DDrf319gg39swZ70abmC9Qz9DnD6S1S_DzcK100IkNh_CMkTGGe3Yihrp06smSPw6Ybn2npESrnLswWRSdR8j5Ky2tONs9JOwCCChnNq3mmRK-iwnO0wuD-nRkJcJR9N_k21C3FqO70DO9i8B8KsL-PQl9Lz0Xt5vnGcREaSUTXgrSPnDiHeU8WOoapgNpOG1bF10ONkrfVY_XXhispWVIx57iA59AlSdb7IJgROKaMUBAH8Lh7DsI9mZKwt9Ig-Y2TbDf7ezWKsIRqOp2BXK2FG5DyyMI0VCxEawv6Mb54sBPGBiXQM7eC4HrWeQvYe2brQRj5SbgeZUlZXXcmqKjvt6pIJuGrKzyTYX5EQRRjAPkRFU024u7gsYEJ3bpBEO1uPurELHb5d55uv5TZBCqtPw1zD60I1fFo9-xRh1Cr3KhHREu9i4tcOrK1RugfTpIwgFWyK0aoLabuIHvQz-HwBdxT5QhM-Kbzia0M8loZXlhqNBiciS8S19Y5Hh8OiLcEnQv3z_9CHpTyH2gC-K1_OAoPy7uhaYXArQj_0ACOooYJ1RBrwBXkuPyEawvvUf9Z8FlkbrUn234X2JujgteAFAkeGnjLKaurea0cCeEtiknxceYyyQPmBcmXhntdOa_qAsQJafUrKPf9HDYf4-jvRpaUEQargbx51c9NgcncmY1Xq1Ib7FSagQURXYJZsQdUD8apYoQhYvcCS2w4scjZl50zU8vzMGzkfhbeyoUrcBIBbpqYugnx4igXcqqhYOMWx43aS7oPhA=="
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 278,
-    "completion_tokens": 280,
-    "total_tokens": 558,
-    "cost": 0.0031475,
+    "prompt_tokens": 271,
+    "completion_tokens": 282,
+    "total_tokens": 553,
+    "cost": 0.00315875,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +40,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.0003475,
-      "upstream_inference_completions_cost": 0.0028
+      "upstream_inference_prompt_cost": 0.00033875,
+      "upstream_inference_completions_cost": 0.00282
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 256,
+      "reasoning_tokens": 258,
       "image_tokens": 0
     }
   }

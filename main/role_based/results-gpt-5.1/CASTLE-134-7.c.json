@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765054844-BOazmtjhpZf0QA520ksO",
+  "id": "gen-1765665374-Rjbmj3rYwlVbR0sXLpcm",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765054844,
+  "created": 1765665374,
   "choices": [
     {
       "logprobs": null,
@@ -12,32 +12,32 @@
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"vulnerable\": false,\n  \"cwe\": null\n}",
+        "content": "{\n  \"vulnerable\": false,\n  \"cwe\": 0\n}",
         "refusal": null,
-        "reasoning": "**Deciding on vulnerability**\n\nI need to evaluate potential vulnerabilities in the code that prints argv[1] using printf with \"%s\". It seems there shouldn\u2019t be a format string vulnerability since it's a constant. I also considered possible info leaks or buffer overflows, but argv strings are standardly null-terminated, so that doesn't appear to be an issue. It looks like there isn\u2019t a vulnerability present here after all. I\u2019ll proceed to return the information in JSON format.",
+        "reasoning": "**Evaluating code vulnerability**\n\nI need to check if the code is vulnerable. The code simply prints `argv[1]` using a format string constant, so that seems fine\u2014it uses `argv[1]` as an argument, not as a format string itself, and there\u2019s no buffer copy involved. I don\u2019t think there\u2019s any potential for information disclosure, which leads me to conclude that it\u2019s not vulnerable. I\u2019m thinking of using 0 for the CWE code since it looks appropriate.",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Deciding on vulnerability**\n\nI need to evaluate potential vulnerabilities in the code that prints argv[1] using printf with \"%s\". It seems there shouldn\u2019t be a format string vulnerability since it's a constant. I also considered possible info leaks or buffer overflows, but argv strings are standardly null-terminated, so that doesn't appear to be an issue. It looks like there isn\u2019t a vulnerability present here after all. I\u2019ll proceed to return the information in JSON format."
+            "summary": "**Evaluating code vulnerability**\n\nI need to check if the code is vulnerable. The code simply prints `argv[1]` using a format string constant, so that seems fine\u2014it uses `argv[1]` as an argument, not as a format string itself, and there\u2019s no buffer copy involved. I don\u2019t think there\u2019s any potential for information disclosure, which leads me to conclude that it\u2019s not vulnerable. I\u2019m thinking of using 0 for the CWE code since it looks appropriate."
           },
           {
-            "id": "rs_021e62dc88889dcd016934997cb2cc8195a4e4766c5d20aaa2",
+            "id": "rs_0fe4708e2f3b16c301693dea5f533c819788d0f4809ee38b33",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJmApYHL_V97N5VfzUGPSHzo_LiYYVB7UQTqIf0lvj4jk6UDeQn-EHE3yFUCWAUOaIsfxhWL_PCwdui0dEHdKRsHV3An1tsw5f0y5-xbbdOPEYCWGiw4J7ATo7vB-rxQbCdVOgB_92tqdE2kFcrTurTYfTw4Q7hkO8NSUwi_bxmTUI7u7RnY6v6aqanG3Bqe31HWAppJjPAy69hrvHhjdifbrY-BkJDvIsMRCBzxIXK-rZB7zZ8tqhEqAO2Us3vDr3Q03bMsp3Bv-I11PW96WT7OCk0s-MCQ8cQk5b51buL34xuC5jieM78PHj_rLDmLGpXGgDghgKpXV05nNO_z_FSxOW3bdZqno_U7XphRPIsplAgk3edV5ncL-Tp2A-ATjvI6A2xWv_hkxUETRbkQB3ufbTZEHeHsOw7VCDdqNsefinBxK5zkx1XU63fu6cGLV6SyCa_buhaFB-j6kAdMaCLW0IjHDGY3jg0V2r8LL9Sw0p_R0pQpRe2IvKXED6zJwx-JC2CdNi1ufAGq0QA9nhvzjjzs_ZmnAsQ4rjIVR2AHIKw7eFyUTRxi79OGvLqEuEsd9TtqCja-06A-NjUJ91mWWKsxAyue_4QiDkI6aZtLKUcblwcm1XQjKzStv02m1BG8aahh_5vuoy7BlSiKSpC4iFnoHljdLWwRVmjsSNXHdMdYGIo7npxXjrjG0LHUXanBbHP8I2mdqXZQ_fkrllcfOEMMXtspOLCQUnL403NG4G6gSylnGa4QbnJA1LdIAP3bzjIIt8exjVPPVXPw1KTCcBjaS7rwZXCdAEiFB20w20mY20e4JokSEy7UHreaJ_Vqw0k1MhjLRsNpvQEqG5YqQrqr_nxBkvzr4a7qYscHWkJAHLDvcJGFzOIj8VVFAS4oD5h6s3e1yK5kW27KDAdl11lcIiJJXJ_xrv0WUuI0qqPd_bbhRj3eLtal84OB3olo_45pKYmVUL7Ht6GYiDJsi3iaYlibbEtJGKHM9ZqMvIAMY30y51tTZLrhVbKGwQCEakO0YQq2yrzEhcaLvZFreX5RzXrXWBHZIPsg-GEMDSDGqHYkDRe90jVEisgp3ZtV9_90Vr6Mv_QieDVgT1e86IIs6S3nmRV4Yu0EFwULmcgsmzJUERxFZu4QaQJeHThtVfaQRntZt8d8b4qh0XtLCV1MMemN7vzy-oEe6OFTwPpX1ZoWIZ4dfmmibmzHZ-oHSE8WAwiVJRJL3uULqioMI-NLiKI9ys7h7qWd_nAQ3-HFWLD41f3nvYAFOvutrfkhaAE9h-lyg-ZP6d9UJ5Bx1p8QH_cBrTILNtX-EnnLAGaCPok-23928DIwSUPUhO-hdmAalHCMv2grsiqLLzVMZQ=="
+            "data": "gAAAAABpPepitfgu_-V6raNZ8zlzVNco554XQkgl2np32jDTZ49uPWnOpGKIjbkT48Ydgrt6xSlvgYdZ78uX_PI_r_qNwW785Y_zGr_ZJl5ggRnWHW8WVsCvlkv8hRAUJT3laLpZQmQJ3w4Evk77feVXTFKL4IWn_RDL8rSvf3AvwiDKfk1E_MBE6BbRDInMos0SedmnkG1fCMnxWxl3YTafKyjTmpWhlzHyF-jmQZ8CsRLTAxtHZ8vubgFd10yKDzM0UGyMz9-F5VzTymZ3J3FajOWEtuwwScrCANCFI3PSaF8XvY7wlWiHypCGSTTMCIq0R3Edb1-X1nOJauuQDbMRIfqC3nCnlk3vCJFJxu50Q_s1FfrEOe-mA7660HZutUFU5om3B0RHVOzOa3Mk8Dxf26ZPmtoOfhvBXNtmhcbf0-2pByqJPPTsIyGhZyh3ydTP4X2fI5T6O0biuXus8O6cNvUESuM5flMAL9_FlAbCUGBdSiiz8M7clH6vdmfjtRshQ9ARQfCkq-1lkz3r8nT3uJxZI-Jx04QXxWDjf6G9CRg9sUA7GncEEHE3_1E64mpV5EHGzAzjgxBEBusXUSmN-KgzyzOZvfSPNOGHc9s2PaOWAjKj0wBAVkrc3rY317inBb4uGlAYP7xjOXevEEvzdiohNRR97WTfVKPQkrqtJNorobFXnDl7VJUIhO6DnrI5BpGkqVUKl8PkOL_Re_VXb3rqvg63fSdc8OqQnsInwtTH9FRoFE9dixSMqGySudVIUGtksRYO8xk5vIcOWgo18Y1SltEQYNk-o2pUR5kW7mnfm6HjdWq2UsRyJQP7m2FKMkkpg8YWk6i_tmDGbaI7GiairPHjBJ7rgqQTb36KX3goGN_vAZCqxIswZIdh-CwVXQycnwo_V12T_C6Yf1zG-O_pHwh7auU6jHD3T3TaRHjN7XeX--8FWQI6FyxxkXJWxru1hJmnlQYfJr2lqsel_bNQhg-8JCjNtEBbgcb2x2Ca-H_JonTKI_oNV-E2_ewx2THk33vQOYOdc0uBOTKmHzT2aNyTGDsGF5_8bziF5KHlr2bATqZwmXoaRM3BpU19muWuPkuXV-KQwym5kaRn0_I6jP7oKhSEU3Rp63YEepP5G1HOD4tz_rRWK40AacVKrj1g2XphxwsTpk1_88ToIrEI7X9WL34OcdjniFdZmctoKuH32KDx9mn4RpM9LrC2_UjIGzNRvtZvnNjq1MlG_V2WVhva8QpBL4nTXVAcsC-8hBS7-QaqII8AwBnWv1ORzNXRHcSv"
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 138,
-    "completion_tokens": 111,
-    "total_tokens": 249,
-    "cost": 0.0012825,
+    "prompt_tokens": 131,
+    "completion_tokens": 117,
+    "total_tokens": 248,
+    "cost": 0.00133375,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.0001725,
-      "upstream_inference_completions_cost": 0.00111
+      "upstream_inference_prompt_cost": 0.00016375,
+      "upstream_inference_completions_cost": 0.00117
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 88,
+      "reasoning_tokens": 93,
       "image_tokens": 0
     }
   }

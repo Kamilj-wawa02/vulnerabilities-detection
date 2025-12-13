@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765639131-t5vM1ZVxpAgfiYVwW3L6",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765639131,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"vulnerable\": true, \"cwe\": 338}",
+        "refusal": null,
+        "reasoning": "First, the task is to examine the code for a security vulnerability. I need to think step by step internally, but not include reasoning in the output. Output only a JSON object with \"vulnerable\": true or false, and \"cwe\": CODE_NUMBER.\n\n\n## Examining security vulnerability  \n- The task focuses on analyzing code for potential security issues.  \n- Output will be a JSON object indicating if the code is vulnerable, with a CWE code if applicable.\n\n## Examining security vulnerability  \n- The code uses `srand(time(NULL))` to seed the random number generator, which can lead to predictable sequences if called multiple times quickly due to unchanged time values.  \n- For a single use in `main`, it might seem fine, but `srand` is typically meant to be called once at program start for consistency.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to examine the code for a security vulnerability. I need to think step by step internally, but not include reasoning in the output. Output only a JSON object with \"vulnerable\": true or false, and \"cwe\": CODE_NUMBER.\n\n\n## Examining security vulnerability  \n- The task focuses on analyzing code for potential security issues.  \n- Output will be a JSON object indicating if the code is vulnerable, with a CWE code if applicable.\n\n## Examining security vulnerability  \n- The code uses `srand(time(NULL))` to seed the random number generator, which can lead to predictable sequences if called multiple times quickly due to unchanged time values.  \n- For a single use in `main`, it might seem fine, but `srand` is typically meant to be called once at program start for consistency."
+          },
+          {
+            "id": "rs_cc157699-dc6a-af22-c7a3-8b68e5276bd0",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 337,
+    "completion_tokens": 549,
+    "total_tokens": 886,
+    "cost": 0.00084482,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 2.132e-05,
+      "upstream_inference_completions_cost": 0.0008235
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 536,
+      "image_tokens": 0
+    }
+  }
+}

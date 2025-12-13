@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765056449-6gUHinRHA4NqUnhTLP0e",
+  "id": "gen-1765666501-1Sxz0dYccWTuXHZ1sr8v",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765056449,
+  "created": 1765666501,
   "choices": [
     {
       "logprobs": null,
@@ -12,32 +12,32 @@
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\"vulnerable\": true, \"cwe\": 400}",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 400\n}",
         "refusal": null,
-        "reasoning": "**Examining code vulnerabilities**\n\nI need to check for vulnerabilities in the code. There's a missing bind/listen that might cause a logic bug, suggesting undefined behavior on an unbound socket. Accepting connections could lead to resource exhaustion due to unbounded process creation, reminiscent of a fork bomb. Each child exits immediately, leaving zombie processes if the parent doesn't reap them, which results in resource exhaustion DoS (CWE-400). They also aren't handling SIGCHLD, so yes, this code is vulnerable.",
+        "reasoning": "**Evaluating resource vulnerabilities**\n\nI need to assess if there's a vulnerability like missing bind/listen, which is more of a logic bug than a security issue. A more relevant concern is the potential for zombie processes from forks in a loop without reaping, leading to resource exhaustion\u2014like CWE-400 or CWE-772. In this case, child processes exit without the parent waiting for them, causing resource management errors. I\u2019ll identify CWE-400 as a potential vulnerability to return in JSON.",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Examining code vulnerabilities**\n\nI need to check for vulnerabilities in the code. There's a missing bind/listen that might cause a logic bug, suggesting undefined behavior on an unbound socket. Accepting connections could lead to resource exhaustion due to unbounded process creation, reminiscent of a fork bomb. Each child exits immediately, leaving zombie processes if the parent doesn't reap them, which results in resource exhaustion DoS (CWE-400). They also aren't handling SIGCHLD, so yes, this code is vulnerable."
+            "summary": "**Evaluating resource vulnerabilities**\n\nI need to assess if there's a vulnerability like missing bind/listen, which is more of a logic bug than a security issue. A more relevant concern is the potential for zombie processes from forks in a loop without reaping, leading to resource exhaustion\u2014like CWE-400 or CWE-772. In this case, child processes exit without the parent waiting for them, causing resource management errors. I\u2019ll identify CWE-400 as a potential vulnerability to return in JSON."
           },
           {
-            "id": "rs_00e01153877767ac0169349fc260cc81968261f6abdbfefdfb",
+            "id": "rs_0866bfc4f830f67f01693deec6216881949f7823ab68dfbc83",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJ_Ia8someDx3g-LfED69lqD24rSJ3rGp8rCOUIKy6ODdwBDDWVFzJ6HSSU0UB_ksm8p8N8nPwIrHVhWwVxUKksN6Tnlll47F3gb-JCXjhbYQ-8NwubSNGVi5owZ6TINxwEpWAl9GixfNAOyn_Hw3nNL8nrkd39Bt-Woz4Gw94JcE-msMLIHSpPApEqvV_Bw1xlLyQybSAiyDAjN9wj7hBageSwTW1qKBqj8PnfWOw3iHhOE2CF_pBEEoz7YnndnNiKDODRS__QXxvIZCP_91hUKkMJlm4oGfMzM29brkWUxZS6XYcTn4vRHMnXW5z8kKGBjcldmprYIWBTtqICiVQUu3YiM2-I0n5jkqMo7oLpU7Lohe1khFz-JjBdSf9AQrNqoRIi1XJA2Vfpg0nz13mjub1PINBAHR_4fdJZVm-sXMyYZotQjBvYQ70uAuGhJIaMn-79YLDEe4ED9To7IgqFV0sTLHc-S3Zb0p9a-4_ICPKkBWXIjaXX1uTlQ4IA_dlMKoVzKjUzz8YjovGd_UgsOv5GvJtSlZr_ZHWdzWMoOxUtZ7eVM43TEXMJx5nRL7e-3NtTwS7fJfvLRmuYj5eVQM3o8GOmI1okHY5ZAIsCEvgyiVfngAUIsJd-S383c6iWAACaWeMU06IcO_t-D64FH0t9famNZCSoGSt4Lj6khLLJnuoCSiwXfJSkDURQiOqWg3ODYvdC72oENLZWDOglfjZQGRToM5dc_YK30sh583PHGSO23ZMCx8HjYJbffiQhZpiBQuAyL7nWrNh6ikYTjchJpsxQkd3SLew_lrbujyd3-XPxNnKb318_CIErvHmcEGzdhPYui9dTrZ10Ige7j-dS1g2XunXsNuCUyhO6wU8FDFMW_d2glR-apEGvxzk15VfCoATji0sstlysgxn4YW5TA94mbZduqnobRyHqBEr-wi8tB1rFDjWuFv-Ji-UtazTfAqmG9H-UTwOLTGrAyuPpPxG3LmmDWtqeQ2izDrMLY8poF21hTd_DDm1kZkcFLmG4ls9JQWt3U5zemQoq9bb7Klg5hzA1cBitsld7yw93H0uHD1EPTdarw_uva_BpRahxzQ3Xi7DGKfMgFAZnJE5lSzB4skUar4dRbjoSmwLpph5jcdelKchMV85zh5t3v6f_jBmLOkWH54bkoP4AO9VfEpC87ZCUmaPvpgnFxgk2Ds1I70I-diQBqq2M0vC5eaYDGq3QejSeARN1tYeaezTJbK_t1AXHBFMHNfdM5azWeAegq8i-whd9a-Y1wP1WWECJE49RCbt-UBGSrO977QyrxrddRGzHlLS9PaIYduwvtSaKpNSn7_dkTDm2XHAHMIfj8ZCCpJqasT5nzOI1QZdyEb4Ye2ojPqUYHYQ_8ym18TyqspeN8iHsn7QzLLv_iPl1CwYsTyWZcm6mA46PetKENpRpKRHWTO0TlhnxZqbJNI4wjrZO1Ks9tXrctlvjlrKBfSb8nUtucXZu2S6GZyJPwU6MonouhBvsvXGFLHGTbYL5TDHBK45N2JPwFPAYERpdQeRkbCrslxc1q0c_ZsqS7CE2Jhcoweakt-HP8vH4JRhmYNsjsZ3I5ic7Jg5j_gVKn5xje15LbPQEioTGQj1qoIc-tykkOIL01GtNyz37ALP6NQzMTVHs10EJSbK65o8hKL2KSIyxL6bpdmeVE7VaiTjboXgbozWDTqcWYiQYPw93Hx8qzAkbh0w6QRZ-7dfnKcYv5Y5CIclE5uSeIzleDheFT1x5BeAGXFFUZXgBXmL0aLXwlhngmi6qAR5VLSIyoYHGrqQN40pg5uEF-gmlaIHdj1Oa4vrJPdCCsHc8PcqvxvE2OBDksxLs3DH1oIpOZ6AyXEtjemY-iKEq56cixHPmM2YGz9HkqiMP-YVNI0uV-eeI367w6wAYwk2qdULiTCSx9yLUuUmh_vlr4snNEi0aTr1SCI0JqHcpWHcH07qnDY31Bqit6AV0SsA_TpOdX2brWnM9nFu5XC32UeHVQP0xQ0jlYxz3B-p4jKoxsqNTvmkPTjzPE4V-mZ-Z5-yrjHrvORdefh1jGsIzLmnK_dvtkYMpfRn3yCMr7ixYbz2bnAglz6jBs5D3MD8PvFSuDEmPzoEYsQR02GqkyQkAe_w-We6be9YFE-N6F6r4Tmof1olJB5YFN3x4G7KW8d4_JuLxipC_wLwpd3FzTtw=="
+            "data": "gAAAAABpPe7MB8OkU4fKe3-NNlGfp9c3CkehmW16K6jazkOi4DclWoRhED3emS9b4Te_6JCm2p9bp605DkRV7lPUBMXIO4thkLxoWFKPz6aCX5Co8TZweEz4hQz4vUA7wonsAfKUaMKPGu2rS5PKADs_9rIQ5xYaMlTNXkmyK-9KfOqAiAsIjUidm4vsR-NAk8yc6WYEjV-Ndj9jp3p0bR8oxiyeoTcR4Tb76X1Xcqvr3ff9R5RkDiIC-NN0grpeYBPCBgTqPmdEk6JJ8y548CU2i4-rIFUFb-EKwuAsgnbcxQu548VffiKr7IATaHk9YRVELfhAsygz6AEQ9Ngd50BuEx2vW9pzQc7Gc4HJlffxZ29Zhd92s9MBrpzvRJvw5g6hEbJ-h0e1q493DpVxO2vOJtVlSvOD6yV6FeBcwgFJ7RLJrspLlYPh6OQH_waUq7SKG_hUpJKR-wSaEE31c7cpqAaz98gfHh7ugJDNZAuNP3w7nsDJkxYZsdvpANVfyv7TAgvcPDRnQCEcYbETuTc-JNpVsBXOqjJBqEcpYbD4ZA24SAxsmKyBryMScRnLo9koE6NC_PioUO8F--c8KSqfCPnOdSX-TFzn7-6sbcyj0NYU_JWTXDEFDAHWyR5OCJV1FcBqn8FZSuMsWlks6WY-bJBvjTwOLPmFA64UwZ8FHlFP5ejpem9ugmFeIkd5c9sqqh2fmwU2Wq9zMoqUT33yZvUKMZzclH1sNYLTICds_vFTTQ_rdXEeWbx_nMTdb-pqwtUywTljuU4yuHTq8dPe2wv57VqCsnsi2Q05GJ_0jypIPZymiE-4ZVCXTXap9vXcUwPx8qiTUYVRlyQHqGiQLBMszl7Y0kC4pntPJs3yJwPgXIDKzIk0xAbSdJ2CH9jyRe83MRoc2Xv3OoVMO9ps_F1SbjqjBqIPnpw-gcFAJv5URUtN0Kh7zuxwQEaar-C6CsiSxxM3pDacX3tC9FGmEemFlf50BrgNt3LTBZgVhIkDdmrIwJoJRfR-CM3jrnrUeWD0mwEO3PYBHB8KkqQTLHViZTHbWnb9lhjXnYrz5-zHtu4AKBRCDVpYetbwZCFgD8XqwLzP-i5_iffEAXogRduMmVBeWflMEP60HfMn0h26tCAMQN52F8xd2OmQYCEMF5VrjcJWSpuMKDbQIsFtdZoAa7adwBUCJt1QQAEVc2k6AzlmoXabWFnwQBXgzMgcq9vjou4NRN-62xMkgy42-m6KrHMgw6KVN5EdZ7pNYyLcOTg6sZEOE0PIQmiZCwslA7vUxJqBnsq-rcJ__D2lgebOJW4kPsMjRw9oK55BiMayeBDRGWLGwq-353sgr1QMr7K-aufkUNx_Rcc88eriooKZEbe9nBaeSVMnyTHTJN3G25BgFdnLmhNmGHF4ULS22JC8d-EqFDuamPm5W7mKeABgjCXqY_01-Kvjls2y-ymsoN_AXGywhjbdTc98axDjm6QOfbY8ZX7kNUZeqpxbjh-ma4mr5Q-K50KFlnQfWq1o98mWhIph97XQMaMH8li94lj7tbZGbseGJwbyuEBFICfyNtYs78vcEVZ5RPXl6w-PDkc6Hzf0RPdo3rX3ugOpeRUQoPkJ5tnW-cz84kNvlSz1XxCiKcfiuxBfUH7nr3_SZL6Yq8p2StH8u16bOTCeeEJuZCH6nuSHgs394Y5OU9XsOZ8tyDzzEIw-r4iEJunbojN_c6pvNQQ4cENWlwIPc32RQOXuJY8LKsxGyxKru_31nqf_3mQFOCr9W3CbebE8DfF93uOMDclwU4h8-JJW3qHvxrTPLz916FBL-Dl1AgIty_gemPpLIyMuHxjNoDdIIuF6-lOZlddl7_fbzFYBCsAi6yBB2cVQN6ALWh7WmwhAVTCgcx5SQO4IzOITOo1DSi36A__Ey86kPLLVxcvXlKqzq9t41q-q_t6RKuE31nz7NwRfPjJuwnL1OGcigR4IggIidJPSnT-bcB9DaWZeDxW-LuQlbSWTmgFwdYgvAfriNDajjw=="
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 285,
-    "completion_tokens": 221,
-    "total_tokens": 506,
-    "cost": 0.00256625,
+    "prompt_tokens": 278,
+    "completion_tokens": 200,
+    "total_tokens": 478,
+    "cost": 0.0023475,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.00035625,
-      "upstream_inference_completions_cost": 0.00221
+      "upstream_inference_prompt_cost": 0.0003475,
+      "upstream_inference_completions_cost": 0.002
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 201,
+      "reasoning_tokens": 176,
       "image_tokens": 0
     }
   }

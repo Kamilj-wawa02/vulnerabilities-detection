@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765056280-s1Lt1TWBh5VimIj9ONnT",
+  "id": "gen-1765666392-ASMM9ATOq3OsLH0jQQKQ",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765056280,
+  "created": 1765666392,
   "choices": [
     {
       "logprobs": null,
@@ -14,30 +14,30 @@
         "role": "assistant",
         "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 761\n}",
         "refusal": null,
-        "reasoning": "**Analyzing code vulnerabilities**\n\nI\u2019m checking for vulnerabilities in this code. The allocation of an integer array and the pointer manipulations seem to lead me to the potential for a memory management bug. When the function swaps pointers, freeing the pointer not returned by malloc can cause undefined behavior. It looks like this could relate to CWE-590, which is about freeing memory not on the heap, or also CWE-761, about freeing a pointer not at the start of a buffer. So, yes, this is vulnerable. I'll prepare a JSON response.",
+        "reasoning": "**Identifying memory vulnerabilities**\n\nI'm noticing a vulnerability related to improper memory handling, specifically the \"Free of memory not on the heap\" (CWE-590). However, it's actually about the stack, and this case seems more like \"Freeing Memory not at start of buffer,\" which leads to memory corruption. CWE-761 is a better match, as it talks about freeing a pointer not at the start of the buffer. So, yes, it\u2019s vulnerable, and CWE-761 applies here. I\u2019ll return this info in JSON format.",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Analyzing code vulnerabilities**\n\nI\u2019m checking for vulnerabilities in this code. The allocation of an integer array and the pointer manipulations seem to lead me to the potential for a memory management bug. When the function swaps pointers, freeing the pointer not returned by malloc can cause undefined behavior. It looks like this could relate to CWE-590, which is about freeing memory not on the heap, or also CWE-761, about freeing a pointer not at the start of a buffer. So, yes, this is vulnerable. I'll prepare a JSON response."
+            "summary": "**Identifying memory vulnerabilities**\n\nI'm noticing a vulnerability related to improper memory handling, specifically the \"Free of memory not on the heap\" (CWE-590). However, it's actually about the stack, and this case seems more like \"Freeing Memory not at start of buffer,\" which leads to memory corruption. CWE-761 is a better match, as it talks about freeing a pointer not at the start of the buffer. So, yes, it\u2019s vulnerable, and CWE-761 applies here. I\u2019ll return this info in JSON format."
           },
           {
-            "id": "rs_0f2544cb106223260169349f1946f881909f31414248c5207d",
+            "id": "rs_080e731998da38cc01693dee5937008193834ae58f0f081b1d",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJ8fw5hx3ug8vGFhB7x2ALZGjy-RGL4fKrLz0lEENVmZL7CC0TJcpNiGuLycBSEP65QuQ4138bJBtbuMbyw6FwB4XLcY5Y_up2yfNo5YDjVdD_m1y0YczwEQyR8ZOIf3VifZJxrqxSGPXD1GQ3jU8_QCzozLAAHhWDtRBKzXihmRbmQhTff8XJgwzFuto4d25XOy2Ja3unwlV-OLvnCzlY8rcf2My4MrtisWPyB065CYFIGrnKabXr_B0jsqm7cCmWwThKgi895IB_0qEFvvzH9IdtmBFC9sTz46hjTnAVv8KTjGhctuqA_xRk0wWJMW3e8b4XeFerFEC9HDPP2HiYR8MVFsj_z0b8jsBiFdHcfYt4sfYl_tvfJPhBfsaZryOSlH7SnEi4GjMCZ2-goZDTyg_uxvM5h75NvK-_Qqo0rQSB7wWd7EriWXHvmWivCVZaR6exymHobuxbwlg9XXvIzjI0tZ2LN-CWXBXY_G1Qee0Pr6Rlo-l7jEXiND5YQk93O3NojjXwS_wO1zZWV5n5RtA9Bp0sRg6kym1aaCRhgNTsnPEcpDW4Xcy81px_DQiC8pohgUe0CRntNDpg1i8ELH31ePP6Jk8tUKGWjcDOFcjQ_kcFKDlMK6X4qRKWV7pl8iV8UY7FPbyzZn_ss4TgIlslcEjR8b9fPVla_WoW8erzdwaglzSjtUD1rEILLoNvg2WWH1IxKdBv4yHpzqpGpZLLEKm6HwUXtMSYkD3TJTjp1-_kgPzuGhEWKrIDNwaQ6qJsAjDUFEhoTyc3DmYxhyNGi18UQoLH3nbLra8VN0IX2LTmTXOD0vGGJbM-ANfGLetsHsFSyAS_gTPM0TD9QVK7KcG1jyYrBEWTvzumU93whp9j7NjeluV9MTKpn-b1qlKULCAAz7rVq6Ro__IS7iKiSWKHEzkJJUwjxdCv5mE7oOPPiieN_hfW68BW_V0Og6tFyWB7gst5NhoxNmTCGyjESfKdouiN8TjKyhfzWXhfbvWY9tEOxp0_3OCsOiDrOnCKYRpJI2QBBLqvTdBQzcDlt930H3QAxr8zPGk30IM14FjtqgJctKDah-AJdtz-RWlvbKvTPmLmGXXv1nOZrwJrQL7bh5OPiNT_lrhmdQnGOvWMLWEIuztSkRjMpmU9FKHGrzRHb5peVnJU2_n1enPsibXtm4ov_rT1xLPbtSDczaIZOvwtpDFFZkZuG1ZaiksCPuLBM6Tfr7TBJuQVlQc3PUQsoatlYauv8K5pzD_dqisqilfQwWl1ZBXUr37DfCAlzIafUPBcG0KUe0w294mrfpwWbeu7jS4zhqtQdTlylHLuaHqSjHayJYTZn9rucgEpgwZpgJH10mkoIYY1cVa_7qfowl3DUXFqnqWzd2iikvO_QTKsCUdg5m0-bFazqyP9LTZr2ctGyirj39-3M9nc0ct8XlQOa2M-98lgKC7tPJo1XcwlXqXGruK1uAzzvCP4ryp_1Q3lgefDwo4W0I8ChAq0Mm6DfBO-0jXRu6h3vzMTKHoyza2_ts7Y5whnwi1LPcXlrjKGKbAHmGj1wF48t33mc1tzeGCcF7qS5wqg-MZsc1EoARqT0tVmlTDHnu1H3mSSpHXJ5DL7l0Pj7H2eNvmeLm45rk0BBrmuwyhuGQbiAYnzHG9b8cI4A7fpcIsyWuT_li4uV33iHWsTbMYk11tGysWRF98ky8DUzry3aEv4EOtSMKbhDAm_zY326I"
+            "data": "gAAAAABpPe5fetYQtijqd6Ws02ODuXdu_W0TpTR_19Iea_oUMbItxi8YgZdFZYf_Gb0rX434tLA4Eu-4mR8I_yaFoEq6qYfaLorxXgWhQnWulQhALBcbI43ec9Uwo7vbuVrIRekoAS_7_xLQqYNFdEGnv-X5ve3Xy3XWamkugP2OOlJuEcPKUVM33htiigKofM9p0sTnC4QwWWiQ0FrRcaLF0ZetxqfIeVInTfyjNPTUfYKlBldUs8l8ZLiuwTVP3B9IX8b2PB3_-GGZZPVjN6sfcGYeM4f6akCB1hbdfTMGOc510lIPvyiIgE7z234ueySZ06W5aTwSd1HVDVaCv2IvzS_ZsFKIaxfEoeKMjkHCdvxTPb3xWecZPuxOg2ebe_MHjb7oL9-JHyyGLlQqh8kxqgDGEUWTFzM6oyEBqIN9Xwjn2_J_N7DAWqf6z8ewWzorgRMy2DJuzDAYoozaovm-K96zK7IKbnPyvueBz5XAARc2sk40kprqii-FtS0XFUwOMoCubR6nXOPU6bbDTZL6hayLD8xmCTw1rRklcyKOKAaXw6Pzlck9C4RKxRqVyu-dq5h9giIXjmOMJCIxv0sw9X9KXK6TZoj2pGqeVYWfgeFT4EHg2CdqiRa_i4ksy-L5RcA0aqQ6Ds3SCA8TfJ4VLhdAU-B-QH7I85MNwvi-Ts6AyhquhMKsQBjphHg7oAnWM81xeUFJK4Dak0Wpl2KIo2nzkIObp1dj6WzAuwsgMrU3PildBvAi1S4JEEIr0ioS4EjEGNt4gt_fssujhZAH7WxHYSAsPzItA_n9LEnh2Cafm-uzOC1HRu9gtGsgwp_Hd2ySpqtKgfJ1fYfWsuyt9KRtSFNL8lQxH_93c-ntA-CjD8sivk0Ps1qWqM-PnIe7M_N9DDsSS7vZPGtSOCW16ZdI4j3TZlAUnQBs-Hh4QoB5ddzhVBZbYDn6MnXl4pt3ETWCWYwFBiYhB3fNzzskzIhwJsja4x1OdbOfKTv6O1S2vNj2nReVGXu-wYHXRgqkscVIIcPhwcoH__z0ld4Sxq-0cZ7ijDB8T6GnPtNj6fxbm2eoYHWFp68-6dsbV9JltR8dFis1n8_rXo0oN8yz29PHWQp16Sc6jAYPz4yMx7HSZO6ZTgd3oav-SYYoqFyCYa4yjhGvbTyCE2He4Ox8G_3ndmyPo08obBarb8UBZ5Fc-aqalE2wpAWAkKPbX586mP-OeSeOhlCGRCujUQwWt7U7B7ItltK0HaDOitzU5Fjg00Iyd63DiTr91t-UaIpfuMd3RoifSXequUAxWH34nCS42EjDdpHugohFp8QdU-6ipc6_yL29POTUsSSn1wZiG3NQR7M6S08WGRoqEC98DLl0YrD63WoNqt6FK-6C9o6bMmoiPn4QS6jn40SKeZKqVRxnwzI19UXt5FrQO8M7r7NE5KixBfaEVrhqK2dFev6cBp01g7rDFbCDJTNT8S65vp-jRAAU4P6kg5ZSiObwVrrtKdJEQ9jn2dGXySNKVUYC0WJDwSdQFWGar__W7QqR0n9woDWgeDv70a9RLKP6o9qN6vOKEjJpwXxr5LgliJDtSk8Thg_RR07-hdSiLhFj_mmnwZuR3DhA1ewMxGAg5v_VaRC08a-WeGSyLt2rfzBmcCrQMzQRaHTk_0kNdzoVkGV83ac6siEibyfsKzqLT9oAxPWkbkwoPIG51z1Vd50_3C2YiJbtV-98o7RBdDAJ-oN9mUxDCoWJVMXKOIx2FAw6vdPcKPATeEe8duIbOOWuq3wF2HUUe9fnUpV2S2_MhPCX0ncNypdyEtiFcQP112-e0m8v4HkWgEHm4EHybA6gDDyJyWOg6rQiFkH2o3SQ2E8J7zwX4vPkcuxOuDQcIXSqfx4mAC6TBP5FRbNUX_oI-CAmpUCmItB9i9axzKDNqt6m7sWlqm-EN71eqh8VkHKgfQHaGFFfaJ7bpFGC2k544n5TpozX-YK2Z84-wvtR48nqAhyJbgCiQVhlhaM9je0Ov2xLhAcuLbbYPdUfA_1Ipi8kKlFgKVDsbhN5IRntsaepavz8nLQgC3icyVneUKNocAIW4c9_dqqE6fRTsrb7GY1dQDegHZDdGIs4qoiIc4MP5iIldBSQ2e7GJIQBbrnJE1gDoGV0Kz3PUX-19lCrPPFq4DgrgY8_3clRi9mucJWPADqSm_QGEHLqQxi8ME_hi4Uce_Q_ZpNKIop2X1_Wct_PqH8ctoVHtHpxHSjxRxUfKFDWMQ2MhOliOX--sLiThHAPK4Ge3CnLhzwZhNRUGpzOGDNIkiU_KR_FSwiD4juCmkmac5o_0OfJTsPNvUUc565f6Z4tK3wKuDboHuJBkS9VgUd852ACJsOOlz_oiMAxgR96"
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 273,
-    "completion_tokens": 192,
-    "total_tokens": 465,
-    "cost": 0.00226125,
+    "prompt_tokens": 266,
+    "completion_tokens": 333,
+    "total_tokens": 599,
+    "cost": 0.0036625,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.00034125,
-      "upstream_inference_completions_cost": 0.00192
+      "upstream_inference_prompt_cost": 0.0003325,
+      "upstream_inference_completions_cost": 0.00333
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 168,
+      "reasoning_tokens": 309,
       "image_tokens": 0
     }
   }

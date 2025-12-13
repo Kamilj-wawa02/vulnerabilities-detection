@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765055224-Y6BDslAteqeWelqZxIbX",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765055224,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 252\n}",
+        "refusal": null,
+        "reasoning": "**Assessing vulnerabilities in code**\n\nI need to detect vulnerabilities, focusing on a specific thread argument cast. Passing a `(void*)i` where `i` is long can lead to undefined behavior on LLP64 systems (like Windows) because the sizes differ, but it works fine in POSIX LP64. More critically, the code doesn't check return values for `pthread_*` and mutex functions, which connects to CWE-252 (unchecked return). Overall, this doesn't seem highly vulnerable, but I\u2019ll categorize it as vulnerable due to the unchecked return. I'll go with CWE-252.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Assessing vulnerabilities in code**\n\nI need to detect vulnerabilities, focusing on a specific thread argument cast. Passing a `(void*)i` where `i` is long can lead to undefined behavior on LLP64 systems (like Windows) because the sizes differ, but it works fine in POSIX LP64. More critically, the code doesn't check return values for `pthread_*` and mutex functions, which connects to CWE-252 (unchecked return). Overall, this doesn't seem highly vulnerable, but I\u2019ll categorize it as vulnerable due to the unchecked return. I'll go with CWE-252."
+          },
+          {
+            "id": "rs_020d92a3a58650db0169349af8d8708193979ea0faa537ac43",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpNJr_im8ygJAjB839cCbCrz-iIdlT3cxO5C2dpKz3JnOfhQwIunNA51zHCpwWFHCUZwA-A-eBx9iYUkpv7Smy4ACP5GZsL0HcrQnli3A1szaNGljlAMNScMpUEEyvArT3KU7cGiboYRTZF743DGpJ-uyyd1F9bJp2Ws0o6Gu8uUVZFc1nGlARcYZAOtAStNv7cPM8Mrb2PrEDCzK_eD8LreQAiGfZduKTHCOGe-0OlKuxZdlRP5P9S9LvG5kN0_tBM4MC4Y-x2NuVwdg2mgmznzcZxAvWeNOLVo5qUQcGB_y5bVqrv1PiuEt68gZ0RF3WNqNrFpftBGZSNmklXzm3FT7TYOTugwnboGAciS_Z0dEgxja__QYwgtQxQ-F8-aQV-22v_tXcOdo0qJx9utK1qkftisUboXyyn-a9adV1IDYWRpzSS7RWMc1jl4nNsnAHftcp7FaCLDZvP6dLtaItFS7M9gj124c7FVZCN26rsQbH_0OgjanaESbtZdG_7lpqDP9GF6-_pdcjsloBqoYt_7uZpK5C7vRIgwYxOiiaQOfsT1CbGuONp_mKTZrBvko4KzeOJ8i03yQchxon2DREelpHZ0p5wn5ZemcH0oB-5L4sV01RjcortFf2DPzciTbeCZaLGYhPvCs1to-QVFOy4lMYm2ru9wBaLCEJd9fCo4eZfltpBpOffgZ-YFINvelMChSd-H59L2D_rqXlYbVp3gGXCHsivuiaEofKMo42xyrDqYyT21iYq6BGGkTcNSMNXo_8XIJtt8r1K1WVZbM07VIcQIX-gE6t1e1-nNgZhGhy9ABgzac9kr8CC0hcMhwD7Yn4bS1V5n77YzoGdcpP5EYYmdOWJg6edQ8JmIVkSdSLBPfv6cYC4oob2wgZXUaOilq7-zwKrR1vNjV05yHk03KsI_iJtWnfEQSD0F6WMymYKvnJ3FDnOMM88265V5A9B6JKhvLh7VmB2kAIy0V8TjbBRfhZDRfdQ54p62-ZiSG41zu2upNGXe6hJK-J4Nct5069zkKsfSFVQZOSbnl3LnXYoIUwqjJrIzmVJ0AMoWqOYvR0Jh4UCU4oK01V2VX5zcOvsjf1EM-X4HNcm2Z2TBLuc3qjxyy1Q9niJYssTHsQ6JCr0PSxCUuxUGrzRCXuIzSx0vCnZ0WJiTJ1Lg7X33awNVjHW4-OiGRgmz56KMNBzyAD9oeN5UcxUDPK3slgHp2r93PbPXPDJ_yVq4wdwTOQxajQEPVQEo93dUuuxn4M5Qw4p1YWqCtuH7NJ0oz6pKxhfIXpnmJcJSoCYXlnSnmajQxgSxBohzZlzloME-itLqPUTs2YivV8lC3I50MDN2eLLEUzWX3cfR0mHVTE587_kVeSnpKblmy4_nRfilYohm-qJFCYK0N67ybwEL-AXaETgFcfmBIFp2CkB_clPZFUoBVUJYPJEIVwTqnk0Sd2uda-tQq747FqXSUlbJv2bRgY-27-gKTBUMv3bYcO1qkEw0HPalVyV_M-iMlShIFEhqFJZZa5jWnDtp_cjCHqheg5qt14GhgD9-YCnCDDS8wfQC8pqk5nMvFedX2o-TMk3FkoztJBJYJfGrtpst7GD0WKaQgTKbvq_qSDad77O-tJRNxl3D0H2zzJHOUPJBei6E1ia8FfRKPggjnMIixeRTgj7zn8hlaGUV1_fn-F0EL47pIQAnOcQuuIA7rqVfQRlfrt7jnaqhaqefNbzN5FTfMA9n7iVug6DAjmQGhARnY_CxxyL9N1kw-ayq_QgJ43Z1ViLA4oEyyjoltfHNWuW9_h9bH1zybLra0pJMyyc67SxZ-9W6_2AwYl7vQQh34jCVNWNgl7mz0GglOdAFZBD8JygGNycfulcVuB-XJNB9ZiAsySdvLiz0ZtYe4ucVYt8Eceqr4MUu4_TtctjVTk5_aelGuZwOfAT2cmAT7v-tRzQH4LzME4TOHahtpJC6JzEketEHuHOYx3_V3t1326HjdJD1bCkvW8pRX1yjpk0oXMUCT2mwg4JAkPZ7r-vo1epM4Lzr8baOk8mV6cEw85kyYBxcF04QDWJ5oWzsUzbgjQsDfiKaL0ZBsWZ-vYh5dbBpW7PeVbBNJPvPCYuEe9rnEDUj-NIeBldVSLW6EcncAXvddadihtzhn6mEFN9fN5upATBigNfVonOvfCi0InxVpC"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 372,
+    "completion_tokens": 234,
+    "total_tokens": 606,
+    "cost": 0.002805,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.000465,
+      "upstream_inference_completions_cost": 0.00234
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 210,
+      "image_tokens": 0
+    }
+  }
+}

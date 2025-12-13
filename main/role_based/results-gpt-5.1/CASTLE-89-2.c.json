@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765054652-RF1liKwvNr5cHWBLc5FB",
+  "id": "gen-1765665224-lofMc09HxlY7fzMabFjj",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765054652,
+  "created": 1765665224,
   "choices": [
     {
       "logprobs": null,
@@ -14,30 +14,30 @@
         "role": "assistant",
         "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 89\n}",
         "refusal": null,
-        "reasoning": "**Analyzing vulnerabilities**\n\nI need to detect vulnerabilities in the code. It's clear that there's a SQL injection issue: the id is taken from stdin and concatenated into a query without quoting. That's a vulnerability classified under CWE-89. I also notice a potential NULL dereference if `mysql_store_result` returns NULL and they still call `mysql_num_fields`, but that\u2019s more of a logic error and not the main focus. Since only one CWE is requested, I\u2019ll return a JSON with the vulnerability status and the CWE number.",
+        "reasoning": "**Identifying vulnerabilities**\n\nI need to analyze the vulnerabilities here. The main concern is SQL injection, particularly due to the unsanitized ID included in the SQL without quotes. That's a classic case associated with CWE-89. I'm noting that fgets includes a newline, but that seems fine for now. Another potential issue is if mysql_store_result returns NULL, which could lead to a null dereference. Overall, SQL injection is my primary focus, and I need to provide the single CWE code.",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Analyzing vulnerabilities**\n\nI need to detect vulnerabilities in the code. It's clear that there's a SQL injection issue: the id is taken from stdin and concatenated into a query without quoting. That's a vulnerability classified under CWE-89. I also notice a potential NULL dereference if `mysql_store_result` returns NULL and they still call `mysql_num_fields`, but that\u2019s more of a logic error and not the main focus. Since only one CWE is requested, I\u2019ll return a JSON with the vulnerability status and the CWE number."
+            "summary": "**Identifying vulnerabilities**\n\nI need to analyze the vulnerabilities here. The main concern is SQL injection, particularly due to the unsanitized ID included in the SQL without quotes. That's a classic case associated with CWE-89. I'm noting that fgets includes a newline, but that seems fine for now. Another potential issue is if mysql_store_result returns NULL, which could lead to a null dereference. Overall, SQL injection is my primary focus, and I need to provide the single CWE code."
           },
           {
-            "id": "rs_078d81ca59c39fec01693498bca1c48196baf8e765af7600b7",
+            "id": "rs_08f7fc9b1a1fc57701693de9c93ee88190bd28bcc1ad371ea8",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJjAAoO8ombA7lc87nBUiYID6SJVKqqEDk8PVXDRMt3Ro8NAM_4rc2lgGIEdhoC1ReYwIA_G_pLZ59BAjB3fPxXy75WfTOQqtSI5FfZDQd5PlNnVnBBv7rCu_IQjUMekBFSTxAJgj1MNOLeAHqVNuR-HyrA7DU85NXYc2V0SAhhVS5FSxBlZhCLbLA5xATlz2TEHq-lubQmMw__Fzt3YX8o6DvSwPq0t9ER30yD4Ig7IR1yCep551QHm_W7kXYSM_kj673uwLZHqiCUodIheN4FfknTPbmIAzHLgdkNS7ZjwDsfekKUSzv7C8k4JaF6zIFRMNNFn7HHBMUVLVWqODpcYG4GTpEI0GnDPilx1Odq8-My1yBqnGRXEyyURgxPwpnm3cJK83PPdCdx6nx-86LJXJAtXE01HZL2gqcnn-9lRCJ-fYMY0QENB8ouEdsuG9SLah9i1GYKW0GIcpTFF-9C_Ym9zlsLO6qjfAUpYcYGPY9HELbsWJ_AnHbdjBxWM-cp-Sn--FNKEbdEn3yaQkOBOA14r7QrykhGGniz5RlAQr909a2nsYfqbVvzYj6HuTKo4P1Zo9RJUPLPlAiyBxDloHW8FtmDjj3RQT0xVhC0vLyz-cw9oRxltPf9_a0Ni2ikkHlQWTuMi81ZCQX5-lDveN2dVyMD_SZjrbXx5iATiNPJq7iAvMTe3zO8Lf1QtoX48jOOWBDKPMw_kYVMOvJ0QDYbX5vKIqS1rcukOflCc1gcB6fGwlAzmL01JlUszxqywS8bPy5Rf9w8y_rao69QlXZkWIMuSJsep0-DgUXWo8k2HN-dIe1JzLcUaGZdZZ-tHAlJxOg8P5k_yLAhjeS8tZbpkNTOR8M0UZDWHAUS4Kmij2j_i6I7LtDVxnI1oumC0Pt9AC1_w4JOZ0yuTl3tVh33zL37ZsvlW73vzGqt7CETg6NqeLvFhKgnJHWvLf8_6hWFL2MjwXxq0PEAsPUQpqywuCGr25_lEsr1wkSebfTZXbnkR-_6KfKDXHDeFMDdQUOKxD2wrCOVcRmhzt-eSi0Nt8xJVeljmWON8ydcscOLoWE2Nznj3DA80_nDM1peF3xJY-_IYzg1Mje_PV4sxMADwtIXQMVzUWmQ_dzPb2OYE_EZTwZ8XVX3hfyxxhVyr7l2WgkeQOytZcdFX1Ka1qGHQyLRZ-R9FbUaXtvS_npQbhRzrvfZUqMBCjOMQqRHcg4hkzGkQHlAbvkKtAVE-1QB_Hiq2F5p77WC9Vk-CQBj2kfBBQaogj67jVznsPn9JvBSN0R8R2KABhKGpoxy4eQGRyBhdYYiarm8wl42qU-ULz3tRVf9sU_UtPiSumTitcp1X48TKE0B8WvO1tXnA548JqDTjA6pA51zXn9RX5r4wox7B-1TkYNYluHJy99yHV-iNlgy4iofP6YnC45NrWiL5KjvyVw8grQ2cVKs_lDQ="
+            "data": "gAAAAABpPenMCtgEWY9iTQdRja-RDBZtj8LO-kWxhlSQVg-IZoO7CKsgg71gpXRb9j79ySQ_Ompb7qrAy4_t8fqZtwKjdisr0kB4wFrrdRrK0s_Av6JnTX17E1wAzlXIZaLn03ZKx6NrGLItgCfekyV-I5Iu7D6tgP1Cdz6pFnMd5U-FXi3TgoA37Odp9ypZltBksDt-HJNTsq1s-vBb-3T_fj0MPic74zJXNWtOxuKItb082p_z7-1dbJ2psWz2KkKywPdEnE1-Efv438HfPOBMyfuP6LGdhk7lQtnFDdZuiDgMJ1fCjkj0Lx9YbfgPsSM-phmElS0dhOlSCby124DVGD5AFNVQKCEmpPETF0zJvOqU6ZTg9MFke0ODwA8TyF1_uWv3XAes1S1R3WpvTKctv0hJT-9VJgfKAiBCh0FbVHU8XaoZAP8cgsifTPVE9JtYy9XvzRfkB7zylMDL8SEqgJD-cvgRi4iyxXIQEi3Pawo3M80dxNR71Gd8KyAZetpJIhdjXxVp7AByhFqg5hjx-9o5W3XsJ3apevO6uCrbvWQLfRxVhzRxNz6-VM7JiF-UPUWr7KMqbv5oWbHfICJaJcRXGhFhg9qf3CsJOo93we5lxSXPYBQqU2DkZCEspqlHnWC6V_TjWqiOK55YlZ8fHALeno0kanilMxt2E_p2KqZkADLvvcE3uG1Niii2fL4rjWZoUext14_0ReL7kktxanrdsrn_UxmqC3nqtteQJ3Us7oEL5ZB7fQpLO-D0QLKEnKg1yya1S7ZWPL9QMS74ZiFu29U1xTAVQJ_wx6kSLkmCd2ya-mNVp5E8YyyG0tTflMuCZk_7gHc3dMbBMgalSEAb1Qbp5EMEET2mx24NMQpcxQPY2qMzL2MabgEByDyUjCqL3ny0p_G7iorP-TEyD45aAN38jchqP5Cetr-JQLStxYVRl-EQ5aMfqAtlbB40fPm66DWFBa2omOTqyfV01GTu0SXStJWdIVZ4wpGdYtDE0DX8qx-H2kSvDJBtfB9fjZqCAckROGiaYvSfeHjWCoODxpCCd3M0Dh9Ew-Byo4uMeRpCLhTXJE1ZfV3zR5BsiYn5P4Xh9zqJxLwehrVcpu5U-BinFqzNjDpU0D-XoMXRZqHAzyXHXVnMN_laa1yQ_kFZ1u4HpyTl8TkQf4r6GR7PT0_xdzPP4jQA5zfqFCJeTiC7ngXy0K5Di9xEsM7hDeygdCog2JYUJ1OwgVYzwuvzcAck1YlaLiesk6GpiRFnliNN1hW5R0psBDEe-uKu5oj0YXa-EZrlVbr9wSoG40XagmQn6Iit_BwFtT0tRtQdOBj5hAWpWj6c9GJbzyK9XwCQpIjmlK_uNJEV56KPxYC8BXCagO54st7gGLNi6VgP4CI7pWU="
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 520,
-    "completion_tokens": 126,
-    "total_tokens": 646,
-    "cost": 0.00191,
+    "prompt_tokens": 513,
+    "completion_tokens": 116,
+    "total_tokens": 629,
+    "cost": 0.00180125,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.00065,
-      "upstream_inference_completions_cost": 0.00126
+      "upstream_inference_prompt_cost": 0.00064125,
+      "upstream_inference_completions_cost": 0.00116
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 102,
+      "reasoning_tokens": 92,
       "image_tokens": 0
     }
   }

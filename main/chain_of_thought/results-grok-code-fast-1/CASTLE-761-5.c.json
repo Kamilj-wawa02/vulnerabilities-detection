@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765638025-M3cfCkIcBUiRVcw4CWfd",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765638025,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 763\n}",
+        "refusal": null,
+        "reasoning": "First, the task is to examine the code snippet and determine if it contains a security vulnerability. I need to think step by step internally, but not include reasoning in the output. Output only a JSON object in the specified format.\n\n\n## Evaluating code snippet  \n- The task is to analyze a given code snippet for potential security vulnerabilities.  \n- The process involves a step-by-step examination to identify any risks, focusing on common security issues.\n\n## Evaluating code snippet  \n- The code snippet is written in C, including stdio.h and stdlib.h for standard I/O and memory management functions.  \n- It defines a macro GET_ADDRESS(p) that casts a pointer to unsigned long long int (ulli) and increments it, using a typedef for ulli as unsigned long long int.  \n- In main, it allocates memory for an integer array of size 10 using malloc and checks for NULL before proceeding.  \n- The macro GET_ADDRESS is applied to the allocated pointer 'a', incrementing 'a' by sizeof(int), likely 4 bytes, after storing the original address.  \n- When freeing 'a', it\u2019s now pointing to a[1] instead of the original allocation, leading to undefined behavior and potential heap corruption.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to examine the code snippet and determine if it contains a security vulnerability. I need to think step by step internally, but not include reasoning in the output. Output only a JSON object in the specified format.\n\n\n## Evaluating code snippet  \n- The task is to analyze a given code snippet for potential security vulnerabilities.  \n- The process involves a step-by-step examination to identify any risks, focusing on common security issues.\n\n## Evaluating code snippet  \n- The code snippet is written in C, including stdio.h and stdlib.h for standard I/O and memory management functions.  \n- It defines a macro GET_ADDRESS(p) that casts a pointer to unsigned long long int (ulli) and increments it, using a typedef for ulli as unsigned long long int.  \n- In main, it allocates memory for an integer array of size 10 using malloc and checks for NULL before proceeding.  \n- The macro GET_ADDRESS is applied to the allocated pointer 'a', incrementing 'a' by sizeof(int), likely 4 bytes, after storing the original address.  \n- When freeing 'a', it\u2019s now pointing to a[1] instead of the original allocation, leading to undefined behavior and potential heap corruption."
+          },
+          {
+            "id": "rs_9919971c-16a8-341a-ae40-c2b13ae0e700",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 385,
+    "completion_tokens": 1012,
+    "total_tokens": 1397,
+    "cost": 0.00156044,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 192,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 4.244e-05,
+      "upstream_inference_completions_cost": 0.001518
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 995,
+      "image_tokens": 0
+    }
+  }
+}

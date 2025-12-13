@@ -4,13 +4,13 @@ from typing import List, Dict
 cm = importlib.import_module("calculate_metrics")
 
 FIELDS = [
-    "TP", "TN", "FP", "FN",
-    "precision", "recall", "f1",
+    "f1", "precision", "recall",
+    # "TP", "TN", "FP", "FN",
     # "total",
-    "correct_format_responses",
+    # "correct_format_responses",
     "wrong_format_responses",
-    "total_prompt_tokens",
-    "total_completion_tokens",
+    # "total_prompt_tokens",
+    # "total_completion_tokens",
     "total_tokens",
     "total_cost",
     "average_cost_per_sample"
@@ -22,7 +22,8 @@ RESULTS_DIRECTORIES = [
     "zero_shot/results-claude-sonnet-4.5",
     "role_based/results-gpt-5.1",
     "role_based/results-grok-code-fast-1",
-    "role_based/results-claude-sonnet-4.5"
+    "role_based/results-claude-sonnet-4.5",
+    "chain_of_thought/results-grok-code-fast-1"
 ]
 
 def format_metrics_row(model_name: str, metrics: Dict[str, float], fields: List[str]) -> str:
@@ -59,5 +60,5 @@ if __name__ == "__main__":
         metrics_with_cwe_check = cm.evaluate(true_values, predictions, check_cwe=True)
         metrics_without_cwe_check = cm.evaluate(true_values, predictions, check_cwe=False)
 
-        print(format_metrics_row(MODEL_NAME + " (with CWE)", metrics_with_cwe_check, FIELDS))
+        # print(format_metrics_row(MODEL_NAME + " (with CWE)", metrics_with_cwe_check, FIELDS))
         print(format_metrics_row(MODEL_NAME + " (without CWE)", metrics_without_cwe_check, FIELDS))

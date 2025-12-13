@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765055598-CwKs19SjK4uCM5Rz8uqx",
+  "id": "gen-1765665960-OEul01Qnw3p7jNn8JFrH",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765055598,
+  "created": 1765665960,
   "choices": [
     {
       "logprobs": null,
@@ -14,30 +14,30 @@
         "role": "assistant",
         "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 190\n}",
         "refusal": null,
-        "reasoning": "**Identifying overflow risks**\n\nI'm considering the risk of integer overflow with the calculation: *a = b * b. If the input is large, it can lead to undefined behavior, but when I set a to 5, it\u2019s safe. However, since the function is generic, there\u2019s a vulnerability related to CWE-190 (Integer Overflow or Wraparound). Another aspect is that negating INT_MIN also causes overflow. Overall, I think the static analysis should detect this overflow risk, marking it as vulnerable with a return in JSON format.",
+        "reasoning": "**Analyzing code vulnerabilities**\n\nI\u2019m thinking about how casting malloc results in C is considered bad style, though it\u2019s not a vulnerability. Negating INT_MIN can cause an overflow, but it would involve negation. Now, looking at input values \u2014 when a=5 then set to 3, that's safe, but the function could be reused with different arbitrary values. They asked about detecting vulnerabilities, so I should assume there\u2019s potential for integer overflow. I\u2019ll indicate that it\u2019s \"vulnerable\": true and \"cwe\": 190, and return this in JSON format.",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Identifying overflow risks**\n\nI'm considering the risk of integer overflow with the calculation: *a = b * b. If the input is large, it can lead to undefined behavior, but when I set a to 5, it\u2019s safe. However, since the function is generic, there\u2019s a vulnerability related to CWE-190 (Integer Overflow or Wraparound). Another aspect is that negating INT_MIN also causes overflow. Overall, I think the static analysis should detect this overflow risk, marking it as vulnerable with a return in JSON format."
+            "summary": "**Analyzing code vulnerabilities**\n\nI\u2019m thinking about how casting malloc results in C is considered bad style, though it\u2019s not a vulnerability. Negating INT_MIN can cause an overflow, but it would involve negation. Now, looking at input values \u2014 when a=5 then set to 3, that's safe, but the function could be reused with different arbitrary values. They asked about detecting vulnerabilities, so I should assume there\u2019s potential for integer overflow. I\u2019ll indicate that it\u2019s \"vulnerable\": true and \"cwe\": 190, and return this in JSON format."
           },
           {
-            "id": "rs_0a1d711dff7f3d6f0169349c6f36e4819699fc02d3a5bb7d39",
+            "id": "rs_0fa82bfb1ebcbb3801693deca8a0a4819398ce630c9a986aac",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJx48m4C9OgLP5Wo1gA8S1tEJSMJHHrkB6CeXyjWPTtDAddsWvMLqssjxzP1FQ0RyZ10gYszXPZnZJRdHKs1dpks98TX02J3t4ez2OI23JctZONf0wx5nVkT-VAO9lLA1gUG8R3vvwa0nEj8-Qa1sI6D7Wc3fJ1K-SQ3b8p2ucOyNxul6DLFv6_ngR6m6gQaHY3LBOvh0uEWi1QwKqXE_Gani8u0s8xkb192aR5sgdP_XFHqAbtmn4BR1lTTSmZK7Vj_JP9Gx-QbDzYrdj7DAcpLr0AXNZgclOE6g_qhb8JjQgDs33JnD0O8c3VQSLls7rTBCLe4mKIn6sBd8u8SSNmIMwNGGKwF2UDB4GgI6qjgtse0G6Loz8DhPBnYYdr1Vc_qEUFEmsdSKB7cnOijocDqwGtrS2gkqLx6YAN5r0P7vUB4l8O9RgVFKCtXpwXkHmlhD6v4iDxkxAY0Lln0l-fGCHzgUQnuKpdIIRaQKSRUo7Fu5XuThA9CzQh0cuPnorwevODKi4wRsGZmdkeJIbek6ihSnfL3Rebo9XrKS_5CUIpalvC8sSwcA_RK0kDTjcF24kw--OnX0y_t7de67pIg9l7JSnTDycNggEK249nu6cTlhYIkdkHcgKYIkSo3pv3oyl3Px5_q3-XTGgjh-PXNnqw1Cx81Hw4sG4gSKjTtR0CYdX2JpOSYWkFA_UtnIgp_SvTZXld-yWC73l97j95xPNG-PC8xIohjlg_uTvKxc2c2Obgn8fhjX5ZPoTysSm1o5YXMXjKHGu0oRVXvhCYbR6lOuKD-JoXuPt9xhQl4UmVY-lmUr28YpahwFteKZaz0206wSNlbFMw44lMvtS-VomrYJhGcvF5hognVgePzK3kerA-fao2MtZQKeFLH2JYYulAqo2M16IA-HVq7f9ihciCZIc1-5WqUijxqkkEJO8arpKi-v09sQY_N0vaR0r4Q8zxWYAM7MzX5Eymt4GkBD_JB0iK0jCQ4oUwj1QiYgJ4vXN9yrkNVNfsRQ-P2ougFoFf2Dy2o8k3jbcamLeMJDPzbADEkA78fYsVLL3XIjH5r-biBPUmwKIoix4qkg3RsxGLxWmNzhSYAU7yepSI0QXmOv3FAJYktqqflyBUSKOAvLwwNeBI1-28dK7y8_giwyVBCwaxB5RpSatHXq-rcFfW0_kYaq7w8ll3Cmt1MReYnMD9SDWFPNzv-R41S093y97fPiD103RQssCCDFld-vO-ZL6Dfsq_bCIm3gKxIkA8vifUXxSsXJCmLSlzQIArqnZ-J5ZZu_ltTsWSG8XnPgi_hHS0CinHYbX8J8htjngXmVGn39dkT09riWz79j5-OVtzpzeE_uU4JMqoMAQxElSUdPCHZucx9oBXSDrBXP6VOEOyt-ItZZxu1EWC75zyfKAT3-qdnEKDesQ6_ClX52R4GG3KrGeS86YzrzZZD97fKJHk7nKUc7MeN18tszHQyFBzzcg2BhopNNXWmWLa2TP-KjuoGMex1aZh07MZjfQd0OZJfP7n33yxeVWzwhUefm5oYmH65sJH72nYJ03bq7f-T60IK7AwcIuYj8rQ5eRmxGEd23c9titHxS3HOpWSn-4X8qG6jPbQQwUZRocrMbFY_ByYi1-AMtd8XUS4NgfHUwEKwYSbvSrWyoVhph6km5PBlSMUWcOOCg6jiQrk_koBowx1RwFX1EcY5k485B7DmN1zNUmQdgYZzw3BOuytYUce_aTPKUHlayM6o42_Y-7K2wyvE4PLtvR-Lnu5_Rv9xGvTnSzV9a8dBwu7L4Zas27w6JTuF0jbBJjx52taN_bNMvanPgMROSB-fKxkLFREF-_Y926huUZfQ7p99Z861fG7N9YX5nv6waf-z1NKFLm5NAiiC582d5OklHDPm7sXRif1hUUuW7TVTlnnSk6f1Kxc1MdzFxSkm8F_OaM59EeoeZp6UT7kxPRtdfJtAE6rP66pPzNXdz82UxucODrSlBGUZJjK5xNP1Nq9BRJ0NQ95uUczkNASUdzY8bfz1ql1XVexzvduYLoRcqm21LoCHRiTBezMDn9px4qsbK5uopWM0uLzWBueALakoazknta3RrzCGutU985QtXDVykDQZdi5u9vZxlCI8bxJFdf2-VsNoULMnJ9vVjvrYPw9DBFssNNZoIEqjNQpLlE-9sn3tTxNZ5lYeWDTK1y2xS4Et8B1CZSO7yw4hRLMsIFMYbOy7_si28j0R5zGut8wgVm4H1b5GvCsYGoFdNZIoK4YN-f80gL8lhyqZmJTx_EuVxzwjeotylDCxdhaz2RMO33xaLECjSxjuSeINumKkp7WSYl6YLy3QRLqf0QaytdJ2Qzcv2BDlnJ9kb0u0tAltkeF4IqmI3E3b5dVUFNwmr32j6-u_QvfDl-94R-y6R38s6mCYJpwjyOLiPa3skWugojoNoFnMbxKMZXACmfOMaS1uOdj0Xn3vYK_tQ1kDxr6zsUHWyo_u6XPkPf4c2avjXwLm1nmYi6PzMYso1ywUNJ5Bqbq9nc9teslFwFqC8uqQI-NjmYjDwcY61unMPcPze0TUbXVeyuejPcjEB5Yd7g5JRdL96p7vD7v9wLb5CKj9cXnetmos5VZ69_ZINlRzMWmKGd49bwAJvHFMftzY7XHS1tdioWZ6-MCSrGay04L33y2hRCkQFg7k88CawGaQkcLX"
+            "data": "gAAAAABpPeyvLLkFztTuTQbiOzWpeIbNME2N99HZAfCuECfOHzzjXU1-GiNEh_6PRmN4W9lF7tM6LpSe5tFpzE9MEC63DYoY_Etigdc9LZYdxBM2mHLZ0BHQyv5uhF6PU4pXPkjVffG5qVRLYAy7zpvuBfLna9N21Bg-08H49GMn0i3Fn3kZinmKcy6oEUWhCpf6-C05CcsCnuis2LOn-ALY6ukyTslu_gGZ4_6mjFyptkwNry1ynfB9ZkkXmnMFUl_7QtiQs9Oc0K8MAuj1TA2XseVUOmHxiFHw4EURg1DD08o3fTIhlK3B1NYbNceDARw0wDHUb0ynreJLbHSh4CsBdOh1i8Q80bDwK44SES4tVRcdAkJ1DdsLkE9yPWfIxNA5wdJdiPFwc3TWTInnhgyXaEYnlYhITF3eKAphGFb7fmZzj4Ucd8xg3EwYjH_OVp-96J6EwVwuN6NvaXgt0Y93XmJpR4uQDCqqQXR9r0AtNTLQ4OiMhvUncxckkMZIWCu-niCnNfC-EQpdYv8VRqh6j8RGZEihuILKb6IpxdHDl8b-IodoivwDTUpH4rGBH8VIVdkxgyYkaCkrgDCpOMzYbXNKa-BBAIad7C_wC3rW78bQldVu-AZSuMih4IIkDISu63FAs6Lzq3an9PcQ9E7D0MUpBBSaNlKZqsETPQ57KjAOKtFZnJE56vcYwEr6m8vZ3e1-lBUttPUveCUOlklGAjzhCu8AiCtkD4IATxJHPTgdory3Efpf2aHsY0W7A-KHfH_y-7CNBgh3EUFQNhfxLDH1K2arY9lgAd2rpccI_YsT9thfTwYAV8qKr21TZg7MqKG6mu6JThLMOfA5YCFb99CotqEqR_nn3FAIwIOxF5T1j9iaX0fy32mSFiTpExNVodA6vtiqaCCqVJmF5b5kbei1V24DvWNnFa61TNIqZH52n_2P4u6dgCs6vvOfkUtVgYn8LBMUFySxMRvjT_r4AHAt--6SZMA9EThhREzhYSFx8k5O7ZEmShY4GBcmlM1wyR3l7iUoucfc_mkS0wt-odNXkSwqiKYEYI2S2SjrE9ZuKKFkSr_Gvyfm_93nE-jE49ZCECgMhE3Bx9-jxRJeqqZxRcz0iSfSuINsLD9ZgEC03hIuoOHTpfx5CrU5gtkUShn1LfI9PmMBc1p5cU1UdPJTiTMR0tvYrSFlWsh2ZCyqjcekGsosz4yTnvjIjy2B6i3ooR6en4dOfHjE427uN9LxBaoxdUA-yuY4Z7G-9ekfBeEH0wNwFl3820DnzYDe2fSd4c8TakVTHNO031mIzRu2NYB35pC29NVPdb69HwyPtIUTiKhvJ1PQmaY6SnlGDIkDhgP2ZUFLo9vYKMuF8bubem7ayHRA41zYEm9ArMfUbyYJPehisHF9GMjdtDMa_HZG9cRbj_yEvEvDX_9f4e6XYYXMY2xva2bKP3oMIhlleHzPOFrjg30tyyUzySAY80GrwhH978-tOOYjFB_zhLFmWHpmVzx9rwdHlQmwQMLW5mDnuO0YA1rMIl5rLBkLQXCLJyFEdgcoSMndfTTNEs6QZWuo_BrmC6NJ_h6616tVmpo0eC3q6q7gWag4euHx9nsDg5iieM5poejc5FoEv0JTKlLK4hAAVJ8fbxJH7Dtp_oOoTLDj460HxBgMeKpsqPFis6YfS-z0ji41Rgs9r5cOuzxuHF4Vxi3FiApcjA1V3bnBlcLRHnQEAyGIqQvQOkXKqxpY6bW_5lyvbTJtZV1MicUEC9u_UdChm-r4HxuP3gyqQ_W6ThiwwbtO1jOfhXstFzlHL622iJNcQRkf1MV45I0-svq68F4R72L8_MBfDf8W_U8AySI4r4-PlO6awq-4EllL7cdL5lF9LJBRvzLD_t6sX6qKN0kJ-MEdZmEFFrfvpvLoxLdUNszmpk5kJlNxbS10TldFCoNPTx4WZ5r0uzATbEySqSAdGp0efGPhwwI0gvTsDeJmJTG4PVABlsF4xjl_1oj9Va4o8IdCvzP6VsknX1zqvb2VnomIu8vRVMYksLAQRGtmVWFWK7RL8ORBnoi6JnqHJDMWYGBCa2EC5Qn6tNpTLU2fo9V0FjMQhR1i_NeivAfe7vsTbgpxVlbcYKQj9TJhEiOFP1RT3sgiBFD81cZgUNH2mpHATtdKE-IvQmmFc00kH4ePlFqjLLfY2IB0lKLHTBkt6G3O61P5kJyZB70TJeoQvO57rKSPIlE9nXhSvIoktYWWR5mdPApS6lFXsmftxp4M9SMdIl3RD_S191dUoxVgtPg_fgSK-VO4sSyNvRBg9LZwfbwa6GXhZ0YNyuDAjvklzZ_2tTOhiYcKWU6h56gSyQ9HgEtz6JMoea_BFgGnbmE6A_XhNOtEDnRp7mexjE_wpTup8_JmQwm_7ZyzSmCI12Kv31S2N4svX_vIC9f-PJEkEixb2J8KdzJOIN_PnL4t3qXD6afMJyb7TXdnhz1SLvJhfV0bUw3B2mWQioOdl1h5_eFbjxICre4b0jPPVhnnlh5-NqExAz3qCMaFB-XTHZvYxaS-Jj5-T2NNCsonn3dsDWmet7d-deBd"
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 298,
-    "completion_tokens": 360,
-    "total_tokens": 658,
-    "cost": 0.0039725,
+    "prompt_tokens": 291,
+    "completion_tokens": 329,
+    "total_tokens": 620,
+    "cost": 0.00365375,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.0003725,
-      "upstream_inference_completions_cost": 0.0036
+      "upstream_inference_prompt_cost": 0.00036375,
+      "upstream_inference_completions_cost": 0.00329
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 336,
+      "reasoning_tokens": 305,
       "image_tokens": 0
     }
   }

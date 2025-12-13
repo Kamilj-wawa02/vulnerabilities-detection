@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765634722-TYgSfsDFj4gzyBQwXt64",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765634722,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 89\n}",
+        "refusal": null,
+        "reasoning": "First, the task is to examine the code snippet and determine if it contains a security vulnerability. I need to think step by step internally but not include reasoning in the output. Output only a JSON object in the specified format.\n\n\n## Examining code snippet  \n- The task is to analyze the provided code for potential security vulnerabilities.  \n- The focus is on identifying weaknesses step by step, ensuring a thorough review.\n\n## Examining code snippet  \n- The code uses SQLite and constructs SQL queries by inserting values with sprintf, like \"SELECT * FROM existential_crises WHERE id = '12'.\"  \n- The 'id' is treated as a string in the query, despite the table defining it as an integer (INT), potentially relying on SQLite's implicit type casting.  \n- This approach risks SQL injection, as string concatenation with user input could allow malicious SQL if 'id' contains quotes or other special characters.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to examine the code snippet and determine if it contains a security vulnerability. I need to think step by step internally but not include reasoning in the output. Output only a JSON object in the specified format.\n\n\n## Examining code snippet  \n- The task is to analyze the provided code for potential security vulnerabilities.  \n- The focus is on identifying weaknesses step by step, ensuring a thorough review.\n\n## Examining code snippet  \n- The code uses SQLite and constructs SQL queries by inserting values with sprintf, like \"SELECT * FROM existential_crises WHERE id = '12'.\"  \n- The 'id' is treated as a string in the query, despite the table defining it as an integer (INT), potentially relying on SQLite's implicit type casting.  \n- This approach risks SQL injection, as string concatenation with user input could allow malicious SQL if 'id' contains quotes or other special characters."
+          },
+          {
+            "id": "rs_03de11dd-a8f2-0eb8-1c76-4b23f559af51",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "q8nu093Ec4ldgPFk6yWrcI+h2GFS8dCIt5eTWwJzrPwzDug7r+QA5le4A+uxzwx3Kayo6FjUWeFa8XRm53uYelOceRYJEDnqJGr5GtmApGgTQWDmT8ODun99gZVvVtGPA3CPImZmyCW0F/g6iiCcu7uEz152Lc2OqDDW0b1D5dfGSq7KdkzgP5JBde6d/htG2FHi4Lokt08nXG8+Nbw+n3lXjro+GC2o0ggeCmbEi0f1/IqKVi196UsueNg1FrUMOaCJyODLp3lWKcFEOQJOH2nBZwtphv+cT8D0/SsmglRhEnJuwFRwAZFYxBf50yrOlS1VYu6gewnu/Eh0F/DZJsV8OiTitio3nw7cibijzK9QEaBY81mlED+rYf2afYRbkdCHBxEoddpHx25DAGJ5qoSIzRs8yljKcXmZUgcUZ++viWqNzaKtGr9N9yAVAn5xBbFrx1RmVozbPBFKeuazxX8y4SU+8eazJEtWooDXT6IY1im42oWUkzpbtdoQowNzOyupBtcunLJYpDsxJv7erO3eQkyCUn0M8JvuKplmlQ/yM2F1Ta1OHM9ZTJ3u0sx9j6RMGHeYwSdZ48Wy1hjExSEE3lL4qn19NhDOvSD2JQJm+hwz11Wv4EoWjmOxAMmF/yP4FlzL2ZX3fvlrIsqc/Z0KM2NwSpRw0oGlYG+SK+9v9iIBAOt39sbebpUSCfmydEd37Nu+SU2LmTyUf+KrH2zVSYH95EANKzg87Z9rmp+25K7kKGAOVw9w0xAsnZEaE50TDzyBb6LTO74qL7jukuJ8DGGqp+AZg9ShgZxze7qoy7M+Uep44HuxgaSMuDrtvm4dle/6Z9qONKrMAdvJoSzZF2ofBWM81HY1JmwTteXcgjz8EISoU0b/5yOlHkJyQ/lMVhPOIBUFADrPXU/vj/4F7x2mmC2Mt7iyvCPDFRUUvfH1BjWzrssWlRVqUZFeYeRVUcPxUN5e0W1gjwtbwUg+fpfPgWKbaiDbfdOWW3iQRVxv7JRYd9Pqi5lb55bptdx0NtmXXRO6cxnJYrVPN7K102jbBEUR8/gUYeF93TpKv5GdzSTDWEYVn7CBJS7DjzP0UGmygJjQd+4GhkHVIWvNY3EhlvcmTR3cYxRgz3aXLH+6PZSJ/igKGz0ip7Lqy+wEFA8Mkqa+/rub0mIWXhzSJ3uLTBkvTgnngz1C1LwwHn0hMLna2gNFACBnMjSlnX5V2biXJGaO1Sz7xOhHFrrX+Ry3YuoWPy+f2CiYDhWDrO8yXkq/aqR5ZDKaBzAJrxJ0HE2Thlz9OXDTw7UPyC2JXz2F0FU75lcJjkbK9ayLNcNlxwn0D7Z28oun248inl5FcElHh2Ki1UeoSfpk8X/xjcu621QTV0A2aOICte4DDq5zKANldSorIjbJNNCxv8U/1Tmx+IO/qM2rnbAbdZn6GX0QI6t7peCorFWU0UpKJ0O5ud2qSOjKUPdGKkzekHbCwZfMFykvEN1ynKYwirzNNXUEtS1u8LOWp1DUoOugPd1+vLvkiJ9wrlRk4YbdB/WRTo4m7yM+vtVjYb7pVHJ+KkcQR/vFnJaMBmx9EzMQibKI+zVuEaFmz+ZE//KqVjoRNgGA5SmO/yYi436FEClqVty/Aak7YTjqYQ28wTgcsP5uI6qifBhlWSyQps0OtBb9A0pNpAQWVHMHQq/aD4BkfjMWl5tBO43Wj4J2A0Ncyvftnz1UnIl4wUHR7aLYnP/DOOypJvgb31fq7ZqDmBgzO+VLfoA+9C+Hq6siayq59w2w2Ulxuf4kH1vgO47JkzrwJYg63fzY7XnsR4uwu4eBnY2nLl4S3zFXgvB3qr+F2bgJFHGWB5KOk+EBvR6M+RMo7sUrjpv3bLLFiulRbLFDtiCFuVpWGAYGdq9M/EZnOchGd3L9paVEoTaPuHNbuiopxzBDI22l3WNiU3Wd7FABsWpU5fklbEncgwrKfbl8hisYHvaBZY0k3XLB2leI5B5Clmw9sD/cE16HhVfQBrmIQz4SYLyYXkwRcp64ccPbtDYryBG4tjFUo1xNXYgRNjQrpx3wGOUaVW+DN/5hnkhGoqrq/A6E0T2L4KwDCR04wqBdAqPmAU0YtXCNeEmZ28jCzCSjA04JH0mcADcvAtLO1toxL6Md+1mvz+5CFSJ5rMzDTO0MSZEBeRmjjEi+xtVTaCLmSNSn52ayqzbppOJCwhwg/vOniHCiUiQiphAzByQhtCNRNkjZkDJgqX3A9OzNNPKHaPACRFiFa6bWZguU5e0cfchZ8mS8VfZv4tmfvCgRP1Qz5+ms+1VwjijFTQF4ou7U8Lxuq8v2JWWK8+lHTrsWiEbU1aUccNvmlKi6+UyqtdiqRSVMnuuAyBoXukDnTSlV9HyX+sEBUV9f77y6rfBcQcX6I6HHhrDP1ISPGUj4R+ve587uZhUulqIJOhsgG5O9W9pe+jcR2aWY6yp55s4iW5TW2E7IzTbyNCcH5d811jufIh/CvMhJoMh9GAlfXsVBY4OLWKzgYOUGKi/02KDH+GTcPizicMTzsjPvzN6Vdbj1gMjrUBwsZsMvrnfk2YN+2BbQm7fg6KnlzIUFbK8dInZ7NvYLZotn0Prk/k0FPi8ynwysBVgFLuBa1PeqQsMbjHNnw/soJKrtpbV81Az/r6Q48UMxZtxepSWuPtEXb1rSOU34ZyG2jZ6sTCtVeIGLUmWk601uYK2W6YywX3UtmXKx7bPNNIvyqPDj82cDe6HBPPaXwfrwswQUn4iQUFpPEfhZzTnD4ZTQUbTqbQy3Ho5Dp4abrUXw9UAZM3LlD6eXwlA0IQdd4zus/zAjSHiMTbTDkC64/Qgvg5b9ZspzC8vtrX2U8Mbtwx3ndORkoHK5vKmZHD4zQphTY0dYcadoG8WssCvl8Tbqr4KN4KyyUiGv27kTp+iuPPpOWMBSixq3uYHktWV+tdBv9V3yXT1dQchfdVB1xllVOp+x/F3jR1lFlvw3NtfX+CdqWhR2o5JgMoNwm2GJiZEvocN22AUiBUsBMO5Q8jdvtt+i4oJAP39pnzF7fOII45QjNZRwKiSIYzv877+QM1bbvLg5jDU5mUcDzdI6QQoswx5PVgEhyQJaDv7Eh0ESWy1ZzS04lDX/YzqIFsYRLjuhWFn+VkPxg+j4PHK5pDeOu31UxF7MiozvTt/Wp7PklssCOUeFifyZJ90R8JCv/Xy++8kOBzOyYRtGYuWWFKoannIFNSluW7CbfPFyKE15w949DPwHItck+O1aXQRaFwFVOGBkjytvMmh5tn25kUOYWJ6F3aMT9p6pAL+ZZmBDgqLjGShGGHH4T2xDEvG7wyIQ78VxJeqlEKMt2+K5QRXIv5s99dpj9XQDyO76OAMzpkhtSDRMXbjbGTwRyOpI1b67VbeJoOTBZJfCP9Rz0kj9dSVLAv5CwWl0OCF51wviuBL8/S57EZdjdhpoAm8pODt13r8+h8lxTQVCbaVGib2eJc96ls6gxGfG9EGxUMYPO5vEfDcx9oqGLfLat6hXr1D86arNJDn0fzDsCXasSh2oBQe4lBvRFS4qvZHEyytlGTZOb1ZpLLOK2e/3jqkhwOiwmDfpPMFbGWh2hLS3ct0KK9mYr8ZSUAhxQQU9xzOI132jnWc+X5W7uOqTCnjSqq2jBQjB0ZSSVOSX2QhUP4+I7FKHRA33WzKlectI5efEYm/CXJQciOz2DsyeqeEHKUFGdFezqxMt"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 590,
+    "completion_tokens": 635,
+    "total_tokens": 1225,
+    "cost": 0.00103594,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 192,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 8.344e-05,
+      "upstream_inference_completions_cost": 0.0009525
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 618,
+      "image_tokens": 0
+    }
+  }
+}

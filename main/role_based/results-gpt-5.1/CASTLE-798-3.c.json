@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765056684-xT6oZpxiMKJ2mx04fvWJ",
+  "id": "gen-1765666658-q6YOHR0VdLj65npNxQtK",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765056684,
+  "created": 1765666658,
   "choices": [
     {
       "logprobs": null,
@@ -14,30 +14,30 @@
         "role": "assistant",
         "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 798\n}",
         "refusal": null,
-        "reasoning": "**Identifying vulnerabilities**\n\nI need to identify vulnerabilities in C/C++ MySQL code. First up, there's the issue of hard-coded credentials, which relates to CWE-798. Then, I see the potential for a null dereference error if `mysql_store_result` returns NULL; that would correspond to CWE-476. There's also a lack of error handling for `mysql_store_result`. However, I want to prioritize the most critical security issue, which is the hard-coded database password. So, it\u2019s true for vulnerability, and CWE-798 is the code number I\u2019ll use.",
+        "reasoning": "**Detecting vulnerabilities in C/C++**\n\nI need to identify vulnerabilities, starting with the use of hard-coded database credentials, which corresponds to CWE-798. There's also a concern about a potential null dereference if `mysql_store_result` returns NULL. However, I'm questioning whether that alone constitutes a vulnerability regarding reliability. The main issue is the exposure of sensitive info, especially if tokens are printed to stdout, which can lead to information disclosure (CWE-532 or CWE-359). The most obvious vulnerability here is definitely the hard-coded password, so I'll note CWE-798 and return JSON only.",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Identifying vulnerabilities**\n\nI need to identify vulnerabilities in C/C++ MySQL code. First up, there's the issue of hard-coded credentials, which relates to CWE-798. Then, I see the potential for a null dereference error if `mysql_store_result` returns NULL; that would correspond to CWE-476. There's also a lack of error handling for `mysql_store_result`. However, I want to prioritize the most critical security issue, which is the hard-coded database password. So, it\u2019s true for vulnerability, and CWE-798 is the code number I\u2019ll use."
+            "summary": "**Detecting vulnerabilities in C/C++**\n\nI need to identify vulnerabilities, starting with the use of hard-coded database credentials, which corresponds to CWE-798. There's also a concern about a potential null dereference if `mysql_store_result` returns NULL. However, I'm questioning whether that alone constitutes a vulnerability regarding reliability. The main issue is the exposure of sensitive info, especially if tokens are printed to stdout, which can lead to information disclosure (CWE-532 or CWE-359). The most obvious vulnerability here is definitely the hard-coded password, so I'll note CWE-798 and return JSON only."
           },
           {
-            "id": "rs_03556848183c44cd016934a0ac8fb08190b903250681234b8f",
+            "id": "rs_03e255625fd7e4d601693def62b458819498f59cf447df799e",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNKCxhWysL_27rxX-BGr1ufqJEtNZtk2gokMduK1PljnayeE0_qBg9nHdezeTy4L8WptLlPf99X-njY0UjfDQVa17N-uZqiImzDpr8PRgZmuNpc7QpNyk-xTeY4jO8LZERgGQB7rb2DygTMegJqlSBy_vi829JJ2QEv0FdJxC5ScJ3MzIE41O7hT5MRNp-5LcbFK9ReDpnSe1iusQUp8Cn1Q2ziNJcSSaUYYNGylcqI7-B_8ZVQ4w-E-hI2GmmGhe5D24mpM_OfafNDNwpSn5hBkz8KVfefT90RWv9sg1HvQINCZRtjJUWvAVmIXB1mG-dygCzZWh52jDzJViU6_2ZBnf7z-V_b7anD6ucgGigtBhA80zRfbD6SIih8yZfdAE2Xg93x3nlvIXGX_F7ZDIyMRfTb3PSgPxD9Wnku8JPJ1f6QP_-XppaDkEuW-p-VWvEP35GyTFHJdX5Ds-caXUhXd9WytSmjapx7NpVmGzoe0D_loplYT_mSMz4_Az9ObE7VLt_u1p1i3KEXCJRRpiVPPN7FH2_-2tzeeRL_tOqVMyHXfcufggoj9GzUXQle6uD3fx86-RXKxOF7QSrzteEcZs9KABbbbG6M7DVrGrN_6BUK5iza9i3LkMT_f_m6HWjVGsy5f8w8EAaA0_jOzNAF7JGMKUcst9usK-skYi_XDku1JPLWGiRUKQpXrjqx_AH3sbJrgU3CvtHbSqj-EZj2hsPkm0zOhHAwnmTgfb5bU568-0lf8lXflbKJEZ131AWm6bPZw4BKNaD3-Y9yS9swdQ6-KKJnqLR_h1nOkh_UARg4U2_c25I2O8KMyI3qti0MwqdCn-vl3vDafvuNCMwrzv6UAMmQ98_EZ6WErSW98TO1cFytx9LBUmsKRTTcPzdHrwuV7_Plq75aocrPeCuIn9Jc3LHh9rx_suVDpUl2PVyZF2_7QPIElpMjygPhcVaxTOx3U1RbzUI3Z0ADI40NV2cNTLLezOcbF6EDAepKHgQ1MV43Hx2nliCZm0fpAWUfyhj78AUQ0hmNnf1yRG7N8cxZkbIpiwl4ohbPR8O3RaHXgznfWtMA7_io_0XLDEM3g1kZvxCi4IL5fLy_eqIgw7ZJIyaEPFQXjPbyXzDT2whB_MfKcjkL1MStYKWZV5W9f9Sd21RKa9y7yWrpvwlO1RgXgGUBrBqY3iPtbnt61EXxYidax2tUY_UT2g0-EhhjUML4PGxYK6FricpRgFZFSb3Y-DmoWSqa1HkCvNUhuo2mKp1w2vxUDI5bVy3xauhLXTQN6O7LVbb9BmcEMcS4rqMPAsG3qR1sEmaIkReF-LYrqqzoR1_NUFSMn9AZ53AI4tiIjrC8akcIZm5cMwYYCoW387I_RB3K3x72PVGoZirEYs0ijTHLAnNMYMykGxNxUlx58SovkHk6f7I5aBL2dFMmwgGCLS6MNYFYGkG1lnAA1y0M-NZHkHre3U-xZOYtzsNypQax0bcLV2XCVQmCHkkzUCOUQLr5wZUqIrg-G-xyP3lnTitvLjgNZb-8HaFlbSllKZjIKsEKGBTKogkZfWR4DrFJApO4ucEjuNEOYZE4opor0o3McqJbazDxANdElz"
+            "data": "gAAAAABpPe9nGnmP4KJSpz5lQ0yPyZcFX2kzFsiauk40ez85jay3ALN-7eVcH5UJ0T-IJsrmOvArBE8ooO1FuvfmZp9BAHuQF8Fpq4OLCRcrMAE_t9_kzlgF5UbX4B-_SMizprHHJioQ9PCRG4qnghHCe6dct5JCpd2kdUyD0fedsOMe3CpnOZvL0HseC_P0jd-hiT0iSYGLWtccSSUEYT1ud_1uKUpwf_J1T30x9ZuXgoZNfQpW2JIESb0sWccBo0jXMSR-Qnsim2T6Qi37pMjvPaLqAr5cYTl5R9TEfT1lK90jeFrbUneWG1nXG_wxr7MNdr-UWm3z3iuTklgUngsfqquFoZxmLIUbe64nyHcmz_DwVyD4rQEHVPxr4Q3HZDwCnkmKcJUccqllUlovQl9_AZXpMHgpLPznyJq0cGdqxd_hydCLmWDdFA3p0ZpFTBq5mgPxTXxFhKsJwUGAw-gOTw6Ju2DdA7B8N38zt3ldoAuTQRhE02pTvQyQYsq-ryFJ8IAwcDhQ_3c_YR7ip5hppmCQwE-q4RcS6AN-VuCClAXT7NZqzbCTAz6A1RW30qCWFZfhpIfOtW-fS7S8VgKKLUhHikkN_AMb9GgNFpMBkBlFdmQ8Wo7VUYyP6TXRLG-w9WPigRBXcrzKRdYmw_S3MGZTvSA_fIiOaicK13JbA3TrqFERJmgEp23_aSbop2r5-8me6k9PLr-hESC2vIEIDsG21-Z-Ncm2tSxOyJYx9FKK-D_Zd98qjB3PegufqFnEZqmaGo1YusQWShvCRAqlrkU2adPbHKzhydvdu0Er_T4TbHJgiNH_yTV8CnJudC60qjJgqp7yEUprmS6DAqL1p3joHm01tHsywM2ErGB3KDD8OI5OycSA_Z8f-8YNlxz0rTf-Fz0L3-Ot3ha2PWhc51116J01JREcOHfxax9fH5OS8gzShU7hegrq-6PKeEByH_sWHHXG300kIuawkbb5PCFoTpjvrTNf9m-nDYV7XzA1q4ZsWlumwLFRpp7WnTrbtXZ0xPbv0YyzqXg2Yep1ILs4AzpCQKwaB9Rq3MKqlwFGdITCw7s3s8LhmIYX2aSCRFsS0hz2HvCDD03eWxhfhO9-AArc0j3FrDr5cZu7L_ZmRAJIdHZ_ke6zKC0FSCNAuCvkapBpN6p8DB2P5QU8TO-M5_uDWy6rBp_R12thdEAN8nTp3SgJNWPfO84gBT6DkjO83M_zDDKUxMK5b392p8QmcPrmwhtV8tldNfBv6pUdWcWq0bb8H7SuOHqoYeIIKNis3_fd7gwOrHvPTKxF8OfbpXD2KiBYx-KyaO3XWyIFaIefTv7RESEwGsjWy5ikvpUlJlojyruea8yR7XJH6BOJmWXRmTbie3zBK0VFRCb69BuapTpLgseRQmGRfPpvtMT1WRqLz_F6Yl1o1x_WZbfP-MfCcBVxIQB11xr0-D7h0GlbmXLmDSqsfOBJGopxCDSC7h_l2qf6IABG9zElHyHuWudfwtTysq83lowcVeAeP9CgLRAdvsy09i2QZfmA99vaKolBHrI70EFw8FKQKhyLEg6wrDhxcuS1HYmPRmVZ1ogJ7-g="
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 442,
-    "completion_tokens": 154,
-    "total_tokens": 596,
-    "cost": 0.0020925,
+    "prompt_tokens": 435,
+    "completion_tokens": 138,
+    "total_tokens": 573,
+    "cost": 0.00192375,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.0005525,
-      "upstream_inference_completions_cost": 0.00154
+      "upstream_inference_prompt_cost": 0.00054375,
+      "upstream_inference_completions_cost": 0.00138
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 130,
+      "reasoning_tokens": 114,
       "image_tokens": 0
     }
   }

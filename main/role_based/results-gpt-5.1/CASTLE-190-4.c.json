@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765054881-ZHCIRMgpxeQM1oQJqweE",
+  "id": "gen-1765665406-6lD7v0mR6zbhLz9fMGgQ",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765054881,
+  "created": 1765665406,
   "choices": [
     {
       "logprobs": null,
@@ -14,30 +14,30 @@
         "role": "assistant",
         "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 190\n}",
         "refusal": null,
-        "reasoning": "**Evaluating integer overflow risk**\n\nI need to check the code. Starting with `int n = 214748364`, where multiplying by 10 gives me 2,147,483,640, and adding 8 brings it to 2,147,483,648. That's exceeding the maximum for a 32-bit signed int, which is 2,147,483,647\u2014definitely an overflow situation. In C, signed integer overflow leads to undefined behavior, creating a potential vulnerability. So, \"vulnerable\" is true, and I'll categorize this under CWE-190 for Integer Overflow or Wraparound when structuring my answer.",
+        "reasoning": "**Identifying integer overflow vulnerability**\n\nI'm assessing a potential vulnerability, likely an integer overflow with the expression n*10 + 8, given n is close to INT_MAX, which is 2,147,483,647. Actually, if n is 214,748,364, multiplying by 10 gives 2,147,483,640, and adding 8 results in 2,147,483,648. That exceeds INT_MAX by 1, indicating an overflow in a 32-bit integer. It falls under CWE-190 for Integer Overflow or Wraparound, so it's vulnerable.",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Evaluating integer overflow risk**\n\nI need to check the code. Starting with `int n = 214748364`, where multiplying by 10 gives me 2,147,483,640, and adding 8 brings it to 2,147,483,648. That's exceeding the maximum for a 32-bit signed int, which is 2,147,483,647\u2014definitely an overflow situation. In C, signed integer overflow leads to undefined behavior, creating a potential vulnerability. So, \"vulnerable\" is true, and I'll categorize this under CWE-190 for Integer Overflow or Wraparound when structuring my answer."
+            "summary": "**Identifying integer overflow vulnerability**\n\nI'm assessing a potential vulnerability, likely an integer overflow with the expression n*10 + 8, given n is close to INT_MAX, which is 2,147,483,647. Actually, if n is 214,748,364, multiplying by 10 gives 2,147,483,640, and adding 8 results in 2,147,483,648. That exceeds INT_MAX by 1, indicating an overflow in a 32-bit integer. It falls under CWE-190 for Integer Overflow or Wraparound, so it's vulnerable."
           },
           {
-            "id": "rs_06d9ae8f2356f34401693499a1e88881909ec3aed43c06cc2f",
+            "id": "rs_09b7bdb4760226b501693dea7e9e208194a1281dece843ffde",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJmmMQVNThM4W99KHJ_2mYoznpXodBdrY1wtKdM-fyaqR2XC1dIEYztKTOpEN5WA-hlpSQ6jsojWHuGCbocuYx_tBzyZ9B5iB8a_NBIlB5kjGNB3dMN2DzK42sukv3uBQn_Y09e5_vyeHTavgKWX9i89uOrNqbytpfgnWxFHeYrvjD0v9HEdI5uPbLqbzfHLWvyCLzLqPe-ksf2U_RlnWdswLTMlTh6l_enixi31TEddZDmMwxu5c9GazmkT9jajYFu20njCevOQVReFnQkgTI_HC6hx9UBmU6mOgYTV-dD-o7Zz8O22TRr8y_XbAA3SGO28_v0aW22XhC1TGMenMK-vkI0aWcjSrsjlMHNLDVQZtRfI3Cw-ExtNVldZ16xU6ITmombkvL8Ii6oZkv3VyM1PfChGHa5VCn1-npfrfqutihIszPE9KCzaoAQLCITgMb9DnY8e9sB8OaxtQbY7Z_dWeryPu8JaruhwCqQrQYZyAdZ918ZlaB3M1Y6ERgWzWXtbX_7dkhPEhbJIOBns5T_wgGEcERw5uP6STgeILTy4SpPMb0szqmkT9qrDUjFsVVRdDbOyFrMr86e7sUtI5Wc85NhwKdyYOcGacZwAsQYnva0YzEsKmYH6L3OyrYmFlGJZne_5GimqP3rVFcTYeSHcGvlAbpVBq-dYki9_gIJrNeANpt4d7YOXWFm9ZQXLRH0F48g3x6vTLSYVnVHgP-OKIbuOYcUZXLq_2im4Nd7UotcCxoI1FmPRuHQffOpMJQFiyBYj8c9VwOIorDhceZOvUQooF-37A7ezxmPtPpZJYHDe0ORoR13j5qbWoSVaCLzAdUl4qaNXpfN-IMURYhsn339qNdc8gyJZQLC4xwxOkZSByzz0Dm8XW3s5cHFEH5bqq_uf6so_U6Asp68YYQMw95Vei3VYvgBB04hp6SeKuhXIorzgnA4jsKgIdj4LcNnj9TpIg8nA0fsSrbbMKsijxRSSja4GmGysV2DdyBTi7Ow_1uG9Ptrd0yUHmgtmtkD3cgdEVM-XCsbbi0Lrh356Di7du5qPPlOQE-6zxMmaai0ca7BgT6jk26Ti3RkZ5nzWGMUvpBUG-gb9Sa04T8HYzseIkSGme0VsADFqHR_Eu0I9qVT7_FS0HLPN8Uyd2ybTLSXoj2mdnhBECdtMxI2AF_9q1JlW77DedaMHsN6SJEn6uPLGOia33iawgJ4o_F5zt92mDeo2w6-f3lH5K_ePy5Kg_yKqepefAgfXN_CKQAnH9rp2ArWkmHhIuqyKsoWf"
+            "data": "gAAAAABpPeqC-04JDgbmc4YD6iUc27E724WUapWCR5Wq8uIYhGsxb-gAF-sov9vlC0EGpsa5wuk0SBJTATafVWMIyEyuC5Wu3D8LE2ScCrI2AE4DdsZR-jDBNTiIJg5TQpkUfifXlsaizKNzhwgVgjkCS27IWLK-PWStBlSVAdNX1RmSSFjF2o-T1pu6y2b0TxbYnBXSFX7zBhYyjPvoNW2iLaAf1_5cmvR4FQEmp_xWm-PZNYaKEeOSkEKwbvkU7SOFq-Iui-8sSs3rmzhS7b2Y2iBmao-eBagP_7jjdBnII4J3Ub54Lx0DyTywOUan6AbqCyT6JBFcK74QWm1c2fnnLZ1bOW9wq-TXhGHJAN-ZRPPLVzrauaybF5lKdGmOrlcoIhHZ32-9gp26HBNinVXVr07SYMejcVhISSY5uG57QHjW8RA8fEkG0e6hNUPRhgBUyOW5pnXzlrmCORjv-GlIEA6Tv0m7vM7PR6TM-teYXkL2uGj-7xF-DOJqB3vufA4j-QuFfOV1nHV9naOm8qdhANe_jIYFxmwSfSwPp5lgI2Yjzh9--O5S8Tk1xJjvLRvjQkVU0KKz22C_00mwE5VTgrMnbGRtlHxPaafEWP1_WYtTToupZF84nOUrzBVTCPFhv2-qxt21koUH96m4Ocelzfeio9nSvMjrWHNMxeNZ5LAsWY_iW9gslx1D7kUTqLEy3CUUIHz_vizyQOh4-tZLtOHdYtYGAzWdR8Ieu3t_zburlXdKuPNnvVoX-GFbUOsFkTvZ4UIeVOSRSeE_wHFby0vfNDcMzmvela2YC3Bsh-VGGyp6Yjoj0K4_kHNLVth6lDToad_zGyR7w3DGiqykOzGk7MBYzZDs-ghCifzdPStqA1lxaseSy6AAVZ074gVcJAjLc9M2hc7Esec1xLacuKkCA9GnUW3vmCeA3rzuZ_cagZnE5x46zCECmlDkXglpI1C0HqYCjDjduPUvVBRFPhkWPkxKq0KOX0VbWdYY36_-OSOBO9HMxAXmdEaCcR--Rf0MZp0kCaVAQOehpf6uCZuptKuodx8sqGpLhBarejPXEyUSW66UiyH58stE1HkCPPByYcfYiiWIBjgFgL_VY7ZPIEOoEJghwYj3kThVSKslXb9vFtt0j6lR8K4Nc3NiRY7Z6ECz_N3NmT3_OCOswcfERo-TBmUKPwfwJcx3BPwJycxmUge0FToE5YKuomJkBh4R6aRpB2DXLpcw5dOy5dOXq8mFkQYC2ceumHof5h7hM5uffJTwIoIhhMCk9R0q87FKRodFh3xUrgJDktWQam1Kw_XEJDTjFIn0o_MSadxYp7EIJ4eG0lmQT1EZUOJBVU-9Y9cv"
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 122,
-    "completion_tokens": 122,
-    "total_tokens": 244,
-    "cost": 0.0013725,
+    "prompt_tokens": 115,
+    "completion_tokens": 143,
+    "total_tokens": 258,
+    "cost": 0.00157375,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.0001525,
-      "upstream_inference_completions_cost": 0.00122
+      "upstream_inference_prompt_cost": 0.00014375,
+      "upstream_inference_completions_cost": 0.00143
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 98,
+      "reasoning_tokens": 119,
       "image_tokens": 0
     }
   }

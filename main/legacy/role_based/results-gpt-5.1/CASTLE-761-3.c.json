@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765056272-O1bZaIXORfH1QuIc4rW1",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765056272,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"vulnerable\": true, \"cwe\": 761}",
+        "refusal": null,
+        "reasoning": "**Analyzing code vulnerabilities**\n\nI need to check if the code is vulnerable. Looking at it, I see that I allocate points to block and use the pointer `p = &a`. In a loop, I print `**p` and increment `*p` each time, except for the last iteration, which ends up causing `a` to point to the last element. When freeing `a`, it's not the original allocated pointer, which leads to undefined behavior and a memory error. It seems like a vulnerability related to CWE-761, \"Free of Pointer Not at Start of Buffer.\" So yes, it is indeed vulnerable.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing code vulnerabilities**\n\nI need to check if the code is vulnerable. Looking at it, I see that I allocate points to block and use the pointer `p = &a`. In a loop, I print `**p` and increment `*p` each time, except for the last iteration, which ends up causing `a` to point to the last element. When freeing `a`, it's not the original allocated pointer, which leads to undefined behavior and a memory error. It seems like a vulnerability related to CWE-761, \"Free of Pointer Not at Start of Buffer.\" So yes, it is indeed vulnerable."
+          },
+          {
+            "id": "rs_00049620279653ff0169349f114170819583670f0227bd2077",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpNJ8YsZBlRj0X_n7v0ridAKd6d9i_S5mS-ISeIr9mSkPCat-d0gUqCWr4lTdvDkgX_WMKcZSPSPk5RMsTOYU4oEArmzzWToUl1CRNJ2knzu3zbsVWLNxBGuHG8pVRb3Pdfh4IKuezQ6Vo6Kwf_nWnQ33tOH79ViWbvLAe5WWTCJitdUCGJNoLWd8pbKQRLx_UMLy3g42cCYZ7vSlIHOWBQgaibI5w4gAjYTP0afxIxdZlhlrBp7nC6ZsEYHZNESwf2elT5L9GIrkzM-0tSYTn90gHnwtTn_Ewtb6L4wIOSun7ayYUX3NVHVpUwIk0IVdBoqDqqXTOzQgHFDErLtZGPfj-03vSJ5ssj5NNqq8lKaFNb_9hBalnutklI3dolNbKgMpXJBGOUw7ZKtT7Il__t8zbkD6_FioNQW9Lk6Yc4I4wIr-H71BWkxlFeMWXtYGvE2KZ0ibu-N0YEl7RBkBqtYWmIeulOJAkupLP5aKAZr4FJxW2EEmXlMGjYGRlxvdwlCLc39yYF4PCQCTpXbtS5HpnvllAiPRne2F_ELPNdpUXryYcd7AxD29LFKzRFPmBZgiOLjMWoGtC8MDvaFCEa7_NNpxPzwnmsh1glSmkQgqOGrM7MuBIqpuICHhj0_kI2JGyFXwpyidn4oulLlsP-9xE1Mdc-IhN7jKsAvgeu1j_xe1sH0Zw0h6AU5-5VRVP6GCMNa5rb547lJA8H9RSVRKHY5H_O8m2-dwT4eX6IPHJJ8pR3Zh5VtaYq2xY68fOIOBG7msqAxrMmm0L5XY-rynUcnibwGdNZQxRDMfJVZk7UETmF7Zwgz40X7xablUnfWgVZz7H5ixWO0rS2_vBlpKB-kFIC9a3wsp3SaSuybngD79TjccSFmqlFQcNVJhqruG5QKNaNK2PvHj4dj9whiNlvsNAWIDouTayeYIt8KulCtCOVfFrbFXkuQjkYFE6VmFjQ0Wgh2gq4LrS4uJ53AomPC8pwo86JnG1Jwh9wfk2gF6TjD6BDRQIZWov5gFP7_B2sjEEFZHYlIQf3punY1s2ie_qpkby6MMIRsRfZO8neMwQ8i6_ySKde6AOy_o3ALCAao15b_ibDzmaKfgMN07yQJPRvWHfwZJff-VL7pdY3oQXQ5_RDk6YFwhZ7W3iigWp2ek6PqHgitV4gaJ8-MGKv5iNMrxap2BVdr7XeBujJ-ruC8-bUCTtIJFhel5jPCe9UgV5KT2sPotn2TtfSKrBldZpEjcu4nRQjzslmRdNMYBJxy2I795sasfecWMoGKbqQNh7BsKhFq_1Kk70sprQ3Nw2Qc-u8O7VLYhcpMOSR_prP38op6daSaEzFZSe41ZsAGALPgnjyy2KnLwxyABnMPzb-n1kJkAyDkFG8dmiiRJqxZnwx9Ekv8JYx7aSoGz-AiM1LAzu2EkWLHgN8tpy8qQBjNbi__cqEYJfLXrIFTG03ThiPNK4z9BlS-duLUHwz8oddagISUwPjdaD_OxoyUvsD8isX2P2fi_aO5QksfCjhuvAK_gn4O34KMVrgXIX8_iOPBTGIdW28Cs2E3LCRrgaN6l-DqV3x21z9ICF-Qp4PTvgqRvUTpVMfaOzmZwWnWAjOUtiIaPVCkMOO1e4otf91c7bV_9sMtUpv3eSqhDxGcof3oYZtodtsZn2twwTlnqzmT4LOTwGb8NqL6u3maBIvuKAKYr6SSR0OvuAPaKs6qkqS3ZpN3foVi6OHBWv_E-jrWmD6a0NQa6g9G0djkfbrdVvaM6UzU3CVWlvVzFUPLjaYkGws_tcYmY_VWEX"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 234,
+    "completion_tokens": 190,
+    "total_tokens": 424,
+    "cost": 0.0021925,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0002925,
+      "upstream_inference_completions_cost": 0.0019
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 170,
+      "image_tokens": 0
+    }
+  }
+}

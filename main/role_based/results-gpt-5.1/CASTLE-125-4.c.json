@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765054771-mnfamrPWReIJxXr5Oazh",
+  "id": "gen-1765665306-PY43NSmOQzJlHJXmg1We",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765054771,
+  "created": 1765665306,
   "choices": [
     {
       "logprobs": null,
@@ -14,30 +14,30 @@
         "role": "assistant",
         "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 125\n}",
         "refusal": null,
-        "reasoning": "**Identifying array vulnerabilities**\n\nI'm inspecting an array `a[200]` with a first loop iterating from 0 to 199 \u2014 that seems fine. The second loop sets `lastInd` to 199 and runs `i` from 199 down to -1. The condition checks `i >= -1`, so it's iterating down to -1, which means it will access `a[-1]`, leading to an out-of-bounds read. This creates a vulnerability, categorized under CWE-125 for out-of-bounds reading.",
+        "reasoning": "**Detecting vulnerability in code**\n\nI need to address detecting a vulnerability in the code. The second loop seems to be iterating in the wrong direction, going from lastInd down to lastInd - ARRAY_LEN, which raises concerns. When i equals lastInd - ARRAY_LEN, it leads to an invalid index (-1) causing a potential buffer overread situation. I think this might be classified as a CWE-125 error; more broadly, it aligns with CWE-119. I should note in the JSON response that the vulnerability is true.",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Identifying array vulnerabilities**\n\nI'm inspecting an array `a[200]` with a first loop iterating from 0 to 199 \u2014 that seems fine. The second loop sets `lastInd` to 199 and runs `i` from 199 down to -1. The condition checks `i >= -1`, so it's iterating down to -1, which means it will access `a[-1]`, leading to an out-of-bounds read. This creates a vulnerability, categorized under CWE-125 for out-of-bounds reading."
+            "summary": "**Detecting vulnerability in code**\n\nI need to address detecting a vulnerability in the code. The second loop seems to be iterating in the wrong direction, going from lastInd down to lastInd - ARRAY_LEN, which raises concerns. When i equals lastInd - ARRAY_LEN, it leads to an invalid index (-1) causing a potential buffer overread situation. I think this might be classified as a CWE-125 error; more broadly, it aligns with CWE-119. I should note in the JSON response that the vulnerability is true."
           },
           {
-            "id": "rs_075991f8c97980e401693499343c408193b0eafd2e8d0a3896",
+            "id": "rs_0fbfdb1f00355e6d01693dea1aba9881909874f6f66354a9af",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJk6ZB1eQGQilJCl00YgxFFx5vvELryM1P3JIjLfZDfs1e6mT6asLyv-YwXZoXEv6GK7ZcXsJws2jvsyaVZqZNgKYAJ4QbCUAFMrkCVro-omfj_oKieLQZSPCLw-A9TKmyYLTMMa2vDR3NjIInFcCxwyMKk9eAzt71jirqre4fxOfG4hSYVgpkMcfTLUwp-haPMyFHLytjEKa5RKxzZHTQuZO6VJ1-YjK4EGUIFD2mPQhiIgOEo8CEEkFTS3KHlXDDLD-kEHEoiA_i7pTF7Nfc1YOAnPOx4OtOpHPcGkEm5IOpS5Bx-2bEvYgswHk5Ok4qdRsLAEGvts4sp-Dn9CigubDLQpx0naNR2AHUg469gh_rR5NgNno7zvL-IAtVJEyz7txZLMmb92EYBMiWKAzM0FK74aISqEhHU9qy6zPhVGehkG6UzbjQ6WN2EGHKSlw6GK7fHvW_e5gBKXBbaHZAcyxMk1GpFun2mIyEkHhC9cu2pNX8Z6m96cetTm3VdHBgzulyrySP_ZJ-u-ozxb7zqaREWt_DUOi7wEKkyU7TJkw7AQevxe34y5mScdCopOfHGfxtNxOQNZ7nY7--ppdwX-BOV7dtfsMYKcgbpMYbDJPWCaNzYYtKjqcmJW3BcVqFvbyBgyfGwtEvTwnSZbROUt7Wffjn6H6gjf_2Y83MjUO_A0AacM_p116IgWtmQSMcf23r6h1wEztLQJqM0tWXqCOWY7bj0lF0cDc0_oMYhrNKkiiqf_yzbU5-7ET2CDWHAOFnIvPI58gghgSVwLX9yfyYtocCCNUS4N5DvhswGNmaVwesWFxkfInLmItCVv_W6SYtF4MhSzuAwDD8QIWY2SqWFWJIyLVmIKDIwhaJLJGDs20smnPBYzW9wSJQcCMqlvUIf4YmfwGRsUSBuZnc-bhcO-n0ghMs-IQTk9d7OWjYoTww8k1a-vr27n_8Hdv89vRB9nduAROy9Wf6eFZHOAnJk4FLeeWiJVERYkgRkOaDHUaBW9cxdwHZqKks-DufH0XmjhI3CqQbA1p8e-MqOvm_p-lVipY_dqrzdfmk2AhRsl13jGVWBI4-hAnxdqB0u9-JldLO5Dl1dRAVlxBmKc6DZGjRzNoL0ceB5P8UaxL_k7Kf0qhddpdzdIEPKcr8ttJpir65y9FdZluvV44tZM451iRJiHiJpgOg6iICheqMnTiaFHoQgbsDhBOqm64suCJLxdVxnorF3kpajL0QBX7povxnhpx455ovS580_Rro_dE51rAosaOjx9xEEVI8uKFfIfESljmri78S9bdljov2l7u_QBXrIZFKpoJ1hF4Ba_cTa0IlThnxbAj26s7jcZDK82Gq-HQFv6a9guKkXBVUXv40Tqqv071SdRS4xSBM2M8gmleh2m_GVsJBSFANlpvmmj3aNWy8d1serqypo4dqzxT_NhUkjk6JbffchZm3WI3GL7fbkiv7xP2PylLXe1mwVFik7_PUmgIKbjSM2wBg=="
+            "data": "gAAAAABpPeoeQz2Z8BTmU4TV1c_jvr_p4vUh3YUUD7SBTcYgOJNS5brE36Q_HOUJQoFbBCciIuVUEwTVtZQSt-S7cVPNk-5KScBbZ1ytt7Uf1lyUzghUgvgkIxp-7w6yGA-slOukE8020T3yO1tLurilYMFUHzbf5K0Z6ihLQUQC6eeFu83C1RTBidJpThdxDDSa1mWvgLk5mTrG55v1dHoi0SNSfi13JIGpY2_lQ9PndsJqC7mrcYXOouddFmBLfAutxqHiSp8Kc0B_XFwvWyFOMT3KnyG6pWWQSzZVcCgk05CroaCvUifcY0_jg_kvGZtVEq4YtaAS40UQdDEhLueG-lHGwj8Hd3MYhum6ztRojZrooTZhsNADp6EOKCy7gk1WxukoHUFgW5sK56xhw6Omeh14AOZkXrppdEb60YLpx1oEsbIMvAKFNc_RM0ODAk81IhKx0e-l3OUS_TzrRADR6Gs7nEt7akJ2dVwzmCXAv7nnqww1m3_Yr6EXrYwAa70Q0qpw817W4rOajXQOYtvZZ5npsekDXDHkCxtUl0e2-37_JJVZEbBe1HoaPxOTKk9KzJbrd2jvddMmmjxaghpLdycTe4eRKErTqHgXXJVKxT7pJA9AMySzhF_hzIWjOUMFsPQIoW5qNXCOrECyh_LgbajlWztcPV9LMfYHq6inPSsgEbr6WElBFeQ6iDp4zxtSMk_CNlRdxQLKz55Uf0TktJKBvxtqe3LJQN0pGlUlmCYlr_BZZaAC4K0bT1c7-GcDyhpjka5K7eJkLI2G9cnk5OJsbj64bwQ009dAlxPMmGs7imLCt1TEMsC2PKIEbGyqHLBoHkuguAajP9_KAAu9c9PsOomyHJZZG0GheYBrMyFROUas8hjz_ezugibnH8rrd53GNcRw2Huivv3-x7H8x9iwCGY0N29-cW2xd3j4Mo6RPsUBNEQHnTmL-SCN5v2NeS-zr_fPRKsRu2AdD0AT7PFSSisZIVpR3APz3emqVUN2gkKJTnNekLb5BtDeVP-8pPXyoqGrHwOE4fdDo0ZKnqTccy9SYRpzvYJFfUd-hO0OkGAuyGumNY5IS44-Cbl3HzrqLOmdPQvax3srnUuRftl_GszO30W-cYCqnlYGqrTXTyorHLp2MFKmeMgA-l29pKXaLC_R09zVdiZGhNEhBI5A1m165SaAp-s1njXfD-KZrcBuwQlATki5wazR54VXbEvyZQfVPW6ORouKIADdmdzWR8frSDQ5NBmrsRH8HD1pThPkrNNpa_1tdKFY79qXzJHzQni6uc5Qx_wusoz-WxO-q_e00lHxHr52Aem3vAgDIfPfShHKozoxL-1qKoLJQXRa8-iR92h4ivwQZSNE6xFh9HcfxZ7s8XTamssgDt8tkrA8UZT_gDxLncC4eG1X_DflsF0OAA6G5VR_KT3_u2AcS4ASVpWLEhV20V6EdxmBH_8dW4GekXT6zMkzEdKtMzhK6Oy4PCfqVDcVOXX8Za5ZgbeXmJqrM0qGI8jMW4dI_4yjNwqB2Y75mbMpH6wiZFE4paL91BuyPKLpZTI9NcZ0FQCUZ-L2cGSy_xMjGLmMt5HROMQ="
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 185,
-    "completion_tokens": 175,
-    "total_tokens": 360,
-    "cost": 0.00198125,
+    "prompt_tokens": 178,
+    "completion_tokens": 187,
+    "total_tokens": 365,
+    "cost": 0.0020925,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.00023125,
-      "upstream_inference_completions_cost": 0.00175
+      "upstream_inference_prompt_cost": 0.0002225,
+      "upstream_inference_completions_cost": 0.00187
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 151,
+      "reasoning_tokens": 163,
       "image_tokens": 0
     }
   }

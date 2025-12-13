@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765055378-b2d9pqwiPg8PlsG0lrEY",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765055378,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 190\n}",
+        "refusal": null,
+        "reasoning": "**Identifying vulnerabilities in code**\n\nI need to examine a vulnerability in the code. The function `createCleanBuffer` rejects data less than zero, returning NULL if it receives -1, with a related error printed. This isn't exactly a vulnerability but raises a question on how NULL without an error indication might confuse users. Regarding security, the integer size could overflow during memory allocation, which can lead to a heap overflow. This is a typical case of CWE-190 or CWE-131, and I think CWE-190 is the main vulnerability here.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying vulnerabilities in code**\n\nI need to examine a vulnerability in the code. The function `createCleanBuffer` rejects data less than zero, returning NULL if it receives -1, with a related error printed. This isn't exactly a vulnerability but raises a question on how NULL without an error indication might confuse users. Regarding security, the integer size could overflow during memory allocation, which can lead to a heap overflow. This is a typical case of CWE-190 or CWE-131, and I think CWE-190 is the main vulnerability here."
+          },
+          {
+            "id": "rs_04d8312a0825e5e10169349b92ec548197b70bf29d11d28081",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpNJuZrV7IaXGQefyeVRAJqxqqjm3isPQ8x0abCp7ONuxFUkTkt8CG765MH0kwFW1lpH2ci78N3kuv00jBDnMKVtJu34htgh9dGqeHY3mNc5zlRkSLH9MbQkaNXhH0NAOj-Z7uATx7NgWZlgfnZ-Qu5ikNrTF7UkNcTAigyu9hQeh_L0FwKzLjmYvHYXvK3yeHmZkiTeJGrRREEjE9by9DQyrQ8V-2TZV0-9qvICow4YQb6yIwE9QYVFlbK1rumnvmkzmcZu_eCsX77aqpiniOhKqmgB4zKYvGCaQvCtcuLOFFnldJcvzZcbmbKxDQcdWHg_vFXtIfispqeXqdn9EZSwpQoJK0QHt_Z6_NSvHQITE58qgBbJnZSLiBtD5wJiZNbeapIuCxEkXOrFYmHIjxbE5Lw4aGkg1JJYlRig4WfNTJPfbDDDjipSB0NWvwaah7QvkzVwu51sz0k2NSgCnpvU4-2F27HfgKytW0bxCzl3llnr5786RAejkbUPXdCO58tBikhcZvXjjmSkKfpP_SS92SfeeU4QUsbN1PuEi4Im3K70rC2ufTy9amEoQmTf-zWoJs_NCsYoYQnpoBbQ90XJcY3LSD_4TDoNuF5pd90tANkMUlhu5VNszwNCVHpBUZMlYM4mgLtWSAcvEOxDLo9DMchXRKiE-ShupKCoEas5ARTaNN2flqo95KT12a71FeRbVROUql19YRHJLVT2mmxwjtfMIIvOaOaCNZVE887pil-m6nFPCe0QVk_rkW7WkqF-paVAIs0JNm6CmsxoFDiWSuaaJFFgk_umbGqnTYcxtjVK2OVdNYEZeCpBBSVbL2ax7-2YYKIBy9zAj5nNp9V8-1atU5IDXti3KcEjIHVpdZljqRKAcZP8xEFNEQf1BIcLgVatgsT6mMMg8IrhkC8QzdWDqEPYQj1E3zZJ8hiWw3KXimIsnT_4PQEOr-FJEOMfbXysQ_F6P14w66ozqx4CG-97jf4DyEwBJwz5PFjId8n0XsoQ6egnMlqDVhNrc6IMU0R94RjIKmoJTAigKLbPZc7QysAmU3EVE8Z9uo2niMYvV1EzWKyYo6qNSwDt3BgW_TK66BtKVqDCVZkgZgJMyGfeN6vGrOmMK0ZWigR1xTlUrnSCGzwjE4qovvOBmIWBOtTlcDNiGSx3lqQTTBrRdBPVk_cvm571TAE9Js7hZ1NTqT1vJYEeYOQer1RHGAWJF_PpTogmsO05QCRZ0RUe7_toT1DacFLcjOPvAPMi5LKk--5tEiUKdH5jSVbZHLeKwkpbMQ1K6NMGr7mrGXqR0iF0ZxGpVz_mXs4sSJeRPhuHQbcmk0hi6G__Bc979lCeVbZCBN3wJ5wuhqRnYRQLObLnW5QdCaH60MucIYxpeY8eULm-6IbXnDulUUddtyXyMctEhICrir27oGNATuG45Got1zXXfEn1OId6TCCDIsJZgHg0IJhuKQ34K6ZSdEAqPl_2L1iwBop4ErokQ4rkgtTzuuwKPQbLnFYNHT7Nb0uggTQnOfVPy6STm6yDLCbEmEGtCYBB7TQcZQbHeHOqBaiArJfZ4NIJ0QzqNN29vQzf-EJHcDnwFcik68Mjmb-9HbWVkO9NRI7wiTRutjLPqVk3ovewDuT4E1Xcb1tr9CuYWhSuFlnnS-AUYmU6J5bgE_HT8pYVmcgkT63RLCZwSxrDAJa68DFzMmVa5LtNhX7ZRqC3LBPHa4OtYxo3pu1A9z2_Sg5Avaqx7aKTOgGqG2dyl1MaIN9gDPmcttAC7E9PYWGjGYrTB2dvn5OTLxWcNrgAagZjtB7TYyddAitkj5Qg8OsLCFXkGrEpOkAuOxoLhibSgXYJD7vsBESa0BNW_fNcrLviI4-692kf7B7xzU4r4JJFw0AXuqjNj3QLsiqtTDROgpuqg50XeT9Xt4z_WTuzbewMw0kRvEdD2GD8lY9_vxibByFHobq5HI1z0E0iE7eoHjM-UsuIgGJ1iDjUG0"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 258,
+    "completion_tokens": 202,
+    "total_tokens": 460,
+    "cost": 0.0023425,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0003225,
+      "upstream_inference_completions_cost": 0.00202
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 178,
+      "image_tokens": 0
+    }
+  }
+}

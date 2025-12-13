@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765056157-0GwClnlYam8EGZnHckWT",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765056157,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 125\n}",
+        "refusal": null,
+        "reasoning": "**Assessing code vulnerabilities**\n\nI need to determine the vulnerabilities in the code. The `url_decode` function has a potential overflow issue because it lacks a destination size parameter. The usage of this function with a literal that might exceed 1024 characters poses a classic CWE-120 buffer overflow risk. Plus, reading `*(src+1)` and `*(src+2)` without checking the string's end is concerning. If the `src` points to the last character '%', accessing `src+2` could lead to undefined behavior. It's critical to address these issues!**Identifying vulnerabilities in the code**\n\nWhen the '%' is the second-to-last character, accessing `src+2` leads to an out-of-bounds read. Although the main function utilizing a constant string might be safe, there's still a vulnerability in abstraction. For classifying the issues, I need to choose between CWE-120 for buffer overflow and CWE-125 for the out-of-bounds read. \n\nThe dest length should be at least the length of src, but since the API doesn't enforce this, it could be problematic despite the current main function being fine. I need to keep all these details in mind!**Evaluating vulnerabilities in the code**\n\nIt's tricky to argue against direct vulnerabilities here, but when I focus on the snippet alone, it could be marked as CWE-120. The unconditional access to `src+2` is definitely a bug because if the source string ends with '%', it leads to an out-of-bounds read. So, this is indeed a vulnerability! I need to go with CWE-125 for this case. I'll return the information in JSON format only.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Assessing code vulnerabilities**\n\nI need to determine the vulnerabilities in the code. The `url_decode` function has a potential overflow issue because it lacks a destination size parameter. The usage of this function with a literal that might exceed 1024 characters poses a classic CWE-120 buffer overflow risk. Plus, reading `*(src+1)` and `*(src+2)` without checking the string's end is concerning. If the `src` points to the last character '%', accessing `src+2` could lead to undefined behavior. It's critical to address these issues!**Identifying vulnerabilities in the code**\n\nWhen the '%' is the second-to-last character, accessing `src+2` leads to an out-of-bounds read. Although the main function utilizing a constant string might be safe, there's still a vulnerability in abstraction. For classifying the issues, I need to choose between CWE-120 for buffer overflow and CWE-125 for the out-of-bounds read. \n\nThe dest length should be at least the length of src, but since the API doesn't enforce this, it could be problematic despite the current main function being fine. I need to keep all these details in mind!**Evaluating vulnerabilities in the code**\n\nIt's tricky to argue against direct vulnerabilities here, but when I focus on the snippet alone, it could be marked as CWE-120. The unconditional access to `src+2` is definitely a bug because if the source string ends with '%', it leads to an out-of-bounds read. So, this is indeed a vulnerability! I need to go with CWE-125 for this case. I'll return the information in JSON format only."
+          },
+          {
+            "id": "rs_05e239aaf002a7a30169349e9e7f348190acef48e48a15c9bf",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpNJ6rQspC5W6VtkzHlRDb2JZdi7RJ_OCmXKU2BEIIcVRR3FGWprnimBN5mxdcfx9Q0Cu0lkrUeLK05EgRfVNVDQlZXNbt3n6IAN3Gb3dQ-pCbL1iJAU4zMGQI1-7FNGoM6_ElEsCdhQRIx-Sb1ovJMRhdgwXI765QjxlQgsqV4Ez_JIo9bu3lilldm2OWGZLDel-EDXQbPQb2IpFt0sPbEZAkNoiaOAznSHVBTBsIQyNFFFe5YmXvbBPfSxx0V0PiDheeFpC82gS-3DPSrxbC8fH0eUP6fe9tXn0olCe8wCYL9mhqbVXVFWI06zkiRWFZg-8lfcJR9Sgq0UbfUyyUpD2UqGiBTO75srZyTJIPmAii_SbvWUk04DtMpAef25PHs4tTc0LvKkUyNDhzNg7ArSG13-Rir2K9AZDlDHRpEgN-wxVGBIYvmoqSU6EwFtx6P3MUo7prsI8wfLNL-lOIfl9zzuxOkDMyKg5ZZyVhIHEgzUiKl_wlgyP3WS75YiltQazXNNQMKTjFcjcf1BkLPHGhY25uxMC9w2BPoboP3QiOgGqsRP3Pe3VW7iRVKae9Ec19RRUTc78t79yirSvKT2NerouAbFf8oQcQdEadAuUN1fzVN9ZeaAJbdzSxygj03Mi1S4M_o-UqnvEs54tmjUDL6JN2-qtjJC29woklIOziUV_RIT0iNnTpFV2yw9YbOBAqQN8xo6PUUeLS1rZlTImL4pz9VG8mwH50hQzvB2APTPZwD1HrRVUAqwgmOELRofVo0PSugM6PFc_TXURUow3tUwNNL0uirZCSom4ymVhZ1AbZJ495yhJWTTzNBebBC8NdVQrNNopMwU4SGo5mCIqycV7-TFj2zuG98ZmF3n701v2iMWJCnuXAii8RR36lHCNEfRV4Li9C1SDFQP8drCDPdVzU4FX5gJHdtQ_UQYFmHQa2Bdxd6uf4cKTktKfbvJ4KTlgnPJsWa8MxIRwDsmSbsY5QksVD1F_Cr-KJO3BWsnH5CVcfkfhpos9UJz1iW_o4VRgPFPFEDjEsDIbtebUfO48GDrRorMZTESSts_XkK4FbWYrpPg0QtrP4cLBfnHFjq7N_gJ_DoQtNYLDKg3vdKy09HCmvExNVWdXwL_4RlmMxn7g9UaJdnZ4ZLb8apUsGXHxnJm83o94mH7ip3eivBnI8Z2lELlBQtcqWjr0tuisF9wyMHSgqKvQQ9PF9K33_HOHob5J_Bl7d5J6fgf6HhcHg8EZp3HO1KOihoul5nSlAcUvpfrFeeOoN4S5hcrDqbfFVoPsE6ZL1kocqGmC_yO8cn7CxKahqQFhxW171r5oLbKivv9UwjFvdXx6dBgPGqXdUAldgdoqbTIr_2Edy33iSoP0ppuWyu_-WdO17URwQYXc1YbfEUsF3uNcHYbUIPJzNRf_moHpFoDwdLQd4nhyGd_d_IhvN3wV0xKB9Sx_EgR9bIyFgCSJtkn0cFzR-_yOToPjzB9Hla0LM264CbE-1ZcXGdea15d-IKE0w5F0arOiulxZSUyxUeWFmF-Yetk8lxaFARPAwvayM6BoQM5Xl3wpnfz5agBquwSLW-2OOuxFrTOq5uS2ID8uD063_cxeNMZNHRhKE4Mqv0orLWS5pwvadt5950mPk9yOwK1Am0SkRC3p1dyv-ym1IZ1X80FjWva8LPhkHUF-Rikw3sxppWB04dNq5BW4iNEYv142tpsNBHa7fgiknxCViauRa3mLiOTVrwF66BnoiL-YNh8szHSMLDU5kcO-ITdio2o__7NkZ76o8BAOc4qcSeMGgugl_pBQvAKySNwT5Mh43RDfydEiqnx47CAq0rCtR8sMQpFpyNSL0VhMNKVXnJ7Lt8FUHfpHI1CqiSCHlXRK-TWIsD7aSDZYo1pAXELn4mt9lzyKC1Qc7Je2raqHZsFgSmohGnL6wuodSay5-3nsrOXo_Mb4a-wENIzlNfVq-Q3wOtZkyYN_tfKJ3n-wx8sg7MQjxVlJCk79KKOMRlGz8rolUXJ50dpqokYrI5ecJ7eIR6OzheNSZIjkFTT1aTy2Rd1eScMR8hlcgQG6KJi9WTfJ8Jl1wZSomtGrcvtADpaVK4Jab0N1dBI1xYF8grFFCjNTQXcRaK3ViffAsb1ciN4D4uySrnT9hBxXCzlKaar6LFRoAEMvLH_G-4EdLB1gAfSpNhclk7GZU6DiAxWq9dTwUiXt1yC_oOcUQ_rJzdVXWOETUJsSA4ZVCzySy30bn7QB64kNL1QxMKJvOz0FRtv4dJke_bshjac0BAjm__M6YXjGeMCeP2RVY6buxuClSyaFGqndlrApVR6RwLy-waamtuNeA3I_sm79W8ZNa26O6xCySkPx2o81OAtc7vFaWb5nmUB7Fo-UWimLYQ8Se1whbxrtcBFLybvHBB_IWuoZ_g9-m2bJa6LVQwXtMs4bfNqyGwJMcfjPtnm-NZzjpqnorsvVAhmJFGDfHZoUP0xLNjAA6UdBMiPqAYhLIqi909-DrmaEd7uGNzczYNoPo0Gnjzj_IQxTlSzCZuuAPvGEMvrqV35HuUIhJwXG7zX3AAa4P4ng3yG-LwQq7krM6MOkJyodLps414gQTrRPJo5UJy-yBBDcHrCd3zKK2498O--sOKXZBF2iI9twKZTMZKezFBYez8Y0-Rsl8Cdy8BLp9K2zt2Q6AQwDGkKIztaERxmKjeIwVmLgb_MqTPih4N36Frs-cLxx_P_aylnMmHFZBUf32jlJ3-Glyk9_KljZ7kF6qGuIT_enndubEa54qS3aVWPzD5PgI43fEq75DoKYF7fyXsrhdM7VwgH4M0rTCWn9kToEo-zJemmBVSwEWjwo7BQjgLtq53ZO7EK58xq5U1nh0ZUMqe-224KbBnM_QB_omQNTahZTK5DCwA8-zp841-gdCIZD-MB2Q_lu890EJVPd6egfM3oF_mqJ7EJWNa_SwIflN3OrOCL3PerC0MXSpA716-cqA01cN1KZdORMCZko8pBY9HFZINN9rRZ_BNHjcRRYkQMJr9BQ0y9PSiOYMg1Qxu5wVIn6fFpduTb9dAHO0USCv5Q1Ky-dgCHQNk5Y_-7UTzhImv_X1sZK-VpwHHlvbCvA7uAytJsInqz7rjIZ19bSLUkv6GVsglYZhmmsiyG6Skouh8S2PBXMkm7FYQPbsqnaIeexwcvtMFGMQdZv81WwAu01fOchUUbF4qEAQh2aVcQi36Y3sKAc6Zm3NC_P4fz3QoEtH54sTZL_sajKtpW6PTax3hnvwiAf8diMuL270LFe2R1jE5tX0MAxHt6E5etpXasCGlBXMkL_sNcq7PvwpVjv1zW2o4fI7hY444IPIxULyQBpOFTiTc2xJE0PGcJWo2AharYPXAOD4ULAI1zlNE22RraoGx7stafuXxvb2qVfIjeq8U5-N6wxYRNvPoftahKlpQ5bbV_POM8jyG42k0W_UoYfUWtpS-0OZZ2QO938SQVSzlYluCiiOl2UONdJCvXjZpRBG-0Oe8yYe4fVx1-AqoHrMdSokQ269N3N4wnc-Ufp2uZ-rIzSaDuPkoyHbV72usRPrWyfse3QCInw7JxRIucZjvdU08ksFvzwOJU-46L0QZiQITQ=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 471,
+    "completion_tokens": 523,
+    "total_tokens": 994,
+    "cost": 0.00581875,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00058875,
+      "upstream_inference_completions_cost": 0.00523
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 499,
+      "image_tokens": 0
+    }
+  }
+}

@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765055378-b2d9pqwiPg8PlsG0lrEY",
+  "id": "gen-1765665777-XQPBeoBUuDiSEW8jgdSf",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765055378,
+  "created": 1765665777,
   "choices": [
     {
       "logprobs": null,
@@ -12,32 +12,32 @@
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 190\n}",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 401\n}",
         "refusal": null,
-        "reasoning": "**Identifying vulnerabilities in code**\n\nI need to examine a vulnerability in the code. The function `createCleanBuffer` rejects data less than zero, returning NULL if it receives -1, with a related error printed. This isn't exactly a vulnerability but raises a question on how NULL without an error indication might confuse users. Regarding security, the integer size could overflow during memory allocation, which can lead to a heap overflow. This is a typical case of CWE-190 or CWE-131, and I think CWE-190 is the main vulnerability here.",
+        "reasoning": "**Identifying memory issues**\n\nI need to see if there's a vulnerability here. The function `createCleanBuffer` returns NULL when `data` is less than 0. However, if -1 is passed from the main function, it returns NULL before freeing allocated memory. This leads to a memory leak, which falls into the CWE-401 category. There\u2019s also a logic bug since negative data is allowed, but that doesn't make it vulnerable. The main function still expects a non-NULL buffer but receives NULL, leading to an error message.",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Identifying vulnerabilities in code**\n\nI need to examine a vulnerability in the code. The function `createCleanBuffer` rejects data less than zero, returning NULL if it receives -1, with a related error printed. This isn't exactly a vulnerability but raises a question on how NULL without an error indication might confuse users. Regarding security, the integer size could overflow during memory allocation, which can lead to a heap overflow. This is a typical case of CWE-190 or CWE-131, and I think CWE-190 is the main vulnerability here."
+            "summary": "**Identifying memory issues**\n\nI need to see if there's a vulnerability here. The function `createCleanBuffer` returns NULL when `data` is less than 0. However, if -1 is passed from the main function, it returns NULL before freeing allocated memory. This leads to a memory leak, which falls into the CWE-401 category. There\u2019s also a logic bug since negative data is allowed, but that doesn't make it vulnerable. The main function still expects a non-NULL buffer but receives NULL, leading to an error message."
           },
           {
-            "id": "rs_04d8312a0825e5e10169349b92ec548197b70bf29d11d28081",
+            "id": "rs_0937c7f3e4db70ff01693debf1da3481939ce639fdb1eb9a13",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJuZrV7IaXGQefyeVRAJqxqqjm3isPQ8x0abCp7ONuxFUkTkt8CG765MH0kwFW1lpH2ci78N3kuv00jBDnMKVtJu34htgh9dGqeHY3mNc5zlRkSLH9MbQkaNXhH0NAOj-Z7uATx7NgWZlgfnZ-Qu5ikNrTF7UkNcTAigyu9hQeh_L0FwKzLjmYvHYXvK3yeHmZkiTeJGrRREEjE9by9DQyrQ8V-2TZV0-9qvICow4YQb6yIwE9QYVFlbK1rumnvmkzmcZu_eCsX77aqpiniOhKqmgB4zKYvGCaQvCtcuLOFFnldJcvzZcbmbKxDQcdWHg_vFXtIfispqeXqdn9EZSwpQoJK0QHt_Z6_NSvHQITE58qgBbJnZSLiBtD5wJiZNbeapIuCxEkXOrFYmHIjxbE5Lw4aGkg1JJYlRig4WfNTJPfbDDDjipSB0NWvwaah7QvkzVwu51sz0k2NSgCnpvU4-2F27HfgKytW0bxCzl3llnr5786RAejkbUPXdCO58tBikhcZvXjjmSkKfpP_SS92SfeeU4QUsbN1PuEi4Im3K70rC2ufTy9amEoQmTf-zWoJs_NCsYoYQnpoBbQ90XJcY3LSD_4TDoNuF5pd90tANkMUlhu5VNszwNCVHpBUZMlYM4mgLtWSAcvEOxDLo9DMchXRKiE-ShupKCoEas5ARTaNN2flqo95KT12a71FeRbVROUql19YRHJLVT2mmxwjtfMIIvOaOaCNZVE887pil-m6nFPCe0QVk_rkW7WkqF-paVAIs0JNm6CmsxoFDiWSuaaJFFgk_umbGqnTYcxtjVK2OVdNYEZeCpBBSVbL2ax7-2YYKIBy9zAj5nNp9V8-1atU5IDXti3KcEjIHVpdZljqRKAcZP8xEFNEQf1BIcLgVatgsT6mMMg8IrhkC8QzdWDqEPYQj1E3zZJ8hiWw3KXimIsnT_4PQEOr-FJEOMfbXysQ_F6P14w66ozqx4CG-97jf4DyEwBJwz5PFjId8n0XsoQ6egnMlqDVhNrc6IMU0R94RjIKmoJTAigKLbPZc7QysAmU3EVE8Z9uo2niMYvV1EzWKyYo6qNSwDt3BgW_TK66BtKVqDCVZkgZgJMyGfeN6vGrOmMK0ZWigR1xTlUrnSCGzwjE4qovvOBmIWBOtTlcDNiGSx3lqQTTBrRdBPVk_cvm571TAE9Js7hZ1NTqT1vJYEeYOQer1RHGAWJF_PpTogmsO05QCRZ0RUe7_toT1DacFLcjOPvAPMi5LKk--5tEiUKdH5jSVbZHLeKwkpbMQ1K6NMGr7mrGXqR0iF0ZxGpVz_mXs4sSJeRPhuHQbcmk0hi6G__Bc979lCeVbZCBN3wJ5wuhqRnYRQLObLnW5QdCaH60MucIYxpeY8eULm-6IbXnDulUUddtyXyMctEhICrir27oGNATuG45Got1zXXfEn1OId6TCCDIsJZgHg0IJhuKQ34K6ZSdEAqPl_2L1iwBop4ErokQ4rkgtTzuuwKPQbLnFYNHT7Nb0uggTQnOfVPy6STm6yDLCbEmEGtCYBB7TQcZQbHeHOqBaiArJfZ4NIJ0QzqNN29vQzf-EJHcDnwFcik68Mjmb-9HbWVkO9NRI7wiTRutjLPqVk3ovewDuT4E1Xcb1tr9CuYWhSuFlnnS-AUYmU6J5bgE_HT8pYVmcgkT63RLCZwSxrDAJa68DFzMmVa5LtNhX7ZRqC3LBPHa4OtYxo3pu1A9z2_Sg5Avaqx7aKTOgGqG2dyl1MaIN9gDPmcttAC7E9PYWGjGYrTB2dvn5OTLxWcNrgAagZjtB7TYyddAitkj5Qg8OsLCFXkGrEpOkAuOxoLhibSgXYJD7vsBESa0BNW_fNcrLviI4-692kf7B7xzU4r4JJFw0AXuqjNj3QLsiqtTDROgpuqg50XeT9Xt4z_WTuzbewMw0kRvEdD2GD8lY9_vxibByFHobq5HI1z0E0iE7eoHjM-UsuIgGJ1iDjUG0"
+            "data": "gAAAAABpPev20Eq_QZpg3abE5ewZMndrm_N_znQJlgFFh2aUXZBGm4X-DHQTKsNf9_hf96ZnuI5pjGePAY7xxxqEueugXPSsWedziS_6E005MoMQMS8AirnQ5SbV4JL3o-bGcCb5auiV3PdEAgsf5WhVpbGE2nT8CarvQO5f0P3W3wuB9DMhhI16B9MothDihhwDwOPkf7EtRy0UnQmI96GWhzasDbmRFFU5Txj3vddL5PHE8RMjAnqxpLXQ2-ANiGHTvg1f3fnKjb_d5pLZb7QJIXA4vbeGWrIdMryqFMd2WLtZNtlA2DLzpvpY36OqPve_9uZQ8DesKQ_RK4RYuqxQY7LVUZX_EPuluyvuhZYpnox_TvyGIQrVsEQDRmvo1rpA5C25-N9iPZTcX_0wwTuYoJSbykXFxapuIa_uQB7MvjQMkoyT8DQ4Ew1xQscdHfifMuNZAZ6HKkRiBWIYGbAkIUlgeTWUmSaEiT77EXeoyhhkG5LA2g49o7ZMeqVD5U7F1EksNsESHLGYazpXMfM1eUm7fDvrsPYzlLVh_KBS3jPeQrur6vAJBjecRz3kCx_KNLi4irSBshDpYuBfNd08qxwSSaQlrW9Li5t0qNDHDFhLG_kqfdAvNQDjfr-Ktok9m_6VSz2w9q5WAxKOVDSKqd9tAENInighD-fYUViEWws-cqNWkPcprbqYEs6piAZDwp7CUi7Ez6HeggVO-0oO508QkP3BPp2S4dcUI_knQV1FgIFIWo7HqRGIdy6E90WOWj1Me3UQsU5Zprzl5G3PgcO3DsPpd0tR7ouyLnFtwHpA5bbb9B0I1im_-d5u1hK_v2DOrJtp7VBjjly19odeeQ2y-skUl6tCdwnK_oSVrtIw5DkIKVqbzGI61DYltfbULxR3_yWBDPbCoXrn9suPHuNay_lMQqXMGM7o59p3n6HLbyNpB7jF38YYFf1Eo2O7JHdtN3_DZ8e2eJr1qyUgJK3YAU8qHAjHhRtWGMUCugTFakapwHdU7yw6aBDVhnAO_93MIQY2SXIAp1_g-mi_GjARcM9SHcq0f5uOHedDAZldyMktSQ3hxWDpfb6YH1I8zLfFfjEdcD8PKWRoyDcHjxZzeMQxzngyOV0458KwJVs7C7mA3ax3upK7REzV0SSoszHc5X66zh-yQLu8amE0SiqlnHwOuf-550UCGTQgP5IDI5SuMFHo_R7KCdVnjgGoGaGIJnPEWYNqSoFw0OEBRuxH2LAgMvynpzeMFKGCVA2Yx9mCDGg23ZdeybB544f0DHqeV68WUJ5GSs1RiSqcas9LssKN6jw9jxIRthHYSjeAsm-iaCPBYzcIeVgQdZeVInPUmVj4W4AZXfMd5oFMvq3LLEZpGA0zoJOJUSSok7Ck335two2KTYa1EQdW16WttcRHVK7SNCpC1O4DDwoVpt1-Pxe_eXTab5OMF2_kB2fcoMHXuP2MJZPNx5MZhNXQd0srDfxRRhw--9GOpWIE__KJ8crJQgUHoMwuwioVkbyt_13c-hBQTFp3MlHKYI_MDrKuiprIdaExtutaKs0su44uIxnRt7v-K6qS4rBDWhAN7tRzPy7VRhWuVX7Gbr_h4YXI8LoElhK_6bnIJplwB7rX6KmvFY_hH1VUyslaK8mozqGVWdnR3OmykPD8CCwITTPIBecp"
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 258,
-    "completion_tokens": 202,
-    "total_tokens": 460,
-    "cost": 0.0023425,
+    "prompt_tokens": 251,
+    "completion_tokens": 160,
+    "total_tokens": 411,
+    "cost": 0.00191375,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.0003225,
-      "upstream_inference_completions_cost": 0.00202
+      "upstream_inference_prompt_cost": 0.00031375,
+      "upstream_inference_completions_cost": 0.0016
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 178,
+      "reasoning_tokens": 136,
       "image_tokens": 0
     }
   }

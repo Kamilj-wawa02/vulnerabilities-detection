@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765636854-F8lPJKfFAjxPxnY61U3v",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765636854,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 457\n}",
+        "refusal": null,
+        "reasoning": "First, the task is to examine the code snippet for a security vulnerability. I need to think step by step internally, but not include my reasoning in the output. Output only a JSON object in this exact format:\n\n\n## Examining code snippet  \n- The task is to identify potential security vulnerabilities in the provided code.  \n- Focus is on analyzing the code step by step to detect issues like injections or unsafe practices.\n\n## Examining code snippet  \n- The code, written in C, includes a function `generateAlwaysNonNullResult()` that allocates memory with `malloc` and returns a pointer after error checking.  \n- In `main`, the function's return value is assigned to 'a', dereferenced for printing, and then freed, but the memory remains uninitialized.  \n- Dereferencing uninitialized memory (`*a`) can lead to undefined behavior, potentially leaking garbage values.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to examine the code snippet for a security vulnerability. I need to think step by step internally, but not include my reasoning in the output. Output only a JSON object in this exact format:\n\n\n## Examining code snippet  \n- The task is to identify potential security vulnerabilities in the provided code.  \n- Focus is on analyzing the code step by step to detect issues like injections or unsafe practices.\n\n## Examining code snippet  \n- The code, written in C, includes a function `generateAlwaysNonNullResult()` that allocates memory with `malloc` and returns a pointer after error checking.  \n- In `main`, the function's return value is assigned to 'a', dereferenced for printing, and then freed, but the memory remains uninitialized.  \n- Dereferencing uninitialized memory (`*a`) can lead to undefined behavior, potentially leaking garbage values."
+          },
+          {
+            "id": "rs_2285e02b-c802-05fa-f110-5ec37e0a700e",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 366,
+    "completion_tokens": 591,
+    "total_tokens": 957,
+    "cost": 0.00091362,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 2.712e-05,
+      "upstream_inference_completions_cost": 0.0008865
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 574,
+      "image_tokens": 0
+    }
+  }
+}

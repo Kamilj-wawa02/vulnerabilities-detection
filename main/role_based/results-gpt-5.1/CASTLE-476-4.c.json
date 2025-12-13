@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765055655-GZydNCxHdhk4xKuIYn2Q",
+  "id": "gen-1765665996-oWUMOEyHEOKFaNyjk0ca",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765055655,
+  "created": 1765665996,
   "choices": [
     {
       "logprobs": null,
@@ -12,26 +12,32 @@
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 476\n}",
+        "content": "{\"vulnerable\": true, \"cwe\": 476}",
         "refusal": null,
-        "reasoning": null,
+        "reasoning": "**Identifying Code Vulnerabilities**\n\nI\u2019m looking at the code for `printAndFree` and spotting some vulnerabilities. The issue arises when accessing `copy.next->value` on the last node, as it dereferences a NULL pointer, resulting in invalid memory access (CWE-476 NULL Pointer Dereference). It\u2019s interesting that while the structure is copied by value before freeing, the last node gets problematic with `next` being NULL. This leads to a bug, but there\u2019s no use-after-free scenario here. I'll need to factor in these details for further analysis.",
         "reasoning_details": [
           {
-            "id": "rs_027daa57366a33950169349ca8663c81959893e7bd273e432e",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying Code Vulnerabilities**\n\nI\u2019m looking at the code for `printAndFree` and spotting some vulnerabilities. The issue arises when accessing `copy.next->value` on the last node, as it dereferences a NULL pointer, resulting in invalid memory access (CWE-476 NULL Pointer Dereference). It\u2019s interesting that while the structure is copied by value before freeing, the last node gets problematic with `next` being NULL. This leads to a bug, but there\u2019s no use-after-free scenario here. I'll need to factor in these details for further analysis."
+          },
+          {
+            "id": "rs_0f8276359b5b077801693deccd1f8c819589b00ab7b13a1c17",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJyu0mkFliN9catXruDkH9sq2td2HRT6E1z8GszvXuyA7ejJueBAlDZWl_xH0GeIDDn9c2p9-3Ixfxf58eCgwb7Hjigdf-uVVbRVyQX0OcLzaRdln8xxoOhiNU1J84NtMyIpjP6OYl2WRn3_Ka3TxkfCKSmwFbZXu0LS35SeI4lgMYs0H83ztEehfvKYMrPCROZKhoz3oeKormqeGsejkVCt75K8WBG5h8M6wYkVYch-AcIUKgoFLsqWMHhTfQH-PAWlvNhBfL1LOWa1TufCsUVBFYVRbOiMAX1_7odDEb947-bkTAq9iBlU9xLCF2fWzzSR1tGgQNN4T1xgB-E7DhFPZcylIVOvF-Nt5sh6kwCEzuVA0mI8TyHLF1MvN_NWKAfT6hcxZxcR9BcuoevH_UFlo9T_ybwAvwJ2IMJ_jeXBznbaG4JUW7ashb4BTPVOmzo2K4HKGmmLohIoag66faEVw1bqFkniT332pidEgSl6zbH2iBPIOsvPaHZxhC80gIGET6HUOqDhbP8Io_xUlZv30jANLhf4bj-58iqyZgwyktZWDfQ5AcOJ4Sy0quV3uD8AQlPUBUENwpeQGFTSFf5jkxhDBcvbDgbJRVpS4S0_onwkANNXWnkFoZXYgP-VMQ0DBaezkvOdIz4nCp95W5TnpqHqoGhDb5z4dq25OyNDer7uCdDhNiZd3OJsJ-0DlxbZHS_6reyeLnMDWDNt1UuKdOkfaQSIwT9YqU1tKs3Qn8Vl30TFIIoNrnU2KKeow84qFu5AfhY5y_abz3x7Oc4Kr2u3l2GuGvujH9iFqZSrzos-cXLPLMNKAU93BhnD-aH669Mxt-kbMGQJRB53eiJW1H8X_VcbNlIuAYQb78_n8biQzLrq3QZ6M6dbZ_3xU-0s0pt9gxZuT4FJ-8M-V63QwAAqQjr7v9Nq0ZmGwyOHdhFab_bJ6L_vSXBwI2EvXyumWX9UZCzoGZx3etf89K_TQUqPjWod-r3Bz-jFewnzF5ElpHfY_07fuLAgGNY6ezAZ7hwSIxjJ7RSOAoey6lHh2GXyTuLVgy1ev8ZDDK-VNrqLshCM1h6SaHdWI8vgjwey4e5DBeadLe_fWB0KynggbRYJFHD0kWfA53y8pdwBYNfj8GM_5eehphc0EGMjr5Wj1DKIfBJ7IE9DLZgAGbQmCDfkGLuajv54bCWRDyAaghtaQji3UBtrfL9H2zMNXGqVOju0ve5sLLhYbGjDcxZ9MXxS4D0492wg_m7fbYN3weTDlKHjzx38bL_gj6m1dr3dLYIhVCKNQlbBYFUyn5eAy0t41cQqdrIHWtiQk-5E3dcw7BhVY7GzMUgXKK8UcrOfjYBUYEJKfJv9Gtz4-Y3QEsM5NawG4OrSsQH2QXlMXmXB8Qv5K1BUbOPZT9t-wYdi9D2zJAEU0-Mg_psXDyckq96wNFdcThS7nvA8teB99rp-9ZzrVJi21CaxIT3vL4dPVeQtoivCsU6zk4-V_WfzyzTP9OETKPLb8Q3wXGtO1NLscb-V2tiH9-sqTa1ZXI_dN5i8vveLCy9BjP6LF3PSaGEONT200Wxtm4UpVKlfX9Sh2-BOOo3cXdosjX59m1JONZ8gx5uCz53lrw4m2bbpl0XQQiV2HY2wmgqlNopXCH1MRqwE-sXtt1Myvca_ELxZndeC8EKtFiyWsmh-15_iHeQMDjULnzdWTiUK51EqnQsEjTPqqlrLgL-_JDvHqjyxodlcYsn52ZrP2w56GTlp-p2dWEFrYao0BNrgPnhdj7f-fE3lD_HHotHlcDSEfaD5TaydTPglmXO23CjOcFas8PgnWd_7r9tRqzziw_S-owPqBvW32zpBJrdaJhj_pOIBKWkjODvFddzeRqb64NnmcB9n53Tm_he09glTxLJXEDdRhqqTy88ow6SIPw5PWSiAmciqRN9KjGcYMPD3LupeUkkCj4lsoL8tIaF-VPrwRW_FEI590yHYt3KHupuvT25oi7s_zXwlsJfDQoVkdtLPuol4M4fhQu1cXxeILUV4zshNokTeiR0iM6eVRW1xbswf34jfHMJBiVji05NgM0r3SORuOmxAI62xjnZh-VyM2BQxkFQQeJ2kNwFsi6swHi_bj9olcteilj-5EvOQwQ1Rkz9Vouw_YIuDw8Wm4s17HwLASnI0zKIQRROEGZKYN2FuY02gwcmPhlKF8hlkQoSbJKyLTJy2h9-ppY-YlbLFHX9XVpxU32igqgtBOH_In4iILqd5NPQnQFCO_IxEzOvfotajVrTuPDzd2j2Qo6lpYq8Jh62zcMk0sz3WkCp06rfD7NwYSIWA1iDme68OZIIi3-bfG_N80se8eI6DN66Wwc_F39HVnqPdBhLbV68tiCEwwx6K1kMP6TTW3sirTXnq74afcxRqzjhgGAqOpITM8bmm_1reLdc7Ipn7sz6Rl3qbgkUdUZw0bIGStqDZJQK99FeLRsHaJYCMWLiTAyXSvzhSBXhCACMns1CXW8uTAewn41RhJnE8arKTqPSmiXlAiWhCeWrqRYdd7hX1D8qyghAkTTsLnbJ87hlmfzwXvF4RjvL1tkA1KaIHkM1DREFa_-Np3zYs6Q6HwMoqTpL8TSY7NfyIzWK9SCXGSeTxdEn0_sGPDxpddNEnlKXRXmNJcMZnZ-LQX6y9A_1yZuqNcypUZ0rOzxUqzndKEgy2pKXDHn2kXVlSURjhbd4a0IuSC8zLQ7o0Wre9ibotieTzn9g_LJKcRxig9gH1pCEpqp6PUMbCvYw8nAf2ojWhkZnXbqwjVMvV6fclkToYqNBFpf_TiKumYwhVbynX-kKKTD_vv43dVGFKKcUxSXZpJulqlRD8nho-hvImteQAlbxXeKlqyYUU69eYTAqS88-xPNOm2-kf5cY1lHOxNWwjrKQ3adJwO59SO0JyRCGpUhyUjgI="
+            "data": "gAAAAABpPezTJFkh-hb3xkbqFP9z8IcKAv7eG4dW114lgksBFXXxV_NpxVDj7tLggNx3Zw8q50wYyRlmX1G0RDfwwFpP2hy1ZvB31-CcgUyg9uOwMzbKkc6qllKUo0R0xFXxIpd8imT6bdIW-ufZ5TjFdYkqyHMbea81m1IReqocSjke1Z2261dtMmdTOv2f8fjzUpXlXPFY021zanLE6MJg5-cz2FfCFOcT5bptQy3wy5EvCZSVHpwMf_7bojUqEqZeqAqXIN5scCO77SbCQ36teUd3EPR9jbvr6T-PfOp3pjqnll0Kj90TUeVaX7RiV0wugc5uo82cV7z-v4r1vs6H6gidbTUlCiKXjqnhaddYpvQwJhR7XFOWbtIoiawzIrSu-ZoWX8H4qjxc6ty0LOfH9CFEYxQAC_Gf8dhyGBuLyG07lsZPWc4SE4QqvGArqrQm_9XKgRbafY1i_kJ4TGmZJdY073wGVK72RmLVappWMmk1bptisN9Uocw7DBAKRH9w3LFGxx37VF7uxm9Fq5sl4UBUaxK7wU4DuOsS_X0f-2aoEG4yYtjk7CuwXPh6i45q5cr8FbMjZaROIhcoVvCnRiiqzxKbPI19GWW5252ICLXx1f5_amdaAo8GTmTGwznt12ystTe8gubV0YeNd7D2QQdCBPSrBndu2GiNtZynXz5e526_qXmEXy1dQDPQ4IIUmUMe5_nnKzxWB78FwvVWSdqFWLQmh6jBYM_Ge7bUpZvVbbix5RluRSon46kOU2zgyLeXCpwYEzFdSY4pLukZsGDpJdpBetM9G5cqYxCf7r0_IK3iY-0ebSoRDx4QcvqM7w579aNWsAZwFVtSbzufbqD0ZjJGBReq9L8XzWhXZaOIIQe3Ct8NSYj7o_xJo1BkRN2549jbauroVnpuwbIOWO_Rmf68TKi4zxNHXiSd0JORr-5DjU3OAN7b3m7q0IOPad4iA7eOZPcVnxAR22AR45ep46cZh5MR2nicb0I7cZoPhs_LXka177uiRd353pJbkJNuScRIREnhj5Lbfasz93Hk6ycMN-kqMdK0u0AhhxeOPqFbGQITBcSyGcj_SLcMyE0D_fxuLL0qFZvr8efnb6PwDgo-yiheSSp1q0ZumRp4g-MiI2euukFdq9pHtplby8_0_oUUEPYeODO_J0l8Nfrg9xW2rQ8snHR2BbrG1XV0DBDNhzCZDSuVwZywhhlLNClNG6GsUKa6h1-ftInt6SZvk9e8bvLnqTiXYuwyPFvO_prFNqG_BGxsPpxV8e6q4ffuLG9Sd5s9WzqA45FTCy8I2m04Y1ZRV57SMA-kKqs7x2Ct531Y8gK7i-s_cwoTCnNuTUqSKO7jjHeF2KW5Vh7nOmUCtLI5gkSJAgP03MmAXzmAmvnVhinfOFRCiRE7JnDUxhC_Y0RbAFnpe-tZT2X7v5e5WDV4savth3goXRLOwLF6LEDUym6Dpxx-goQP9rFZ3mBFelYy1qp4rXojS8vpPiQBc67KVroO_6MxwzxWHXrWIrX96j2KlmcUB_78fA__bkTGghC2_7O867nOr3g4kKqCM7Z3GrWXjgaFv4QKEIAEtCvTQW4t0hk8FULe7wrMtdd_PAgeoMEp4HrT-2H-6owSNEfFstk65oR4thLt62sgFzfrab6ZUV2_vVOLxHHiSuZ3QA2jaVGnCwcxz8yXZtaBfZxIJ5Z-SInloLhizOieMnR1l02UHO18LEX6A9cZe6HwzPtV0XYEsRCwEvS3_SpRE1afPhTK7hAKtzXqOT0-DPM_ExQtqe4P8JffBy8-T5t2xUjjlhDzeFTfM1BOsrcO_Q3ne3ZhO1v388yrJ-rt9LE9veyHsKk9zB1T2vKfCRiZoxm0C6qj7hpBQMO84q03e-R6hHve-WI_sZQ5u02TbxC-8GHlwj7pDUqLOi2T8f4RqBSUzq38UTcnVdKfPMcw-7Z6ngy8L46HmHTiujmzTevzVmlyWKuGpiiBVFFk-SQvLKYTmesy5fnToKKoiwaQH0on9ICLxfN7hRsoAQeFV3VY5_8R7XqKGr-5SBtSNv9GB8Wgz79cPu1GiBTaVCRcZKZS5w7XT-lMqrnm-5Q2TlYyfxt0RRLBQXJw2fCg_bgkSHz0WNQHrF7QN7aNqu2_kO5hbvOA_i_tyQ5hraCS-8EFWCh1eMNz9jUeNvqB1JTempqoWAHs_7_WSRDpiB7FMxNmXm1ORPSwbmIpOLgKOsmEiI8fAol7MbSGeAhVp6Ff84EoIIH7Ry_F8wla6DaHUb-ms81k48BWVLwy-Tc1wAyvMqkgRkZOkopp_LJx-0zz"
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 455,
-    "completion_tokens": 385,
-    "total_tokens": 840,
-    "cost": 0.00441875,
+    "prompt_tokens": 448,
+    "completion_tokens": 270,
+    "total_tokens": 718,
+    "cost": 0.00326,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -40,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.00056875,
-      "upstream_inference_completions_cost": 0.00385
+      "upstream_inference_prompt_cost": 0.00056,
+      "upstream_inference_completions_cost": 0.0027
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 361,
+      "reasoning_tokens": 250,
       "image_tokens": 0
     }
   }

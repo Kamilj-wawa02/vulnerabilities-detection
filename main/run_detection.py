@@ -7,6 +7,7 @@ from time import sleep
 # openai/gpt-5.1
 # x-ai/grok-code-fast-1
 # anthropic/claude-sonnet-4.5
+# mistralai/devstral-2512
 #
 # --- For testing purposes: ---
 # openai/gpt-oss-20b:free
@@ -14,13 +15,13 @@ from time import sleep
 #
 # Models available at: https://openrouter.ai/models
 
-MODEL = "openai/gpt-5.1"
+MODEL = "anthropic/claude-sonnet-4.5"
 START_INDEX = 0
 END_INDEX = -1
-STRATEGY = "zero_shot"  # options: "zero_shot", "role_based", "chain_of_thought"
+STRATEGY = "role_based"  # options: "zero_shot", "role_based", "chain_of_thought"
 
 DEBUG = False
-DEBUG_PROMPTS = False
+DEBUG_PROMPTS = True
 
 JSON_FORMAT_REQUIREMENT = """
 Return ONLY a JSON object in the following format, and nothing else:
@@ -34,14 +35,19 @@ ZERO_SHOT_PROMPT_BEGINNING = (
     "Examine the following code snippet and determine whether it contains a security vulnerability."
 )
 
+# ROLE_BASED_PROMPT_BEGINNING = (
+#     "You are a senior security specialist with 20 years of experience in detecting and analyzing vulnerabilities in C/C++ applications. "
+#     "Review the following code snippet to identify potential vulnerabilities."
+# )
+
 ROLE_BASED_PROMPT_BEGINNING = (
-    "You are a senior security specialist with 20 years of experience in detecting and analyzing vulnerabilities in C/C++ applications. "
+    "You are an expert security analyst specializing in vulnerability detection in C/C++ applications. "
     "Review the following code snippet to identify potential vulnerabilities."
 )
 
 CHAIN_OF_THOUGHT_PROMPT_BEGINNING = (
-    ROLE_BASED_PROMPT_BEGINNING +
-    "Think step by step and explain your reasoning before providing the final answer."
+    "Examine the following code snippet and determine whether it contains a security vulnerability. "
+    "Think step by step internally. Do not include your reasoning in the output."
 )
 
 BENCHMARK_JSON_PATH = "../data/CASTLE-C250.json"
@@ -112,7 +118,7 @@ def debug_prompt(prompt):
         print(f'[DEBUG] Prompt: \n{prompt}')
     return {
         "id": "ID",
-        "model": "meta-llama/llama-3.2-3b-instruct:free",
+        "model": MODEL + ":debug",
         "choices": [
             {
                 "message": {
@@ -161,7 +167,7 @@ if __name__ == "__main__":
 
         prompt = build_prompt(test_entry)
 
-        print(f"\n=== Testing {test_entry['name']} ({idx - start + 1}/{total_to_run}) ===")
+        print(f"\n=== Testing {test_entry['name']} #{idx} ({idx - start + 1}/{total_to_run}) ===")
 
         try:
             result = send_request(prompt, api_key)

@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765056268-4SnrefiyBlvu9rwxysze",
+  "id": "gen-1765666382-GS9TLrKO7KsOgbVsMCyj",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765056268,
+  "created": 1765666382,
   "choices": [
     {
       "logprobs": null,
@@ -14,30 +14,30 @@
         "role": "assistant",
         "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 761\n}",
         "refusal": null,
-        "reasoning": "**Identifying memory vulnerabilities**\n\nI need to consider vulnerability in memory management. It looks like there's an issue when the buffer pointer is incremented before freeing. The freeing action with `free(buf)` isn\u2019t using the pointer from `malloc`, leading to undefined behavior. This relates to CWE-590, which talks about freeing memory not on the heap, and also CWE-761, which is about freeing a pointer not at the start of a buffer. Clearly, this is a true vulnerability!",
+        "reasoning": "**Identifying code vulnerability**\n\nI need to detect a vulnerability in the code where there's a malloc pointer that increments before it gets freed. This results in an invalid free, causing undefined behavior and a memory error. I wonder if it relates to CWE: use after free? No, it\u2019s an incorrect deallocation\u2014likely CWE-590 for freeing memory not on the heap, though it is. I think CWE-761 for freeing a pointer not at the start of a buffer is more precise. Yes, that fits! The code is truly vulnerable.",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Identifying memory vulnerabilities**\n\nI need to consider vulnerability in memory management. It looks like there's an issue when the buffer pointer is incremented before freeing. The freeing action with `free(buf)` isn\u2019t using the pointer from `malloc`, leading to undefined behavior. This relates to CWE-590, which talks about freeing memory not on the heap, and also CWE-761, which is about freeing a pointer not at the start of a buffer. Clearly, this is a true vulnerability!"
+            "summary": "**Identifying code vulnerability**\n\nI need to detect a vulnerability in the code where there's a malloc pointer that increments before it gets freed. This results in an invalid free, causing undefined behavior and a memory error. I wonder if it relates to CWE: use after free? No, it\u2019s an incorrect deallocation\u2014likely CWE-590 for freeing memory not on the heap, though it is. I think CWE-761 for freeing a pointer not at the start of a buffer is more precise. Yes, that fits! The code is truly vulnerable."
           },
           {
-            "id": "rs_04d81fdfba8ceb530169349f0c9a34819582a0d8e0ce2604d2",
+            "id": "rs_0a17c54ea5060f9101693dee4f152881968b557a61eb40b115",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJ8QG4bWLupHkSpAvnYLMDclv1empRR7cDEZZHZ01zn_JdJ_dTJqIumpygZ0mRKLINcQJCBIXE7UviESLFkY7mRXYmC45sqAMVOgaTuQEE4LK_E-2ajXm4UBu0qb6H3XtelkXdmAnshy3RSy02Xd4UfZIzMgpgw_o72hIitTz-Tkv3SmNWgZ4QPv10uEvm278GLcUt24JmYZGgoJOERCvesaY2YAydAalMJMbfKoxPy67McQLgXfQVlv98D887nHaYQ3hYtm8Knp_5VZEMPs_-c5QtHTmR2iqAKrcYHQeqLtnmn3w7y1T8hkdEU0Hhlnbds884WG5_Uxb-Py61e4bkwAAd1sPxl19pwvpYB_4BjwrkLbPBh833RrLZs3hxNgmH3lvIvteFZnRbJgf5MFozTluf_tTKoFHBbNUMIr1PJdDXFjhL5DaSK4_9SVmvPey7vzw58kdESspzULP65tyE2V-nNLaiIhKRCqM4jE8HR37uaGoiBzLY1QpJrQBkCOXUhjNk2tKpY79UrLuV_auWndQAqT2vdkv0mZ391mDA7W6mLPdFVxur7p5X_8YN1L4pAAIQSRF0sY1YlKqjDRw1QyJO2mO8eLyFXL4OUR9YcwpLNBKLjDiy9olyAi2wbQkoICnDCGAGBf_2bcQYjc7mPhyvdK_qLfoqE4jQL2bPDtq981deVZIR5Sn2J5xQ6bqPNqaFPkOWMFsYYRzncXfSAd7Dzz4_Bi0NrfwB9K_VXk8o_pdp3aO4nd2j_ZHPGR0Z240B8kXnyESqhJ9JwOFTyPlBZf7049si2iV0_Npayvrj8ju88QU64DpVAqlwrxkyBKGWDwLOyz8a7fNNrwPvYXGY6KGX9WU7UUI14V5PIhN5fl4usgZ3rbvJJg_5RkWgFif2bT9XXdzX4YHiZiGjgULED8H9498RmILgg_U5zZk723t8z-SOuUqjOFE-kuJL8UIZwqKYZF4c9W5OuvbRcFd5jCsld8sbIa6t48nZWl1ZgxSWu6FY7Y5VskBohkvMethpjIA0imxZsFf097sidMFx3LNODjGX5vPM_mgSTYwNo_QfZ7qWUxK73hfLmxt2rZjtUgA9mXxCGT9EIZSDFoLJQ0ai6CitSe-jmCW9bCo0RJO9m5gWTT2hg8SMKtk9dOR81ub2gX4R2kF66TrrYp2IQotstp1Jx-BHu47gacC3sxvgzM0P1DHoQOZqiNjkE7NpbzCJteE5ap_suGhKcklIE7mV-ix3Q_gByYG968XkCELiLw7nlRhKt1UTYN6cYKJ1_uEkl8-31ZsQUz94KfNA=="
+            "data": "gAAAAABpPe5TZD2nxM657lV-zA95H9Xx_-S8lRT-bHR6cdf9bVaTCuvmDfiIA6Qow1jc1GbzbHKohUaADq3CIiyNYDyiW2CtNSC9P1ti8EENped0hE4MPNAr3uTrENCQAugozS_y7N1BY6UnshK03ERVokRE9Wrx8mGuKiWtSPxJuCgE63hCjddbYbE4JDE1CuzticFuFfjRk4n4GNFM4d_0p3AIe0cX90_LMOmq0uqF407XluzMuyJtx_nLt2cP4O03ASpV2pkACde5taOcuFO9TvVooAitDjGCxHKIhzniEPaYROArp5T2t3xjloSQn1rA2QKFuLq6DqVxJvU6kmREDDjAAtgQZOUS2jKwvln79TrUeGOwKhHVEaybRF4zhCsjizgs6AobxrVvFrx2uX24OSIjbwuwukqBeSx8kpohAQAF6kUXCkmmwrW509r15B6AiAzusMAIhyzRqzlH5W4var5tCcg15cVoEIa_41kgUJZ0Z6u_mDpH_2qRKBqAlpXsLXlKlSqBt9ki665KhHnEVXdFk-JT1lZcueE7nj-UidsGvSljMdLZJ1ISZLzWNsAjYszE4By-xPvMtpU5N7O1d08z2Ui3C17_9nm0kemv8ntIYZvLh2RE1aKXRyJnMmLTxo3RrQCEl9S4X1rWFHzOeTYNCjeX5zRof_tG5e0U5ss2zuAPKoTqFcWQieK26DBwyksWpDeB61n4qgjrSIATdpk618rYvIilXRa6EiXgt8hEv_4JmdA2gDSgTeK77JeNOtPfcYbDPxKdRrHHxoqULaOR9zDBOc29eFybS_XmejMw6FrH3B1GSEHnitlTkUfuXT0FGYXtCN-htT9jzKbqWmb90uv1U2Zk3MDrtOWAGWkdgzPeP3BCLcrxQe8JUrv11vJaDQNxOSxfLqHuaBCak25lMhBap6LYePwb2RKTA7A0r5KgEMn1EN7Vc0Ky8IG8AAJCRRU5wArtKsQ5NfKsMD9bUvfMCRB-kAvnDHZPb_GxwZK87_sx-JjmkO9tneR_CNwqxl8x9eoVeO9EKwIX_VgdrWrGxsGOe9mmFoO3u_CDD8PlFH2U1fs8bqNHhwd_nAtUT3JXLUFn7FZFcgO75fkS53ZBY-sq0DvyJsb5m_a7plL2lU_cVc0uYpWrd4Sf-aTnI9fdOav6SBtK6_VY_lTL2DgV1GNt329Sx3fRiEyn--FENEXwyHd_ZsNCyWD0e_KwqoyOCwE1qDV4Czn4D0AJyVlGmNUpnxLFxdfwK8KhmSmjtrhYskZ3mGc93R3SjooBuJP9KW5sgkR3Q2n6HQXiakSOKrMwzIdVewIwGLFzuLBgShLFzwbjm0ihywD5TUOdld8U9EbUFDplGJS5Kpdp_do1nw=="
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 150,
-    "completion_tokens": 102,
-    "total_tokens": 252,
-    "cost": 0.0012075,
+    "prompt_tokens": 143,
+    "completion_tokens": 114,
+    "total_tokens": 257,
+    "cost": 0.00131875,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.0001875,
-      "upstream_inference_completions_cost": 0.00102
+      "upstream_inference_prompt_cost": 0.00017875,
+      "upstream_inference_completions_cost": 0.00114
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 78,
+      "reasoning_tokens": 90,
       "image_tokens": 0
     }
   }

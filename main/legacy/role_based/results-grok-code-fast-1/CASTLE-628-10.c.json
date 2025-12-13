@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765066707-RsEADvfx14iy68WZH83D",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765066707,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": false,\n  \"cwe\": 0\n}",
+        "refusal": null,
+        "reasoning": "The code is a C program that computes SHA-256 hash of a string passed as command-line argument using OpenSSL.\n\n\n## Examining Code Details  \n- The code is written in C and computes the SHA-256 hash of a string input via command-line arguments.  \n- It uses the OpenSSL library for hashing functionality, indicating reliance on cryptographic tools.  \n- The program includes standard headers like stdio.h and string.h, though ctype.h is included but unused.\n\n## Reviewing Hash Conversion  \n- The `sha256_hash_string` function converts SHA-256 hash bytes into a hexadecimal string, using `sprintf` to format each byte as two characters.  \n- It uses a 65-character `outputBuffer` to store 64 hexadecimal characters plus a null terminator, fitting the 32-byte hash output.  \n\n## Checking Buffer Handling  \n- The loop writes to `outputBuffer` at position `i*2`, ensuring each byte's hex representation fits without overflow for SHA-256's 32-byte length.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "The code is a C program that computes SHA-256 hash of a string passed as command-line argument using OpenSSL.\n\n\n## Examining Code Details  \n- The code is written in C and computes the SHA-256 hash of a string input via command-line arguments.  \n- It uses the OpenSSL library for hashing functionality, indicating reliance on cryptographic tools.  \n- The program includes standard headers like stdio.h and string.h, though ctype.h is included but unused.\n\n## Reviewing Hash Conversion  \n- The `sha256_hash_string` function converts SHA-256 hash bytes into a hexadecimal string, using `sprintf` to format each byte as two characters.  \n- It uses a 65-character `outputBuffer` to store 64 hexadecimal characters plus a null terminator, fitting the 32-byte hash output.  \n\n## Checking Buffer Handling  \n- The loop writes to `outputBuffer` at position `i*2`, ensuring each byte's hex representation fits without overflow for SHA-256's 32-byte length."
+          },
+          {
+            "id": "rs_043af45d-3974-45d3-ca3f-1a1e70a4be5c",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "lE41r2HTLgYMldUd8g3J+2ibUpq9lH+wanf8bA5KPJI2hyunTbtlyVqaZ/9zBh9XczupdjF43/HZgaW96ZX1Eo/+sE4/WYxHJ/7qVNXN9FrypNjwq3+JdawHeY092KIxH/iHTfB9QpCTY+/YLiy9F66HLhPAPKmBiVM4MD47Bg/qLQ/HUfdzZ2sqLJBWtSxR/x7qieXAus9bCoTNgS7nJO2sUGmDQaya8QErz3ohW7MggfdsuyTFL9HB7ZOxmWBYg3S8Mqg5Hm4fXFUrefbdY8p8yZnRCPk0KlPqjHNiEPhFebL3eu279VMPsMLe6+4+VaCqhzNBDrqRb/LRiR9gURc0IB1Ck2ZXmUuTXwvk6RYBH/9iMxX+8f4mcAEsKfJBoVk7qZmj6hLGwFpmF2OBLgmxyfo0ku4GmR9RSM/u54C4H/xdoWxK11a0kWVXdPqnPvULzQy2VctzN4KFByHyJ7NBpHYwSPIgxE0wvWN5LJjDe7MRD3yV6YOUCumcncVEzRjqVV35pfcmsBxxf0CmeBb2dnqWHfS+Ru4Z263lbmGA8Up4y+jugdO3y5w9dSj8U2SfyOzjueIhxmuZj7Ps4/Re+1zyvqWEF1lw/r8mO1Hywtl4VlWdpXAZqyEnfauRmg9m+tpYSYoAGmeCYjnefdUpFVRj26hPvHsmMcPiPfQd9es6GM5QmAVSd62tkkXjme1zPeYC+IMgXxWWOQFtsjTllTwiyVf3aMPt+erI+zz7rDl1EkLRdFKwEe7NdE4RAvRzV/tUNRciK3ifzrFv03GIvcWdKrztQtpxdAjHLhG5bQoEnRnS57g65qpoiZ2k5v/P0s6DfhuZCqS1l+QMeUwc/o4NmQLQaMtI5mMGXBj0VDpD2GyemOJikOrf6b+XhbUPy6JediHhCdzWWYR9YfsCLCgdCYaiQoQ0Flrb8tGB3igCpXlN6VPUoXbYB81g/lvd86n7gH9eg45nkOUMKdz2+DiN7ZC8uYJNcmSqJoEKS7enIsidMxmcJhASPItW9uF6Ce8KXZflRN+Zv6BtfF5/2x3gCbnCrWio7QEVMhU8pJG6tUJV02gyIRcs3LzSk1/XZCdcfR910cXdPyv20Zk/suuUd+IHt2/SCd0MgP5vEaNGZwuIUhh3KkEechcD0YB305LXzZx401ICM50ity91UDaTSPCQipqG+DqhvmSN8cQ/eomGvAWaLJ4Mt7jmwPV+bKY7gqNXhpUWLnKyeHBFJy7y/H7evRoDyIx4+xz2w5J/JVuHjmu9hYkRiLLqj/m6EBoZWRu/bHslAwDyAMKciYlRUrJYCZuKOAsgnkRMaEk42lf0x9p/qmWG0Q83iXrbJ5+CE4Jleh6ypnweNPD/5YOhGZmC9Wjy1TQW6r3/P5J1P7QigOCmSZ5n6sVGr1T5z4DtMVEbm4CITLXL9QmsyPpQnRyKNJpOcTZes8kKjvMzpoVoUFGEDMgAOubcCkA/KBVXTmB2U8luJI6/c47rK+FL5fP2ZTZxIT+xEP4RSk9JEiU8Ocxs0LWrn2wBumvqJoffwnWWdgntBXfmaD17mdTF3rAwmD6mDLwaWYPb4qhkjQKWRodwl5sJFkWys+M3+yvlLqo5hDdGYh/tnVoEhDtf4NF93qrlPEXNxxyZgv4i8eQrzK9ZcKtUmdNyK5OtLMZos6SiFveVnokpZ/10PbYwjrNG8nmuvmNWFVIKvxaPSHoJ+cx0uTFEWVQ7V5FXZe50Gv+PiBHNQOP/taFUnkWz1w1T0eGIwN2kVYv4uR1W5F5d6HnfrFYNBnNpg+aK8CmnL2HbZESuok9vdd4nSHPlmu2Ez+alYDn+mdpkVmXCPQLkoaO0SJXKMwCReK4FYMtoHB1dtXyREV8ZVhb7Rp23is7cI/5LuyPmTt33vwb44kd1sRCCpuyuLOiAIatLEDk4OmmxJA1Cfc3owRbumLcX5SZlyByP7pvkBi/jSRD5cb4nIZ6tfMHt2A0DmXS/zDbmWOolgUop0fuh9CKX5ORmD8XS/tTojxlRW5wBOHyt6q5MIUsTytkiwZwWj9feqeDeVDVd+EpkJeARiL2h62LKPUnYaNzfaHPHPvejxMDA+wbcREwwmAVdBa/QWRQY7OlWh7hfRWPDGoN1biwHodgL7X+sjNe2XHiten9qvFymNS/nItjsSQF7mFxk0L7o35kAtJLTCDTlcfWpWGxvP0bl3ers8yJbGJsA+ZjchJUkjvDoGVfCwfOLfnr5OfR9Fjrlc4fvJrWIAEUrEAMKncWn9bMcG8m76Z1fDyOolAsCNs08nhKZew7IkXqVjyi6g4TWrw1gRlXDqI7Xxxe4T0MiD0XsDpS+JZ+LmLzMK1OIeNcGq32+mL4HWPXzKzAv1Awx2DRMx+8YxIzRbwDuKyxwauCYb36/7GCV5+x2i3jY31uAp+cNsXpxhC/9FGFRGL67d0rlBUb/4sW2jbqws5FSN9Ce+e9QBwPnL6sz+mMlGPrvrGMrYQ3tzTVn7ZZ+tbP5YJSaayfhpqhhYiDPOCi8FNUk+6uDMDamz9p6efWrSYTvQdMzsOZWgFMHhWf2XPdwLxTTuqk2g/QcbZ9YfKeox41DXIGn27LLNsdxMB7Hpr94qVpf7esfoURbErrSMQEa/ckOwskAkl1h2v8XwAOZXYrK+skxozfeaTCa7ffPfXDGkPgO5V5rFbsmETOc+Qy5jSbTpaEA90JRFr3gp6FEeD38tmL/DOoqiHv08yk3soNYMz5X9gS7oddljHAS16UzKbCXZ275ibSIoe0CEItoYZf2a5uPAWIhQvrmw+LiuXSKGNb9jftpNjwvVuAsuvfdtbzMZQL7u+7KMRlpkCj6O48ECMANeL+IfiLXmA1FRL9QmbJ/QosfXYGbJ5rM0VLMWwTJ7acY5YWpptRj72ihJqmbvkSz1GRO80UKjvn4cTq8ZtvlgnWSvCQJX22LkPWRrC+N4rof8lYe3elDP9xkU1+XYYkIi736XV1dUoamp+dnXXJ/DXeOl5508fss3ZcoVGo2/lA0umWXojl6XeSAfjn4Ava6NfGHucy2rtNrgf2vATPlYH11uiOR7NL4NiCPDctqA7fBPs7XZ4TPgdbwGmBza29r8XXqUHJyyXfnso8YyWYyFg2veiipZBAN4924yAHGBQYi91uUYatfMUqvcAZIozARoPV+lIparVTyEq5j9GHTGsFuqaeyCb4+BEvp+LTFrUAHyS3tBpHhMUrXbAKUmlPoWRlEMX8t9dLgorQYbXl4R4S7x/jpe5+YefCzlUAjnKxN43g9Ml7Rtmse43VgUZ/ydzG31vaMp7nFAf+397fVYUiwZrENm765TGMxUz4H8X8oLy0LKY4lQFWdFuq4gpG+1sLSFqJvSK2JXNJYVYu39xJrU1FYwWR92Be2tAI6nvQlnyMGDjxj/kKFY7gT9m9oeDPbnuj8L37DP2SDIaTBP9hKie22sOfzn9Qlxzlkq3yq3Ux7xrs2H1BtliTU/PW395dS6QsvJmzYPrxI7SFh7OEvSqGKLaUUjV/ge5v1OESlMrV/uc/u+MtG2mXcrLEEnWViD7D4K23aiL0jgvX6joodsweJmz+SUO74MAcCN7o/OqTC3uQOoVTxldPP4LE2fG6em25M+yKpwlGkMPz1ncjb5438tlIKLmg85izED9fE5Ril3bKLuXgyVSFyQtfG3wGyoNsYa6sJDw4281EEI5/EwaPc9oB/z3JrAOftXA/UQpXGlbgiBTPvUy/aWclyvNYEBcpDEujR8f2v3jBUjICII36eqyG26eu4uqlmzloggsQvOrbltMsP6gXx+QbVG99uvLkSOIC1"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 680,
+    "completion_tokens": 750,
+    "total_tokens": 1430,
+    "cost": 0.00121492,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 8.992e-05,
+      "upstream_inference_completions_cost": 0.001125
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 733,
+      "image_tokens": 0
+    }
+  }
+}

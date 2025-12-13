@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765056310-CEKFEZTHLBMUX7IpcS6m",
+  "id": "gen-1765666408-d31EDhR95rtcnaPEpriJ",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765056310,
+  "created": 1765666408,
   "choices": [
     {
       "logprobs": null,
@@ -12,32 +12,32 @@
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 190\n}",
+        "content": "{\n  \"vulnerable\": false,\n  \"cwe\": 0\n}",
         "refusal": null,
-        "reasoning": "**Evaluating potential vulnerabilities**\n\nI'm examining a function that allocates memory with `malloc` based on the length of a target string plus one for null termination, which is generally safe. However, there's unnecessary use of `malloc`; the function could directly use the target. My concern lies in the potential for an integer overflow, particularly if `strlen` approaches `SIZE_MAX`, leading to an undersized memory allocation before `strcpy`, which is risky. I may mark this as vulnerable with CWE-190 for integer overflow or CWE-131 for incorrect buffer size calculation.",
+        "reasoning": "**Evaluating code vulnerabilities**\n\nI need to determine the vulnerability in the code involving malloc, strcpy, and the const char* target. It seems fine if the target is null-terminated, preventing overflow and ensuring proper memory management with free. The main issue arises in the contains_char function using strlen without pointer validation, which isn't commonly recognized as a CWE. Although strcpy might suggest a vulnerability, the buffer size is appropriate. In the end, it appears not vulnerable, so I'll submit 0 for CWE.",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Evaluating potential vulnerabilities**\n\nI'm examining a function that allocates memory with `malloc` based on the length of a target string plus one for null termination, which is generally safe. However, there's unnecessary use of `malloc`; the function could directly use the target. My concern lies in the potential for an integer overflow, particularly if `strlen` approaches `SIZE_MAX`, leading to an undersized memory allocation before `strcpy`, which is risky. I may mark this as vulnerable with CWE-190 for integer overflow or CWE-131 for incorrect buffer size calculation."
+            "summary": "**Evaluating code vulnerabilities**\n\nI need to determine the vulnerability in the code involving malloc, strcpy, and the const char* target. It seems fine if the target is null-terminated, preventing overflow and ensuring proper memory management with free. The main issue arises in the contains_char function using strlen without pointer validation, which isn't commonly recognized as a CWE. Although strcpy might suggest a vulnerability, the buffer size is appropriate. In the end, it appears not vulnerable, so I'll submit 0 for CWE."
           },
           {
-            "id": "rs_02b056fb9463c3ea0169349f36be088197b752e6c7cc4d1b5a",
+            "id": "rs_093dbcc8d163af2a01693dee692bc48197908d1cdc1881c154",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJ8_KJho6sdxczVIl6F_7f8MH1iUcT9QjcuX5vai-UvXOO9XNQzz389S7KOP8zrfXGD-480rNToH8rOf2D87kxa0RBeWvC9X5Ue51trjDCCgWeK40HkWBE-iV-MnHzMpDzPzMaeZ_M343eqOJvEbKIQAz_gFgz_g7flZUc22ZLPgpzSszqnqA54xOBfTh-RI_Pd9qKRAJ-dWTqV04j2hhlNNsqEFRTw5NSX6aE3mxN063cyR6MAGvo6xzwEs99bBv-TVBC0fmkaciV4cBXBPICjDs_SWmtyTk2HgEciEY-VtdD5idyNnv_k-mZHli3AtZamM2Iju9vZHMC-QvGvlhu2bPP5hnshDj7tJ0HoZlyY0l7zRo68O1I-aNfkmy_sXBNSh0aZJXOraJEhdFuGfcUpj79RIblYR8FV79eClkMe5wBNO9MMlE4nVS5tzFQAkEQC87Slpuvv_fYvjzvZAeTbHWQRrcr_CHOfnP0syfa7C_EdW8B111ForBv1OOyjyM6GBVVJPjNbrjs16cyGT0auwpwmkpAUOufupi6vBd3MUy0BVVsbXWspq-OnPa0wwSnZml3vOtbiiUzTYlTGzcgHOdXZ61RBwTTlPlEqi8MI5wC5C1CG-pKg2xXwJGMdNHM_4viQyby9SJ4xa56fek85ZJYF9ckWwZYYPAy9NbHFa8zpIH7XKSbwkwQgYRLd47XzPAEhEIeUKCx07qOb1GIkG7c0nv4jt5YPg6T6RXZ9l19voQ3Ve99S90NJdIYJz7_2rkNQzhz2Bihnlk3UrBaeNZMfqdgaSBnDWrnqXZkN5S4WcJ4BPXf13LIcpGTwj3Qst4b-SES-4rjfAE7QY9pi6zaC-L3tr3URIoBHE3JReRZfavmaBCTzz8_AKnpgKEzF8fRWuOoApTbDYzxuqsJ6VhvPSQCJMsN6efNE_QQe_4308IfZuQ9jvFIajkZyoqufKqjbV6CsiYTzr-Ww1ZSKvqAEIbWH1vbQca4pzApQyK3D7DxcXcPBvMmp3T9zIbkawLqYcSkpvJAPyffRvglC5scuRdkp76aDFEMEHJQMqFawWi8kNtjIsCWwSwTH6uSRlpikzgIerje4fI7D5U7Uz0yByoM5fJQ-cdBbNYOb0BKMoWa3KP33lHdwthDDEKBh7YIuPd8D3seL8Ne9nUn_tYtVaWY2k7ODpG7umHuP6zLLNTaBcMQU3dHuOiVnQQcbDxTEYo4NrNviu1Vy10zK8QiU0sKecw2acXLxdVYHHPaIus5f-dGgKCm5WrCADnvXZH-i0ZlFb4PPxXuCPM-4tGNuMYStRyP1WdhvQMI65a5hLI6HTejPpXgxniaNGqytT2XYfgprLdyexA-d7BHS6QFhSyQ12q1ZDXRmPjZG1_vVUQZH-1y3dLUsBkQ7wFMupih3o1aYwU7QTz0JYQ5zniTueZxItal4FugvPjkIX3UbXpGI9TZHsVWDzaAtXcoEdLnqvVgU-Kf5XHQ6TLpWyYp05jaWZtg-be4unme4tfvcy0TgONCvOlRQh_7s2SkLUEjJpyVXT3R7ZI2-JzR0bcBJXAf9xDkfXX6uHVKThkdIFehlxXTWi6aYG3bu5d4zF5FPdHw5kP3v_dZ-K6-mJePEPXAmJyn9bOB7TVcgFny-ap6UE4KBTwaZ7o7iulIMjuOx-DBLsJnZoqUs3GFndIDYaDoNrKW1b1B9ZskCh_AdBIktLuOs_LgLIetmloPEQBVKN74gLgxCSHtBc4chyJK0-JEM_AY8TsiyEJzW-rPqvDxfKuLQFLM6Jp6dsJWyelQCGhX2nmXhat_V4xFmdDEnpoPMxbWbxwYlP2a9g_dQE8WjUGekLTREyx2Qwrl_mXbPXdsEX0hsB1V4TKiWvXysgg_e2Ir1nNqtmrjLQ2eUO-GzDL2I2SthLQbM9623EjxQs9HCZVdS0NBu6bqSiRD4YVCndIb5SXWVPAykys5NVYbhUu53O4WPiOD3PpUujkduYZ8iw4Z6WLP5rVWOBIL1feukxx1vcxLthnizeusRiMdSkWSoCfama8RO-v3ZuIOMyX2cCQiHgmei3mU9U4tmqWpZdNdZLghwS5Vrk11NCaep3ivXU_vV8zthlK6dagzZZ1OimGrS01k1vIc-Cu5_xn-3OQS2CvysQMLO5Pocw8etv0d1zROmEsn4rXtTz_imW7dfVsR5ykRTCfay0ov6WBxUaOtyf-HWmAEn0KIe2qFT6bGz8doTz1-JMtPxAvBX0m0UXF4ocS81VQ7CMuhc0ugWfPcbpb5U76ZFioevJHUnx8O6cMNah2ciiunMKcKe0XRR37nMRxiAh5Ta2KriggWbJuLD4chSSK7QnHl2E0k0nz16HrB4kLolpgDbw"
+            "data": "gAAAAABpPe5torGxE0xYF1juHsI6ciNGrQaDMgVWjJx6OrCJHs2iG-Gyoz4lLIJ84qyX8h-NyRhHSmfpLsDEDtyTg-e9NSI6Svd1Q2UYsHY0i_n_Kj9VvhGQOV4FgervArDuCHeTq3Tg5PJWvj2AtljcHyUkM9avOPF5oWT-tw3nya8NcfAN_O9OALaa0rn20tY7f94Lbm_jUNvasn4EvJ2a50XX9u776CSTjHCBF9kk6XAN5EIQorAmkh8JyXa9DMJ--i_PoXj18nyu2VOUzspNhBrE2c2_Q38toocugQYYsfUQIkkoW0JJ35DXLwQNXwICVpREv981S8Rqch7T4h_QQ9z_76QXTvpRVoCGaxdpcJp-pxgrgbxCGF5hBSdSTdPpphlOCXHwW8_gg1lhuLn82G-a8b4YPeNP-SvjLUrufHd4see4N7CgXCsmG9grHobH8HK1Q46VCFGR8V5bjMb_mrL9RzN5fQKwXTR-4Wl5bxYh5NrlUICe9ZdTw-kqTk8uxunaOS7slJ82vpPULcuum5GPc114E31ZuIJ5symM8SPIxqi1CI2E0g0t7TUW0002NmwxcivQhH4dtJVluupn0kJfZSaxu2AgGI9S9_fckRyX5kvCoFaZOL2g_KUAbAr2nRuxfksgKmnFDi87PnW7q3Kk4_FNXGVEmoabT2oBxsWMhZ4wEzadTofrsxpczpwFNHPBhUY8neusKat9YV6KVOKAgxbqeRH3_AMrotJemiKvyQVI6zT4uN43rpMQImDiH2kY2_Ack-JYkbJqT5r7507pikSKmlUFtJIQq0U9_F_8nQiFytS2TN4VM6jUjN9deP_7Bt3UhmfRLhmOmOoUkfK8SS6xIMnjp8LklkOyfObiC5vicvEf6_V0ILIKdaaN5aPjby8L61buMGhAwEua9GgrLAbPBIxBafkZ4iCRv07vG_PP0KbpQk8p_0MlhUj2pTb78vxMlh_FiIzhWAcBMGNgpcWTV7Ya5RLEPAwaTnQ1uQGqzzINuO2u6d_B-WFPzp7ox2gwwvCF7-24sgmJHJbgP-U-G8KvK2Jp9j3e3nIV5YaaVKTj8XgsKf7Cz111EKwG4vuot4c8Oi4wtiP6gy8mYiQ6HGxj7xgH55F7CYYE4qAbqWZMJiDqeSrmgmh0aYnjFBDVbBHlattBIwIdhXhj4pOP7tU3ryj37UNZbB-vbFnb6aTB1xfT1bAZJvE7HZcXKwUz9pVn3r9BtixhDO9bEXuEY8dWk24zNSNuN-gKB1V-ioRL9JWauHDQwTL3CTlXe4b6G99zXcU4NVFJodDTyqNz_OxlPl8TZof5sxSabz7gxu8602LhWF-zczoVh9XcYvHfxiUpLjG_igmuy776S5gIan5cvLbS3g5HgqiiIIa5BgGbr1WmO9IKbZZ7rt_sh4U3n0lyLNmZraFzKeiXoZsCR06a7V17s2Hf5_IsmMQBUtxvm342yBgrPg9NaWJyozqYDqYe0qQZi3ZMQFE2MIIzE50ocCpZ1Dqf13lpuaSgWBSZ1Bn5m3Y5agTHBggb_7l1ATdbmW0POBJTMcfH8gQhgYh67_c2aOznZyrRvbBhIHmRn0DhUaDasbCtVOW1AlDQepwpU4BsaS5ZYujOGb8SmDIV04cNHN0nIhAYH7HoiII4_uXX7FODnhHzuYWBvoWrig_TZB66HdI64K9u92iByTaR8Z0ply8ambQkZ607UUDIrElK5Qh-h58AbPiUVyq6qvP3j0De2xqU6NDQvxM-GyU3G8y3toa3siIO0BenJbdd445dBgaddzDrUMBV3Sv1JZOLTMgFjs1jXm77YqJwMGLdY9dClwVjlKPWFisvOfodo0oIOSHwp0_Q6za4n_XtXGvvjTaW_JwdI6fi-gsOa_Fa2GfWdDghHwesm7GyjJT5_BxKmAQ-WOPFrz7pxOkihW4wW2Ml5qnWp1rwC4wyCu2QN4Hn50WlCfnyByuQwBp7Z1uXd5Kos2j1CsI_m94W4aTfI_ETUwb03TYPuxdDf-WMkTdBlEefcz_aSV2sOgFFCytG6JZ0Pzn0CLR-tRXHAl-mLsc3z4SZZB_j9Lxeh1UybTfqhmQR3bOw532TiCPhkZSFPwSlrJ7Zu_7XN0AWWzgwmEnRn_uONWkdSpKG4w=="
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 298,
-    "completion_tokens": 265,
-    "total_tokens": 563,
-    "cost": 0.0030225,
+    "prompt_tokens": 291,
+    "completion_tokens": 247,
+    "total_tokens": 538,
+    "cost": 0.00283375,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.0003725,
-      "upstream_inference_completions_cost": 0.00265
+      "upstream_inference_prompt_cost": 0.00036375,
+      "upstream_inference_completions_cost": 0.00247
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 241,
+      "reasoning_tokens": 223,
       "image_tokens": 0
     }
   }

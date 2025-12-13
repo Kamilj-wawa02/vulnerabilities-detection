@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765055074-upwm779pNn3zPSP8HGsx",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765055074,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 780\n}",
+        "refusal": null,
+        "reasoning": "**Identifying potential vulnerabilities**\n\nI\u2019m examining a potential bug related to `ftell` failing, which could lead to allocating a huge size, resulting in a malloc failure or wrap. On a 32-bit system, -1 as size_t gives a very large value. While the check might be wrong for 32-bit or 16-bit, this isn't usually a security vulnerability. The main issue seems to be using RSA_NO_PADDING, which creates deterministic encryption prone to security flaws. The specific CWE for this is 780. So, \"vulnerable\": true, \"cwe\": 780.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying potential vulnerabilities**\n\nI\u2019m examining a potential bug related to `ftell` failing, which could lead to allocating a huge size, resulting in a malloc failure or wrap. On a 32-bit system, -1 as size_t gives a very large value. While the check might be wrong for 32-bit or 16-bit, this isn't usually a security vulnerability. The main issue seems to be using RSA_NO_PADDING, which creates deterministic encryption prone to security flaws. The specific CWE for this is 780. So, \"vulnerable\": true, \"cwe\": 780."
+          },
+          {
+            "id": "rs_0a3a2314dbf201660169349a62c00c8196ae0f5b9eb9598861",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpNJpvV_DkiCr-uio4VTP4t8cfp7-WgP9egMITcFQqKu-iBz_STV-X42uxotnHPfuaPmMCMJZMDtASUzniWxu1hwUR4PoneS2xbjDyYq4Hsisxabaywyib9QpbFkkmO60vkoQBZHyU9bS3c6M65qLFUwUmjSCikgMRBikBn6bN7hMO548i-pyDBG6sJ2U4ZIQkYsoJyAvBwJNUzIjEmlAUSOMlpT6YHqURRACVj9V2TQAArRYZ5FNO5vjp-uDdO8NIFqLdBG-JcbLIT3nl4FjPACXUZ886Fcxx1bH-AUmZe0O86HdzucbdT8UTShsunMwpIuo2Jt1OJO8SwK-AzanfcG-_0wXVNHDL1csXFUZ-S3A7aWwIuBwd1nasiVkzh1f_p5PZulBzGek_916qJz8EgeEjqjwsyHM-9DrhbCZwgJnVGYealKYA47psVBe9sNjr2wWJ9NphV3NqyGDLgY_Z_-y_NulGXtbbHshaVIGjutUjyy2_EDy60h4Tf5JRN89Z94csEMZr4fARfizpPpSX7TDnqdepAT84SsTDCjbK9bhV4-HWaHbXvx4DwH4rs1vgjd1fiwHIHaDGw0a3xBWOWw_T03ZMNs2FfMkpAsW3u33WWg0RoaICLNEms5RKNsxBs75zADjuIyYYqej7ug7vx3caJ10rZ-S4hetX9DoCorIhO6KTY-k3M-ISrqvqEe_cuKq_yQj3-6R2zhbHzNpCWP4UTOjuRml4nLNbXlgRBwkp6s5E-y6ASBckKgFSUzkj7jkY1rSyXQcAAhjbngHAN1Vve0t4Vqx6pjvK_xStVhWZaLsgtPna0yUiuln6U53O5dLVcQkp7Jio68_0wgLSjXLgBHk1ehLocUroGqqJ8hVWQMItQs2VMPxpD30UhGev3mN2dL5XXgNNCkyxwnaW4dHZQfc1dd-sI0a4o8z4VNfzuiPrPGUoKJAIh3qto6DJTLtFy7NqxcrETSWXz-eDsvU5rqoh1WdUQFSfVH_1W7Fx3OZu7Nc7QHp3Qkr482pAea-_0uqrvJ4ypE8iUfk2oVBoK4KAtQF4DWZVlD5h5YxdvHKKJw7we4l-2Xy5JIfMB-Jkfbp4qx-8EHC-agW-a1sCvWyPqUOHIoRjJNzZLisc3pDPpZq4ZTlrYDNAH1-5DmZXLNbxzuLBS7GuDspOi5gjPYOgRq9wYroHEilwNyiWbl7e9vFPRVaIiKy4viwqhfmnF10D8UDSvBBFpBszh1xEiTLDVJw4-xcq1RzYnaI2ebLl-bzUKtUOs3sFKAtkeP8qEq-JEovSHMHW3dTJOZ1A3J1mHsI_uJg7yDGxFZU-_jAd14dO0fV3Ox0R-J4Nbq6u3VBMBY9O9-CTXDp9607cGcWqF72TtmJmCs0QwCw8I30_l1r_J3fM7Airz9QbKMyNiadHBS4XTEOEa3ajJ7Alrt_iO1i_KP1suzsaFNrc5W8l7GzNXah4wE7x7v6kj6mSbXBOiJ47yliYeVd_iFCdTIuE929hIYWGg4k8pKL4SE3Ubht8v6iGFbWtmJCCAVXstAxLUOQmJ7nmCrnKMlxJButZzSr3unkw3VRrMIbGSjqw6blcNwYiA8Tjkf8UsTCe6oMm6VAcpkOiCjGZE05vW9kD2tvaXYq5js0y7Elu5kNwi2fx67PeW3E4F2C3jTU5nT15JXcR62HCNuxhgEBIwA33PRGXEfa6bKnGOh_SsSPmIeeX20I87rxncLsLrDg4PAQns-zC1vM9JGdwKnveqAZ_knQbtaPybJdl2C74tjRlSwJ1JMQ6gmfSEvPzXy18KnA0RKJku3UDMXU9TuILBzNsRPLxa4vtlSAyC71vxE9NQM0x3pNjz0L9Gm-Tj7LJx_7tdddjaG9MrrNaGcYmkqtOJ7JaFJs6pMtUq8uI-uUdW6FtveHA4w1pHLGYMmTdy1d5I-8BCFv2UJW06X2QAo4mi8FMVpTYkbaBc_v7lrSpus5w8eWNerTekZpk7827bvEwtrPgH1dlfAmZIjwbvYkjZX03xiL6EIDgSoD4xjI7CWN4bx7m9ihkWzRglWtDJVW731AEC2sldCdFZMQC694lgUONrUsayd6_TA6ablLMvxlODWdiny7PhWi2LaBkhJ_qQvdqQf0nCpWmfxeJJ-zZNaAwGrc4dJq7YE2ee9ilSWtWY2k9Z_mzZ5TUWyDo_h-WhWEz1_nmpYPTSzKuHwS1AfJYhhdSO7AbbVJV4YAVSgGefXz_sCer9UAmpR1xJbcS5Q_cUMAuWLE-j_fixd5vwFOrkxMKo_WeG4uAkdp0wXU2u93ytHqxHl8WfSgHWaEd3k4j77Z-oibFX7e3eCwFo4Ki2k--8huIBj5VrIrHxba_sPul-EI9rdN0unNDk1kK4JGaOjOLBPNUNNn422hfSdw-bG1wdFheIBl39oZbemnmDo3xKtGIZWnvxgQeXhw4NIk3vBb5ghvtOCcXQn6FiOlQR8YLpvHujeuzCKyzM7vz_vxakXm2R-hlF1OFeVbdgWbj3C6XMNWIysk2bGwkB4p2m2TxLQflO5mH5riR2MN6jQqaA3mzPZv9ENxapXpzJXGqThUB1r0HbUx9hlIaJTFuPN1X9bhJHei1f8kVb50LVleCWoFOkShenZSP9HzIt-pvLz-RpIp8lKaierEcHEHuRd5YlciivSXkd0GQIwaqXovFGCwSXD87SlOjI_cme1l4RlnvOX_dw9OyTMSrFhaQxsV9w-KJa0adt2DhF7adHNnY8WkdcQwRybcnkVDXiM2EDZh0jFRuchnmqYdf7ayYZFy60mwBHP0FJ5CY0GLiJjHmjzyXETHI3HbBqnGSLLO2jN6rhR5SutY9xApr1igcoSMmzi5MBo9Zu_IpUFw4o2ZVE62-0TYkY715IQohSonBa02YMX4odL0GC9JRAnej4uuUkrhBmFgzJbadhmbrtjsvWwzPsjgmC_7Hyts60XQa7OtwamqwylZDjaxNI_706XjG1U8PKGRlY3OssvmXXg-QTOxmdYk3cnvYjcPG678lWrrqAY7Ph67guDqED0oZoiOS80vb9XAX72wNocaB-QOO0RIpFgHqnaeKUKqH3Ti0_VeUOwLkKI8Rk9i3SnY2DD1CqfyWKjAh53gc1tg3T96yWndwr7TJPTymqqmiJb46_5bUTSNST0BzeqejXerk6FjN7u93L32dxcg="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1212,
+    "completion_tokens": 443,
+    "total_tokens": 1655,
+    "cost": 0.005945,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.001515,
+      "upstream_inference_completions_cost": 0.00443
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 419,
+      "image_tokens": 0
+    }
+  }
+}

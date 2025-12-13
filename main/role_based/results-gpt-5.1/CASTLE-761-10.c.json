@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765056342-uSmrnEsk89mb7hL1XBRL",
+  "id": "gen-1765666424-ACyBUUk5AO6BXjJCiZjz",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765056342,
+  "created": 1765666424,
   "choices": [
     {
       "logprobs": null,
@@ -14,30 +14,24 @@
         "role": "assistant",
         "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 200\n}",
         "refusal": null,
-        "reasoning": "**Evaluating vulnerability in code**\n\nI need to check if there's any vulnerability in the code. First, I'm looking at a simple malloc and how it's being cast to an unsigned long long for printing the address. I wonder if printing the pointer value constitutes a vulnerability here. The GET_ADDRESS macro does use `ulli` before the typedef, but since macros are expanded after preprocessing, that should be fine. I'm double-checking the format specifier too, as it looks like %llx is appropriate for unsigned long longs. Lastly, there\u2019s a concern with using unsigned long long for pointer sizes across platforms.**Analyzing pointer casting vulnerabilities**\n\nI'm looking into the implications of casting a pointer to an integer of insufficient size. While it leads to undefined behavior, 128-bit addresses are mostly theoretical, as most ABIs are 64-bit or 32-bit. This issue feels more like a portability problem rather than a typical security bug. However, since the user is interested in vulnerabilities, I wonder about classifying it under CWE-704 or CWE-587. Printing memory addresses may reveal information, potentially exposing sensitive data, which aligns with CWE-200. So, I conclude: \"vulnerable\": true, \"cwe\": 200.",
+        "reasoning": null,
         "reasoning_details": [
           {
-            "format": "openai-responses-v1",
-            "index": 0,
-            "type": "reasoning.summary",
-            "summary": "**Evaluating vulnerability in code**\n\nI need to check if there's any vulnerability in the code. First, I'm looking at a simple malloc and how it's being cast to an unsigned long long for printing the address. I wonder if printing the pointer value constitutes a vulnerability here. The GET_ADDRESS macro does use `ulli` before the typedef, but since macros are expanded after preprocessing, that should be fine. I'm double-checking the format specifier too, as it looks like %llx is appropriate for unsigned long longs. Lastly, there\u2019s a concern with using unsigned long long for pointer sizes across platforms.**Analyzing pointer casting vulnerabilities**\n\nI'm looking into the implications of casting a pointer to an integer of insufficient size. While it leads to undefined behavior, 128-bit addresses are mostly theoretical, as most ABIs are 64-bit or 32-bit. This issue feels more like a portability problem rather than a typical security bug. However, since the user is interested in vulnerabilities, I wonder about classifying it under CWE-704 or CWE-587. Printing memory addresses may reveal information, potentially exposing sensitive data, which aligns with CWE-200. So, I conclude: \"vulnerable\": true, \"cwe\": 200."
-          },
-          {
-            "id": "rs_023534b2cef967e20169349f576140819699bf2983bd79f77d",
+            "id": "rs_05d200acad936d1e01693dee791554819597114a32f058f68d",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJ9iSw01OBb_gOkKVc1A73JunVqcPSY6QHCJMjqvkxd19zB-ucM5WjVROOTvEkjAiX-gZVPpX7FK95YG7hkCnAk5n_SbSXHNEFU9dvHlQWRJwkWo71d5hpHXM8fA212OQZpLUJmHoCZmOjZca9L64aYwNLM9Ee3g4cYbqrRrjgyBKbovP5fhTpzmrUslDzMn_ncPyn41cuZr5O7ELUuBRuABayXaxx8D4LKYM6h99LiyJy5uVYfyRBTdXkyztC20amaU1IHsKNabdY9r0s-CxkXC1grcUQWUUoAWgfRPxaQAqi8Fwdi61CyXyFK5zAf_9qS5uafrUlU7HAWpDcmjau1KZAsMDEZLRobTNlsO-By3YpOCbYNMoBSFCslHKRL2cSLpsm5VLS2dn7-4rkVMyCTdXsHRgX8Qi0QenabA-MY-PRJCXZEX8Pnrr61Aoy9q0veCU6jaullEgMB2NGfProlt3SHHay_iPwe0mL3-EPWHfgsmk6u7FwXd3H0BTldvme-a8ZzyPcnA_DyFV_Er8YQXrZX8K0gtPjYei5ZJ8GO_mX8PhJqZ7FuBXn5XzcgpkDbBloB2Taw4bv8H7-khrJ-iIUNA64p6WU5uyHKcHoe-Qlx6jdbHlypfdRZlXGVRewEvurW91t1E-86IY6eVdmBq9ldZtmLIFKsN-iXNvbEM_jIbnRmT2QXLqiglmbXE0-tjy5l7JGeCD4O6U3EjSqO_9r3y1GbpX2Z7PyeFHkFAqGEElskTehEI--JqcoK3JYz8HkyEKKkU_6bpXxmI01QndtjgGR1nE2Y9rj2Ny7UEStCwx9D8ovgj6ZzLmGWTRHKFfjI5wOqbDG9TNzhgm91-fSisJO1WKyDGQj0ZP1NHL_ySMz8CfIPHOY1KKasJKN7HIxc5qbJDfWUOuh0WCvbaXe2WpQvp_Tt1qSESAVUMgV2MNG-kEq0COSLHBZRmMy5_95jYcRJEt0jBCe6yTRvsBvuCjbAh6uXSYOctAuZ9OYOEDhlq1Z9Q1A9ibndJI77MoLgUL1M12UWCSazRIqdgwYMvZ9pb7463uC4xQcpnLCkGJZMTEiwKGx6RH9FTJuleQ8tuLtAE8oMNcVu8efAdmy8KFhApDh9cqn8YoG3i05HpiJeKr6PUMOsVEyKHWEa9MNFjnpFrfQhA7J6VnVeYS6hvc8mAH6Vg7jEyoUgMeyCqaW5_uzGG60dWFbikAZY1GEDuP_mGHhigVmfjzrDGkeaBik2QKlzqpp9gMyYt87_E6I4I2mwwMh4FxMKlwv7hBim843LVmEUW1n0gmG8GKL_XqQRXg9PU0Rn7xovIVFGH3yDUN-L792ngH0gMCkVgzlw_UPeXH-izIael7u7wXMNFvZJ2KH5E9Jx6FOWFjT3_GKyzon7s0CEhnLCGeVJoAcdcf-5JXfgVcZ6rHUiGSwK0D9IhYYAS3ckUhfLPXmBcIzJW05IGn1WwQAnZyCOly2mGmq3Z7t651s2RinkkvgGiMCsDmvlHaYSj3-QSFvzhvHhGG661d8demIGYyJO_f_7_8cSVkPS87T2l3yYZSdRiXziPcqEjC4CG77gtNUxx36u_D4butY98F-r-rn3DxOV3icYhCoSpMz2mdBhFKAt4vWOGsPHYJOIkjTug5ipYE6iJq2d48t0L0WcjjkitEvMkCI_Q9wpfhQ0hXhqSyQsiFDkHbYk5gP0TDHiChO7UsWiB0tnIfmLK7VAP1uiWuwKeTlJd3f71iWZXjJCk73vOnVhi3LDYCtT5zHmlASt11k67LQqIO8wfnuXWThVf4zRevix4t5MrhLamob1H4LYKXrGzDjnmGc1o8wQhZEZVhse2uwmNa5O2v66uD0tMgTrYUdE28IeD2wTl-wN7PUg1r5rUTbA4D0lo9P4h4pvj-xup50Ae9-UZUOgG2V7ACnO6fHTyB5c7y9YFcWH6MkNbXAfOY9VLkI1Mu1KjsOIo8dAz4PS7aZmofx0Xrr4g0LfGgye_okdwO-icty1Fn-XIVG2l4UyQ3HodPonlvji6YC8Akke5G5rf-jHlKu7Qk_eAc3RVEEK3r9udzapE5SJ_-hSjKxPvvrWJLCel2Ck1oYMwbpmEjtLnmbG0YVcfnGvEFxp15MinvzkNLBQBen7ikpztdnqUiwKhuoduoGMuZf8TzZ0UUzFWgyAHSApp6Ijw5u6P_032E2YasA7xJIJNZz56k1nC5oZxfexR6YGfFgoHt4R0dVY7-_k3dAHese4WIYWhRpL5Bdvxq7ZBQOqKn506pgqv6T6TNua2pjuHatsicCnVyi0Lhvdjp3gv1_HNp6y1NZmhgjrkspKw6b-gxja7Mo09PbjMu8O2Yu_IlRBesieN3CRRCK1RAoaZ4M8BUzQ9JECG6Oe_Jpjn4YmE9V3O8Im-Ic9s7k5OvHjchMGaixrK1gz2qvhKMzZYbA-5tun2Wop36t1yXMCdvgZeF58puVWF_IjwSr6L9LHYSZak_vWmUsl7VjsSU4BAh3fxiMvtr0dgPwvyXtMExw3wotdYGn10aZ-CSid3TngwFEFtFx0-BWUwgUlC2-M4xxA287t5Ibts7RRVlR3wUZ79Z6pYWRJIE3U4xXXh0xamwQIs2zv-QrQ6Vrqh0ELDd289bTJ-g_pgXsB5g16X-_kWdq_fKAErfwEedm-K1Jf8Bw34qww_XLw1zYsoyA0roQm8W1LvdaiFi-skBoRZrlsTD1izq6TVawj_wjVZbJA1b9W9xqbGspxyyX8MwdrqLZRVtht7WIcp4Nqkzd59ONR4mCFxQKmZbFnL7zsPKIkqTLH6TptBd2AWC1nnKkfPqHxY709-0kXgG7fjrFWwvXgXFyzjbMwycVBBTUC5RsBQjxGTYbVZW1sOwYonl_Xy5HddRKY-7DP_Aj95AACRPriSKGHjdVnVnWWlyZCDFuqhds8p7qrzHL83tx5MdARJpmCC_ymZYNqz1OYO9-KZsESrFNDw312PaO0mocXUY_pFcWEjH_djJG-IR_txxHniFr5WS46no7xQoh06YDToFKjHBgVHO-tZ6JCplGGZ1RmJ-Ffi9yOl5kHzPZh8CqVQ2gcLqKfOg25qcotXaGVkuGF3EmUmlRfyifAWiRYVkUct6_AD8PS7xNKITFdYECU6eIUt99y3vMOCc344Vxh9EUgPEN6p3lfTqG9580nK39guhOQrLqW3NF9ObSaQtRD_m8hE6uMY71Uq_VQHt5rmG4R-BeeVhRyWVAsEtzwXNymg7Tp9E4efghuV9HfLzgbu0nA7OYc8uivMmXsCe0jjSrSSAoi7XJSVa9oI_9VIUOUMoDfx2J2nePsKPuObov4I-bxU2nAH7mE7kZwUgTdhOyEvMFuRtXgVYIdPufXMC0Y="
+            "data": "gAAAAABpPe57s5ztpMSYyoySjxnffHEtUG0DeS4Xfe1FSRd1StRDdErZizEhjYiyZY-Yb5fX7Q3mxY5YDIXIoVLSAEu3VzsDIYjbxs_jLpGC6hTGUawbPDw6tbRfO3vG8zweee42JYE40GV8C-imNSLOXH6wCFuqyKatGLXpk7AhyiKpCGOTfgkmysQvpK6fzFv1orpbJE8zAxSjqOg22lD21g0CBZdn6DncFi5eCXdD058WDuGnOCRbu_pPAV-EBJvovFozR08ElHyD1xrBSH6O0qRcJJqB_TwFcE2noUKK60esB6Hl0hmrpRHD5Lr3Ci_Ky_r4Fvq3BWSk5KbvJ_kLvurhXOCqJDGRLtrvNmAkSus7RyO3tS6qZ6lnLRjiIagNyNxya0LyuUHU7UcWCLDiUi32uTkoTfo876v1Kh6qHUhwzaaUKLTRpfbt6D7Upg5Kjc5VJPdwCM7F5DjiFUdxVnOFBraqKWPtWK4LCScV0GIXOrVYQPA4AkW3x_OpVXG9Z2SxLFYDZeYsNmbRcqsdw9FiF9hIGUkpaKJNoP0KnB5awyIbfEMSeGSQ41Ym6Yxs7wg54J33wmnrQXrbm6iPH4uthqh5CLIQ4eUmk26EADuxeiWedFSxTCD9IFYorlfn3F3iJQe7fQUj2ju-GOxLcxOibbzkn152uu_9pD_X_C_rf1NOWgFthCJLDjpyFT2hFnyqhDDF0z49ekA-z2BRhXEr-5boda3wjlUP1jZhM8ciL_wb9hkg7Bca5J85FNiVxU9eu0t6x8OW-UAh6pLGr64vwo5AsZhn0umzqVOwOyqyO10EnTPbjfDAW9cZB43VrZmDxUjkVXp1j1VvgCjbr5pcqco1qgnyZPJ9wAOViBafQ7D7XThXZ262E6gpnoUXc6FUHpouYAk2AgFsrNnT2BxP3ImwGn6ULVgdbcePhbGzrKjbJ8OGgbFYGEmt55jS3FljGCHtg3OvA8iNXR0FVNAMosDriwR_pPhVSpz3aUTe_ytxSr43jSzJgrUwjG92MB357JMJd0Joe8R4xcHDEOU2P3sL0GF6BrlmGy6OehvodHJnoCKs-UL6x1rPrQAHtJzoZ_BI6e4yF1Pg87ikAm7XrX7V2R_fH3h4K-dhNV6vb1JkqaglBCHXMgXUAe8Y_Y3dnPPqfbrqWU-vZ4KTloXn7ChY58NwEkL-mTHSjJKji6M6NaoSS8-1zjH6wDHPi5QZ1XbI1JAP4pHCTIk0yiSgY0lczlaCVvs1l7g3RFgXtwA-9wPXPoR72FCMI59UIfl8w1f1hsHpgpgX_rHVlV8-b3r_lf_7Ow7iL8m04Q6dUdNYeo-_rOJsYaGuUOj6Iz5Rn7QP0-ifU-pY1sdgx6Ucg9A4YuzEDdELfiAf_BOZGgpuqX4z8JVe6VV1nceOMGURJiLszo_CgwDfxvK5zR7YCz1vqbcmB-wAynZ1vM-EgghDQp4f-90GqWozgZ7nOZt2V4gboOZs99I9srtSvxdHkYFzH6fAwVN9ch3ylMxOHiOI7EP6y4VZQXFnw1F5jMRlJQdeb_4LnqHNDIMOJcYyViHBlCWAqelGrObzMD-zFKIG6Kk-1g5usjSruelCXeQp05yxgPFyMlbothNrOEDFJYyS5HIY4PFrFZYcvZ2qQBxv7yJbLxeCvThIuZAPLhYi_DChnbRzv2q3kW7ZpicZbTKG9QsqmpUKOQaVBjGLywWImXyymAWY58GLA7nCw1uMOPDrl-v4JA0YbDHjDnUqRIBEjqKdp-QmI7-WBRl4eHcR4_hyfawgoKjr1DS3J7betNNmB4aoAzYN7z2AcNDDAWXKWRVM6-Go1uuQfK-eKCJGIgLJ3VrtaWOWNLS4s1VTw8H5QewICuweJghiPmL0Ks9L_83IQU6JAnU0b1rEEPDMH9VLRxVnmiVYMvp9c29WeR2N"
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 185,
-    "completion_tokens": 410,
-    "total_tokens": 595,
-    "cost": 0.00433125,
+    "prompt_tokens": 178,
+    "completion_tokens": 190,
+    "total_tokens": 368,
+    "cost": 0.0021225,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +40,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.00023125,
-      "upstream_inference_completions_cost": 0.0041
+      "upstream_inference_prompt_cost": 0.0002225,
+      "upstream_inference_completions_cost": 0.0019
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 386,
+      "reasoning_tokens": 166,
       "image_tokens": 0
     }
   }

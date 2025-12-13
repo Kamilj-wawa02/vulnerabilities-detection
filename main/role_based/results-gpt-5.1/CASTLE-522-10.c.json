@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765055922-yOxylGBgjxPE9K7FdvG4",
+  "id": "gen-1765666146-BbALGcrFj7zSFondKUS0",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765055922,
+  "created": 1765666146,
   "choices": [
     {
       "logprobs": null,
@@ -14,24 +14,30 @@
         "role": "assistant",
         "content": "{\n  \"vulnerable\": false,\n  \"cwe\": 0\n}",
         "refusal": null,
-        "reasoning": null,
+        "reasoning": "**Evaluating potential vulnerabilities**\n\nI'm looking through the code to determine any vulnerabilities. It uses `fgets` with a 32-character buffer and a `VARCHAR(32)` for the username. The `isValidUsername` function checks the length repeatedly, but I wonder if the input array might not be null-terminated. `fgets` ensures it is, but I need to confirm that the use of `sqlite3_bind_text` doesn't cause issues since the buffer's lifetime ends before the statement executes. \n\nI\u2019m also considering SQL injection risks with prepared statements, but I think they\u2019re covered. The use of `isalpha` without casting could lead to undefined behavior if a character is negative, particularly if the username contains non-ASCII bytes. This might lead us to explore the correct CWE category for this type of undefined behavior.**Determining vulnerability status**\n\nI\u2019m not seeing a specific CWE that fits here, but I\u2019m considering the common ones, like CWE-835, which doesn't seem right. There\u2019s the buffer size mismatch with `username[32]` and `fgets` reading up to 31 characters plus the NUL byte. The database column for `VARCHAR(32)` can indeed hold up to 32 bytes, so it seems there\u2019s no overflow risk.\n\nIn light of this, I would determine that the code isn\u2019t vulnerable. I guess I could set the CWE to 0 if it\u2019s not vulnerable, so my final decision is vulnerable: false and CWE: 0.",
         "reasoning_details": [
           {
-            "id": "rs_08b97710340676f20169349db302e08193b84809be7d25ca55",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating potential vulnerabilities**\n\nI'm looking through the code to determine any vulnerabilities. It uses `fgets` with a 32-character buffer and a `VARCHAR(32)` for the username. The `isValidUsername` function checks the length repeatedly, but I wonder if the input array might not be null-terminated. `fgets` ensures it is, but I need to confirm that the use of `sqlite3_bind_text` doesn't cause issues since the buffer's lifetime ends before the statement executes. \n\nI\u2019m also considering SQL injection risks with prepared statements, but I think they\u2019re covered. The use of `isalpha` without casting could lead to undefined behavior if a character is negative, particularly if the username contains non-ASCII bytes. This might lead us to explore the correct CWE category for this type of undefined behavior.**Determining vulnerability status**\n\nI\u2019m not seeing a specific CWE that fits here, but I\u2019m considering the common ones, like CWE-835, which doesn't seem right. There\u2019s the buffer size mismatch with `username[32]` and `fgets` reading up to 31 characters plus the NUL byte. The database column for `VARCHAR(32)` can indeed hold up to 32 bytes, so it seems there\u2019s no overflow risk.\n\nIn light of this, I would determine that the code isn\u2019t vulnerable. I guess I could set the CWE to 0 if it\u2019s not vulnerable, so my final decision is vulnerable: false and CWE: 0."
+          },
+          {
+            "id": "rs_099d864cefdb496801693ded62b0b881939ee4a5398ea38011",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJ3FAkZ9pJgXJ49xr86QvgNmoLVelDGoRTzyG2f2DTJidvAt7ITkyZ-kRmlFHF7tlABfl5k1aScBl5H8JTV_XIdC_aEP8AvvyqOoF-tmTx-4c9bopsFR3f13AW7_QPx_pKNpNf8rQi4BST4l5V2o5mi9ChwPYUywcLMJ7hFIlM99X3ywd9Avq8gMGoZ3rRPkVZpvK7CvSKjHsL2MxItaYdkpBTZq4aWI55DY7uQGGTZRcRUOonEPBbep-aIuZ_W3dgHZ1YfuZXQnxs6ZIidp0lN5FDgODQTP4ME9u84Ei6DMuW4ZF4Fo93dnG-OYKKhL1NpSmeYKaKzwK4I085b5N3N-LABk_stKluYrKEbS3HyNifiZIwm7KHkexNbgoRX-y_-QFMMseNb5ZBqiJlH-iAXS9gng6Be9LHaV5toOjGgQKTPJbBQtnmkCyKxaid57YzJn67InlUbjykWa2ng6ksU_eQj9BsW93D4e3bPSePbKj_mkujSzly2vdxHG9Y2c2rtN_RRABNKKxdWsYVqa8_dPHuFVqw8gxaqSR3hpUQzYntK5Pi9a3DD-o5Wmdw9DEex3FHU7SI3jjvCypVUDGeFKWPTB9rZrwZ-VzLVeVJ50ltUtjmbssj2oBlWD1FwQkRBgXm_wvv85p-fh6nNgM-jdoKKOmOy5Bm3ACFxUkMJm7DarGzSO0WoxR3NHljZdneKDdlf-0lhJSY-eLX1gIYpcDasAR_aXHv5NTz38P0J626VdlCd-6Dh-xsU2W6Ace0azHtJad9ntN7MFmiQisRwC8EJOkf0OvVl2QMprGRqbbFRLx9HWJlauoNLYOUQkTA0lG4oa6UH-rjPC_3ren04DU_OYNKOKzTuWMjLkLuSXJbdXts6UbaYO4qTZkXcgMxJrklSPDldh-GpDwAWEfXnMLlDOrymq-nJmXR1-KkpxCzUNk9QNxy3iLVnSC6HLbwpqX_VUf1-piomsHskBotCzr4Nu04HAAaM9gnHGhOqyotnVBRSmZKC0ffC4XaC5B25JlEIgR6KSCCUoGryoNWMTQQND_QlFVc7zyTx4Yxb2aUxbccqtdd1DrRJIa8L4vKgn2p9taCjsjrGzMTheqmgohjSKOjPCW31X7qSOMYPT4Npf4mjjmr9xYORnnc4PAuzqteZIonzuAmAdszOi_YjyrWpDguzsDpYmAgwbUyZLQzX6xngdvRCDGnBf2G2w2ZpVB1z04eZ-0CoHqJ8-V911ExbsRKY34ukfO3a5peMediiuYJWPe26gvuNKEDg5mQNwhSE9mf5tyG-cRcz4s-1Ja9DBzdQPlnUbEY0Q8E0kYr1uYT4E_CZ0gBrwBnyGEjNZC4QEm3Ohz-53sqKqvau0uO-Jj-69P24B_2TZmM8Px1mCJ5HGGFN18x3og6QjOxiMZ1c6qZwJsbC4jbzDKaxS_YdiDaYbZwwqXNn1Okj72HKXqFjl7KXZproUSxaQgVagg4_h6J5ZXm2DwbGftkGFlkIF3PvrvILttR8eBzoSf8zd0TLeeA3eM0YrGyiE_UbGiOyZDCTqmYBLwvesNzuzpyW2YGBX4DR0yYozS5TRLQv0Js4PYJOjN1jjJQaokIBFrcwq6wqHbfuiZVnyd0wHo3DEquLuBLRgFfrj4dwjcjWgv65rSK6cVfPP0crIj7amVKyqjgDey1Xq--YQlJkXjCI-nl5FxoDAg3w17Qvi6Qvqhak-T-a_yUer6WktvKYNTTnBf6CJ2aqorzvrYZbUmXl3wgYxxVTl268LqEC-z-kh7tzeuuCSQFp-nby_Iu0C_v8q5SCn1zH1uhxyPVszu6kI2uCcU3cSi6jI2ArmjYRqrJPtJ36QTKiFlVJeQQZyW8r58MuJz3j2rbuvKPksMmiMFGTCgrFVr3at2uBePTh2KC1XXwe3IgKBC9npI-lE0D6-yNSXTKgKOc869XxKRKB19J0EQ0rrhJXNMXNl5eMHvKPqB5To8CIiTg23ADjLcOQXgMU5Ej0C2zQuQwMEX_F8Az-PxT2pTvgxgqrY5kANQWWMRb43TQPoI3uNbnt5n5p0zkv-GmKvFmRzHV3FgZO4LwvXDGkSd7y6rVcf7Z6Qyic0YCc6Gs_pgfgNlkzsv0clLTuViJbhGMMJUpz6IrezDRuvaDp7iyOOcaQuGDO4P1tX7Tn9rPVoRkvD0SKpkCnuLhy9F7vfUm-WgeXMDoB_ESxo9gweeCNJ9ouuHNgq3Bur44Dzm6cOp5awi0HhmnfMw2-zA1D4-ATtwzeK6rD95r7AsKT6FnhAw3jPvnOKiOQP8Kmlk7YChy5Y2WnBCM7_O9kmocS88oIAx-2JYrXnygR7GUtJ6ZoR88oN4gI7BR_XdxCqGzX_tP3A9ZcqRwVZVGZU2r2y4vDE2Spt3ASib2Ozzddo4sJAQyok1DbwJuF66fhOx9x0nilSXeCf0gq4HI2GeZrU5qS4h0Zeg_EXAiQ4AXm3D53BU_kHvzsr8gpoPpC3s3yq-5rvyGh-2QpvaofhDl5hwd86W5HNqCqiwxZCOJCB7PDPf5Re_9KovhvGxW7Pe11RflZPRYK10_IkRhvRRvD4l7Or8G29B3FYRyQ8jj-wFfjbAPQ81jgzeimShi0jrQCIAzfmZ_KaSagQMjtAwPfyHQBfDjcl2Nt0syNmnO4Idb3xgVJVWYXQHOXPKWBEaAm9sjhYcVTroC5CwOHOxdbHiQmDNddGz2H7eHs5VJF0H2A3ewe1E2jgnYizudTSpWxW6U4bzkjNWOMdQg_EEaIplqrkkv18L8nW1YVQ98UDFU8Pdcd1eyugR6HMBaeexCY8NqXSQup29-jqr1Oumm0AGTPLZ8r8RNS227YO9bGXDwWwV_Zx73E_P7kcOp9Rw5fG_lv3__RqnZWaIaUaRlL0oDZPWzcbyp9eiZ37zVsjlqcBD2FeS4T0CsXvKfLqPbS6Rqrcmb8OqrTd1Q7FV-GhuCR5zKJj2WR9i265i8MmUOvPjuWTXMaNLNeKG4ka97aNlN5HXrYqacY8VcuyVIlV_ImMGKkZW9on4j7CEujsqd9jMjiF7lHuias2FT02Meo44wY9-WQbVZScTCsRQ1IldySLQrtDpHvCR--O_wx97SFfKA_iX4cJvA1ug5eZprFFAejYT9bUnUvWrtAlUQTcNrSS-uWKR9W3UCxjCaSM9zBWFc9ux5o4ppP7a69fGBXP9JIxuzdOzntISXC6ZCtGKWfTMIWCgCXOdHi8sTMcznHUxMAvNjnU2Cu-9pXS0F8k7yHt4v66QplrcGcvej-gFpmuywQzfaVKXDRZVF4Vfre45CdqNAWsMS8WtJKOxgyplyCpN2Xc8e4sL0PWd24yvfyfu8W4PLKg8byZ2LZn0HcqttO8AMaFmYLW1g5J321mLBOlBZcpqPtt9Ap1srNnAvNI-wNHG6j39oFcBBZ90QJyzcPs3UjP1Pb4vZ5U7AAMKw58g1ghn25hJhngCxS5l06olNn7rJbwwJkzXB02dZJr-REDwhWtuDHR_5HMPuV8Rdnh-3uHNnykvJeYuvnxtB386Fo90T8B-KeJ7094btXE7vzkwnrwvrb9AVSuSBVq51Wnj5DyM7cayVDRW0kRm6R4UutKMuIS_vgGQcnc0bSlJQs_8_GYvKliQQwdsX1scQ7O2Wr5mBvqXdgEdgRO4n1EDbBDv0NqTOn6x8bJ4uMw3ZEIENlOX426lgonV07yrO5_EaW01Hd9GAjLe4miD6hFH0l5QRtODSQnGHyCocI0nl6f_ZTW49akmrmC9NVNVQbboCnk-NXa_t7Uad9xaZUkJhsDxrkeM5Ipo22x1BCwu_V6Gn8No5X8pXRTvRtiXgKxdEzF4FJJ8REmecOKmJpig89OrVemfcJy3qu-zCtLa44-T80UqxSek-XfZb1854Rxixl8JSljLm1VoeAg9cWwHFFRqU5DHCnG5BGz8qdX0kJyRh5bOuXe7QIkX4K0vNZdOtYvw17N23QSQljJeOF4fq3CJC9ZdQQLKbFUpifeEK1VL-aIlth95JZ6jMopItbaiX4IDh5bOTZBFbu6hXymv6OeGSh-8M7AKUBiYqWYJ1MnJvpPi9r3mnlY9wxZgm8hh1w8cVhRjnMCDeTkS46KKdiK7HU7Eapys0_a4FJLJNGB14TO_a6J_X0HG02t7W5ZtUtxo1FcX1uF7PSLyVGI4Sg4iRvBJ1csG8y7-dMYUC4Ip-K1JrBjgFhbIglLx3vwvM9RRTn7cTDfME2GkOQ1DNLP7uTfxifpuXb3S6v8Vpafwqc8g6MQ0pWmVVY5AWHDBmH5x65xiaDLI4oRoG32dIGzNvQqAq6VVeByTz6tAw2Yvr10zqJ1_jXvpoSShzC5kGRYJE1PCPoXBDD8XLInyEJv0AhEUrYBTPtyMQ8tLPjM8AgkiQmdxehVDftUNxgr25yUIKeSv6peQpmKpQJWlcd44AguZi1raUBSWsT1IFEG--5w1DQ7UNrW_pfgI7FAxuv6iap9oQjqrASklHh7n2aUByYdsO8kStpyOh_olwk4r2cxEuSu24FaMYAeF5DM37X4dj7wtU7UDfBo_7GoW_fo_E5N5372J9N6LlejK7ak5HhyfhG_AQJa-Qd8ZHc_0dpbbDIxdD9xsF4iQCiavq1BdNnqKaNsC88Tq0wy1PzSeVO5-_2QlkVoH4X6E8e2CQaJU2RfoyaoRCciq8HC4iF6eyqcBFTgId7Zu-13hEUOb8-WFwl6PxUDW2h4Ec0_dKRKukxmxYz9Cg2JgxGq1S6YKA=="
+            "data": "gAAAAABpPe1yMjLkhkPm6tFhFkGOx2cc2drtpYpRzBksR-AxWXX5NJUt2YjSms3GnIt1BwW7eTIUuVgI5GvX9VzyJJp8aA-5haVrbixmr9mN9kKaeLDZhaWM6f4ECONPWTNQsgDl9_JLCd81hciJXendRn9kCx4bzKaTMXVUTEgCXrLYND8DGRx44lbZ2sdU2xmVE8ejdbH19NZD5VfOTcN_I96CjkrCcVC8mtCXtt67z8Bh-o6NrLy4OCKa04DSHUB4hiWOcxjcCT-Bq5hLf04iXX7x7jpXybQs6uIr-vEhDT52kERinN7uwe4p5oflvezWnvAaR10cKCmC-kfjtj8zzCMRzMHQR2jNykraNVgYkOyQOXAndx30CrlywDy2smiue5Ky7kcXSzxzd-PtFUe6n2UA68Nr-W_tKpLVDh8tW4TRsBevxhPTp4HTssEGDBHJyfAyRFr2nWL3sAKtGpOjQT1hwUwTZeT85eZD0eVyAED_IWGVqJIXOXYQ3G1488HD5SICHrhSCtGEfMTv9xVCPwBjhZNJPqEdFzf2Z0032NMj60VsmZCSC6oboEoFT4zkcDwkQs5VkHsUYDj-jdvFHeBLYlfvxv-vfWWGHVl81ff5GB1OoYfN9i8gt2rGeXE7CApnpVgPnyuBFZg28S0rBUzk1gaI48AAU-JbFZ3xTCGg92ztzxJFunEyoInC_rCwyixuyss8Z4x0ZcWEdOSDnWr3pMMYhhudWMYCbkxXSwdYlTNIL4wQIypZpGo0QR2zrsjvIOOPbboCSdvBBlERGabPIZ485Gt4_L2Lk3JIZ3NDVQ5BGVGATD442xn5GvTlY87gj8wE4sN1EJAwgV_HBt_B38_8sRhvBNiauOyJv-L98y9zuV5M1mGmbKgvgr8WqmKWKPjcBMLhJe2w3dNwI64BkYAQTIP4axxQauxqKaVYEJmS8vEYfVYkj3DpezI8tMM8R6uinO71jgessOwH223_3FJ_gtJ5kqWCyb3szNdFlMiQEjHk1iHwrzJKQTVTHGz-R_zPYB6yPip145DbD8SeQ3m9qgLogV--chA0kM6T6dxI6ccZSLR7MwEtw0dYEEGdRcb-j2wRErB83k5NY2D0eVZzFX0LvApbR5KVEhZMbI1SHw1mV_brZc_pYqbuLiXl_kFm0uGxf2rlWOeaZr7XuEj_zHZs0yNONy5rbm6PbP5KtwWtTcsA1ZOQ3l5dFc_UEB5CjbwnUbcU_F3sM8K1srPYcGP8ucWe44NODi9MTVqSRElmzbfK50qatyEIf15aakHoI4IunzPLu1CkiNTeqnxtxv1ILa42C5_EYqbOjqpnrdEWRoh00HlYSo1KKbV_LhHTKNVFjUMxMAJ6ZACV9TsfVrL4SeHhI0SrMtUyEepGaxTkJGo1MJ11DRcbrVgbeU8Wf9nAGolnpioRzWx31h6mPbuWPHU5GR0IUGkFHQlLSz2HP-rF0tEC2tG2bIaSaX5dWnORkA-e2nYEd-iKtOawA3qDGaThV_FbcYXtrRXjGRDkWbAX3RX9ZCuddTEUcKm6oqzVSwA3e4XXKneQnHOAEg6aJAahocrZqsEFd6Q4LqfOOPwsYFlMXjGNh97PIBjIAYPIpkfH3JibRPUV5S4Z11AKFlqXxNC3ecCEzrWfvGvq4UrlPF2tJx4DNCEj13xHhol5jlXNMDmhGDona8_hFuCDG8hyrG-evWHNcxgHXLWY6VaFR45F4MvvwdC8jTxkGDCRzk4Whnc3hNTKJORgroMIqVSIQSAIOR75jIYBjAIgWuECqeJS2RfqjCxUfpGNzZAannq7dfrw4gzXkuWZignjuvkoUt5xSii5f9oOjLp5jwzQVXBM2Ev8u84rtwxtdPmW3xV-tMkMZrsVxuZbHxNCLNt3UZVX-IzmSrOK7m3PKAgomDaL29QEb1Go6SvF6JBQhuai0NaXF4YIaz7-2-geoqwGMVamdSjEbOsWcw4UYsCifvmVjVSfjheugFN0iZa0dy2ku8H_j2YPmXBEaUbiGuL6v2veLocggsk0tKFSn2QW-Kv3kFFAZ2UoALJ4KQUwmP3QF30qCBe3aTGylpWkLGmPCxTXe5XEFKGzqGItzAsnKMuyLalrm4PY0nCDcFGaUv7C4gfoWN3zq56kTn7mvviSJW_qFnNyfeItg3f6aIranPsmRpkjTTi7Uyu0DMLsicYY5ljO2i4Oo2PNS2yU2Xl7lNu4d2Qqib2NSF_m2g6DYR49R5mxwDpBd0p_dA_fSU397g85gYYBVY1L6F4PbBsU_xq59Zl-Obbpn49iZF0xs4K4nvTml5qBR20FvlSqxzHC9MLIKJgW6tX4ZLa_kJKjQqSGUzvKcxm1m03pxrRRyHv3K8rH5mFgN308sNux-51gFsW5TcyJoi5s-emihsGARv3aEuGMviQhJOtCxTuCN-ijnClUZh8aphz1x5icPUmjWEGIlO7O9UtVLc4cQnROzy2LIWMH98vB5a0sKCpb1GZ2ooiPua-e43mHhIX2cTXsr5BDaLJThlNbf2DRL95RSR0HKU0AIJqjZ-hzZsAXxMa0KnJQQ-sxvQa9ueyzq3HOSuEfzWkkFKuxdMrlTDCTI15JEfH2ckFZ2AVknPWI0BhWAOc2ZZKxe6rU455F8bzyh5RRSh0XriqBbTExFSOutYMOn2BwjDy45mN4lVkIr2DNrNGU771dXWryrxdAmp15ph4YR1eSdyfD_-v2canQ0U72b7RDeVlhsgueGlWonTIuuS5xwkd_lupQNC_96sAO9rhDzC2RFMsm3GZIU-tQHNcIzwtI0qYrn9QlOcSwYkiVvHIWDYrDF7ck97ss1iq3OWstEybbGtERhdgEM9wG65MpSbbW_Iuj4EyjSkeGFTBiHAu-ykDD1I1jgS2-6NmJnYkW69Ab_FH0PkddjgJLrA89kxzwUIuJ8WQ7zTHGGGfjT6VA4UlK77lxme-YsHuE1nQnunLvGzQaihRLGcz6DcWY67EMFyXDhLNddXCUdX0s1guY1_Vk2mpXy3FDB1TmvqCDavDixOcJEAJ3rxuwtm5OZaBldlHkLWat5WJ1pozeAvFFrGkJeYNJ4TUoAgmWn9ejZiswy420C7yuRkryTVC6iqOC0_ADJXo="
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 528,
-    "completion_tokens": 633,
-    "total_tokens": 1161,
-    "cost": 0.00699,
+    "prompt_tokens": 521,
+    "completion_tokens": 408,
+    "total_tokens": 929,
+    "cost": 0.00473125,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -40,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.00066,
-      "upstream_inference_completions_cost": 0.00633
+      "upstream_inference_prompt_cost": 0.00065125,
+      "upstream_inference_completions_cost": 0.00408
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 609,
+      "reasoning_tokens": 384,
       "image_tokens": 0
     }
   }

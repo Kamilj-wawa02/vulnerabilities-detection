@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765056856-9GT9j1X46RstGs5d8RWZ",
+  "id": "gen-1765666781-fqkfJ3aKPyfWBOn1TtEH",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765056856,
+  "created": 1765666781,
   "choices": [
     {
       "logprobs": null,
@@ -14,30 +14,30 @@
         "role": "assistant",
         "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 338\n}",
         "refusal": null,
-        "reasoning": "**Evaluating code vulnerability**\n\nI\u2019m identifying a potential vulnerability in C where the code uses `rand` seeded with time, leading to a predictable random number generator. This situation fits CWE-338, which addresses the use of cryptographically weak PRNG, or CWE-330, regarding insufficient randomness. The function is labeled as \"getRandom\" and noted as a \"Trusted value,\" but since it\u2019s not directly involved in security decisions, we infer the vulnerability lies in predictability. Given this, I\u2019d classify the vulnerability as true and choose CWE-338 for precision.",
+        "reasoning": "**Assessing code vulnerability**\n\nI need to evaluate a code that's using `srand(time(NULL))` each time, relying on a non-cryptographic random number generator and labeling it as a \"Trusted value.\" I see potential vulnerabilities here, like CWE-338, which is the use of a cryptographically weak PRNG, and CWE-330 due to improper seeding. In a security context, the term \"Trusted value\" implies reliance, and the predictable seed and rand usage definitely raise red flags. I\u2019d classify it as vulnerable, likely CWE-338.",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Evaluating code vulnerability**\n\nI\u2019m identifying a potential vulnerability in C where the code uses `rand` seeded with time, leading to a predictable random number generator. This situation fits CWE-338, which addresses the use of cryptographically weak PRNG, or CWE-330, regarding insufficient randomness. The function is labeled as \"getRandom\" and noted as a \"Trusted value,\" but since it\u2019s not directly involved in security decisions, we infer the vulnerability lies in predictability. Given this, I\u2019d classify the vulnerability as true and choose CWE-338 for precision."
+            "summary": "**Assessing code vulnerability**\n\nI need to evaluate a code that's using `srand(time(NULL))` each time, relying on a non-cryptographic random number generator and labeling it as a \"Trusted value.\" I see potential vulnerabilities here, like CWE-338, which is the use of a cryptographically weak PRNG, and CWE-330 due to improper seeding. In a security context, the term \"Trusted value\" implies reliance, and the predictable seed and rand usage definitely raise red flags. I\u2019d classify it as vulnerable, likely CWE-338."
           },
           {
-            "id": "rs_01e617904997a2e0016934a15881ac8197a914df59febed0d2",
+            "id": "rs_073a9d8bd42cbb7001693defde04108196ba58618fc6ac951d",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNKFfExra1sVaxP9Fv0WSljI87MzVn8peFcw6Z4mxgPP2gQM29yaHfmOfafzPwlj5OetWMlYrV6PdzaRW0Yfe6BstI-wAOOas41WOwJPXqPvZNaHjK6ze5kNArybBI8o56CM75OkjwuC0b8RkRDtGyfkKrEh_SURhBqlXiRyxdTVpzKwA-Zm2lXIO2CoTfYFhl2JbMkjVoGQpWU9Az3BX9pWDUKAz82EyJlV_xrbvbJBkavTS88PzDs1nRfVGt-yBr_pvv2Wyi1RnpAvrJCRneWsirCDyFbpWH_lXuiG228T-cIbq8s_E02R5C-or1xHm__p3QP4xGude84b1-q8p4EUZyWTzD94blQy7kHUVNisoDjcYlARZcIBO6JNuZVssbeFN7p-9-ZqgPQ7c2xEbTnzc7v8dCX9RjoPwx9ctUGwj1Yhdg6RHgFqvvH1NN4KTi8IQQN2PDIVDigmF4VPh5kpSGjfpnKtMTj3WtwW6SQm8vussi_mqnfJAx5xeo2zhjJ3PX1maA88f9tLZpxoXqKbOfZEWEGNdJm7VFaPVyABlvmRNxcoVNNnpYeYqUWb8pgx1r4Et2mKRnNuyovWJ1lyObjToEBkeSTwyg2EByzgHVHsGfAbsVpoHshM34hs4jc6Ue9gDs4yUgV2q9wvj25xexYmUVDKmlUH9cYAlHhwQI8iGuGqo_nNqwguQzTnVowGWO9TYPicH8IG5V4tTHtCCD8hfdZvRtDwQ3ho2G6Wm352XFCmfoCvK8daFrULFIJjv11DypSNIpk6klyCVzrmbLJkG6zlPpxWcTjL0zl-5aSaXMSDY6ayzXy8oUo4SAppwp4uoMSQNyvMh5p_3JM563FJ40wAZ6yXWP5fPa6_JsvrTjLehXBmoTaE9G38BNbfCuZ9T_yeeZqk7h7leeb9672C3g6piHtOncAxfrrYkUuGp8LWpmshrAK03xBjr4Vldio0xdUR0vcVx7Vu3VUN_bgHsTUwhgjhPF4PqaVmnAN8VlVP4vFKzEp1Kv5YzlCWv_4OxodNYnITxMvS_0IbHnx7LVxU4nyS1UPOg7a-da4u9-zvI3lNVBgP8Q5hRC9jT3M1HxRDahbA97WN6rzOiD6CYpuvkenBYBa7F2KnoUediFdH579YdTfnJkzpy9MN_oTagwJQTh3beeallTqPWNkkd5mpCkLuhXn84Ly2A89WVjCZomK1SY_iwUh--UKeNjI5G7TWVXL8AoWf21JEexhGl2voqD7IVUaTMJ5c5JAGxP2uA38ujidEDGK_82Ip7mnr1kmZzLKWHKKh5sNFNTQ5X1Fn5hgS40JWPRRSbPiMxoP2qzrjOxh7MoiJxcwVwd8sP7MXNOwP--OSg5IHBzOUhJr7zCY4SmNG93fZ1X0UiEcd61ini42U-hAkH1NioshpWTRfhx4HEI8UF58Zw9OTLrqN2OHMNOPrp-bx9aKjKXqYefXzB3LHm3uo1HfOmB9bJU5OSuTMHmdJ_iUqQ0h-NXYHo_Q3IdvpDuX2WZoWqXN9ZVWbFo5FLLg_P-LgZ8S-eOto-el1gEpqg83SxmjsKYaEREY424WHdCy8nJDx9xtbJ-y17RxiLCdeibt44KkJLs6OYp7vEN6VDzTuqTF0zSyZTb9-du2s51SXVIXBYp2a1exzFQBUwsoJWDYxvYQZOcOQgg3jCe8bTKja3LXd9iep4U-4QeFWDihWnFsRXVebeKvIjiYg6jluAJLXrmE01jKUil4-eOuXw-RgtQJXjX1qS0YhmpP2_k8Q0nVymUT-j0Bzj9vdPU6Mb9by5U3Ovsy2Fl0m6u7-QLmRWdA=="
+            "data": "gAAAAABpPe_iY4SSL7qocRZhWu6Mu9zwWoqDWeQgipbHn4qssUjvKkMio2mI7NLPHLdpQqZta4KDyNj3auc9crZXuMm63CVmE5-YAPn3tbYTDA_0p70DfqYYIGeUbQSTM_xQe0k6ZVVPv4IfeDu_jwTyVMAGZZdn5s4tX996RuLp_vpBrSNBdEoYO59SXpEXyNW2s84k9QpPchCxP6BILY8Kk0wVN-0ebbncdhwAryCJZ49FIQwV69qwPfvkUsdKsKDdgo_04zMJY_j0Dk4m3puqkC9L1TRQq7euVnEpC14G0xGfG9JiexeRNUeRIbG4mzzAe7Uu5qYCmYtUx_aTUNO5Dhb7nzOtqY_YxI3xzyzgJON2E0cHlobgSLSUN-uf4kz6f6VSGMrmmjldc_4uL2zSEz85NUO9zfTRw96PDBvc3KUn5H2QBEM6UHr6XKjzNWvYIqyV8-LuAwYQuRncYmB-7Gc2TiOkydTAxdHssfff7OjohO7p7hecXOL9PTBqbOeStwxjbUykv0Z5l_ipedkhBlbYj3SJV0zj6lHHnaRy6Gzn_eMkruljGIs98Ea-nlI6X6GaJtsnhTz4JGXVSR4BUvAfJ5EKGGtjqXXTREd38kRaJhxgMzyrEuh1zmiiv2kqkO4iLOISS2JPg_wSzoVrMsyXB_PDnJ-hHAdmuh81xtrUES0ctxVesRoitG9zbVd5QZQ8cVn7JGdCMpym5-bPHpuEUHtKHS6vwiGUdMmiE9Lci50jfjC4EsXbt7oFK4M2w0QzTGo9WZ8vvMS5-LYi43F94gvapBJwrrH7Gz0GdAoWhrvLcNVuWO1qEXBMIg-usZhDOaXIGC4nr6-Zb9339iecITS8QxRCe4Up2PGsQo3Wf6-TYlYCxTbLCzhK0rLddE2npQgLBXTIqYSqYP30R2N1OJCmvwNJvCnX6P_nyi9p0Wp8WzcrJyLuhUFDopnZlUgl4jCr4MrxEnj7VljUltTLQhMLBTsewa3ULpvZW_xKTNPgAI6TNxrLtFFEMDsaDphewVG4IParok_ijXQHroDxRwcJWAWo0HQJRzlzndWUn2lmO12tQtKLSyoGlnm4aZmlK43CyP5qMxa1egMOa9j9YJjkFbEpSxdAq-t0xarbU9YIiKVyPK3OaHAxjES8rn5uLrz_DuT1EfATtCCylabCWKhQwlTP0wgjJgIjsROaGPzdD_De2JSDxfEmWz2GCTLITepmjdCuCn0cByofjYz3hzDD3GGB_NcbPwWdpPD2hpZSZwUwzUCGG815hJHS7ki8kcM845o0949cOu3HiCuBBcxUkG1KuVmLB9lxXTeELk7HpxDL27DQoPGMKQrK-xU12bi89B0WIZqJvUIp4TUQNVjTCpiXVYh9PyTRh1bVAm8eAif6guNXdlApaO7ysKMQZ1uMLXKJ0jQLS_WhSohpdfQy0IVQ8DyjMPMD2dAu0hrstww6BuZCgwqSKX0s4noFrqhaMt7wyI6JJ4DNtqVKLwBTzKYC52tK0efGy8hBWDCBFS7P0Bm38qU5gIlt0B3_zqxym_Jsffrq-qZ4m7D8wGwus6ubZssJ_HYw9rcMxEx0ZjM9ZjGQwel_YTImaezMZjY2N1GbVY5CF4qlm3EcgaB3BtYp3EuVkUIX-WiwnlC5pYY="
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 143,
-    "completion_tokens": 180,
-    "total_tokens": 323,
-    "cost": 0.00197875,
+    "prompt_tokens": 136,
+    "completion_tokens": 158,
+    "total_tokens": 294,
+    "cost": 0.00175,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.00017875,
-      "upstream_inference_completions_cost": 0.0018
+      "upstream_inference_prompt_cost": 0.00017,
+      "upstream_inference_completions_cost": 0.00158
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 156,
+      "reasoning_tokens": 134,
       "image_tokens": 0
     }
   }

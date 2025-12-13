@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765636565-wztJSnSv9qCp8yMKdy2e",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765636565,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 416\n}",
+        "refusal": null,
+        "reasoning": "First, the task is to examine the code snippet for security vulnerabilities. I need to think step by step internally, but not include the reasoning in the output. Output only a JSON object with \"vulnerable\": true or false, and \"cwe\": CODE_NUMBER.\n\n\n## Examining code snippet  \n- The task is to analyze the code for security vulnerabilities.  \n- The output will be a JSON object with \"vulnerable\" set to true or false, and \"cwe\" including a specific code number if applicable.\n\n## Examining code snippet  \n- The code allocates two integers using malloc and checks for NULL, ensuring memory allocation.  \n- It sets *a = 5, squares it to 25, and sets *b = *a, so both point to 25 initially.  \n- The function f(&a, &b) swaps pointers after freeing a, causing b to point to freed memory.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to examine the code snippet for security vulnerabilities. I need to think step by step internally, but not include the reasoning in the output. Output only a JSON object with \"vulnerable\": true or false, and \"cwe\": CODE_NUMBER.\n\n\n## Examining code snippet  \n- The task is to analyze the code for security vulnerabilities.  \n- The output will be a JSON object with \"vulnerable\" set to true or false, and \"cwe\" including a specific code number if applicable.\n\n## Examining code snippet  \n- The code allocates two integers using malloc and checks for NULL, ensuring memory allocation.  \n- It sets *a = 5, squares it to 25, and sets *b = *a, so both point to 25 initially.  \n- The function f(&a, &b) swaps pointers after freeing a, causing b to point to freed memory."
+          },
+          {
+            "id": "rs_44b66bba-8af9-b18d-5a2a-eb3f4d92b0a6",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 470,
+    "completion_tokens": 503,
+    "total_tokens": 973,
+    "cost": 0.00080242,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 4.792e-05,
+      "upstream_inference_completions_cost": 0.0007545
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 486,
+      "image_tokens": 0
+    }
+  }
+}

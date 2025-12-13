@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765056080-q4SV1zHuLbHa4Rug4GHb",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765056080,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"vulnerable\": true, \"cwe\": 120}",
+        "refusal": null,
+        "reasoning": "**Analyzing buffer issue**\n\nI'm looking at an interface issue where the output buffer is declared as a pointer but uses a char array of a specific size. While it seems correct in some calls, I suspect a vulnerability due to the call order. The main concerns could be CWE-120 (Classic buffer overflow) or CWE-119, but for C specifically, CWE-120 is applicable since it refers to copying without size checks. I\u2019ll choose CWE-120 for a return in JSON format.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing buffer issue**\n\nI'm looking at an interface issue where the output buffer is declared as a pointer but uses a char array of a specific size. While it seems correct in some calls, I suspect a vulnerability due to the call order. The main concerns could be CWE-120 (Classic buffer overflow) or CWE-119, but for C specifically, CWE-120 is applicable since it refers to copying without size checks. I\u2019ll choose CWE-120 for a return in JSON format."
+          },
+          {
+            "id": "rs_02e39c234d8b52a10169349e511134819393d5c7b9afb6beb7",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpNJ5cEOiaDv89oJxIRbZa156WcCwVIMUAs7xolf02wS4qHqFCL9CaLLBRjkxkBkRtwJ4x6Eq4Oqll9Z9w-3XvNWiKMPWvpFV_aH_X1O8hu9qPpy_BtLpB_rQlhPQejZW7cLzuK0f0tMxYwtHs8vUdj3Af1rQ5OLDM3os01qWKW0e4zBuUdwcBdk81lBk8L8xXiSsHRS13lidur-rTIg4WP16hrub5i7jz5L88x-gvzNrmRaiCbdLjI6nK22eznMwtZ6eIjdy7bpJTh0vtaW7fXPcShJSuojCIKQznVUbTLzkB71wJlt7ScK8CbZy0NegRza9yX-nDwO1zEL4R4UVCyMuoeImIcOHmIjhwk6Hw4AcC1JXQjB0ONm7qxWaJkM339lwBQ45tzLKbj7KXrCqe5RC7sbWps_FdIj1IiKEqrQUM_HvsX35HMkIdPy375_5-K7YWei_y3IKj9MdOR2I8mKktpByevT-TKjKCFpvKBNnqEYjQpAqDttKVI1h8zgfOH5AkiPQgQSVahs48GBCuJe453qdhizkfKs4th9m9MVmiCQPX048B4oERT1lXMf7_RXSPnClAI29-u96fbxSUKBsUY60hkSuzLwe4v8G-oKm1MJvwPbbKVThOJXfEVo7VgAJIticyHo2GI-sQk8HgIe8QGBKVese1XX8zJptDheP3O82EPxxxdKYdu9NEUK2ZP770-okmh7O4YoPM_PGBR_yHmbwrbXGnphWCSqdMXEgFr3IffEZoCDXicmZJAnmeWOuApb9JQ7U3Wn8aSxhwix1AnPXs_wMsnEgxq9QpwWd-kG9I_y9u4rhD2sfN1bTbti2w3o1WQfVV3pQwmfcwnf-6-CG181tc2A_IBfmLxQg3QOBC0L4bx_MbpR377avJtSIWL638Y42-k8ReYOMVB7JJ0Jes9RRg4yNxtPuy7yPWiFqYIgQDpMZmjh8GE2IREATYl4GSdx6Pg1mAlpMsbPw1WZqfQ6xG31RpggRj2MCAxKbK5eH_01Kb-kswL19_GpZkUP-7lb0mmkj-YaAwFxHiSKVPi_bxJlB3eUSkdgufbA5OqEm9dSOyhPkoE1-Wp4aV-SyYCWzz0kwDi0j0o9Rx8-QLDTo5jsx8uKIAegI9jYQ7ZgQckCj-FnE_eOIVur3_CVVcOpAnZRdBgMBd0x4rmtkIqolGnxIVgE6OKa7MLA-z_iuzQcDRo3bZkmH0IJBNd2idH9hTKuR2vmDCy5KfW3c7-lf2AkQEUrA417N8HUwTN8Khqlr6ezTEN-Jklbql0c9ZyjEimMHIJ9QVXYDa5eDgOWkmrnlhGVxRsWRNV2H8V7wI393O0Y_VDMNgkDfT0oAWdOIUZuGz57l0dxX9bipLu8X4oC6TjmWW0TUvtmcDy40sqvS9v7DMUzv2_fBXfCmlGtSokQzvj2swFfRXXarzwksPdyX8w2P4g4hkk3M_9N4rkNvVz3ThpM0GcrWDK9E_8BYvoKUf00yiFMC5uD94XiBz--lDveL96eggo4qg9lAPNkCN7q52GvJ2DxP_cBuADBAIWmPvXch3LLxA-cc8imLEzmAuQUaX_71A51sAIC88auDCrMfVSBP2ipmwdNkbJIb5jgrn7Wg85lmHStDwY30xUCdsYpALOayOxuZlX3yl57jF9BNy2L8ekd9nPyCvOmoRBkI5LUnl4Ws--PUhCaIhSLri88hkUExW8SPa28Wl5cPBCrUW0noTnirK6W-gut7w6BKWyi-dz90XDDxjFZK87jngNQPC2lN-XiMXOrc4EZ49HdFNqvEsCxT5pI-pGgEDXsHfbVSzgRDAdyKEJd01ajk6TJOwf0VAb-yorNA9Q1agbVD-WwdOy7AugJgu0vIDApFNCgK2QxCm5B_uEkYhhIw3s4-pg7tnObDFj5gODy4BM1X-Z3aUaOXglkgi4ICI0yUBV30lGLZkK7iXrs9ug48uszZfT4xXn_hA1uxKkdRLKPJOmMBSPllX5dZCA5ofjWRvzQtAxzAWOcXoUuqlQ0TIbxO4U_vbXA72a-abK3ZCKTEq_4HgXD0IQb-Zk4SKB-TFi_FHxzoDm531rLZ-I32BqY2Jr6ZHagB2Etp-WZtzu0ufUcbqBJzLdUt7gkc0LdJzjXJ6slYeAyyf7Wnwtm2tgxm44b9_Zx4jHTFfnvkXVN4YTJSOX08X6BDOzuhLAY4E-b1Ppc5ORcc-TtaOQaEuSrAm9rRwvfIuZ67g8-CAnomOK93vfW-o_G0bFjd7ElrzpM7_fc8nC8gyZ2D1n03Blr8AsmF7TRSiLLRcsh1Twq4Eitr5TkObMeQHEG7gJfFTmuXtFnaROSohvAFPU_9X2pFiMVQxv91vFZF4O2pgeS7GoPN6eglp0Pr6Ltvstrv509mgQ3MvbMBHr64YA-3zSAi3GPGTVXlyt4l53nJ0EY9jefl9QsOe1R4Us2Qq534isfSIThD_OsrO7wMyToFrTBGC83tFMQ27pAtdjjacsv5MMFbNkbHrMZE622xrrMLiXDPa5UvzF76PYqzwcMb4jn4IYlA6KeIasRoWYWemnyLCNBK5eUvXIG5lRW092xVnXojhEDgFP6xcsrNVwjfk0Jw9fqq6M0AKaBTRz70SdSrkbULvHAoxpYEyvEeWVdmZ-gWtWFPFrRb_AoKJwwQCKQjQpWdAZtFcQehOl0l00PmRimWneyer"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 491,
+    "completion_tokens": 343,
+    "total_tokens": 834,
+    "cost": 0.00404375,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00061375,
+      "upstream_inference_completions_cost": 0.00343
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 323,
+      "image_tokens": 0
+    }
+  }
+}

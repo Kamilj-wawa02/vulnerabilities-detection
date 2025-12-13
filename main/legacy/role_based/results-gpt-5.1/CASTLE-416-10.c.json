@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765055629-rdHgNG7b4CJSszw1p2s0",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765055629,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 416\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating pointer behavior**\n\nI\u2019m realizing that the C standard indicates any use of a pointer after it's freed leads to undefined behavior, even if it\u2019s just a copy. That's a bit tricky. Strictly interpreted, accessing an invalid pointer can be seen as a problem even without dereferencing it. The typical vulnerability associated with this is Use After Free (CWE-416). Here, reading a dangling pointer and using its value definitely counts as use-after-free. I\u2019d mark it as vulnerable and return JSON.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating pointer behavior**\n\nI\u2019m realizing that the C standard indicates any use of a pointer after it's freed leads to undefined behavior, even if it\u2019s just a copy. That's a bit tricky. Strictly interpreted, accessing an invalid pointer can be seen as a problem even without dereferencing it. The typical vulnerability associated with this is Use After Free (CWE-416). Here, reading a dangling pointer and using its value definitely counts as use-after-free. I\u2019d mark it as vulnerable and return JSON."
+          },
+          {
+            "id": "rs_089e27f7ee52d6120169349c8d80088195bbccae613244edf8",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpNJyayhgHJvO_OHCl2EmqPmDL4Xh4Pc6tEMqil9DVkiO32APva0t-hNtzmOQmnoBQSDcz9VEEZGPdyZKsntuXgHcM88uaGg-pKgIjRPlFBxqmt7HnqoACIG8XUtCWoQQ6XzMXF93opX373iFQRTjis6lgNHGjXprLd0c71mUW56ZZvzxL9jALpvJC7fkz-6frZKvrMY8yxOTFP7AZLoJBOmvK2AgNcQLi2h7S8glx8tJyUsKtHos1Ng2xnM_x7k7jNPsHPwuRhrmGa5CHNaBTI6Q_DOx62XMDF0392OhGUcM6gbhugqmXZlz-lcLSfnKACO6eIWa6is1XePub4PxdZxyCuajFJYfDesEcMmTxoVubCl83icZ3ZtXyNDsa20QoWNwBvncrPPI3G9MmvqhOekZGwp2ecVaO6ITo9iPWDA7RIwGc1P3BxSWSXme6P5WHUI6Y6WdLZZtdt-NFFSdzD_hftgOUBqRHz4293CakERgRl1J9f4Pn-bybjYZRjUvNEhl1d5BQy3lSSvVq2FjAB08qV25gnmm-aqxWGVpNIzx64lKA8Hv529_U0XDktXPCoxv3NJKxHT9_LKPzfp6Y2uNpoh9J2YRnya_Wzz2JBp7AQ_w-08q_6Vc9G9M6Cyj_2cKhJ80y2YpLwOmha_1G_elSRt0LxB9iyG3s1HWMCxYyllu3B5TzzD3w_z-ETZ_XU6g2HikqARLeMWdu2v8O8QprJFpTQkaNDgXSVeIEzkEVHbYtS2W7RydM1xXDSJGmGx8zvjX9kohVNEk9vFgn6ERCY7O48elVIdxYpqg7UOe66AprHADmVAX6aHRpy5kcqTb78Qhd3I56cEUk-wIBSoCdnOVPA3FKahRaC44YcSuUzicNUShlTLSUyvGTQcfBvWxTCKb7VciKHIhv3rA16XovsS_WkrDKTmIOPtUfNs4qMJ8cDdifwD_QRmduY4JdGXGqtqkDceLYDvRpDBN7mK7q-t0V3matrnCGl0LmOvEIx9Cac_ofgrS9QTqfdoby3p2tIpJTd13t3o_LIoBrKO4YuiyP6ewP6qcYAJ91z4aMRylHQdNa6lqz0OfMD-rPFMkq17oFFSWtXSJAsswm29ErHLw13ASj_-FuQnW--5Np_CNtHoPALW-D6yNFDl9Wliq5ZcpXinMH1Vbzx79PDNvDL1ejYGZO57Z-bkBi9YYH0Hsn-Mm-TwXpP4KK0CVJyzlNcMMq0U3XtltIZDUxCRWPGRWRiKHlNbLl0cjNnJ6tkSgpAoa9JHqdSUJWdFHazXLaAu_aAdRRR7gNgaKpPZrmHn04bWtgKbU3HwH1LN_Hj_8AnkKbExraEMvFTbkZDZOMswsvr5CVoSFQhkm1o7f2pRvRvI8aL0O6TL8eKgHbGEOv4bILDmvmwgr54Ws_taAoVj7RkpAO0cqHvXLSaTcM_j0LncTwEn0PGoQZ0P2mlNCuLjY-FKB86vDYHtB31tJAdR8DPjgmk_FkOwIlY3E24CnDBBvQFjy-rUmjhvAGsoEtmgBj_mth0LqTRIMkHRnkWlKJ3vr8-9uD8HV5WQrfHycW5KPdVEjuT2WHn74LlR-DzCoXJVwBLo2_NkoThOqoNvD-LNXgcoR7xxsAGvUSFcsdXFGvi4I9_RyRAWcv1ng4CtbnpWtAJyujtDxW1WPl8aAzeUUvkFqrnJd0GTKPQAvgs3AWLUSJPk_x0klCXFkHfdAI6z_UwZoQ3W8xZf_ae0IDXUf5T3kL67hxql4b-gEzYAUKBVy1QS7r6bspwZNHcLqo-W7yFo-IYgI_jVm5HKPKtzTvB7v_EEbERCyxSFN8pgVzCUZwRpm8tZ-kvuawTdSz9tYmsYzTVZivzQ4cFIydICkBBb8ErfxEaYy3BukbnZZDhGUELdYjC5wm5i1Fomc5p9xlAKZP-v7TQBSQmRZE8LmtFar9_8yDhwU4QdqpILYOC5ONL1bE6tQEENjoviTX6rz1aSDUzGYLdAHf38WaWA5D6wFNp27g6zf-yyBEW07uLJ1QiA-_EuyjJMn7psWRq4la9jLPAvj1bv4kJeCo1KqBY7i1hhjWj63LSiKRcDz47j66qJ3QpQOIZNh2XjXGGe0lKwVxvMDwv-MtmdCvhv4Dxh-dH_JihWJrzc0FqoiAltBfUD9c-Zv-8-lTtKKIyCRzKzWc_7k8fXj8ner9nJ8k9XWabtsfdLV4CTOK_SRzIe5E1lsIjYM7xFv1nyzVprNFH8Tk5sQIZPa-Nm8v5DjvvELrWHybZhXwoWa9Qwoe9MUPDlwuIBF0LICWVOTjJRBLi-Qti2oVdC3AaKwuzUhptK2wGz5zTUxxQiiFZXYljNnxKRbzgA5M4tVEJJJecgh_uc5_rWgp5myg_ERD640aHY2YShWhFSTfeF57cPIwdSS2v_ZnblKK983BoGMe0cSoiekVhVpEp0GhNJBspuBIr8A_RxttUJT8KfNzwIkw8fooFypAaN5_afo_tgghi4uvVtmgwuRMvq4cUJWMbMs-Qvpfxo6uTXjArRvCokI4MWE1wujuATWmIrBey4JrCihLq8WIY4OBkmlPw55Iv-W-2IFPDPaRqN8VQ2F59Wv8A9QWfOCGmzlFgjnGRaYKE4hMGrrTML7zKd-gXBcv0sEyzHE3y-xJCowMlzs3G-kKMaRcvGmBWcp-mwp6EyrEGcg3-dcbKySxYb8DUw81dn5A8p16VjMCQ6qb-qMmigCKkaWgw9YpB9j964Em0IA7FyMMk3t6shdUobf9ShRNEaOQxXGgQtxI8EXYf2ueYcZyPeJnLOL5rLuJANiFT1TDKKL0rrRjR5k1ceg3DJhO4fLsLWIB-s7UP2feEOmJCBlqQhIWqY5Qu2-B4ddbJszRtm7iGHHiLwQR8twz6Cy85b5sxIrr2IfFUTwXUyv39Zb-64nbirF9TeJ1Wd1ntzNxu6UB19EIHTx60ZeQcjQRCtcADpOGsnSuATWveavYPRZVej0GVKe1GOgjP1CxFeafxYktTt2gnLtO-URD3UFUixZEVcx5mgFOD2J1q2tzR0h1JGFuvyOuUOzV4NgLX07SVYuzWtvTQ8NF0lNWlQedY3hLV0_wk8doYT_Bfi1MvDmiyLvWheUxfnMCyWYKFVhrjs5GKJ36EOEzZAVKrucKKqBezPM2cOPlSENeJ3O_3qLr_DAASP9JsXaMlCbXyNwKxZEE76GeZvlz1Vo7cEXsvaxSn-tWzGheQ7CYYGXf636zfYq8tImFrO_CcnuMozIs6zCwUf4kKLJQH_F-d7Cd-ELn7xOav1uwVqpQlu0Y9gkP0cYXcCpGTX95a6rvXFeVJZKOWgCbxwicUGnq2tY6bVvlEp59t3iYZYGRtSHcom7OJV8mSTrRhWL_4HDS2wr4ujXpNNMhIhwNthXh8aZuvVSzytS174fQIqVy6EpUDDmG_l2pvd3JYqlkmqrdcE0iS8Rj0ljRWs5gEdcS6dVzh9y5lT-ajtAgwSR1ewj4w_TZZQDMWiH1zfh_TubIpYg-KXQacj08u_t8zoMMObLPn1ydmZqUgo3TH5neBli_AboBnv_SGyfekwbf57DVpijoz6EdVXbROJ37Tt758V6kPXNLouoonXKHDDt-PJ9SUrXJIoLOJaxK9zk89qsPgRl0DbBQDGgwSpDnq-kS-gXmOUQxB7xtsqZsnaNf3SKGEMlURWbD-YqCMtw9DLJ8SUYVrAM-bwuO0OkryPp2"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 266,
+    "completion_tokens": 559,
+    "total_tokens": 825,
+    "cost": 0.0059225,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0003325,
+      "upstream_inference_completions_cost": 0.00559
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 535,
+      "image_tokens": 0
+    }
+  }
+}

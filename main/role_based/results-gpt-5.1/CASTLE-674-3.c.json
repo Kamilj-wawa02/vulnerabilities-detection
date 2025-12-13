@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765056192-NbQ1PbaIs8zyCMnol34H",
+  "id": "gen-1765666333-XGA9lU5fFQ7Aftk3pZe5",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765056192,
+  "created": 1765666333,
   "choices": [
     {
       "logprobs": null,
@@ -14,30 +14,30 @@
         "role": "assistant",
         "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 674\n}",
         "refusal": null,
-        "reasoning": "**Identifying vulnerabilities in code**\n\nI need to analyze the vulnerabilities in my code. The recursive Fibonacci function currently only checks for n==1, missing the base case for n==0. This leads to infinite recursion and a stack overflow if negative numbers are input. The primary vulnerability is uncontrolled recursion, which relates to CWE-674. While the scanf format is unusual with its width of 9 for an integer, it still requires return value validation that ties to CWE-252. But the main concern remains the recursion bug, so I need to state that it's vulnerable.",
+        "reasoning": "**Identifying recursion issues**\n\nI\u2019m trying to figure out if there's a vulnerability in the recursive Fibonacci implementation. It seems that missing a base case for n == 0 could cause infinite recursion when n is 2. Testing this shows that it leads to stack overflow. This is a logical bug related to uncontrolled recursion, which could be classified under CWE-674. Also, the scanf function has limitations too. Ultimately, I need to confirm whether the application is vulnerable in a DoS context.  \n\n```json\n{\"vulnerable\": true, \"cwe\": 674}\n```",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Identifying vulnerabilities in code**\n\nI need to analyze the vulnerabilities in my code. The recursive Fibonacci function currently only checks for n==1, missing the base case for n==0. This leads to infinite recursion and a stack overflow if negative numbers are input. The primary vulnerability is uncontrolled recursion, which relates to CWE-674. While the scanf format is unusual with its width of 9 for an integer, it still requires return value validation that ties to CWE-252. But the main concern remains the recursion bug, so I need to state that it's vulnerable."
+            "summary": "**Identifying recursion issues**\n\nI\u2019m trying to figure out if there's a vulnerability in the recursive Fibonacci implementation. It seems that missing a base case for n == 0 could cause infinite recursion when n is 2. Testing this shows that it leads to stack overflow. This is a logical bug related to uncontrolled recursion, which could be classified under CWE-674. Also, the scanf function has limitations too. Ultimately, I need to confirm whether the application is vulnerable in a DoS context.  \n\n```json\n{\"vulnerable\": true, \"cwe\": 674}\n```"
           },
           {
-            "id": "rs_02bbde30b47437d80169349ec113148193a5b2f9242f5bbd48",
+            "id": "rs_0e37df9173883e9e01693dee1e15048194a8ec80fe73d95158",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJ7Io4pTd7o3FJuwS8pI99hG3bHrEbmHLB1PM6mJv8GX2_S4b_VpplYM9M3mExW5J7d2eAsymwgP88_UW5ZbxeMw2zV3i3hisCfYGnMnjPrfVClmu-W0Mu7TQVeMGVmMQK9TPqQFZgeG1nmMykTBXYH8-YroxFOgs7MfLWL5Shupxy8V3SvC9Nmil_dv7-rw578H1_UxhnMPl21iQ1XOX-5koB-T3-CnaAqYKvnvL6HWRXaBPRlS0n_abc0fOodoOi5C4VIUxEDYpRl3xKYkw5J5fgRmbWSftO40TQBzPTlzuvAkkHzKbDZaOLtvy1uuTpA57VE5w3b34L5jfeeUVe3qxXRHy-J3cJH1c9w3lanvf-J1-CLDqmXR9Lgz8eFVv15ypjTkbv_L4rgRwzOM9O_XZ6nJuPCqXHsy6b0bQG_ntk4B8-RUCjdFTeSA1GZqMvSz-CL0uvBf1JQ9w3J1pq-MMIoZlVLXQLOgy9qd7qDeqJ4RXzZ5Hgkb4P2eRcvDFUtrJmR60XV6lpOUjer1qxoqimdOqFWteKh1IYHqX_ZSFbKiUttmcBaBQG4abrE9RlPiA-FQh32st4mObcs3fhyXtKk4ER-ln2ja2VU4GwLZj_dgYXDfOd4AsffOK6s3C4HTVYPebf-lEnQqGROoQ7TvE3zXGGQ9StidWBr3yBpMQjnaGT-afHQVQkvMq6vZEKed1g7LX8M2PhQjYGo6V-pGLnL1swnIO3qXxkmVXPVP19ILdhzAuqHZM9b51JLHgndetP0okWBc4fNGX_1B6WgvwB_FfNcMBiOe_aPSSGBASKOdzBj1JqnSK7lO3U32BBIEPsjuPbqEfeTG5U7w65tin0Zt6R916ApieO9exaoo71URDJugglwx1rQrh_0-DxVry3FuCSVqMgEhR8TjHQ79sYif5S0pfvGDc6iU1v_YD8YEAfEEhkKrQLiSuwRcECjAa_bXONTqbuU-5nFIy2ZwJ30xVIfMCBa7FQP9mTWiZ8JF9FlBH_B1DUfJ1kkXKN1QOQszfwkQsME9iTdUq8PWy79seCqdC--QNOIqqY69rZ78mPF7H2WJEDtynK04w1lliDjXrD0_rn-VMJmCZlT3073yCoHMowF5z9FVyo26ML81fsHVNZUKY6ka4NqbcSg5w8IdMhkJS7krd2IaBTY2yt_he7zrH3MlzT3PDY933DhHjA4lYuzYSMIRq8OAfzb9Hab5MGll0cz74PcbhBDzkrc1Lk8bvnTVSfwVRpFplIbjlH1kebY7CzYjCp_-aBdLEuwB98uWE9hpf39dH4J5R7ukZfIMUXUkwNi9HrY7J2gjwQAzvQCvPjn-v4VsGcjImXopEQb7qVYVzB3bFI2aBIK6iGWfphdVhjn-hrKGz5OTcG4ifpgc-iafM3p6Bq0Fgeo7RniUWfDj6uFpau-qtioEegBnWgra5oGiig1cFfJ5owx5ZutH-PE2bH4i9LAgq4zCQduadfh4hLJpaKLrQA-p0UHmvYpiSHmno-ufeE244NzLw6WLW5POfOly6O3NKhi7VActBN40ztCvJ3sIISw2DuWtmaLDqsY6SfHEZvg77vm791aw_ze31Ft7ZfnBoJ5iEWyB9bHaD5cbdNCBkmkE5Iw6AI7Febfp21IDZ2vMvTcg6Y3zzNkG4zdv-V5WRKgPeCwXQNAAAVPgkwRsQHRxxrrpPNxme5ABUYSuPXonz5k8XJYjqv-Bt7V2hHkGIvHu0bnUx4gqRm_hEVx380s-p8mgHwyK0Zy_JjZtiOT_SRdyIQS4RBInUfdQRS_2wrA_AZ5US5yuDe5D31XTKW_eoImjUR03c48aUutRpg9430G-wrVjcnI6f7bGUk-gTzrA6bJrzzcoamR9VvI2dfaRL1CmMSMzKh4YCtWBQEfuFuOEatxTusi9-gfweejHWtkJrTsziI5DiJQz5mOJVJ8I0cJ9H1iwXHXJkkcLDD-wvFnjMxtJl0a3V9TzQhIDmnbQ8NJz3Gx3RbNvkLqYzEKXvmzvDZT-8qP1fKLdPE2-c9K--cIDd2MW-CA4mJ8stH7Tkjx3FmLrRNfI0eYMBA=="
+            "data": "gAAAAABpPe4jtdxTPPUOjKqOyEWerlJGwDQdMdMyFZvDtJHpCQfTyFMzKconKe04kqetjx1OGzmmVE7FTdUUMpgBkDJ6CwhZ6fHD0B2yhdzE0GTH9u07_Z0CkLfiRSv8P-hPCTeCergofWhGMs2BahJPGo_RSXmKW8D-7WPgGbZHWLkl_ah5h2Lhrb0MxyPqY3w-jQDcHWNMpQ3FpWQ36Ul-dpm2xVeAWuN1tpQ5yPKvf7isxKGVgpHzkugKHeptS89tZRy__mpU_B78vyDPeuUNR82SGlJ_KqT_duR6sQNnJWWY2d2fXj0dVfV9NVthEidjc6ooLGSunNC3yMdn897DfD9dh6YhttHCEATk0f0YuE9YOVr0Nrtv3u5Gjl8z8wR9p-EdaRzVtJzO-K701UpUOH0evxJW67RDyI5t6CDznS5SFpw4Ar7lASaRT05SYikUw0WW4h0q0RMDada5sXPNLAgldkMdoE0HIICJ-UlrpRAYaPb0n7TTf06OI9GHmjdWK4lQP_96PsU3JeBKrxbTquA4k5oEXqldaUpxnq31rxLHMBmCulJWtj-6Z6x4qCIcdVIXLStNT0O1rgEwVS9ahtjXRL9UEMfaBXFZ_azm6_f1jjNrHKlE58HAObSi5YC5pWXyFWu4QUUfqqVyPznS8HhHJXR5F3q5dg769H9HPT6hbdId2BlxIhoW2Wf36aaE07FBi94yaGs6N8lAQOQB4s3bgpRun4ZC9eL0lDk_Lcj69IgXFOQEIvrJxngAL6qy100OYS_E-RMoh0zDPjMboNK3VVNtk7Z2UeTBOjDPkcAp8MiXE1FsW9MX5On-XC_qsQ1ad5zJLrN774jWSwsMzaZnOjxlI_kfOzYGzaIaKcTkiJU3KPNnXfhpqKwbV9Bhr-JwOpYAtehDwvHUgTzGlRr43Z9DQyNkljk8MLLrbMhj6kZOVw_hUw6p4lekuPgL-ZyYRdYafQWLrm4EvQyvQPUzKA7zGBXNTP2-wUKKvz7wZXZ-FRLvU9BRjD6RNFu7WqxrKTiRpe9FAqp7ZL1yKW9jzabQoaNyLUD6ZF8SUKncdlcYvpkraSm9ZXXwrsij3o4zgzMkb8EPwEKQ7gfJYDxw4zlByCWkEuTGEe90tVOeB-Vjjrn9f9GHSGfUGa9VYRvzBHJImU9-SunUGpiLQ1--KHYQLZpYDbS0ubsd4qeNM81eLbZ5Y7hwWYuRQqb8iS4H6W7pRNGUGGLHI6lW2qzyVVHp6owxsOBkQTtSrMv9I-DEI9L60xh9kNRz2MNcpkOxljwkvycsWKTFABAmUR2F2_xq0sTBTbd-o_8I14O_b-vEj5P_c2irFlZ7NxmNuo0kfhsFyoGFmiXEKzJ4X32FR6QS8oftEuRXpQnjmKe2lmYAoZO5nNKWbfDUDV3xV9xN5Uas_2ksenukALlCl0LTV2J22G3ZnwKdCrIK35KjeSKAhyjLXYMLtcdIcDNSXFO9SwIK5wclC5RAgVS20-64325qaHSkvMgPBYkNRzspFrEFeGV7voxUdqy7MFCPhSpdQM5epaVpeSbfxG_jP-xMHL1JnGeknfNjaD49GwEW7NCE91r6NvkXh8In3CblpIHrflHW2OGlnLmnPHzA7DErMMic4z0jAwSAFpjSEIr-wpS1IEE0dI6oASxOw5RTxwoDxAZGPhb2jBaYW0VDBm54tTOcrJvEtECXXf-JbwRgc8Dia9cpmzDaNoteoyXL9f13dEp7KvYfw-BzTJBVyz5fW7o35MXqK4nVg1FWoxTY6fA7U3yUe32QIg7qUCzHEEfM_t5ty8DUgfL2RasftQ-8LXheVbRaBxczyyCgvWhxdKqxhLyXmEE0mtAI60iG4m3n4vnCQqW87JhF62ivfcEZVbgeQqftkukQVOsI2YTfXh5IxT05GV5l17gMpDX7GiRfXY9znID3hg-CCaniUzbYTs1ViJ4R0mRpi5_2bF3wzACm8orqWtm9wXyZ4O6svodeN9j_vwmVAmpOvuPNr_LXtP6a3oOw_OVFBvVvZisAOUdyKoKuFTPUZzsuhC1AVtT62AS5AVFTJbUWYNj_zf9AlHvohbZYZakZwAOvNUWWwvjpCtEq0bj6FZH732gPLHrTvo5yNGyL6t1QRK4WM_bSmqxVT8B-Q5HlHfi2vkb47IPwFmc9rmvrBr4K5DXMrIj-GvzFIpR-naII26V5_LV55cRkoA=="
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 220,
-    "completion_tokens": 247,
-    "total_tokens": 467,
-    "cost": 0.002745,
+    "prompt_tokens": 213,
+    "completion_tokens": 286,
+    "total_tokens": 499,
+    "cost": 0.00312625,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.000275,
-      "upstream_inference_completions_cost": 0.00247
+      "upstream_inference_prompt_cost": 0.00026625,
+      "upstream_inference_completions_cost": 0.00286
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 223,
+      "reasoning_tokens": 262,
       "image_tokens": 0
     }
   }

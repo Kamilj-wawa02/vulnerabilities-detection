@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765630802-artIolbvobZLW2iwirR7",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765630802,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 119\n}",
+        "refusal": null,
+        "reasoning": "First, the task is to examine the code snippet for security vulnerabilities. I need to think step by step internally, but the output should only be a JSON object like:\n\n\n## Examining Code Security  \n- The task is to analyze a code snippet for potential security vulnerabilities.  \n- The output must be a JSON object indicating if the code is vulnerable, with a boolean value.  \n- The process involves a step-by-step internal review to identify any security issues.  \n- The final decision will determine whether the code is marked as \"true\" (vulnerable) or \"false\" (not vulnerable).\n\n## Examining Code Security  \n- The output must include a CWE code number if the code is vulnerable, formatted as \"cwe\": CODE_NUMBER.  \n- If not vulnerable, consider setting \"cwe\" to 0 or omitting it, but follow the format strictly by including \"cwe\": 0 for clarity.  \n\n## Identifying Vulnerabilities  \n- Found an issue in main where fileNames is allocated with sizeof(char **), but should use sizeof(char*) for nbArgs pointers, potentially causing memory errors.  \n- Noted strncpy limits to 255 bytes, but fileNames[i][255] = '\\0' is incorrect; fileNames is char**, so accessing fileNames[255] is out of bounds.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to examine the code snippet for security vulnerabilities. I need to think step by step internally, but the output should only be a JSON object like:\n\n\n## Examining Code Security  \n- The task is to analyze a code snippet for potential security vulnerabilities.  \n- The output must be a JSON object indicating if the code is vulnerable, with a boolean value.  \n- The process involves a step-by-step internal review to identify any security issues.  \n- The final decision will determine whether the code is marked as \"true\" (vulnerable) or \"false\" (not vulnerable).\n\n## Examining Code Security  \n- The output must include a CWE code number if the code is vulnerable, formatted as \"cwe\": CODE_NUMBER.  \n- If not vulnerable, consider setting \"cwe\" to 0 or omitting it, but follow the format strictly by including \"cwe\": 0 for clarity.  \n\n## Identifying Vulnerabilities  \n- Found an issue in main where fileNames is allocated with sizeof(char **), but should use sizeof(char*) for nbArgs pointers, potentially causing memory errors.  \n- Noted strncpy limits to 255 bytes, but fileNames[i][255] = '\\0' is incorrect; fileNames is char**, so accessing fileNames[255] is out of bounds."
+          },
+          {
+            "id": "rs_aaec271f-8a04-a63c-643b-a5fdfa933fda",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 656,
+    "completion_tokens": 622,
+    "total_tokens": 1278,
+    "cost": 0.00101812,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 8.512e-05,
+      "upstream_inference_completions_cost": 0.000933
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 605,
+      "image_tokens": 0
+    }
+  }
+}

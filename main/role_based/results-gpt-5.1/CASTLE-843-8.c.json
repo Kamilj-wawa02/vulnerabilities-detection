@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765057455-MnhqViWmuVed2AbPTFXe",
+  "id": "gen-1765666899-LG3SCcp7lXMowa4GCOs3",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765057455,
+  "created": 1765666899,
   "choices": [
     {
       "logprobs": null,
@@ -12,32 +12,32 @@
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"vulnerable\": false,\n  \"cwe\": 0\n}",
+        "content": "{\"vulnerable\": false, \"cwe\": 0}",
         "refusal": null,
-        "reasoning": "**Evaluating code vulnerability**\n\nI need to look closely at the code. It calls printNum(int) using a float, which means there's an implicit conversion to int. Luckily, that's not a vulnerability. The printNum function uses %d for an int argument, so it's correctly typed with no formatting issues or undefined behavior. The only downside is information loss from that float to int conversion, but that doesn't mean it's a security concern. I\u2019ll mark it as not vulnerable and consider CWE 0 or null.",
+        "reasoning": "**Evaluating code vulnerability**\n\nI need to check for potential vulnerabilities in the code. The issue arises because the function `printNum` expects an integer, but it's being called with a float value. In C, this conversion happens automatically, promoting float to double\u2014but since the parameter is int, it converts back to int, leading to truncation. This is a logic error, not a memory safety issue. Given the range and a value of 1.0, there's no vulnerability, so it\u2019s likely safe. I'll output the findings in JSON format.",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Evaluating code vulnerability**\n\nI need to look closely at the code. It calls printNum(int) using a float, which means there's an implicit conversion to int. Luckily, that's not a vulnerability. The printNum function uses %d for an int argument, so it's correctly typed with no formatting issues or undefined behavior. The only downside is information loss from that float to int conversion, but that doesn't mean it's a security concern. I\u2019ll mark it as not vulnerable and consider CWE 0 or null."
+            "summary": "**Evaluating code vulnerability**\n\nI need to check for potential vulnerabilities in the code. The issue arises because the function `printNum` expects an integer, but it's being called with a float value. In C, this conversion happens automatically, promoting float to double\u2014but since the parameter is int, it converts back to int, leading to truncation. This is a logic error, not a memory safety issue. Given the range and a value of 1.0, there's no vulnerability, so it\u2019s likely safe. I'll output the findings in JSON format."
           },
           {
-            "id": "rs_0923d868d43b7aaa016934a3affdc88193a53e412de628ed20",
+            "id": "rs_0c2bbd970af0d80e01693df05448a88197bd35b0d65ac83f68",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNKO1r3Pvekdle-wfLbpBLo_IDSNfdKNHfxoxkhVzo6Jv08ov9ZpIrMch0Zeyqj1phPPkwmIzb7DI4v9NIA7-o1bXdrqEsxZtT80GVWV05v0FeNUvwOyeJsA0HO7PuTzrTZ8lIFnPiI8DjDMJVKDeL4SlLZQLPvVZokrcVdXPT-IHzBIxb79HKTIy5Pl3oAzrZxVX2DAUV2-SsmprhB8QDLpC4zAuw5h-q0F52jbrEM4s59wGeDwKdeqeuCk3Pmgz6c3xZ7OkbgNg_QXEEoizt4NPJv5ZuWbhyfiqUfZuq8j4fM1BuLOkQkEmkgBTck0DSlPvVhsyWnC5bH7wTG5BVOwvcy8YAsWCLhQIh31hoftheAtsZ2MROR9GiNsSzCjK-9rIHEmk-7H2YmErBvZ8CEWGiNJok2fc2MNMPya_mx54X4jY9CUnidSxgSiJJGSTEUF4H8r2Rb81SCtOGCT28hYW0c2OohGJUelE_q8okkSthuxawbDdXziK3OYZBF9uMH9JIWAIdnNU8OGMijIQVzmF6EYcAjAI_sK1b6YMnpx4Qs13g9HfBWWSnOXwAW1eIWNabazygqcPTUwcnCu9uuHLqz2hceU00eRSBr-8LD7eGc0hDtBLIEJOq5IyVbVp_9ttM7b6m1XXj-3BN8-lRIM4xOQrqILkWmbmDagBWDUN-4vgwygctGSTz6guzRdNfSpqonBTSzmzgJjh0sGU7ZEjKNIFgc1z-ukT-BwSKpO_0ergJJgz7TxWA-ubrPaqjYL8g_p57559fZGUUnLrSZBz53AKvNgxtIZIK_48RtNfM55Ycp7JWjQgDRHN6Q5NhYtjajnljttn0hMQZfKX9mg3bWsYJWR2rbV04ggRvq9QjLdgMsejZlc6d2_5EKcVCm1FtzQ7Z442_hlqjwvzhhCL4NHncxQVhxGK_37N-X1jlFYKOESw1O443m3h_XH9dlim7fbX3LAAikX7sYspenSiCvYKnw2PnzyXn8k9zGlFdFJkJkekX8oabAlCstv-PhKlMp0bvVQy6pFrgTpla9UOqcPp32_e49Shk8Qa0rBKO_UG0dYM10L_cSAz84dXaBXbNezN3NQK1Rr8FfTXOcDDjGIiRGLuIsMAxiSrpIeFqWnTR3ZL1lqbisaotd6slZWPavwIGma1gJFsU-cTXSXyUJPqz_YBSYVKTbSxEs3eQZYX5vidZ4tbdAoeI7Tu_BlbUjm-KXkJ56PU_3M0NyPVdLezim3Y_5hYfCNxATHMjiP37J-ta59DSWSyKBbkL1lLIS05K3x9H3hAU7ruourl5OjBGw8dUmLH4TLo8lGl7HdCdnLT_dSlADwV7b2Ps56UU9FC_YGCSy6YbZuX9ZSFdsxhAGM30MLSWQGsTXC_G4Am0qfslpvvGMZUArAKGkbVAZBZ_TDDThZJF4WiNUWqui6vsvrVhwvcUPVxseWAIw9x9plhZ9hAyhcqcda9ojGLZH2y4GobqJV8fDKPhKGm3B6UsvKP5XLaIzMJnMq4DMs="
+            "data": "gAAAAABpPfBZgxynQcDyU_8al6ezFAbtvbngQmoKf_fSK2RCWzHk4-NnOknXAu2pv7XMRkRt89pP23u26c2-43mZoHIRKlnG8JrQV9amzwhCmxim7Cs_qjwPareFKCYOhjZfWlJjEyXCjTgLZlSULCvte5GRKN_KYZwKcfXuZj_aFUbpz9YTLdjMlXuSjDyib2HeAEum1n1dEW7g8DBPg7A3c3v7UvYKdMsxabc_A82vaDzCQuHepIG-BlsByT3__nFYSDW0XyrUP4XGXi-cYqus7vlr9rQ20YDht0b8d0MzauIc1fLDPMlvbB-bKOH6Jyg65W9JOApvawV91_7KdQ9nZ9naV7X-PKwkSwQUG9F2_IgoTjoZT3knJyZ4hvjSHlpKG0LzgsQhwxpjhsUbkWqdniFBKW0UfGR8F-Ai3Jrz9pVBeKF0Uu93B9ub-3mgpHxmwU0Eg4UbnsDIEmRH2QuWXBP-s-02jbLqInxdVaTlvdvoaoXyYNy1-ZUsxjkR2rRqB5O2rlNfEO7RNGbnRNpvibQI8sJ1VY8-VJnwWoM6mKnO0ixnsk23wqhIYaFAtLbPQhnZXHp8GiFMUl-7fYCx4Hi9i5ruqhuWHvRi-cu3DJ5fYfSAF1e85hCU7YKzC5salvFXS4iyNAzLu3RbqruwW7XPMBRqJDVYSXW6Y-jqshZy223p6tVgZJo014TBELVHhjKQ8NZ9alGskVhjWl62mY5bnbiN42PSj2CIl-MI7lZG0AW7f2dLpu_p0hYqb7FiQaASzjD178YL7UEBrmTBNyMDiQhFWDOy9yfDR2JxCyRB7vZzoqSBDZsTsyW1p_932ffEC7fVK8uq_i19Ar8sf2-0e7n11vbzrupW5ULr-5rd7kksmiUHhGNaksh2eJPyjukpAp23B_9EKj5wogrU82UXL3DTsaXPWdU9ZjaYYvCDXUM1BJnUKVWzXKJz4rCbQ_fP4OaVDWeIH6EeutRSes65dQzswPyY4ZVvUUWIsJIUaJstMDqf_K1AOYmg-tSvJt653627LUxhr3KZcYsNSQdMznEHIRdlhTHTWm8YlUVkAcnJIJ0keq8AG_kncyy51pySB_Tvso8ZSmrnqG1arg-nw31jFLIA_Ab6kCKlZc0o9uPep8u3kJBeNpn34MW27Zyi9qGjatUGkE1a8iBVrOqeX07T7GYctRrIcDYjNUc34z2HHOtIV1tURoLP6Nc599FnHOgHIt4JpVJqnojbQC493H_eEBVo7qozBu_PHBln3sVJiFAI7_tC5VbfiNfEB7aGNHTTTPcURFHID0PcDvVc237Rsxbmg4VsbtlG-2-530aV7CLPlkUE7pgDLUGI_7sdqgoDza_I9jKT1qeXBq6_XRgnFOmnPDozWf78rU0HqbWOJ3g2jYLSR7b6BmfTF-6nPmXvo2y3RM3L_FvACBjqj0uuz_R2_ZDfUnn84RCjLgr51G1iJGs4KimNlyo6tTj4UrWFjhPuhPsNULWGJv75y5JRnRNESTfFrZigtFP2lyoH5-kiNwaddOImF-i1hXLCGHEhIu5zP-K9iHpEh6G7FB-Wp1N5Z7rx-mlwG1ZhlClujkJcAfkZ6MzIn7oMARzaLwAuMssXmEzeL8JiKSSVAMP0FgJb6OxdTHrngP2nr37Cg5eELpXc4yBlzpp4E02tvn3NijvCM7w85dUdg-ypn2DcDWeYG-61eiWA35xaq-gSxp4IrdZRFD_jeXnG7mfayfZJBmEG3Bc1zb0QeYDPr_bnn-FcsZjHyZ2Uo_80ZP0hHe_-62NxSwgA2XNo1LaSvhr_uR6c_6d-bU81sGXlPSgNjr5L0eMicyEWKPiUT661E54="
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 137,
-    "completion_tokens": 144,
-    "total_tokens": 281,
-    "cost": 0.00161125,
+    "prompt_tokens": 130,
+    "completion_tokens": 178,
+    "total_tokens": 308,
+    "cost": 0.0019425,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.00017125,
-      "upstream_inference_completions_cost": 0.00144
+      "upstream_inference_prompt_cost": 0.0001625,
+      "upstream_inference_completions_cost": 0.00178
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 120,
+      "reasoning_tokens": 158,
       "image_tokens": 0
     }
   }

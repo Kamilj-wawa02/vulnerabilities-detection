@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765055961-H9PKGCXwO7g6HMrNESlk",
+  "id": "gen-1765666178-ZIigAvBf7APAEQivpsDa",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765055961,
+  "created": 1765666178,
   "choices": [
     {
       "logprobs": null,
@@ -12,32 +12,26 @@
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 617\n}",
+        "content": "{\n  \"vulnerable\": false,\n  \"cwe\": 0\n}",
         "refusal": null,
-        "reasoning": "**Analyzing code vulnerability**\n\nI need to dig into this code: `int i=200; while (i>=0) { if(i%10==0) printf; --i; assert(i>=0); }`. The loop runs from 200 down to 0. When `i` reaches 0, the loop still runs, which leads to `-1` and an assertion failure. In release builds, this could be bypassed, depending on whether assertions are disabled. I feel like it's more of a logic issue leading to a reachable assertion (CWE-617). It could be seen as a vulnerability since an attacker could exploit it, but the input isn't external. So, ultimately, I lean towards it being vulnerable, with CWE-617 applicable.",
+        "reasoning": null,
         "reasoning_details": [
           {
-            "format": "openai-responses-v1",
-            "index": 0,
-            "type": "reasoning.summary",
-            "summary": "**Analyzing code vulnerability**\n\nI need to dig into this code: `int i=200; while (i>=0) { if(i%10==0) printf; --i; assert(i>=0); }`. The loop runs from 200 down to 0. When `i` reaches 0, the loop still runs, which leads to `-1` and an assertion failure. In release builds, this could be bypassed, depending on whether assertions are disabled. I feel like it's more of a logic issue leading to a reachable assertion (CWE-617). It could be seen as a vulnerability since an attacker could exploit it, but the input isn't external. So, ultimately, I lean towards it being vulnerable, with CWE-617 applicable."
-          },
-          {
-            "id": "rs_091d893c87dafbbd0169349dd9c42881969570dce33ae2354e",
+            "id": "rs_0453ae7635024e6a01693ded82da7481948e17198320c150ae",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJ3gTrXumq7hswzbsUYAxNAsRBXy6rNcyOgkR_kSNDcH0gvv-AqtU1DqV0mjISeLr_HEO4xD4LyvwmFnLkT8uejsDAEiNNbXlHUUt0uwcFwkNJkCm6iezKbmKKfXgpYewgF0ezKmSuTZS1dafI499V6WD1SnGsge4PQuVf2YXeDOhkNumW2LcSlU2rqnACtLhW4EmvFhOJbm9qNkyovfEK8kL1ndzCqTIY5F4L94llX6yjQ0dwQW3qqGqIipdvfXd5f3FLGrqy_60x7Vo6ktcWGy6R6g65qZP4gH8pgk8eMWqQldCVJempYFH3qWsq7ZH6ovbKL0F9QV_x2wHN6ij63V4ejxqoPj6w60opBMhkLry3DeSnS-9NNbQI2leSmtUX8szjwUJoHzHagUPftiGBz7eXbJi4QCEbpqCjrcBBm7P7uNR0MfGF-HuwmPlbSSVqZfETtRtmk-eOnr2T7OA3IGRyrMlsznDqYOsDE9DjGjosGGyakOE_Pf8AlnWQ4Mlm7aNZ7AoWCeTrgGQEsqF6ntKJGpBK2PP21122QRKuvARiCpR3EgZ85nzofwAuAjTl3PB4S1NAL22zGVJklyJgpPbfXxTw9NU7B-26RttZLIPn48qfEKZG2h8-RSYoQIEDpZz8RCcFvAfRi7htaKT7qSvwgxU-ex8ltbCyzvrr6exS-8xyoHhrmBTp7opvplarpKrANZm_jNeulEahavW_4JWzy8p_ofexKASc86qeIlPynVVoCPSgXKh503ylDiM9TKjpyrlIb1tNwIYapDtbEIy5ApXqiFvoiVBWtVF4xM-A8yr2v7xQWjsT7lTGjqdOf5ge_HMlHKUCrCHFWEqFzhrPr9JT8iGgyPhYakgQ_7NLCph_xXYh4s-LjEc6qQYOV4OCX7_S-CdGo3lKU1-9KkfiD1tDZZm8rknPoPRMdGOEwuol_4eChVqtz4_P_xG-yUeLLCg8i8-9fg6TBswY3wto_azAz1gzwhNvwFInAen9yJJfxJv8U5E1q9X24DKHDIz-pgce9qDCgJJr6drNV7No9XI017zmMCV0Qa1gCxYvJOi-WYhnEBAmcYruf7MKJNFFHy70z7lTxBs9mKSEQP8XubEp0-oPUAh1vCx8-cRE7luACI9F0soh5JnBDQIwtqFIVuGHrUS4ItPUS0rTakApnkEXVImDiJFGEVPi8g1HRBE9tSFYJvp63S0PWlgUV_b7w1sd8jA0cZjadHB9bWmkkzh61yqoE2tExacZg_FA9NBo__LEpfsmkPmVGYMZvOdHT7vYCFaWKyel5ZgYcmfga_KADhKTsPslH4AwUJ2_3zzumUbWN2G8DZrPeWrFALbpXVxfLvoNwzd9PdPVFmUXRIh4xexHzbEkh0vEhGJ8VTXRoq-ESq2l8N_tokiylkupMEOqHs2yKLj7EWwnz7erjifnuCivQU9XflqNukpahCwPHDoMowOUpEkFOUJpErkweeWhJ21Ca6eKjKwHETzYPIAbcfS-U3r8m7Yyo0BI6W2pIls0v1p7pts9L6KbrENtbTEvtNdZl2GEwXN80IsYtwxcsT6yDlQ6tnYNVjz1GTIuzk0wzEAj1nWwfuCja1AgYKxrbUb0hQjse4CBBSI6VSDRN8C_zC02iQHMseXMjj1td_JHp3d8DU-MQwo3ss"
+            "data": "gAAAAABpPe2GMTyI0CPhGiHbb-IajY7EPhRHlfSPmBVstHkkXcdJrPNwq5U1O5gcwEDTaEbarAAzPfOJn7FQbtMYLio4TSEcl1ODDuZcnNkN2dR8AHN9V_aliMtrQSqxetC7vjxg-vfYADEt-X-mikvNuTZFiRE2ThyzfcINiQXgr9RcOoCe1MeLbvY_K3jxEPEMjFlOthUuzvGKecIdYvDmGqUzTw4bSrMxmDVdHXa6s-jeJgi3-zT1ga8pVw5qOhwsEWQFwHmVZZKnAcEhx0RMfxteSQMrf_gBOpsXyBfrCTLtqpLy0FM8KWTYKMaFFTqCBFmUPeEVdnSLmUNxt4kvz_XiLtIV-qW3Oi3wCJxJN-_7ZTt-aqj44QZWieqKvrX4kdUOK1STD6aF3928BqpVSunvcfvE3OgsNK4bjzmkaKo-D11cpQK1cHUOlAP4Y2ZECs0phzlsrrQxZO26fgsKvoHqabD9aZdMrFlB5ZKjl76iQeNT6NwMG-wwcXM3n-H0F62ppUtDHRT0fDEoHoqnp6bFAjv8l4c5diPG_cFkea8YCCEMF2BosfbPBG7eWVPeJzwQ02mjKfqVDRLmM-XZSBQ9I7BImNgKSBdiJew_Y2w8J1V1cI6FSe77MpbOuv7u6hlv_goebVu8LryrNXTeOWBALI_altfj60__h1beDAe60fMXwG3M3KA3dU0Gt2vFTEZyhcdjMbsP-vBIfbmEuD1SG79-Y2JBAvlJpPXZR9uhbOgeRHI9b9iCMibslze0KGKhhy6LSn7GsPM6O797naSQoxEZ4DJODeeOy1AXxBjtKR4HyhAXP-csRtJbH4tW7cb-IkEVSB-ncwwIVvJcKCbRk0lcbry-lFClceWEYTBHaeK1ibfN5b9ahlSPPPkBc-fw0ZX2Nohyj8ZdbDv4TbiPtmfs9u2Tu13aBYtxAu_sJc_hBBqyRCC9EKGHMNAcAwReJ3v4MIRPZgTcKS9nArCwFrEaonPBSJtaLGYDLu4zmKNnBRRoAKW7bw6D2OR3-A_ofMWR8a7nBxUWmDt0hAh41x9oFetqHcfsq985fs_xQtFRt2TsvCBnoF3AJW9A2nKmdZ81TtL97TFiMoBeqtKaQkqgViKIbmZ7neX_OI_z1av3ACaqvrUOvj6JkirOBlhjbIdOJ7gTi4r4VbHd9vYB_0EZT-hF8IlGyho1GLkv74Sgrh2uUnIlerhHpp9EBpnQnCNipgzdPCG6s7FBz_T9WVKUp6YLjjVwl3Na4ng0DpF5dym-0BnOrbl0hQShlnb-D4xoW-d8RzMv4yQxVZePnxNVhoD_8xMrT0Q4u6LwL3knsU2-v0ZOwNLNKQRucpAZmEbNqRqxECHAysFEFvtj0cK9czzwhCQZr-M90s9MsusgbxP5CIdQLXYQUjCY4A6Nrd4dJZqjg70jAaxSw-sCoqtsgud-uX4XwvvV2B523QZvHWYAp7z8i1eef2Z84jlN1lIgnGLH9s1KZHGp0OJLD9dqS7im96wLF3y9bts7m1OR5DEniJEcvOJeFbJDsc3_qkvIDKl983L9ndkaHg6y0tP0ZudU06xMHg8GBut2aAQNYqc="
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 159,
-    "completion_tokens": 184,
+    "prompt_tokens": 152,
+    "completion_tokens": 191,
     "total_tokens": 343,
-    "cost": 0.00203875,
+    "cost": 0.0021,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +40,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.00019875,
-      "upstream_inference_completions_cost": 0.00184
+      "upstream_inference_prompt_cost": 0.00019,
+      "upstream_inference_completions_cost": 0.00191
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 160,
+      "reasoning_tokens": 167,
       "image_tokens": 0
     }
   }

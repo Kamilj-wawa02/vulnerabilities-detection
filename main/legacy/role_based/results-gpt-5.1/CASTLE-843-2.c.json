@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765056957-DonP5CdyxJ6DKmkiBvjr",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765056957,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"vulnerable\": true, \"cwe\": 843}",
+        "refusal": null,
+        "reasoning": "**Analyzing code vulnerabilities**\n\nI need to assess some code. There's a function, printNum, that takes an int*, but I see that it\u2019s being passed &b, where b is actually a float. That creates a mismatched pointer type, leading to undefined behavior when dereferencing and trying to print using %d, which could be risky. \n\nIn the context of CWE, it seems like CWE-843 (Access of Resource Using Incompatible Type) applies best here. Using a pointer to float as int* could introduce vulnerabilities. So, I consider it potentially \u201cvulnerable\u201d: true.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing code vulnerabilities**\n\nI need to assess some code. There's a function, printNum, that takes an int*, but I see that it\u2019s being passed &b, where b is actually a float. That creates a mismatched pointer type, leading to undefined behavior when dereferencing and trying to print using %d, which could be risky. \n\nIn the context of CWE, it seems like CWE-843 (Access of Resource Using Incompatible Type) applies best here. Using a pointer to float as int* could introduce vulnerabilities. So, I consider it potentially \u201cvulnerable\u201d: true."
+          },
+          {
+            "id": "rs_03297aadd6587962016934a1bd9e2c8196a03ebbcd42c82c7d",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpNKHFgGuuBgNmnMerzrB9u8M9PvjSUxJgritzRtcqa7e8fhR5BiznclNZp42FR_awQmTMQAU5A9SIRPzLGjWpDXzEtUKLLSjjpt88SoSnX2JjBCXh2daaKJE1FcmXspplmAqemz2PU8m3m-jsdWimDL9DMCqYlw_kB2LauB-EeLf2n9ZoknWoWkQ2y61Tte1AY_eRQja4NPndUUo2-ZfkvH-BqYQeAIMakpX0SEHUqeERoaAsbYFwWHLuaXba-7t4t5c8shkuWavQ-5cz6maHYeajbpcxS7cODcQJcoQs6YPJBPxR-NArEsgk3AeoYywCwr2E5ziJf1Rk9gO459ch55mR325FtwTgq8Gvcn4yYdbYnhD2LFJeVBQVqec-7pHdXHiAOd2wS7jnkVanlFKCwhbtb-slx4MawOnt3Wv9GpRwIBozPJ2bdbzMMAgbUeICGvubaUS9kVYmR3i_Ci1XcaGQtqAqj3A1WRuIQpE1s1LUbEgqv2HEI74Obu2z1wZaZWkSOX_vOOY_DmW_A9PvQyZn2NtFMhzN7cifBjHZr8TJZyQJ8hfRe_Zsmv0Ae94PORB4sj9M20Y0WpZqghfc-CwEwoF-0nhuazEv29hhGJ7GCwHcRRc4AKjU6jlJeB9RYVEZvZLtqCJo2WGXt_7XdhBFhES4Jr3SDqEvtVf2HVba0f8D_0Btff8VNnACc629YfL0ZZpzPF5XK6a8MtS8_8zjuBPdIosJlS_Xtelc26eOfaaHQaOmRzczIbpythA5q9RbNNoMzw0NFri2lFHtYk1P_O8X6j-eiE49fiNrUUxCfZqGto0oQHPFvKvYhmR9LzunRoJJSuyT8tzqq4I7VMTv1o_0dfOWiOUYXNrdDsqzSYl89sgx8gPpYhq8diuVYnlRSx8nDNBzO_0sJmSGxU-IcbcMFxFFJQQTgNKuVtGhtGKKqVvk7NeRmXVFtOC0Tk0ksN10Q2MQKDWqXdrJxz8UXNJX2JUyFdcLJc-Cv-qXeX-7c1cvZFCOv3J4BcpsiRf9-O0OStTPIaU1EXGC1sL5yW6LmjwKTdawtLZi6vnA1Eh6NUnFPH3WPoDzQNwyEnleJy6UariC9XJw1yfbuHur3ETGUJjQBEGZYwBYHDb3YfDE0zIGVUmxCih0y6PF9KSYp41h_uhID5dLSsoEn7s2MbVI2r1TEc71LWgngp6Ti2kJmAS6rWlJcAm13b8ETSfiLJ1wKKXloGdQHzQHFyIhHUt6fjnGWrGde89iHbaE6amgV_-0U2LsLfUMbEI_cpW0Jv12IzUXhvT-QhsIzSzsUGHcwmgIIraxD9qQME9j2Tl1_01QseR2Nhv-rKGykV6AMYI9c2q7-4lOgjCXySEoR3gfW5UTLSn1bBfSmslNj4qqHzoW7NIDkJbfng7KWrQBE7bM9VpLqyJEWhLzdfM3eZVy1mCjdEendzW8ZfIyyNRibFFRZHGDa53MdFM54wIJGAoptpdHmPiFllJ9xeXunIDS8WV8JrbuRfr8DByCKdfL5AUMaA27uwM8SVvzIfegvgrAbfgTxV1UTDF4IenfIl0eGWYNfK9so0HCYv3Rvs32EoyOu3VOCgkz9a-N9KbPlFIAa4dG7JV25-6o7_N416AhoLoRJhkj_WUWmybmKOaHcm8Kll-jICLx8Re39EsT3lR_RCE7b0PeM9wmweQ5fD9aHJiwzlaGO5dFOJiv-0uU-v9Da3U_UWQotZ2XPBYSF1Gdcn0XzNGgDekF6IQhEIJAbQu-0LEjSDMLwBtWD2YurGGxaf3nV0yI5L1aaqYRzm2OnPP-nt8Q2PFHN6ic_FqSvIQJXqQoGGceXAccOWrxer8HyIrGCOAls9JvLaJtA2oVjLCDX1M7M8MIKzg3bc2F8q-gFflYO-SkILS1c9058XsT2LLfwk5oGCpjwcaBLal6VQ9DnKvOkZ40xTiSg8vgJkvo7vyZ2fyESn-mq-A="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 141,
+    "completion_tokens": 199,
+    "total_tokens": 340,
+    "cost": 0.00216625,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00017625,
+      "upstream_inference_completions_cost": 0.00199
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 179,
+      "image_tokens": 0
+    }
+  }
+}

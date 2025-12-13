@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765056080-q4SV1zHuLbHa4Rug4GHb",
+  "id": "gen-1765666258-7hBHyJBV7tgFqzIrWd60",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765056080,
+  "created": 1765666258,
   "choices": [
     {
       "logprobs": null,
@@ -12,32 +12,32 @@
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\"vulnerable\": true, \"cwe\": 120}",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 787\n}",
         "refusal": null,
-        "reasoning": "**Analyzing buffer issue**\n\nI'm looking at an interface issue where the output buffer is declared as a pointer but uses a char array of a specific size. While it seems correct in some calls, I suspect a vulnerability due to the call order. The main concerns could be CWE-120 (Classic buffer overflow) or CWE-119, but for C specifically, CWE-120 is applicable since it refers to copying without size checks. I\u2019ll choose CWE-120 for a return in JSON format.",
+        "reasoning": "**Analyzing vulnerability**\n\nI need to conduct a vulnerability analysis. It looks like there\u2019s a sha256 function which takes a string input and outputs to a buffer, but the usage seems reversed. The implementation hashes an uninitialized digest array, but since it\u2019s zeroed in main, it hashes an empty string. The output points to argv[1], which may be read-only on some systems. If the digest exceeds the length of argv[1], that could lead to a potential buffer overflow.**Identifying buffer overflow vulnerability**\n\nI\u2019m looking into the issue with argv[1], which acts as a pointer to input storage. If the input is shorter than 64 characters, it could lead to overflow when writing a 64-character digest into it. This creates a definite buffer overflow risk when using sprintf in sha256_hash_string, as the outputBuffer is not pointing to a correctly sized buffer. This incorrect parameter order leads to vulnerabilities like CWE-119/787 (out-of-bounds write). So, my conclusion is that it's indeed vulnerable, and I\u2019d identify it as CWE-787.",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Analyzing buffer issue**\n\nI'm looking at an interface issue where the output buffer is declared as a pointer but uses a char array of a specific size. While it seems correct in some calls, I suspect a vulnerability due to the call order. The main concerns could be CWE-120 (Classic buffer overflow) or CWE-119, but for C specifically, CWE-120 is applicable since it refers to copying without size checks. I\u2019ll choose CWE-120 for a return in JSON format."
+            "summary": "**Analyzing vulnerability**\n\nI need to conduct a vulnerability analysis. It looks like there\u2019s a sha256 function which takes a string input and outputs to a buffer, but the usage seems reversed. The implementation hashes an uninitialized digest array, but since it\u2019s zeroed in main, it hashes an empty string. The output points to argv[1], which may be read-only on some systems. If the digest exceeds the length of argv[1], that could lead to a potential buffer overflow.**Identifying buffer overflow vulnerability**\n\nI\u2019m looking into the issue with argv[1], which acts as a pointer to input storage. If the input is shorter than 64 characters, it could lead to overflow when writing a 64-character digest into it. This creates a definite buffer overflow risk when using sprintf in sha256_hash_string, as the outputBuffer is not pointing to a correctly sized buffer. This incorrect parameter order leads to vulnerabilities like CWE-119/787 (out-of-bounds write). So, my conclusion is that it's indeed vulnerable, and I\u2019d identify it as CWE-787."
           },
           {
-            "id": "rs_02e39c234d8b52a10169349e511134819393d5c7b9afb6beb7",
+            "id": "rs_08a99a8313da8f6e01693dedd35a648190a52ecd6bd8b6b097",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJ5cEOiaDv89oJxIRbZa156WcCwVIMUAs7xolf02wS4qHqFCL9CaLLBRjkxkBkRtwJ4x6Eq4Oqll9Z9w-3XvNWiKMPWvpFV_aH_X1O8hu9qPpy_BtLpB_rQlhPQejZW7cLzuK0f0tMxYwtHs8vUdj3Af1rQ5OLDM3os01qWKW0e4zBuUdwcBdk81lBk8L8xXiSsHRS13lidur-rTIg4WP16hrub5i7jz5L88x-gvzNrmRaiCbdLjI6nK22eznMwtZ6eIjdy7bpJTh0vtaW7fXPcShJSuojCIKQznVUbTLzkB71wJlt7ScK8CbZy0NegRza9yX-nDwO1zEL4R4UVCyMuoeImIcOHmIjhwk6Hw4AcC1JXQjB0ONm7qxWaJkM339lwBQ45tzLKbj7KXrCqe5RC7sbWps_FdIj1IiKEqrQUM_HvsX35HMkIdPy375_5-K7YWei_y3IKj9MdOR2I8mKktpByevT-TKjKCFpvKBNnqEYjQpAqDttKVI1h8zgfOH5AkiPQgQSVahs48GBCuJe453qdhizkfKs4th9m9MVmiCQPX048B4oERT1lXMf7_RXSPnClAI29-u96fbxSUKBsUY60hkSuzLwe4v8G-oKm1MJvwPbbKVThOJXfEVo7VgAJIticyHo2GI-sQk8HgIe8QGBKVese1XX8zJptDheP3O82EPxxxdKYdu9NEUK2ZP770-okmh7O4YoPM_PGBR_yHmbwrbXGnphWCSqdMXEgFr3IffEZoCDXicmZJAnmeWOuApb9JQ7U3Wn8aSxhwix1AnPXs_wMsnEgxq9QpwWd-kG9I_y9u4rhD2sfN1bTbti2w3o1WQfVV3pQwmfcwnf-6-CG181tc2A_IBfmLxQg3QOBC0L4bx_MbpR377avJtSIWL638Y42-k8ReYOMVB7JJ0Jes9RRg4yNxtPuy7yPWiFqYIgQDpMZmjh8GE2IREATYl4GSdx6Pg1mAlpMsbPw1WZqfQ6xG31RpggRj2MCAxKbK5eH_01Kb-kswL19_GpZkUP-7lb0mmkj-YaAwFxHiSKVPi_bxJlB3eUSkdgufbA5OqEm9dSOyhPkoE1-Wp4aV-SyYCWzz0kwDi0j0o9Rx8-QLDTo5jsx8uKIAegI9jYQ7ZgQckCj-FnE_eOIVur3_CVVcOpAnZRdBgMBd0x4rmtkIqolGnxIVgE6OKa7MLA-z_iuzQcDRo3bZkmH0IJBNd2idH9hTKuR2vmDCy5KfW3c7-lf2AkQEUrA417N8HUwTN8Khqlr6ezTEN-Jklbql0c9ZyjEimMHIJ9QVXYDa5eDgOWkmrnlhGVxRsWRNV2H8V7wI393O0Y_VDMNgkDfT0oAWdOIUZuGz57l0dxX9bipLu8X4oC6TjmWW0TUvtmcDy40sqvS9v7DMUzv2_fBXfCmlGtSokQzvj2swFfRXXarzwksPdyX8w2P4g4hkk3M_9N4rkNvVz3ThpM0GcrWDK9E_8BYvoKUf00yiFMC5uD94XiBz--lDveL96eggo4qg9lAPNkCN7q52GvJ2DxP_cBuADBAIWmPvXch3LLxA-cc8imLEzmAuQUaX_71A51sAIC88auDCrMfVSBP2ipmwdNkbJIb5jgrn7Wg85lmHStDwY30xUCdsYpALOayOxuZlX3yl57jF9BNy2L8ekd9nPyCvOmoRBkI5LUnl4Ws--PUhCaIhSLri88hkUExW8SPa28Wl5cPBCrUW0noTnirK6W-gut7w6BKWyi-dz90XDDxjFZK87jngNQPC2lN-XiMXOrc4EZ49HdFNqvEsCxT5pI-pGgEDXsHfbVSzgRDAdyKEJd01ajk6TJOwf0VAb-yorNA9Q1agbVD-WwdOy7AugJgu0vIDApFNCgK2QxCm5B_uEkYhhIw3s4-pg7tnObDFj5gODy4BM1X-Z3aUaOXglkgi4ICI0yUBV30lGLZkK7iXrs9ug48uszZfT4xXn_hA1uxKkdRLKPJOmMBSPllX5dZCA5ofjWRvzQtAxzAWOcXoUuqlQ0TIbxO4U_vbXA72a-abK3ZCKTEq_4HgXD0IQb-Zk4SKB-TFi_FHxzoDm531rLZ-I32BqY2Jr6ZHagB2Etp-WZtzu0ufUcbqBJzLdUt7gkc0LdJzjXJ6slYeAyyf7Wnwtm2tgxm44b9_Zx4jHTFfnvkXVN4YTJSOX08X6BDOzuhLAY4E-b1Ppc5ORcc-TtaOQaEuSrAm9rRwvfIuZ67g8-CAnomOK93vfW-o_G0bFjd7ElrzpM7_fc8nC8gyZ2D1n03Blr8AsmF7TRSiLLRcsh1Twq4Eitr5TkObMeQHEG7gJfFTmuXtFnaROSohvAFPU_9X2pFiMVQxv91vFZF4O2pgeS7GoPN6eglp0Pr6Ltvstrv509mgQ3MvbMBHr64YA-3zSAi3GPGTVXlyt4l53nJ0EY9jefl9QsOe1R4Us2Qq534isfSIThD_OsrO7wMyToFrTBGC83tFMQ27pAtdjjacsv5MMFbNkbHrMZE622xrrMLiXDPa5UvzF76PYqzwcMb4jn4IYlA6KeIasRoWYWemnyLCNBK5eUvXIG5lRW092xVnXojhEDgFP6xcsrNVwjfk0Jw9fqq6M0AKaBTRz70SdSrkbULvHAoxpYEyvEeWVdmZ-gWtWFPFrRb_AoKJwwQCKQjQpWdAZtFcQehOl0l00PmRimWneyer"
+            "data": "gAAAAABpPe3b5HYzLyn11tExAnAfgbmlXWJm1PXtrD4fuzaRO5UhfE6YBcRmZj2xNKjucGgnP_cSVZfs0La7fmv_5CzSx5C1o2fYZz24IG2HT13A5doJ-pkSIOXmFT062PuU7aM5IOmSFaHw9GAnGNCyOv0S6K2eEcVHklCEcbhlXS9Q5w_w6llV51zb2mfyinPD_p0CkUDnDOE74xOAXruxGzKJp6F_oiapkVbM_muJdVUFf0U5FEof9wv-eCAe-c-jfjuTp5rswddsYh622SSIVnHxdaV-kb2eaqu24dxUD-DucO0rmr2wKFXM9kti_cvjcQFlO9XiKrbsZK6WDIGXMtTDBjt7vdvQyGEFl8Bir2C_uQ8tv-pXqug5PYOadkComoQtaQ7muKz7Ddr1Wb96YUdwJRCPsHNfM0Bi69X5y6dOgVmd4vTYQCmX7RQFEJDDfcm3CD-EynuVns9EjoFzGUPRIaZhAfJye3dxjVC0wY7lCJLvhjbqjNfuQvChWleM0pQM9WcgVGJ4YSxzyC3cMdyZD3s77GQcd0E5RirDLsicGfjmMPE8jVurQkq0wDhSmYoDtYc-LhJxfzeSE4RzhMEbEde2PngzhnTdcEozyeYDSgG1wsGlF5tbiswirrlDjdgja08vcS-rZEvuUYdWNVdbtFbJwBfEOzTJqiOYDoVXSS7b-P_LQ-sZi7zRJImUKI73Ue0Z-TAqhRz37TNhhgsmolbdbBSBcLXFTJugf0FioHDca-0IuW-9hXgxJSX7GpDNvFPk_hOipXaqogUa2ys4-454d3LwHeO0eB6FRr6-3Ax-FLp7wB1_gs1ECXd7vF6v3AtmlFFuZIGjq1FSK6ZP14ogmGPu16VGQqwtQ-VU-c8ZSPo7k7Rd8vRakNLtFuE_eO8IT137gRgT5lF06wLNKDSzIPKLEUQOo8ScCUgZw_RBzCgmUEi5P2_7wZOVHlTXnelu2J80773Sl3xRn8gm8MV98Nw_c3hWqFfWUbQiRQ1dGGeTvXCJM9Yq7lphBhJr0FM5NVPSD5tFz9fQ9KujhqI75gdRwR3YSQ47mldL2HgyKlpK9ApgUZygG5Dr67jSBA2mIf1_kFdujFSdy48hwnI5AGJd5cGRhWC--hEAgJf3rVu0yCvGSK8NkvxYaECJQxDAbMQtocxlwp9Mv3nUgNG7Cn0p4MQXgTQBwhZlJBjw6wiVnfUAl41CyUqLUcd0Cres2NwX6v4jdpf9qopubp-Lb0jFeLinaiOZWLLaK33xRqCXznvLerbBQq6OFkyo39fikzlHs-y7-m0_-l_BuRUvKrCD5Yu9juoUdy4ROKKZPTP-26m9MIn_oeAN-c1Kpxti1zaRjnZhKN2F-ga-KiTEre-2riz-yH_aRtmitrhTa5QygtcWOXQCx0rrn2ytg_HD19jXffi6eugKOp0DxERWxusRZEDr-5l2Oh2sHdwhz32mrXtvYOi5yIO-kFJAv0R0I09pi0Cjw5nzJ-iyInUyYHZtEM3W2GIcz2v0qD__jhLonTrTQASt7__cl_uB9NmSLcXfZn8VqhiuMiOO8bjzR5qF9EyXvB05Lok8RbAyjvhr7LQNq33qHETkODC87ANFW8GvZjsBP8Q62dApJaoLYRZYfKPzraDP1tWbcmGJhpSgQqJd3IqMA6vWLf1248DM5h-2cnAG8T0oJG_LNz3wED3QSc2BeV0ikY0EhOdL_IRLyBGiuSQ_Gmx2MpRmZCorM7ndmOUYxLPD2UMa7Lh8ihFIPxaFP83sdEMr4NRtftuTOAjnYo-7Lk1Bgx_S3E8Wt7juBjrYwuXugMtLNyecOruwi8kbdM89WT-vEUNBcNsGSA_0WHUFmZKcpLuBHQqiQMEtKBlID1w1vpfDqlOjdgfM680t85_2wJ6wM85LtBP_PXq0IYvxkfbsYwIeeQew9Q2VKi7CfN6apct2I0pdZMYug7p5d2NcwOA7tGNgIudB52x1jhEUkVbQftdMh1C_v3tvDhMjv14CvkqQHUnPuTvtffayx79YfEtd84OQiuvMFrthF5_nKClH76iBhASR2znVgK-lgVQtLkHSqiRznk4z1viW522nJFWi9kXR7pt-P81evhYCIFp19Nvny9AWBA-Xq4YM3wi_0yDb7QlrG2ongK1nGSu4c6fLQAJcBd5QLjDosItko9w8LYYGIngm6fctYsZ3rYLWmBlMBW6QfnUfN3HvBo-axSbMp6_jPRygPo7C8cziS174NslHqeygNBh9ARYsI_wLo7_teqkjBMK_HAXxfuz9CcMJeuoC-NK4CqvhaVlCs62MQkvuOwT600qiiPOleg08wPRd0J8vOXbvx0Be3P2MIFtOLRRePbmqKQiP4tiXwOreVr_uDEVCN-uhvYuyfVYS7i5iAIHkzccZblNMJBSH-mEhiVstH3MnTkKyNHJNAZIbZnGQdSW1e07Yi3879i9ph2j5aJpW-1V-0f54jwrUos34yYXQHqMvQkdJPF6qHxcpl82VjCuMZFexsUso5aoBmAfGkav6FVlBjsgfqzu_e_dzVpXeJPIR674ADgdel9d6oZZ6NdV71e-WxvJVGjKA0eluh4Hvy4CNsQwCeiz3-shlOEjsmkHSHfU96Tj45LD-x5eIAbvu3DknmU5OSSEvFvZTxMMgiKYAaOKgRtPZXJCtAdgfPwGMRQv-ucY7tz6Tv3MJMXJkGIsPby05L3hYOKnSiGwSnr3KIF7HXne8kd-W9e7M6uEbgMamf7PTDdm0DtyeC_h-p6S1aD-EVd7mo7T98vAKYwcZPTvHLXhHWkBTQ18VXfvqVTNPl02F8bfKMbR3ujteNsPd2Ie5OjkJnOfhQYArKZzesbkyI4QlCdPLhm0TAzObkW7fuTidMqExQHOFMisk3f0ZDRvFB73Gf3VObfsBnpezbChAT8NIvQOTV04S8MnHypARlb-aGJ0HxgfA2TRlkDUL3Ck3B7U9i1DKtFgV2-tWEgn_AnqK-llnKAkxWQnjxKAdfs15_9naB1Vjy9gvRRyR95RgyzsxxugIRxuWZmAZQkjRanoGTLpIJh4H_RgXYTv3YlvV4T6bBVdHH5JHz74a6WnrOOHAIBhwLSSEFjxiejQAu-z9i_qUMydzsJ4KFh0QaBB60L6dMc-At8KCnq5vwp6r4dtjOM3bKIBMZuxgTjiJK0lVnxNPGb_uhjSHVwg6qWMBiNco9YPTzNaO5Ql6xo0d7rXwuh-IJEnEKrf2hljcutjmJWX8ZdpX-00ow2IiKcXTWPkaSBJXJZcz"
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 491,
-    "completion_tokens": 343,
-    "total_tokens": 834,
-    "cost": 0.00404375,
+    "prompt_tokens": 484,
+    "completion_tokens": 461,
+    "total_tokens": 945,
+    "cost": 0.005215,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.00061375,
-      "upstream_inference_completions_cost": 0.00343
+      "upstream_inference_prompt_cost": 0.000605,
+      "upstream_inference_completions_cost": 0.00461
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 323,
+      "reasoning_tokens": 437,
       "image_tokens": 0
     }
   }

@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765054864-Ft3dj6gb5x8O1tCkY3c3",
+  "id": "gen-1765665394-dJmDIcRMxC41aA04XCQg",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765054864,
+  "created": 1765665394,
   "choices": [
     {
       "logprobs": null,
@@ -14,30 +14,30 @@
         "role": "assistant",
         "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 190\n}",
         "refusal": null,
-        "reasoning": "**Analyzing integer overflow**\n\nI'm diving into some code: `int x=77; int y=x*x*x; int z=y*y;` There's a possibility of integer overflow here. First, calculating 77 cubed gives me 456,533. That actually fits in a 32-bit signed integer. But then computing `y*y`, which is 456,533 squared, leads to around 208,400,000,000. That definitely exceeds the 2,147,483,647 limit! So, this scenario points to CWE-190 Integer Overflow, and maybe CWE-681 for conversion issues. Overflow is the main concern here.",
+        "reasoning": "**Analyzing potential vulnerabilities**\n\nI need to check for any vulnerabilities in the code. It mainly does integer arithmetic, so I\u2019m considering the possibility of integer overflow. For instance, calculating \\(77^3\\) yields 456,533. Since this fits within a 32-bit integer's limits, the risk seems low at first glance. However, calculating \\(456,533^2\\) surpasses the 32-bit max limit, leading to undefined behavior. Despite constants being used, the discovered overflow signifies a potential vulnerability pattern, specifically CWE-190.",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Analyzing integer overflow**\n\nI'm diving into some code: `int x=77; int y=x*x*x; int z=y*y;` There's a possibility of integer overflow here. First, calculating 77 cubed gives me 456,533. That actually fits in a 32-bit signed integer. But then computing `y*y`, which is 456,533 squared, leads to around 208,400,000,000. That definitely exceeds the 2,147,483,647 limit! So, this scenario points to CWE-190 Integer Overflow, and maybe CWE-681 for conversion issues. Overflow is the main concern here."
+            "summary": "**Analyzing potential vulnerabilities**\n\nI need to check for any vulnerabilities in the code. It mainly does integer arithmetic, so I\u2019m considering the possibility of integer overflow. For instance, calculating \\(77^3\\) yields 456,533. Since this fits within a 32-bit integer's limits, the risk seems low at first glance. However, calculating \\(456,533^2\\) surpasses the 32-bit max limit, leading to undefined behavior. Despite constants being used, the discovered overflow signifies a potential vulnerability pattern, specifically CWE-190."
           },
           {
-            "id": "rs_0695733e98d48a4c016934999144148195802a4f9d8bdd2cc5",
+            "id": "rs_0a0a62bbe1de27c701693dea72abbc819496c82e6b9ab97185",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJmXTs0x_fCdOjP4T3H3eIFFh0uzfT0ArCfQOxOMv2Ju2jDPWJvoLGzfOqqaV6IEpkWNSbHvTi2LjuZh7NDMrAhLz877051v9n_60zcsHquADrbiFPk9ujrNhhfIR5ZXAkciczZrMYS2RSYdFJ2UXu1Uq9frJASn-VXN_xAX0uPwU0NdsH8dzxua1NPCwKS9oxkzO9BSW2NP62rFQ5UeI5gmspL_VxDqromXhrUrYbx81AFn0rAF-QhiyhOlKnAvwD4gFXyIZcCoig57Mbg7leD7KxWuJZNMhm0309N68xiS415S63AbipOwi64c2i9UUow0wWhVEzXQ6TMvph39C86gMjShbIjQtBbSC_LVLWUi665Hui--uaTW95l8YHp9tfVLH4IcOBTj3UGWf8BibeGYJlSJaqjHZDL6qyjJzB-vc2Uan34weOXpy0n9tjB3ROWt12CjHbIHTJFL_S1BdldRr1-801O3I1NBzRalM3IVW_T4W9Za4hvqck_Q8HQVXL__N0_vabCcuGBdy8-wkyxzduhieuoLymP8qRJ1BAolbEp9QuvR83hD6D2jhHLfV-5Sy9vMars-IFPMxWEk9aqD_fSPPqlkS1HqT5-pb-dffD6pBMBXohxaROIBwaKvXm3HKSUEnmUgVoxhgtEz0m1SBy28Ve95FDYmon1is7UEkchbrXqHgrqNZG_x8qXFDHwyIsgQJrLA1qXZ6rk8_pcfu0OGbi4cGm7pxJw3jcJxTTm12bjNgaiSZl8uT5xqZbqQNafu91l6Gd_tVGKqwIxOfUgp1PaM75rAmbNzdSP9UL3s9o2zHtiOkuQhfGDr_Z0dckxzeI43cY6ufGffptYCbBBWIFtQiCI6VfbQwbuZupeYezlgS9haLoskfN2ZUx7CdobCESR8jK64bVYbSjrrom7ybytwXQDGeF0h71KR7B5l7AK31dK7XL8PYOocni3uvRx_1GTGjDO3J9X4kLMpbUvLEe5gML9o79p6_dtjx4svudiu9F8VOoZcatmsF1G3NNWISmX-TFYib45KKDf6cXmJDy7oXW8YhXOpfNKSlp-wrQjBi2xshEX8rM4y4QIp6jCY8Ot9Uc8mRzk_4pEorRTbGUA1lIoY-FVJXz8vODa4Nll0YGecRznZ6tyPtWpS6sOGfpYGeRDFxRUCzFSNr44pON_AxVPrOAOzLFRZwLTgjbXIwPxQJBt-WZzyXbNGalJUKZfYN_0nRxS_y57a3hq9_RrVt2AGgcsERPgbw5RR_gwtG4qmzDp7KYMHSbUmNxPGGJSiBInPHEEPzggnQhnN6S17Gol6JLByb2OaKzBuwNcJRBWlMTEBXqewQTvcDbvkeS5r39-NnbgkFk-fn5kX3fLUpCQ7BaeDRXW31BhimfJ56TPABTGfPNW6WOT7j9aemGNYwHxubIJZK9cnMS2-qHdiK09IYqcHwpPzfAGqt02wpcV7Bc-joeg_DtXfNPne1EHjjBCY4pUzJ0yYUbm7aTPMw6GgpxgJZB9FZF2o1pybGFO6E-RdEilvZfXu"
+            "data": "gAAAAABpPep21FCILObqqQ53CxgqR1OtTlB-AvUCssoeU6S6a9B9-Nva2yXZy0tWewZ_1r3qvEqRyTTCxwj9v6S1FZI4lRCAdnDA4iwmsMGbjDfMYZFMsEGSPhnjZl_8-7SXMrb6TE4jyMXQ-X7K5d9plmuQN6-Y6S8DqDRUht4hoDzWByjV2K0kelKVHclccSTDLw-eEbJsXQHn2gd2f8DRupnIv5p3ONWI7SuV4CwWc69gQ62Fc6FIlJvM_KcWaZN2a5f7vtbheZwFFIda0Y68bn6KKcRBkIPkSIPKi7WiGGTnAYxcGtaL6vzGAIhx-PLO72swGSo0hzoDzFmOjqKFgS0TxcPOpSYlgZAqBlfya7W_kwJuvPAYfLenwA_3xcTmdK0hgtPGJp1j7R0MrRpk-wej4QQxIXM5AGsFKUnYr8xSbQ2GmcHrlGpvdpBgQ_QSAk6jhtvz2bF29ttIqr3cc0vPOUlc5QFrmlv139RQs_bvhfg3-hyar6v7fL8q3qrz0xwYkyVmLd-SPDCdJY-Z_nfTp0tx6ZMRp2Jc_ayhxl-nQosfSS8xV_ggXsAd3jbf8IFTucpzeVMkXBQ9K47GjV8uTBoRJgGLFcMxBSz9QBMPb9Vb5ixZ9MQ9hHLv-MKkOtvqXurelTQ2gr2ncBSa2I8ciZQ1nQsB12wuo-C6IJpyeIrGHc4ZZRq7U9hhF_-bmgwaLADkQqaE-28B049Se8o-HC9bBYgYFfKtW-N6JKnA2TfqaPxAJ-9gx6VH-R2GeXrX_lHlhqWjqk3t8iSDowGWyj6RoJWqcZ9GtfjLMzMXM4u0r9Vwkg0RXbotoV_1RGx55Yz6URF0dS3Ebb2uu_KLtSWWdd6q3RC39WsZ5mCvdakTOTHDu-I9VVg_E0JRlDtLxDApp5EHHfm6yhcvpw8_07w8yo-4J3arQXxDP2yWrr4tc7A30yQ3fKMAfiWjOqtZbGWg0m3-BusF85bBaKLPPmuUQl02axg8wQjgc_Pzlqob-4WcH9PMlo_2UZWrUmq9QL-bhBZW73wLDdfX9rvPMt4hzgi-RlwidIdyfb9BB39XSjJQ-yCWuxKOkybmuCk8At9Hh9m_EUHVmbPLxrwRaUy_-qS9GOs8hE5DnLRJ4QfPvxDG5Nnp7NsPMEre3azEDahsB7JrdaHAUOloLbbdl188jdaFJ5lUDHu52whR_5HIwG3GtN1J1aUdJ0aOmDYV9wXkyhL4FCOxROS50cS6p3n35KEHfdwcOEwuqtQA8X1KxwFTXg5bpyTLSmawm5cE03bPmsemLjEX5PfiCKS5HpQaRIPUD9DM5uCMi9TB9dDsvWePiprcInpK6thg2mOzfe-wD9tQPArStUoG1OFOHygW8fF6AS85W_QBgKjD3Qn1uFEQ7h5QRTpfdemy0B4JQaiVCoEO19-4Dk9kS5bvsiXcmXPwTu-ny3N5cNrjycQA7TNRMsbtrEJPau42zmX-NWciewtHLaE5Bd8AXs3kzySl_0F4zUBPzZx_UxtAnePkE52-lTEx-jU04WHFLgLZQyI7YFHcQSMmQVy9_s8JA7qK8LK7DTaA4ZcoZVZDD2gSfkZKQQ7v5xZZReOS1y-85mzp2RZUcVct4cWX-3ttq6NrjQ=="
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 130,
-    "completion_tokens": 222,
-    "total_tokens": 352,
-    "cost": 0.0023825,
+    "prompt_tokens": 123,
+    "completion_tokens": 212,
+    "total_tokens": 335,
+    "cost": 0.00227375,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.0001625,
-      "upstream_inference_completions_cost": 0.00222
+      "upstream_inference_prompt_cost": 0.00015375,
+      "upstream_inference_completions_cost": 0.00212
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 198,
+      "reasoning_tokens": 188,
       "image_tokens": 0
     }
   }

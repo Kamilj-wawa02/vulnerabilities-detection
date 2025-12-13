@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765637566-oUA4AYKy7cmblorbkKj7",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765637566,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```json\n{\n  \"vulnerable\": false,\n  \"cwe\": 0\n}\n```",
+        "refusal": null,
+        "reasoning": "First, the task is to examine the code snippet and determine if it contains a security vulnerability. I need to think step by step internally, but not include reasoning in the output. Output ONLY a JSON object with \"vulnerable\": true or false, and \"cwe\": CODE_NUMBER.\n\n\n## Examining security vulnerabilities  \n- The task is to analyze a code snippet for potential security issues.  \n- The goal is to determine if the code contains vulnerabilities and identify related CWE codes.\n\n## Examining security vulnerabilities  \n- The function allocates memory for a 2D array flattened into 1D and fills it with a range, later freeing it in main.  \n- If allocation fails and returns NULL, main doesn\u2019t check, but free(NULL) is safe and a no-op for small hardcoded values (n=5, m=7).  \n- Double precision is used for step calculation, casting to int, which may affect filling accuracy but isn\u2019t a security issue.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to examine the code snippet and determine if it contains a security vulnerability. I need to think step by step internally, but not include reasoning in the output. Output ONLY a JSON object with \"vulnerable\": true or false, and \"cwe\": CODE_NUMBER.\n\n\n## Examining security vulnerabilities  \n- The task is to analyze a code snippet for potential security issues.  \n- The goal is to determine if the code contains vulnerabilities and identify related CWE codes.\n\n## Examining security vulnerabilities  \n- The function allocates memory for a 2D array flattened into 1D and fills it with a range, later freeing it in main.  \n- If allocation fails and returns NULL, main doesn\u2019t check, but free(NULL) is safe and a no-op for small hardcoded values (n=5, m=7).  \n- Double precision is used for step calculation, casting to int, which may affect filling accuracy but isn\u2019t a security issue."
+          },
+          {
+            "id": "rs_4ea584ff-af39-fe36-a29f-2499d5b484d3",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 512,
+    "completion_tokens": 526,
+    "total_tokens": 1038,
+    "cost": 0.00084532,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 5.632e-05,
+      "upstream_inference_completions_cost": 0.000789
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 505,
+      "image_tokens": 0
+    }
+  }
+}

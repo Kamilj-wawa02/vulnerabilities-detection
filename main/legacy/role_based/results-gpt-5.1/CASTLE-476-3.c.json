@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765055651-94mYKo6nLacxCIGTvnRn",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765055651,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 476\n}",
+        "refusal": null,
+        "reasoning": "**Identifying vulnerabilities**\n\nI need to check for vulnerabilities in a function that returns an integer pointer. It can return NULL when the two inputs are equal. The caller is always dereferencing this pointer, so if I call `min(&a, &a)` where both are equal, it returns NULL and then dereferencing that leads to a NULL pointer dereference, which is undefined behavior. This can cause a crash and is recognized as vulnerability CWE-476. So, I\u2019ll mark this as vulnerable in JSON.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying vulnerabilities**\n\nI need to check for vulnerabilities in a function that returns an integer pointer. It can return NULL when the two inputs are equal. The caller is always dereferencing this pointer, so if I call `min(&a, &a)` where both are equal, it returns NULL and then dereferencing that leads to a NULL pointer dereference, which is undefined behavior. This can cause a crash and is recognized as vulnerability CWE-476. So, I\u2019ll mark this as vulnerable in JSON."
+          },
+          {
+            "id": "rs_08750f6883eb38080169349ca3abdc81949c56dfcb64a932ac",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpNJynd5bcE7gylCjkx9vpDV8Bs0t_PhFvX-WDYiChfiurdDDxlknv26dqGoGLG7q5wsSkm6-khNsbsbUuzKzf2Lnd5vmpVTzC8332qaBaLfChEz4Svil1laRyAISzG5D-TIo8YWrWJXookeG0PlWPWhPZPpzlrxw67ysrn-pcZLL2iNO8V4h0Kc8GQDmW8NuMkqHefff5xGdCYgZXqdXuiX23hxt3oiKFJOYp7iZsU-wsAooQ2tMnCB1Hz2ySpY8m7FUYn1Qlr9gM3SiOKiOoMNAWuUJ4BhLXGXXLKCN6fQWFEdLGiVOOZFFmpK47w00YPMvYDhmzVI11SkryISwAtRBjRSEXQG7yoblKP0fU4yHA1yxacNg9qz6j5wjPCbtuU0sFurNQRu18gT1FAjhy13MitpMmpKJoXsARXihhN9MbsdNAWjwgNMJPOrxuPygyPNnfjhLOXiDAq29MhFzyGPbb5HscMT53tEVLCa0gTKfcLCud1cImY_2KvhkMTGJMc1KAJ0cSb1eDlznn1at9FV6V_jL_6sCpFW28K7xIJVU4Zh6KhIRdQpswIknZr1Y9FzyjMntFd0gz2-E5dQiHIMz_Kjoss-zMH3MIk4cSbnTjVOHbRJgcqkWUiU2VJOfZhmFORSBGxss_rrdzj6mFoDX4TYxctcFA_gFZApp7tXMSZm7EaaZcn6SS1FXqPI8ZkJBCicSokudagF7aUEWAhylLxg18YdWTZ8bXVGKhwTCQ4ejnW8hNUH-V8GruUQVDqBxsTHIodClypT9XbWHo0YgaayRNpLTHjZaG-SnS2zgsliJV0-lg6WrD-Ct9BKVeD9qPq9Nk3X9MwKxArJkZ9m3ZMpzT4fwdmFLgi0g3EDWCXj_-Ajz7TeslAo03ueocrUdN7R4dbZFADAUPi2UPcrU4Ot01b-gWzVDbGgoVOAsHj__JPbZ4tPBwbZC00dMBKnhSqknfk6U0-6mEWXaBoUfznh5vIFsS2jnXftd7En5nB43cq2--1rm-pr1XJmLDFv_XWht-zl3CV_TV8Mc2_3lKo17IfMaa23XKRKrIxh5a0exTkLW2skSXGSJT9ezeRHIVS-HoB2-2dpqPOou4_GkgB-o6yNmB4TOZencX0pL3Fz4Z6lMDKMOHOcgyF5Fbh7bWGB-hivm8VFCFN9rsZjFuuxdWcJfmTjZURp7FjY4ituqoPd1RQ5xcpqksuPyBDoQvHDiYmL21xFVJ8VubcDfu_LcfGhd742OdbjyFEGYTXliZJFtSlgkaUFulj7k2ta58ZABs7G7c3D4tTygCrEP4hmiGpFzZXmKwSxTX3RUcEmM="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 236,
+    "completion_tokens": 104,
+    "total_tokens": 340,
+    "cost": 0.001335,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.000295,
+      "upstream_inference_completions_cost": 0.00104
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 80,
+      "image_tokens": 0
+    }
+  }
+}

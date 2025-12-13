@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765055955-DgMW4FYiyakZIVx25haa",
+  "id": "gen-1765666172-RyfKlVI9QEP2OplzmAox",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765055955,
+  "created": 1765666172,
   "choices": [
     {
       "logprobs": null,
@@ -12,26 +12,32 @@
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 617\n}",
+        "content": "{\n  \"vulnerable\": false,\n  \"cwe\": 0\n}",
         "refusal": null,
-        "reasoning": null,
+        "reasoning": "**Evaluating assertion behavior**\n\nI need to break down the snippet where it defines the macro `true` as 0, which leads to an assertion failure. In this case, using `assert` with the definition given triggers an abort due to the logic error. While combining misuse of `assert` with redefining `true` might seem dangerous, there\u2019s no significant vulnerability present, like a buffer overflow. It may relate to certain CWE categories, but here it\u2019s just a reliability issue\u2014not an actual vulnerability.",
         "reasoning_details": [
           {
-            "id": "rs_07c9fcbf8810f96e0169349dd484b481969682aa6192c781d1",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating assertion behavior**\n\nI need to break down the snippet where it defines the macro `true` as 0, which leads to an assertion failure. In this case, using `assert` with the definition given triggers an abort due to the logic error. While combining misuse of `assert` with redefining `true` might seem dangerous, there\u2019s no significant vulnerability present, like a buffer overflow. It may relate to certain CWE categories, but here it\u2019s just a reliability issue\u2014not an actual vulnerability."
+          },
+          {
+            "id": "rs_06bf1b7b5b5818b701693ded7ce6648195970c64f60dc0541f",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJ3Z_nv8BFNNWbGwklutAPmxLeT7LTLJr1xgidkwcyV7tWFTUF5Q07frWLhHUiiBKNywyCcpyqk0osLP1O13z9lEWjqFZe3hbvVRC_wVkfOnRKqSx6Sgd-Dl9CmZAC4T7mpH0BGYC4nQ-CxWXhENNodA8gmyEbW3sG74rDsZgx2f2r6vkRqI8WITiH99POBIRFTwbw1-sLJl_avMwcNIL1O4czg9bJ8K-2AbNDECAp44Jz-ohxcHoRgb3-nl0GXoK6V1EJt1E4CJ_j-BO8s_lTwxTbxUYcJBCmgqG6LPBb6EPB7fQgoh_3kaEfOvt0BuY6mLGq0jf33WFCq1mQ919gCFCKG9RltdIw36pd1goZm4kIC5AEPu_vIyfRL0ku4N3F9ulllm52jvB-2hneeckNr4fEFMBXZHrRF4ZR_wFWVOdRfhfhOEzlRUb3U_r7Pk47PG8b8AHPQeo0de8PIqn1W9BXiIu9LQJNdcLBLHIyboKxT4V0g9fUuueQqnZEmKeqHNDNKVT_bLqyWPEd_FgNs8g1gj5c1pJ2asxS8O6DsYA2Pcllyb8Qjr6WmThlQ91q7cQOmldDT-jqUmwP-V_BZ4qo4gEVwCFpDOTu7vnFpjjkl3a3hjJLDYapCmBLEi4bZmh2BRlJXL_Xc6KO0iU9T55aLtrTpip5yOQAgvxP89qkUOiKpbPMsVUAnA6sLVhJBXOuhpug4WJu2eX9M1L_xA2IA2UlJ-VzZKFFZGbTfWFY0mYjy-RsUSuj1s1AFORFXH_FcE-PTiRYGpeYzZ7cISEUBwSAvydrQZzeQKc7ED5fxa7n_LlwJ4r-2jcz4f4OV_jMNRHHKMc55LL9M6qd-U_nj2fy6shd2RGF27AqVx_0KEnUiDIVG6mtquApDfprXr95iffQLbsIC4ZsbBCtaFpIoyz9L1fxew70GhGczX7pGKQT8ar1xIA9W3N8O6wQrT4aftAbRb1z9uR4dYtsHrMgqiXiZ-aNZTQ--VevhfBetVxG8yVH-ghYRCMcGQA49iKKd2C7mBga2jwvhVxrI9aOY127r7LO9hcSxq9W8EyxHNWekFOE-ZfUrlj_4McYYSHTkfUds5sBtHaYW3CuJGALrPAJGpMftvlk-Cn5xEWHP2X5fcCAh0jMLE_DCerx7DSqJpWAl0MfkbhdVqCLf7XFItTvZhqkC2KQhQ7jNoOp72_MZDG2BVYpNTT72ohBUd8t08k7rledyAkwVMdBh9Px7NieyKdB2pUe67SncD1tgKKmdCO47WCXdcHyPUCsAypeudIbVW9xePK0i-g9A2UvNWHe3To1xMaYQPSmR3UCfhJE_FZXde6WhJjf3AS7LGyCy11IKuGZA-1kfp6hveh6v8GXg8p8SvqhujEwltHhOqcqcFf7G6TTuFyHFuPWqbH6HG9-BDokJNdPIWKqLJjeZinL8I1VzBVxy9f2ggKyNBS2FRWTo9D6oJitsYb2UR8GF1ZF6HOqKOo2ci8ohm3TS8TCBWncrdXNqRUYBBNsXdm_R4s5CFwDQHA5tuISn9_S8EfJ-uydU0rbWINARG4xx7aqmFlCn0IJ3FgKaR4OtcYLuRi9c4_AJeL9jhyww7oi_dFIIdB7ASBdDSEEJrnoJuXO4XignOly1v5YuqW0yqTGMG8rC4PXLukwkaJKMYTATOL52qzKsvJ_Uo5hTnNJShdnJhKMPQo1sRAmupL84GyAl1B3tKikvjmwo0poTnztoAFZcF2N-NmDbQDbFn4iBiTAIx8Nmi0vlILf39EDZFwDB-x-tA-m2sree7hcVl-XqjvyKacHrTU2Mx5DvxIVnZFqBajZ0piuvZCCf_6i53ul5PlChmM5BBGor4M6vszI0wHxhIVqQrlTERBuz5lj9HEUmSVJMEinwQCvCxhJ9BunhEy0N79IEWBIKlF04D"
+            "data": "gAAAAABpPe2Cz3G6NjZrbIBPg0rU18Kn86wrre84hVQJLB1tyzlMoLXE1XTFgbyta4X36IVWd45dYMEQfQRAItn--QYdIZtM_ucSV-_VixukvCD_KEN3n3KYRULMv17dv_fPX8_bgysM6VJc0D0gYqlAxdJd3PTAu1we3VP7zvX1PiE-_eAVEJ_R5ROOdosE1KlilyDBaj63ry8khbweA99It-GBQnwJpU-tXmUd1yVFADmicTvjdTib0FRlRDzZ-TwNyT7GLWvR7XlkbNO1hSO0qVy-ueJAMoJm516lTBdSvtZ5BGMIunpqAs1AUW01LODk-fgkIYxSWFqAKDznrHaZPqNXf8tLRG-8WMrqZ4d5xBtL0LlKzfNI9r6C9jso0xys3-aNPOMiSlrrEP0CdlMTbbv1I1NoG7D8-PCSQ7coEEntlTyw3Gk6JK9NQqeoudWcISVBMpReJyTIjUrlqGAvLqIRMEAjhsL5yOc2W8mak38hTiKdHF8FJBx0kRGYkkalkT7JCYxkHLb0WJrF24pOnChbQt7pnE_bfC2L8-sflKLP6bspXipYcfFJsskLDKMeEvb8aTPv5vj06wgITYSWsnTMQn-iuL3pPYv02rjOKSfBmY8zadtGBFlC4FYFNxHYfo9l8ZKcDPuetMUxkwPbMfM1kjM7tmyNKFOVrivrs_9YZYDevWKpM8RGX_HMqi_J6PaiKKdX4_E0cNyMNYZrnFzO5MzRslBdVhzlgOssqgeyTmuUSlVLm6Zq1C8K53x7NogP_PDUMO7izxBpRtoTzmjAIc-uCv51STrlKfJSZ5USDUG23dMlYLEBsCa8CmDevv_RNb9rnjY9fQkG7dER6hQkpqjFNIQ1qmt1m29s6_3dC_YN0uzYaErRfzVj0ha_bfHG2Nm2mJgg-vNsHsLcNI3GLldGRP9yltRXi-qNneAT9a7JTO093v6i6jnvg7wIKVkwUb_zDo-So-AE-ge27xEANidBpMRSFF1rRKat4tCwbRQ7PmbjaEdm_ek08oKh5xY-QHV1MvXysMfLdTFItK9Z0XjxgC99iWNbP90IfvneBJrV6OaCp5ysnMg6NwMfgWbpzkPFredOC7Jg9Xl9gXI8wWJfPTe8R5txCujXv0LFavX2DV_Ojg6ZQevFuv74YHPh3oPnh0aO9RMw0EPY2VqNzxTOS2Rc1FcS4ctace6Kk-y4cjilH9KbhdC_Uc8w5NqgCxGQo4QFvxJnwMxQXYItFsRGg82Fc5fK0SutC1WAVuvRWn7pvlqJ9Jk0x6j4mD_V9w6-icKAkFJ826Rl_wp88IWj5EMXoKZkHLj4PDerakdAgXQS05PQ12RM8JT-D5ogemaUrJgXK3LZQKBtZ-gQ2dwKj19MC9CNeoGuO_X_rIViwFx7wiXWPnJ1bYIPuZq_Lztmws-1lgZA7eCMAu0nnF2uhH0LHAH0lt7BqK7b0lvsNKddC_sEHAxVw_GgZ6Co7eGo-BTBWFWVebSISjRwVgIgL0HtyDiOPIIzXj0Ma0osjavWTjLopFMmIlJ6E-Axnu0888mtO5XzrjSpIGG9ugBb1aItTiOhFKNJ4QDZzX9N8wTo6k-laoIuDfrJoDoKmXzim5bP7PR8LZ-YqkKRpm4mRvxLbOHNEVu2lcVph4rC-u1UIztE_4SMBr4cLHpOpYQ2qmXCTNBfvGmvBqrYcf7VaqbJRQxdAQzh2KetfXQ6ZvQMnys9w8m1LgqyocddjLKs9X04QsVXf6_wQKHknhew_bonSiEc6Gx_fqII2cvtkMnypeClOSl063KGVGXpbMYkua0BvG49Li9HS0IB3cKCwyGr5htwhE-jgYVTn87G8Y1stnowSonDuBv8qwKa5izNRERJcHZx64QWAzAkk8ViV_WaVIFIUFUxUJbUlHQYkkeeLslS8shOsi7nxsZOYjR6cFA8mNUlZci4-8Nzh7HvWlBcGP0-tOqqTC3N6GL3WHpbqDOMCc67cLosQGxrVhinpxCZbEYtZ4jxWmVQBWaGkw=="
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 112,
-    "completion_tokens": 210,
-    "total_tokens": 322,
-    "cost": 0.00224,
+    "prompt_tokens": 105,
+    "completion_tokens": 213,
+    "total_tokens": 318,
+    "cost": 0.00226125,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -40,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.00014,
-      "upstream_inference_completions_cost": 0.0021
+      "upstream_inference_prompt_cost": 0.00013125,
+      "upstream_inference_completions_cost": 0.00213
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 186,
+      "reasoning_tokens": 189,
       "image_tokens": 0
     }
   }

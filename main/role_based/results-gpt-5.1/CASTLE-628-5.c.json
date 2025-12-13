@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765056092-IAUt1ALmP84gyhOLTzKF",
+  "id": "gen-1765666267-F5O0feX4j9YbfFuO0HKA",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765056092,
+  "created": 1765666267,
   "choices": [
     {
       "logprobs": null,
@@ -12,26 +12,32 @@
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 787\n}",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 120\n}",
         "refusal": null,
-        "reasoning": null,
+        "reasoning": "**Analyzing code vulnerability**\n\nI'm analyzing a code snippet where there's a critical issue with the function call for `url_decode`. The order of parameters seems to be reversed, causing a potential bug. It writes decoded data into a string literal, which could lead to undefined behavior. This might fall under several CWEs, such as improper buffer operations. The concern here seems to be about memory access violations, specifically CWE-119 due to the improper handling of a writable versus read-only memory location.**Identifying buffer overflow vulnerability**\n\nI'm examining the `url_decode` function and noting a critical vulnerability. It doesn\u2019t check the bounds for the destination buffer, meaning a longer string can lead to a buffer overflow, which corresponds to CWE-120, the classic buffer overflow risk. The mix-up with the parameter order is also problematic, leading to an attempt to write to a constant string. My primary concern is the unrestricted copying into the destination buffer without proper size checks. So, I'm concluding that it's definitely vulnerable and will note it as CWE-120.",
         "reasoning_details": [
           {
-            "id": "rs_0b25585892a799dc0169349e5d38908194bff90a02f2bd62f6",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing code vulnerability**\n\nI'm analyzing a code snippet where there's a critical issue with the function call for `url_decode`. The order of parameters seems to be reversed, causing a potential bug. It writes decoded data into a string literal, which could lead to undefined behavior. This might fall under several CWEs, such as improper buffer operations. The concern here seems to be about memory access violations, specifically CWE-119 due to the improper handling of a writable versus read-only memory location.**Identifying buffer overflow vulnerability**\n\nI'm examining the `url_decode` function and noting a critical vulnerability. It doesn\u2019t check the bounds for the destination buffer, meaning a longer string can lead to a buffer overflow, which corresponds to CWE-120, the classic buffer overflow risk. The mix-up with the parameter order is also problematic, leading to an attempt to write to a constant string. My primary concern is the unrestricted copying into the destination buffer without proper size checks. So, I'm concluding that it's definitely vulnerable and will note it as CWE-120."
+          },
+          {
+            "id": "rs_0b8ad1dd3527c03101693deddc274481908cae0f6264fb6e97",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJ5waoXgSbPuD4tZO4b2YLQYFuRW2ZW2BnyEIu8IkTdN3bX3oc5CJkxCJj1dWznuJ6Niiw3VCFs74dOmO3N3bsCZ0jtzy8fIIRSu-D4M1yNVP3K60SSAgAHLxKLhx-_vozfTH5cZ1V8WW2stqT44LpHzzxygom6LajmxvnBVrsfmVWIMe9wx9FYe9xqFHOv74OYvvWgb-8UnMsrNeTiaVZuAWdZkYyIh7kzcWEzgwx-NwdTYhdt8uP4jVXGoDbnpk4bSJC76MuWdEk09Mv0P0QVuc6fPc48gQpSSM9gbvROVQnPUImQfD1Qw3_yHJ2un217nt8qlhndHKyCxh2KPjO-Ewa691qsPUZOHrpqK8I7EPhtpFSiR-wS6dOIYWBDmQbh1kPSd7J6tLmDPv0y7Lla73POzU2vxXW1gmSQNPFv3p8mJLJsW7Nvl5XtTjr12xNRwR8eO-mAptV-zJwfFlS4C_EPFs6QnjVuZap_YJpYGn2Pn0uj_d3548ziMYZjNOAvejKnJ-X2mob-rHOTSZ70dSW8NR-NXCX31ZkHeY0sJ7T70H5IGf5DaE-u2fgjTCFBiE7G2NhrFkN2mZXJIqERo0e1vyIICeAdC2SQQiwcGxl0MuNm0Ld9UkOoEzSJy2ibw5Sy0LG7bbMtwqJ6Xyx33DUcx3zCtK7abqzbq3bHyXmycwGJFRu4JueowE_T7SKh0QHvvb-nAnvTBG6RAe_2Q8gZVul7NcHf2nqBlGUm-ZG0qnafzTkod-l__gk5VZHIu2yCDUbEb9LjRUQmrPUitYl__H9zt-q861eBW_YqldR3vN0AhUiVm3Y0GFA2fJQU9KxlhBOhIEmoIYI9UzlaWeEhHtkAbKBDp-5keKfjibdAXvlBdDzZNZeD9pUSiZ06HST7CYj6CkF_6vSvffF3b5CjYNg1I9EF2uxEIJAnMnQPcC1HDMXSV9izvFAJyS61LWei4xDhwiGDH5_-_N9ahIMCiDZXjFMfARlpjl-FXEW2eDBMQBYz3XApBRJcQJ82N7LD_JtGxrIJ4tTn5xAo4Wz0iTUFb7oTY4pH-AX8adYnttv7Ao8yttbxMfJ4g1V8RQr1w3D4jehX_PLWERbBSpNNsnCtNrVRDDrIolXk7ZpTJmqHoYTpXMotovpMGnzmKqgXlnfBGOeD_ktZvG4OQO6thvyVBEGkE_XTuB-mb_5XXcy4oqNB3Nc5VacogyAkFz4B0P01zEApfWVe1yRlvDFtaKc-AYS4U6a1IuX9gn3b_Od0ib5lAbPANGQeOmlBAslHnlHIrSzODqhS02l3tWsUYdgY8FVJYgwhU5qiGnlH8l2A09nNiCvqy1_yBjLZugzMenI8VtRbV0kACL8n5KPb6BT4YjkPLwpTz8MyxhuKnNM8ubqPnIRquc9Q9K3K2h58MevqOulbGAqWKiurQmfZ8NpBk6seXexZBLRCsCSIqYnygxYlpkFPdhIqGE7CjtI9ug8OwRUzcgdUbpEhMnFKBSW6VXqzA5rX-xWbnud4ibA4V9LdUMwYu0JT0fpS4Zz_chU3G8S5LGeWFh2T2siYaNugBfuMeMagxeuOYZ0bceHHlSG9S4tEvC-n7rnRTvjFge4xcxATgOugCljdmOh1tTbeHXljCCoiDidf7c36tJVSjsUEnWk8ha3fOayifsgK8z7GOv2SpBxMvnJl5-R8GUHOtKNuZ-vgBqPTpOi_g8EWXnctVWtjgi07_TZ8i4v8O4J7j3qNeldce3VgxmPJpR5iaS1AF5fXtar-3url8XceBdzyngTz64VxdtW_-oEn7GEfvhgCEQ-eRQlbx8kWj2LcQJqKL4ol6ziSsEHzLmrjT7RVxRBLLA9TtFcwxoBjlfI7wACou4O_TPXY7o9mEoaLqOBe0Dv7de5R0Dx4k6o_9sfS1NU7hZKoqFSnEP_u2qlX0ckvR7ZcCBuvL_6AAtRa35JwfVjuISjUtjtVlY1BaPHb4lbhP7pt6Gkw6THIjAhFdWk5adEn2cfv563XSdTf-xJlflIZ9IU6tNal390Xfe2bBGGuSUvuBXIUReqIrvPiN1xVuBiHh0lFM4_S1qKSPNDfyquBjTP_h8ZXw-RhhUbGa8rMRJCb-FyfAPpHWmfC9PGAOG2vzQsd3FMMviH3BriPSTtSylrCLbgBw_O_cIEV6wQ-SRnRP0srgBjCRKdeh_Q3ri3-Ve8Ycl9dRg4-Cn6JiiCDaZcO_C44N0lnLsWZ2e4VwKmqv1zh0eF_12G4il1NyyD_ySd62RR3proh_GpLIJXG7niIMQxq2yqFTo8HM7B9lgPg6RQosvCg-t7R4Dr_ZmqY-q7Cdyw8oxR75f1kt-n2mTHay9bP_8IiTE7n9oJPfnYT4-eWxNNW2vie3YypEOF45CrNNn25AtOKaR-s_Iq3JRsFug7Zt_I1rSeDarXvsAwvyW2pxyo5SrCjwSlTh01gRgZ3gRVVjzlQK-6VLY66y51Zg_wmNVlhcoToPgvCDyhlTf0s3JhPMXEOwUe2wcZ4_pw_F-sDwBfraNMtr64oBY-kATJkC6wYgF5qwqgjHqeAxQyjxdHWqTUWyKGJAGPqGyQ1e67ehBRq2M3rRMAObEIBLAwFF5rDItayHAN7TCh1Hr2xYA_4vB29A6jESXVpzXLSRIolU6FrHONcsj4oIppPxSr6z5-DFT2myiljG70mZYpG9U-oe14IqS7jr0-S_MBNqR0FMbX-SAUrKxQ4JMY5xRGPfYhRy-s6la0JrPO5ORacYne7bv9Bs_JW66Qk5_ixdO17xmBV9mJeOS4jmh4GnU5oWR9zAaJivKTlDa3vh6DJ30-e9Xn_VCROG9yzT6dzoCIIAlQQHoudPna2hRUe5L3MqF4yxxqf0EAeNtxIFRIBOmkOg1jiFgKQn93wBmujZQtS0PKmUHqNQwTy7ubxxdd5CzGXiK82JeuyzBLHqBBzc2LlzXx_tgpLmzE1ED5xk6TdxNb5_XkUQGeZPWDmnU8yQUuYNntUDFI9rlPD0--hMKwe-Iup1RJh1k9j5AWfFbbDRs_fP2CNHP0ECOaVS-lF3d_1OSMEtVVC9Cy-bZsHBAkxiyWTp32_qdHAFXy8cpRN6TIvTYAfJqJy4MpEm3yMkoqhgNlaj9wdXwF6qM2Ppyuu5828POjEWyJnY6MTjILP0LAOw4RR8Dn20TmmF97cFCizxtyfeIp5cwwK203oTC9dvZN0c-psZlUckgRsHSlqbh8eOouiLNVJv9HBAett_TzxJeBFzRQjRJwnCWV3r8nkOo2fVNx5fE13Ws10YR8Av-4ogV9wA3hj8DdFgd7qP3n5XKiNugthVVrVCPkz-bxf-HgoYFz61DeguMIComf4hCAXuyh7mrO89AyiP3HN1gHM78RFRzOCvGj7-lhS8oLJQ7v2yXCM4gWnpfP90eVobFcuT-ZP6QmDeSfXUv4s23rMQNLqeuey1aKpCohjxAN9mtYgUUrbpY2P7WJBkWp6a8jehYVY70YbuafSfaWtcJhuvsKijel0MgI6aKxl5fh7DNRgYFXLKaYZ73ujUUqfq6XxXZVDH1nCkUwY9lNprLa4zJnxCotr3kF8hxrEsqlqrxNAwcagxE4a2-ToU_yOcc3RflNiu5veMkpmu8dBekGra8M-nS9iEDGUJJd5jfYvMoCqU39t0ZD0AuHCnCkqVvznMZ3AlgYQNDFxRb4ZD4gyAocf9LV1iO_FjrcpPBQMdSVhgyvvMUh_y3wr2YzoFf_3csB8d2ZrmQeNzEdrf5IcVvlFPLbGOvz6ZlqnjegrO2PmBGbDQl-hAxwm-YzY6OhSMChPm13yZhnMdJvjQ4kCXaUqhdevOZdshKr5l38SS3aykjHI_nYQGTn3btyfUNjpuuLY1nu6uLcqvf8_uuD-rJ_rjUkvl34B-hke3CUHVW5mwK7nxdwFURETPzpDOpf8pEvw-PE41c9xkLmBbXlIYhi8dbNaanG63JXHtZfJIO2yua3HKETMr_T8qpdnaWNeEzZ9V3wXTTzpt_0c7k2Tfs9OMBz5imtcTvp8jW2oT19OtxvVcLFBFzH83KqOBRJbtDcOdU_iGJLot_A8PdiUuFhmXRGRk_yMD6yOW26eHI5RkvpFdjFN0W7IURtUIYgqqn7QfBysHYa9WmKppRPmcCx_SBoNwMxjCDpx_vFbNIIZiYL4T7UpUuSLU495YoheqntbijoseHMRR9xcVcKb2h-VZG1C3DSeXa2Jft7iFmnjjJ_jogCqilQS9g2oRCpy-p5AWO_eYkTi2gYXkl373BBulfMwsI7bFzeRUhIMdlXbMYxpAG5GVImeVdtW95ogVUVaJfyFMgGKDhV1EuCBqANwGmANDIM5SQV855EzfMkGApEYuYBZyZ5bZhsyA_hit4I4_qLRdAri_tlZZf7MGsppjLMQTAOX9iNSCNT5I9LpOKLvUTEUaHsRbdjl6co1ZQDCF_i0D-rEleJwrHVPgsmDI5yP5IObVMO5Sj5B7Os-9wEeX705VIeIz4tNIzjMG1E_tq8VgeRCYviVlf2YCpYlE8l8wWeabeAX651hGMI7wrC3KmbtxXN6NQJW3hxnDwrDx9XB5m9dwKA0VVaVEvb_Ed9tr9kaqUB7X2vR8uEcuC-xT9v-bXgzAEanef0rs26RiqDE-yhiI05pc6ijwp4oxCtBZV0wXd19qGEUAF_29Y5U4ygLb4kqrGUNSIeI0-hYiCahrLC6WBCuKQ2s8BO9mSSeZ4Fuk16qg_VLxkIYEVcr4b_i1m8B5jGrC8sLVommr6jKhJqymwmL6XGL3qEEgIpRb9vEIQp_3xggM8ld8loVh4Sg5LqNfdOSm-l-xwaf1dD_WqH2StF7e-m92AguNxKfHB1XgWgTe9Cx2NJ8GdxPE7SK7kUsTzw=="
+            "data": "gAAAAABpPe3k5Ui205egef15t9fbs2d4e2brthnvPiDOqbxN-LyRSCJLkmlo3z9uG9gi6TAqQCvVspedY7PZbecALbFhlL5yo-FkA_fihGpdv1B5UI5jHAdzNt53iAWsqSqzirBMbKFhw6JdbgeuCr4roi1Z1ilEYdrrSoWWmsEegQ8bHIwfH1J7senNUFVE3OI1pXld6blCZaDhQOs5ztQT4Icz6rTLUuzXA-A2fifE5jVSmjJ0RNGv_CwlwRCukM3LzcuD2rWGkFW3miLjAx3cDVlg8gqfae2XZfDd1jiXljZRG8Vb3CQsFicZidLpQYgF8jVTSarVZwmumbSjbYb1BnExurNlYfscSlAt5_vSNlhyOKm13LRvJK0f5okgjp_7wJEIndJUdtN7ZmUpL81Zn3fIXRVSnJjvvxKwiY6ZitXKfIAu6V-gHyvI1wjK4VwUH8lTjLqc-7V6Rr7-sfAqj2tCc7eZOCCVmVCujJdOxQHJcWackAbRGJ8cM5NGTs-2E8n1SXZACr-YN2hgK747OhY8gKAM0INu6OB0HSWHkUsqdBdUE06bAmUBs4ISJMMAvIzsBXqQ1MtJuFsiYnGRJmVTz-jyHu4AU28lcdYMDM9KUKzEsVH0XnELAuRUQ2E0o8He1kkeB9vQvLbl2YH2ERRicdBhKO7bznMXQ01O5r50S2NmIozpjVpTGh8xKEXBskuTZbnqazFaMOzKd4mdfwPptYebtnE20UWVg57rOxhNnVabmitC79DRb0t4wdjqnyvZogzdL7y7Pj7v6N4_n3vM8F1Be5aa_qDSprHCNvbc_NjR2pqo14Hz0p4TPCZM8ma8NQGtGw4s9iu-CXBQm_-K1JfAPQ8g9RPUxJa3MLwCHGNQSGW8dEVisyBkJbnTDnOK1U_pL8OyFXdrq2dxK1u9f0YOFH4HWnZxN2QHip6nDZnpTUjsOjYSuuqpMzFE_dpJaA_kCq77hCgVMJChP50M8yfD1MbfoJPCJU2dMk4M0kjKIHlx2KmDNXErcB7tS-bViXt1FE_uQXavj2jD6bFrFdppnWQUO-sjqI2FutwosTSbcUvUA1MZpf96rtDCqCLLDwgDy5_kOZ03WjPIcVdMIUGg63_9FMUU0VoyHzLvEHystqkayNfdC3_3dKYkMoB_MQ_xNCqn_O1RT01sC-at-Igrwm9NK2F5BtFsKLWZ-FyuW2VxiMqzN3_IYtQaOC8ywt33xKLVQoaRIbvFRJDJbW3xoQoTnPo0Hga4Uzy1MfcRLw6T0lm8VFDlxyk_bDnxhMx2Qw5OphKl3OBEUO2787e3yGJ9B_XuE2zEq6EIpA3QOtLH3LKWHXRvn-WLviGfAXxB9Zi363SENvf_UP-_phQLLdnpyApaMXu0eO4APRGRZyy3W4nmrdfRpj4qRxV4PiEai3Sons5MWht9Wa_Jz0WCzyGVNFTNDZUpCB8ftEVBQIDu_u-kxflQSvbExrN55Mz5T4R6ozp1A7P0GHAemEOiidB6d3Rv_4r4gr7Q7LzuOznULmlb6QbnQsItgDFyWW00vV9ouVa93LpCBecp91tztpTkcMOTXz0uuUJs47sOgxxG7RXwwjweLZOlgBsyl1JcXwoO2jBbJN1Ipx5z1nUnL8Eb3EZO3CaCz5Bqp4tcQp4MARsP-5-Oeq_NNeTgOiXubkiag5KlTvlX7MeElBe0PBpip8rlSQ5iraG39p_6d_zIO7CCzET0C0_xz2jbz8GkRv91eUs_T-DcMZntQqy5a7OlnSAhr2Q52GsbgkF37G2za-uJeeH0C14UhGK9ELDgyCj3LjuKvXZZ3L5N7XFA9bR9hsgVsu-BI0C8Y-nWmnyrRZBRni1n8kaKPrj-kDxS8Q1XFe7oOwORKEItkti1N4qGWOwhWGt078v1IHYAKZAJ40JYaQwjYgpit2uaAbW3r5FZhEwHD2XpqcTO_SgQYsUKMRnVREEBY5WWgdmFFp-enYu1duVbf3xnUpeMFPBN0s8dxmWKgv_Lyw9-xrAlOyCC1kZmdEChXEzXAqO_taCm6QZQgtzC9Z64iZdKj-EaLp_6PR10ygH8ROyuOvjFN-Ekesxx5dM5vp9j3JYNOwH4Kgd7ON2-MJjW_HAA0sxyVasU3ULLyRq9Z0vg13h1nlRX0kmWKmmFSe6JhqlD-WmTkD1GGhpeiJPLSdM4sAWGWftbMnYP-4A0HG-dH_ccHhphM3r2jQ95QzK9giCEOa7JZl8PsUl1mBpqz4zwKJfViPPmLJbn4vqCMw6hE1MkqsG6M17z5aOxA7gTcQyJOk5SWS2RMtuwAvgrE1DwvOgzE0mFYiNXOhfd3JXg1u9iS1gRaBFZIzB_HICFKi3ORx55vK73pp5P3l65T-vTuG6vag3LSHLxrdf1HVillQA8VNkmVhLZVHPLWlPR1UZWSbhoCF1Jhe-zB7VpSP-9nrkFA1OCEm08oPxeALSV3iMC_mL5sjpDOA8qhe-L4cD_M4KpPDIf1j8j7e_KjI21ttJsUfz-w1RdrZpdKlnhdivHSmsqWrbpI37bdwINZ9URl47-AAsveoZVncRzMRjhMS0llzepiE-hcO8_AgdnjIcG-rqVoGRyMJOMS2g3bnymnUQ7Z_nVuGUjXDD4vY3F0AaN8QGsJcjQYzVRsId6XxifdI9dxEZrHH6uJiUid3wMBAj2exddH0bUhAOkReQILpJWzXj7_--9Ak-UIUlzmwPH_zgXiWLdg906HeHG1x71J5eQ8RR-XUig0Yc8C5PqM9EZbtXEFYuc2BNoEPepjTb9c_am49nYtYyQUZ00KEldiZQkXMgY_PirDTvNtH7PqNUuSds2QHKCaGzw9Y3QX9vYArd0enRCOD1avjG5ZPHDt0ajauXUng35RKZn4GKLd7LmmZSdWHBJRPlecDpVT2o1yA=="
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 475,
-    "completion_tokens": 670,
-    "total_tokens": 1145,
-    "cost": 0.00729375,
+    "prompt_tokens": 468,
+    "completion_tokens": 356,
+    "total_tokens": 824,
+    "cost": 0.004145,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -40,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.00059375,
-      "upstream_inference_completions_cost": 0.0067
+      "upstream_inference_prompt_cost": 0.000585,
+      "upstream_inference_completions_cost": 0.00356
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 646,
+      "reasoning_tokens": 332,
       "image_tokens": 0
     }
   }

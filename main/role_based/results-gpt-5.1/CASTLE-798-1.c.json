@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765056668-fm7rYCBXiwHUPrIsMA0V",
+  "id": "gen-1765666644-uFNo8zru66ZZGMJ4YXu7",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765056668,
+  "created": 1765666644,
   "choices": [
     {
       "logprobs": null,
@@ -12,26 +12,32 @@
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\"vulnerable\": true, \"cwe\": 321}",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 321\n}",
         "refusal": null,
-        "reasoning": null,
+        "reasoning": "**Identifying vulnerabilities in code**\n\nI\u2019m examining a piece of code that uses AES-256-CBC encryption with a fixed key and IV, which is a vulnerability due to hard-coded cryptographic keys (CWE-321). Additionally, it prints an uninitialized ciphertext buffer of 2048 bytes, risking information disclosure (CWE-200) and exposing uninitialized memory (CWE-908 or CWE-457). I noticed that while a variable is defined for ciphertext length, it\u2019s never updated or used properly, presenting a logic bug where it iterates beyond valid data.**Analyzing potential vulnerabilities**\n\nI\u2019m considering that the rest of the ciphertext buffer might still be uninitialized, which is problematic since C doesn\u2019t initialize automatic arrays, leading to indeterminate contents. Printing them could potentially leak stack data. Reading uninitialized memory can cause undefined behavior and is associated with vulnerabilities like CWE-457 and CWE-908. In terms of prioritizing vulnerabilities, while the hard-coded cryptographic key (CWE-321) seems to be the most significant risk, reading uninitialized memory is also a concern. Overall, the hard-coded key takes precedence as the primary issue.**Identifying encryption vulnerabilities**\n\nI\u2019ve noticed that the code also uses a fixed IV in CBC mode, which corresponds to CWE-329 due to the insufficient randomness in IV generation. However, the primary concern is the use of a constant key, which raises more significant security issues. So, I\u2019m concluding that the answer should indicate the code is vulnerable: true and assign it CWE-321 for the hard-coded cryptographic key. It seems clear that this is the major flaw.",
         "reasoning_details": [
           {
-            "id": "rs_0358a88648e33f31016934a09cbd2481968842358739f18f83",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying vulnerabilities in code**\n\nI\u2019m examining a piece of code that uses AES-256-CBC encryption with a fixed key and IV, which is a vulnerability due to hard-coded cryptographic keys (CWE-321). Additionally, it prints an uninitialized ciphertext buffer of 2048 bytes, risking information disclosure (CWE-200) and exposing uninitialized memory (CWE-908 or CWE-457). I noticed that while a variable is defined for ciphertext length, it\u2019s never updated or used properly, presenting a logic bug where it iterates beyond valid data.**Analyzing potential vulnerabilities**\n\nI\u2019m considering that the rest of the ciphertext buffer might still be uninitialized, which is problematic since C doesn\u2019t initialize automatic arrays, leading to indeterminate contents. Printing them could potentially leak stack data. Reading uninitialized memory can cause undefined behavior and is associated with vulnerabilities like CWE-457 and CWE-908. In terms of prioritizing vulnerabilities, while the hard-coded cryptographic key (CWE-321) seems to be the most significant risk, reading uninitialized memory is also a concern. Overall, the hard-coded key takes precedence as the primary issue.**Identifying encryption vulnerabilities**\n\nI\u2019ve noticed that the code also uses a fixed IV in CBC mode, which corresponds to CWE-329 due to the insufficient randomness in IV generation. However, the primary concern is the use of a constant key, which raises more significant security issues. So, I\u2019m concluding that the answer should indicate the code is vulnerable: true and assign it CWE-321 for the hard-coded cryptographic key. It seems clear that this is the major flaw."
+          },
+          {
+            "id": "rs_065050f7e54b8b5901693def54f6b08194b15408dc262bcbe5",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNKCn_QuwkQy4yq6SkQnkpsxo9FUvoFFTE9yaOCdeSee-JezL3cypWNcK0vuFin4FMX81tahzY1dIkJdMh3OuCpLKoJzxsoWCt3heZyfiCFs97p0dVvhWk6MEPrEaOpQiqQp6kRf8uTkQ27yxPl_r7eZcojy9OqlBmBZz5eu2r2WElLOaysemqJ_WgKvksPQX0567BzfmDDH2pe24VgD4yuGOZLdjTCgd43oxoKrFJAvw4Pc_SbQuZqfP9r4hcJRnjZ1ZVlGeJT5Cwj1ag_Kio1Rzrdoh6SuZQ4xSC99M6KdqdOmOHG9TAsi7HoFCbD5Z2pAz-E65NWCUiOh-tvZAzIh-XnUmDIOH4L0Peft4Pyb_9lovnxqRjYrv8S3zGkWu6MFjIjMNNrlFyQ6_YdnZ3WRVxuaI4ryDNrG-vjWUJXfDVzAH9bn5fj4AsiFz1WA7o73ljIIVj-CQZVYp69TWIKDPdGm9vptFNyE57F1DdDtMEJC20y-JejEb3g2NM5hXrqsTKXFDS8zXWlot3j5Jr0NQYZuHHGl_fy4iltnk60fiRnan7jQRoCb5pT7IbAA7uaRkH28G79yg5xCo0OAy390K3KItMmB7eASnomLVMaZPG_7bCceLqKaPk6Of9czHZtgFFxdjQb0qeuDO7NvJQCDFpZS1uPMI5kZayQjmjmAYvH1OxvfCe_antH__mXC36t11aarTBZ3_J2ZHOFo8spttu34WgTp89tEhuPFYa2FiwKR9Kkz7D0LCJe5p9u18qi78gf4SwHb7CwAUEeDZiSRaplQxiOjTl_EbZoRPvxF_CUgHdbZ6gt_yqgHpGErEst4k4CvQpa9b9kDdgOSZI7iMbLK8abOjJOKAGcrl0zW0loucof8ymQdjpb54vczjGgUHr_tOZp9y5Gl9ycRiFrufmdLM3GERISjM3bQwTx6Nwq5Kh_DGxJhuJrsm6UzmNvjI7BqGPHxYK6i6QNXIt77a05xHr-ZL7dlTtV_ds-6oE8cRrRKU8-D4HOTIK1ANweMy7oxlu40VJ09Vmd6CNNt9WCHQyIiTFDOizUPctO_T4ezJaBUh4V7ezGgVzpzo9M_TBa8MWoRJdyz44ns_09zoHekWC7cA1VYgtsHRdacaQuAt8L5e4wSkPOqhAzdsi-q8YP3oJb-8l4wJnEvQvLR9evGXgU4fzQEd5YpBwZDCxRZUxLrc2enYfIfiQh_dIQYc-XivebgjjPs8UR4TSHuvjdengUI7TwJgWHJwGNgPEaiFEhepOSxi-N2ik0obQf5-8pqtnhpx0ajCgsHtW1gaiMZqQCvC3zDdR8mwTJII_Agqj_O3NZu5qshCl92CEwhPO7NUYcOdAhIkk8cTM1hGLpd-h0C4UMxpqk8lMrtFm6Aa1vSX08ui2DiGEbnwz0jRR3ZCxl0ZiGclDr93ZU0nFcUjEs6N9JHzOOVjFuWmAtoXI6IJB52td6Hl_RbI9UYz83phDby9TFsF-ju2nuH4h8KLBY1HgUGR0Vque3YEmNYt3PCzti7vKfMY6nMLPm7qeWMZ3QJOhdsF_vpctVjj6jZR09v0MCyBLHqZgL-ee-f1-2Xi8wPPLL10QkULu5l_yN8BxYN27nQ7vWjw_0vdCC4EW3Ej5yQImxMWclu-KTbRywFZH4NXKuq8i-NN_8TWo3L8C7kAYgFBkzlP6PYoFCrYve2o7B9oPs8cTfuX4T5iCdBbp-1NUsKgmPgxiIo6tF-jV3Aim71LtME1-PhiJsjSkKLWilTofRHMXi64Pje_LP-q8pPg6We-Md8YKEEaGzgM7xxfyic5Xjicq6qs0d5jr_w6A7_Kk4x1oajiQ7TB5B-RVIsa9jMNhoUI2CiJbgjRV36O8HMK5U0Ftx1tPnvrNY55guaXZ15s8Ofkl_adeh8PC67h5T4RpPOgKsCoPoxVYtEZJcpoyBLCeISCNQcc9WHVub4ewTXnln1fFlhrfrR5TZjtZ8eg3PhddVJUMdlOA4p9FhSZO-PO1qwj1HEBzPdux-lwkC8D4FPG9ovfKLpJWU0cGu9KicVtiBn-E6s3UmglUY7nVisGXwCEAO9HGiNqQCowHHK6I1E1rIwFu1k5TyYZb5AauMxPcNtW_uNmzQxkZDHgVoxvzQ4A8T73bGUSxWvSDMi--nwk3CF_DGZ3UfppEk4CablILt1oJpEXVRUQV265pDPRLx8M2Mj_EbW455Rg8aM2YAhMTIXDEkLeVSGFmQ0Ksb4Iv53boqPeToIzZnhVH3h2hoJLhbzEem5lLLsIrIIPErx02A5n4sQFgBjraQFi8yY6gGGdPPh45yNdaDGtAeuiY9GPJLHEmvOxTXMfP1jiq-J-VK1IOiS_DdWFjHqy5duvNnP3UO--VPPtJUSOVP8EKab_Edg4JTaAlGYo5IWs69GNW5OkKwph8-G_-yrtO-XKPII4MeHUnrTpk3p-d2kwQqdRWZ79yInW1Loup5DLEcKVz9-xpQHspZVgdRKeepf0wD7RmS90ODI2KIbL5KvWVf4_VwuxJ-OKbsUT7fC1u5bKwK_qDuEYC8TxOjLD-eq3GlasiqgFJ4RnpqPscmBOZqowk0zI7_bBm5fdJDoS_3dd9ED8FjYwelLDOEQY8jKRyA6prgSiXl2ehMYLRacvwT-LK4vnHog6vjiJvrH2a7-0kPHOeSfQwLuXmoEoo-S1azHZdANlysHhgwUAUePNbRZH2CF6M1Ldi7MoZj_x4lWzKT5caoUDJeQygQX7SWZUL4Ut-A2BJvWIoOis4iog9gpnYVNIMIBbdWcY6bOJBZGctzAq69szs49ZYw-guywJdPsu5ZxmDL2K22eRwPopNcJsOHafD5JoeUcX6P_pIQGdkIOTUoNVBBxQSoI7iH-KGfYbqr7tiLTNdw2TU3QonNl77TaW3AmOeOXDJeihqkYSkyXpWEjr06BLD-Gy3Ep2q4ublZzzQAdH0vv-gYpWvTq8aEDF-Rt0eS-I3eTbTII19hPaTbnzUThGrfvNQMhTvdnwmmM1tBR6jsj_u2fHpUDO2loyVyBzodNQh6Led6NmzjOX75oHCCn3eQkbaXolkofXGbDU6-cN8V-FVOtfL7a4fdDosePFL6_dfAtsAHWzsnnr7I_Iu6AChG_v65-aZLlnpq7ie64kmf7yeLs5injl7owm1GOuI5kxASB3tYvh2aSh0ws031vpzHFUsn-c4-6UVgR6zq7R3PEMU8A47TU9IAF97f_MOtTewVqe8iCDX1RP_Ovyy5gy_ttXy2eNioYCfrDCJrXtmABn7zlL1RT0Z8ixncF-c0EQEcS0VyfLd74="
+            "data": "gAAAAABpPe9eehmA5X2UpZ0iwAFbDYsNRR7Po4Sq3J9mE1Fd6Vb8zQ76LRlbpLLDume1fWZB7r-0GsuwKTft56SV5C4oKojYeAMOYtS2zD26NjpxdK67MJxRTIpn4AUZjWTC4QDzI87bqe3-MUgJddRyjdLEJz9UBjHwL7N9PLL-XAOHESotQ892wZmY-a5p7YILxK_RpGhh6tu9XXageAnh2tycY1NCj1FN8XNfIRBKXA8Eu2DTCpAmjEMJ6TRp1Xd9YKEedQyR1BmELbsTx7JWxHu7UPgHF2gqo9ShtbIDtuPn_OT9CydJ9BphHV9WfN6gGkM_aF3mJz8vd1AUjaadu3PvATuphNTiIvUsdjjNV_BrhPCSDso-vsL8JfjeLKccZCHKBvGX1E3OyPUt6a4VFXG5VeHmOhrz1TWq9UiJPuK9M0miHcrvKOXmLVETD9j6BmzUzTs2Z-6iVTlR_OiNPIvGac9PXP8L_zxR4iZivAydrKWBuIcYT_u04ZjhxmQQIVcCbscQATW3I7Htm0hWzT7kf5mH0dvDQ7lHXqWSIyosZ1gbzYfDfnItjn0Zy2O6xAvkOOaEdPzYVgmUyrXDQL2Wx38-Eg3gbXHIJSP-Ji0APnm4---t0ybAalEXpwL0p1kse6_OP7VfjVm2aXsxyEn-KgPcArDI4feLgq8UAeGZPX_LFU5s3Zmqugapjlpdh83iOS0Gl8OGReEnfCHkox7MBX4PT49eNj-F1z7wFff_CzP1ES7c_PPBPhNE-EXpHTgGFvDJIZyjrPbrBT3GVOSLirN8Ew7Qm3wpASaptUg4o8NpldT5VUXOxckAI8cGjdUZrzLYsWiv45E7dIyEGdPAGJiiPDjBMuiDLiCrweHXj9amvoRwJz8hhgs-q2CjBvTpdr-yM952xTnZ-C7F2-Mtc6F3W1nX3Ig7W-xKVxQwc_YSzkdZbXV3yvqu7exg28Mzg8wJ7NcF_FYiam5R6RMc-_krjOoqUEHWUwHyBwTGHwZJvht7Qrfi3tThyD9fBZ7Q0oOQyZTHxSwoQziMNu-zgiwdMgpdy0iegA461YZlFhYBBRF0j6BRIy2kc5K-6qmuVAdGDo4jlVcuol-lFfHljO5-1Sol8f8W8QGZGKP_aWJgodD11xXZVedLKJL2HBMui5r0TJo6PNSEQNIZskJGz0XCtTicoIhvqmvaN65i0a0h9SKyjABg29WbXKuiuZZt833GfzyZIIkvnzx0mAqvOI27vC25FCD3GZCL34-jbweuvJwdTafzgqMBPIriavXlfy20AdjpWxyUq2mT4HgOIJEDHYxtN16BTu_wgqs5pRKdkthQNXOntfZpXn-zYvlMGUFowb9A0fC8qbXxYqiwfKUMpmmDAvHJHupY9zotCmQduOuzhelE8Uk1yYQkcT53zBGVkxQh1dzgFaOUpar-P2_VdOM-fieUA7jPgndidmlGB8jkca0nMuZbn3WKpQF7p72Sj1L1zgr6AgOL5HKY_PdzbbTie5ovLz4IviK2eqa5L7JEjuxjzXc7SyNIsyut6fhvoX0FNGVlgML6-o4HqwDwGDST6j47nvF_IlJKkIKGl7GQTYEcjoT9XQTKDKTJ-PIWMzSrh6NeGbe7lALyYyU50fM2foaEQRiOQWfDBgVl5Q4SxCCyDR4w1XrgAccAXI4cWVT0CUyBFby4ehA9qLBRyKXUp65imJzRzcmIv82tbKfFKHHWnnCpk11NKCTxcwIl0Ov-jL_FMSr_ZPkxdIGzknJzUdzL_qbZbV6L-AJO39krJIVYz8wznutU2Tae3hgFSBJ3hi3az9KDFU518RgQPXu1V5awgG2r4s-WRQlSEiCkVgdpZNOE6n5Rb0MYvcALyiGso_XRIYuEGH-OfAZ8xOuWRFOkaPG9UQgHDZ1WNRtRIUMxfN7HNSIcrv8I5DzBkXPfrw00aaDHon1CDNP4vVuoCIkUxkeT1RmUDKUBw3xJw3-DeAT9uKpdV0_vkkJpCO-nVjx-Q6tjvQJZ_4PwfM5JpTlTN94twfGcKA7T_6TJ2dJpqVYqrq_TqZagnINGrIGbTVjZZhY7hVMPEM-EK1frhRf2NQQzM0njVXFtC-2Jt_ji5q5tNDaFm9Z64cmHpPWzOLkT9CyKJdRFzFtRKPY2z3yOI-hXzlMa-Rf87P2z2MU8-c76k8KbKQA_Kwpk_c446akdB_Dxr0WjjkBjcEn4mQPYACpZjEUJfEYLeGMiIqerZtva1APetNmomM3Y-mQBFsIsaRmYyDwW_1vT6P4PgOpQpmDN4iccIiITt1aOzCF47xg1mlP6xQFbOrB54Kn1-93TCDl4tbaP_6UZZrPcjYa3b8Q5pgv6TFLIKsT6z6zWloym7ySOmQFz9wjYfYveUR-oH6OkOBgKN-w4FOPn8rGHFhnNK_Yt6-L_lXoo5uhgw_iJ5VqdUtzJIVBHAThx11rCQuXRPCACfXfc05QHNmWcFTCbTOnXeqZep75QCAaCNui0Pk01iWsyLC2svOBLyQCTgBEReyIo0zjw6D3hq8Am62WrNaUayw4DaVlPPnaSakmvUSrsYq0YHYZNar9soPK4sln_b3PkGEkvBuHlqyb-9GgsJJer81G7OFUJKBKzaUFRe9klKWC5nKa1ek3LKqcdSnkOkxOFZ6yhStc9fQ7qoCBUD0PlpFN6H7e2ZTPdgV4uU7ecA1gI66dYz1EKOaWiXOfEhwpOhY57x5FXqNJDk8-xguasExIm44SDkd3fYqfrE-_9LlvZ7MFQn0KYSDyPkQVYIeKutVzqOiPjXt-WJuCln-RSX7j-p0xE9tdkEWO1fGFKVc5sAIsnxIYAKKdB6j7Flz3IrlaRx41wyR0OflrZ_4PTbGdAYtr6A_djfPXqJPozOWLtILVHc9h2YhYTUO1ybjjYmotLsb_B1_1z1-wT_1EUktvCWb45Giu9iCejImbnCr9b4jcGLibOZGXMT36-Cw9rUTuGvSB8xYwKhav9voFbDYXeLO-AzFGkRfvuGA0WAfuypp8FybOlgOIvIHwpFYNdiTjFenQg1CeD-7RHMCU4v6f5sEE6n9jpNPd2lRpechE_lbWxh3XdIs9WHxC1AoHGP0Ty0DLmn-VqQA4TofN6Mt1OVaIhQGSxR1wkgUxjvUzqplrGjJvvi1XlfFuBRBMhW8dr4X3rN0fwXYzmLZt-Sq7hZ-InojERgEQcpwMkzFSAPo6w8Tw1guWcNL3N46ksXuj9EDHz1MNEiKyGY7tYVjmrNNZd9vfzc1rFmi0DrVwZkM1B_II-o6IHkfuOt9iR7RGtn6HpljNkyynVq1rNXJ_402aB1e2phdQhC4rvXPRuiol7XXoOpKcGJ8Rs81T5IJb-iz9Z8lywKXwyPC8TxhAg8fS-86-JOGK2mKBkMwm2YB5MfAaQ-vNYkqof_tmtHpinCnMRw442Etdwauj1nlekPJKrPbQI5v7hO7iE7Y8c2vsn3nTvFj1O8Yf-RbDgk2redhTTxtau9EVhQ5tzIuYO2VnJClbSJsTLo3gyYfWgNBLxIQ8tygpgzEqpbUEQ0Qb4UAi6jCAn74jX0DMaCKOVrpX1RGbleRP3lQbCVfid6OgqwYQSM2Cw8il-GkCow-xnpb8uuAANBk-9WD0tE3QEsYJV2q-4xOnM7rRXA8cExfwXDlAz5BdALwmtKu4BYMBO17yVEdV2LLvTxba48iD0LdeEwX0ZhKEFZ83po-lyjIPBqJIMXc8_1KptFqmz8SIoOTuHY6bc9LUYZuLV3IwPucIgzPR_X9GdVr0WeDoasCch4i5cXQDDOQYmEh9osySgUZtPRQLDmy5s-d6dRapswO2nx4io8WttgH75a-xP9GiJd3n5JKJHv8TJVzEAai95sQ=="
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 723,
-    "completion_tokens": 402,
-    "total_tokens": 1125,
-    "cost": 0.00492375,
+    "prompt_tokens": 716,
+    "completion_tokens": 485,
+    "total_tokens": 1201,
+    "cost": 0.005745,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -40,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.00090375,
-      "upstream_inference_completions_cost": 0.00402
+      "upstream_inference_prompt_cost": 0.000895,
+      "upstream_inference_completions_cost": 0.00485
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 382,
+      "reasoning_tokens": 461,
       "image_tokens": 0
     }
   }

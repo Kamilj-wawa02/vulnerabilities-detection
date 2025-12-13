@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765056975-OJ8c4ft9NmYiECWRXzQw",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765056975,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 758\n}",
+        "refusal": null,
+        "reasoning": "**Identifying vulnerabilities**\n\nI need to identify vulnerabilities related to using a union with int and float. When I initially print the int, it works correctly. However, when I set a real number and print the integer via printf with %d, that's type punning, which leads to undefined behavior. This is because reading from an inactive union member is undefined unless exceptions apply. I conclude that there's a vulnerability here, specifically with CWE-758 regarding reliance on undefined behavior.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying vulnerabilities**\n\nI need to identify vulnerabilities related to using a union with int and float. When I initially print the int, it works correctly. However, when I set a real number and print the integer via printf with %d, that's type punning, which leads to undefined behavior. This is because reading from an inactive union member is undefined unless exceptions apply. I conclude that there's a vulnerability here, specifically with CWE-758 regarding reliance on undefined behavior."
+          },
+          {
+            "id": "rs_00e2ea2c926a2262016934a1d1cfc081979ed6139157be94a0",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpNKHl63Xnefyp6TO25sAlDSthnZHl0Wn3CMppzEAb4kvXhxGjQEsmc_PYFmzTIjPrWhyP4asbgaWMZWQM_d6dW7rMygaMKgte8oKWyTObr3rFDcnRw5Dzgp7wBnIfTzVcSLI0UyJwHyWXCRS1sCnLrLjkX5n6hTD9Mbp41J86iIh9tnBWaFONGKbQ5tH30N1EqBooaZQvcKJNoIqwR7bgRZYYCETh01Hkr49rEevtaFNH3yYP6eJTs-Lr6G48SCO7zh2xAoCxIRG-usT0zggs4azVfAGSQ1YuVF0qSj4pkH7Ab00MgJbvNsgHum9tq-NXpLTofM6VpS8SYlTmtpmLW2kpwci1oUgvo83XVqVi48nZvdwV0t5R2WEF9tEPm-qhnsXreBzbDS7FIPy1MKzlZMVoH1PeUJ13ITxNLKkaq3EvX-t-HNFVIQHgDZHy463jN5trJNKXvHMfwM3GiJE4gznpOg2CXPaZGJTX0HuxnbF0WA9pxwUE3ttMm8gUtqj5QToJzlGbsuphEQ511d-tf_TJL-hG6HGhiDaH6798pkIpIYIe8QgWODQEnCIee7ula63Kk98jUV4B4p1BEm9WM_GKftpeI7W_w2iMd2aYcqlVAyu52_TQnBG9oYdJ5ybyFzvCKR-hRoWnv3ZHvpMoXDx23ISfipzlgp2sCkB2R_diLoK0cCvMxtCrw1CWEMaXBsiPSAHN2iVhWezACI4epcthhF_Xn7GM7feaTTcP3f7LJgtm18BrLSTrKlM4v_wYsWIY-9LiHSh-NWx-ipdAqd-PkH5K7xxIeMa0DhgwtZkqM3MZrgKTNjoFfj3cNi0ndkDlqp4Se9Z0-13vxGEvSqj9M_NUmPWfLraOuonPevoe6B2guwRiGvMaJo26XGTdOoSyHheS-SLEVeVUuUmJnXEqnjFIZ-keF7IsX2hPp982v7cUMPLYVSKotMuKYomPAukXT1dBBvJcX7VWZOmG5yCLtxdJYuBLkHrfOIyYfFX76xFrDwGONLQ8o4MBBiJvXh-_SYAEs9ykNfJ6zgvT2rYWh2ZKntSi3EmOGdJtla_yTbTFyjDEAgV9yvQ0RZVaPFvmyKXT7uVio37z89gvaOmW5wf2Pn1En33AiYvSxD3_kL2wAxzgJoRZBwGLI7lkstOUhpRvyDAU_GCC2_MwaCWJCQrIVom01I9d26ywpug5dMHV44O_jMEgg5lpbMak9EiFoFcIStSHvRzY-bUEJdcTFz2ViJp2FfGHE7CKv4VqUXfzPNJTvhh-TDzHVNKdWyYPqMnQ-a_KbVbV_PhoiQIE1S0tFnyFmkvbbmnkE1VJDRZ9irYP11QmfBrPT2uOmSUdozj9fPXzplCVwRAA510PyPVmFvtDiDowqrcNI8-PT7-OTvLTqvMiqcfWphNytIFTHEe_BK7L8ALqsG-0v1b_zR7R6wCfHN8YMj2SN9Bs07vwpgcKstlMJhK94a1cMZqTjmHlf9I5b_SRP-RQi0eTXxNLpt2gt5tedZgqKT8fSOfulThxYHcYwrGMX5ybNt1BdDkM8pBEijp2FdjGCiHmSrwy6SJyv7BVB1jnDJtTlaDV4X-xR8IwR-jDesz01pmbEltJKjTHRFVprGSgY0RHbfCu56Q2CqPn5LGf0HBF0mN6-MWDMXS674wKCPfC0-gPm6dBs9cwcsvgNYmkpLgDiXxhgnYwL8lzNmPqYpVo8QEUfz0bN691WQKocA6siOcQgJfVUa8b4zWYnehDUh-UWbXKUhM6162R1w0lyvny-SiP2ZYnLqb8KykwJFVlf2B5"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 163,
+    "completion_tokens": 169,
+    "total_tokens": 332,
+    "cost": 0.00189375,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00020375,
+      "upstream_inference_completions_cost": 0.00169
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 145,
+      "image_tokens": 0
+    }
+  }
+}

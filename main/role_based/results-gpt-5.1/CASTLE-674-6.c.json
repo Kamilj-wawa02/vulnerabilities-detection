@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765056211-gJWOazeFXbYPyuGkXt0x",
+  "id": "gen-1765666348-5kfWiifqT3RX5fx1Ur5w",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765056211,
+  "created": 1765666348,
   "choices": [
     {
       "logprobs": null,
@@ -14,30 +14,30 @@
         "role": "assistant",
         "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 674\n}",
         "refusal": null,
-        "reasoning": "**Identifying code vulnerabilities**\n\nI'm looking at the code for recursive `sumArray`, where the absence of a proper base case can lead to infinite recursion and stack overflow. This seems like a case of resource exhaustion, which connects to CWE-674 for uncontrolled recursion. While it might also relate to CWE-787 if there are issues with out of bounds, the key concern is the indefinite recursion, resulting in stack overflow. So yes, this code is indeed vulnerable; CWE-674 is applicable. I'll format this as JSON.",
+        "reasoning": "**Identifying recursion issues**\n\nI\u2019m checking the code and noticing a problem: the recursion lacks a proper base case except when the index equals the size, causing an infinite loop or stack overflow. This seems to align with vulnerability CWE-674 for uncontrolled recursion. I also want to consider how out-of-bounds access might happen, especially with the sumArray function. The recursion loops through indices without terminating, which leads to exhaustion of the stack. So, I need to conclude that this is indeed a vulnerability.",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Identifying code vulnerabilities**\n\nI'm looking at the code for recursive `sumArray`, where the absence of a proper base case can lead to infinite recursion and stack overflow. This seems like a case of resource exhaustion, which connects to CWE-674 for uncontrolled recursion. While it might also relate to CWE-787 if there are issues with out of bounds, the key concern is the indefinite recursion, resulting in stack overflow. So yes, this code is indeed vulnerable; CWE-674 is applicable. I'll format this as JSON."
+            "summary": "**Identifying recursion issues**\n\nI\u2019m checking the code and noticing a problem: the recursion lacks a proper base case except when the index equals the size, causing an infinite loop or stack overflow. This seems to align with vulnerability CWE-674 for uncontrolled recursion. I also want to consider how out-of-bounds access might happen, especially with the sumArray function. The recursion loops through indices without terminating, which leads to exhaustion of the stack. So, I need to conclude that this is indeed a vulnerability."
           },
           {
-            "id": "rs_0e4a6e3265a061050169349ed4150c8197b47f213d8f62491d",
+            "id": "rs_08b77590e547cf9d01693dee2cf0648194b65d8c2eabba3ac3",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJ7YlL4MXBd8TSMFI5bzkefW8i8QkjKV2qjqy1EvESRMMHA00puS8270PwsxBh9N5GxRTNN__IWRWsnfh_8R89dmvoMTL8-Jv0_N8F_D-SIHFds80SuFjrFWHuVHlSjX4LWJlcdXZR5rTlvl-mX9FYkO5IJ6upOyBIxlBlJ2n3BNSLZ90_C1cY887mYtSHgjg4Q58-avbp_yfY3hItP4lDfqd6Sd17PVSUlG_rk_vLkTO10SuHKRCE7qI_ItqD4JXNRawgRRqnA9PjQ6TBjZhVapb4-Wue4eJBUExKi0i1y3IjsGDzz4UXSIpqEcNAoeaT8cqD_DS0XaLRIzuJDFH45uoV78r8rFREr_yRnSNbxUBHxHQZg18u2rha2V0b-06IIDFvhi4TPJR0TULuvX9fFL67rgzpIJGIgIfpBE3RoMLhQXTJm4h7VbqGHtc5q3sD5IFnOwUPB0_3Dtkic3P1AbpSUaCtzXQ529EEKPig1w_7VuqiIWwMeUsDF-vHyazXp3B1Pzm56Irktii6brgS7m6_P158c235LtgGGqTCLrNM7mDWQauGyzjfW8H2SGIMgtZr0g24l_47dzDMvhtP52y4A4dRadtc7ddpNhaRhmh0uqCVnfaY7UyRajT28fXI_Gp9cCbt62u9KNqETOqG8kiMFdCA2ecsSqbESKtOzLo-RmmItykNnUrUOrpV6a0vY_yQoC8QHpYk5ZZWuB0uyvCg3u-1ugZa6ylGq9hNd9zgWfC646F5N4pTQ9rEKoAVRBOkIOW19X31JsFQKG38EabcvilbhRaeMp8OJvHjhnpW428WEzJUzuVwO_uAbUNpBcLSZoU7bvv1vdN3_wn7d2asUHINaLsvthHnfl9GFA1YISt1rS8DCmVfF2cZASScxgOeTi8ZOtl4JE4MNeVXA0UzfMUyHSujzoXquBiG2mFiQwkBRsi_Aumf7bLhNsA1tBq6NKXgUSWmpvJ5Zrp9HYDyTMh-jk289gPq7Ws2ThCsN2aEmTaCIUwreSsJZs08z90skS4C30BKJKns4ZExxuih-m-J3o_7Ey7IGEXIyTHxN_rX4n0g0sbNeMhzu5NV-vZfiPe_VsLmlZNotiNbUsNPGs_WfgnS8AsOf4sTmj_kbWxQDGNbiZzlO0ZeYB81_G5rW7i3lCG8fvG-O16NvImrGyxIhFImMJnnayBiygVojcm9WVdokeeUpxgOshQTvrF7cmbEjZDn26_tQmOC44fyare9mKHnSxibNmsfLegDgeq74vfqV0ZX4TDNc07sDFZnlcFeiYKO-W3rJIIfmzRZqhy6MCq40ZJ9lTJXjW_W0rtneNfutQeFXQOOnv_2f81zlkkyzjdOQ6OkejqNIoeX4xNY1fInT4fxEv46kbj2GhazvGIjq_HDp5trolKJMiC8wZDjWAqID10196P4ButQ=="
+            "data": "gAAAAABpPe4wr7bjRmvNdBwOrk4H4I-8400M6iTiTG6kTANRUR1uWg91EFYMh0WmqpbVYkxloFHjV5CU9cj8yxmxAnDjczltfnJSncjDmqBJIz4EHg-mk8XBSznehYpS7lJrL2rYFDl0NKEMCdVarXXQtnWz1zCx-EsMMfYn6nrGN50TeBwAmGHPZcDF9S-BThkKpr5L0LSVj_SCBQnKgzKiPHUhGroNAoSy3fcHf3HBiqAbZFZH7PrlNkJA7oZclEy4MMGl40ndP8m6-Kjr7fpPxIjrNKJMHRGwwJUKqn4w8_7B4-99O1ca_6zmU81gAMfFu4AJr3xtfc3qk68qTDWhvHjrNDHiUdWC0W2zVN5Bm69qpLgeNW8fHZMuaLFYtdzbECRe-V8ZVntCIpyG4irmoDwudTOsGKwatOVB7xPFiBudwD0jWfbGAWqShdRcuvKLs4UfyxX7Gw6W-OI8SCcItrOKCHaQf1uyfmRMFSrUhWJ5vnNmsOTNCyX1yd6X9i8DICc-uGZUTZJ6iV3AU6qghMj-bCin2Ctzu_--KBMtS6Y2Xn2pCo9W2FkwDogoL5YVhZ9tZ0aWMhGD1_1yEDI3_6_Gz9nlG47WrAE6ym0-XxCB93kWlle01cGimy8rtHAWiM9ww96UrYf6Cej_iyls9REQwLtGR6sGjC2Wy1I7oH4E3wtnYVMRRcJb2TVjtoZ_9SDKf6RlSMYBcHWReg7lr55pbB0WmHlYiEgPFGtL2A7esI2yLiNj-i7nLTc3w3t5N8SucslnjseG4iX8gVSW2G_pACy_rk__IA9jbYd-pG4SIwfjW_0B4IVxzrOFrjx8lI0KBWfucPsWMBvOwXG6UZ3xKUtBnKxBYounIJSv733iKcXGF1YAjvoeGDoedk6mtIDWA6u9Rxy1sxW5ggBvOL-AiSMBxDy-jVK5PHvWm8OSXzMCycPlpx2hFI4u2zVL_r3udxXUxwtGlmYt9fPxrOkJma0ueoAMA9Fm_11KBUXJ249YGahPzsE-Oh4MiunLU7OhsRSDRvtiXHZs1ESzXGXz91OLCoxXWkJnuDlkhDYXVzVUFzEd9QVsLCeTjYEOMk9cMoFkq6zhJCgkYkQoqVxe1v7Q1wXI_DzyWCIb5MhiMYaX66sV27FPLkbHHJqmyQLCnpjReE-LtrGH3EiGltLe355a8phLxIBfJ0nrw8Oa_79rl2SNKYI_6rKhouBCA6jYpT8m9NIhSCKwMfJ13_FVXtxXL9JQLmNH27LADZ7FY3rsEzDAoaRehQOX2I1rVZrmJRRFpbZRnVEzlL4kO5RhbTysYAka2kaVBSLckFhZ81DE54IrolLEUC2w6xCoIylJHBq9oT7W2yImSaSxr8N9y0FjhEgfc1yI1ZA2jEav__fe9W8ArfAjqz0dKbBDG81gkXWYRj0HzBhlpY8nBXDBta4JBYqlhRLslmCvVspCD-6mfe4PnY7YxRfYENadavNW5eWOFmvt_5Fd2YbEpmoNgjraLzkOsaqrPbXEKIz0-jYblIo0jofg9vBxeG6EoYeBwWFrYtLKpIx1uK_-Kaa97wlYQ9CdAXOnUVa71nUGIDI29m5nTE5a4U4c7nwb149Z04_8rLHIh1z5OsjEvhlvyqX9dbLPa-8GSmj3geyk8DXcZ9BUtPdoJEmkndBci1e4IQHVpXYLZrETqlhUUAtmOBFOo0b3eoad_YPpYHZKvG3e6ChxIloLNor8nJ5IRRweD7pI_lMMBtgwSeMQWMD0Au40n054G_3Qw21HUlNUNwdlR4JC8cBrQS49blhaq02HK4c6"
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 183,
-    "completion_tokens": 118,
-    "total_tokens": 301,
-    "cost": 0.00140875,
+    "prompt_tokens": 176,
+    "completion_tokens": 217,
+    "total_tokens": 393,
+    "cost": 0.00239,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.00022875,
-      "upstream_inference_completions_cost": 0.00118
+      "upstream_inference_prompt_cost": 0.00022,
+      "upstream_inference_completions_cost": 0.00217
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 94,
+      "reasoning_tokens": 193,
       "image_tokens": 0
     }
   }

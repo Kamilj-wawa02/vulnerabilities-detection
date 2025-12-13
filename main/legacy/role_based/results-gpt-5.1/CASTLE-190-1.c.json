@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765054864-Ft3dj6gb5x8O1tCkY3c3",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765054864,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 190\n}",
+        "refusal": null,
+        "reasoning": "**Analyzing integer overflow**\n\nI'm diving into some code: `int x=77; int y=x*x*x; int z=y*y;` There's a possibility of integer overflow here. First, calculating 77 cubed gives me 456,533. That actually fits in a 32-bit signed integer. But then computing `y*y`, which is 456,533 squared, leads to around 208,400,000,000. That definitely exceeds the 2,147,483,647 limit! So, this scenario points to CWE-190 Integer Overflow, and maybe CWE-681 for conversion issues. Overflow is the main concern here.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing integer overflow**\n\nI'm diving into some code: `int x=77; int y=x*x*x; int z=y*y;` There's a possibility of integer overflow here. First, calculating 77 cubed gives me 456,533. That actually fits in a 32-bit signed integer. But then computing `y*y`, which is 456,533 squared, leads to around 208,400,000,000. That definitely exceeds the 2,147,483,647 limit! So, this scenario points to CWE-190 Integer Overflow, and maybe CWE-681 for conversion issues. Overflow is the main concern here."
+          },
+          {
+            "id": "rs_0695733e98d48a4c016934999144148195802a4f9d8bdd2cc5",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpNJmXTs0x_fCdOjP4T3H3eIFFh0uzfT0ArCfQOxOMv2Ju2jDPWJvoLGzfOqqaV6IEpkWNSbHvTi2LjuZh7NDMrAhLz877051v9n_60zcsHquADrbiFPk9ujrNhhfIR5ZXAkciczZrMYS2RSYdFJ2UXu1Uq9frJASn-VXN_xAX0uPwU0NdsH8dzxua1NPCwKS9oxkzO9BSW2NP62rFQ5UeI5gmspL_VxDqromXhrUrYbx81AFn0rAF-QhiyhOlKnAvwD4gFXyIZcCoig57Mbg7leD7KxWuJZNMhm0309N68xiS415S63AbipOwi64c2i9UUow0wWhVEzXQ6TMvph39C86gMjShbIjQtBbSC_LVLWUi665Hui--uaTW95l8YHp9tfVLH4IcOBTj3UGWf8BibeGYJlSJaqjHZDL6qyjJzB-vc2Uan34weOXpy0n9tjB3ROWt12CjHbIHTJFL_S1BdldRr1-801O3I1NBzRalM3IVW_T4W9Za4hvqck_Q8HQVXL__N0_vabCcuGBdy8-wkyxzduhieuoLymP8qRJ1BAolbEp9QuvR83hD6D2jhHLfV-5Sy9vMars-IFPMxWEk9aqD_fSPPqlkS1HqT5-pb-dffD6pBMBXohxaROIBwaKvXm3HKSUEnmUgVoxhgtEz0m1SBy28Ve95FDYmon1is7UEkchbrXqHgrqNZG_x8qXFDHwyIsgQJrLA1qXZ6rk8_pcfu0OGbi4cGm7pxJw3jcJxTTm12bjNgaiSZl8uT5xqZbqQNafu91l6Gd_tVGKqwIxOfUgp1PaM75rAmbNzdSP9UL3s9o2zHtiOkuQhfGDr_Z0dckxzeI43cY6ufGffptYCbBBWIFtQiCI6VfbQwbuZupeYezlgS9haLoskfN2ZUx7CdobCESR8jK64bVYbSjrrom7ybytwXQDGeF0h71KR7B5l7AK31dK7XL8PYOocni3uvRx_1GTGjDO3J9X4kLMpbUvLEe5gML9o79p6_dtjx4svudiu9F8VOoZcatmsF1G3NNWISmX-TFYib45KKDf6cXmJDy7oXW8YhXOpfNKSlp-wrQjBi2xshEX8rM4y4QIp6jCY8Ot9Uc8mRzk_4pEorRTbGUA1lIoY-FVJXz8vODa4Nll0YGecRznZ6tyPtWpS6sOGfpYGeRDFxRUCzFSNr44pON_AxVPrOAOzLFRZwLTgjbXIwPxQJBt-WZzyXbNGalJUKZfYN_0nRxS_y57a3hq9_RrVt2AGgcsERPgbw5RR_gwtG4qmzDp7KYMHSbUmNxPGGJSiBInPHEEPzggnQhnN6S17Gol6JLByb2OaKzBuwNcJRBWlMTEBXqewQTvcDbvkeS5r39-NnbgkFk-fn5kX3fLUpCQ7BaeDRXW31BhimfJ56TPABTGfPNW6WOT7j9aemGNYwHxubIJZK9cnMS2-qHdiK09IYqcHwpPzfAGqt02wpcV7Bc-joeg_DtXfNPne1EHjjBCY4pUzJ0yYUbm7aTPMw6GgpxgJZB9FZF2o1pybGFO6E-RdEilvZfXu"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 130,
+    "completion_tokens": 222,
+    "total_tokens": 352,
+    "cost": 0.0023825,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0001625,
+      "upstream_inference_completions_cost": 0.00222
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 198,
+      "image_tokens": 0
+    }
+  }
+}

@@ -1,9 +1,9 @@
 {
-  "id": "gen-1765056200-JaLP6lQ3Nzf8gU0mg59H",
+  "id": "gen-1765666339-7BMGoZw5xgmGzacxzLal",
   "provider": "OpenAI",
   "model": "openai/gpt-5.1",
   "object": "chat.completion",
-  "created": 1765056200,
+  "created": 1765666339,
   "choices": [
     {
       "logprobs": null,
@@ -14,30 +14,30 @@
         "role": "assistant",
         "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 674\n}",
         "refusal": null,
-        "reasoning": "**Identifying code vulnerability**\n\nI need to check if the code has a vulnerability. The function `recursivePrintArray` uses `index++` in the recursive call, which leads to passing the old index due to post-increment. Since `index` is a local parameter, this means the increment won't carry over to the next frame, causing infinite recursion until a stack overflow occurs. The base condition `index==size` is never reached, which confirms it's vulnerable. I should output JSON indicating that the vulnerability exists, marked as true, and reference CWE-674.",
+        "reasoning": "**Evaluating code vulnerability**\n\nI\u2019m looking into the function `recursivePrintArray`, which uses post-increment index++. First, is this undefined behavior? The parameter gets evaluated with the original index used before it increments. So, it\u2019s actually well-defined with the original index passed. However, because the recursion calls index++ but keeps passing the old value, it could lead to infinite recursion, resulting in a stack overflow. That's a vulnerability, specifically CWE-674 for uncontrolled recursion. So yes, it is vulnerable!",
         "reasoning_details": [
           {
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.summary",
-            "summary": "**Identifying code vulnerability**\n\nI need to check if the code has a vulnerability. The function `recursivePrintArray` uses `index++` in the recursive call, which leads to passing the old index due to post-increment. Since `index` is a local parameter, this means the increment won't carry over to the next frame, causing infinite recursion until a stack overflow occurs. The base condition `index==size` is never reached, which confirms it's vulnerable. I should output JSON indicating that the vulnerability exists, marked as true, and reference CWE-674."
+            "summary": "**Evaluating code vulnerability**\n\nI\u2019m looking into the function `recursivePrintArray`, which uses post-increment index++. First, is this undefined behavior? The parameter gets evaluated with the original index used before it increments. So, it\u2019s actually well-defined with the original index passed. However, because the recursion calls index++ but keeps passing the old value, it could lead to infinite recursion, resulting in a stack overflow. That's a vulnerability, specifically CWE-674 for uncontrolled recursion. So yes, it is vulnerable!"
           },
           {
-            "id": "rs_09e0a830f752eeab0169349ec96dac8196adb4e689a246fa99",
+            "id": "rs_01ecee90e78c78a101693dee23ffe48193b064b2d7558132b0",
             "format": "openai-responses-v1",
             "index": 0,
             "type": "reasoning.encrypted",
-            "data": "gAAAAABpNJ7OWUoQuAzGXT3ZJnMw-NKIlc8yJkAnKyraFCEo7ZrxqR5TZewjy9QPSW6veLFTq2WQ0_IA-s3RGl_T59qzabuYoDe0wMjtsnPfH4F-MFQJiS8S68m95THF9CfT73mCWSWYWRTymwoBPrOh_PC1I5YM862YjgZ2WY7u21ZaKgZ67vgjoKnAwuMNsDqLYON4BmBiwUE5J6h0KtxQ1__AYR_3GCMR-5smyuS_AgFlY4SY3UT7XBcEA7F8yBk6kX-JNzs0WRFt7jJHFU8pm4OwHrVkbEpPYzBgdqU4kU9PM4vE0MXhVjxU3tr_2gkuqaehq5-tibpMcTLz4SiS7bniUiz0bX6c-ZG2xjIWs3m6MmQYFFBtw7PMzsgICtASktl-tgzSVtOziUOZXQyhqoWowdZLFGagM-mtJHRn-CowNJ-_MrDD7os4t_NqbAbsKWbf0_rhj3DRe-7Nfv4e7dRoHtpIFM46vm-RxdSMuzNzwYK_G7xWy92ruxI_UCs8RH8JnrHc4l9mftgHUumNzdMCL_ygnA5hkQwmc7OJu8TLP9XDvxmLO9KTFsdTH42VN9D_-8OzGQIX50vfIPB9quiGi-4qqAbWmhdzqwguCZRSCEWHbe4l5XRiQVjyWmIDzrSfizQvl3HwQqRK7Ul0EY9QLUkYGkmuKRwQSkk3cXg92f_v5oxJkJ_2_Qjuh_uAfk7inrHQ1wuVINJFNLKjTfFn2SRNBASesPMU-RyV_50P84LCWrEZjRP3vl9og3ZoDBLCIYQkim1pkp6uexVfXT57EhLgg9g0u-q92-s4XKPD0Gtucts8cCRdUT-FCZKgTKVjI8rFJA9DeeRQ4_dKWq1h0Vh-5xtnk6o9NK0GWqXxXmueurlqO74Vgj8VS5lUvCkvMfUgHwshCv_l98j2XBis2uP6o5rZoqnMEEZOD33jqrpGHTZqtttai04JVrfCQZ6woDLJIHHy6Kz3MSJ7b_CCCdka-VGtSKNIHu0W1kCyN2nt-CN1gGOW6fK2VeycAbhTI51G-htB_UrLbGChIjP1VvjWURpe8gAfVNKv6xRl1G-n7O2vuSLY5NsRz2KoYnD7Sxmw3E2igHcsVqd7bYVBfj6k-TuvYoDX_OI8_PtGziLp7J9X_pat_NvvlvxS4F4Ysr98zNxVwulRGVzkWRHsragCb3XGgtAyskG56h2x1pHV0wkHH6o373etUkCxFSzcEt_9u0KzTat9QAovJwtjX3Ezf8GHOh0KmQTPQ5SvcgHvPhPFH8bwkSLpQ49WCaqBDb3fV_VZeNGcp9mZWqwQVRuDDyuLyJiUQKMMMvbJdAyK7wCwgJCAbZ8WZaH5QMllkfrgijq9MbSvGfh6alB-mbaJ2TYn95AMlcN1vRxaVM2JEatnNa0Gf6X4sllLBmQBa7aR9KOl1VDYR98VxXYe34Z0Lq9H86DNY23eY4DEHcokNZOkG2uUSXwcnCyhgBhDBOG53nW2qDua5LHDNPrtTldi96LYk91Pziypqp_U8cIRwYW9b10-fra1uZ6NNYDRdDHNpNTigYxWyMELUEm1opozgAuBQFnIiWzA3niWWtGvgCD2cTlsezaZZ26iYCRg87yN"
+            "data": "gAAAAABpPe4nvg3OBNowyrXKhaxYbmVmzepcQp4Wb-bO0p4QdnrtYLaTHZeF5-8XWVq475piATZi_07P_ds7P8Fr3pivFj45T5fxKt4PQ3ukNnTOvdWlONKCOeAp8VL4LxnbqmP6770ag_kfYFY2Yf8avYxihvUw6uszrIH-Sp_m6VCPkA6kdnNSwpOw7yfPEvteHZxMQ3T_hljMY2GZ-8ZLgXCgj8zpG64BWRJxl-j3XlkLGf4cIDrJRBUBrZ8FPUUrt18wIl0wYfw_Zt-3P1omHeXicow_EnESMkRKLRftOdZcmvErGZ7uudB_HHxaDxN-XbQMgbhi6Dx4akrI-BSA-0a0T0QANrKmBCvdpn2TQyDVBFNdQoG2hfka5_KrBho5YuEcNOtMtzQbTJhVaPJIUZMqxMrL6oB8rDPJgVftv9s1ZaGU-OlXpMLvuI6kHvvHuCDi9bFq_UPB1Pfqxn9qUJhipH8HEAdXunZ_z67TjfQjROfr1mmv6G3aE8HphWKSpx8jmrT3WJ36-jwG-XXygvlrvm_JoyncfvIQJouAFbr8LOrkUCv580GCBupJn3MyyOajqHaaWOTGpXjQ8XADr2oFGjAVjBo5HLWFMayJJM4C2CgwRexe7AvnrrjTMVwK7lCTyL-KYYEuRRuB9A8esUUGeXP_FgIqEyGSgHLEtp_9y0xPKUUskQ7shAWG-kplEY0rKFWChORxYz3w8IaPcBmgz4J0nwdanIob2WfwjMwvrdBs1To3-B1Ef3clIz30grYqA0EjSyLgoxB40SvjJdyZ2t-Y7qEK-H5E6lK3C_2dtNe7ltfMNsd1oTcRBWnBRmUGN2nB1b0kaGw6cCR1mhfaBcbs2OG51wATNheqxVcjC28_disuPg-SNOxHf66nrurkiwZZjWwP5PFV49sJljsrKzdhDkhHyncspiDunjiUrFdMVdeVmMokIVz3ponqNobOJLr9qWon4krL4eeyTEmEuBkX61CbXdLGGgnq8hG_UqLZAsRkRoYlM8eU_91yFjkOTICR23bhe3d6n-Eqaegld9bEO47WApx3evdumGM2f7gKKFcrOOWlF44UUOaKX0b39oM1qvVko_qM8HP4VBM4XJdlMuwtNTCyjElaG57frb0SCw94PbwVzyy2EstynF39DKQXQBl0T9zJMe3mHVQgQBa1tBxKUx82CFAp-xbN68nHTbpZSyF67-Oa1yB89SnjjKBHsMvail8Eo5FqWDjZsWZMlw-doI3PjVyXpyd9G_Io5FA4J7KB90yOcydRWpZOmVopU01PosKQ3QioCcVmqb3t6KnWnaq4iuf4pkDr77xi3aKHp5yqD8cTW7BIdVt46M5_34QUDgR2ezEYfDQA3mw_vQ5bntCVPrzyYqqKEkGNrReCSVQcmReTPkEuRpaUz7WRMt5GSIxnbSUEKCXeIvmHI5l80_nAv7p-8Yy4CixF0SnGXdsuDNbEsaSMUoBokC7CbILNGxQiwwZrfB_gYRCT7J1Oj_pcz8riMdBuvUEMYOjMvQa236IGC0U_QezD6sZarvoSN7VM4MFjqeJ6PO-B_rO5Qhbz4aIag72EMDKMDCw_22BBYzP8Z9GxxWNX-DV0L58bJsdYLzSJEkn7zd2iSofK3yGMoL5PL1NOtE2gMVjgb87oKo-RPQX3_y4EvPq9FktZKVmAWSNa0YnQdf1_ZvnfM82v1oMATskfxNPpcX04d9wRv_3vm_-02gfnAFerMhQpd0ki2IJQulHp9830MvkXbVgXn1eHi_KthSx0LAoYhRC6ercBxK0F7vXSbzBz1soeQS7bKlrkHcPUhm4UV3iwaoLGR_akk1lqICw-ecgbnNJZTghmx_FUAvzf1GvPMlMnHf7aXna00wJkow55LNtbwMA-9pQuB2o3ydZ2KOmYhSbOsks0BBvDUua-7FrL43pwzYlLPjHLFUuIeq9FAi9WGN25SjDFzASP6STbOgZINz5qkj98pfIbB6_IhDi2fZsjfjkz_2LGQqnz5ZytIA=="
           }
         ]
       }
     }
   ],
   "usage": {
-    "prompt_tokens": 188,
-    "completion_tokens": 137,
-    "total_tokens": 325,
-    "cost": 0.001605,
+    "prompt_tokens": 181,
+    "completion_tokens": 199,
+    "total_tokens": 380,
+    "cost": 0.00221625,
     "is_byok": false,
     "prompt_tokens_details": {
       "cached_tokens": 0,
@@ -46,11 +46,11 @@
     },
     "cost_details": {
       "upstream_inference_cost": null,
-      "upstream_inference_prompt_cost": 0.000235,
-      "upstream_inference_completions_cost": 0.00137
+      "upstream_inference_prompt_cost": 0.00022625,
+      "upstream_inference_completions_cost": 0.00199
     },
     "completion_tokens_details": {
-      "reasoning_tokens": 113,
+      "reasoning_tokens": 175,
       "image_tokens": 0
     }
   }
