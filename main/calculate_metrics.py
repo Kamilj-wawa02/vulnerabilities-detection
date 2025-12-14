@@ -15,8 +15,9 @@ RESULTS_DIR = "zero_shot/results-gpt-5.1"
 # RESULTS_DIR = "chain_of_thought/results-grok-code-fast-1"
 # RESULTS_DIR = "chain_of_thought/results-devstral-2512"
 
-RESULTS_DIR = "temperatures/zero_shot/0.5/results-grok-code-fast-1"
-# RESULTS_DIR = "temperatures/zero_shot/1.5/results-grok-code-fast-1"
+# RESULTS_DIR = "temperatures/zero_shot/0.5/results-grok-code-fast-1"
+# RESULTS_DIR = "temperatures/zero_shot/0.5/results-gpt-5.1"
+# RESULTS_DIR = "temperatures/zero_shot/1.5/results-gpt-5.1"
 
 # RESULTS_DIR = "legacy/role_based/results-gpt-5.1"
 # RESULTS_DIR = "legacy/role_based/results-grok-code-fast-1"

@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765723078-9s866Tvj5jP7iKNClIaD",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765723078,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 328\n}",
+        "refusal": null,
+        "reasoning": "**Identifying security vulnerabilities**\n\nI need to detect security vulnerabilities in the code and map them to the Common Weakness Enumeration (CWE). One initial red flag is the line `#define EVP_sha_256 EVP_md5`, suggesting an intention to use SHA-256 but actually opting for MD5, which is a weak hash algorithm. This maps to CWE-327 for using risky algorithms and CWE-328 for a weak hash. For passwords specifically, I might consider CWE-916 due to insufficient computational effort. I'll also examine the buffer sizes to ensure everything checks out.**Analyzing security risks**\n\nI'm examining the use of `strncat` with a `salt` of length 32. First, I need to confirm that the `saltedPassword` can handle the length, which it should at 65 total characters. There are a couple of other considerations, like using `SQLITE_STATIC` for stack-allocated variables, but they seem okay since they remain valid until the SQLite statement finalizes. As for security, the main issue is still the faulty macro mapping to MD5, which indicates a cryptographic weakness. So, I'll return just the JSON output reflecting this.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying security vulnerabilities**\n\nI need to detect security vulnerabilities in the code and map them to the Common Weakness Enumeration (CWE). One initial red flag is the line `#define EVP_sha_256 EVP_md5`, suggesting an intention to use SHA-256 but actually opting for MD5, which is a weak hash algorithm. This maps to CWE-327 for using risky algorithms and CWE-328 for a weak hash. For passwords specifically, I might consider CWE-916 due to insufficient computational effort. I'll also examine the buffer sizes to ensure everything checks out.**Analyzing security risks**\n\nI'm examining the use of `strncat` with a `salt` of length 32. First, I need to confirm that the `saltedPassword` can handle the length, which it should at 65 total characters. There are a couple of other considerations, like using `SQLITE_STATIC` for stack-allocated variables, but they seem okay since they remain valid until the SQLite statement finalizes. As for security, the main issue is still the faulty macro mapping to MD5, which indicates a cryptographic weakness. So, I'll return just the JSON output reflecting this."
+          },
+          {
+            "id": "rs_05fb754ec09588ed01693ecbc6be5c8194b2ed24ddde1c1ece",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPsvQoYgJcRtsV2ojaSEc_nfwmYVvrGRwhevkh9MoUxJYmX9lI-y5W_X77_V3O4EFzkPLprgM3suoCPrkB0WYIJswnqy3Sv921zET8DpNvRyhnhSDk9vnRwo7w6KgGwQoDItBPVfZAoPr93atTtRGc0v3vnfZ6aV6itZM8YMZNP0b_PKtQY4y8jR0ByYbPNvjYmx6DcDWIL-dNVlOe7WVYmOPs4aLfG7SBymsZVJRH9oTwqg0xZ1Z-5vETLFJd1Kp-gaV2sW_AdfU3Ink8AOxEec76JrXAG_mXKuhiZHmlyoSidNFGDyApNjOUQYANMqCYW5-jCIjLSrT2QCGAD6JQwEH0CdFFf02UpJMBwwlW0mrsbBOlw4yXssXAtraMvqL6rnKDuYokfZk0BBvzcqjLGOIimvgFE2rgqPqxQ7nQ4mbwZS93cvGc6-Aohlcpk8tV58LQIuNqER8p4jReMD443t-jrTsNDqRU4dF7mBaUylgDYW47nVikfdkWU8bf8lk-4vEZJDAbrRNSiA4Aefc7kpN69X49HQgE289JILLlDfrERcnGh8KYAJXg8JvBmBs1vD1_bou1K1JHS4cvIiBt5hqKUK38EvZUgoCXcEIUlenjj4Gztrc0A8fNLGOrJlYrekrdJ0j6SU04k-vycpjdndsGTXPkL0bdvbTB4H4pzq2pTg7bpUgnTWNlh2W-Z4lC_7EXuZYZRkd51QrLCq9Kls_nJ57UI1yYVWACoMpfQPjOWa4AAvjUdAck-thDiF6K9GrKD33Bm7Dokri_TmHEGBtQ-vR42CiMNMGviNQ9O5l_rhT3ekYKpFbj2jXtfaSANj-rI6ddUmIjfTe3piqAEn-44dsIBrfIZuXPd8KHt6Sfc7y6MMWuvE8jRVo4T5TLJBbMCmONSGV7x6P330uNkburEEOkF2YwQufQc5gNxZhM_BTVfcKmIoEyzgWOR_vLA_Qt_5TjKsAF6LudtmHBxkIUzFJLpxv2C5xy9v6eVZpd86XAfEj7JtOH4da6XstrwVY_J3PtqUxoVvQ7UA2mFYV28SDFkkCYE6yfXl0OaVnzOns2f0V9HFjpyZLEbUPir4sZaPj9GQkoO8hlAPTbM-naCBBA1W0aTCo0uC18aAMSudHq7ItTOCH-Dr0z2L0NBFsM8BagUFOwKMh5LoIJ5tsRVWFW8egnmDhWowUzYdBk4g9eG-cd92nNcl5qKIewRxltzJnRNQOuplM_ePgvhjsjyLZ37fw4zAp4YNVRIsLQ67JlYIxUycq7IISaQNAde0ZFnK5fOdGdK9z2mEbtf61LQgF9lJaeKpAS7Hw9D5qzFI0rty42PfqiGjAHcb3SF190IfsDL4a_Nms6Bj7OsE31dmKTn7qU8p-QZ9i24ifKiNp8SSIbsXyLCNKHFll6hjCXKg7XAgk51Tc04Yj5GB4ie_Q51HjkLzQlspal688LfXq4iQqfCEm9_e54UDrBHCiuzeWPZuSbiuK-SKFomciUXct3WFfHhVHahjKlxCLScS4JMVBmNACex7LovUtfw77lbXceHPqcrGpZwrWYjDDVhNcCmJ4WMaCLupPsGn29jh4cJWgTdmIAduKyt69hunnyBhfPIw0Ey9SOZQSwP3N7NYIs0gRzssJcYw9kXnZ7T3LBAM5nO7U4xnKyjK8JvSkEEGJH4bvu0uhBbtlhO-KuCc3Ij65pk6VtP0TzuxEMi8LdQC7ZHwJb75ZXVATu8hy4c6aiqMT5QkRSUnd4qgVmljjM9HmbGUPkdSI8EzyYUtBYnCGxzhknymGlansFtMs9IrOdmxpZ7JsTwx9no-1zYlY1bHrSY84NViQBW0l1NB4MDiDv6OarmkmWaQ6fZ7W9X4_HD2DUcpysldpPKtUNssNa2JTaszpK3ZTW65jj3s5dLFL-Tz-Pgr-SBMTmh5tkXu8QTC6TLAHOMMNsgnTvzk5mHaS4opijSkRcJO_kb_9Mn5hwBfELYDBMUI-6acEPDdMbYC9sWGdQC02egTq4b2LSVRDMvFMreWNMsiEawBwDPNkzVgUsSEhC2_OF7oLHQDCDJjNxnJH5iwk976bwjgfUYagVMoWd1rcDBYsmlxbCmn0ywA6HBazMNHK2GAIE3ztFC9UtwGD1SxBJI8BqpF-7SJfvP1RTPDnAonJCSBjLrjIDmwa_71Dpfllg4vvfHcu4Vyr0TcwxV6GxMHf_PZnIPDwm-yctilEdpkOm3wAt-_wx2BZvD3iaQFZN9GnrTY4nLV4sfLHlAFiLQy_NlwDGbHcndfanLtcI6BOZ9id19dAZbWd_jls_9qSsC7o6MrNG7X_aioQ_753OUIxsI10U_gxplvRkl1-8dekgBd1sGfTc3QSNuiWR10XQS6q4nJXINq1Tt47SsBN73D0BpOwjpZ42rQ85vKj89rBoWhCmV5nRMbG0u7aekY_ZEFc4dVvgigLxriehO9iu69DAwEajuDKHHUPwj9Y-V6z6s5hmSNTGIEsNZfSjGA1Rw-5M7zAMqNWCkKm0OXP4VP4fHwLM1PTyYkxN5XfvqRXL4eMr8sxnCJLWcXBDNS5kupEcq9oJIu8uTuu1zn31ZPJnSy_dOSgCsIuv0247_Ixf_3w9pnYHR7ramy8c6ZEpYaHvPk37fzfUHK__ZW7QmTkYhoMbVnlqZs8lbvTfGXSJfzRNr9nlJoqJe6hzzLmh2a6OumqvtZiwfRz8Ratr8BzSeJPqPqoUlKxp5hIKDqzVWwnpnej6Lc2vD2qLnVOjrtXX7gwcxmAH7eyr1knHBMO4B1bgg9bs4EqLzPuf0hjSNYQavKe4oJ149fgE2e_05APUK0wJjTJ-bfCrYvY6u9HMVeqb22JU2cIgaYTpX6aR6701Dwrnpef9ajfRgqieNH7pf4FDuGBjASJCSgC3GnNP3p5nsPiAfP47wBU8mUFq20gWKfeA9feAaLvbwTAB10fcvXjL0Zgtrd8InMgVleArR7hj6NpUdxbPIVL3fCLN8kAUyGr9esOf-tr5BR9TCxpRo4L0DMCLZE-VXYUkNCQw7a0RpkDeQaTrNIDsM1OxCxv6xEOPpYp5lmmSgsESbBM3KKlfHJCLeNeQgqpTVc6927fcIXZXNlx7mBTzb3TjD8c_0foebgbS5TYRQQECoRBnufp3iBtxn78gCXkxi4UgyePVDiTL9D0mC70B_7wMu34D257JLs3fpwhNeM2v8ZkewkO22VQIgdzl1PvWKMfXkgqcD1RhqRSyNQZamSkMdlbC-dNPTheEWxAM8GZyIK54gUjXu758h9OQbOXSkah4A=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1216,
+    "completion_tokens": 456,
+    "total_tokens": 1672,
+    "cost": 0.00608,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00152,
+      "upstream_inference_completions_cost": 0.00456
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 432,
+      "image_tokens": 0
+    }
+  }
+}

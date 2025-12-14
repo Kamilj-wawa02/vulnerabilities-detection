@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765724855-v2RM3Amz8Egz9Q9V3Nm1",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765724855,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 787\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating code vulnerability**\n\nI need to check for vulnerabilities in the code. There's a clear bug: fileNames is allocated incorrectly with (nbArgs) * sizeof(char**) instead of sizeof(char*). There\u2019s also an error with fileNames[255] = '\\0'; it should actually address fileNames[i][255] to correctly terminate strings, but this writes to the wrong memory and causes an out-of-bounds issue, leading to a buffer overflow. Additionally, strncpy doesn\u2019t null-terminate correctly if the length is 255. I should specify CWE-787 for the out-of-bounds write.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating code vulnerability**\n\nI need to check for vulnerabilities in the code. There's a clear bug: fileNames is allocated incorrectly with (nbArgs) * sizeof(char**) instead of sizeof(char*). There\u2019s also an error with fileNames[255] = '\\0'; it should actually address fileNames[i][255] to correctly terminate strings, but this writes to the wrong memory and causes an out-of-bounds issue, leading to a buffer overflow. Additionally, strncpy doesn\u2019t null-terminate correctly if the length is 255. I should specify CWE-787 for the out-of-bounds write."
+          },
+          {
+            "id": "rs_0dbfb16fd3276fcc01693ed2b7781c819395f8016b6912cf4f",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtK8Xd3KnAzdxXdwxWplgB6sxI357sNKT9LpHuxBrFYi8m9Z2mB0N1aoeFTKq19LXiOi5D6aY3S687FjRoQc8OkkkLubjuI6UXvKTQoRpXWVTCyctxw2wienFh6y2xh6Qv2FLwA1bW47GBjGhTybxx7m3VBY70HhlEQjPospxzOH-LQKplA-jsk-bI7YFndmU3zCRTLsYuWYxBevxTpKO4qpdUAW7NLf3XAag-oo2q59dWKo5h6_C0oRnuHcUbTrZEbAEHW6FPQq-0tCPu-ytItYFStQQj17Ae0bVFnqqs6M2CMvzATXC0YFHdNMmy0dcvap_KE3-NoQBEupfvodvV78HHlXllaKxYUr8TU6_Ta1fSHUMQGmpwkHs8GOmMchhHs6J_5SgNJ1vXd8K9B72b6cU5sHnzdvw-LxSfQC8I8bJsQirBz1mIQnImIWwGGCxXzo-wP7ewNJjj5tm7xNidk64XSfiS9c2juBp8dRqsPXG1Plzu-sSWnqY41bdSeb0oe_Rl0situZtYJsgWFLKUknxRgaPwfMUy7n3aAcjeYpGGbs-UREDsRuppBGTJbBd6ccB5kcUlbBxL-y8iUL4uEWrtcOH2L5DTfaGNRMRMnED8tVwKKsYGbyZw0WpxHR7JZbq4vu6JdbeDXiNiDzeK0tWlKeTtA2y37KkQ1Wq31ud9KpNOa-qgLKznLZGEM7Q2tCujXlSPXA038br4Pd_LOQq8kplgQsBn7iVlbhudHTnj7o5hGSBHAEYyxWsUt-g5bymejBGcUX0-onTGcPS4lLirpXr5skGyja5dvUcbAr-RWQiiQKIOBdgYccENDSWQfouKF7ijwaBml14jsGuJ4S-yRhLYDkV3TlsukoW9H6ZG-f9cbuTq5EOZMHqjuKuCY99CN8ix7P57jj0qU3EUaq3tGPKsRIvjluppE9byl0YLlgwdHRxOCzf8QY--dPPLphF-00BTJlM8nc2I6UQdy6w1Tm1zjEUkxVcGYX1MC_t8Xi6PTnDpmR3UhqbGINE63zunf4QrWb4KoSXbKVIjdjq2s59syyj0gnTTAIO33KuQb88zASihyX2VnCLwNamtn2uPUPl6MrktS-L77vW1EVK-GqQqqnYQb3P4sOjtl53rdSNZb4-qq378IR3G4d8ZH6LTFGBEeAM52X7jFPLZiq-1asrjHSKYoztdnmTnSWu3FMnuIrv5V4leUfF0fx64Q-Yr2aQ3qQpA6UgGlogFBNNjJtoPlFeq2m_3vkDx8gtTGESHxzf3lz_sJ6qzx-sSoy9oQDCFG5rk3RCgmXYWafCJFU3vLP60j8QhIM8vgDjqyhlpuJJTXpsAdhJpOXxQIBI6fXmlQaOCPxBzwFQiNsiU5m2a6LgS8Zk_KEa4TIwGyS0GaJPPbisFkuCmMRMU2-ePkU1Fy0vKW4zMCm5fb5rGndvWYajgvgytx9-gwV83F2YbpUMRFA2i4os3V91eajPbM5c3tt7kA3NHxuu4OmeaD6QeTvrsTl2o6QbsUkVeKm96ZTtgF5ty9_MahMdyWNW9Z-nsap108hRUMxeSHFrQpVQuG2mgsO0ihSHS6fSfLxoIWgDfbTBWEZdMx6l32pVYcbBAPP0kJ3KVcwF2c475rtewj03384RKvXODtAi-q0YWIz4BNUVUrHAkCXx0ssDBpGF9agPeIFazldxqyRBPDDhcz4dOvocvvH7Q6QDHHGNDnINKPGswSkS4VIthzNeFJZmZUReBW7TQH3I18Oq162S3SEe2pgeiu5lRzRAWyYwIh5vphULSZvjXk77uhiXV6medaEX9ufNdy2VtqEO3bL_lsgMjw-HlcsMisRbYYJYglvZH7xz1qKqwAaUTs0lwnSDaqSv3tt7qqnRzyUghrYGH7dEvzs4EF7ss3FeVP8J-uZ9oH3URL1p3SeaGmLMpyqD6g2B6TA6dDbm92tS-El_C7DO3_-_qUpM_6MzH9NEXGKdLSeR_0N4sNcbm-n2VbLhoifYCHSUzOKeAW-jw=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 445,
+    "completion_tokens": 230,
+    "total_tokens": 675,
+    "cost": 0.00285625,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00055625,
+      "upstream_inference_completions_cost": 0.0023
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 206,
+      "image_tokens": 0
+    }
+  }
+}

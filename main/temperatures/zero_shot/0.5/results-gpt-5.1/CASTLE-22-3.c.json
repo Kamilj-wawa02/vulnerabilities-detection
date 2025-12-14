@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765724825-qZUQonuQ76NWO63bpSfr",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765724825,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 22\n}",
+        "refusal": null,
+        "reasoning": "**Identifying path traversal vulnerability**\n\nI'm evaluating the vulnerability around directory paths in the code. The path starts with `/var/www/html/<user_arg>` but seems missing a canonicalization check. The prefix validation allows for directory traversal using \"..\", which could potentially access sensitive files like `/etc/passwd`. This indicates a path traversal vulnerability, categorized under CWE-22. So, I'll determine the output as \"vulnerable\": true, \"cwe\": 22, and return it in JSON format only.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying path traversal vulnerability**\n\nI'm evaluating the vulnerability around directory paths in the code. The path starts with `/var/www/html/<user_arg>` but seems missing a canonicalization check. The prefix validation allows for directory traversal using \"..\", which could potentially access sensitive files like `/etc/passwd`. This indicates a path traversal vulnerability, categorized under CWE-22. So, I'll determine the output as \"vulnerable\": true, \"cwe\": 22, and return it in JSON format only."
+          },
+          {
+            "id": "rs_07e47b33f0508b4101693ed29a14908193938cfdb1f31188af",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtKfslVF5k9YGj6WN8mbvFqemIHXcehX5fT_zigqBblX930twS4yHHBPkzLgLo98O4Vr16_WUNaKy0KIWTmXB1FQhA5ujpYCsiZFVa8E14d2lQ4U4DB67tsbBEQJyC3Cy4kCO8It1j6wLKRs6W5Boas9L9L8Nter56AVn0ISoT9G117LgR1kA9yFX4QVfpYv3UnFzgkqZGoE-Ce0eISYmk406vmlshokb9X5Cc0yxC2S2P4TTDOgSvJEWq458hAD-295o6aVCY_EYwV0wO1OloSo75y-mdhDRycXFPMFx0KH8wW6cOx8CMSc0Cn1IebXppcUkxElHipKwQ7DmHdGZ3z27DAlzCGXNFlnH7BHaE2dLKlMHkS0sZ0lk2dtVtudVSrw_EI5EzhXcv1M_-jjCc3xIA5hMMesKF6Z-7sxCNor7o90gGvH_Rkk_TImEBvTrF6zA8fRVt__E2Zq85knGaGb9m0XG_0TQyoP968Ccf2rhqXpxg8huGki-5mkyU51KZIsmFZuJ5t_nPTsP6sKtM47-HHo9ta0E9YRBbobW09mRrPior73hkqZ_HgyxfL8wySfGlsWOy4Ef87drKaLUh8C8FLin2FcUBW8bPzzyOCoD7lXD9-18hipeOxV4COlYERAh_E6IolmhNJzgN6lNf5zAW8kuyJJ--BAegBP7CIDiuzG0N4Suax9R6VNeacKvhZ4GsYozv9hQVM-jdMWXPx3DlCOFLkvtit92glNDxWtmPQ-dXZbm2A788P0fg4jFVwRSz-rYEcWOfdu6Hrw2lB9e1coj3ufQglkQGBlcxhlZylrbaDIb40SbmOCVxfEldltAlvWre9QmcPXtOC7KmlnnbYOn8k6yCA0eOUaH1U3AvyF8mVVTm6e5-IXkYMHnUH4vRn6xoAmxGepxlz_TVsezKXqVZkbmiGzFRJ0RSy5kITLaqi2R7kBihu5cpf5r4vo_QHhv90KMOJbe9fM-D8MolP7mIxe0fBcF0y3nzPqhgMsaF4dQbt70hkaUnyKxNfSM49eC3AlblHd8h9-2JtirvXR1cRI5Dz4UlsUo5KpKcUHLwEsu6ZASSsuYai_SatxEGp-Bm9lKmH4CC1wGNU7YCgoHn0cQKjGY5zuNEGZGLhyEP1taUZrDSzt8CR00flhSIHlSNNsazvLzUzL8sfXD4IfZ5ENDi1jP7LiKYRR3QzHs__yNPsPyljRvsHJPg-x9I2pIqNBNudaBlVqLE5nihrYS-Zhm4EWgB0xLOPMgzBKWqIrBwD18GBDQGROT0AgUSJKxmt7aj6IZO26Xdv87j4K7cG1BxCSQiT-B-icfdJxdNuykcOYXL7f5uT574q_wv5VJ-rl4_-bIUO5AHrguTpd1VgVHkgyj2vSWxXpcGfdW87xpp1N-LaU-EgsiuDkn3tSGdyJJGYBHO6UCRa9FlaLfYGJD8NanTn_6IiBA6FWoJCMnAj_OTxEisWRHYL-nz2uM86-_-Snf0OCUZBBRqXn1qhF8_KauupDX2UGqQ12-xeUIHej-07aV1Yjo7tX7TBiOfBlxoT6ruoQZLc0fkJErVdZWd9AVqR9tZrJQSwI5MoutaSDGKjnugeloK7FHK5h0QRjC9vaSxf4sIO0RfdO58jxuWcjqO7G5LHzIYBmtMgZsZ8SzjWKttSou2StpHdFXTqdkeWvawXkFYmdo1229jsUq7ivvvyeEjc0ObNqFx-29UIEHodqMV-3kiUDXRk19uC9H6jfArTGxPC0Ehrxy-4aQanWUO4h944nK5HYXhM2M9O4Km9lRfqUAHjy_I0pgnvUkFfplnCqmndvul5f1ZFwKlpkMgb79JpHZyztejGChyfm0aHwK5MglbuW"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 338,
+    "completion_tokens": 209,
+    "total_tokens": 547,
+    "cost": 0.0025125,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0004225,
+      "upstream_inference_completions_cost": 0.00209
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 185,
+      "image_tokens": 0
+    }
+  }
+}

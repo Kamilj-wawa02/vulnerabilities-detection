@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765725174-6j0SzTA8FRjjPdbxv3Ui",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765725174,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 125\n}",
+        "refusal": null,
+        "reasoning": "**Examining array handling**\n\nI\u2019m checking an array of length 200, focusing on fill indices from 0 to 199. When I run a reverse loop starting from 199 down to -1, it looks like it includes an attempt to access index -1, which is out-of-bounds. The loop only accesses it once, resulting in a buffer over-read and undefined behavior. This seems to fit the vulnerability category CWE-125 (Out-of-bounds Read), because it\u2019s only a read operation and not a write. So, let\u2019s note that!",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Examining array handling**\n\nI\u2019m checking an array of length 200, focusing on fill indices from 0 to 199. When I run a reverse loop starting from 199 down to -1, it looks like it includes an attempt to access index -1, which is out-of-bounds. The loop only accesses it once, resulting in a buffer over-read and undefined behavior. This seems to fit the vulnerability category CWE-125 (Out-of-bounds Read), because it\u2019s only a read operation and not a write. So, let\u2019s note that!"
+          },
+          {
+            "id": "rs_027c4e3683739aa701693ed3f78bdc81979aaeebcc0065deed",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtP9-g2OIm1B_aRcgMUnoYWB03KKsrTK1FWvAdEH68yVad_2I8EkxdOMqDj_CwB_Z9ySg_radaj7JYDy1k_h8TU4verRFIrl3xD0Qb0rEIKpICxgKPpnqPYcpF_7z26WgrBbHwk8S9xA4gEcyZqdgNvAXp95Bw3m5zAKAhNfyf-6jNNALRZ7sD-u6FOHtyG7dqVjXm08X1PAS-ArKo8c8xVxnlKvRMNlxcCX1FDbtb35ku09_691gk-qa5okQnxP3cWTHOwpvJd0hlbHdyx29zl41XvFGOplIVCJ4f4v31EW8pR_zumlqcM7SvjeY6koKORgf5A_zRe5p0KLyyJES9vU1c1bpawY3MKxowt31KPFfQTn7d1jsNImi0WV8Kpbqf8bcTx6uA7KwNAVcij86hppc0mifhvuY-z6_IM9vHUl5KI9PFMtwmqpUhIv1X2ajeECznm0w8cerEy7Dmcj5ELvp-zXtWVjTMKD7mBLakRjgLEQ6nv_htt6jedYb5z8S7EFhgJfO8KmJ5Abmu62MG88_WBLNkEKJXE_d0Tqbr9_lM61V-mLZ7mMKYsuHOMskv7Fpy2ka7kHeO0cwgV14RicSGW7J_0Hp_7feveeJGV7moWa-yzCpWOLB4FDzQ5U-WfuVIjjI5QLYDqmwkr_5-hMCG2qXrG6hWeLFRFN-_uQkQdTBhM0A3b8DYyKSL8qgRtZ9LodEb7cLOnawV0Vq5Wcap3py1fRTg374vT_5TFnWL9KyhwBEi-9k3V5H52lN9F15QQ3fGbU9DN6h5zOTSEfQVKNoHSkHizgeMkYwLRMuslC_CYLRkxrtEQUxGQ2mTqB-uVvO9Zx0xDmho5Y9261bYO-J0smJhKbbHIq3Sig-DRa3z1OgOIQrsoBnYEt1O2UPfcRzntqoqkdU7EhIMuNbN03zzU0DMuTxfgiZCReSXv4G4XkksdeAi5wsJKQQKbQe7SZwLNGPmWoh1MyFRpi7Gq1gzDIdHxHLZ71q2FFUkbNlIXk_B3BXAaKN3hYf9w0QnUu8rszT6mZW1VyKreHYzQMeBhMkAOTbGaNkuBC5M0Xm68wA85gvFtmtpSVxMVOleBz7fJxGgXVQqsKva07l88j5B7xUxjTziqpyso8te_h89LeO2KBOCy-cdQr2KPx4ofVyd4TIQXQK3RwqFhkrQ4SkK73zUoGpIKl-V_Jg_rK0-v9b9zrS1_DRfnZ3kubNAB_q9PTKEi1oq4jcRpAXFlKCaDDi19-tLgvgndKm5VgL6xFxJmHN0icyVqc6rjCgRZgQzkuQJ2jIk7Bc9UkYNZgCfYMt1YU-mvD5PJKDIMU4u7g_ikb5W-0nalrZN3m0OXYFI7MbX6_8k6C9AgZIw0H9jobklXhH1A3nhgGTAPxGTBGrJ8Q8JCu1pX_6VvzSTYwTA6K2y4H8bAJJfY8ivglzWncuHoiB5RR0cT3m22-rMTQewzIgP2G4RvTEVvS6ypWILSPOfkcjvSj_F4UrCuhZpTl4f6tbDu434bsojn9OSy7IurGDzyQA85BB0xe_gZnakQIVx5vCiPUfgNqKOevhFqfL1PkmChw5hjEv_Zom0SnFRWZhzd6XOuYYh2cvqoTeAoLnWtrFOroX0mx2X2ip1EI3rW0tQFfH6-QNOgS2_8RS5873MKM_DF1GkKEWZkXqC2RGtDzUwDoHJ1TgZAqRThGB0WXaA0jEuKIDBw="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 167,
+    "completion_tokens": 226,
+    "total_tokens": 393,
+    "cost": 0.00246875,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00020875,
+      "upstream_inference_completions_cost": 0.00226
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 202,
+      "image_tokens": 0
+    }
+  }
+}

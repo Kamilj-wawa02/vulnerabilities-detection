@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765726297-9oYf58ZHcAF9EKopkBtn",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765726297,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": false,\n  \"cwe\": 0\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating code vulnerabilities**\n\nI need to assess a piece of code for vulnerabilities. It uses prepared statements and validates usernames, but I notice the username buffer size is 32. While the validation seems adequate, the `isValidUsername` function uses `strlen` in a loop, which could lead to inefficiencies but doesn\u2019t introduce vulnerabilities like SQL injection. The SQLite library\u2019s handling of a stack-buffer username appears valid until `sqlite3_step` is called. Overall, I conclude that this snippet is not vulnerable, so I\u2019ll mark it as zero.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating code vulnerabilities**\n\nI need to assess a piece of code for vulnerabilities. It uses prepared statements and validates usernames, but I notice the username buffer size is 32. While the validation seems adequate, the `isValidUsername` function uses `strlen` in a loop, which could lead to inefficiencies but doesn\u2019t introduce vulnerabilities like SQL injection. The SQLite library\u2019s handling of a stack-buffer username appears valid until `sqlite3_step` is called. Overall, I conclude that this snippet is not vulnerable, so I\u2019ll mark it as zero."
+          },
+          {
+            "id": "rs_08f0d649003b4f8701693ed85a19f08190bef4debf44bafb37",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPthhdnVaiI75x6WDjqc0XziKWdGl5gPulBBrDjPONO_OP6EcOhshMUwjugjw6tiWgZY6ALSVvDIm8aaCoyo3sfnvwOdbIz7DGEth0ccOS6d2rbz48xIzyCG45zSBPKvclJqPENS_tRfhFyb39w8xqp9jRZuKvsrS0s8NTRIPvFwqrlGFm0RlNaPCYMfqtdh8rPlGt0hZFLYHh_9tDGp5dP5FFrDfic3adS3r0u2ZgobEBd7-BbZFTOqM9pBTP-Vyxhbwu2TVUoH14nE7mc74kQ3TUbgqvQjrNiuSXiDFWfR6aqbKDHN511DlrITHRSy4V6-JYP2fEZVSoLhh2X-6Tu94j4eOp0Mo5MAoSWKZJeCNEZW_wyoDSJck3GqdoDQI3MMeN3MFiwJpTcxUNyoDiVXC0eEidkNggtzAYb-RE0S2Gcjw5QVXKaG5fRIrUqCVTr6uF_oRVKIw3wLs7Fr5w7Bp2M2bvL6Y-LrG7xdG1chjAIg-hH_MvN0X5FEqXS7aCmxbF6OlBQJZSUGiXBPen84j6oftLLB9J1Xlp1-NJ6nPTVVCzfnxrRygwoawWOiXlb2779tkVQfT_rfsi38Jb-MEhLoouxCIJAzv4R05C9n3vGzjFJau8L98TM63cg6kCJgvm_R086ZfaN4vinNjYzxCniT5oiXWx7gDmyWRVKRMuXC2G-dL-wQYlcKc8ekyN1Ng3ZdEE0dVP3yGveVqEl1Wg5pNbKAp8ldTsnR_4Qysydc95sT1FCQ5b3488LQu9jWYKFD8ZX1boJjzuHaiTzSHoNB8O1IwQWvUMNr-aW4NA9hToPSk4MRtYvFLa7MOBtrF0ndlIJw_PA43hBm2rWOvLgpTVfW13DvEdFyjpSUkcXpja3NcuWepT6NgPaoqPD7buw5Q9xMSFqnl3wCcenh5B6IUeTgdwuFz7mWCEfg2AUJPz5nHtwHN3jbs5h-swsUIthMqe6jPq78o0-wKIQEcYNPqtt2iDQeZ1usK8sMZAkw_Cz_FCAIokclXophZUXJgBp4mWj1-DE-t3UJilWgVPn1-mp0fSgn30aMDkW2vNdovpRtucZzmgh_gwQhrsb7oH8KDuWz6zXKEFWqiHPNEYiD-YxnGGuNIuQtoQ4kQjZCVMsUyBmQAP3tgWpRY2OzH6luO4DdcRDJedlkqCuLLokEdb2MFq3w22ibh9UUls7adA5TsumvCKBePGl4Ls0x5zGbpZ_NOyBY9nQCSEhkMCNRn03wuTf7zfHK7iuv-Yy9PfPBIPUUcxZueXCkh4OZk3ddxU63ATvN7UkpL0quGsC31SwlcMhWi1CSUplrxU2xIcD-X5cvhWm5phoMTMpoIhUfak3aeCFpITo5bFpIW8dMI_MDOWbSg3MY3GL5ZJom1-52iFyDJ7eQ_P82IYcxGjioPjr2WdR_J3qIy_o0hNu0IHwmpaWNVkG2gXubwCi0P_wJVtGcoU8Q76XdlnODSC0PoPYsC7tw_bo5k7ZBTepeievLx6CxKrWf85kmKe-QfzkwahQTtw070NnGpkuzINEGogU454CuIObW1EF0ViMlAJVNOo07avmpwEj5_lExGOa7Ozs5p3kdymKpUP9l7GaMry_jyYVvhM3oxVUsh-oQWxrd_hhWmx35XbseiYV_cRsVBRFHrquNgcbqjICPAwqL7uknlO3j2nK8-LgDWpHTpNAWHrY-6ugYnKfNUsKn-scGDnS3DKVKKGlqWEfCTAHe8Qa9hnEIlyRiTIafeJIERb5nL6pXdGeiFVve0Mk4TTYxru-kxs_rsRUnwGS6DV1Br_ye8l-6mEc_80InjPE-FG_-Q8vb8nsE8D_P0R3ERDaVgprOWD8Btc_A-WsbM-bm8vrWGFv2xSfwYEXnWNHowhcZoEhLDE1UkN4MiVHpvoBVRF5I1JzXuaha8z_ytGSpzQ9VqicHsWGvpL-ax8bdqh5O-TMjTwHgJXupA_HIlnKTyHFY26xnhPd-NHCmllfSgqkhNDx2AmGq3N-1rej2GBEb79Yxqms5HwoUdNVg="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 510,
+    "completion_tokens": 219,
+    "total_tokens": 729,
+    "cost": 0.0028275,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0006375,
+      "upstream_inference_completions_cost": 0.00219
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 195,
+      "image_tokens": 0
+    }
+  }
+}

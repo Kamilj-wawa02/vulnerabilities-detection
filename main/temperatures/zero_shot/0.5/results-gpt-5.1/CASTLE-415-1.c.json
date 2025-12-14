@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765725957-IlDh3PiXYKjxO8oVDMmr",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765725957,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 415\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating memory vulnerability**\n\nI need to look into vulnerability here. In square, pointer 'a' is freed, and then in the main function, I call free(a) again, leading to a double free issue. That falls under CWE-415, which is double free. I\u2019m also considering if this is a use-after-free situation, but the main doesn\u2019t dereference after the free, just calls free again. So, it is indeed vulnerable, confirming it as CWE-415.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating memory vulnerability**\n\nI need to look into vulnerability here. In square, pointer 'a' is freed, and then in the main function, I call free(a) again, leading to a double free issue. That falls under CWE-415, which is double free. I\u2019m also considering if this is a use-after-free situation, but the main doesn\u2019t dereference after the free, just calls free again. So, it is indeed vulnerable, confirming it as CWE-415."
+          },
+          {
+            "id": "rs_05f6264000f394ce01693ed70620108195a5877c098d1aea81",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtcJVcySL3XnDJnyJmOgoCFA11n_QITbaypsVV3mfPoRubeKRecqj8qpT-75ELm4zGTVYDIw-sPsfUQeanxAgBJytr4Y3N3gfY_DzTza81tqtgotkd2mx5zkRdy4oqHzc0gyXi4wxVwcOq2lm_JvkZGbNmkKjNbo2IqLqnFfcZJIYEP9bg4LGLU7lL8-CCNu4NKxWeOPWewMbAb1xkMLREvIXKhzin2goYztA2htvaG7CWiOImO-Ln2Pf9dVFnNgoefx0OahDFpCpbD-lIadfxvewql_Vfw8khsiOwUmaQ_B6rv2vt9BAhzpxwXuiTGthpBUObE12PjZYrLMvztJwNq8SYJAlPUZsSk8B0jEfrsmitMz1qwcpIIBaqckZmA9esnCDLmH_bvsdFa6woxeazmTQ4EvdhzTO1xjCZnWyI1eeSp-MmbxylGwX1bVSiayS54ojZXzQPBb-nXRq2Fe6ofOlZMdkKsVitrFE0rzSoIIGrdXY6J4DZ--aPTlW73Nqb1dCFoL8rIDqZ6NDlvt2n41qFtLhFdxeBU8AWy1XcHY7VXT4yPKPjtReK8ujH8ubEwvaritcKXRLEywOO2OD7_L3HkcX_X7x4CVcYsEPedcXf79SvNHK2nB28cZd89xTpvGQnmS0XSmOgfrJZSMYHzHXc2tK-LSZd4SNdDA5a0wXFThBsUttjHXIWAb97WbYpUPOzAnXM66uB74lsQ429mT8hIGjwqNQXTXz71y-oDGHQGorupiqMBxi7YQvRsieAiHeIRMA05e7MBfCd0mqW_Sn4qUcmkfFRJUto856Qkby-MBtN6_ujT1_KGuvmcsPennJPZ_TwoT-Od6amg_GzjpTQKwboPa6DODROpF82OzzAXpmYuN8WzgHM89brFNUbPM75G4pYLA2qWpykuQQms4Ut8Zwgw_K8rvAOdDCEfkIH0EiV3-0Tp99LsZcQXj0T8LU75eudvA24AM2IkIzpAdoAKc2W207-rJhvNRKwXjD42QRRYX3COxm-ZMI47TIEkOWE6lRQg_OlImMfOsLj6758PZ_qGnFEhvBgZiwQjPNZ1hdWG0U7iCiCeBOJKQgd7E4v7bw5chaM3haE7aW0LscmPT7ovI55QlDLdhUQvKFxKeEz186-Uit7j5obz_GXTf"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 177,
+    "completion_tokens": 85,
+    "total_tokens": 262,
+    "cost": 0.00107125,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00022125,
+      "upstream_inference_completions_cost": 0.00085
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 61,
+      "image_tokens": 0
+    }
+  }
+}

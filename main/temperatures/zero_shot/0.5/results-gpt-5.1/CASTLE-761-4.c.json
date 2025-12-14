@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765726654-RcrBtrubcJL4Lrngcfpk",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765726654,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"vulnerable\": true, \"cwe\": 761}",
+        "refusal": null,
+        "reasoning": "**Identifying a security vulnerability**\n\nI\u2019m analyzing a piece of code where an array is allocated and manipulated, but there\u2019s a flaw in how pointers are managed. After the pointer increment, it points to a location in the allocated block, but using the free function on this pointer leads to undefined behavior. That fits the definition for CWE-590 and specifically CWE-761. This could indeed be a security risk since it exposes undefined behavior that could be exploited.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying a security vulnerability**\n\nI\u2019m analyzing a piece of code where an array is allocated and manipulated, but there\u2019s a flaw in how pointers are managed. After the pointer increment, it points to a location in the allocated block, but using the free function on this pointer leads to undefined behavior. That fits the definition for CWE-590 and specifically CWE-761. This could indeed be a security risk since it exposes undefined behavior that could be exploited."
+          },
+          {
+            "id": "rs_04bd30e037b7b0c901693ed9c00f7c81938ccd3f6f102b5d95",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtnGQJO8H53zM0K5sNvDRIRGcP32snvYsGQqFmuKLJ4U4AKuxKyh8ct0DPM_6m7PsFQ8xNAqZDbmvqnaEXjkHbcrroxhdYsHU5YwlUEhGlbC5IoWmfw6zh8JWqzKsizvxqP3eYHWiKOIxvbvD4qTT1Rnw8GkmVQ48JKuqmlSapMGAlDofQ_tOMQw7xHtIIqsc1rA1JFLJJ02ZD8LV_i1o0TU71iOYAzNbYOKKCO_UktUV01vapLfzwx_YKjIJZK-Fs-DbZkQx3X_ScscBdeT_UTiV8yhRNnOJNODc337ultXEfS_sNeeu7QcvF_b_EOZX_YCHmi67LEBZsY1cEK-K2W6Rp1HHk6oSD2-e7np5vgqPcmkGOuavrEuPOqeGbJlTd9A-F3v-Kjce0j-wWCQwisqcYJ7_iL4vm2UPQ805Nn-tvOFtZXdYw_4D7IKz8yYvM19qdLZ1x8bseRCJFSXmWy_COLSMYeLQGDbwrUmYfE96kCqJRhhlV6m86-u12wmYz2uVFlWbi7Js2w8PIGoJ1T6DQswwL_EJyO9k17Gro5n8596bJNt5oFr3hrCz1hexEOhV_YUjvlJg6o4M8BcdRyqn8OtavNOFBkBGapatMknk65sibHUPp14zugBSE-mnje2iaSzt-HZxOxW0qaHykGuUTZPmrLpquabh5BF89FCSABL2z5vkQ1m4VNArIGhBP8QKRd6ZHz7tEyh3t58eEfH82cC0CXRAbsJbAbofpeb_EbJsxyR3p1Bg5Fuc09n7tM1Mr1hFvdGKTOglZ1Y3vcK6zr7haQa0adZOZpWrPH_ePcOvRMYg5tuoYsh20RvFnPJRlrT4LpRM86y1C-gjhgSkB-XVcrpV8a0ooVUoue1xu1Yow4vRSlfMu77Bbpe0cvf8e9AqkpcSBc8lIqHEto22VYJq0aNOFJpVQ3TeNe39XuagfIGAZksyd6VzGBnnisJWrIAOs30lg7Vr2sDNdLYVFCNfZTOuAkHZnFic2aPa5qYQNTwo_s02myBHVN3qvJHotgOI-6VHA0U6yn71RIr_aL6bjV9QFyZkbKaCUvpmupZOXRkX_gKOcLoL7Hmwk9w-8sJV3hFaL9MGgZzBd-V-usik1F8uka5pb4y3jfAZsMuUBJNYg70obhBnkIkK3OMwBjiTMQ17zTVy1sgBw0qxJgoWT8DVVqmqFIR9UksGiOQzN-WeAV9srGhcfTSX92ZKexxBT_-pUjKRVlUI4TJmFgBsHtkcTI02rIuwc0g7a4BxsCC0Gsu9FZKPf4QYJkYqKMoXL1NB-ovK5xyrXbTCmRU5TBxkx6ogEO6qLYNv1CFSEVsI9Mo_EXf7JCtstDgDp6b1uMRSq2b9gD6vTqjxr4Wpju58mrzVdDAdeNpdxT6AJtmqwJOrhZFR8YfW1jtmk7CiBeSsrgO7QnodpivL2SNAN-MrnmpeVxHzr1COBIahw0MEXhVmIE7DBYSNTelabfV8V10gAJxu1f3HgFj2lcT2oPoFNCxVth0FJ8iUC_wxutYYEIvmRJxTkhIpY4zcijxe14zSS5W2glLmpn0psEm2Tn4WHOuh9t-1DSzlnTq1kA1SJDGs2UupH0NLz1E1JpvglUeZcq8_pCJV0qHzv1yF663b4tL7PQJG3gEiiDrRjwvuDke_Et1Ivul8d4In2knSev_iGuUnhHu9YxtvTcKj0HU2NevGJ2FlCSPQON0YmsPQAXhyMkYBDF95CF0ajRvqaUNuWqLCTFiWJFUUnXO0oo8lPoGcYxzfOg57ScFjAZJFROIKjbJSzrxRkvUGervOOSwkUBvrGrM1u3sqL3dX2SUnO1ITabWyJtUBCQGRijW5xVn6bInIa_2Kby-0vSzyuxy924o2emLjTIowwwEs3hrE9V5wkQAvqkx2zQxnItQsu9EKsph1r96i9p8"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 255,
+    "completion_tokens": 223,
+    "total_tokens": 478,
+    "cost": 0.00254875,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00031875,
+      "upstream_inference_completions_cost": 0.00223
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 203,
+      "image_tokens": 0
+    }
+  }
+}

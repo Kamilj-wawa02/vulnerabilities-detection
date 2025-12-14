@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765724334-E4dD9J7h3BufLTgGCZAQ",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765724334,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 287\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating authentication vulnerabilities**\n\nI need to check for vulnerabilities in this code. It verifies passwords by hashing but then compares the original password string directly to a specific hash using a function. That\u2019s a logic bug since it should compare digests instead. The way it's set up allows any password not equal to that specific hash to grant admin access, creating an authentication bypass vulnerability. I\u2019m thinking the most fitting CWE for this is CWE-287 for improper authentication. So, it\u2019s vulnerable true and CWE-287. I'll return JSON only.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating authentication vulnerabilities**\n\nI need to check for vulnerabilities in this code. It verifies passwords by hashing but then compares the original password string directly to a specific hash using a function. That\u2019s a logic bug since it should compare digests instead. The way it's set up allows any password not equal to that specific hash to grant admin access, creating an authentication bypass vulnerability. I\u2019m thinking the most fitting CWE for this is CWE-287 for improper authentication. So, it\u2019s vulnerable true and CWE-287. I'll return JSON only."
+          },
+          {
+            "id": "rs_01334d799504c38001693ed0af5f6881958dc71b516fd24a08",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtC1as-SCYWcosiCBRCnXT_avHwIrGYyG1cDM4qReRBYJcLBoHbajgOZukYcQqJa94sbXN2zQH-0olq_w33qBH30Cj2P9F5g7pJPdY5OiJsgY6Rsv9ccPOz75Pn0RTxTEhIkwmE7z3dL0F6naypa0jBEt3U2IqpSbp2DaYpHigdm_P0fzHCuQ8d8CMbhMbYCMgazyQinMhqD69uHTd-hjvoHVbDtCNkP4YtGrQfQFG7ZX66DwQRt_nHeEY8VgMjA9auyeIsiMJn8wTkBu2XNV-6sT-c4V8XOQ2I16pnRiQvDmIGUeQdCrZoJeQP8wvxvq0eHh5EOK8GMXfi-bl62-L5JOLIs-U3OAJ7nAGokizp5MTCzaHakXzAZWoCZVgbglEFRJ3_j2bEUiZ6WoI0kb_pkr6U-adDFbA0360qw_wsU7QbqHgyMwbKcXxTMooUyoUaoF5TaQWwmLq-zTb5C7_O5bUPrexP4zY17D9B_ApVAFWJUzyXKbm1IoGil-IcAkbSbIQ0enyWvvSI8xNL32KZnwx41um4-jTyT9LzNMAD7c4IJj81Vh4t64fmGU9o3jR_RS6qyPbn1o8Wzp9bo3bcwfIW18LHz_ws1gptW2aE0m9PvoDTJxikDdxcJTwwjkahCrH-88sGDRzc1E74NRcxWO8KmCEJlSEoOn1oDthRIPvky7lSvu7fjAn5e7jv8OVkwAT65aYRRXUFo_5Mnfgeed46V-aJX3QBZHgSN1I_LHIwvhLnxD1O09i5wKestNF0Sl6GJ-Bt1Y3Pt2Xu3E2HgYMd_7kBI6lG1427S7WvcHo7chI_Eoc_nePazIn6p24QEEDDFJaXdljFPx6qTN-cOKiofoDgYx5Do7ohtHIa8KM-tl5tVf8A9XBlHe28SCe_f4BcG_Rxeih2tqUN-Xu_9MdX4ELkBFQ2wOX8QxJ8mjK8lcFLXEHiBpNtFYnC6wEy05IlSl38u3l4VfvK84vv7ec-WClKAucl9y39Th9CVw9PfXc_TvUSipyajR0yyJvDhsM3j8_EN41IE3HwWMzoWHESE8UMN8x-42j_v9iSFb3TaNqcakPa3uINe_N3ukHA95scq9sKDx9FV7TyQia-GP5Tdvx8_gkuH0nfXVMvGI_rA1yRoZwqnwD553flUxRKIwosPWX6bf1aaFl1jWyQ74cRu4nMZDSu7vC4cWRDvFhMqTIudOkdXjjunS5Fykv5WULUcbe0fH-ukR8zuZwRo_9K0ObEab-DlOZf2FMwBuCb51tuyJQp0_hzKFIlnhIseH4751h5_UF6_S-HKH6IGMrTKSMrOoUwvqfJo-FIL1GfnOf-W5XI-AWaHKo59iWnICv0Z9KDbvDN4j8Jv-ZC8yjZYz2aRn_55XZmhaEvUU1bqSOg1velRSoweAwffWJKSFlQx3tN_UJ2rLIcgOJ568sTZf6btK3Zw3w7cLtbIGavCe_WHxz73Qy92erFQDnnGyEgdudISVduu6VkbMn6lMGxpe7y1agIBM7MUn2OJtnUkFep5EjvxvZrJUW7kORCWbeDqQnU40dvoth34ejUaX5jO71hrn2nSfKQ0SUAEEaWrnEOUGTBXJcyoUBW2ulOTZtA_-yvtUM7mFAKyAxW62YQzcfOvhna6ifiq_pMcdUr4yd-gdLdIKgyFzIM5VUsBAR9Zx8UAVgqGWOO0c1kP4RTtmaqnCKG4kphcDh8ZSIbMBkNopyS_2sxyNfaJKpb-7zMtnSHeJsu88uIVrD-eU1ADv57ul1u5Cd0Eo95b6qCoLthv9OKHyJvBlFZ8ezAxJCXqUgWPNBhoYr8pWC1MePRGzorH_M_gLo9mGevb7mbHxkLvsYLUgz_H0m-KDqpLQDtFUjXWaGsGb_3enZirBxp91H1f9-FODy6Sx57oqbj8hGg7BUYF3JiWbThjlczElkEsfM3NmCCDRJLBz8bmd9qiTCgZ4vZRiDSpJZyZAnOU9RWRQ8z9kmXYxDt6g99o419pNQzJ3KsIVCdxNxMA3xXFwoFVltBGZ6lZvm0R3QfKa0-LelZ91j0QOH4lYVhZ"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 553,
+    "completion_tokens": 205,
+    "total_tokens": 758,
+    "cost": 0.00274125,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00069125,
+      "upstream_inference_completions_cost": 0.00205
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 181,
+      "image_tokens": 0
+    }
+  }
+}

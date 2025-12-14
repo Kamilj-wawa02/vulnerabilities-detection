@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765724975-PyDAIHvcGnbPUox3l4DP",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765724975,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": false,\n  \"cwe\": 0\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating code security**\n\nI need to assess if the code has any security vulnerabilities. It includes a function that checks if a number is valid by only looking at digits. The input is read into a safe fixed buffer. However, using `atoi` without range checks could cause integer overflow if the number exceeds `INT_MAX`, but the max allowed, 999,999,999, fits within a 32-bit integer.\n\nWhile `isValidNumber` uses `strlen` repeatedly, which is inefficient, it doesn\u2019t introduce vulnerabilities. The use of `system(command)` with a sanitized numeric parameter seems safe since there are no shell metacharacters. Despite potential DOS issues with large values, I believe it\u2019s ultimately secure.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating code security**\n\nI need to assess if the code has any security vulnerabilities. It includes a function that checks if a number is valid by only looking at digits. The input is read into a safe fixed buffer. However, using `atoi` without range checks could cause integer overflow if the number exceeds `INT_MAX`, but the max allowed, 999,999,999, fits within a 32-bit integer.\n\nWhile `isValidNumber` uses `strlen` repeatedly, which is inefficient, it doesn\u2019t introduce vulnerabilities. The use of `system(command)` with a sanitized numeric parameter seems safe since there are no shell metacharacters. Despite potential DOS issues with large values, I believe it\u2019s ultimately secure."
+          },
+          {
+            "id": "rs_06f63ad91955776501693ed3300f188196b72f2be0c82fb17b",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtM3-ZjRT7dEU7D4Ar9HoP0ZZrno_f2W9tRd4DruJG_ss7xqlUiRAQiDw2eal1lFTCOqwM2LEkwWT4Fe-4EQQ8HfIjJr8OeQV86ImKN_8t1ZOjmuAEfaQ-yLRDwrjdSAU0USNlRjEGhZlmlcVXl8wNseJsaU3T_v6xPGUJOXyJdvOo4OPqe6vWMRt8MYB9fWX_9QqPEeH5V6tpKK7buxv0oepsLpQsWpoSMODTnjAtBIVOjjBYyeEn-hMWuNPuwfcBu6bPjIL2EHuIhEjaJbR5BnrTFTpFeWzYt6zj0VPIVtIpMg4bizomUGb4xuTcAi0Jh2rzHz-GjeXFjoUf6JhjtcD-P8qor4KjQ_gNRlO_D8oYTykG-ZTUrJMTqfoDM0mA15gGkHrLT5PlviR4VASY9c5CgBma3zSM1yqe1py9B5NAcPtPfhLH1UHeVybJ03KyWzCTKMtGDqGB-xR57IX533813wLnjaYf_SRpPdkHoe6Yy6WGkL1AAX44bmFXiXvD_1DfcoAIFvZcuIQbhM2IUUtl8xuqp8DEpoW0N-Y7NrMjM_KYWSkmMEuF0t9EirNmq0VzYHfo1SPssgBN5RSVxdFUSZta24rdZH2xLwqQJbzx4sKbSkb56LFeL3vkA7rpkwRBulJ6Qiff-U7OONsOiVD97hCnOjSj1ne21a4zrXaB0a0KCMO63FVs1CzBncEsuzI52VVp9MhxeHUMIMeo3Mwzq7XgpHCi2PnXo2n_bZCqiF7mnlIFC2yLVfrUVo_1SfHZnRXeXziC7Spkew0yfMhifAwquOSOgyOS1mj0VCJbb_zw8g0mLW48nBeRXyliGKL98bAmrx8LEW6RWqYHNZfXCmuPqrjR01d5d7iJmhID8TYpcKPsrRDh-9xeIjp25S34JKiX7jJyHVoJZvk8e_d_3QVbzJpDEOccK6n2mXwqt0zR8hcAEKGp52iF98ZpZZ5dkn623ibSJYoFc5-ftPZ8XEsxFaYBPaAQ2d_TI57Cd6GSpQs1hVYkVicTeVtFmMEpL-yWExu8WaxFNBYtPoRt2dxs15Q2Or1nnZqXZ_eSdKd_O877Og12EwfuB6ti2DVQRn28gvOcdnQg12f8qHe3X2xpnyfGbTx5A3nqsbzOdpNM0DfrCVcFySGklOJm_6GAAdZWytbwf8xCwnGUY6PjvR2fqQ3J8iK_Vszw8Y94NW3rzai9mmedalnsJxPSbpS3d1XEGOwJhUJDFSBj6m_iIWO3glh4MR8ehGZyDxOV9OJFHQGHnDJGkOKh1TWU2K-IeV9yMKSEB9PhDFEJdhB58z-TBUWOaHXMhIgs9y2ch6_IGj-pssQ3mqGUhMozWWAjf6cHTdfvIIESqkK72PLrFa0MGA44W1DV8eMpfTqCFo-7vzMZ7EBAEvB95545Dawb0nRhFn_vdVoJlTUOEfY2iJyo8YVzog1QZzxiPltF3YCSBaUlInXWkjzhwfh7FnTXdkMYMOscqyEMmTGtfsoczy0i4i4EU6tzkU4Z4NIJ7bYUDWgwHUcsXWXc6FaYb9GG8I3Ws6ccEM11aZCFBJz0Xr-rtxraVZUY1FBJQL79SCGfpliJp2u7MTBX8Knt1a3YDbIFPM3rzxx-w7Uk-vw6ILHigaVTs3BuxeuH6z3Bd69pL7Orx9uZkuUgUbbrhgixjGkddYpKMUZwolqkyxAUlju_CRIxzJ6tpEio1i4HUTRbe_OAdwvIzAGwHSH3WDLKtYbEZYQpEnSeqxaRLgdIXcAMZVRoAjreCNKW8twwZgG56wyI4JNmSlHs65VaMhaOVXTxS7GQKvm548slbQspBQUR-Jw2ewDgrGi6u67bGHn6po254HZyfR79ysF41UV02aZx2A_9PJq7a3MCy9IfCQUFUkA8KmS3jMkhRt-dZcKJox9h54IJs7nYMsgAcJn32jFe3k6GbVvJDRSrrz15DvbL1FZmkIpdw1Hz67OqasGpdoy6hgFYsQSbMcDa_RDxdnoxluqD-UPmGAlXdlPqNDD2yCpphAnFVlz-KAjR2toXp9igdSfkWddbMLk2Xc-_175b_t-kZhADZOtO5qcWv6zaCBwfA_wP5Ww1kTuonOgx0onbe-Y-CadtefnRAITsxW4FtxzL4Bj7fkMr0S-hUoQruwwteFZ9u2kwK5AMU="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 295,
+    "completion_tokens": 257,
+    "total_tokens": 552,
+    "cost": 0.00293875,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00036875,
+      "upstream_inference_completions_cost": 0.00257
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 233,
+      "image_tokens": 0
+    }
+  }
+}

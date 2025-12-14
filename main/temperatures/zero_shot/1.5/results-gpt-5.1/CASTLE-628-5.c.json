@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765723894-sBrF7oN3Z2I87NJ8CwLg",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765723894,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 119\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating code vulnerabilities**\n\nI need to check for any vulnerabilities in the code. It seems there's an issue with how the function `url_decode(decodedUrl, url);` is called. The argument order is mixed up, which could lead to the source pointing at an uninitialized buffer and the destination pointing at a string literal that\u2019s read-only. This would modify the string literal, causing undefined behavior and potential crashes. The initial reading of an uninitialized buffer could lead to unsafe memory access, indicating a serious vulnerability.**Identifying memory safety issues**\n\nI'm noticing a pattern: the function expects the destination to be large enough, but here it points to non-writable memory of an unknown size. This could lead to a segmentation fault. I\u2019m considering various CWEs like CWE-119 for improper memory use and CWE-787 for out-of-bounds writing, although it's technically in-bounds but not writable. I feel that CWE-119 is the most fitting category here, as it covers memory safety issues effectively. It's clear I'm identifying a vulnerability in the code.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating code vulnerabilities**\n\nI need to check for any vulnerabilities in the code. It seems there's an issue with how the function `url_decode(decodedUrl, url);` is called. The argument order is mixed up, which could lead to the source pointing at an uninitialized buffer and the destination pointing at a string literal that\u2019s read-only. This would modify the string literal, causing undefined behavior and potential crashes. The initial reading of an uninitialized buffer could lead to unsafe memory access, indicating a serious vulnerability.**Identifying memory safety issues**\n\nI'm noticing a pattern: the function expects the destination to be large enough, but here it points to non-writable memory of an unknown size. This could lead to a segmentation fault. I\u2019m considering various CWEs like CWE-119 for improper memory use and CWE-787 for out-of-bounds writing, although it's technically in-bounds but not writable. I feel that CWE-119 is the most fitting category here, as it covers memory safety issues effectively. It's clear I'm identifying a vulnerability in the code."
+          },
+          {
+            "id": "rs_02eaba0134f6dd8f01693ecef70be88193bb39cd486e33973c",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPs7_o1p-wKZCxYUg6W90eQJYmKJLkKqRMobjTH_fDZabs9ruO6ejWbvIV1dwfRTuMnQMNLrwXfwJAScgHLyByLk_X2exzWDLZYbgvDb6wqXs0-QvC38ohd39bYWm7rH3vWWSCSc2zcgCmdkFv0OFSHFONrfV4a_XMr4RI9BSOcP3MVU_9htk6DEOmmRJDgsoV2IpDBhKAfKjd9_awuKbXChG9uVPZuaos8LmL2E-E4bA6LKVGwW1UXMskqwwWfUlZ7hNF1B5Ts7iPL5llA_BVMosT1dLskE_mpbcwAiBwVSdicXPS0s3iirSO_4yhR-eRUQCDBeZVqwm3rbtKvbT_9eZkX8vnyXtHYxJUd6zw_iIEPGNbmp27Fog5oZXhh4HMTamHoZZgrmGTpstgNxqk8lQjb8WZWUnJgJwgdnnRGP08dImgwlIE4qhfuUpf9fmOy6v1qSXNjP9ILMhONy89xRwG9RW8WaRkgX1QjvjqNG5XTDYUwwaZrvkHUViGE0YvgjinNC_mtWdKj69jmkezB6sH9nsGSzP3-8rU49CWzAI018-CnSl1gppurgD2GOHw7n2bc4qeexVrU3GFOi2kZqhEVCjdkzbHQakBKkQp-nAfnE472YW6nobyLi4DOwCpnjTgS5ayemOBJJjdf13iZ1MPgXPA3Wsix5sxFazErRXydLJUa3rHkkhN3XvQte65khXjZcIM_VOTpI3JdYiSK_Ztb_QuRQVi6xrAhIyratZ1stVgAR0pewaOZ846Ow6ftr_k7bA2SbCJSPF56XDUSBRZIckf685AgKl5egCySP1MlrF0LpITBBKe1Q6ak_I-SmkStEY5obj-LJla9V5X8YyfR7rCoexvtBVuVPvhOQEMb1oz1AztGq6fUGBGtZ8_dZgpDW-pM1GfOh6VBV8CGXHNvuqfuin4EUq9ojfgJYAv-nuApfblgvmPqrfGcl_ighruTRg9t41ZwQur9IHKqOel75i_dyIJP0AIGAzj1NBUAhoHZJ0tX85SgM1CCne5XcrIKEjJh5amQjr_Bl2zcplobdjRsE2F6ME2dAcOJgY-Ffy7ar_xur-qdTNsA7tBsyGMUwisuYlicT2ZaO71t08jxkFN6TcYz0CwUE8oxbJ1AJCp_NNoDPhHnABpDseAe6LVNKOCgsaPaeZCeRbpS8RnFKMM1c-Bdx6bTvInYaoRl61YqOEgyZ09PWX6s_Lq7uKzdhOg7XnxgkKbQVBivZlgjJx0Gxu_Cs7TuqOSFXOq14Q3SlW0C5FwAwxjyuk8pQAlnPlRym4MhRnWqM0S8TfecF60H037PXntOgoram4JjJ-JtgUyX4mJhQv9v5gm2OZ6NN6mRy2CbwtLGOGGwvF5wDcoX3AsJlPykFeP_dqYa4oJUxzPFythnJUE_zM26gWwZNHZvuVLTqiOX7c1YctQPL6aUXfh4Sh3k-GNYoyK4-GXR32miQy7dtFJt7SYHPge5FJ1xdmt6lP_ItzP7qFZ53EgITQJMHyONE7gMDSUtayU4sC1haEAUSTVuU3uNpdqIy5o4Ee89BIjXftYHPc4-FudWiUvrWJrf4UiOe0BWI-cwfkZxAIIoBr-1BJQu6pRg-G8RQX-Tbsg5kEJvNAlEDPDVbY7S7YPFUZGW3zAY2SRvbEIdxhU889TEy4ClEbL-Hv8bxas1-AaGroG8AZHxn7yXtByJn7rQqMas3BF4IaBSAQhHK22E680acAVIbdtVfMtnVlZvBX6_RVQQsw3LwBZZ5sBNb-xNSJYwVMgpikgth3c8zBGncctkvlSpK91B_YlELZ5YAoxWH9qoQQSvFesJB01T7kfkKK71XLs9MRtlxLSWHzwsxiGUrjWHGYGcQgeLeUcz6dE1vFsr9x40y18vg1kIPQB4B5cHRJsUB5agcszjcEMvanMqIeaeZ5ENQLvlVm7kh73N9LjFNrXDtNJZk2L_lAVdF5F962uYqRNKCIXlvwifrfCDqN1bPuk7ZWF8vF_tWNddOrhFIiSbb0_xv7srMUlscYMqqSDRZg7ZN0AlNemH_0mp195wHAQwYwiS5w7SEYAjNhrLLwmI6RSqprOOVPo9srVcLjjZn5Wgtd7TDteZwS1Z1MqxQ9YhraVCs1HMhxncIA-4BN_XnxSmxjOZqNUEq275gwcBRLbdYlYw-GZcWXEGiKRbQrWvyKG7OnVFMEfftnVMZo_-yPvGs3wF-BV-za2OjlBIlysSkJZhWPayBa53z7yBHtaWT_uCZpZvkubeq5vStF2eUaQ23lqioZHbV_kC5gHrWXsoijlKKiHgdUXJ31mzHzAR-xg4qyI08nOXvtGslPISE6wcXqT9MH9TXFOEXJTTu9bin1o76pvwMGCYxsODUugAc7BkWc7frFFO_0lnA-_OF7wzsLaUKy29aF2HmFxCue2WWd1RrVFmLPAAMIIPEdUMGq6w6Br9QF3Im2866LoouMso-6l-B2opWzPkWRnFlAAMM07bB3oa5ujdVcXoMp-mVCS4ToSAIXxXaqEBugf5CrPY8d6BmWlAwKSNB6-aXYxzxljcB0EEfnjX5ef3UQuzc06lG_mtBVxfZ4kYUUJfxuJ7RSzY64TKD7pm7MZYPy6CDMEA4C4wkRJ2xoa7q24EDgKTCgwmYPQb1msHlLMnXWDQG_AXRwEsAajr1CqWe79CE227EAkVrJJHEF2Iq1QDrmYLQLgiUPaamyRX0w4l-Xc4gTP-SSTBQ0JrGXs8RL5-5K0ywT9PP3mO1yx2Bhyg9qDuvJisldxMp2eAvi4C7zQ59AxuN5LKZrGwE7LNaYx4mUS_m_Lgmt33nbsb_J0uR3QaPOJAq2zzVCDxU0qUl4-MscJwgw7hH5tbwCK_1Gg0OCqZyqZw_nUwmaoZdmlmnoW6hLniw1M2kGOr7Tlw=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 457,
+    "completion_tokens": 371,
+    "total_tokens": 828,
+    "cost": 0.00428125,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00057125,
+      "upstream_inference_completions_cost": 0.00371
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 347,
+      "image_tokens": 0
+    }
+  }
+}

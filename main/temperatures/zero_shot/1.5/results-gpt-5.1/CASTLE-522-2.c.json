@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765723706-FJy460Mx3D4SflGF5ktI",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765723706,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 256\n}",
+        "refusal": null,
+        "reasoning": "**Assessing code vulnerabilities**\n\nI need to evaluate a piece of C code using sqlite3 with prepared statements. I found a potential vulnerability: it stores passwords in plaintext in the database, which relates to CWE-256 (Plaintext Storage of a Password). While username and password buffers are sized correctly, there\u2019s a risk since SQLite_STATIC is used for stack-allocated buffers. However, the use of parameters minimizes SQL injection risks. Ultimately, the main vulnerability is storing passwords without hashing, so I\u2019ll return that it is vulnerable and relevant CWE-256.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Assessing code vulnerabilities**\n\nI need to evaluate a piece of C code using sqlite3 with prepared statements. I found a potential vulnerability: it stores passwords in plaintext in the database, which relates to CWE-256 (Plaintext Storage of a Password). While username and password buffers are sized correctly, there\u2019s a risk since SQLite_STATIC is used for stack-allocated buffers. However, the use of parameters minimizes SQL injection risks. Ultimately, the main vulnerability is storing passwords without hashing, so I\u2019ll return that it is vulnerable and relevant CWE-256."
+          },
+          {
+            "id": "rs_0d8332045b27c1e801693ece3acff48197a9ae00c6dd29d66f",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPs5AB9bNUHplYAoKOrTX7Mfo-eKUliQrULAKTq8ScJeObc4F4dNdd6nYPDddgW-TGufsstdIoKi48wqS0vTNSqOm-fJEPBAAKkHom_li4GZicXbrtog6LtpIbN_KP6ptecIpQlkBz_27342dk--C9YWFG_CcYPc1beReqzl_O4B9j9q_AxCoz_J6wHLJiJiWqZFp_effFrQ3mAME6pRVP9S4L_EGwU6mu-CsdSbekrBurJbeptTocgfi_qp7qO5Po9qEVcJLlbVb-NoEWaDweJ4-rbG13cVAKOewuqHwLN-0aDLT5UOX5oOihWCHsryktxGAtQ6ChpsdFvyTRndRa8MzAdtaknBbh7yjIz3ZMUrVEmDElEpFIXPgyrjvZ9vsVUTSsDBK6qEagGeRk7CxAb9SDMX0uz0YSDhgtZ_STzkuFGBaA_ea6Wh-HxSbnjX-BXgDHvxIIVflXMXyeRuAiVTOuWaAa8MfYGRmXrMx3hbiFVf7vxzRICi4Fz_1T2shHwuO6ck_v5vGbEjK84QOMVdqvKAZ5dmETcs5qHZxyLCD1QuhCLbZHY0BH3JJvnwt-i8-XqEn0dsD6DNVtTL5ygCsapvyUum1QlAVamFH7Up52N-YI72WwfpkY8mWPK5WKyKCH7IPyoVa3u94UVei4C8aCFjQc8TLedB26odi5zlEkNxLkGx-SG0Fd2GsPv0xVez2Cvig-em6_P4WRrqSBBBZrN5ZdRxVcf63m_Ri5RlzH5pXpw13LskN5jmiDbTsYN08QCvFOo5kHdekfxHvwLUuw9CsRx0Z30Rb8y2G91OB6WcFG0Az538aIaNAWqSG9crj67Fn_ffM7--ZyHMp4HVkZ5yXgcCTyy2z5Qhe5_1OxHAls8JppSXVxOkS4r6QCCpEp6epw-376ZBxXCj8bHixhZkUdX_GzRBtjC4eGAT7oxy3k69XiBbj8hBr7sqK-lMK66yikOgomfXjyaKLHrwxX3awVdrZpnkYnB4_t-k4mz-SHODBR8kHoCo1H0m5XC7bLk2igER5RJneMIheHRLTWy1UuEj6rEt9Xx9Oolk8vkDyTGLs1oWfK9L2klDwld6Z76ApJiSOwn1WeFYcofEmkT0_UdczAHDYvGki6ZSNZRxABflzmyEPwUHb0VpI_2NOnliYT21xQ5x2-oSI3-T8-YrGjKJpfFWUNP5MWZk-gGwLWUXbwvoiFVQbfaUTWHZw_vvM_Q9ydqQwgC0kdkNJcMCFmQRXiAmDtn3GDpaju4S5g19UyOAdEsXS6km5UQ-Wo9ic5xTVhMWw28jWTeSRUizY1JbVch3h6OUOwqYY6qHJ0E0dH_FD01wQFifd3JTtPHVIAvKoP4gK0y-1wLHkcug_WUxuRJS40SBUhZxPj9kKP7RO3XbC4T74CkGzQ9lBy4vOGnFPz0N67MfJjtMIvfOSkpqg051NN9uxHyaDfMY_XtfOc6Ml6Cfroc9I9S5h_GvhfaTCsXP6m7ARVavtfNuuOcH2cDksq_mM0vhAQhh6oAQXqc-tClfn-n2jjeA6F0hnMvqAdFD7n3W01CbdwqIEQlaWImukNy_XAuXGOCAKxFb21f6J-LjnUCr5-B4HY2654RfmK-9Bj2Zc9Osmk3ZDnZWC4QJFI3J5DuE3oOKZmWpb2aYjfvwdrAjGVrWTMe1XkRQxs0mtsH-WLY1sqRan4hiD092FycrZU1ul_E4BMPmeulxw8hIgsfJkdQ-iN5ZTqAdXhq9s06IzoFmwtRGuT84TZEal2eqBjsaeSK9uzDwGs5H-jK9b5f4EGL9V70lnbfIVVkp4wilqnoGyj4uhjecjdEQtr35F0A1LlMcGi6NpQJevV4lfVkdtPCJcM5pYRAsjkndwiu2uPMLHn3ZK-MDyjrnvr9IgIJzs4KkHLVseya7ofElIF1SDcECdxyjqA6CQj4NSbQ1o8_NhyQQSD-BwvcWOv4R6sNhdKnHWF87IyM0G_gPsDPKNz0j2nXr-2CaT2n1DspMHKhzWi2W-si4D6fxJfxWlEkc9WBGhqi1ANniFbeT1Pau4VtaUeE2TR5us1nZWRF1mSjeLYkFQ4R95k0MjHxfVUpvE09LlblkRY5mGsjuw5KgcHj9OBZYhco1F8ZpsXtXTZfqi6klsxrlOmtOpZahEjbA4kDqnQ6DgaD0BwIQgFeAb-03e"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 624,
+    "completion_tokens": 244,
+    "total_tokens": 868,
+    "cost": 0.00322,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00078,
+      "upstream_inference_completions_cost": 0.00244
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 220,
+      "image_tokens": 0
+    }
+  }
+}

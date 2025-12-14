@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765722991-mo66VeOq32lgOnxJ0NMf",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765722991,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 476\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating potential vulnerabilities**\n\nI need to analyze the code for potential vulnerabilities. I see the code uses `malloc` and checks a pointer, casting it to a long long to check for odd addresses, which isn't actually helpful. The real concern is if they don't check the result from `malloc` properly. If `malloc` fails, it returns NULL, and when cast to long long, that becomes 0. This leads to dereferencing NULL, which is a null pointer dereference vulnerability (CWE-476), making it indeed vulnerable.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating potential vulnerabilities**\n\nI need to analyze the code for potential vulnerabilities. I see the code uses `malloc` and checks a pointer, casting it to a long long to check for odd addresses, which isn't actually helpful. The real concern is if they don't check the result from `malloc` properly. If `malloc` fails, it returns NULL, and when cast to long long, that becomes 0. This leads to dereferencing NULL, which is a null pointer dereference vulnerability (CWE-476), making it indeed vulnerable."
+          },
+          {
+            "id": "rs_0cfafb7c68a8999401693ecb703580819589aaeb91e6003baf",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPst4oiCRgKf1BQj8ojmA9hPyxLqfNSbuhOLzUvhXlatFeyqRA8AWmIz8ZeoUhdV81ZXJ2ZCfaBrywpFvG9wWvYVizjVIRgKI5BZaXzNNy14KkxKIpY8DqKhS0xo-NqWr7_4IyMQ5M4TsfAOGCZxqPBYedabgamIwcqyoDLlgRdVs1eGp1J_ZSdM8zdpU32Vu5C1LYb-sBD0CHd7WH3gEvwJj_CF0cZKdzF3tDRX2PQoAeOiIngYe4FPZA4Jg1R6m2w3quvCRIRj6lgfAGb_0quvu2aX5k4tLHzgoqS4g5_OUlQgMc0ck0am6AO_ZtZYGWWUYnoj4J8MoZLguR3ImOz2qWfCPsZx_CBWehnxTsLPX58D5hJd2yOfZCrB74TALm583m3_G8WVads-gOi7IREHFTvgVqEd87e3I5s1U5I1cLdGRGN8GMCXohs0GCFsbJUdh_-ygYtFuVH0mHsRjrbM2asOezKOFKaks2uZJa8MhMq4D_ywiuKdoQj2mEM2Bz4J4c2zrUBGLlQ0S-UoGJgc-OQS7YctQHaZ8kOHYtVv3mmWUhAlgaxW_QtBHM0AGLGOi4HWxUuIVByVrmT7BxenxFdPCxASWN3RwVO5CvmwDl0AvpSJqIajQZZJpsK8AzFAlP66Z4339qBl0LxbfGpBuQuXlOt-U2coYab3s1Azo6g1q2ut45JMAHU22iD0IT2S9hMKQKn34NAMcuVBeUd01N3tfpXHrOdlEGx9F6ttsXjivKSr6sqVukhb2kx5P6jG79hbjpe6zF0JXe5Bidy83Fn-MgV0UjWgajM65ZI5jGD5LxQAJH2UEvekZEy1_p6spBatjKv1yVXR8IO4g-Mn6lgeI6kH0CfJ_XV4LJHZSbZqbk2Cs3mMpK8yLAZokZ0gY3uktem6sOpJv63S1iJuqOLReqUb6QU_P3vFjMWwfsa561pXIukYaoOYVP8Yf_hVh-L1QsSFjLz1Gyk12E2UgOgwLedHrGHVlT_8V_mYkHn1Az4_VxBdqcNMUC_neAuYSam5lKqs-phgbymbLdup_AGNolD-Fs-Q7IlxwFvK1tOLWRweZXbTGkSLfDiUQAfIJzT-UWBPD1NFEOFhQF4TQPODFsrlGLnEbP6bpJ6_YexNCxnD0tIhmyZb98SGXUf00dw3vnbwPJNx2CqS11FYmpDGVx_bqSskzcMp1NNYdOdllz8BLs5hr6Chv40vtKysQvaLa_mfY7spaqMQSCSGDwzfp39XjrBA1QDRUJA0woWrcGN99BsW2V_0Sm4X5zqYs6ygSdTfhFdcepaq-PLHZVBNHuOm-KuhZHmGNbcPomiaxYOjsVtICOClE24Y18hKAYNI9ag62987TmpQ4ksYZsU-PBzKQOwnf1XHtMJy1yL4Vb3RnFPaMn1xKzfNSEJncXF-airiAgQObfNo9244L0fK9sgzO6PrPAjeidWjVa0uGA7zYbVuyKR3WOsXU93p20t3uMh0kF3Z6cxGucJM-0nvaiWNBc_7EsInM9A33-zgOD8b4w1fRQrV2aQD1MysaCvtSkpXEzrJJNYrYDy7rKo1AFJEVSOEk7QQnFCsptqI="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 173,
+    "completion_tokens": 157,
+    "total_tokens": 330,
+    "cost": 0.00178625,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00021625,
+      "upstream_inference_completions_cost": 0.00157
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 133,
+      "image_tokens": 0
+    }
+  }
+}

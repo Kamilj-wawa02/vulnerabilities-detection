@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765723820-JZj1gbEKm5D3rqINfSMv",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765723820,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 617\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating code vulnerabilities**\n\nI'm analyzing a code snippet that uses assertions. It defines true as 0, which means assert(true) never holds, and assert(0) will fail during debug, leading to program termination. This doesn\u2019t appear to create a buffer overflow, but I\u2019m concerned about possible misuse of assert. I think it might relate to CWE-617 for unreachable assertions. If this condition can be activated by an attacker, it could lead to denial of service. So, I\u2019d conclude it could be a vulnerability.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating code vulnerabilities**\n\nI'm analyzing a code snippet that uses assertions. It defines true as 0, which means assert(true) never holds, and assert(0) will fail during debug, leading to program termination. This doesn\u2019t appear to create a buffer overflow, but I\u2019m concerned about possible misuse of assert. I think it might relate to CWE-617 for unreachable assertions. If this condition can be activated by an attacker, it could lead to denial of service. So, I\u2019d conclude it could be a vulnerability."
+          },
+          {
+            "id": "rs_0ba4d24c19a1237601693ecead475c8190847c722e5d4aeb69",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPs6zs-tccaXdS7wEp4j3t0VjXqyPxrwgc83ttnRotKMwBQstOnlSqjfgw4oysInoiDv_VU3C_Q6sXH9uAMx5qZ7i7ewANHAxtHvmHJYmFuPaOx46x6WUjqNOoCclL6vqnUVGi-IppgiVQ-63sMqzuy1YBqTWQOZtJKv6BxcjiyQZ1KbOpMOZ8_D-LOYk8zH4_jX-xFr82YCBSddJt_qnAp_MWTzwcA5njJeoh9Mxe8WJww_zIMAhrZIKsgG8iXmhTuTz0vzIN-0IGu0RcJEl-OixRAxpZuk4tG-my55-2zdAtLR6M6Iz0H7R0pUo1BsBV5iecWHs3tfkgOi0_y3avCb-7h2MGhSPmBNVHjjKTdUzly__mtbOhW7QNKZBUls07GyJaSOzsSiLK84z-7M_-VCZAndAFXhEdgdxr_NpExSz6SLgJ5rVgW3JN9QS92zuBm88qllCLTp1xShN_BVhWJJavG79XWhkY9Or1vHMxLEvH09wy6oGyQLMoAXCxHZ1CKoRBew8ZAN_kHcVN1jVhGQ-CWIq10Kz8-888FxXUHinAfmAzwWpuLQavIdxpXqKdlPpT0pGTCS9rRgu3Q4GfovHcqqgQ7EKrakEC0mUc6lE_HiUgwEIB4kFH6J0IhSuA7xnbiIe5PWQ7KtrlpWzNdDwxtuSUAfdbjiOl6NuHdAEgAAHdYU7axm66ZNgsDZu2dEr6h7RBNquz5Q2_pKWyypO9rhx3LENOiPyOYkXVNGl_HXdtdoFDDdRfUSGsT-2k5y8VfhvFe9PChgnDJrj8cUYEUGPTprNaKZ96yfBXOjIFbjmElRC3Ema2oPFeF67528ZIxujRXimoVivpodxg2NW_1ihN9cUdNFXldXIaG__LshwKaFnYQzEaYRdYJ_r7QFFsKimdCW7PBDR3adwG8AcxJouETqc1CuszegGNrKx8I4urBhOLgpXwRPU8utuAg_NLr7U4y22UWEjmmbT_xEWQ7D2Yvw8n9KYsAVGegx_h1bKMVSRYj_e3ACphXTMfClfWPSXt1ACTR2paXI7L3oTUscFHB0jW14DNjgnQmGI_62HmgI8ZnpLZ0VyEHpJt-mukvXwM-a-_Qba5gXjt2AU7MEHGhaaLrw8K_jbbKBnwFMoa3-nXxfAzsJObj48zCflKteErYzOnCzNCEWxk-jWBKIsAove9HSSJsJ5RlbL6uAUUoYjnoMfnScQRdg_9bnwIGa72kGUGitfVmU1sUbim34gGdgD9kqoH-_wAUX5dh7R74KyUxBard5TIcodflOoRMpPjxO3JYteY_xitNoT8WYZkBC_0VrNh2tdQXoEoUZqHA1PDK9rdzi99PmMIwNsynH4pKqHg4ylEcbAGpsPkU0kcnlw4SmOnV_zwaYm1Th2rpaR2cIxTCfolWE2msitsSQVuO16KB0ESsupDT6uharBzmguC3Z1hFNlvPrRuxU_t2p1BwaDXKb-wYA47VUxGFRLw6pTCzxOpje24KaofJSize4M2EdT0SIbfhCwod0bemMuwBwO8BwPeHbBB72bbb_spLerDpqFJWDtgMQNW_dCYTeubf9zgY2VkSrUvuL_AUAdnSL7DW24gmH4athIwnHcb9WuMSGxS8LmweqaeGynJ_sO9XD1KXclWBqzwVvIZxXKMwiTxhtlkbarF0yEkQoxt816UqAD5ZUK3xqTHaJ20MpYtgI5a3-JO9lHGrAroDdGaSLHBHDOBlzxPp2ZNqeoaKsrOlJTAV4ksfN3E9xQYwhejLwaz97FPLGLToE-9ie0r9jHwVFTHb7NXXjrdTJBbFyncDo4qET-Cjl-WmHN1e3vehSFOWl6nyRv5Rm30U9OYznXQEBSk9csrSjdNjJcRsetEW_c1vhQasEFFkuciceWdnKsxAfAmCHao3TsGS26mwl3KXQsXnNCSF61wY9GJQNZnDzweKmmNksLdItw8WQPn7dh2o47l5YIZGKAoZMpFfciDIMIcdP8mhmU6mMmMTBkSZcA_Ou2mSq-f2fg4LEooxaJYlt-u6pXO0fDSlPGHfHz2wzLuUUqu8ywTXiZyrPPheiFWKhsEBwWB7QvUJxvknOw9qQ-SzvGIUqu_tG6K_FlkHQg_tQ6Mp5sTyggkZZoZJ-ATvkcpXCcVA=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 94,
+    "completion_tokens": 225,
+    "total_tokens": 319,
+    "cost": 0.0023675,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0001175,
+      "upstream_inference_completions_cost": 0.00225
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 201,
+      "image_tokens": 0
+    }
+  }
+}

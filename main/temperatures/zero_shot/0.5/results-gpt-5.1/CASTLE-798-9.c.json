@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765727176-OoTVMX53NGQOK4Emt5B8",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765727176,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 200\n}",
+        "refusal": null,
+        "reasoning": "**Analyzing data exposure risks**\n\nI'm considering the stack layout for the message, key, IV, and ciphertext, figuring out how they interact when calling the `aes256_encrypt` function. The ciphertext could overlap in memory, possibly leading to issues with uninitialized data containing remnants from the stack. This raises concerns about information disclosure, which I feel should be flagged under CWE-200 for \"Information Exposure.\" It's tricky since JSON specifications need a single CWE reference, so I'll choose CWE-200 for clarity.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing data exposure risks**\n\nI'm considering the stack layout for the message, key, IV, and ciphertext, figuring out how they interact when calling the `aes256_encrypt` function. The ciphertext could overlap in memory, possibly leading to issues with uninitialized data containing remnants from the stack. This raises concerns about information disclosure, which I feel should be flagged under CWE-200 for \"Information Exposure.\" It's tricky since JSON specifications need a single CWE reference, so I'll choose CWE-200 for clarity."
+          },
+          {
+            "id": "rs_0e2dbde5bd87ada601693edbc9771c81959707e404ad6e53a4",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtvZpVLMG4FpQnH-UwvUsSDbyU9inwbprjSV_J0qPUEvlfvZMuE2KXMSRrVqlXtCFde0rO-H0BrK1B9dtwJsOrBfH-NpTmnjxkHQJwVMPqCzQGp8jsIbu_PKeYlExX-xAzKS2DzLqxMBX4KgTgEVGB-yo3SDQgErFk45F37Z6V2OHaGHI3JgZG8HluyRswD380dXsVT2XiBlYOVlbBWeoLMFnRG7gLNZw_1Z9_RiG-EPqbaRc3rya1aTyVKXH7ejZ7l4a--OsRLngGZ3gXFsOtXm-Mu61WtP1SsJDHbgEI1UWPqbyLCi0dai_p_KuQH79zu7ZLyv4UqEshmQH6NzXAY8mC5vcaAix6SFxNeEO4t155vtdFNWArPik0ggbNex9JPkrqbPywRRsQrU2iMraTYirEChj_CpcrV-M4rEBboNX4CwDPYlvCTTQ9kPAD3fxnZftEUpxAGkNfM6hWuFfrmuCDbG8AmWzm5ccaJCn9Yc6y1rd-RD4wU6RAFua5QUWlQJE1o6d2wt9mo2Gr_8a4sNAc4wXVF7m0Ny0PNZnOydNvQbjPiOX9aTxEpnqalxhk3q_Gkb07yuHgqemuhUOGoY3gTbcDMnbjzLhenuJRrCTF_M3uqSp5web6nCY3ApaGq1OFmwW5NVqVTWucWDLt1sAh305pkxMNjr3zI2Z-_OMXk0Jn91ekb2NzsP318e0FMIgvY0ABgL0iJBsIZEV_PCAPaVhDZaEhKBKVj1nQSMQAbfxfyxyVFq5tjE0ExMonmdvQHFyv9CxFtj36OrF9PmieuPW9krqsf4Gl39vyg-PPqgEGJfV66G3J5NGUz5XuIktPQmj2pWKR_viSvJceQqvZjOhUbjar3HGKyyv2-KvR7BtNvCdeu7_hEv2FgdwYUeh9DGlB_vmJBWjzBwUf7MKLaggGj5R0X68dbB2AlxBmvEajuL6GpZr9DwpxkbyOrkyUeQ75WEcvzZTiBsbgwKIn8kF5k1NfhMKpy34Xjb6gJGVJhzKBAeuJoASyFqLuSSbyqrAO2MYO0RFGcsLLtTk8vpk7cw-rPqiPVSFaX8NzCdqoL-KbKdvBMVfV06nhE0eSCP2a0AobChOPf13gr2RFVKh3i-iOtkajF7uAsCTQavDziM68miy6BgEc1Ee-dDOiK4MRGCtv05Y8WfrVUpoODYYqETqWVNdbyiLNAUo1dKES6uXRy8pBjduoQ5kO-vsfYvzH7CYmueUO-e2TZiPk73UQ0DRwgBU5uMzLVxV5QAZwMr-QHg5ITPs_WBk7ARSFC9xcM1vwqh7ID2fcEDB1aDK3kW1yBRdZl_3MH0-B8UhxAzzvT0SJMFHCtmLqsJ_eF9IuhBRNHJmCVANCdUhi5yG-7X7AKYoBjywyNXlzGGch8vgEF7UfPDPgjNBH3qFqfAMj85N--R2To3vJ1HBhT5zmY7H33-_E9HYZrYES58I4E8MSwGaVVuxaN6izl84Btk7XfmCPifJxAxmt3j14FOlI9ef_WbgKuju3316au0j0TDAJ7Y_0exEG8XUrQ82CRG2G6xIsG5vWj3Cwa15iNFW80qFKnnr_fQS_VklWYYwuj1o0ykJPG58uwRXf9J73KU2WOiwkrE59Irs1NUih8eOIQY0u0cx3rQSVN--keqd-L7qHKQxvBCR2AEF5Nde8lyC5jhJybUhCDMbaLomD9PkbUcRIuFLj4WaA6q4Esw_fEvZ8GixLovP3MeUh-Q6Golk9xljd5uTgXGBOA2yAX98l106hlVF6seGImrVQ6w5YI3lBKr4FpaCvKDdCmxo_KMb4Bs-B01PaS5y_fPpWsPGz70Ay-CYGhjkeNsUpEVySerxYO8yFuWc6NlMEYHBjBYpacqUgo4mXJVKC7-IRJdVW52UBeY_FYzRB8A41lwAod_VZT7-cr41rScOCI1P6uGM_AK6AOjFQP-VZkhicDN_8ZVwQWsm3wJhs4-PlVJGWrOM5ZKAg8JuLHyHaAgdIXSmvIhG5wHqKQJ32ftm75KQuEa4dH3WEp0CKjpewga-2Hwhn-Cc1y7uqwKz-bzmHBGnJnZgYFs7jgF0ZDXwmkrGKCjHLD0helHsYRRV7YGurU8YkNOg9L44BayjG8ZZHdK33uOyNaq9hyhf12UKDdNUQbM6x9_eYlIeXArs6uiwIulQWy_Uj6fiVO_lyFjL5Jx9gNDds44pxjTwYNW7L1yqm0HNIblUW7_M0046TJ5oBDksUgyZqAFoehpf_B_QZL3lXjH3I8pIjE-P1EKzOd1a6em6gCTOZBjQlmcfjUPVRUPVR-mCZdVOT6VfbFbygQej8Z4KYJKw8XaT8GyFTNvrst9VIFVfDeYML07FyQe_al1jLvkY5FbFERF3bqbCvERzz5GW6eqZewMDW5YdA9tpyGQy61AXHn6lsEhhEx2VIF45P6DuQL0ArDEj_wkPXDWPdXtMRommqAoNhAuSiHwdH3aGB-dEeV47-1_wKOZw0fWLOPxfUHMDnU2dmX0YNQ_alkmK8Wf_5Lor5Jguus18Xh5cvXewe5aLzYRBH1p2pUJqdqMliPNfHIIVOvqMCT21j8-JHCYEV2pSp3zYR6PJbb3zIRbaAQTSOBYRg1960_gopg_6kZvMMz4X-1WFyHdgfDg1s8ngCUYU0XrnNc1rrPPzfr3CkczCo9gThs8hAKF3I9RPbo7aNKBq3kzlAeO-GoindZ528X9AWDh838VsUkd5FThAjdaBiYHQGKDAE1EpoJxdzW2ThZSbxp01lXV51rvj-Ks3RFDCq06IFBYo6NNYbwLXLkHy-UuITmwAhnt8bLN3Y43ZYIh7bxTAgStKpWxttaDrmkAe0t68y7szINAetq6aX7JIQv5bkhV1tH-JLWM55j0qdDP-3RsRE-NMHPhgtZ7y56N6bvb7_0XhqnRTRRY8FsoGgQbEHFDtSHJO79eX59dgFSA1hIx5odh31Xn_EbPbA1rjPQGIFkrVNAWksx1Dk6UTRfrlpsMDm-bu30mqvj_X43_zMaeF_jXVlZayrhFz-IWF7qtDKiRDcyHR33_8hwq4z4KvsNdrcfhoI5blOQxwNcDdMSMlTteAlXki06Mke_3TEABnnTHfc0-GoUqR-mW0ZBylQ9Kj8PBqul2Sxg8e4KE9IcXvJJ9Vk7g4RybVyjd3mZbkmUgjumsa-x4MjNrSOEA51ttMPsR6rPMXhHqKIvX1z5nSI7W8MAT-s96kMqfOSLfK3cxjpOI_G0zy2AWX7C4f3_t55oXDS7f-wqOtpfZFaZ9U7zcE6K8pwfbCV_iWO30i7SjaN77Gys9l-mNt6o8Qjlc4gnZguPrTid9NAUsLeev9GGOC8YkWW2CRbaWCtDJdXzalMMIwmKRhZp4gyliOMJ-WbbPobduoGiUHVwFuuPoh01rRYJbAQof3x73cWd97El3umIzENim-cOZiWsrr5TCALomi4U60vtplTv6ipVab6NscjD_opEoDh9K9IwZfLRMN6L1QX2Hz6uwfX8vqJ38_1F12AZv5biXmhXQidR_MGYVknGilT09jXcD87kU7svBY171FtmViSRkEE1CyXNgwGdfDBNqWx8dIy_S4judoUf3k4PvWnaIU5FCRYvNh1i8b9ZELsPSjcbQph5UdXFM5ETOuEvHABjuoaB5HRSx4EmOdLY-Ega_0MgmmS86igNwKjr_lC8PFjQ2ZV0CaTf0nY_f1Iqn7KqC-AnxRwD5g-_ISLnaa9NLWv_rKltIQ5MT76cWmsAsQzuFsPurQC1w4MDtX4tvn8jJ33kp2zhfcirmPDNO0tGRBBXM5Ytsju82QAvM-UAS7TuQS0z9GyG9Veq9C_owoco35pRbtJyIARcuYIxQtcJEosUniUKxRVVdO8WFXy0Fwt14RXDUO7LnqGUcZNtMGeWqZofTxmDjVvL2CC9Z5O7-ysiI2E4rqb0l4G_irgtwZ0MvfzURgHQ1Sy9WnpV0E4l-HFv1yfBOgVZUgpxflI5rs3j4zRxI9LLSDsguNIlL2_93tkl_5jqwdCFveMHm2mEI0slTtLfCJNU4-lXp8hDGtbtNDbh89bQAaM4iHjMObVOAPQrmF8BSjGQyVy1L88v2Q_PZt1UjbXAA5vrBAa-n1yOBzfNkiQRSwjjNdD-xCnDjMtl1XMN3hVmTagykeZFyXBuIHGfkuM_HCD2wcgxTUYfO51Z76vZzSV2DhcOpenu6K9A24x0qBg7LkBy0NuHWc7PfnLlsPe6fViGfebeZAnke_KlnlyV2JaY7L1QwQgxIAnZbLO5brmTOEkeIKi1dFJT78Q1IMd7WTD7dMuBl9Tm6cPpyR_TW5JKU8ZMKI9Pxr0QZWhKC5nq4HivQ2n4Rsx2HnaBL"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 858,
+    "completion_tokens": 618,
+    "total_tokens": 1476,
+    "cost": 0.0072525,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0010725,
+      "upstream_inference_completions_cost": 0.00618
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 594,
+      "image_tokens": 0
+    }
+  }
+}

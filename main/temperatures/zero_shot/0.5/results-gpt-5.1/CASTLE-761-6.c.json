@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765726669-wSJ6XPpx1XI40iwAfxH0",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765726669,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 761\n}",
+        "refusal": null,
+        "reasoning": "**Analyzing pointer deallocation**\n\nI\u2019m realizing that when freeing a pointer, it should point to the original memory allocated with malloc. If I try to free a modified pointer, that's undefined behavior, which can lead to heap corruption or exploits. I'm digging into the CWEs related to this. CWE-590 is about freeing memory not on the heap, and CWE-761 addresses freeing a pointer not at the start of its buffer. So it looks like I've identified the relevant vulnerability: CWE-761.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing pointer deallocation**\n\nI\u2019m realizing that when freeing a pointer, it should point to the original memory allocated with malloc. If I try to free a modified pointer, that's undefined behavior, which can lead to heap corruption or exploits. I'm digging into the CWEs related to this. CWE-590 is about freeing memory not on the heap, and CWE-761 addresses freeing a pointer not at the start of its buffer. So it looks like I've identified the relevant vulnerability: CWE-761."
+          },
+          {
+            "id": "rs_0970990f77eb2f6b01693ed9ce584c8190adfa010e3ac25c1c",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtnYKx_Fpm90gYxlJnBZ87iJ4lttC4_JykhPqaWrJ44Ek65TYyO6vy7YHiviYNdG718Q6uecZqP7W-yK6HkjFCW3kxkKbuwicoKsHR6Fn9MxyabxVP8uh0dBGD9ibI7j_EePNOSitayuICfyZwjGaYkJVY7OSJl3gNMyaRiNoUa_T6jnfcyhdOdFk3y6QrYsRnjJ64gTbqCoGVaTo5ctDL_BcyMIICrOWSapT9m42I0uCBHL7Yy2x0wgJKT1172ls3Nl0J2o9FQ8_1kX6fNmsXb3iZLNeNpssTSFKuCKMxcSrwd34ToQcs_mStJ8vx3gYfqcFQrNskoxeowUGLaYvfkUQTK8_N83Fvvr-vVODcCiv3cy0NFo0OYPX94CKz4kjkbDSok2upHkwMvaAa2jG1-g-Padtce1Z0oH8AjtmLUMaFdr-1ueVmYUNZ661jJbGtCsIXRw5flYiAjidvlZLTxJ0u7c6QLZ6V8AboHUHPdgM6AA_S9_Vs1BL7Sj2qHfBPsj9maQvWMC6qdRPLozecey1ThDk3P4PfvGZweu7Xa3ImioXYoWEMQGObfVF6K_U2xR0lPUZoCYyfBwIiN7wZ0g-iuoB_67byiKOjYMPO14wPOSHC8ZNFhnHNes7GUkBAU4ScEsONEjgavj6E3bt_czP3qIP_-ipL2cfL1O72VClMmJrb5Wa7h6RdDnz25NistojsPQnaMSTSEYDffyR55pYOWUmNiYeR5p-oQbFsojVJpQ2VXqApzMN7RDdqvvPWi65ZrgoYkxdTD88v80CNDoVfHeHgaqnCghYasEsYh6KmEt8HCmrNezrG773bxsEeGF27FZp2IDDx98l7AMaTVikOORCbuXhOnsa_8f57ARH_fDJZWCdJUoMSEleO6SZuG9fq_vJ_Ia6g2gCRmBV2sVV2oMxCo8SQZC3V3ztILEqIZjjYK39KVTr7XMWcKach0z36FLyY_oX5JdV213Qfm1hHQ7ccLdATXkw44bryP2biJ2BDlMxTQlHttmKxxixF8iRUSc0WJAwr00ysRVRojnNETKVxSi6VezDMm2GEOdkdthzAz3geXWlQbc3q6dCz394sdvWZE4k_4pZH0I_k7qkAWCmU3iu6sKDz2Gw2ziEVZSCNRy-pgUJbqb2Aah3BjmwtB9OIHKGODlcjTXQKppRlCr2d74Q_bUJXQ72hCOL49DiFVIPHc_Sjhtj8TgMXTyotAozcBWzcLa0Fy1TCs3jK2nFXd6tf7KtCr--0eJukmxiUb9thE8TD_50cTyldFD7LHQe8yuEfoVejVlaqeZLeVK6s_ftXlMVXRTMfnzbkpXofErC-7Emel0hGXBIOK5onrrNvnjyuuGnbA6ZIP4jgk5WNZNubb-ZjeN62su0nguj3QLmTDY19UYfGnHiolFPBSPglbB6mOX0Gq_GbUlfT2EJZYSBbA30DW25RY-1p93hTN6VnjMURMDKavIdku0t6-MqeHGFa_rMP-7v0wGqAum4kW3b6qcGB99tPgg8hDl6YY5ISTh4yfT9wIecokVTx0p9AiPLPnKltg_HnPk3Uqqoy_3DtLDnZtLN9WHXy614FZK6pDL-kac-icB_ztD9c8TSpTs50bhC5U5DX8puq58ignmcwsoDLQO3mmwVc5Qqx7aO1iChEfhpOANHZeWMO6-x2lMQINt5475UwaHCAlhyOlK4zCDVYfJjWpwHiGLWFdzW_GCUl4pyulaurHTDsgpSiSjdKRta9y67i6fPYoLan2-1Uvo1WsFUzLFU-6VX-RCxcYztj0XsVxawIUcmOyr7WyUzBNjrj4adbrUtes99uOG7Z3M8OgF0VUWVcdRKENpIIwo_NhWSdOd6lywrZmfLegtyRwbizEFS7dgajsZVex7P9ZP0k4CN0gs6zHZOzjJIbE2XH7MYLWiHBLhyXLQF0P9Gc1SqcQfzFXAL-IabEqZ3oRO9ojfx8nmxQTW7JKdJqXsbXXY9Asf2HpA-lRZaL6dTiwnrI-HM2NJrHbIK4bcxPtCXZvuGhTjd-dcyEPrQFJsr_i73Lcu21r8KH1j0GmoDQw4580-_Ini6dR445UAtzF-rJhXxAdJZ9o9aAHmgzkvlufMWTQbozPggKvTzY3FFFD_J5DWTND7UU-7ucwZOM1mknkJZ-ET-rEOsjXhcc7T2fAZBJL9XM3zY894mGOz42Lf8sk3H9dwX2bYfq0B1FCIWOMqBtKN3nhSweFjUViyFTuU67G68UDoTxMWgD70RtFVtNzDXPa9gfjHVMcEjRWUhVU8mOYBTuTXihWdjBWCGnqvb5PMLYjcv1lAuWKINwr6hdDywuZTUmBKxxGgP21hqh8bU-5YEEmBO3Hl8W793zQuG5opnw5jLB3nUjYK2o7ZaapHVt5ikWlu97sX2iOj4jfPoYndaWxV3EW56Olb6w3ZIQFYQqrxGvBvePsfhOwhBpxD3D50yEKshfMnpIKY0rXbNaqrazli0kR9imrUxCwfLurVqZf62KBfTSmeyQFxcu4RncKeuUSJ5jQB3LoyIlS4KAOq3viLYO6QKjeA8aYfLRpf7g93PmhlD0e9BSp6c14uQgUHenShmWkqgRahfu1TPxR7VdY="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 184,
+    "completion_tokens": 339,
+    "total_tokens": 523,
+    "cost": 0.00362,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00023,
+      "upstream_inference_completions_cost": 0.00339
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 315,
+      "image_tokens": 0
+    }
+  }
+}

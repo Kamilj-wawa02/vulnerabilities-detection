@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765723138-HfnMPK6yG5D7BN0hK6lL",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765723138,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 327\n}",
+        "refusal": null,
+        "reasoning": "**Considering security vulnerabilities**\n\nI need to figure out if there's a security vulnerability here and what CWE fits best. Using HMAC-MD5, which is weak, means referencing CWE-327 for weak cryptography. I'm also checking the potential for buffer issues with sprintf, but since I'm using a properly sized buffer, it looks safe. The real concern could be that hard-coded key in the comment, which might lead to CWE-321. It hints at a risk but isn't directly a code vulnerability since it\u2019s commented out.**Assessing MD5 Vulnerabilities**\n\nI need to emphasize the relevance of using MD5 for HMAC. While HMAC-MD5 does provide some security, it's still seen as weak. Many vulnerability taxonomies classify MD5 as broken, so this definitely falls under CWE-327. Therefore, I conclude that it is vulnerable. My final answer is vulnerable true, CWE-327, and I\u2019m focusing on returning that in JSON format only. That's clear and concise!",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Considering security vulnerabilities**\n\nI need to figure out if there's a security vulnerability here and what CWE fits best. Using HMAC-MD5, which is weak, means referencing CWE-327 for weak cryptography. I'm also checking the potential for buffer issues with sprintf, but since I'm using a properly sized buffer, it looks safe. The real concern could be that hard-coded key in the comment, which might lead to CWE-321. It hints at a risk but isn't directly a code vulnerability since it\u2019s commented out.**Assessing MD5 Vulnerabilities**\n\nI need to emphasize the relevance of using MD5 for HMAC. While HMAC-MD5 does provide some security, it's still seen as weak. Many vulnerability taxonomies classify MD5 as broken, so this definitely falls under CWE-327. Therefore, I conclude that it is vulnerable. My final answer is vulnerable true, CWE-327, and I\u2019m focusing on returning that in JSON format only. That's clear and concise!"
+          },
+          {
+            "id": "rs_0f299b68dc3aa80801693ecc0350688196882782c8bd160e68",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPswKOLm7bfNJrgH2o5SsB-L_VDwkBq0dGgjNdQMi0aAroDPQKHF4TlwDszTquVLfqhspFlNqlCekxIpQtd_KcbgE_22eBAV2RmP5eMQmBgj2jSdFbMsTtnaHm7QepAK-s1CY2as39KPgVECUIz7bwj7Ld5t8y-H5EiPLxSy_uZF-VOXSryJu1VBmKfBxgFFPnvf1CeAhFx2YdPZ4OA402qcDgd68bMp9iSO2MqUzNYlxPG0e5eQWdTXZTIuU_i3V17T0AGnf8qSmb40Wp4WB0BxoNC3eHAAJhRpFBQ_ncHoD2-4NbJbijFwQpUUpTztgH3JsUGa1vpHzrbavJZuQkiYJMNagdOL-ZBpedf1VfRtr1MZ6mQ6fbkM200WZECIHRQHVW_uNepFpzjZ98w-Ey7xu-PQjOC4hwv1mmkynv5nXcq76NCaYAA0W5zVQGnVnfN7TnnnCr9r3dr25WjIAb5ghy6FktRJMgJ015lGY3v6v18Hk5-IyoKKLqBalLCdW0PyQQxp2w-LjVGzrT515Ya9q9026rDurNxdRWFn_uswlQ8g_mS7YVZKHOSWd05VHcHUabCPlqb96DCT2MoE55L25AD7S9VHmwdsRRiVMp8OaQybXghZ3g_W3WXvS_Pgjxtww7DHstyBFU3XPCE9CpiQuSJ72ykavmhJOzRsYRzvuRoov0iEdOKybgs-R-5yM0kB5sE__yeBXKfYXHhcQq-k7d-cxBp_c1iSDpDf44mIinPfcwCR2tOfoKdENGkfX808N8aToedDU9wGJeSwa4vTFAp1ZvRzWGjJQTUFw0l4y9FJHm5nTLPK4Ep2Ww-PSsMdjsXGSrgaz2r8iSepxFuEOABv6jJjGCoIT1cWAmAfHvIZAE21UCA-MG7fcIF4gXFsVssgtCnWlmuwJFIidmszNA2smjLhCsbgWhlySKabPTDgjrKFjC4gZxyDE6BtMZVYYKd8Zh3JvXLNq5ue9XY9Icn_hXo96q-J49YdCIkjfCiSAe2S0p4IW1FsPgvEJxb9KUP2Mc7_PJAU--MCvhxCkh59MEl8r6DSQstiaFP_Y-g9uCRCn9D3XVHylKi8Ir-8lJwrsXR4WfDCMM0VEQeXK9ZtbTtKrMAMAnhmqpfH-2ibKuYybUTNXNtRMj_tHDeU7cCncHXBFcRAbuQ829p8mcWpo_1lC4lAWH-81SSIA2QUW5EEMhOXnKTfrBz9wJNyFAe4oRNKHmpZF3SjKeuITxBi_KfM_NQQ-GY2b6lDREFwcc3-ooc0rGhgfrykz1J9eT-yjqiHStFb9pvCKcWcSCLGSbGX30eIeNG_Z0coV2gCVJahU6A7dyNzkp-6Gi_WRNcnHtmAtVpUDmThlTcPW7mbUUlgcByHobuGiAk917G5XcosbLuTRoO6vwm-jK3DMihMivOGFQ15UC9QUXtNpLL7aNIaMg9YnsFmBdLP7JKM68ugFiPqqx1-9_wxk0yBgEdLFaO5BgSjpoqjoScNmwWrWcuQ-KkUpFL__uySp2Pwe-zpZABTbA3kfUfJ2mvYz5-YGTVFLzwwTum6GYESFOpLvN0QCwxdUW5vvslw811XSJOITvslLEvL9aMliB_cQeUdpRA4VZYYVxDEWx0RpZ7Jzgvd8IhYJcFLHV0T8sHcvNnT1QvNsFr0XKPXkgQvKYfSZRHZ_5vxMRYdjSuUMhMlzOVy8prOm4mxfqF1rJXkQrQTjTljnVLYQ41-1s0Xps4PEq_Rnqpk-vT75-5f0ECO4W7lym_Q3VUQ9bMBz57gsbhcZmFp1U931EGk6tgqFZ3X0c92idRv7hcgryD-nRA8rDOO6Mi4XXKDt3QS_mftjSaCqncK76LftNzUAkFUMqmhspS0DRX2Kw0MawYHkQ32_kVxg5kPdYBFxAiGXtwlEajlXrkzL_i-CkJtkf0aL-evchtXB4YiZwD0Z5VT5CQvVVA8LyJsDqq6H-vN2-xPUzUOA5N8yn3SqtaE-lESpkHmMKr2AEqCu6gLMIeMAqZpsyBtiGaxywmP6NOQnEyIiqQj6Es3fzEqIk9wXo4_ek6dM5cXIAOQmfec1f1WMPA8F3FzAEaU_AEuNrYrrCQPw8g2-7OEWRNt6XgVzx_EsOUjkKSohX3LE2tjgJXG1PfxbnYFoB0YpcGOo-UeB4do2CwkRx5H4sonHSZJkkzYqiy-Xk3WUJS05p3fgqfI1GuVN-OHg5Tbs_MDgwRjWezYDxdoYBU6c3bi7h2mZywiWvC4wFBGasD4iX1NebtGh0qEf_LNF31UdrYvI-J7MvfyxxDeZRnO9s953gCMCmcAVZXUZaBxppscHSJPFF_KlxTGfxDY6l1xw2rdpS0CuasQn_Q59B5soMcaG_1rPCqWRTyWK4Uk-o8P5ignB1t8nozq4-GIWNHMwqywIdF21b5iKVTJwxMmnmVrgDmrLPd5ez6106yl_lReDk4eFJLSRMQ=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 649,
+    "completion_tokens": 311,
+    "total_tokens": 960,
+    "cost": 0.00392125,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00081125,
+      "upstream_inference_completions_cost": 0.00311
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 287,
+      "image_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765725844-pOhCnbYSWhexM4s3vYan",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765725844,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 401\n}",
+        "refusal": null,
+        "reasoning": "**Assessing vulnerability in code**\n\nI'm evaluating if there's a vulnerability in the code. It uses malloc for 10 integers but only writes to indexes 1 to 3, then prints A[1]. There's a potential memory leak because memory isn't freed, which could be seen as a CWE-401 issue. The loop starts at 1, so A[0] is uninitialized but unused, which is alright. Overall, the main concern seems to be the memory leak, particularly in long-running programs that may lead to DoS. I'll mark it as vulnerable, true, CWE-401.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Assessing vulnerability in code**\n\nI'm evaluating if there's a vulnerability in the code. It uses malloc for 10 integers but only writes to indexes 1 to 3, then prints A[1]. There's a potential memory leak because memory isn't freed, which could be seen as a CWE-401 issue. The loop starts at 1, so A[0] is uninitialized but unused, which is alright. Overall, the main concern seems to be the memory leak, particularly in long-running programs that may lead to DoS. I'll mark it as vulnerable, true, CWE-401."
+          },
+          {
+            "id": "rs_0b3f93cacfc7db8601693ed69545908197b399826f018c14f5",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtafsy6AOSuXQWUWrBkrRYEuyULDrl2WBj0xUb9Cs7fwW1tluGcdb4tX_Uu610tnwve87FANYdf4E4zTzZpuZf4_7vYp-wsXnZUddb1MBeWyXfPNa_6kYE3n78--4j6eEk8JjFLfb0vux2mVuLjeRuFJiWQB3kdowfzTbi8er8h-loeWEM4OFgpn3IR6TlQaLt7tLzhYWVYGjyaIyHfziu-mjPjA2ThLDa1iW2s_gTBj62_ckfv1-eEVAO2WInRYkWRtrhDXG_bSSX_40oluHvAUK4DVOVLG9Sp2DGGitnsltTrps8zlgdw0tWE9zfZEh9auNgb75Ncu6SkChnrNVl5kLbf26e0qsudt7G3DR19RimsCY3HQTzI3Kt2rDPwy7E8ADgS7LPLq1jCBlzPPkpkFEP7UOJ9SkQAMKJXn9pg1Ym-CB_FjU9a0bgSTXczp-lHyLl8Rk7X6jZaHdz_amJCEASPXaKBwbzTFso28JMhN2dM660-NfJrZvNRIc6w8JYC_P6FnQ-ou2rWQuzIquPVBD5lgUe8hRfDDEhc2OwnV4_5RJGXfVtqgZzTXCkk8x-HI4dudo6WcgAQyaUwZYnw-CWCx5ITSxofUIqPjKdhwW-ZUYOy2EwM3Zztfkwi14prbSdF6yzrhK2jVfKgP83-eXk7rl-qqM-dznBAV8_lzHg-x4YWwf5pSf4OSqzjT9sPwhVs9BJ6JYuift-Bnj52gNDr_XNQ_a_5ANLv3csLjCWH0-GoPLmUWMHsHn4VfF3oVgyQJFMeRaUffPspK7p3HJz6ehuVTXgJFdIG4Gh_mYbdCoVzqtD-I6r7dwe00Dlz1KdI_0REQ-5aM03FAb0zMoUv-RmXPHG71p-rGH9HOlMsXZ5JXia1wgKp9ILeWA0OUo-hAGfPAUaczXsrqZubqoXhI-p9zoIij0c1Whsn2-T0GFPo_mJX0Q1CB1Pjc6foNh0t9KAu4sbhqIxxv_1nmny-7psZmQRp1xfOaQTICploxjikd2TCtY88Cy4koe69MkpjyatT-es7cSshcGSdrJxpDjS0CM89bturCMcGX2wgDvOApN9QWhNmSbjvMgBxnGXKSmZS6_Ow85b8cgEYLBNdDrRlsZX6byiGkxopB0rFrRiD-jJ7chYhUGuzCFkJNMLOkS9qro2OD3pZiQP5o-BP_jW-n3spT5Q4sjVwx46LdKl_OnJa6JPbRNb2vlWa37wqRtqHuiwrWdqyeaQqPmeFMvvoW8d5O9nUgOAqrSp8dSB3XrfS7iWbtLCA84F_XkuiA8NbDnbKHZSNCgsixX8uz5Nj_oV_qzbaX0PfBP7ooA7ZUt79W-j1uaE4MQEq2DVB7lr7yth5G_tqRmhRnR72RN05PXnnaCNwjw1qra_E742UFpNTwbJTkT_aXqznnFipcG7IybB35DVql0a8WTgB1IgjojFbiowc-fWPfGVOSL7gARkUZyi34qg6oOr_k3Ex1DIZI4ZwkkhA1GZjxWFLA3xh2ttFy7aCYvQpkwy49EJmyXk_-vJnGoXliDEorwa__LSfj50fRgNbf_qGwoSI6pWHe-IuJv0kpwVdLD55X2KNAXvg0bs1qKwO3gP0y7XSUVe_PjEEictl6dFoUFFrWMu1W7ff1m2RUL93QYK0="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 160,
+    "completion_tokens": 172,
+    "total_tokens": 332,
+    "cost": 0.00192,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0002,
+      "upstream_inference_completions_cost": 0.00172
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 148,
+      "image_tokens": 0
+    }
+  }
+}

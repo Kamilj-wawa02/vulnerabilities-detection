@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765724430-z1UlKrVXWpvO5MP6pG4Z",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765724430,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 787\n}",
+        "refusal": null,
+        "reasoning": "**Identifying vulnerabilities in C code**\n\nI need to identify vulnerabilities in some C code. It looks like there's a bug where `scanf(\"%9d\", input);` should include an address operator, or it leads to undefined behavior. I see issues with a pointer being malloced and overwritten, causing invalid dereferencing and improper freeing. The primary concerns match CWE-686 for incorrect argument types or CWE-787 for out-of-bounds writes due to the incorrect usage of `scanf`. Overall, I would classify this as vulnerable.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying vulnerabilities in C code**\n\nI need to identify vulnerabilities in some C code. It looks like there's a bug where `scanf(\"%9d\", input);` should include an address operator, or it leads to undefined behavior. I see issues with a pointer being malloced and overwritten, causing invalid dereferencing and improper freeing. The primary concerns match CWE-686 for incorrect argument types or CWE-787 for out-of-bounds writes due to the incorrect usage of `scanf`. Overall, I would classify this as vulnerable."
+          },
+          {
+            "id": "rs_0857e569aec0ac6101693ed10e93508196badc3900aa76258f",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtEV4H0SIv2DC41NBnx3MXT5jAC9WZkQtOG7xa-oCNQnS_tOZnDW6TKHenY0i-k565LbSHDqYXLF9ElEQNhCYlHWycSgy9Oa0bf0YhlXlVS0Q9MybQecRTuRdcQkdDMPo5wgH6eAswzPgRGzmJ0XTVv9mmp5cpsLFT1cJwjMLXJPdmG-_t06THRPI4tJn6IcBWGQOSk6_SwAhs5h3QmVHM_EPlkKd5elJl2H3bxe5VDa_frp69VXo0Ge2qg7qwbWIdMcsebWphXgnGqM5QGD6lKP7FSF7jDKTedAQBx4-hEyacS0vGtjCXfhtF_AA-VXgoUapPECfjRi1ahTcoPnH09ew3uC933esXwtIT7nvs8b00p3sFAo8fnnvtrorsAqGJ12vMr7WrgX2z-33lGI7cLiwO0JyGfdlubvypuYhHNmTvOAQY7a-yRrvhGDF6jMx8s2OceF92U27oHOHptJww-ljWvkmaNFG5SpAtcDFOJdZwo34zFkF4nB4grFaZrHzsu1cPh3dEUsDE30qA1wmJjy3LfzOV_hysOBunUhXi05v9RK_Lfosl-BveOnDY0f8ZSOkKbam1nA8uciPrJx9kVwmlgIVh20hgO5zjqp9a_azXL2X8-Kb0FMTLIMEA1St5p_c1wjH4W85h_WHx9nvscGg6zvGZY4rNEvmjB_ve6jNGKmHUwBOj_oJon7qamrLmA5AYggrVKmU3UULxeUl61efvQAmp39BpnklHdNSspZwtFqbiEEb5vO8TzLN_-kHgx0JZ_VBxrUIqb7k3mnlrEyYHtVgXsmaFjquUwyQNm5OrOiTzM0WuMPacJUA6N7SXnLgAuPSXpv_o6j3KR3kqdzneA24XWe8IBUG8tnBZS0cshx2dzNRUlhDZNVhjGgrfNhV5Wj2FhDb8SGi5PX6aD38R26D126q7MwXIfzaG4mt0Iozkkq_PT6eE6FED7pzhJ_hUjbG2LbFnAil1q9Okr529UjLETntzfZ2mc1C4JFb0BHvuFZBZKJeDktJ_CqVSLhDWpmj-RShJbu2b_rLq5fDLEDF_D-Bl8lw8MpJt6WGjqmgLqqc79iTO4Cf5TUIpFsC30Q4_htkxmeOgc1XXdFiB8-b6M7m7EaiiS68BRPjr5Q1On36Z8JHCtjrsAKXyKQOTn6TapnZXuHbh2bTM9sRHaHjG--SMmRsslZS1skfu2vVkP5qD_zfvTn0U3Yn1SfVlP9_KCK89Mj-UQh8YfiO0npIqFyzpU3jE8rpxM9-ZLDXi_f66UwE9irgS-OhO9ZKBkBiosvOl_fLRnCuXGp36a3kLDZCNfzJzKlkCSk8RhxTWWRQfeobbdPxisbXvoJ3lMb_SXoUakxo_df35Qk23kcUH7njMbTEHs48QFxMA7G_3SptSkmOpYq3cz2-VIb8dv06ifgrjeFhpKUBfcdLp0IfMyQuUGoJVgh8Gjqe63XeINjXYFAQX0LwUAEbCSPo52dffzMrXVAj5ckUkBBneb8bDVE4HZUy9TDdweM9QGzLcp1QV42d9wv06pniGrSGY9mEsFPFNUPG3TVbHZKIlZCYTojwdzT1BWnGevuf7-2foAPuWcKuV7MuWVbJ6cHmhN4lb9Gra-UfbSfqBx0nUumCLFCzKvRywWs2OOeRn2AKhrLPxWhnz6Uk5b6z2b1FOb1z7gh2JqNDYO9-qefEtodBGJby9vlT1pUhA-teSt88tFbrRNbFdx-aVoUfMqgGUyrMw_2hyTEBJI-fcREC2wqXFZ_ZPQu33FIKHIlCT2xjtVZA99f8PSrUPsk-K-b1pb-aSgBr5DSWTwd_WFU0m7LfPZ2jx0hrW1RLq-i9af_wFhmRDRDeY0mEigY6GtOF4I6BVOJ8EyIFnVO5FAzyQQXNQoUcMAyLh-FXsEJSN3qs9VVsoBlAKNeINyh6J-GGXJxRVfzVGP9EWZaFygCYs9DJszASPCXseV_HfYoy0x7SqtJ2AyakUBPTES0nZbCJGbr_UD08BhysTwDgAoMX3HbrLFRrUwsL_UJ_dG_3gBUwmbmwThdsN4kJlwWXDd2POITacR9V_pjvoggf-5LY-nowqjIXNN2wzst3YxsDeg="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 175,
+    "completion_tokens": 228,
+    "total_tokens": 403,
+    "cost": 0.00249875,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00021875,
+      "upstream_inference_completions_cost": 0.00228
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 204,
+      "image_tokens": 0
+    }
+  }
+}

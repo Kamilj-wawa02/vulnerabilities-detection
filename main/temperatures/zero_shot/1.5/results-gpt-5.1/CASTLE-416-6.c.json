@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765723595-ErMjJLD0AgOcL7KhLC6e",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765723595,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 416\n}",
+        "refusal": null,
+        "reasoning": "**Analyzing security vulnerabilities**\n\nI'm examining the snippet in detail. In the main function, `allocateArray(5)` allocates memory for 5 integers, and then `cleanup(array,5)` zeros out and frees that memory. However, there's an issue: `array[0] = size;` leads to a use-after-free vulnerability, which is indeed a security concern, specifically CWE-416. Although `scanf(\"%9d\",&size)` is fine, there's a logical error in printing the size instead of the intended element. Overall, it's clear this code is vulnerable.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing security vulnerabilities**\n\nI'm examining the snippet in detail. In the main function, `allocateArray(5)` allocates memory for 5 integers, and then `cleanup(array,5)` zeros out and frees that memory. However, there's an issue: `array[0] = size;` leads to a use-after-free vulnerability, which is indeed a security concern, specifically CWE-416. Although `scanf(\"%9d\",&size)` is fine, there's a logical error in printing the size instead of the intended element. Overall, it's clear this code is vulnerable."
+          },
+          {
+            "id": "rs_0717e93bb61df78101693ecdcbd2a08196b69b8cbf127708ff",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPs3RXft617vccgFp6qi2ST8-RLmCDrPwQmIEuhYVEENcZ5JnRM_bxDKwGHFOnA3J3jCA5nN1vSmR12hQb12eVHAOLaJyx246Yg4OZFpNCXIBswaIAFOvVrTJGJ933qGfyudOUqBMo1H2CClTmJl7_832Eo4oXuDIvDpwICSSM9IQUOOTYjL4tOeRdZKKVlmtCjjsSrJ86jpXqZrunqmElA3DS0w5DF8kvHQHY2_lmGESD06BHKcO3URgR-NofObEqkV2oHRNpPu_Hx2p5jiw3F6KafBqvr8o1F-dCTo9lQWJuT38sFWiOc4-WyQ0CUk2yD4WPT3zvaX9nnGRVBWmWGt1PFEHdJ750D7lSWVbqdSNxXzemSNtAw3FWZq38KCN9tnuQe7dxMI0pI_yWeDRQSX5YqJQ1moEoFfk1KSwHA4uozC1BinyG4BUkjIrw2yuDrZeovc840HSDcpINIunKlzC0GdLewwC7kzUVqkkhJdO1nk7oHWRtZCuJzb9VRMZNc1bddEh9erDAFzqQ1mt5F5if2oRNiG_hr7T_ytsYhgKNZpF1-fhGFROhWn5ttWAopEJ2ijSGoLMPLEz2Eqx7pdOmGiKvLYSqaWcraHJwTsBD6_YJwCd8g6THPqz7KpNaHL3I-WHwEOcZdJCkKsSYWCEyPz5KS5gUWO8HZ9DEuYq26VpW56NO2GKh1Gl-QdUicpQ4M3qCLq7lLbZFj2KsYGJj13uaCKw_tfDkkojIl-GrBja8ggSoNprgpZKw7QyIRjmvKqy43IGidF-NBWcf95M77gFL5K6l_QX84B74PqgafJbKCbIn_u3b-h9fifOTVCtIZJpI5NN4wouR3_LPAuRdiB7KehLZVvM-LLUwdtFjohjq0KTA7cOItDkXF9qbzDWdOkZ8bEXfyYu9uJM7rBjKhhy4ZbpL38xr1Ec0OL9X8Bh32xp2RAW6C8u0v-DAga9ZYQyCJ5ufjzGCccK6XY1_93V6kYe0l3bwf_jbqwwh4tS7E5LBkqvTbx6CeH0PfekXsRSpNWfBUSFUf87V77xfIb-cp75IRYmMLFbdA5UaCADoWmSsIgq9jAyzSrJvHtjRF7eVrE0SSd7jswsV-0YPMCRtmEOLb9RTNWDG6-wiKozjh2DERctIFT-u1S-fhhyEuayx8AJNgA7y4sWRTqyVw-dO8k4bVIZWlAOl6wzZtf_xPrOfN155X5mjX118EyWfFib3mIZbkgHk0TGkqIm4h_dXG9-wg5qtgP94So-RLBx-C1r7h_mRUwWWKrqdMVRzh5oa6YwKAViCG2LnlGJhw=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 249,
+    "completion_tokens": 118,
+    "total_tokens": 367,
+    "cost": 0.00149125,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00031125,
+      "upstream_inference_completions_cost": 0.00118
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 94,
+      "image_tokens": 0
+    }
+  }
+}

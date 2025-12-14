@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765726453-04cxH1wyhfIIk2wdVahW",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765726453,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 787\n}",
+        "refusal": null,
+        "reasoning": "**Identifying potential vulnerabilities**\n\nI'm examining a piece of code for vulnerabilities. There\u2019s a URL decoding function where the arguments seem reversed. This could lead to the function trying to write to read-only memory, which creates undefined behavior and potential security issues. I'm considering a few possible CWE classifications for this: CWE-119, CWE-590, and CWE-787, with CWE-787 standing out due to the out-of-bounds write to non-writable memory. I also notice a misuse of the isxdigit function, but the argument swap is the bigger issue.**Assessing buffer overflow risks**\n\nI\u2019m also considering the potential for buffer overflow on the `dest` variable, but since the actual function call arguments are reversed, that risk isn't triggered currently. However, if the call were done correctly, there would be overflow risks, but the main concern is writing into read-only memory, which causes memory corruption. I'm thinking CWE-125 for read out-of-bounds and CWE-787 for the write. So, I conclude: \"vulnerable\": true, \"cwe\": 787.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying potential vulnerabilities**\n\nI'm examining a piece of code for vulnerabilities. There\u2019s a URL decoding function where the arguments seem reversed. This could lead to the function trying to write to read-only memory, which creates undefined behavior and potential security issues. I'm considering a few possible CWE classifications for this: CWE-119, CWE-590, and CWE-787, with CWE-787 standing out due to the out-of-bounds write to non-writable memory. I also notice a misuse of the isxdigit function, but the argument swap is the bigger issue.**Assessing buffer overflow risks**\n\nI\u2019m also considering the potential for buffer overflow on the `dest` variable, but since the actual function call arguments are reversed, that risk isn't triggered currently. However, if the call were done correctly, there would be overflow risks, but the main concern is writing into read-only memory, which causes memory corruption. I'm thinking CWE-125 for read out-of-bounds and CWE-787 for the write. So, I conclude: \"vulnerable\": true, \"cwe\": 787."
+          },
+          {
+            "id": "rs_0cd589042ef9b9c101693ed8f6291c8195bacb3e2d8a2a261c",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtkCvUX0q8DtVJg-o7KeeGEEa9SXUZpB8Udaa75172HRSP1qUEZAdfdBcksYYxJHUYPoLFvPOrAl9JxsD4y2vvAdKr81VQS_nVm72QuJ2y7GBSHs1pfIyZMmHpwFQrRT1mLy4mlmkMXjorzGDU2ryO49qKYbgBW6OsA8-o2Vxd6YMbSZdi3PRwh295m1om6LY6jXnymFz6rgYaN8E4XMpZxCoCBfR3cJhkDWr6RFF3bNpOyI53-9uUEbyvc7ZFEGVaUQQR_2AqQRrBiTr7Tcldg3tPKqetNqorl6doVA0FsLrz8SsUjj2qlbwtj5V-w5uWe8zBgSWYZOF-PjodiWoTBOCFddygSj6F8IYKoMnkVEzj91X40hUMD1OMhTLDaAF4tJMDreL3QM2At5FcJeid1iK4Y4vU_rKlGqAuiUHK-U5dUxQgmC6QNm02uHOsCdFiLnDoYegvJu72P2B0h82sRIJp64zTc9HMV1RBe5Wt_NR-jAm-ts3Sl2wXwq1pVQNzfekWD77EZRW53rn6yCgv19GNx1RmDbsDMD_2L_vKv0MmAt-AV9t6YkI2aEzOMRZbhmAnUXWjN_K8B49LyzBLtSBQg_BXN_AOjaT5XKKRoccnj-6LrQ7mvR87ok2xRzUeVki5qA9vHh4tXgt6UH-rrg2XEM--ahw08SsDYOR6uioQVSbSjxvTAVpoyvS7RL8z4GbMgttqknWeVLLmdZ1cD5OcOUDPZ8wc2v0NK-nz-toBso5OAaJTHt5iWlOZ_fWCk4wRefQWsc7zwcxqgs5Hr-9p5S7PFmw78MMifoz1gtsoVDE3ORa9UOv9Kq5QG1k8fhJfbirww535kqWmRW_loBSaj90N_vD1M1BZY5dJfMr3glRWcKcdebeLI7Puu6afy8z6rA0TeKP2R9QJZtIUhPtyU4GqribhOGMV9TBPh28PCRymsHhSwP5qdrZVyJAoYJZW2cHGBP7Pe-OFSDJNCsmABftSAI2P8WMHBcNuADFYzKDx50Pmq09wjZEx9Ay_HbPouF1HPPPpmTvYj3VBroIV9_AhyA944mcOiVvkdSoxXKjqDJed1j_z7g_4XufKq7SJ4nK7jgSeGNSLZ3jKqS9F-84CR1-G0r27WBJ-8To7UnH6-qx6y7lAu7WwuGsL7ngvPQK5TZ-LgS47Eq4PFZuUvjcI-doL1oJEgGF42I4U0f2ftaT6tUhUhcCX5Jm1ZH6MFr6OSji9WjvJRo5Wso3pqrEW5z9lJ41Cbkml5yKhOn8mJwhcPLqm75Fae_vlP7e0dK8s0piR_c7VCwf3ar0Ogh47r3Aw-T6awpicmTd4uyYoNe4wwF_I5pk3uXeYOyOC6qB_9Imk-1LQ3fe3FW6Tye8bRFSQ71SVY9XIjIXmC_f7MxNMQ3wQKEckHChta3Fk3mxVBulVb7FaA_TNt52jfuIQU4hM_wQyCl5UjpR7trkRpFdgsjzIOChol_lx8IJjNwGvwZ8X4h77_CzG8HRfWeyqmY2V412aH-5Yu7r6Ng0NfNLPlH3TJITi9hM9J-YA7i1sJH9RV8UL5VJHBKdktJgKecx8X2OifVvu_2FTdxjTSFB-j1g6d3fMUbI37HbzkKzebLb9jHPTqFjalUgVuwu72Qmbw_NIY_fTFlW_lYhatWMWhP-OeoZ_w37PkLYuJQIwfeTj0NeQbXu7nt-hrHKUwMN9hJ34MxOwUglB1oSUI_ZDVlCTwrWtcd-thFCDQdu-2M0dtRbDN6ec4DQkANQTXw5hqqGye5ibgNTj9FRFMc4f8BT2Jerd0SRPzden3JV63cFs8HnfHHp5MECR3Qlk2ttQ-MfkVKj9G_Q7PLXvTbwqg2rBxNnSiAxFjPw0OOsMC9RMwgodBRoS204kavzi0TCZVN9qwTCHKu6dJGyymO0Bw2p7d_4YqnoVlBQm_pLOznL2kui_3d_C-fIfOEKE7g2TcVNOX7rH2YklJyOP3-fi_eorQnOdCXd-9t6sqlchhShscthCeq6XT-0L8wT8aYOAzs9_SrDY_MlUZ1_j9zFrkwacUYSwuMxn0c66Q6N7N2089oInMeEjE6ycc3HD4AyvgwbEJ5iDsuFPJW8r743oPGMOlJYh4XuipebB7NFm-mpPyuSw9lf-FMP82U3bGNJc965ZTXZL0-i984iP4JeMfUoL2wQrrrWLXMJ54GO8UwltWDGnBqj33twKkhd9JJQgX8pmBWCCVYqCxCIfV5zPBEIV45uSdPByVUVSR_XGZUlRj-3sWZhdusT7jUJa19pVl7JPEiQIV9UKTT7FObwN_yxcFyCOJCcqNEmuko4qqB_9csTqEofC4lVR6lC-JmUHXYGQd66BUBGcSzlc098d_m57kwyHsJ8egzD4mhOaATFlvd5WOxqEKMBXS9DuHaJQ_huCxpnOVEs85oDYqRqn_nCJx3Z9jaIkkd82v_B2SlMgKtaTNJgSw3Anv1YTtBQ4swbydm5s6wy_44FWo-mSvNsuqAG0tKGSS4WJmyml6pGoJyKxDVe3eHGMYNe2HECPlj_W-kr2VfMLG8sZ7OW_i4gEiCjb5F4Ei6LKv9yrAuljD4WGQ8PrUI5w=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 457,
+    "completion_tokens": 308,
+    "total_tokens": 765,
+    "cost": 0.00365125,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00057125,
+      "upstream_inference_completions_cost": 0.00308
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 284,
+      "image_tokens": 0
+    }
+  }
+}

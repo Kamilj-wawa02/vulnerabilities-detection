@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765725501-HiXVJuFl0Jy1Trh4zuRH",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765725501,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 328\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating cryptographic vulnerabilities**\n\nI need to assess whether any vulnerabilities exist. First, I\u2019ll check for a yes/no answer and reference the Common Weakness Enumeration (CWE). A significant issue arises with the code using `#define EVP_sha_256 EVP_md5`, which indicates a huge bug: using MD5 instead of the more secure SHA-256 is a risky crypto algorithm (CWE-327). There could also be a potential buffer overflow related to username and password handling, but it seems that they're bounded correctly, which might prevent overflow issues.**Analyzing cryptographic practices**\n\nI\u2019m looking into the handling of the `saltedPassword` and how the code appends the salt. It seems to use `strncat` safely, as there's adequate space for the characters involved. The use of `sqlite3_bind_text` with stack-allocated variables is also appropriate since their lifetime is managed well. However, the main vulnerability lies in using a macro that maps SHA-256 to MD5, which is a weak hash (CWE-328). The hashing should utilize something more robust, like PBKDF2 or bcrypt.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating cryptographic vulnerabilities**\n\nI need to assess whether any vulnerabilities exist. First, I\u2019ll check for a yes/no answer and reference the Common Weakness Enumeration (CWE). A significant issue arises with the code using `#define EVP_sha_256 EVP_md5`, which indicates a huge bug: using MD5 instead of the more secure SHA-256 is a risky crypto algorithm (CWE-327). There could also be a potential buffer overflow related to username and password handling, but it seems that they're bounded correctly, which might prevent overflow issues.**Analyzing cryptographic practices**\n\nI\u2019m looking into the handling of the `saltedPassword` and how the code appends the salt. It seems to use `strncat` safely, as there's adequate space for the characters involved. The use of `sqlite3_bind_text` with stack-allocated variables is also appropriate since their lifetime is managed well. However, the main vulnerability lies in using a macro that maps SHA-256 to MD5, which is a weak hash (CWE-328). The hashing should utilize something more robust, like PBKDF2 or bcrypt."
+          },
+          {
+            "id": "rs_009de6f36798d2e901693ed53e78cc81909d0fd2a547fd4434",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtVJvSMwMDXD42IHEtBqmb7Y_2UoIlfkGi8jBJ8KJvAW0zhZ5LMgzUnykBVzFcQYKqNUIh8tPn2GSvdtIAz0El1fkarSD7LGQuaJByjA32pul0DG75S97qjGuNWgLlSUZast7C7MN0AkKp46X3zBLc-Afp_aGaGtdctZH_bs6gFnLDkrWu_sQEw2gpAZBapydFrVHSvBDUEylkcEqXlkffo2uaImJe8S1WhLXWsYPvc2ypkfBL63zhc9QNRzldpK_z9DCJ7B_W-9p8EvVOR3AacnPi0xMKXagN3h0YhR72T_TofWGKqtwtnzrPpd8TFW8qRmm4oJjr3acXxvDkfbFqmAdLZQKWu9GpADBOV8YyL1PovZVccUgZ7SUKeRj5je8zOB95k9KMrh8eO5W8kgiB2LFH7wtU-6ztp2TWEf4FkMcA0PEUWP1-g3CLgLk-kB2BoxSJ97INW1XEe9tio3U_pTGd8VoK9t283UBSrFIj3llxsvta1Z-nSvmGjGohjVNYN093ZUaV318p_-Qytb42i8yFrILvh_M_-WTNXSCBUaWifWzSD5mFXvuvrGnq7LZIkAlPSH-_9sv2kJKAOY-7bq0Wt61mwRgZXPp9lRsDS1rw-F6-odKbO0dK8nxwPhUzRZWcpOKvlS9Yicx6aCUdnEzblsIWrf8_Bhlf_26P_fiH43cUDZTnFdEVy2eYMNa_nLv4P0vNYxj07wlJ_t6jHzBe-KeocUEq-6ymi4gIaPkaKk4ICqr6sNc66_kSMhF7-ljWTOEFQxcMpJOja12SDlU6m1e38ATTZjLKfPwP_4236Kn3IMsdRqOHnKa8NoQukok5jxXImBeHnWUvYCzxCYpCMhyUk1BSyEOmgga39PegMQD1iWA5znTfeTsSJaXRsfQ0kP8p6faa9C9JvavvERW9Gq_oXRSXQ_7S6oaEQ-S5SVIlyKTQrQdUrMN5ktgftY1JRsIlc4T4w7GzdaiaEbWFAMEdYrBIFrPeP7LVxi_LAQZcF271hADggdcyAEdeXWD6-I0goq9WzcXMT12GQZPGlag2oYtVTOZYDVTZWxh2PSdD78lJiVXbrt2CF-TGiRgeAtlVBJNyHTeKBB4LHmSEYFto8pYBlhYwZXE6pGCv9UbsCxOzKfKG-qhsBbGTcEjdYrfJ22yZlmeDp_UqXppdGRCCPu9OnuFxT1-QMqYDD-nI_qhP__7wopw7GbiT7a9Ebfrb8kW_iisZ4kVpp4vaVf2wCg6Cj68rkZg8fCxRRdoVHCpCiqR4WM36UqrfY-6cEPD2JepRKvjWrGPwx3uyz5G_veTuAkJiH6PlqHh5vTy68K8sMcCOVBW84sQTZvnKh_zGcpuxbt06apyqT9DEejBx8i1pEvnh3D2XfoCS9mMiIml1tWVaSw76jfhCPGnl3QTqYHCT-vAyeJ8rgixcBBSQcyxq4TLO2BoQZH9d40p_KB-XnChoUXdBZrwlbE6CV76LkuKBzjyDSwKJ5slGrh1Df-4AkUR1031fSFMtMgPe6Zwp25C0PvXme-pWQxNjFijn4xtOXLmShKGJWSYSGhafIQFgcvmy0_UAHfl-Hz8SuiCvMjP__g8-UXi9eFV2CkaFL1QogPL0iH-8zrhw-drnJpvweWlTMJqHhlwrPQHwG0i_Qq0hy892rtq6BBQ9M6qIJO-BDdIpcdF-B-WlN7Dao_U5QWZGD4BTnw_KPe5vXPv1i7Ja0T8-uUopnSD1jc12zlrw_cl7U2k5_25EDO1m0Zc_eX4m3RXkPnLpUQq_nNhdk5J66_76QUf7i3Bp-YRncY2UTRsDq7csmFbPDaTPd40bxQlpoQkyBlmo_ghnNNd5LA25n7c_koCRUjyOIYWAZMv2ucUZMGfOKXOzAEVRHcgjHWsL1zy8e-5_M1-A6JQVrgkjZcZc0vNpMyYJsphE3x_dPLGqt5O8VSDEfuapbZNKgdbdG_Y1NhRcAUkvDPQYvRtwjXdzoCx6zBbF8TkU_frTBb00IpZm3CIFPNyhKsgeCrwZPSAJdHwmZsvLOdl6FQPemzFYcBCxloo4VNOKq9xdkb3pzgXi7q_7XrEN9ob_OIOS1G-G5TKkUsxjVhUdfx1OoJO_nnfz70xfOJnYCrGpOoJaZVT8Bp2cFrlcgnxDRgs42SncHBWi-ybkpQBbipoxT-TlBvMDOvmk8SUhTI01kQc52SQx-60p131c9Z41x8prikdwTiueZDCltHw3Wh8Tdb76i8Q-iENMxb5Y1uj32pPGB5rqbBVRHXMn9c21znA-9BXSphuq2rdNSCydT1tiHynH4mq0qOLFgxtHk991ZZk_a-DQ4k54uAq29MljBIOBljwriX97Ix0JRkDQzgg6eLiNWN-0NKXp0rZo597Dgmzhe7Z3U7uvZcdRNLEdjxmvvWrN980QC2WPYjiN9GBQjNq-wvkUeJd_d5VkWQpTohzMV8IP7hx_kZy8v6yJdBzTfh59YPr0ryZDVACmjo_UpWuh5OdNjZXniPxl9ocViYHPr1d5f6ghftvvvqXr4lKnY-TnEU-uh5df1jsPinTnoG9A7-3UH8icXFvfgkeUTxUSOUj8wYUJ0alWJdZZqvAOmqrvoqoj9-qr_Jf3dBu_VWgQGnwhAmc1oWqyLmkEG5fTvoh-UA6RHmwWA4hy38tCmIL5_253EZjda5qjaMvjJ7xp2wl47jubE99AVAJ9mIjiWya2mTxGbKeOiVqi_In5_v7Gl2SlUxvZyDq1plIiedCDoqcoQMACgQJEE7jgC7bJU8bN8vJjU4L-vfySMCMUAXsB9mLOp9gL2akvvUfSoHyRm9liQurB4GgwzuO6ubasev-ol1nQNnfR8fG3Vz4p4ryToV7TuVnkH_Z5Yg4QYpusP6k9hpKUVgO0nC8r0vMHshfTdRHFdnlwwWh5myo-cfv7I552uI8aRNYWewodSTQRteQgVLTmQhxVG48MxRDnML-X2wwzdH7kczR2zLz8tu172kgzK7Mh6QeojtdoLfzYAF5cGkxghdkzhlhqjiFhP2zzs-BnaJK9zq4bE1inxrOPi_PhTR_R4P6gqFDZexhq1ueCh5PMa6HVBH4UIA9faVS2WBRBA-hfWvOniBOPmx3bYYzVBOEez7cf6WJ4y7_dPgGrIYAGqNaZoXK9OxrB1iFxUt9l4M7kFeGlM_u5_P2bZIukFEwtURhivrumCcmGIGnpuokTwJCf1nLB4hf47-jCZwya0AlXbJf_xSb3pZd_5umtMXSdu_OWDCJN8l2TWIM0qBsoHI8oeW814LstFq1CCPyEkv32dvnpaiMuLEbvtgbqQSxVexIKnhXy5p_56tHh99H4_Pc_GADXqv0crsWw_5tKhlyBC-HU1cvNsttq6VjYzTWTm5Oa9IHvf_SU2aHelIEpMSYKvn3sDPQh2TLZESKw=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1216,
+    "completion_tokens": 496,
+    "total_tokens": 1712,
+    "cost": 0.00648,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00152,
+      "upstream_inference_completions_cost": 0.00496
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 472,
+      "image_tokens": 0
+    }
+  }
+}

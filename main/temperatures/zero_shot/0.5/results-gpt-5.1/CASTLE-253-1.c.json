@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765725393-LoTQz2B3lgnvUsqppumw",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765725393,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 476\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating code vulnerability**\n\nI\u2019m trying to determine if there\u2019s a vulnerability in the code snippet: `int* p = (int*)malloc(sizeof(int)); if (p < 0)`. I realize that comparing a pointer to zero could lead to undefined behavior due to constraint violations. GCC warns about this, as it\u2019s not a valid comparison. The real issue arises if `malloc` fails: `p` becomes `NULL`, which leads to potential null pointer dereference. So, I conclude this code is indeed vulnerable. I should return JSON.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating code vulnerability**\n\nI\u2019m trying to determine if there\u2019s a vulnerability in the code snippet: `int* p = (int*)malloc(sizeof(int)); if (p < 0)`. I realize that comparing a pointer to zero could lead to undefined behavior due to constraint violations. GCC warns about this, as it\u2019s not a valid comparison. The real issue arises if `malloc` fails: `p` becomes `NULL`, which leads to potential null pointer dereference. So, I conclude this code is indeed vulnerable. I should return JSON."
+          },
+          {
+            "id": "rs_057de5d3b785a84201693ed4d22f3081969e90e1620a3561f9",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtTXO2nxIDi5i96DoeQ8oNS5xz_rF338FYHes_SC41D2GHQJ713_EHnvaCKUxE6B8Wdiioru5mzQWYPM1ubVnERjsPi3bn6jQQDYevfk0AWgHiGWpocjrq7IaE6p4x2n34UwcDppQmlCfXgKpW2M_tDDMYiM7jt_zXgzL7y1G5hcbZYASHYGfFlDQrFmgI_hFtcVUpPIteN32xtqyg4GbNviiCbBR4Hcwzk3MaKeX0IJUzxga9uxGL_-QRnnsPh_xnOsuzxKMtx0ItAjf5wRWd2DYhCwo_btf3jTl5_93_AyA74Q3oagttydwVUvXTDJ-yOZBWKObEtFJtY-9BwKbGdAYbTUCqBRcrXMzGPolsySoKBYd0M7YEcPi5OKDlwv5zcD4qQfoexf7k0D1mscSUqb74J7vTYVOXxOBbs2xwqD1enfUuNud5Hf4fhXB-LL2mDm3Td08rSV5Bb-8wtK5JGgQwJI3-0ltMuupOr-AGjjcMqChZvxkPOw3ZmVi3BPtOrRk7qgCeXQTrIppzsWkvPVYFLDJdhBGWqHEDM0sjeMZyp9gRzh0w6fBtccK66Lz8i0jYAKwvCj-B9YTTtf8iR7vbMSYPmOZjgN8frLMREYAU3QrJ8ZGnP23i6owX-9rVvNbpmgyRhCObmzsm8RD6sReL9L0LQSMW-F-7e5qyzGv6tDfbFhlAcfTBNyKd9y6EWPOPStMfspMUjjfeqzsUezHhU2R5GK3eSMH1Cxo7XB7lH41bYnbvPuVnlV2Ub9k8FWjIuoTpPtSYz9Tw0dEAHvlFB8sPyDlxof5GZSANtVN6Ly6ghqpY-mw-CUztLZhXZVr-wqXZd0uSVgpz__Uhm75ozZjS0muf28PEKT4FS02Pyp_DQVKpFamN8eeRMtufUKCxyOwPF6d_alSPcKZU0OQYRgFFR9QK4OunGnA1E2vTItzj8xYtQMEa7fCkFW_e0eOx_43GR0OZ__oGRynuAAIiQgJTehwAYQUMQAivwngIUpS4oH2GP0cPTk1zOxh_3z4Y0Mw_a58U55xErb3r622WU8S6x89e3p8-npJ7HfuInOmaJxr0UY6mp9Bmr7nJB-cpH8Q2xjb7l4bntKTeKjCyvmm0Hk2drUMsD1tcG-Q316DVhYuDzgL55kwFmmh_k1dK31q3GvBfQAaq8VjvqU6SZ2kHAhh7nuNKHQkGgn5VEE0WdkkgybqiUBRGBMGv3TBcyhNUppMLjidiOwy4cDrymJvyzMQnZ6XTMkHDAoe0jkgKvph74DB2OVvCArXL-2PqK-ktvD7om46eJyDvpmaKZWOAdG_rqUgbfs9EG-aEAlhUmmzrmLhbkSKe7HJxwC053AY7dbAaYCM1XTwmAgz4SYWjSAWZLU2gSlXn5WzLu6dQjvxnr6MGhMwliU7VcpYwqpZvPdheyBsEEozllB3bu8serW_N8LkYWDoTbnLy9CeSk4ER-C5jcU1AJ5vViUYpscJRvaGqSwIul9OgcflN2132hx8VxxcuvbiAOEss3cCLLPmj3B8O-8dPSv1KE-MdjkPgtar5C9FuQwnGBXDbnT0Ph6EWKlYzYVXOXnXq6C1FTaBEbyBR8dI6smwsDP2twIKkoc3nK85FMBS-vzd1nj1XZDoUiMI1A8AKnuJxWxU6XquCQ9Oj-IC7ppeZ1aYhMkL4eMDqgio6TCMxSiRmbmIOgxti0oBwcgYDQtu_rPaLPS_nzfQWselURpNndTmSIFt62Z0Rnx3E4Oi0fz1olDwwFIKKJEDQJ2oSqNRha9V-p2Lz9JKCfGcu7ykZDBhT63qgqzfEcb0ppHgYVL5M_SYuG-ObMrBnQpzb4Ytee8z0GvwwztxVSVUwVSqz857deQ9VeIg1jkpUSMaAhI4lV-x0695LxXv3aWxqr5I_TOxRJ6aDUMWd8YIUfdj11jaaAudPpzTjmYHHenOm0SSGrLdHxZPgiksvL2qrkF31fe4Zyz0znd47rNP1oz0D2W0R7FUQo7Ag08BJXcjkdS4HxlY2nruap_tFVZbsVdseBE9Bc7vNPG_fUo-Afutdvm"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 139,
+    "completion_tokens": 228,
+    "total_tokens": 367,
+    "cost": 0.00245375,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00017375,
+      "upstream_inference_completions_cost": 0.00228
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 204,
+      "image_tokens": 0
+    }
+  }
+}

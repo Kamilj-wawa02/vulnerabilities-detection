@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765726061-1RS171nium72bn74hMwY",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765726061,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 416\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating a vulnerability**\n\nI need to check the vulnerability related to the code. It seems like when allocateArray(5) is called, it returns a malloc int[5]. Then, in cleanup(array,5), it zeroes the array and frees it. But I notice a use-after-free issue: accessing array[0] after it\u2019s freed can cause problems. I can see that this vulnerability is genuine and corresponds to CWE-416, which is about use-after-free. Next, I'll prepare a JSON response for this.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating a vulnerability**\n\nI need to check the vulnerability related to the code. It seems like when allocateArray(5) is called, it returns a malloc int[5]. Then, in cleanup(array,5), it zeroes the array and frees it. But I notice a use-after-free issue: accessing array[0] after it\u2019s freed can cause problems. I can see that this vulnerability is genuine and corresponds to CWE-416, which is about use-after-free. Next, I'll prepare a JSON response for this."
+          },
+          {
+            "id": "rs_0ac60b6e31f1c23e01693ed76ddd7c8193a03f39c2576c4a5e",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtdxGCKgTjHZuLKglxrF9DFMBAjfpBwMXzg6c3mSZ5782BzFv9UAGJuKV0xa6YdA-Qnrza5r6xfl5w-haQ0OgadlKwx5WocvEseJ7oexqr3nN-WWibFnaKAla3fZpRqjM_JJa0ZmrJRwaofav_oa2etzmAsDeMKSsFrNmLHrft3SBKUtJYXeYMv0c702assRSCdMjC_dUTS65Z5Gc1Eem_3yolgBwamq6YPYRRIZrFYadAOKN6WM-luHgbq6kCGl14EulBuYhAje9Ff_3BCSGOnfOWZNbRk-zHDgOZRRIz-q3jsFxq0fMDtt6NJkQ5IVTNZy9LN0j1E69rBWfqOzxrVt9-Se40rlf5c5n-u9yyjSq-x7mGw1zN5FR9aYM6wYG2jDRJQfAR-1LerLQZH_OYvwf3oVlFvHRyXBMt2VkOo4eQq7OKunHQH4VqoSPzNZnuaTfRq4lNpz-Ya8R2WJgCu1whGgqkIobZy7QcfhA3bbNGVX43o4eK17eWLK2MDAy2440c7mNVyva2HiU4PCod2r_LAwn9zwLM9WR7SwXH6grypK4dJoZbwZllRM1hBkfgp_U2YrOQVI90X4PkFa8WVy4UX0aPW_qmk2-bs8oss3qPAvfODgwciRNDQv9svWsRgIlWzTr9uLZAmOuFFWWiH87NXYcgnld9IP_4AIJ4FRZcYWskgKfKGXxpqTe5kpx2S7wzzd-j38QkS0gymEfX2vi0HmZxTzD4wiHNifoo5MG3wmby_IdOU0Eax6EBYpMgBBYuU6FXvBg3NJ615EFozMe1tX388_y4eNN66RYs74MCHtLWzZhukdEtVb4Jm0Utf5lK98oLvxDeCVw1KFYjA5AT4iN1yGlAssqNMJqfvIEPtNO1z77suRicuHguXB4i_HDEbNMzu4UDSH2jMNtV-fCNR_2zwN4BzvhCyo1afxa4ONDYVv80fKGsegkneXAsphErpCApZCRtcFy_p_hl-7ygHcRUi9uN3gHH6BjJrOjsz5h4mdNrI3IJ3z-MfM-8Y-8YpukYtrEcK18axfxVHB1vFTYkBZUYZChf36DEKlcGiDfgnYh6SaZNRyYSgXkjUH6Hbr_ivjpGjn01Uqh6UqajmmJs2ipyQZb6gSPElcv8K1_VA_t3FgLrFTBnt1nnA_7aunI3DCiEAPKj5tTOUixA=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 249,
+    "completion_tokens": 97,
+    "total_tokens": 346,
+    "cost": 0.00128125,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00031125,
+      "upstream_inference_completions_cost": 0.00097
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 73,
+      "image_tokens": 0
+    }
+  }
+}

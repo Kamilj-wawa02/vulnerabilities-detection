@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765722528-YNuYzAQ1ihCKnn01fy47",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765722528,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 78\n}",
+        "refusal": null,
+        "reasoning": "**Identifying vulnerabilities**\n\nI'm analyzing the size passed, which is 498. Since fgets reads up to size-1, I get a maximum length of 497. So my combined system string is safe at 510 characters, which is under the overflow limit of 512. However, there's a command injection vulnerability because user input gets appended to \"/usr/bin/cat \" and passed to the shell via system(). This falls into CWE-78 (OS Command Injection). There could be other issues with shell arguments too, making it vulnerable. I'll ensure to return JSON only.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying vulnerabilities**\n\nI'm analyzing the size passed, which is 498. Since fgets reads up to size-1, I get a maximum length of 497. So my combined system string is safe at 510 characters, which is under the overflow limit of 512. However, there's a command injection vulnerability because user input gets appended to \"/usr/bin/cat \" and passed to the shell via system(). This falls into CWE-78 (OS Command Injection). There could be other issues with shell arguments too, making it vulnerable. I'll ensure to return JSON only."
+          },
+          {
+            "id": "rs_06e028debffb6f9a01693ec9a1006481958802cdcb4ee36584",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPsmqRY_J3QS9sYhDZkoa-Flvj7_8WeR3r5OkzqWo09Mmhzvz_YWj4waMaU48JBHpqvNzW3DcCV0GK6t-WwYWVI04IOPmS3FeA3qmVMmThua1MXafdTA3mNQmEQPma92PYQwmOvf6M1ve6Gy9pax82FsotyfUkPhPIZBPrNAiCKxdI66CIHlL08SUbZT38Kb02yBPQEdffT7zJOZ_B2Q6QePQ1tQ-vRMyC85WBCoq6mFZxKsFr6c3EmN9pYxbgsR5kuoTiM7NIic-ftdS7s1_D1U263cGey5gEMV7ajidcQMkK9YaKjx6Ig2tmtdOPM_fuKpOd8bNT1l-uLZVfIZ9_z-cx8ajS8kbgakPJ9jpLg_JWUBRKOSNhTzukE4Mbd3iqHHWSJskvxtUipCMw6h0Aof09NM5Xt2gHLrGvP6kxlwVp9dx4Uitp6xuVYh4dqG1BrqISs6rv7vnzE8R8gjqIhHGAzhuuQqqG-7ZjIdVBKI79-TVR1LH1lG22ehcgRxUXh1GDjbyTZxp8izAcFb7l40sXcHGJnE4NjUosYr1c06h6zvHILQx5NlxwJOW4Dboh4xj3T7shL289teJPLykNIN3Xe4cQlHaw0kkJbYQ1lo5vbe00_MZuFQ_6dDkDpHaXatRlWjwcG5elf76PhKp7sxK4CgFr65IMIYdOxmjVCt3yerlC_31U6wwFKJaGfQwn9H5N3tBysulFja2XcvZkq4KS7ICDK1PXRmxuCu9gnG60HyPDzUH79zVlo1KTe87cjKNfFauwEjMwXfVuyJY7lsTC8nbFCpU1VC1ARQn9N1LYruPSL3o-1AVBSCSiN-Z4BXuuhplJ72RakOL8SKf2iXBiCnzKA1lSZ9mHkQIqdmX_-Qujur43HnhoYvRZZw3bbMWS18JXv7qXXv78VyLBjKl1dRyzOyGqcevUw5WyUPxilxWPQzBFvmq1EPR0vDLXLMW9gYyAq_SYVHg4tyC82Q9i4s8wTVQh4kM0imY7Wbl-s6gp2F0LIcrG2HhIytwBElLCBAAisxJ9DAY_gdleWBcY6P0I94uOnDqXFzKqmDZFMq3Rq66lodf1ZUtTJpSMVqgC6OvHKzK0bte20p61iovjS84TpQogAvuwdyyTEY6izFr-FJq6thI9L5j6T1JpJYbaEWeGo4VVJAx4fnxKrA9lHvyY6CIMy2gUb1wwHU8ZdIF9uXXDA9y0WfHoDpGsIn8fQSXLTuOjJUHmRAGPZNKjVhHwubfGf5cpB3naU8OnAjxT8LSju22Ac6ClYx0tx4K-kH09JwICBjnpNqmtVs3FKsB2_4c26wUEnvELOmAbhNc-j7xg1cxHCLjA1MQa8zQ4g7jscpCaWZJ7di_A7TlL--cE-HPwWFvXHFg_5fPNPjSTMTGhBn2ckRAmNixCCkDCP7_jIXkn8uYScZpu1qDexke9DgZI5NymKv2rDHlcNbveLK89AREGAxDx6aXRgBlYBEyTnKx44GA7fA4vY0eZ1fo6T2Z6wYR8VmEj5YqzAzmZ7MJXDrmy6FpfiursnIbePD6ioIRJ-78AriJZmUpCYOtwJ6VFAC5X_OS_GHgqaskZCquK7fMZA-1lumYaVSUsDX-_OCJvFfw0xPJtgBwdsTWnwbEr9E1WX3-e59PQVKrcgqB8MgKyORnONAZOWb1Qjg8VUxbVX-DxqLvFpOLUtQY9rb_ZKzd3BavQlYUAe51lrtvawJazW2JcaCBrZfAlIihtQ0ChvZ4we7TgR8vTZhhncyUvzUXiKhyouKRBlUETWSB-lJljJKCKzuwKvj1vqnYOjH-rm6bHuIWuy77r38qhJu8t4LRUD3HQfWbhiz3rigCQ0pE5RiiY2HzOCSlarY_UjxaodAsi3IhECVnze5GL4PLRHWjDe1P7pnvxFMBRkSJeTR1KEV3_Zl6-9jDq54lQcfuQDY8PKBDyrsjVYheQHKy07ZXINS5QSaLGO715NTVWKBmbWMJ77s6-n2wiZb8nTxZsw6FSYsJFDNt-wSSLbxwdpHrlcaVsnC8djTBC5hJrLindF8ce2Sh8eTKCHJKCLskdQakwjbPoQUnOItR7dEBXuwkUIXMFWgb2u8vwog_9kKzFQSgFl5zhRq9LQJn6OrliW40N1t3-iUdW81_-Vlwhe7ENJiaIxWhCCRbOfm9fXQ6dCwQNN-5CeZoHwiKSGxrrF5W-GmFiPHLNhyyfeWzJGRHZbgKW68lhLrwxz_kZs4PNDK3pazWfAyGV-LFAMiSC9j27CPb7nwzE5UzA0FPIT63ronI7lFWgrWUV2uygOnnIaqNSAA8-sbkCdpfhqr1Ot-jHwHJnVm4YfbiwGlUC1QCUPh3c12z4nOXtC3n6aeSgwDHb3KQlnEwapTPLWiDTNgpoenvrDmk0MJs1BPopW9F0h3HcetiHuKEQqoq2myYFx_oaGtuk4z6f1SmWt2edNia9GbUduogtgiWwk7e7mAW292B3K5zh0IGjcFAGIVGjbaGycJJsikJb3RNGUSE7GCwnjFV-ZQYx8d1l_HDFZF0cdAii9Z2RBF4I_21yyha_k6LJOmPEF8cfswFR6ICtGvwqTMfqLDhx2r7sNUwrBr4l2aWAGv_6uWd6JdhvoPn7BXbYOMrMlzljjqRMjgREbvNUjc2wCIgAAxhaXpetS9AmrqrNWX_67QKanN6M7g4MvL1I6SpdXQtqtTR9fEPxGN-GaEiOljbpR9X-sObD9wTU0CJZfDEnUI="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 178,
+    "completion_tokens": 409,
+    "total_tokens": 587,
+    "cost": 0.0043125,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0002225,
+      "upstream_inference_completions_cost": 0.00409
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 385,
+      "image_tokens": 0
+    }
+  }
+}

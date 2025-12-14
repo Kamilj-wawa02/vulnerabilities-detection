@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765724457-QyDM68f8lqM9o6hI8ylt",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765724457,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 822\n}",
+        "refusal": null,
+        "reasoning": "**Analyzing security vulnerabilities**\n\nI'm checking for a security vulnerability in some code that reads \"123456789\" from a file. It parses that as a long, validates it, then casts it to an int pointer and returns it. This setup could allow for arbitrary read access, potentially leading to a segfault if an attacker controls the file and crafts sensitive memory pointers. I\u2019m considering relevant CWE designations, including possible options like CWE-822, CWE-843, or CWE-119, but none fit perfectly. I\u2019m leaning toward CWE-476 or CWE-587 but need to analyze further.**Identifying code vulnerabilities**\n\nI\u2019m considering how to categorize a potential vulnerability in the code. I could frame it as CWE-20 for improper input validation or CWE-788 for accessing memory after a buffer. However, it seems more fitting to classify it as CWE-843, which deals with type confusion from casting an integer to an unrelated pointer type. Ultimately, I believe the best match is CWE-822, \"Untrusted Pointer Dereference,\" as it perfectly describes the risk of dereferencing a pointer controlled by an attacker. I\u2019ll output that in JSON format.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing security vulnerabilities**\n\nI'm checking for a security vulnerability in some code that reads \"123456789\" from a file. It parses that as a long, validates it, then casts it to an int pointer and returns it. This setup could allow for arbitrary read access, potentially leading to a segfault if an attacker controls the file and crafts sensitive memory pointers. I\u2019m considering relevant CWE designations, including possible options like CWE-822, CWE-843, or CWE-119, but none fit perfectly. I\u2019m leaning toward CWE-476 or CWE-587 but need to analyze further.**Identifying code vulnerabilities**\n\nI\u2019m considering how to categorize a potential vulnerability in the code. I could frame it as CWE-20 for improper input validation or CWE-788 for accessing memory after a buffer. However, it seems more fitting to classify it as CWE-843, which deals with type confusion from casting an integer to an unrelated pointer type. Ultimately, I believe the best match is CWE-822, \"Untrusted Pointer Dereference,\" as it perfectly describes the risk of dereferencing a pointer controlled by an attacker. I\u2019ll output that in JSON format."
+          },
+          {
+            "id": "rs_027b9755824363d301693ed129f9248193ace70791562046e2",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtE165nTFc7POBJyC3FTliEW_iPIfxA0dZDdJLC3JGpfiSIxZPsrzviCFlD2w5yOvVvhtEaeX9ayioVHXZ0qIWyGo9YQidX0sWHmNeLhS2X6YcXEi8x6dFzEmOdTTTWO9ycdQmubgXegyD-uJRfJOJMQWJ2r-DbBSlWItlyPW9st4KXLKwMfYB0zgA4qGI0kQxCRMHR2qg9VHGTTdtusyX7MJ4t3Q0WIMu5HzlCOu5LHy2x6UTh8x9HbTs48-QTKOMTgXqiG6OPU6VmYmP8yOnwZmruor3_t9d05uIFUqcLl3uIdAkFx8rtTBMvlM4u09aGk-8e7HsHar1t_seTwX3ocsnnpw46OnKAkoxU1vVj4-gpElZ_t7txo_-c352N6LjlHckaK9hh2aW-ufzJ4YkkjW4HbR1SkU-cLUS12e-dhGo1rmZ51tviTfStMQiNfbQoNaYaPrms7K-Fr0Vw7XtX6b3XZNO11K9i3hdAcGlARE6OvQS9Yc2hFf1DCgesEBJLh2H7MaFqC0s8LDycT6X2fvr_pFBK8uk9qQdHwAtUgSshCevLpptFmXYgY8zRGglK1qZ4Roa-k1RfKV7ADMFS2uUFkwhMVguVvyqF0w6MX6kP4qVI0qUJ8IO1Oh5aoO997YxTgybWzlXVdFjXUJ8d8weRE8evCNhGuM2eQdkKyOdxFSE5I8eTiwo-CHyuUL_TsFEfpF0JH9RyGQdHwoctSgJTGSRpsWKFU4GdNlnLJY4AVeOrAPKNO-unzIQXUusoq8ZBxT87mS7PKuNUdffgzZny4YIH2e5Re7tAf-SO0twqte32oQAC3e-XJ9jHoNk78pSfhn2Ek6vZ1BLOckMhb31nvYtCyYDOiWTZlhq1pk5I5X1IiJSk-6oKEYxgw8MCJPy7FLznU5wsPt8bGcIdHla2KhL5vBypi_7sTJlBDGDAzZD2Pl9onXPa6hbxJ3kYcRD1VgzRe6eHDBZwX_esLIOT4Ce0xqMb9SbCJeRhitVtILZPx-V24R3R8PPTjtJW-E_OpzdNKsYPaHVTtUYrseBuiX_qjEtxGV626clyO00yjmCMEcuA6tGCOz6CuNRyPdjHGN3sEabX2RUG5bvT_8RSfAfYSTBUfhf_gRvI8c0fPSMWpXQGT24foLKIsQf6smxnjjtM6NWXQQ59eT5RuSOE5b5S4-6f1nLvHUfOrzY3Tn-82OwZe5orvrCu0E4Lirk-Wov3M8zS8IaNYw2woa0Sw5n-jjekcza7D8TxZUjSDybCVKH8gcOUYUODnIn-qq68jvDWXej8YJ_yD9RQ2Ok2E_xGjEvtbabnytKbGkq5PRCRMcrSF7Ji-nLFGUfOqXAZkt2dbGN7ebAgoVp7rNNFCv341cpHfulOdcLap9wBcXGwlRR5ZnEJVU8K188jIoOgrCNBJjtJZTbKpNF23l3lPjScMhrpwvp0Bl2lo66NsOdvMqTxPaflXwVFDjcVyAP8UGPg1twXJ5qLTK1BiHGY_9dC2I1vxmZYPnflv5A_laKEjAtOJp6yiy-0junOn_xO8LrU7FLp7ZwDDT7I64UBp-3GHuv2Rq6NCwkyVRXyYnsoRCnkj4xyO6hbkgYcKAZwHiCEeTi-mmFyzWTYHGhZAQ6smjlzHSB-nmtdWUAMMM5Ru2srg9oadJq2cWXJ4ITWDvpM361eunSiORQHO-T45Rfptiaku3rd9APugkjmaBg1BlP-cvpsX3NcL1SkL7jGKNZkxzNBuDT6WbLNue_bw8djPpqnGLTQpTTe3svzLsU27uMEW4rgjfngo16RnAo1Ws_PKVCp7xQ_YRnnjBSCRTG213S75V0Wr4M1weqeGVkf8SEyA75NpYwSqnZGfJUvbwJUc2dL29XECft9bQT_Iw34VxKgq5oSyzkbP4AtXpgfAGakwkqqYmbSbcSEzR0BGpQtvaIw4Z_cK4ydW2EagKtji4fn8CAQ45EGC26ItDKYcjk-9eFuDq_WWCQq_1C2TGRI16wmdW0UINcT2fdhZ0301-DSlwsPBqZGTrKZJJCROJxmn-FwmYX8prq8VWc0oQ9I9FPZmuYXYEevhdmpI6Ff3VrsJIGGbQhc3uaHScZr2qcDwRMrmmLxmd9u8rxNttkMeFLE0QLjJuq7soWB3nNWJuTrh3sDUqCsQZb5-6ublSIOGIOjynp-NB4fTDiF5pbY-4yYTXehA81cFewOQuTG6ynZIGnYozNWcv9_IOAr4m8hSV1pDtba8M5pL7i6Z-65odlI-R8hXuD6BpX79HRWXmKvoRn6Ffn9i2hMJek_Hg_oL_e15kyd-ImEvIuvPkG6PX6AJDKJ1FKadNiLQm7IhdIoD1x2fvc9GzdL7MB6EQ0OU8uh-ZT8b4zWZ9bzjFjBhbixHwseU9l-yjVzV53SCR9iMQTu6tEDL5gDpgSjsSyVDjn7CF8ELAMQE6-oOP95hC_kLyhiT-tGMysuTYfE3aL1K2iVcshPqMQsA2nDx5i44QJxhgCxpfhFEZsch20UeIMPR7VYzrRRrdO3p4ZE0vPS6ywaSHbbpz7MHQ4r7riRD_4SG7J_-pVDZceoDRrdKJFV7EDZbf0vTefifB67l4l0nYfG1qYTMjc77DIIxrl4heEXgdg0R010Ec9MXkFVS-BdL1oQnUUSfgE6fkD7-H9fgIpkgxLy7hMV0qx0QOm1ljRUPpiA7C7Rp8db3hgnTNfiPeB_ukryLAU8PekT1uhKUWeGE-vnTvUbLFCgAp-lshEIRnFaJSO3FjZ27sKNuqE7NgwO-zWQIMGiKdIS7AS83QwrtW5JcQQciW4xpZSELUZ5pRNLZCAuNuLjeppXu8raMwI19Kqj0uGAZuGDA_J5dLpp3xQHJW-JLlViNAYQew60VQpm7CIQDKZIn2F7SVPJMKgxaTj0xi8GXOR_ICx8gewhCfgWvSrUhMsHOkohB2UydfFJkNZKV5K2YPczm4RLjF-nJ9DdBFzNRu6GPdyE2erQcEg2sa7hmv7Dtcrt4E1PdsQPr2LmVAG1TgX3iB7Zo2DvFVQmwT6bC3lsq_L-xiaSQYeEdMM-hNRcwcNScg2W3FOwRSaJpKZt-B2NVSK7WZIAtb7YWswaEFIpuH-cP_0pzdbu-4tql3TQnAhQSGfkvMnJqEJjA7EEFgXqZmH_KT2HwQajsuaZNM6NZD1b7NQq7QJ7A0RDSrScb6pTUYR9bgNoeUnVT5qZ9ZgCCQDLrzkHgHsIcriR4x5REGbrds8abD_WpDhF1_vcy_i-kD_mdfi0OCmVh"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 281,
+    "completion_tokens": 417,
+    "total_tokens": 698,
+    "cost": 0.00452125,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00035125,
+      "upstream_inference_completions_cost": 0.00417
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 393,
+      "image_tokens": 0
+    }
+  }
+}

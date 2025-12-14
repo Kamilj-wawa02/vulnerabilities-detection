@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765725977-QjKaim5ju5tEZKubvugn",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765725977,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 415\n}",
+        "refusal": null,
+        "reasoning": "**Identifying vulnerabilities**\n\nI'm analyzing a piece of code focusing on vulnerabilities. The `allocateArray` function takes a size and uses `malloc(size * sizeof(int))`, but later in `main`, it overlooks this and simply uses `allocateArray(5)`. This creates a double free vulnerability. There's also a potential for integer overflow, though it's not triggered here since a constant is used. The function generally could be unsafe, and while they check the input with `%9d`, they don't check `scanf`'s return value, which adds another layer of vulnerability. Ultimately, I'll return a JSON indicating the vulnerability.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying vulnerabilities**\n\nI'm analyzing a piece of code focusing on vulnerabilities. The `allocateArray` function takes a size and uses `malloc(size * sizeof(int))`, but later in `main`, it overlooks this and simply uses `allocateArray(5)`. This creates a double free vulnerability. There's also a potential for integer overflow, though it's not triggered here since a constant is used. The function generally could be unsafe, and while they check the input with `%9d`, they don't check `scanf`'s return value, which adds another layer of vulnerability. Ultimately, I'll return a JSON indicating the vulnerability."
+          },
+          {
+            "id": "rs_0c13b5299ec1c91701693ed71a7674819496a9308ce8b986ad",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtchahx9Mmzq2oFj14aEcddF1WenMOxu8Ht9wujC3KMzDP16pra-5zxJ4YMZ-ljMXFlNopI7gU1PLTwh38_xxmvzrrkX_KZDINF3jziFWv3MyGhnrZCYUhMgh1uPtlBcZgLwndY7GjwSNJuZGklLQsrK0Z3Ob9uk08TolX7EOa0lQaEE1DE-UF7GOVNvogZFCpOC4G6OM4gsUWW_7kDddHtN1iE0Uis07bS5WgOskrqgAJgbSZILs2KgK31t1f7B-IC1FnoTzp1awtV894rPmKKYZR1MBou1xM-omcYXs8Wu8jd-FdF23nCG9nJZF1yeecDN-R9comRG1iXYdsGRDLwBO0WfcY1yF5d8tJ0FIg77otOH-XaFHiFt487nu6tTlS_9nBXOprkYBL9NdC6ZYcxpi1mvJVGaH-rmLu7CiWxjL4qE1LG1x5NVrDMMi9fRg5oMyocYMxjtsfoEn5SgfdUEHVtkpoStpI8qHzBQrcpUIA609AidRrHv1NxiS4rxd1gqcsqenJtKxjLGTToh1QF3BiL-Cu0WWVGN89XIWwUnXbkgcrXM7PB01LpmIu2XKIIWmaxoRV7Ye6PnVpNaWcAT62NbMD2bi5KqmNQjTTxvxccN9fIp_C656IPxsEBL17BZKROp4agHQpjgdiu2vKOfd5giy032syEaBs-AKEdfJKUVROkuo0cRslM_oWlN3nQV84e0Kb5niSb3mkLan51NFBjAGuPIjxfkHT1g0091U91E58HDtH-VCkSTPJnBDozX2TVjdGMmhsf8opqV6vkfdGpw4u_Z7J6mOutMMeYrp0S5O-NEoUYtm8P6sCkAy_ZerPKWA2zLpzMHVPsrf4nGw4ZUDLce3ShDka0b-M59pgFiNrke7MyL2rbjSXi7XjYAuYyjdlhH0Xs2KhAsNA-5EhDkNz8q4oFIfP6f_4Y00XZnT7VpyoTCWaqCLaBr8BLpfMDVIhNgqWxUkGPDnozY9sAPbAQ99_dQz36YjU-l4qwrXJOE4dTxqZlF2m8MuTVxhP-g5ZBVKo2gIdFbq_xu5jD9IM0j7PPROuj-Gv7zgZqB6x1zQhPj7HBwS1jqtZdvzXW44O7fHB5LV0Co_oXDQe_xB-j136k49aoL_7Gx8fFGgAqX0bE1Ec4UkmMfSJOVAF3jJPpnba0CrjdqkdJm8mT_Hv17z4nFLJk5n4Dk_527uR0Ec1VEOxmWzqWKFZwnTTPCnY807N9t4WG56AuuQcgNRlrSnKkxHXbMpwwp9_I0DPLf9SkUgrzirLhG77SEdZTMTvl6B3pDrnHbsO_ai4NkdjvofgRgO6lL3PDPOQcExbpjKsOg_90nWoXjHMgUZ74WTnJH2LNqPCPOJcfVM2iFZB7-7M-YefSOKqGmuktfj7qALD0ML5o0JbOiPl_qUJC11TZlYgpIzPBM0moP83bH6JmPDuilN2dpu5wJ2HQWApgczcjcxqIfB6BRtb93pGrZEqcmplHynF2DdboREW4cM0DdZhCok8KRU5vYdPLgwuIkjwi4k92Pa1bSpfjTEUrJ8iztk0joi6w2vPRpLmq64FWI-kZ2OZOMm9Y9gT9YF6w9uKr4IsKhOubMttycmJaTxhJGxbFNgf5M91NY7ufGehGVH0pCQLe1aKtRLtlpqYI1lfWcC65_g5DzDMh1RHV4yHAp3sloWIFGd12z35vkE6YInU_9RylUIw83tIK1dnJIm7mA4leBimZ6YlJD-Bll1zbN-bZ1eOB7qqh0SchihrTmy8lctSwBV5qiEn9Hrn3PyUZtbLJoob2bleeMiB3uC_2faDmQPwJnbb2L1z9ZB3oKy0UtPQLp8Mxyoto="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 238,
+    "completion_tokens": 204,
+    "total_tokens": 442,
+    "cost": 0.0023375,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0002975,
+      "upstream_inference_completions_cost": 0.00204
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 180,
+      "image_tokens": 0
+    }
+  }
+}

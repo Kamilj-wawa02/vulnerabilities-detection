@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765724954-QyjoQfh2JGyH3GNEIUiZ",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765724954,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 78\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating code vulnerability**\n\nI need to check if the code is vulnerable. It\u2019s using `system(\"cat \" + userInput)`, which can lead to command injection (CWE-78). The use of `strncpy` and `strncat` looks fine with the calculated length, but the `system()` call with unvalidated `argv[1]` poses a command injection risk. Overall, it seems clear: the JSON result should indicate that it's vulnerable, marking it as true, with reference to CWE-78.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating code vulnerability**\n\nI need to check if the code is vulnerable. It\u2019s using `system(\"cat \" + userInput)`, which can lead to command injection (CWE-78). The use of `strncpy` and `strncat` looks fine with the calculated length, but the `system()` call with unvalidated `argv[1]` poses a command injection risk. Overall, it seems clear: the JSON result should indicate that it's vulnerable, marking it as true, with reference to CWE-78."
+          },
+          {
+            "id": "rs_096119114dde6ea001693ed31a83c08190b105034953c87381",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtMeeM81AF28hkbO--iiB8ABX-em6dY4mqVJaFhS6_Les0HdnFbuCx4HOTnMmTAlUr1VizaJjg_bGZZSmrCpcsb8anAYlnJl5uKUkDXsm8cCGx5G4BwYk-w3_g6da5aq-baYB8WmhWidsMzJAXY9oB6esrY3HUgK-In-V1NmVd2Hi-2vuzCPeU_Z8Gpfv7kH2u7z66hv1HMHTA3bC8oqemt9nPgHKMPQt1r-XKD8ddVFip5NDtA3jaPNwDTk2G1rbRLDcWFpp5gpeQENBNKthFfhvSquDJo_WyC9qKxiSOTXIojobEQr-ERqMrVK2o9unVwfhJwyKRI2K35QcKcolnQxrhU6uMuQJG2nPkCFMW-XAP75VquctKHD6z6mM8cw0gzsridPZGBi9Rssx0ZhzBUpJQV6aO7s1LvwuKGDvQKAF9j-KbRcYbpXxnukvKOoAxJEY6nIDOBc5T68d1HLeKDhy2C-KMFTK0kSVZAgnanGcpbxuphdGzNKEMxKfyhtnrJ2jbCWtbf8JH8wIsnATVXE7kczTu8y5pDEle1cBQUrr0kU6xJERbfGKou0LehCbC5yfjm6zcMG3Y58V6lXL6_XUB3L_zIUucP1ZBxEoSJ8VBRXGiG-tNzu7IrgJ_6TlkmeKtanT-dzaNpl5ZUpg-DatkXRN6PY6pAn90jwcZXZedFSZE4kA9PdrlSjgC-iQvDIP6MeWPi--P_0QiTL0tewyVSOJy7ii6tqcjv2lcpDn6k5D9s8_NSYr4tmybRVn1yfryexM_5NzfUn_7b2KMYyjxPvIdYHssZyL75HpeGgi_G3r9d4IyVO2LaMzifHwr9UYQJe1o6OMopg8CQadS43nRZ4HgAXsLs_3pOVXjmW8EbT0iduCsgP-1wyjsWjgUFQUBuJuDIC42ssLDfcsMmNjwvPVKTzXQpsJxd6TAonFiCtc96X_V11fm-TQzzJIasO_69leIR000k0BSoH2H2lrYMydt_-YfoafUJwIzLHeYKCIKkR_Nwq6F_NlLMyhGI4U2_EaK-RO44jhf--qvIiOmWT_RlGLPXEsV2W7MPVqEvXwJP-A9b1yeqUExgjkjopMMuCLY16sA_YPR25dnk5tEphR5UX__CvjfdhcKlI71YaWWI07eS0U7DzrJ3UPsevJ2EOzmpZ0WjpN5WiYJFZlbR4IP-P62yMyUeGK5En_xY="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 225,
+    "completion_tokens": 93,
+    "total_tokens": 318,
+    "cost": 0.00121125,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00028125,
+      "upstream_inference_completions_cost": 0.00093
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 69,
+      "image_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765726396-ZqZVBccSZWKpGv2D60sU",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765726396,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": false,\n  \"cwe\": 0\n}",
+        "refusal": null,
+        "reasoning": "**Assessing code security**\n\nI need to determine whether the provided code snippet has a security vulnerability. The function `write_to_file` takes a filename and text, but the arguments are swapped. This means it tries to open the filename as \"Hello...,\" which is clearly a bug. Although the text is a constant string and not user-controlled, the swap introduces risks such as arbitrary file creation or overwriting. Safe usage is assumed with the format string in `fprintf`, but if the text isn't null-terminated, it could present risks.**Evaluating security vulnerabilities**\n\nThe user is asking if the code contains a security vulnerability. Based on my analysis, I think it doesn't have a vulnerability, but there is a bug in the snippet itself. So, I would classify it as not vulnerable. Since they want a JSON response, I should provide:\n\n```json\n{\"vulnerable\": false, \"cwe\": 0}\n```\n\nEven though it\u2019s not vulnerable, they might still want a CWE code, so I\u2019ll use 0 for that.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Assessing code security**\n\nI need to determine whether the provided code snippet has a security vulnerability. The function `write_to_file` takes a filename and text, but the arguments are swapped. This means it tries to open the filename as \"Hello...,\" which is clearly a bug. Although the text is a constant string and not user-controlled, the swap introduces risks such as arbitrary file creation or overwriting. Safe usage is assumed with the format string in `fprintf`, but if the text isn't null-terminated, it could present risks.**Evaluating security vulnerabilities**\n\nThe user is asking if the code contains a security vulnerability. Based on my analysis, I think it doesn't have a vulnerability, but there is a bug in the snippet itself. So, I would classify it as not vulnerable. Since they want a JSON response, I should provide:\n\n```json\n{\"vulnerable\": false, \"cwe\": 0}\n```\n\nEven though it\u2019s not vulnerable, they might still want a CWE code, so I\u2019ll use 0 for that."
+          },
+          {
+            "id": "rs_0821da9ffd830a2e01693ed8bd6aa881908439f87bb98b74af",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtjH_tznM-DTwLEgfIiAWXb5ruzjr3xGAZh0z5qL0sibMQF7FKe38oLHGfY1Exli5YzmXwUXuYIJnOLY0kyFYt8ax4hFtyVUIOQfQ0F1yT3Q-kkxDHZ2IORMMf_DYucXMfHXCrvGLRsFtvixyple30Gs9_4r2HhNUd-weaoHS2szLTO6-p4CVc-6cce_ik1BY4qcPW2uljOSeO9Vx_96zoYRi9Zip1YyDyId7GCanNddW9mVCtkAwyymq-VueclqnD5MpPgJFCSVPIwxx__NOpCk1RtsjPMqk5bbn5SHecYZtlfQuxra8lNCO3ebB-1yeJ2m5aG9DZCvPhsHDUChbizsy9bPI2y1IYMvDZh2QkMyXEWKIoaVFwwLrFWBN6GtMGMM5Sxyn934m1nMyB9fMf7wjzePqxFeva0Et3uTOcr_HPVpXy1xPaPz_jsIQsSLVoFLoc60SGvP6CVH-HllgV1wHF8O5du_nvhcEOe0DfDtzh-AbKBak5ylZYlQ51MnrDHg4CeeHik1Tm8iH4lEqqm-dIbqm1WAMzMqIr3VgyKVa1vPDwaJukdqkPdc8S0zEI6v4bJTMQH7JGafE8fyFAUPn0Yy4x3pA4SDIgSJs3muUUdD_8ddZNUVEWiyuiTPAqtkhht_2W2GIxa7S5UjK4edg2RbFxiT8YMC6uhessfkG3G9zaWkNt4H_gTM6kAOCnJGhOIUe2PEBi54QN3mwgd6EdR6E6AUcFoC48p0S-v8jJ-Q_YOMWK_p5g3sz22cOCQHWC5AXQClxyC7-2-ZgWEVqMWLBoW3fN-dmsh_1DM2kclLw9tg9gx7xfRUcU8xSgBMEuD7_IQAi9-qUpWJ3q24CT0co1TuOQGF3U3JEiZNj68zxOrjn9KUgKjFBslsAYzJlSD9lfQNfXywiBOrOj_v51W9juXOjEtQP1_PxwL2Ih3bTBieQC-gp62gZqSd8kXnkY0FA-TVXpm8DiA7qKE5PZPRWAny0muLm0iQQWAmikUoXaGuRNLtkwBN72ADDBOSYBSOdsY-YoACHTAruKp9qDqbNpwd5CMQUB3HI3t2YAkm6pBcVb1YLEboAMqDM4iTMzMznL1XxfxWrPUAvfnQyFweU-LcjmTrn74BXRLwzcQ6ouNmo-zvgZED7qR-opsZ8GxZfWo17SJ4Gfk_5mCMnHV6oOC7H5UiSOV5RxFZgqBkS6NNJB5CtK6bNbVFpiB2Csc7sL14mhtHYzcQIGq9adH6MzDo6PcE-M9OrWogjGV7I9JWbXji1dylGE-lNu1F5LoqG8sjy4-dNO-V7rQ-l00DUqzOcXMbhXJr9XP4FgPAHw64QNN1jqsVi5lrmbQstMI9BKxH_9vxC6T4F6A6ocnfyqjARMpmsk86mkGXPi1Y9_H8oMaDKs964XmHunQYH_Vi-RsD6JwalELbrnBPAs7Nv_51SbMB0DtvN49PnJ1Y55wOP55oDecUGYiP6vmjcArdknMyNk0g3ENFwdxxLLX4fb6xV8nOYsdpvA4a2jPF0P9ld6-vQfw3kfejMYWK5TF_sG-slx7bVKrKKRF835JFEzNEzQczNoCErqz45mIYLJlgky1BrHZWb9CPM9xMdJujEpP1YplehDrM69lVfqrvdCSKbU74hYn6wJ8YcN7qNMiYojSuLc5QEOKntTMCcqQdhYXEv7mpE033H2-I3XvUaecnnmCmGadT6IvTsz_zi3Cnn_CFZJUcXNB-5kfKXFPX6UUMPO5kOd203x2tKZ38GSrPFOnxFLIHVczcQKA57zBm6qQFvOkSa3xEgh5R4VK8Crwu6xipUC0H_hAwd--5WgzLe6X1lmwiVIOhUuSZ7F0nKo0E8sZf_QNqLei9Tt_JlZdMMlN-cwZKlmd14tOlntnsOsXrpHYQ8sWc_dQuy10UDbF0GgzVBMGjZQmyC1dMf7ApSrGWLPtlvUvLf_Zk-85GdRXuWUuFzsdCnUpi1cQtO0fKh0I29VEEViWhQWsSvEwGXKN80M7yviBI_1u9POqioW0Ms2BO4UDY5aobjKjO6p08zIorhty-mANqn1Wv3qvUiiGK2RuePU0NRJ8-HuleVz47h8LmMfp9oBsBztlm0OpXnSfhMIGGuhrecNu3HqYKjDUlNcbLsaZb1WLxg2sibhJ8BJUBDwMkwtyIpuXjRXb77wgN_asSlGICABtFCBlWpnJqBZSmyNiLm1Pw8xrPURfgfDfJhkZqtFYnTNS0amSJPTg17jErff1IVC34M_vVm9uj6aYbHGLYmutqal7d9yWpPXSUiA3eDS0ouKUeaz_c5ylVjmBgqdDftVI0gDk9AM15Wl5Y2mwFklvawGJKiIAkABLgB89ndPIFRcdwTAzyFavnuU29fO_ae_Fb5RawP6wXRLlyfFePsZE5ho4v-dU9ONVT5HXfX1aIxr5YIkmOgTJkya2lFGwZRaVwsSzj68bzthXxYlfOeqPxPz6QKmTc8oaCsJpxTwW0mK4UqkfGKUleZqgh0-FLkuvjeA4HXPDI4WbUKXbnCA8BNsFBTTpenVjTJH0T7qiRB1ibojMkMmuBNUxkRiVwbSYulo0BpYu0OBcY50eQh0MDOKVqcztlzRh_knDP8F9DWn4jaEi8S2R6F0jhyN5yvYsNiVq0hm2-J1mMhks7BtQkS7Lqd5cpRUO5hMF_0uyu7e4-Q6xSF4kBrDHM4b3rFgbgvKw8fxm548VU3gHIMPTQdWTGqkNAvWn8Kk66idl1lcZc3F4EWtmB-xAnPLWHXhVPe32DkHAIJggYDyeGU5uC71AF0Wh9hiLLp-XEQIU="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 187,
+    "completion_tokens": 344,
+    "total_tokens": 531,
+    "cost": 0.00367375,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00023375,
+      "upstream_inference_completions_cost": 0.00344
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 320,
+      "image_tokens": 0
+    }
+  }
+}

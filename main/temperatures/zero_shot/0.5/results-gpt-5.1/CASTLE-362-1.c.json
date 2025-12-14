@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765725699-jEaCLvJWD8rOIimQ82tz",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765725699,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": false,\n  \"cwe\": 0\n}",
+        "refusal": null,
+        "reasoning": "**Assessing vulnerability in code**\n\nI need to assess a potential vulnerability in my code. It's using pthreads with a shared integer protected by a mutex. I'm wondering about the strict aliasing issue when casting a long to a void pointer and back, which, while common, isn\u2019t technically defined. However, since it works on LP64, the cast seems fine. The arguments for pthread_create can be any pointer, so it all seems well-defined as long as the value fits in the pointer. Overall, it doesn't seem vulnerable, maybe just a portability issue. I need a CWE code\u2014should I set it to zero?",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Assessing vulnerability in code**\n\nI need to assess a potential vulnerability in my code. It's using pthreads with a shared integer protected by a mutex. I'm wondering about the strict aliasing issue when casting a long to a void pointer and back, which, while common, isn\u2019t technically defined. However, since it works on LP64, the cast seems fine. The arguments for pthread_create can be any pointer, so it all seems well-defined as long as the value fits in the pointer. Overall, it doesn't seem vulnerable, maybe just a portability issue. I need a CWE code\u2014should I set it to zero?"
+          },
+          {
+            "id": "rs_0b92333621356e5c01693ed6041c3081969f5c5c6ef0ba30a0",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtYMFTC43ZcbSLUVdXRxsX0TKp__KsIJIPurKe5vwOiMH46UaH8g6UHegxg-oTz_3Wxfjp3yVhX-XYp6kgA_lYVHAIfJ1UcmBWL4Sqw3NYg6kGiruv8ULHq2WSfOjk_ExPovlWgVC21ZZgsF-a9SIEuQmJpzr26xuTnvW5tU8vhqIFAPSCBpsQmWEjzpd7Txggxy3bdurLcdBbWy8-wVlk5o6HaYUxaK7SDf9iHbW3J36zFmN3hSp0eiXfTJAYbwF9-ignAe8frv4cR0VQlm-aMYAQAG65WI4sj9xgi1qlIDcJvVbE43LNRqpJujCPNuPxF_o2EFgrBautZISvnRA9nyB186ouCGpggU6aoYZuPNAxUc1fW-xdLijdSxaYaxxOwODxhIVftzMmnzHLKgnIO78c5tu_38gdC8iMnrkieGfjwwYVBr6KblLQSuwN9F8blPrqq6v15braAx5rLMdhQev6AvOqNvYhjwHrR8bj4GkOF3lykgIj9E8g7icbXAIMpMj3kCpRlcP9oFig6kItt67tchafE5UDp6CKKIj5dEnl4Qh9CHyBAes_xa1m8H_h9agLtjP4uQi2UsfkMzAbAm7SDqwLTYjXQhFOioGwhtuaHcnHAWXDJyUNX0MlSxGhLixSQ-OF3pc1W0wf3F2tALBQs0eMSPXftRvjlX1VBU382oS84KmKmgoUYyG2Ocxl3qBGsog-FqBUTCjaBMf2ChX68s4vqVO5HNUvqrfpUznWKS_84Tk0nzIeZAmyHcEDBE10Fx9LFHMIqb-paMXNDBHzOLve_zswt3OgLxaaiDuHcYPevA9DYWjrcbe5O4W8hSM4_kDoqR0p0h83hSUZRr7q0bJPFW2kha5yg4xE8BmJMioy54TAQ4_qM_udWbAwUfRP0gHu2nOqyP6yal3za_XNi05hVB8CStNfyPGvgJovSq03d6E5BV2rMA0NKzn-yCd5mTftoINhGwaerSf8m4mqqurOABcPURlRcHgg8HD1cGGS6xmUm9q_kX4mZXAL9bfLX2E19-omN_rsd8dBRooKES1aMdQjRWe9OC0x4NhWSiD33gG5o3EiCTvUFdBfSAFDoLEqXlC2qzWpFcBRIw7_TebTWbgdx34nHrBGkskf6-bE0-6CVRocnGALGHKa6zcvf23T9HMgAMLKg7VoAvXDM-cX0jhVWPBPIdUWz2ArhxbfAmCtqzHa_yAxUXFHHDacrFmcRBgl4s7Iu4jL9z6AgS5Ks54dWmE0lFEU5cTcDegrhTu6o2QYs6TciEbefxYiCQR6Xh3jaaQ7ocSkPGySKLBmAn0PvpmVxqeO6sIh014r4g38dAT7AaHt2pnbBljco6vFt1HWRi2_v-PymDjU4aG5FnmvgkqqLd6AOrHQFjIAsidOgZxPk51RRZHM3LrQLgg2s3PIDA-PWSnCFrTfvgA9rqDNLRiXON0SeeWkLFzC8vfxA6OPHMr8HJMOBkQrQXPo8hp0puINXkDbVV1ULvTSbb13_1Jy1lEAW-Xhwy2tSEYIXp1N9I-ds3avGkWFt3JLiyzpMwAB5YZ7Eo3e2x5-xa89zYcKMsYTF_kb4FVFpLHw5-91F5QFXv6xGCJPA634qZcnpGtkU3Yjln-207jPdr3xycobK7ckpn5eJvxesnfMswHtuvI6xBVv_4LoktSrOiC4eg5w20J4Fc2g0dqCnvOSBN2Ty0xtHIuvKoBwChB2BbpXixxC6msOYKFL7aRgYknUI7bOQVDrpE7E3E54wvn-b8LuFfZ6kG0DBnlMYv36F9Q_CtoUhJg-xTShXxCzT3asueHQ-EAX0qzUSuVQ_0uoPHDLUeIwi_BrVrFymRPy8faZsLGlFOSQOsihxNj-Y3iBXQBCnJOqH9Q_nVtsxahezPKeX2omY51onImw1SyF-v5Kw8Q9qGkikRigqj94TGZqRarqXudwqWejAupXTBj_xseZ5dOgmQIDBmLVesIF8CNEL3nOMxCmworeNT6Mv0Vv0TfWBdSxHbLO9-p3aeJjKDdUMBZxgIPYf-Elwnv5QLKe6-diYyYrAV9PlqKmHjMfLDYe9QbGhhKbpeKtOMps9rPF8snsKlzsw="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 354,
+    "completion_tokens": 238,
+    "total_tokens": 592,
+    "cost": 0.0028225,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0004425,
+      "upstream_inference_completions_cost": 0.00238
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 214,
+      "image_tokens": 0
+    }
+  }
+}

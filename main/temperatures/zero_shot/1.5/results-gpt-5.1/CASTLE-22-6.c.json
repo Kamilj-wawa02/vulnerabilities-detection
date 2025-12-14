@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765722426-kVWjUmNUFdeqlcrOSBFJ",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765722426,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 787\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating vulnerability in code**\n\nI\u2019m examining a program that prints an arbitrary file based on command-line arguments, and while that\u2019s expected behavior, I can\u2019t assume it\u2019s secure without context. There\u2019s a bad allocation issue if any file name allocation fails, but previously successful ones are still used. If one allocation fails, it might still print, leading to memory leaks. It seems to be a vulnerability, particularly under CWE-787. I\u2019ll return just the JSON response.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating vulnerability in code**\n\nI\u2019m examining a program that prints an arbitrary file based on command-line arguments, and while that\u2019s expected behavior, I can\u2019t assume it\u2019s secure without context. There\u2019s a bad allocation issue if any file name allocation fails, but previously successful ones are still used. If one allocation fails, it might still print, leading to memory leaks. It seems to be a vulnerability, particularly under CWE-787. I\u2019ll return just the JSON response."
+          },
+          {
+            "id": "rs_01c1b9b573f351ce01693ec93b2fe88193ae7056b6232c3a51",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPslCqY8QNF0iFB5SbeaKJKVDGhGrm67pO6yaV73lK-d_XqEjujGebbNYgiB6j9febVKeoLO9HNr7jwfMYhzPqthemNvRGYxpF69z_eqTpfLfGoWDV-U8vfNmYPzFTOz1J_A0VyG50Zf3zrWjHDX5_2CzNggTSQi78wJtBV1mKN3O8IZ8kZTS7JFvFguG-14gIBeWcBlRcmtbHoOy3F9xHzWWslZl20_WPVr1Rhoe_0d_rFmm8WhjPMMdSBZ06gIu1Cr0YkhpdbVzQ6N8es0RrrE97-X1LEUJGxX80ZfNybcnsfZ197RnocLVXs3tpDYENlB8nNGc4OdZBL7z1V6gGY3ShZfUUiV8cShAKPfrPQua8IpKhH0B5G9-h6vUdhgu9QVhHoTuc4m0DjYUZV-V5xz1iZipU9IAG1iLwt1lmKnVqUV2r7BrZ2es5vINiR9NsAyu5puV5drwybmhFkSYQjKSw3bqfOYWagOp9ud6efPnM-L2-rHUwFHK2Cvf_6SRvD8RMDlv8-XRyz_ZqL84VDq52VO-O0UbN6qgIBbZgKjE8zLU5wWiY57NRi_d28TRd_S5W8whVCVWtfvqiYHnl993ASL94LVJgDsIaPESjZcgpih8nn9irb_VH-IfMAGalEXA7zoA-PMQ8YNweIZUB5Hxww6oFlkIkPS6BaV2r29k7Y7AqHROqbNARvJ0igqNTIMDWOw-AO1itDvKqA-GUyf8pwSdUYaMxNKY9jMJCvO_DIV_bY6gmuJlP78viB54lBP2QnsgdDwEN2-xKDEF9iWJVQMYOG9C80BOT652gmqvia69HJcZq289d3qET_M5CjkIG-vdyhdP4nShoDIC_0snObcZxCgbnklR8X_avIRVttxCPwmcgwROLq5QhWa7GIFOiqa8kJIJYJBN_1kWwGR5nZXLZydViOIe8KR18fb8Y_vc0zaHblhR_FduTPeKQmjsWRkdsd6ine7OpnxVN-yQ6qn241ow_0kFXexLs5gKjOBxsXbdY7yTkH3QBwPOnTf6ypyMyCjsyycFLqWkdkTaG77lEJfbBBijl4SHhbCniGhYg0_kPoY9M7pNLFxh1wA0WdDRoORaZANNBoAFAe6SfXUnXTtoT3P4sSGEYmWCagZp7eHxacTMVgCKfLRzDSSOyv6dq2pc9R9-UowIu7rutRwUatauH39bh8-2cGqxbWPLBYW4MerwUFoIHNtG4FZBB-oAv5AU2Lmi_55g_RxnIrKEWl-7FvS61Ql0XAEyrR-toi210Gf-1u5t5IUrtXZWEAiF5sLG63f6UjHXSSdD1i8zB8SjTjJ3fCrmweJS7pkLnAFaaaxO6VuyYKOwyAWTNM4LeUegDsBws29-LMQ0xtY6ul3kayRk3eDeG-l_FQXnLXTOvGEcZFNyn1C2t_C9QzzPB0qnDteGwZmSE53m3cMbfCFp04Z1NE1mIFq8xCk9zltSjveBvd37ZGjFAClOquCc8nCcDc9BGAn15QSwvPhG4uQAfl8l_6YHydY3GldctrXfoC-8qHOdzUMb0IZvyo6xdNL8VnpQMAzl1j4IWJKNUOd8pDKqnADQmUVUC6cw_XOmFHnYc_4G1Iaf5RAFBSmjnpq3Q0dWhm_KbuUSjiSVx3y2IPCKALIzBlVez9EZdy251z0_YIgeiTWzO20KjRPQvXtp3WpEx5oeEwOUx3T5eNUNgzD6Y_okWJyRJQGeSs9PMyH8fKZSdCXsh3SlNNLQw_Sunn8-KU9TbVmO8UtdlzXsS2IKE5LY-SPSWLPnrnux3Ke3PFWKLwfnp_l1GCiX_CpH788fhEvBwI-zZqAPhvKcD3w4fkS-spYVqkwZp9nm9ot9u1xagMVWXP6MJJtyOveRsksQh5PdOEXIlR9WmlfD91BT-wG4mAcvqEOSJPTNeYs_YCfKTAzFleEg88r5T2HMpfWuTXz9RGqEkQy1-xgiLnk-VxIgCTao6jHB4DhNZFf-J0l9x3n8G4v_IkIC1yA6jbWewRM-ZsOv2n7sJuVD2HseRLz0Jm5Mgy5BEh1jYVEDPVmYkXT-fNz-SA0rMKdoR2T9KQuEHEGVSdfmBSE2EbJAWcvtHlsdP-IYDWuGZE_096rr9C8C6m7yxpJbg0a8nJx0--RoiiKecG9zdxrdG6piegBVeUEuG6rQ8qBy9qR4nZGXm5VjJdrSTYy4b3kHE83FTR3rW6DHCQEsNjiMHFvhnW-mVZoB_5QCydTpY-WXWKhlSDIb08tUNfhWSLAYr_Aedz0jr_ItT0YDFEV2nR2nJWoVumz684Cf5SPodhbMomhVouwAw4zSFKZmk_QivO565qti0DWLNg0z7aK9-UsaSHZNTeCUom9LZI58cfmTZ89el0vgoJZx-2tcO_HpI_MI6PrbFEHk1P2br1GjSKlmXhYOJuYH2EEnhI2HiSDVm4zCvXiVDJGFQ-tOQX--e3miK4hHarbcJ0NF70Y2Hl77QLR6Euv6UHnCkNHHxYWFfZD6HyNKSsRwtKBzNIS0eVo1FwTY6dQc2sThzXsfYLbQtziARXU5WOvoQjJVwUjNCO2jdjzccjEb"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 445,
+    "completion_tokens": 342,
+    "total_tokens": 787,
+    "cost": 0.00397625,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00055625,
+      "upstream_inference_completions_cost": 0.00342
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 318,
+      "image_tokens": 0
+    }
+  }
+}

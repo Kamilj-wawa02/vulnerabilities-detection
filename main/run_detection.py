@@ -15,11 +15,11 @@ from time import sleep
 #
 # Models available at: https://openrouter.ai/models
 
-MODEL = "x-ai/grok-code-fast-1"
+MODEL = "openai/gpt-5.1"
 START_INDEX = 0
 END_INDEX = -1
-STRATEGY = "zero_shot"  # options: "zero_shot", "role_based", "chain_of_thought"
-TEMPERATURE = 1.5 # Must be from 0.0 to 2.0 (defaults to 1.0), set to None to not include in the payload 
+STRATEGY = "zero_shot"      # options: "zero_shot", "role_based", "chain_of_thought"
+TEMPERATURE = None          # Must be from 0.0 to 2.0 (defaults to 1.0), set to None to not include in the payload 
 
 DEBUG = False
 DEBUG_PROMPTS = True

@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765727014-FBFg0JVqbpKIFxe2sanc",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765727014,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 131\n}",
+        "refusal": null,
+        "reasoning": "**Analyzing code vulnerabilities**\n\nI need to analyze this code for vulnerabilities. The array size is defined as `double a[200]`, but the size argument for `fillArray` uses `sizeof(a) / sizeof(float)`, which leads to a calculation error. This results in the function trying to write 400 elements into an array that can only hold 200, creating a buffer overflow vulnerability.\n\nThe primary CWE here is CWE-131 for Incorrect Calculation of Buffer Size, but it also relates to stack-based buffer overflow issues (CWE-121). I\u2019d choose CWE-131 as the main vulnerability.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing code vulnerabilities**\n\nI need to analyze this code for vulnerabilities. The array size is defined as `double a[200]`, but the size argument for `fillArray` uses `sizeof(a) / sizeof(float)`, which leads to a calculation error. This results in the function trying to write 400 elements into an array that can only hold 200, creating a buffer overflow vulnerability.\n\nThe primary CWE here is CWE-131 for Incorrect Calculation of Buffer Size, but it also relates to stack-based buffer overflow issues (CWE-121). I\u2019d choose CWE-131 as the main vulnerability."
+          },
+          {
+            "id": "rs_06745508cb32ae9d01693edb2699dc8193bc8b28db2f5e6e5e",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtst-YMzRO2-qjRM9iIrvU_DDh7hQLSE6U98CB-SHk3oJzkM3zjslcKHq3LwkTzQry6y1rsaoW-5AIo_o1-cHFjirM94E5rt1FOO-8R6B484Z1Vm8jco2QP01TUpUZEuC4gWaIi3RyNTK2Me-Q5WhP6Qho3d0PB5_Udo8TpTpKT_asxgsYVARbMnMNlqYP5TW4rlWMEo1r5KTlTe-rZ2Rf4PBrRuBTbF6dyGCL84SOuJ5tYBvBRxpXgoZlRov8SsP9K8sD-LmaWfCEQBsna2v37nRW1lKO6TZw9H21C2FOt-sZ1YPorp_2HH7kt0wTCAh_mvCXW8c5ACTCxGuDvGDjeZwlBKHqOHz9WFhenZwTBNQOqZtdmeSh50eIgBe9gjBFPQjk4KsQ85zUKEIbZBX-S36kCw2mDIMf1W2KEGj99cjfDfjT0ZryootQ8f9TLcfta_45IDwHtXeGMtssDBamlqWVKrKujOaB4Ejx4fc3vfGMgY2s6MvbqZclpBH4ZaJj3joCEYkSb71HeZNCRxlevIkT6BSn9uG42IwqZTh5D4BT9mGjSK-EtCn5ucXkxG5fyz7bBLVq3I67gx5aPyfjjObfR7KR0whuzLCpMqueRuOes9G83qj-kKjfVIV4P9aUq90sGuIz4CcWv78SlV_SMSM-8bD6omWrXKpSQ1OF863UVKXXQ2YvGv_ToTmRh_7vObW_ERjluBgMUBrwU2m_DuW7RnhJwFlI-kkoAbMKa7jZajxbzrQ25RZwxOofEZS5BHDYhy5ik56Pq2hqcuz-mxSfm8_jq9SFTHiYMu58sgj2quUzAnzJJ8Kvn4oUEsc1HgJMFztWmsI_VwHFb2rTTf98DasonZyvdsHSQHes3yMcGzSxnsu6p6GK_064KcQ1dQwoWpiWTz8HC0-GcY7A6w1-DzROy8rjNMdsP4DHRAvn9dXywXxUz4cNXaMbwl90_yXLYAUafBKKU_iqcMTNS4vHPTm4_bjsobWrNP_xTBZHCqkY-P01ua4g7akGXbjvZ-8O2n_I03llfFpy8Cagru5Brf2JOrRRnzOw4fz3Agku5qQ0pXHFGRV1F7HtvHeY1NpPNDzDv3AIVQ-JAP6uMfY2lbucpSAnQMX_TK4BAV8USPGqASEcSA2DzrBJP7oQD8ij7uheqaPwJ3PXWw1sHHXlikfD4q930Db1fBCZA9aX-IEHXDMr9GAVHtFgYks-lfNdzXUwnsBTF9ZIuB6NMbST3ciT_z2XkOlePbHVEzxgYJSm1vUT3Z9pfd0OWEjU6OfQUmNFYZk7QfjV-7y0wDei42U6P0EeZdgovx5luQOqIfVICB8tZe0qzeUTRiyJGKn0hE4Y_h0CnCWZDVjn-IvWKnqZZCnfF2yoFe6VV3nHN3J8CCSYHYsCOtU6Ks_oezZKF7misZF5zXvbkCIG_lDIyk468aoukcUiZHZh3NWD9mITc79WstQTvIBKblP65PeuCvueLOqaoYvFW5S9rPKpsBfw3P1G6yyy2TxjSuV44iFimPV0-KUt8d7MtBNmiV4ymRFedJNsA-Vdm0LXP_kjFADQpMFU55S_Ts7ngGV-BZc4EpPpJ7zmljKW7cU5GuOiF573nizfLo3Uo7y5lAVDCXtGrzvvuYLzpf1PKHuII7WKtzPR8SABMlU4eg4hduKA3wx4G6sO8B7dBccI6DTj62xz_yFqBJehN9a6d-oVL3XRRCag4kDU7KSwvTahunOXBIupW6VqSX89ihjgSJESjcZUY9Iejv4FBuD2pUICV8OAnYUCygybxbqkOzuk_dfHO9vAwbv5vlkkC59xRXx0P1lIu8npn2SCCjK0Tfup3ZjcOVXdcwlYB3pPr65Lnr_Otqw34oCYGk2goHnz-bWHZqKHx0imPN2pPencFx0tPfOMU6a98ZC0wMk5y1YzEaqERxcE3W0R3H5VZyHqnlLiMkye-bNGVnz91du-zwzXQdYCL2ESLVMnDGyQhNzF1TLfzmE_sOzGgWDtUZ6wdGuE-fm8t0Vlb8JkjcrV4uDHGw-ttIV4RWQWPfyiwVyfpLRri3sk_f2N5luz2OiPJxltHnvdQTndlg1HIrhbqkwXyotaCOv-ZaUp6shZn5-vCVgsiW3S6uQpohtHRAe-oZb8cQ5dNoJow7A8o-Lnkyu6RF8nbupEK7GryTZjUa-rGGsbpJrLLDhohF4ACdqHhRpzOpxdG6k-htCihZ37NcVc276DcMVS2oX-lWgYpgKQrjmAf4RdE1Q3UM6INeGy9jMRYtGxyH2M4kpPEWWFkel1DBhxnQxNsytCu7ndTALPFc"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 196,
+    "completion_tokens": 275,
+    "total_tokens": 471,
+    "cost": 0.002995,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.000245,
+      "upstream_inference_completions_cost": 0.00275
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 251,
+      "image_tokens": 0
+    }
+  }
+}

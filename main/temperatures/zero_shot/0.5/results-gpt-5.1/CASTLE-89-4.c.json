@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765725090-FpMYvk8li7onWQ1bLZo4",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765725090,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 89\n}",
+        "refusal": null,
+        "reasoning": "**Assessing vulnerability in code**\n\nI'm analyzing the result, and it seems that without the null, I get arglen + (fmtlen-2) which equals arglen + 42. When I add null, it becomes arglen + 43. They allocated arglen + fmtlen, leading to arglen + 44, which seems safe. However, I'm worried about SQL injection because argv[i] is used directly without prepared statements or escaping. So, yes, it is vulnerable. I need to document this in JSON format: {\"vulnerable\": true, \"cwe\": 89}.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Assessing vulnerability in code**\n\nI'm analyzing the result, and it seems that without the null, I get arglen + (fmtlen-2) which equals arglen + 42. When I add null, it becomes arglen + 43. They allocated arglen + fmtlen, leading to arglen + 44, which seems safe. However, I'm worried about SQL injection because argv[i] is used directly without prepared statements or escaping. So, yes, it is vulnerable. I need to document this in JSON format: {\"vulnerable\": true, \"cwe\": 89}."
+          },
+          {
+            "id": "rs_002f26f7bc4248b501693ed3a303308195b5cc1051b4fcf842",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtOso8fkB2VCWCzleSqie-JPPDYrn2Z4gv0akpoXIEJlyXn9zC1TLdJ-xVeWyUqwcMHdt3Nx708xHIKItkRBaan_mrLK8RFxx57hzkUasPSDEQ08GUzbbROFszQvK8YvZKttDG9108H8e50Ipq2N2nCXEPKq8PtE0q8hd-TMeyOY_Brnyxpjsg--ACP6U7ZDjxWUjQajIvOtYWDp4rW3rtc8PpNhmL6epqTxH_XLtF2KQ8kSYuczg3_JqihXWezlWWQbzRmdLVwPwCmcU1-6xUyGCI-a4ElPiFrpMAdGKqLyPZjlaGh0-T5j12nsRG43Cwui6jidYDvOU79gaBjKoTzQJlwv-6hsjJ_iIWu0E7gQURpyFCckVdAFg4MOnh0xfGQawK1EgQSHrXGVT2AclLW7XnlZ2VZlBp8b2rP2Hn3neGgw3wtEIyuKSRcMQjG8U23W8GXOxIKzKCRE2vnaTvfu5NQgpE3Wigl5zteFf4P-LPEPXg7wjBY5PjUbpuGpSfR-eCZBW38xqh7hy3k0wGd6382oYTwKxdWKP27fnWNJ5ivCbywNPdWZtB-ZOjCb07xnK-Tm6O3h-2OtC9o-_SsC41Xcnuf-hoXZq_jGWYMWJmbPBrnu0Ryfyh8ZbIpgXisbIw9TKIQvNCOrsQUwQGxUCMR54t51vEUMPb0FIhglrtSghlAQVo31fICQQR0Br9u86L7GGRBogmSAkvn6sDTaW9JCvvbEIl6ZFP2A-ZsPXLGuzIvLMzo-GNkElT9AzA8km-Lg1FuebPS79GRkkkgWlOFhk_Xhs-1ditAyqIQPDEV2Ao9bP-ZLGgf55x0R9IWaRXzQu6L2Fbcpz4Z6KdY5ecrWyMcijttEemrODm6dDG1MFYGBD1fGQya64jrKTdMFxega-2lx4pLr-18TZwVSmnALRUjJpUUXvydhbbURhxIbssR17I_h5bnFdLYG8th4o-7XsfTQd6d3OQxVlf-sgedAnT_p7Un-lEBlipllnFYbjrT4wU0wuT_ZvhSRvrYh4Piogg2otVPpg5sM0eHDtMu1ALWsbTn8F2sliidWHKadDfVv_Y9wsEkIz3dV97ppRjdZ1WfRIKxxez9Bv0I8mCdQyCI2Xw9IoK71dVpIDVsFv-eXSOxmMC6_BJ_YVOhLLqYzGbMN0wo6nzO8d4vgi_GQoPswAZo6a4tWIB3SXvWFOsPfcCdmeawaV4yY_3MNxK55ymUKtkdsrZXC1OKheHq-168L5tQ0tASpisaRySeFavm-KfCTg88JIXrZaby8kxQaW5HCyNT2o6Ay-Ip1ibZj3BF3XeL9A5Sa4QrDinn0sq_jLIFApLwdwwwGYmEKZ7f0YQHKvPYEB27vQBkjJjLDpWeKoipMt-b9z-COJnfHiXz_CWIyxT3GzTbJ4tt9dY-nfBKBYk0WmX4jlXXqKh2-keaz5jLjM4uXi-_5vUETKMw9TS4O7r8XKWwQDVMl7aCIdsYAp1sKU7jC2MFwtfcTp19-Yec8ql7jw_6g0Fuor_uNZbAY-O0Rh4Ganq6_V-3syNYMVyx76MCFcvxYO4l4abeBPzl7w8vZyccJipUpbumrH7O23eG2ng5bLqubB3SkSnBHnVwYYhpy9xzAmdn9ntyoP-1ps-H8YPFUbETnVFG5_WnikggSwuHOc18YGWtLGlMTFjHvofwmawzEEF2ZWze1WVu7oHUlfPvOPzAFB2EhT3acOrb77RDTRvfwuObsKFqGVNoI9q8m4QNk7CX-EzvOY-2YdJhEIymZIx6qx0FjOLOPRTNypY7fIkP2hCQN7LubusiEa-itTh8oN1X2swit8_WnRFfB80p6f1uhUGXvxVesXaACPH2wK5K7FRNLkEProshC7TqKnoMaVvzfJ_Zz-TXiGwVNJwUdiDSXOAuiT1UIFTIhG0su5Ae3YUTW7oNTxM-hkHZaXr80HBFl7iQ7KifbJae-9buFjHP4IzxZYVbltW1FVx7PCJF3CsqG2Oo2i6wrqYTyWHiek-F7LIR-Jm2f38Tv_-ua5ayROhCLoYexkeURrCxO89JMl96Xcc7EC0vkeMsp7u-uyAvPx4JdYqbwyZkX3_dOCQ0YsZasKvWGDnvDAsByOsS8Wc0xLHSj1OWfNmtwi-xnTL17V-yuetK1mwTLi57i1mAy_HO0kZb_W4MP0L6YE3-eTr235VO39yB0EzAduu5dY0Om9dDenpWj98geTOO-R3Ny4W3edxZfHYstewZIoMz3ka50JucxH7gIQVqbIqWNU8vmJq2sq6Ck4v5AdYIZTOsw-su4QEBGN7OF8h0bmiQi5ytKxKWP_klMk2tZk0wK12BCzEb1aZJXGbrL1qpqooEEjO2mIXM8unWA3sCeFjksdBK239wR37tpEx2WkJyOqeFNY2ZpUs-sVnlqlI1mlstkjUen9eOOEYXq6UXOnoXXNzRGCzG0FsGCMMSrz1rXxXMnRM46sPyPkX0boOGU0NFvXXxgfbwwarkpS4avYQnm"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 813,
+    "completion_tokens": 379,
+    "total_tokens": 1192,
+    "cost": 0.00480625,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00101625,
+      "upstream_inference_completions_cost": 0.00379
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 355,
+      "image_tokens": 0
+    }
+  }
+}

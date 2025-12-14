@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765725855-3Ktscl0chCTLrmE8cYil",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765725855,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 401\n}",
+        "refusal": null,
+        "reasoning": "**Identifying flaws in error reporting**\n\nI've noticed a flaw where perror is being used after a NULL check for reasons unrelated to errno. The thing is, errno isn\u2019t set when data is less than zero, even if it was set by previous calls. That\u2019s more about incorrect error reporting rather than a vulnerability. However, there is a memory leak because I'm not freeing 'b' when data is less than zero. So, I\u2019ll note this down in relation to JSON and CWE 401 before I respond.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying flaws in error reporting**\n\nI've noticed a flaw where perror is being used after a NULL check for reasons unrelated to errno. The thing is, errno isn\u2019t set when data is less than zero, even if it was set by previous calls. That\u2019s more about incorrect error reporting rather than a vulnerability. However, there is a memory leak because I'm not freeing 'b' when data is less than zero. So, I\u2019ll note this down in relation to JSON and CWE 401 before I respond."
+          },
+          {
+            "id": "rs_09aaa72d95a4a70101693ed6a0155081969942215f5f2cdef5",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtamW-iNrlc0L3AfVskXgBYlP4ctaoK3HXqevaH1W1lo6AebI7taHGkW8vNgOsBchqwlbmcfQ5uSQslt1F4h0PRuUV1HDPi7j-VaDO618wgLTnv6P0-XMbTMi1fqLNBDPwNIb_2zLR3wRiYsvJQ8hqj8oSXtYmZHLLkN0Zujf71uRSwG3-oSV6S9XjLaQdlbO_6NZq5OO1-0g7Pg0WX5X9grG4Uzdy6_ixDkK4mg-DMve0nHQE-r31O_tkYu_cvvw7hgSy3XRtkaIYJZKFIpHcN0A1HiLhpyeqohuXRY-IROjtes25GxOl4alj8KbbfkVIa86rBvXWBq3kvi_-3TPlS-GDkn0Kgmc_cJ8fc5ThmSd6bC5wQnmgCC9QI8_yJrYL1y81-aQDoedEHV8CcfeSkFd_IGulG7AfbCcpcKOrRD2aMpPEHRwGYYhXfu1e7te1mzE-zuPEK1A4XQIXszNDvhg09QYTGuVuGZrjSUi3MjheyTX2pqSCvBdpkSGcCglyyHY3SlwahOgVRkQqHuL4KGPe-XIyHwSy25O86CzOP5E_BuexBH84p5NiPbyta3o_g1KamthqgruL-tfHI4ayeiLl_J0DdJ2CauK-UWcxKSO9FzOGacgjIkO_jhOD8EhLgMaBy1eyUO6kKQX0C0uCPopaM3c6z2ETIdTXLa9wvwAYEsHC0SrmQsttqEVNaXZsx8Q6usN7-EiPc7w__KPJt44YsoaNqZG9A2JdeYAUi9-l0OOQroRaIkc6EXLbEzmDOSkW4rn9UFLVi1QUa7KKgojF0cr4eZU4p6-M6Pni6Wtak8mqJPA3G0-1W4QSIgzlYCI77dwkON6LWhhuy2wd6Hf_gsRUt7MwHzemjHYpd5uDHfqbZOQEuYAoVdnnfXcbXf1SBayMRtVE2XfNXzVYv_o0dza7v8B6c0demknaePAMR3W20VshX11rFyXYUkUd63R_lb6Nm4XPo3pytGVV3t3vPIDwHGTpHvAJJoAL1QL3J13r3zx-153m0d83JH5_MxFWQQB9YJyMsyi43T4OD2x3OUYgqNePMkx_IIv-gjuBH1r8XKc7hDjAVl8mdIpA2okyhzWMWGMCETzWOcrWhFyxjo-sjf3BTCu-o3V5hG0bKT0nSPgOanXumDKXYpVHzFtX0d7oUeRI8AW16nr5dB1syaiKdCKSgTCCLnMuD3f3qsPEDaC6ef9e3S_RLgeEB2gjpmLfTnmIV2oSQd3_16XM1PlsFOIwUsJx1fTn4C_rJRMJK46DkIPWAyyiucConUwZnNao8H_qrCt7bUbV_ymBvn2G8u8OydbaLCd8OudkNctuuFpAxsY87Ux2Wgd9UPhrGRqRpIvT-_GcPiUHA-xd2tSzOcyF_J4UsEv1Q_T8kzi1eL-WH9LwqFMvEog27QyG_bSD3UwFHISeK4I9X9K9C1_5iz28zxtEMWkGqP-LcE8I_Q76kNPtGAHALtv6hjz3pQdzxIUPiEO_NlTz1daLZWcurjvj3apncCLyoU4raEdAxrttGGLgaLuDBR3rTZJmVzMy0OtIWs6zM-D9ffu529ijEiaL0zWP9uBNVN7cvydDxMUhbqcEiK44BI-x4lp_ANKNa5zbffdCEpjkR9_-gdyPewduYX_jaWYIqnLO02NO3w09H4_lLM9zUFLfH_mLlcIvK1E5RVv8z2BS5K78u8E--8eDdlIf0Wkfl7h6PfIefrT_etL4Si6pUjBk6k-dr4t-OgzIkm3AFHTtGNTGH-UcJNm2socb_IoplpDqxtK7hLruD0kMxa7BwhCn-3ZvT_yhocPoSJdUEzZLGbzqlD9zbdIoKrKyfYbzKZEytzN5xS59lIhYaeFtsHYFoIWFRDO1kuCYaLUW1bVLHxHSLbtT_NA2TG3dRFLqW4i6tlYnCpYWpQxYPrA3d2oVr_lMKt0dvvP6BI_GgvJDVB9X5wrsS462hT3nNVn8Nl0Dqld5sDmBp78DhSTdBMP95ChUyrphurrCb_gFuJMVbkRMOsnP_XzaE0TFlyhuulWPaLL-WkccelAJJyiU0gEQC54J4oYJ4Ih5qYKlYQKb0vK5PjmP7tfJzgrp1iaoKic8AYigepuP8To4UhQ4TwyhyYTstfM4OXKYjqSgBm5QRiUnUosVgDoe-lGuYcjRYZMwhz7jOx2mdbtBoZGBvDAXQ4HAkrb4apouunfp_qFb5vIa2n_bu5uLth8gOwtaxgB1Ao0IM9ZNS_5ANewuar7porucpikHmVg8l7Vdp3gn-Q-1aTPv8tb-zWSmWETlsZXDqvEe1GulPfuWbqs0rRLoSCzWNcVTbdAln9-R06tHlN44hJoSU5qiXo0fNtGPW1gc0riwLjdy4LkpilwO1Hk2eJonFZ9t8C_4B7FcO51s-IQFmFJYWc-iJBN-zdbvNIx00="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 240,
+    "completion_tokens": 274,
+    "total_tokens": 514,
+    "cost": 0.00304,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0003,
+      "upstream_inference_completions_cost": 0.00274
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 250,
+      "image_tokens": 0
+    }
+  }
+}

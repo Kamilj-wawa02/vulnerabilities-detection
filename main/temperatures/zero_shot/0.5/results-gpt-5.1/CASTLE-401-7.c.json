@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765725909-Y6JrRPaaeBnPdJBIwiQQ",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765725909,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 190\n}",
+        "refusal": null,
+        "reasoning": "**Identifying code vulnerabilities**\n\nI need to analyze a piece of code for potential vulnerabilities. It's allocating an integer array with checks for size and data. The loop appears safe, and there are no overflows. However, a risk exists with integer overflow during memory allocation: if the size is large, the multiplication in `malloc` could overflow, leading to writing past the allocated space. This is a real vulnerability linked to CWE-190, Integer Overflow. So, I'll conclude it's vulnerable with CWE-190 being the primary issue.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying code vulnerabilities**\n\nI need to analyze a piece of code for potential vulnerabilities. It's allocating an integer array with checks for size and data. The loop appears safe, and there are no overflows. However, a risk exists with integer overflow during memory allocation: if the size is large, the multiplication in `malloc` could overflow, leading to writing past the allocated space. This is a real vulnerability linked to CWE-190, Integer Overflow. So, I'll conclude it's vulnerable with CWE-190 being the primary issue."
+          },
+          {
+            "id": "rs_0a165412c94b0a7a01693ed6d670408190a9446dd178c4149c",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtbb5PBLTezuBQqcNGSfV9TWDY2ZLGnznWIcFdImMn-GRqMBfVwEzAiuE3yL-T5-XnHe6hs0hxfq4E1Auv0MndJAXxF5e9JGaVUf1kxPV0zF2THww_izRq7dUv_iWTsUZK2zMrntyusridcMHzoriVh921bBrOoG7y_xxlL7yt7T73QRrrU4trwgwk3EqA-0rSxf1Tp57uRYbiGG4wb78iFwMwkOzE7tPlttOEakaXKpkYCMEW2cqUx7q9AMh_K74OI41Kjjjj_rDgoTieu6BqywO1yGt4NodoS6pTv7P2v-AsAKV5AWCmVZw-Bs9OofYA3iJkTp8fyUoZQ0b6gOdq1adTAljEGbbpKHgswY9Vvo37cPcnd-XoL9fyTrWl-uaR7mnp2YSn4tx9ryV9IrXEkXQRdUNLrY3NcQ727fML5k_EPrDUicz8wBJ57PNQ1gSg8uHviJsjmyPWUpg1wGMeNgj7ZiMTkDQi6dMPYtLrr4pGRHfec2wllAIwcN50vy6KRzL2CkGMkJHlsftHqc0mz7L2_H1JaORsuKApYXBMYNXCsJziZU7na4wFfPXdKdbJT5s7TAwI7vFNTQlTItGRxR5z7wTMIuVk2fQVlyQCLqJSgGEppMxgzYLYW4L2lIIQwoujx5_Mrd4TTx5KvkYSRs7MIb7ehEgEtbz5Kl9x_q_5N7T2qiYp89sLqM04QMYNr-6BoCgfpwA1FEnuG8Uz0syvTecPemrrN1W5ZqikZ5hyejrwmZrAHCltD3a-Os9A8FKTeGiUw8TdGAWlwvqIt4zWeQ8bECMgojIgpw1uMXRTB-33Pw5iswO9iz4AwlaJmwNDnDrVZ6Jui4SBq2NSkuYX6UgVYYtNNCnfGqN31XIsj1onuexRLdiZ8-CIho0YiWCN7iutogtRH2F2FljQhfhqfoMRjwFHZG-O7VrmoPj4tRuJrLmbMJZ9TZ818kVviUqQJilT_dveV1tCylVYJRvW4kMpVuctEUgBwxPAn5YmrpdGle87nmlO3B-tDX4rd4UC6raittre-2hy1Cfig0xVdcFIPwWu5AwD2TwNT8wBODeU5ueQ676w--yNpMKXlpF1HVs4rH6whWZQ-ptEJ1qh7wvRz7kEaGnzsYOP4HGRIMDEGG1CEpTwwYledw2HqRDb_2jrng3Hem4p6g3EUtBMdS1LvuZdWeIZGSa5JBxKiV4x0nzfZrrncxYZPJHROrgbLCVfmR1WSyz1WwN6avd-GFOTdpaluKwib6q5IQVLWwjk3Ty_DHLqJsX7TGlRPnhT467esQZJEevIGf9j2AJ1Dhe8IcBn5izk4nv2yu-5UbCyNogXnTyokcPOkmUqo1cIvXb-9TlOuy1I58PZPvr1ZrkZPj0NIqB2pRnlDwYP_XpTAkcxiThIgzwT1Oa3sjqfOG01m1KZ8ZbGSbNzpSQi-aJmXSmYnrSA9jONon8vpuFbtzdYDiCraWjbHxZx4DaJgQgxF2ZpqVs6MY79eQKH6Rn-0w0ecW2I1NEkF16Mp9xJpEyL5vG6KyByrA5qoVetO3_XsDSjakgJlxCmPbwZyb45P9p_Tgyh_pfaz73oCO9Yc1iPO7Rr6NlXeZ6VxBnVLRAwpiu7wWFNecQmiV8XbkF0CWMntsgd-SN0gv5hCDaqz6fekJc4EN2VAZ9gyt0OAXJm0bBoJaWpWAHxHdtA=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 240,
+    "completion_tokens": 175,
+    "total_tokens": 415,
+    "cost": 0.00205,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0003,
+      "upstream_inference_completions_cost": 0.00175
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 151,
+      "image_tokens": 0
+    }
+  }
+}

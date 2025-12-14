@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765725078-wOIQ9PwHJ8fhOytdkvXp",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765725078,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 89\n}",
+        "refusal": null,
+        "reasoning": "**Identifying SQL vulnerabilities**\n\nI need to determine if there's a vulnerability in the code that takes an ID from user input via `fgets`. It's not sanitized and is used directly in an SQL query like \"SELECT * FROM tokens WHERE id = %s\". The newline retained by `fgets` could lead to syntax errors, and an attacker might input something like \"1 OR 1=1\". Even if the column ID is numeric, the injection remains possible. So, there's definitely a SQL injection vulnerability present (CWE-89). I'll return a JSON response indicating that the vulnerability is true and specifying CWE-89.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying SQL vulnerabilities**\n\nI need to determine if there's a vulnerability in the code that takes an ID from user input via `fgets`. It's not sanitized and is used directly in an SQL query like \"SELECT * FROM tokens WHERE id = %s\". The newline retained by `fgets` could lead to syntax errors, and an attacker might input something like \"1 OR 1=1\". Even if the column ID is numeric, the injection remains possible. So, there's definitely a SQL injection vulnerability present (CWE-89). I'll return a JSON response indicating that the vulnerability is true and specifying CWE-89."
+          },
+          {
+            "id": "rs_0f9537aa81249a1901693ed397916c8197810ba34959d95758",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtOdfa99WIrb_4QPqq2vRKxxah5JEIUcexVqvUNTVkhTQvgDxX1cB3Fxn3WswGOcAz1FpcZpInTl2BKEqeQdFvYIavvd8X-e4urI7YJd_nyaVhhqRCFrziHj8ZkChLsX-xnvymYExlwFz0vBOA5J5I4xCEtEa4-27Yg4-6lEW3CILu4-0gRT2QyD9UWOOt7y7zehfd9CSmjE3XCo7m3BZOp-cxJHmopx082WETlrj4XFTQ--xqPocbLOOH1eDKfNFsVwpAf42CqoGd-MyKCvMH2QyrvSgDZTDoVKN9I6B0ZT-Wt3-5lHUmxr9cQ7JKMr5HDR3EaZwBGcQoi9CVKkNVwCdD8CXDbbwcidUjKcH6RdxxCX3BiXLmiKMteN7TTp9xVEsAdyg-avUQh4jyg_6-_HA5rKQmFu5wHpI6OuQpoQUSuUeQRG-89J73HeUmfUlYRZZdBnYpyijVPjrgfeARIHbkJQz7QRsBdBjqvF6Ib7xft50ZjOpQ31WLXqv5tj1hxawGxU7C49QonqolQCZ6zR1I0csNz5kGJlr6UphmM03iYh3WZOi87zrys6q4FqsosWyahJv7Rr8-F0AovkN17jSGhZ2Q7E0gaMYmuJ6P9nK4lwzbyjSFezerXx-nOA66d1xm9FhyZ_XNQbp2z4He7gNOuGXnyzd8-ExtrGhGe4ayKiW65zrzL1WH4j9YP3kEp6Prwq3KkzXcHred8A93pJ0b2JMuEoYYoepkRIxeZbzFkGy21Vgl26iV99yB82CouDCGfJBrezJTbWsNcv1j4z-zG6NDcQBwH52Pcx4iT6SgUXyB6Q2QSYAABakDLuqdqqhrZqGB6m1VohL4lq3TRhkrd7wX-CFVzBk6B5iAzh9yvtIPCgrKdHzbpJZX1e5aGCSo3gWHvljj3ABo8yasMOGcaFb-ULbTe-Vaq-EL6qF45DGz6gs9aESEddiGU_nL9ICE8EOen2SivVvlDP1zXDH7gBJ3xpMRkky0IXIWzSO7_Uy9aCRK6DjBuezr2tcMGrT46ccfWN5Oti37GOm_eY-c5MuZmAg9HgttjBkboIU6CedG38ob1ObEXfVEcdAwRj7iUfvAq7mZ3zI2FJMQdiPQkpEzzmQWIRbHjS4WknIH_Ik8FhHCiGjHImEptwgKW_dKz8IdUaUFh8WYUlz0_oxwLe_jODGkaBrdcv7G3Z421Vme6Mmdy70t_pCW7Py-rtmw7pYmP3G93drf6v9w9sejCHNxFYhbaO9nAk-ygrvfWjgBaN4VfYceg5_IHT9GcGW9qaazhgGmq7u7E3XuzdZOtGa8g9O-VRUtJQRSXRcMfusEWIYT7DIqPxo8Hb6e3AfAXHkAPYq1mA_6iDVCmPhiq1VEPyHd05dzsTNCo2ZORrsjl9gyZ_H00MCG73rxmSuj2D1TaxDkVDNbFNH6MOoo0fKgBsv_XBxiKsA2Qcm58="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 502,
+    "completion_tokens": 133,
+    "total_tokens": 635,
+    "cost": 0.0019575,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0006275,
+      "upstream_inference_completions_cost": 0.00133
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 109,
+      "image_tokens": 0
+    }
+  }
+}

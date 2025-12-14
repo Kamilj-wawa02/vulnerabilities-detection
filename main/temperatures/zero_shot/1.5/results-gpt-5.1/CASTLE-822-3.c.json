@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765724448-952bXNLiA0bAJPxyZOzm",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765724448,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 761\n}",
+        "refusal": null,
+        "reasoning": "**Determining code vulnerability**\n\nI need to identify the vulnerability in the code related to memory management. The process involves using malloc to allocate an int, then manipulating the pointer with a user-controlled offset, leading to potential out-of-bounds reads and invalid frees. I recognize the relevance of CWE-125 and CWE-761 for these issues. Given the context of the prompt's focus, I'll conclude that this code does contain a security vulnerability associated with CWE-761, specifically \"Free of Pointer Not at Start of Buffer.\"",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Determining code vulnerability**\n\nI need to identify the vulnerability in the code related to memory management. The process involves using malloc to allocate an int, then manipulating the pointer with a user-controlled offset, leading to potential out-of-bounds reads and invalid frees. I recognize the relevance of CWE-125 and CWE-761 for these issues. Given the context of the prompt's focus, I'll conclude that this code does contain a security vulnerability associated with CWE-761, specifically \"Free of Pointer Not at Start of Buffer.\""
+          },
+          {
+            "id": "rs_0322954d919b881401693ed120a1388195ad602ab2adbaada3",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtEpQ3L8jGxvNNhyHw4caphjHfTJxyQKKVrPVY5EkkReJZ54eWkwV_0vsWXcdjHCXnx-zbIBH6MDV9U9ZHq6ZoJHZWmfyUpKRb1MCJhPQeiUHO9yiuKJIZw-eHAmE8KVmhNxgMpVESk-3AQj99CVjqQWUaBIgMLzAFOP-oqieOAR7p-Ipysxgi1RFxlKrjPJWYQMQlcwAMMgITVJNkDzzk73uE_3PLtqkrAfUTX1zofuvIwZ_1oSRwt0XPFvOJAhP4B9V2_kU56HD3q8tN3qHzgc8YQ6W8Rzyo9luokqHJ64KZ-oNaNpz4JvRKKlsP0uQRXsZW583WEVhpRbkB40eSOTkryvj1OyBWocKCEJRFz3NSTrQ9U575Glm-Fx_FOrbpVYDe1a2izeFQ2bEVhpdxrYr-AB-aTA7vX7wg0eGnNw-alHhPJYu4e1cjCtcop64d27NKLfrArF898KHi2T2D3hwVFH0AEBMwea64pdVdds3imLsfQVjQfoNxAP0mqZ4e5UgW2DEnDVuDZftnMR6rniSK6Yt6nnUE5PMtYA1E6xYLe4vvDIPVRPRmJE3K9VZkV7wQvpUtgCipwV94u2cO1Fm3xmmfR730SRe--OBBHq7qfHb-Z37lM3qD4HAukFqkaTttRnMiA2zgecIE63xe5gmEYP8Yjbs3JfjfDnPZjxm3REnXKyPj-8cZ2yOz_AE5N02fKxLxFWIdX3Jp-qt-AxJqqERcRikEjd2QdHdVAh4U1lnnLq6enkmYIr6eEuatb1THoAg_dwDNmKRl2VuJ3RXXGyaspsAJbs0cPDB2Rodj9zjo_itbrJ2MDxTm2lneOWOwMlA201YWNHCEFs_IBd8hD3DaJf2qRlnj-ZWMEHYgGcKwiwSAMPYHIuVJn1JMrPJhNTvTpIotnURiH_pQVntBACEDjqZwlHkaNaJ-TuLhlqnL4v4Sd5u-LD80U2pS9Tkup58XI-3zMsfRML-kRHxDKpXKiK9dJbfl3XyaXbX9Paxas_svxHqrML66utZN9NWhJkJYwaEqk5Br2uGhp1vi1GWPsF164VFXTK9_y8s74r3X19V09EeOF6sLPjXH00d68LtZmbQfmkvkxn5s0QPepEW0e1_O_clpXU6ekuS6-KHfbF0lS5vUsInRl7CjujDani9an7DOfuts13CaGMJB5pIDcAEVW1lOhfEC3qb5a8I---rMu5NS-h1y9NrFiRBMGI-fjq5V4SKIRxuw2KajLz4-wduJbUxJ9hV0G4zwAamuAmoReQIwtCVil4YLlBYF5vo0HCE8MKL-GUXEzh2yeX3HQ7_3LXXFdYWfabEnsu2EA_r3xyFZ4HmKdftLzAiuE-xCTbv9Z_yzMFcb8PEVA0JnO5JoALo5tkMd-fGFJ2Z_05eqy2PE_2-SBQ7sxwd3CYBhxAO6_zw0Ow55PgDdvEN8zv7-X1tu7BpoqR1aoz7hoUNRLFFPU0BaL1HYEsYiBQTtMcap6Tl-N2jk8qkoscXzbl3SoutsNgXGKigQCo4kZArOgpF4rxEOZ-uJCIKCoxbjiHwiMjLdr4i0ytSonCSNrwJClGr0o54D8nPvSHhYOfqXWB4LVqRA9FZTkEnUR-jHgLs7Lu2l49EAVi9Vs0T2guP8K2wXsX3QD0YJEgK3WC8aOIKWw3bQIPltjariEt9HFEOqZCj8ztGFa8zgKzDwPqo5ZvHv3K9IwdkcptxQOuKD180WKEBlXxvpBWqXC2hzUFrO96KZ6nQGqifKn_K-wrZpr0AZZeWvIRg8b7SmUzEtBWO8VfK_IWQxkj2vOYsyNphftN_tpztv0PdoiKmdRpoZWpwWU5769Je-UkziuxkteDokvqEwkOov0tftyoj330VzFY9MUWM67OY3niql9iwk3XsVOM7t2zOC-aD74Nq2j0AUX1TSPxOH3eBwLMqklqrG2Ug3ts-L2jq3PXj1HscDhR0zNKbXpy41bzrzTTsVHie_ZGlpT0uzh7wlnW32spMbVe4pc4Xg_esiKqzWrtbR-pYl5C6NwSGQIzaxVRhrcHRWBOkNmmgt2GtZEX2CHWhZSutc0-UT4RjotZCMCS9H9mMjWa6nXmOdu49DUug-88rHMaGjvhqdd_mgJ5xSk-V5oIp3PpFsBvwA=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 264,
+    "completion_tokens": 258,
+    "total_tokens": 522,
+    "cost": 0.00291,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00033,
+      "upstream_inference_completions_cost": 0.00258
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 234,
+      "image_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765724819-m6UAmmb66OFEDYAXxh65",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765724819,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 22\n}",
+        "refusal": null,
+        "reasoning": "**Identifying path traversal vulnerability**\n\nI need to analyze the code where the path is built using `/var/www/html + argv[1]`. The function `validatePath` always returns 1, raising concerns about potential path traversal since users could input something like `../etc/passwd`. In effect, this could resolve to `/var/www/etc/passwd`, which is outside the intended directory. This appears to confirm a directory traversal vulnerability, coded as CWE-22. I'll conclude that the system is indeed vulnerable and return the relevant JSON information.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying path traversal vulnerability**\n\nI need to analyze the code where the path is built using `/var/www/html + argv[1]`. The function `validatePath` always returns 1, raising concerns about potential path traversal since users could input something like `../etc/passwd`. In effect, this could resolve to `/var/www/etc/passwd`, which is outside the intended directory. This appears to confirm a directory traversal vulnerability, coded as CWE-22. I'll conclude that the system is indeed vulnerable and return the relevant JSON information."
+          },
+          {
+            "id": "rs_07b729f6e3fb5afd01693ed29394f88195903f4c205c7c69b6",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtKZrV0dZS4woVuuozUU3DeasJQ5w9IG4lXoPH7i710jvtIj0h2iTGKMHQu_EkFSB9lsaXb1SXj7luFcVaB-8cTskFeI96Ij9mXKgciabW-w7DZvyIBLEg5jRx7l6b1MlbbF-eh7bKaLs4EqvnsSFmcVWUBfs-wMCCxdOCV1hIEsW4R8iYdDuIFRDaoVcV6VsH-vRgWMBTM54Zr4uh2n2bM4j7WgpZ0dw3j-GRh2fUjqpXUQzT7_9oaWLD0seUHnEaOTWTnbAwxhPV6lWBbeiY_eP2ottpkiQOH02oxphRrX5JeUTfN7GZg24r_i1BlquLcU7BE7cgkbvLIbc5rMc8ETxXj2ZNb0GyOKJSap6cTFbdFVnX4ZkR0YX8k6hYKWWo9yhmkKbZWHwscVXtSsUeSjsjcw3ORB9QvYVlDK3VSo4c5PQodLL0n-8q3pCJ7ZTN-4vnre7PgmswASmo0KEHYpPAanlojEUFi4qsdpjSA4NZsJPsQDGCTGwVcfgjiWoDsliMvfE93ZVfEo6Vj7m-_O-OmAw-T4MWEIpP3fYsFLudxNHrj-RCj1JgubS1jyDxKR64Ra1rY5gcUId_8_k00mbsI2nPwCBaGR6rZxevvlKjvrJS7AGO01zIfGxQXjDL4OjVG4CB52Jb60emBFLAwXuWgWf5jeHtaL3f6zHf1CHodF8PldQAcPbs-XQyNkrlbNoHdkYkqkKwm1nYpWS0X-ZXexHuziHISbnxHy-LT_vUFLikh2gfka9SSS3n750fSmo8RG78djIcclSaSCHZvNdjHKLSnCtDVRyFIdTHOgADxxEK0FIWvmusLEPE3ytLRkWS5UBEjw8lBNQ84IuM9DND33p5OyfeAZEDxXPhJn7fRl9TuuhDecQiD6CHiXUQWfm57YhogfFegxJ75beYFEmaWnnrzBm8htBRr_OfbUu6AAxym89zywzxIGfi1pGcqo6gg4CvBuaSNoQqisaA09uJeE_79fOuEoQQK0fS9wFqaiK0IUKkCQBq4BZ2EyelWN3HW1wN5mBQ2t83WqZ5qYMzhjTDbUawl4aisEvhRrCRjsIxCQN87f7xxTtGg9trmVaEx6klOTW_ZOtHSLNPAkY0ZkuvQtoY71T5x4z-c2LC9DjWzQUCkFiMiPSt6NfLJXqkWd86CJdzjrTPkst8_BGemIPiK97Z_L9d2EShJUBYdoPVsXSGc3U9Mn9IstN5viIjjaRpGEJwKhuIfHpWSYTnronucbUxPFOtlj68zom7Upm-MJU6WLd7QpKyBPnBZE2GpcKSURjm_pseGT-9rGgS_GRZVBjrjplDHiGVZ_ICZDyzxIzU6S3ivw8CQ5b6Phu_-UGHGFzoFKyAsLIz5oY7NJkvaFIvnuCD51ePpJMNhl4y_Jjl2AKxEyvH1Yth7Gt4i7xzjFI6AqHGhMquYNWfEhv400s429W39WbUpQgL8fhzEO9-_iFyH_tJvFxK-0pBxGZy7zHmjCrdlSAYAT66_0fToVCs0Bc6QOU4N_Ky6n57eRFK38WDxCY9spiUFICaKinCV2bnFnc0ShOiCRhbop9vc2kT1-1FzsYYa7dM_OPFgDwukD9A2XgaR6I1sHlGVlhCgL444JORsc3_IBvDLP7h6lPzip8mW4HlRJtHaKxPa66PW1oPYvTlxV9GmHq2fJcToyrQNEUqZWjm0T20nPe2heDJgFOJP7C0uETDL9CwgLyzVdCF58w4dcQAGHt1o5hV0oYB8DQKMZ_f5sutFDqXXjkn8w5ymFnvH-o0pPmvSM298WFRZxpjVsroc0SS8N5wnb2Y5kWBAKFd-r5P55J2fSK0xhan7uHEhWyOMWLB-cpknkMnDvvb4cpb_jnwSZbDfD-qnylxoHvCqxn8eXkfUD-Vxa0TeXWnx7fkbhA5QFsD8xnOVT6PQv4aJd6Lyn1Pr9lledK9gF3rM9ozKDYE-4QMxrKF7-bTlH-9DY9pW57NpCc0W1jabbAEOJQp8ZaHS0xyZI5gU00TFEWQ=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 312,
+    "completion_tokens": 230,
+    "total_tokens": 542,
+    "cost": 0.00269,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00039,
+      "upstream_inference_completions_cost": 0.0023
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 206,
+      "image_tokens": 0
+    }
+  }
+}

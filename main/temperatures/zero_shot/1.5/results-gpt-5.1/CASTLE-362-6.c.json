@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765723249-l85eXJGeJ0lvG3McOSdl",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765723249,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 366\n}",
+        "refusal": null,
+        "reasoning": "**Analyzing data race vulnerabilities**\n\nI'm realizing that both threads are only reading and writing, while the handler solely writes. However, if multiple threads write to the same variable without using atomic operations, that leads to a data race, which is undefined behavior. In POSIX, sig_atomic_t is an int, meaning writes might be atomic, but under the C standard, there's still a race condition. It seems like this situation aligns with CWE-366, so I'd mark it as vulnerable.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing data race vulnerabilities**\n\nI'm realizing that both threads are only reading and writing, while the handler solely writes. However, if multiple threads write to the same variable without using atomic operations, that leads to a data race, which is undefined behavior. In POSIX, sig_atomic_t is an int, meaning writes might be atomic, but under the C standard, there's still a race condition. It seems like this situation aligns with CWE-366, so I'd mark it as vulnerable."
+          },
+          {
+            "id": "rs_03920d3b2543b7d501693ecc71e8788196b25ebbe38c57ca74",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPsx8AAyd0x4JSahP69l5mYlaPyI6wlBVKA3YevAqomxNFJJDdHXDR4KOvaNP0uBJKuJY3XQ2ii0IyfOfKb1mPPnFS5HnQVPq3ApvcSJb-A7XQMNL0wRaOfNnlQrcrr9RkxJ2U5XdR2ogE5csjIOOnSpcJVa8XGfDiSpZ6PkBSMGEAQ4MOs6mop83id8_KKWqiGokbJzx6SnubSOFoCaSPcS_3r17pcplunSpa9hNZEWrL5hqdFcrOfjKVqwPWhh88ET1CssBLO2tbnRshpE1rCr--2FWud5SYe4PuYgpqs45oAQR0ddWque61YXyQ3UmUDgpbpWXfT8oerk9-BiJgBY6DKI3lZS3AlRtwjLr1mYntE-2XLSWnHWnQyg0h7ig03p7PsXEMxxSjrLmprANDLr809BHl2XQAwATtE7jPbzs2GnA2KcEOqiGAkpnQEWQepk5dBHYuNOCJVmoxKez-WcSdNfv8lLPIwyk2uq3rnDS6Hai5m7HZdp8_dtFZHAuJz7QXhlbODATcBAgkymZig25v2FIF9JWswv4-yQy3ZTPr1EBqS3hTNtJuOlRCrvotjhx2b4R8YVPRq4m77RhsM0w3W333SYg6vyzzgy8QQCj6zpmPm3ZgXi6QF4WbjS-ECM3q6zVjHRazoLarCEYt4QBV8R3ZQvBw4Cvc8YMB9wBbQaOLinZCcv00D0a5f7ebCTuwf80PqeyryB7BGSZgDzZwgT0pG0iD7ZCSstMYUtkkot34X7FjoHN_DyYLDMxzWTIUCorgM5RRFe1pyt4monpC13LzZ2JqoSa0BydYrPhsiZjnz876JGglW6_Fp2k0AFPH7QeeFO4G1UETa6sLk4VUjlQErbi86Sm5S8FnUmUXIRs5ByBfB7af0xMNFfTJJVvmtPaNbcxqHJyQqdte6ccDHMzeFLSCZ2-7mxbnfw3yumarcFrfgLOQwpsZcIFu2k-qUATCncZMj5t8fNoMIoJDLOiPGTLuY-AwFh2-29R_L5EwOwNs5-JqZcI6jorioGVkG4lI-FL1JA-VZSt27pW5naauN1OdqI7tFAoLoAJHAbQTRJiM4uGDsim83MJ9DbW4t7Mvcu3rCwbXpKsrwllEX8KT-PYftzDctmr7kDqNBahFPoKja2jrl7p6vtvTepmE3GhaNVngR3ID3G_eNIPJImH70QL9dElfB_7RMq-j7LIDGV3TZu7YAkn0KRUSI1h_nk-VpU23EhX19U_ucQV1hjHcDNEZFD4XJWA4dMG5QyLrDpEKOv5UZwDe8tLEFcfXr9m6nD97jozsUZVe2ZDIvFGDoKZcmkloBTJcyUlBUhgqQSmOLLBEGlAOv1nRuMOLFQZkmiCJN8EON-Xf0fRTqLgphF9--lCW8NLvdotZPZHwXQckl01SuGaKBtOUS_wQtH1lLoM3vHOCwBmpS5WiGxV3t2WeG0FmV6fAspB015qfwDxw4lV-uEogI-jXc5ZcL2_i9_CvhAg413u9h_Ry3lKt0n4v3pu7W1w36s22l3TLFq4M6YnkUsKxwTU2XKTi7w2PIJ34ITyodJHQQ7P49qWul00M4_gka8-vPlAVdAwWeua9GBz_n_x6NWhk7Fx2HnZ19E_IT4yA6pB7fknUoov4SFS9onycvVLBx6_05lrdZUmEJOJWIdeW2Uk2mMI1UrfxB7sU8jr0Mf1UkpnkFbvx28pU7yVz9RSGTT9Dx6CNimtPoy6q-Lq01GuvUYigYJJFUmBeMSnNiuqvWH-L0ydXXT96UrNv_wgCXvwZ_KopA5GwEBQe4rZ-eZBzfMHC1xJSHq4jf-JEwxL-XJpPWGzTrEYdideFncUqBpfYKuhUPk1EhrpWC5dCTlaC-PZXJmrceb8V6IiQ4m_Kx3zc5Q3GByggbLZAksDXsMXTZmuwilCUMDjfBH-aqPAI5YHo50zMy1hOmNIU6XjXUxcKqtqQTYDQr0XvPBvZnlW0KMX7Tks7juma5brTL8a1N0JPSVCOdgnCFJrmIXJsioGcGPHT66LPlE8Aie7oZdx5a8kWl43l667RrELEZSSg-cdJ6FWENW48eopsRDIij-Ld_-gOSQ4hVWAek2Vur9NYuVpI318Ca8HqDJ8M7399deRGReJg1o9oT6doPIxbhL6346rQ5W5-2aqPjK0SiCkTelzuT0Q7TMEvHvy5hSpAdq-VxYb5oYuUmUZK9mvppq3LHAqt6Yu-1NPAY3i3wfu87huNzr7_py0EH9Q2jfFgHBOpRTq2FIVUUBG9FVrQ2F4dWSJ-SwTA-nVtU9wKm4Z-82OMYoKPZ1UXUT0bXhQ17N5CkqJxkQTKDVJNq99DvOgt7faUEefpUXcnV8goCHTv6LMSp7h7R_7nVOfSGErIaWdBhRqbkApVwzcQo-LJxMq0nyXVsDGWZytBTO0QDn5vmBQEIigAWWkLyupg8u6VcpUj5nry5CFM_XQ_Q504hbpkPLbP5CVRiPdix-8poA_c56a66xBAFwk8PSOXC2Evu1VprtSQ2-y2g2NXOqe8VUo7meMqWsSUSz-yM12H2AsVqCntFJ3OMlGsOx8CZ0BMrGWvdwyEe2-eSRjSd228pm7Bg=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 326,
+    "completion_tokens": 301,
+    "total_tokens": 627,
+    "cost": 0.0034175,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0004075,
+      "upstream_inference_completions_cost": 0.00301
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 277,
+      "image_tokens": 0
+    }
+  }
+}

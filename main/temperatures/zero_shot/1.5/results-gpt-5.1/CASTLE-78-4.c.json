@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765722524-OHS0jYreHi76yXzX1Nbp",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765722524,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 78\n}",
+        "refusal": null,
+        "reasoning": "**Identifying code vulnerabilities**\n\nI'm focusing on the need to detect a vulnerability in the code where it takes user input as a string and embeds it directly in a shell command executed by system(). This is clearly a case of command injection (CWE-78). There's also an issue with fgets, which limits input to 9 characters plus a null terminator but can still allow for injection, like \"5; rm -rf /\". So yes, it's vulnerable and I can return only JSON.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying code vulnerabilities**\n\nI'm focusing on the need to detect a vulnerability in the code where it takes user input as a string and embeds it directly in a shell command executed by system(). This is clearly a case of command injection (CWE-78). There's also an issue with fgets, which limits input to 9 characters plus a null terminator but can still allow for injection, like \"5; rm -rf /\". So yes, it's vulnerable and I can return only JSON."
+          },
+          {
+            "id": "rs_0aa0acc88603562701693ec99cee3c8190a9297be294fbb891",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPsmgFXl8xVSqgTilBPr62GjPH6Dm3Lzdd1kbuMRbtKNSfBMfYlwmmJVoU5pPWEQKLjPwGOpvkE7rkGjwa8MRfT8m5JcaL8dIkpfCtBtKQG33QKSp-tk-w2gQoWL5YNhGTUZp0bq2GdSSYyRsEA6dblIyVkL70TUvYL2WHCADZ6MZy5d07aNpq5pCK8V_uZfWGtviaLEBJ8V31XHjypjW0yPzW9kWGcF9in6ZqnzCL7EGNuLeWE6TPYDeVBtCedK_UsX0dVQCEqDoh0nopcwPNMThEkpDLOITyBk8HF84oySEdSskZrUMY8u4IvKCrvcsJPKb6VRB3X-AzDxXJPmHymrRFEFnldNF_1bd7237lp49CJ6yzhBdnaETa248cYBFGNssWwu8klzEXvsW5ex6I3W2qJ6x3X5nGyhfsXTuJuWZxG59WJo1kZKqc9NpRGNJGWHgCEPU11iIYdM5uUax9s2BnF5DqxCoc2RuJRMz4luAmMnkW4_AIiXAJrS4ma4EDFKb50ijaEIMsMivkHa-jdcwq5YYg8kZvQziZRxFiyy4HZsqpHU3GXNGG8it1rBlHhjbcw9qx-m-NmYX2KT-PRcTKEQtKzRvDv4QuOz-PltCuC_dOscLzpDpIoXzyQrMBV8cHRL5ae1nTj0h9LeB5kO4dtc9EqXOFAgTwyA4Sut3iUqIS551rze_V6HwcaJkNAlSamSlttRnz6Ziu9ELNdCUbqeZ5gonjkesxezEF5vpE0pAMhlTpR38qX02h1Aw9nQcWcol0ujVP-Mi3Eszli9sAOmNk0wFzG5ZHImh_UDoeRBIWBMTSkJQ2hfayygoFSAmRp9TC-dfq7WcJnHcKypB7lI4hP1jxp9_kDiEButFz-ofEBKbmxT0LECYheg51FpxVMaL1a8b_sG1J1A9eTctHcoTeXt4dInyYv0kPPk82UspQCvZKNMgMrDJ_KJLShyDVGXHKlULzGIe0-e_2gGXOcJjXvYQ3VuaJl6KE8I51epZBCA99ENxEfInfKAwH4oB5G8jeCBTE5MFmwxnHcB8b7hXL8b-V2CrzYcU8jIdGMSQ8bVpjYZ2pB6GQeyeOYLh2JtciQCNIfcA8c_5nH1likGIbt5aSdZfRnigMRc8CAOXoZjEgwK1497xLgRZAKyGcghipCaI6uVOQGrrK6LUCt2yah0bWRkQEX7DZqLWd4DKcGQmCcuAh4VqzRl7H3XODPwlSGSEnme-96mAAKljc-GhAHjsi0vyb3I2Oq_VqLc="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 139,
+    "completion_tokens": 92,
+    "total_tokens": 231,
+    "cost": 0.00109375,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00017375,
+      "upstream_inference_completions_cost": 0.00092
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 68,
+      "image_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765727421-R6SN6zyy8ktAsdQ2vZed",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765727421,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": false,\n  \"cwe\": 0\n}",
+        "refusal": null,
+        "reasoning": "**Analyzing potential vulnerabilities**\n\nI need to check for any vulnerabilities in the code involving the macro GET_FLOAT_BITS_AS_INT(i). It looks like it's converting a float to an int when passed to printNum, which is technically defined behavior due to argument promotion. Although this results in a truncation, it doesn\u2019t seem to create a security issue\u2014just a loss of precision. The macro does raise some flags if used broadly, but I don\u2019t think there\u2019s a security vulnerability in this case.**Deciding on vulnerability output**\n\nI\u2019m considering how to respond regarding vulnerability output. The specification requires a CWE code, but if there's no vulnerability, I'm unsure whether to use 0 or just null. It seems like 0 might work as a placeholder for not being vulnerable. I decided on indicating that there's no vulnerability detected while still providing a code. So, I'll go with outputting false and 0 for clarity.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing potential vulnerabilities**\n\nI need to check for any vulnerabilities in the code involving the macro GET_FLOAT_BITS_AS_INT(i). It looks like it's converting a float to an int when passed to printNum, which is technically defined behavior due to argument promotion. Although this results in a truncation, it doesn\u2019t seem to create a security issue\u2014just a loss of precision. The macro does raise some flags if used broadly, but I don\u2019t think there\u2019s a security vulnerability in this case.**Deciding on vulnerability output**\n\nI\u2019m considering how to respond regarding vulnerability output. The specification requires a CWE code, but if there's no vulnerability, I'm unsure whether to use 0 or just null. It seems like 0 might work as a placeholder for not being vulnerable. I decided on indicating that there's no vulnerability detected while still providing a code. So, I'll go with outputting false and 0 for clarity."
+          },
+          {
+            "id": "rs_061e38080920423c01693edcbe657c8193bedf36261389ec8e",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtzK-ViL_jEjMhkW_5RI9u52oGC5pf_Q8YlVep0G3ZCUu-ZbJgCDs0kQOmTAfVk3f2h9biNn63lmIWombL7HIvonwnjVzz3kVVjAUa_gXH91wlUEpH6xGSdSeJKywDRcenbx03kZ2fI5jaaEIWdIX-WjY6uGvR_yokkLAVf00InWRu3ne3NSVV_Mof8EO1s1ewKhuzJBDL2iBnw0lDK5hUzfaMytjBDUgfEwN_jVcfzx_0uBWxYuAb8wqZpeEUjAiNFwPvELhoNmmfNt_fn2PN3NkWbVmKsJ8-L5MX_pYM8GhEtnYHm8lcLB2iJgbN0t0a2WsvyQaWETbmz1DQ2_mIoeHf4yYW2EpLy9OuHXmNBiYe8s1WwSz7UzLysbIHztk3E-9GsAcWn_MhB1svH9PupwBsMJuI73asDLJ5zOfrEaQjsXNee_DwZjtI-7WPQJwq-JUfh5klW3IlcalhYMX1yLZwbMuzxGfD1_WiPfdAu2W27EJo3So0QjCD6J-P_PGyGcyygMGE5ssn7ikW9FEjVaAfuSoazs2DqgOTrUgLT1sC5b1fHWsUzI6BKZUnIdChmG14oZc3m183ImaU5b--l3yhE95zTqkRmw0hCGwbkZDGBLN8s3JFNfq7M2Iu-tpaG0j1GcEIYLDlnCz3FvWObl-NWIJ63JoAGlqExzpLzGufcwHh06V0x53XorNKgqf2b7zV1xIl86i9hG9zTw004WFOGBWkuT2MvfPYfqW-GrH--jHEtqDW-B10z4KCjmqGTL2nSiTqtYRX9Ooy6THUypdijAa67yQJWVbLDV88d3Z27tdEIw15pml09ry8GPAobhjJBSc6zra3gqxjTAwqqdULo0RDVv6zbevCJRvSqPNRcWJW4hqzEVOWPuKJDPGu28ys9bk1kB2J2Qw-vkoMDcl7XBTgvejmGEmZTZ2ghxG4hV4agNg6tDTaSL5dz7Nvs53qfS--0T9liBU8am1B0AIOuJXlHOQkNEQGFFZHNw8zRyE9QOgRzU1E9mNBy-KHHsQ77dZKVjy8nnxMxt3wf4GsvJFWu89A0IqVK-HNvBA8u7JaSDYuz2JYGDbKNdvioyEFjHEhRnfr7xQb-D3jer98IWobu-olrlSF05U1E9E2q4uXhD1aARQi1vRZkjvtVGRdYfxoil3X0uJ_5_KeTUwVvTHbJU27AzADRxXSY6vx1sXjAqglE-rpgg_YRoXd_oK1HJVkDGuD2IE79n_cZqe3F9mUiwMNRmD6dPyxP4bYJBGeBaL01TLUFEGQtloBhVhEXOaMkz_KRrnrgM8Vs4KWN9vx5HvTrl3UPD880C1H-ZvF9QPDcT9CcGCAYNpMFAqzgdXr7ovFhiUp0TRFcC9m_uWweDlp9h4Iu2Ej0ohWUWEJk7Vh-iuC7QG08x5v_9uI3PMTNUC1XpEAkhapbj2Xfl9oJ3gS9__IekaSs_qVS6ledVZhKKJputO7T3ga6LhyIxavVYd5xxg6Lkwj-KLkooCNCoSpLwBHAVSdr9REVTYYg9xnPTv_DDCITghva7x3rHFL-IE9_M0l0Lok4-YpL0LkmBSrOYNWuC4I7s029E2KvHLQeEQ1O04YSZAtAkAYS9QK2HESd6IcoQuJtVlSsq2tNEmC0cw2G7eGDVcc-Nnj8NmMDiEB7LNuho5NCNqEdWi509cBYKQn_ZWedUF7TuOg0Y5hfsx5JIxExcfbjgoosfGNSOJASWrHlDlqUOqdIw_ooY2gwbd2TPHRsFqnltF7hj3iP9T5dm9AxkQGtCGHisDKVeiKAW5ug6AcnhRTCkobZMfiWqnqMyQZTTNFeBebGiE_WxDCkvynot2YkA2Pqu7zpQ2KTksT5xP4aTCCSLDJ2nwneTWCi5cTr7DRI932RuJowRiFy0h8ZmDUCBxX8KOow4W8gMNIg1g0-KN1KFBLBwQCpKqK0XrBmDc98Kfy_HtfNn5GrLrABPAGNqGkMFXbEfL59tUb5ZrCedYydb0kpi2B3Py4yXtiFEZbdCVYd_LScWxXxXZE1F6bbptbeiqN0xdEIHvnkpdx46Y8JWEozq2fPdyg36PCLJQ7q0Y5PbfNG4guIwafZLWdKNRmcoDvJvsVo8IRnqmggHb65HUOjGGQlP1Gmi1qq6DksbBKXl1Meu7Ae8Ua-FWPzHoGZx6LFCxzMTWtMrtbqKLQlANDArEXydvDP7odq5jibPrYmR7pS5XyO4U1GrydR_KKi3f4LMrT6_4ZrrXFKnKNVT-yaf5QoA2wStlhz_ODVa3pDlxAAZkDoPI4uXQacUpCTRDxDfxwxZj_12_GKeEzaihxaj1Ls3n8XDEu3gFbPfevaJFhf0U3c65ZeaaaOVUjV5BvWtdI-S_ep3Z7swBJJsSKM_hLwyd5_Y4KYfHImTyVBot7fUZF2ANS-XfMJAsyfBhm3oRVTqojn5yHsk"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 136,
+    "completion_tokens": 301,
+    "total_tokens": 437,
+    "cost": 0.00318,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00017,
+      "upstream_inference_completions_cost": 0.00301
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 277,
+      "image_tokens": 0
+    }
+  }
+}

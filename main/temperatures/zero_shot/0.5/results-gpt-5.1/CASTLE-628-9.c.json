@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765726511-cgYUPxST55LuekYLXtj4",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765726511,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 120\n}",
+        "refusal": null,
+        "reasoning": "**Analyzing security vulnerabilities**\n\nI need to determine if there are any security vulnerabilities in the code. The function `url_decode` takes a source and destination pointer but doesn't use length checks, making it vulnerable to buffer overflow\u2014specifically CWE-120. There are also considerations with how `isxdigit` is used on signed characters that could lead to undefined behavior, but since the input is ASCII, it's less of a concern. Overall, while it may decode user-controlled URLs, the lack of bounds checking is the main security issue. I'll return JSON indicating it's vulnerable with CWE-120.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing security vulnerabilities**\n\nI need to determine if there are any security vulnerabilities in the code. The function `url_decode` takes a source and destination pointer but doesn't use length checks, making it vulnerable to buffer overflow\u2014specifically CWE-120. There are also considerations with how `isxdigit` is used on signed characters that could lead to undefined behavior, but since the input is ASCII, it's less of a concern. Overall, while it may decode user-controlled URLs, the lack of bounds checking is the main security issue. I'll return JSON indicating it's vulnerable with CWE-120."
+          },
+          {
+            "id": "rs_0d0209da19381df501693ed92fd3a48195b88178690bef4526",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtk3GQrb8Xt8DzYtEHPyqIHArrARGKkim8WncprVkoJcDBix5j89d_7VKCtx8T6AKNm_RRKHbltPzMDzKiKOipN9OoXAmh96KtTaOPj3Y7V6Zm9SiTp0IUW6tfX3yVfiWDELBd1dR871q4LuiFzRsMyLVQveaLhLgFCeNVr9ZZPKSOMLGBPDh-WuzpXW4FtXC1otuyRohiZg_1MoClQsTiZpxypcEo2aJLjiuss8oP0r42hyDedLXmSA5uY33cMkRS5znJ8xw4kWV-Gb_7sfH5iRxJPgaFIX2TCAWwRKG2Pk-LWanhSjrzeygC3yyh0ZCYBPdm4hlfIrBANy2anyEks8MkafaORhSDbEq-Cyh-Ls_tk9O654tPp9O9XOl2rb6xYvcqWqWgQcdlGlxCczPdpeS9IKUkus41I5mHkWtb7N9Phy8LTzQ393gaMPkExAwraJ8mKFgBGgUlMb34aPT2jYT8RvrLljpsLi9HZYHEX-VqYZyLMy99cobdom1DyEqeGkCLAValgqCU0fUh_XedkQgRrZ7tOKl0BQ8cg9IbY3mwntCXaMj2qxJTrLk3EHw35NOPrK4fgWhv4nYLxdnGY0YmRq0Si7JXLcvmifgacOq-SeMuKzUhhem6z3GvF11Y64L2SlsEKhaC0I-juocWCmjagrXVZnRyru0Os2JhAQIOTI9Y1nnAMNK-Yvruvvfsx1WEPZBUaIImGDJtOlW0NBAKXQ8yoIDnSsI1sKLFRq8QlhFBg_9RUBF6k5r1_3TD-NJxiuBUpnh0YRs2srj4nasteCfLzW_ly21Wrh9azq-eRuWbYVC66s3mU6PB84LotVqqKFglwQNjxkWSa3qvDiEC80ydXxO6Rwuc4Cbdioh44ooF2ee-C9AAKp70yInMwbM6jF58DCIr-qj9oMFZPGcPEsfjNTNaOoalBlah_yFHQHGNBl1EYU957SDtCZ0aKf47PPVFrwaCkuHy9bJxSQfkWSdBj2c1kQhcfouSeG0kinp2k8ZqC5alenabpJbJ9sCuWAcwLqGVA6RKrx2gcvD48bv1H8nezCkbsexFN21S3SkiF2nbkKznGgmOeDYtpv7Oxf2pbHcUGW8OcxoCS825nbthVz6WPwrQkoGOBd8WVuansXa1FBIQ3Mp3PueYEmTTN8KjUAWp8IPFDS7dooB1LgnlR7z9A3SFMdSj5RIHkd9ovrYq52KD3AJzcUAwW71VlnCvF9hmJtuPej9e8qRUv1T7GseJXsYBxN4Kr-g2_B1i3RQrFbj03uOuyUMj0_hLMtZk29v2CDrqltCiQmWtO50pkX-nA0pqc85MxwgmHVpxPHQOzrzTEuujrUGLvwjtlGMfxMzMkz_EZRk_dZxtMKXGQbaBS2zhw1X-78u57FBY2gsAVTMl8EBSlZuDF6W1YYFxAt5xB2vLRU22hHFpT2_UUUgJnPXo-2jvxAXm4P8OvpZlZcTc_k8ti4FYy_j2eT4H4IxdGHGGl50dYRNJgmBAQC_rfCHjCJGqszyc_Q42W_LH2ffLs6Qj2NaGgD0IjO1fh8pI9pwwEcs595u24wx2MC_n7HUBAxNa3JOdrGZXSbHFhlkHcITFKDMf9jhZ0MpeRAfIpjpJvwvKm7jUIb6z_4npOwegEzywSUevC0k9mB5Z-q_mi7SP_Bijmx70mST-Uct4frPU_wQE6hirA_6AodnGJ9F5NBS2SFowpWpjV3Mz-VzQun2Dqy1HvM5wE3L_bCo8n1fW32sTMGYnYRzn5nHZFpnGVRUe6ACC8VPvz17ZwYDRYgbyC6UnUC0uAsSk4YjFola0-zeln0bWDh7xYeoScN1ihnLogWAFW0PW_uT8QxmB9oTrPkDX4mKDIZSomLbi6-cBjvnOjDIIBjQi_dJAe1EzOdHSs1g-mEr_YxHqoV_PFO3oF681kMRCDshZqypZN-kZnYPMLI3fcVUDumimWdigiBkMe9gu6A38BiUEKIJ7oEVQUvcnBGpJTzdvjz3Mn2o6WTPgO1WPDugnXBTcdXzX7enJTeyKZ9oqb3_f93l5YHrIoUmAJ_xKYcmGSazJMovDJX7N5FrUfSFvPbP2WzZAdT-cMlNftIrk8goUeJFtMb_MoTf_3I"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 453,
+    "completion_tokens": 229,
+    "total_tokens": 682,
+    "cost": 0.00285625,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00056625,
+      "upstream_inference_completions_cost": 0.00229
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 205,
+      "image_tokens": 0
+    }
+  }
+}

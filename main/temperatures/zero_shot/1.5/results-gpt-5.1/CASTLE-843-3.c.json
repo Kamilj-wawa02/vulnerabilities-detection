@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765724596-WcW4ztSeGalM6gMOlDOR",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765724596,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 457\n}",
+        "refusal": null,
+        "reasoning": "**Analyzing vulnerabilities**\n\nI need to determine if there's a vulnerability, like buffer overflow or type punning undefined behavior. The buffer size is 8, and using strcpy with \"!\" (including the null terminator) results in 2 bytes, which is fine. However, reading from *intPtr accesses uninitialized bytes, leading to undefined behavior and potential stack leakage. This relates to security vulnerabilities like CWE-908 for uninitialized memory reads and CWE-457 for using uninitialized variables. Since *intPtr uses uninitialized memory, it\u2019s indeed vulnerable, so I\u2019ll select CWE-457.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing vulnerabilities**\n\nI need to determine if there's a vulnerability, like buffer overflow or type punning undefined behavior. The buffer size is 8, and using strcpy with \"!\" (including the null terminator) results in 2 bytes, which is fine. However, reading from *intPtr accesses uninitialized bytes, leading to undefined behavior and potential stack leakage. This relates to security vulnerabilities like CWE-908 for uninitialized memory reads and CWE-457 for using uninitialized variables. Since *intPtr uses uninitialized memory, it\u2019s indeed vulnerable, so I\u2019ll select CWE-457."
+          },
+          {
+            "id": "rs_090ea4079454c23301693ed1b53e4881959ef2b0ad58249185",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtG5PJhZDPjx48n5lxNRq_LP8mBMY9DjaU7itytQ4qkTJSX69y7kXFPrE4RMoPamGrTvk9oU9NDR4w-3gw6ZV9aetDTg5CTNNzthjyF5KZWOdj09Fv-Z5DV0-rWW8RZaQbrRvklCbvUX1w3_zQ-BdyN2XCQiBFHil7-tdMtaRQhZYe-qnhQqMVphZSbNpOT0ron6Eqe2b9oZXSdYA70YUnGJvUk4qOSbGjy6opLrvr_xmkQU5GWtR27bBJyuN-wxa_P0Becy2EdH6Sn-PawYNbULHaRorPCBoW-JIt12C0TRt5jPDB02jJvPZ9gRblsHLa950wSt8Q3lBQ2dmG0JEDNtniqGl47aByb-j5PKkEC7e6MRCY42fKecsCMwyaPFRAi7goXfEJgDE0gpCQLTZVx8zYSeRlSIvI2VvCabZl_Kp7ml3kWQQBfBjseFlA8zA_v_IN2rdBv6-umADYRkqLBxPh9CTTXel1zjg-sUIPdQJ0NFDvNAg-03ix0vTYwJOll66Gry-ZnjRne3IeYp_v9uNWrMAPjNaXouHmUZmCYS8SO5LNUFcla-C64Pon5mKNUrKDOkgP1gdatHLAM9iPOxu3Yqv552NAswGnBmbIY1YU-9uH9pF5XPJy96BC5tTx8zjaLRCUa9cKuD6B6DE_2AUpdwD7KQdOofDuz50HdEuC-5UspEI2NIVavtomFO3KOMDuYPxPWzyzw47gU6c-V57FiQn5Bmxt2QdvGerM3XUc0BzOX552GIbDoqrMJrhXJD8vr4Ja1zsrUuJgjC-_tmL83_-69V8ewgY916B4vRb1m0bebgpghNkbbnPYFSejuPjRnam7TIL2t4nkNKAYIcuxMh0ZKFLoAkKLHzZfFeBg9kbz83ZhyuJWZ7CGpO1QIUlrGz8HFWa-ZgNfgxpfhhesK-9dSJLhoxkLfj8sswONd0yP6tcqImY5IX53J4_yqKgh9CQi4dPdA_PHoG6rkLHvFAD3RwabiPIZGBs8KkYSeiGsmOxEJAynqB_qjcK6lewNKswsL80E2mPluzVxZ2Wjm0zwfD8QmqWQzlsDsqD6bZveqCs84kUth5ENuCaiCsPzz_l38DLyKihwPTA-3jNwJ1wac-L9WsdMMMFAPffcmNTf6xkG-HjA95m0FlyZ2kzZANa2UZcc_bODvoEl21g9ZhRuRRJJXUYCCLW75uOz3Yo9WJCDXf3Y5GyLrAbDR-IUhoWAZH5KDqWTBDBUf_W7V3TTe2nRDYQ40KRn9uxhBa-4vV4vWE02chF2rxptirJ5X6o6kN1Nrp5ZPFgj4WWs9Bx8QLzhGxAe8MwimWntaaMi5d6edM-zHn1EGw6OoFM5jALLPFpKMuVQ-Cg9P17yKP1ZuzgHvmCUUTJTQnvpqp851CzwD91POhShiQ1sX1x1E5tOodbuVmwXH1oEMwz7dBRX8GCsU9s1Xnx5PHKFhfCJsJ79-2cilit4WUJg9DfN_aCPkqNkKU-ur5U6J6PS7c2n7OIVamIsF3ExmcCvB0Bqvw5yFFGTqcHTgY9TO6xIJcEPjmIORIbLm0fQDXNlDAvoOhTxDhhCZ1q5gOLBMVFsv29zjZtFjpy8H-DYeA"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 124,
+    "completion_tokens": 151,
+    "total_tokens": 275,
+    "cost": 0.001665,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.000155,
+      "upstream_inference_completions_cost": 0.00151
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 127,
+      "image_tokens": 0
+    }
+  }
+}

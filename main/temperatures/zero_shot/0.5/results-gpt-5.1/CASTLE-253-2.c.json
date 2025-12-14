@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765725399-7rWC6wqAEYaBzgR4Mb6I",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765725399,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 476\n}",
+        "refusal": null,
+        "reasoning": "**Analyzing security vulnerability**\n\nI\u2019m trying to decide if there's a security vulnerability in this code. The function `getIntPtr` uses `malloc` and returns a pointer, while `checkIntPtr` checks if an address is odd. However, using modulo to check pointer oddness is nonsensical. If `malloc` fails, it returns `NULL`, which is not detected correctly. This could lead to dereferencing `NULL` and causing a crash, representing a potential denial of service (DoS) vulnerability under CWE-476. It's indeed a vulnerability.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing security vulnerability**\n\nI\u2019m trying to decide if there's a security vulnerability in this code. The function `getIntPtr` uses `malloc` and returns a pointer, while `checkIntPtr` checks if an address is odd. However, using modulo to check pointer oddness is nonsensical. If `malloc` fails, it returns `NULL`, which is not detected correctly. This could lead to dereferencing `NULL` and causing a crash, representing a potential denial of service (DoS) vulnerability under CWE-476. It's indeed a vulnerability."
+          },
+          {
+            "id": "rs_06ef556353bbee2b01693ed4d843fc8194ba3c491b05288c5b",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtTd8AwxaL7ApfgvNSViM3NJl70p85ahK4WcfegN-cXYF5zL_zwxxeJZ86zC_OP_xSzc4i7jqhER1b5rVYmQ2JgjSZSTAz4moDh6WFQc3ZYTLLwOx_AfS3SuC5a_JsnbDreeKxwS1Pzd23yCSh96CkUlgrAD3deSozEBmivGGkVLfyTOHiJi6YsVTH7Za80tbvkTogWoAlDTH06TZPcdvQbuEVAQRKA8ECRtI4zEx1eGTvHLjT1RBUCjg48RMj3ypECxJmi93kl5rKXEDTJggo5HhcSOr8DzzSt26VAyRiW4IXf58oHcelZI8lxYnqVMlGsOiJ6gFeR4GgpkHfzIsKrMAY6_3k2LJxNTHqpjxu8mLPBs0Yt-OgHKj5I5nz8jiVQyqKwFQfCbdWUp28YqEDk8GgxeItH7HmdHIsEjdQ08ELiM0yWECplCJKF3YKI1ePQBRoye_Iys0UKjRYSNqgv5faxTtVGD0fnHPPqX-iR3tOUVdpbST1CIfzm3RuwjRJ-TwAG8UPBuMZ3qJJzRJoDiywlg19FE1FqBEVuwCceM9BT0BBo7BNTGru3I50bKR5kax9pKnC0Fgd4cIvBwX4K_ovrN9qWZmCP1sc0-edWdcFdqBuKNgtq5VmBMzqBuQ0hX-C-OmLeET1RdETymwxLaSSRqPhBbJz1JOI6wxhwmCh3vQLTXoNk0sJQZG4StE3FCPFSCYB9MopJOzYpTma9QMEqi0JLAE6rIo5KFIoxVeZnbWcZ4ab_uDbFkZVobtRWYaoyB1sjNREDoE4mmvYKywT_ZYu5hMa58vIEA4xSFrjVK9pWFk7af7UClc4rd1AeZfeSyQ8FK3Al-wZPnVn521zqDKXpa_kfPGQTzjacxpVx1CZ6eRIICEz8YH2rdthOt4Ht6gsCDTyTKJavBVwedWwYQyyEtHdI7XF4sfBoQxkeHVy6MA-ULFoKFBcqR5L_rVaf5vMbwUEgh35OQJJBfize_lqqfAEpEYSW5g9KiwHmCDzbqty9sfeDliBlpJa8FK0GAL3rYelbQO0yTSvYwzmXNG77fRVO30BCO1tFR4xQk0uHFirF9lqViLQOQTK-9KFjWT94iWRp_iGP4hYqEqZdFIP2hxVIKf0rm3LIBOLvdbL3fZmm4bXhJayRSluytPUtAQTfQM9s8QzPjC6VU2EQi9YtFb4P-KX1tKuQXzzCQPBa5YvfbG3r6my9tmSBZDcCpBN0wCVrgdjKLqzsifb8drVY1uFUAG_6KBqNAetWYOz5ZY0PYc--pLalLxGhra7V5lPrhUXfCldQUVtJjRfxT2MQJnOg5D4d7ZQP-zxT9EnrGJjULdXJo8GDYF5kxi6EXoXVBfSw5sLSx2aWnN5bMeGjQVvxGAvpqj0kVLs-tp9_jGq1c9h4BUUqUNRRMBVk5QVOR1nEwvTbaMstNA9yl-h0YeWjrOcj1NZ5dbNZDXTVXixEDjfAb6mdpLg4-Uhtt7xfy6V05fycZ60uAC5bnetC09kNtoifaKeYCPd6PBZq1tdfVealomfY_NFxyC1wCY8f72dqYLtaEz8kuTY7-DOxDGZDVe3oQ3BYRUSbTXjHRVydgyOJmlhnCuczT8UcVIPvRggiUVdyk67GapWmqG-azNVpAi0l4Hj0WWE6qx4BIY6hVsrywKpV1OO9WVBkSf7Vy70HXPSwpeXrM-uZ06zkHWQFctE7oBiMyeGC1CmnVlvdsmXhY-CuFcxNbr_Lze_tW7H-neqYAeYB-r6HLS0Q6WZ0SqYb9-01sSBm3JcDgjgtR20IrIRvKJjPUL0PljvlvggpVwLyFo2IgYrMz_cwIATOfnvtMCC9SuJCeH3a12Zm8nl-9ZK6jLsK2"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 173,
+    "completion_tokens": 211,
+    "total_tokens": 384,
+    "cost": 0.00232625,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00021625,
+      "upstream_inference_completions_cost": 0.00211
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 187,
+      "image_tokens": 0
+    }
+  }
+}

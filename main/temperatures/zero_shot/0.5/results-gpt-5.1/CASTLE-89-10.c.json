@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765725157-Bv8t3vbhFnxx8QS77K6m",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765725157,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 89\n}",
+        "refusal": null,
+        "reasoning": "**Assessing SQL vulnerability**\n\nI\u2019m analyzing the code that uses sqlite3 with a hardcoded ID of \"12\". I see that snprintf is constructing the SQL statement using %s, which raises the concern of SQL injection, even though the ID is constant. Many security analyses treat this as a potential vulnerability due to the general unsafe practice of concatenating strings in SQL. Therefore, I lean towards concluding that it's vulnerable in principle, following CWE-89 guidelines. Here's the JSON: {\"vulnerable\": true, \"cwe\": 89}.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Assessing SQL vulnerability**\n\nI\u2019m analyzing the code that uses sqlite3 with a hardcoded ID of \"12\". I see that snprintf is constructing the SQL statement using %s, which raises the concern of SQL injection, even though the ID is constant. Many security analyses treat this as a potential vulnerability due to the general unsafe practice of concatenating strings in SQL. Therefore, I lean towards concluding that it's vulnerable in principle, following CWE-89 guidelines. Here's the JSON: {\"vulnerable\": true, \"cwe\": 89}."
+          },
+          {
+            "id": "rs_04e0c5697ef3423501693ed3e5911c8194bd25f52bee5bdca2",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPtPqIbOKhWBoUzlX8zssmjkpyZbtN2IjNBn-FyG7EmART79ManNhrQAV_6DJ_lEothkKMfZJmzXlbBgU9xP7gD8e_X6a2oEHolfDjbJlF-0LYBeETWV9gP3foKnkqRF4Qp9xx9MvpjDcJ9OSh-9k7ROJCxZt_aXNigiBVuI_mvwU2eF_sN1XgaoWEDnpDRPDHOe-j405JbjdmslzSt9xO8cSGOKIXhzsDBTN6KQ-ZnaKWvGofsV72blI9toXNonK9r6rUQFqFUIlfgnyi-FXy6SlLfj-TUS0TFUTdAAtVPHwjInILIDACYPB5C9sMqtvXtF8s4iXh4w5I7O0n7CnEM685d2GUUr4we-OW2SskL_iK43K9mSrCxQFQEkbb1kQyfzM8oRljfz6mUDZA08ATOJn2t3Ng253wj0iMcEln0k_Q6n9z6oolTnPUWBzlOlLWo5QNyK9AJfkM59rlAIfgtQ5Gqw30xrmayMLahLv8I0uRmPSaYJlVICsmxbL0DqJlwddyq_ktbydoS4uSBIB4ybQ-R8tkrfDI-j-iCMIY5VOZ4uQmNvQ1lZxW2mQNuwNJ7mkh0a7rjkvAx0ae6aPkLL_DIhjpi_rUhBgfk7BX7uWriasZ27rutOo7NfFqQD-Las18MCkSbFEZmzW_SScqK-ygAC9DUG8veV3jYSDqd0baE4zLlWYlzgqMl4fQzLBNANfpnFoR1hZMFPaab7CK4_AzvkOKKzHynd6LHfF4NyOZXgMDllazfhizAP-MY6XfzRtW_YZ8MGFYgdygqhOwLTRYIm6OUB1jJCsTbTw3xFXQtpNc_5tMCOXRkedsMQk4evE69-9D3uyp4UYjON0WBKf73lRknJZx5YH1nDnVVZKSgOQxIwr8MYF8ZqHJ6EoSsXwEuMsQJyg_lhkeOSxdKkUURTT9XhZyp2zMI7K821oBTBkAr-v0Lp-xOoulZU3H4Bs8sOcrYKc_0pBLotyfK7wWs4ryGBGKhNfAqPTg8x8lksBTA_NyHD4jHsqhmtYH91d0GqAHfOXgLNFzNLVpb_wMQg27t-yFjVIIWwY3nQ6DVR5ohYQM6AlJ5XiORW9My7hhDJF0hGhWvcNPSa8Qkrq4UXjLoBbgDeNRClC1hZtRXUCksWK5aJtHTtMXlL5A-Fj9LlN03ZBfHQOd675hslKg5ZpEGwWIIsVC13z7ZhNdsXFZZ6P10igsFhk78QVQh52z-2A7KWZzO-Hn_DaRpneL74mQQA9vbsHFs-NEQ4Oveko1d9b5qv737PJAkLb43mzf29loUIhS9V_hi8q5T6_2q-yYj3Z72qaXe6mfKExQqMJPRbWEMDoRBXw6-IocsLq1Z7NSH334oeYT8I4h8VJC3uc8alnxbABr5JIiTPTJtXEnmzOhPXqa-h4wZE6ZI-D6HCT78o5SiG5RKhfo3DGjP4OnVUFjPWqOlJXNbCuP98JD0mI5hIGDG5g42ZXhiX6GFQGMvnq3QpMTQ3vNWxrucziDuJho8cWVdGgfN__Qk1b0RnAHmHTEkLusNYV-aC5kk1g1P4uSUlZB2rCbGHNgPVZbrRI0vt8OaDk051dJBlpQKmi60VggWPhYcoozJ2SBdL19AcOQDQtBDupZO81IrI1zAwmS4lUz4s6jelAS1i7eSUuF76WJ2ArLDOxsFjMxfQt3fN0J0Q5QvSj_pFMDdyJSz3ROQsZpvQ-Aa7G_DUfu1JYxcOIzmFGLH_LWv6nvJufFK__gX8yKiNKUqI0W-kDJMAIPLmJt7kY8lQm_XiR-MbaMKgItXK0heMXfKY6zxgm02p7UZiIMGkXQ3yXpAKzQMllmCzbesGjqDw2-9F7awnl9AVjkOdg2G8Xlf3ADpxmZ4T1WvEzj3rWQofSz0aZw-XHLuj4V7ImI1qgwxlBP4cAyRTV9lCBp8r-exlGcd2u3pAItpDmFoFZYOEiCL-QF0jLS9DzK-aG6Bl3gjk="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 378,
+    "completion_tokens": 199,
+    "total_tokens": 577,
+    "cost": 0.0024625,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0004725,
+      "upstream_inference_completions_cost": 0.00199
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 175,
+      "image_tokens": 0
+    }
+  }
+}

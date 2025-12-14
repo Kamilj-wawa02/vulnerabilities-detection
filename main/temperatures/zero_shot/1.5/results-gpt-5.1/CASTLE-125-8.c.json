@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765722814-149H0yVgvqgxnuSOUArh",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1765722814,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 125\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating code vulnerability**\n\nI'm looking at the code with a defined value for `MY_SECRET_CHAR` at 442. I need to assess if a string literal could exceed this length. Typical \"lorem ipsum\" text might hover around 445 characters, but it might actually be shorter. The main vulnerability here is the potential for an out-of-bounds read in C when indexing `str[442]`. That's tied to CWE-125, and if the string is shorter, it definitely leads to undefined behavior. So, the answer is: yes, it is vulnerable, and CWE-125 applies.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating code vulnerability**\n\nI'm looking at the code with a defined value for `MY_SECRET_CHAR` at 442. I need to assess if a string literal could exceed this length. Typical \"lorem ipsum\" text might hover around 445 characters, but it might actually be shorter. The main vulnerability here is the potential for an out-of-bounds read in C when indexing `str[442]`. That's tied to CWE-125, and if the string is shorter, it definitely leads to undefined behavior. So, the answer is: yes, it is vulnerable, and CWE-125 applies."
+          },
+          {
+            "id": "rs_0c27f5fbd875a79101693ecabf75c881948bf58b8a293a333f",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpPsrLu-HHE81n8x1slWndfitD5oCXgEtHXj3uN6siQF09un_h7HHZvx5EZHhKkPxkZpg0Y35T64oWquf54Exnydea3TnqZX-8ZSpUp3B7IUu9GMSPi2_-U1G8miO0cfwNUEkomns6_sUSwhUauNGXqyUNvD7giqCubWIUGA1Q2NmLHN2yKTTwb2PCYeHGRbmKFKFrPhAC8asNwpUM9UGQg6t7c5I7mKZz8wpTIbf-uXRInr-1B49VwarKXkLw2CmFaz3bxe-szNmzycDcSwI5tXWgv59S3IcCJeEhsFArWia7J2-6XgnSwJIFFFZaeedYscxaCWLcKo-1UyFK8NENb__xwnXBB3j5iDdOHQO-fU9OgE_qP3bz7c6ZEnWgIrTR7Hxu7dlsXZg1AfQahpIJHPPQkHkwgeZ5gsVkxyEnGOGIawjDnNKIzWr72WgM3852npgx-p53da4k6ruZJsJ0_DmfcCOLEuORzPYoAd1Ji6-iMQL1-xioDSlLaYVYySACq0_uOctMfG6qWnbO4GmhO_RYyasnkP7bz6E4MkWAmWVxrV9gNScjotiG3u8I9VAdeyMv6qlhGehuZbgdyMUx7W73pjwglQ6ncwwu6mfCMOoSFLQ-qWoplR95YBRp05nBKhDznG-R09ycvuyEdig9jVwFzvj44TjKuDynQe8tuDm9P6LMmE5iUFglVG_OVw0jWCJnlASb3pXikGZBGP8U1H_cdmf08fp1wM3kQXefjkWN9VA83QIff13NXgY_aoYMKV4hvVbxC63ZD6HnR0HP-UkERhvMTncYa2d-Fu_-NWj0tk9wHtn622meq8H14_qMaLk0aYbbuTPHy-8Xn1WKuLY3k6itV6KRYPpZjK5cPT7p0uc3kuOFgHVJtRnNF2fX9g9DlfI65DlCDCyTyeCIaMGlhJn1p9MO5dmeVmzBZ_JqXrSXRh5Q18FC8Kdc0deqZsfnjrJFi2SMGvLTxXz5A-mcPo3k6Us06jrvTf5lVr-1ZCobkDEudBU85zRqGvkRZQVGBtodHLJE7GbThrTMHBnMqvmCMFzrLRz2lO4JUzacKxjO-BfHrrS0gPJWfYqEytQudF6P3D39c6Xq3wBCwXAqFnRqo-7FqqQq7Xadr3pN16mA1bw3TliYf76KpMHCID-qB3TK6SqW-hcgmUm3vBatOUoC_j1DjNj58gl1PM_CVjuNyoizuyPn2fvjhm-xY52TznOXymX7FXZHgSKJmIwNFEhHziSwbpiF81N5Vlp-nY3SxcenWBHpDmcSaq--kufLGBk5xQeTz0WA3GnteEm6QQ8ujaT9GbLuM-FYh7T1VxS6lGbIBc1HiN8DXzNTatwNlQENGIA612CXHrqum3MBA5gl0koRoUSA9m-ewA5g0Er-P_v5bbHnohMEPIAdNdOv1ggDkQcz6sJhgZoQlmd7W3A5fD8S7hQelp_aWj4-tr-x2e60nWSSGL0BBXekGL9YR-c5DkEqQYlqV3v8IYjnlcR1C7U3qM0YYXWnEMKUA9fpMLqgFCpKma_3KO8EWl_AkNmhR3gn4rQHw03FhISCgupd9gt38RP7nMmprjUykZsDZWZUB7xait9vt9VV-SNBAi6GUUi-t0z7uPMTyYfHlPZPktXmvqZhlj_-vo1Id-abpuuBPddyGYkoaGHEMBSjf1aX4qed8CqenwZ8LTvR6IzOO9TriZaoKks9wdkL8TY="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 237,
+    "completion_tokens": 182,
+    "total_tokens": 419,
+    "cost": 0.00211625,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00029625,
+      "upstream_inference_completions_cost": 0.00182
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 158,
+      "image_tokens": 0
+    }
+  }
+}
