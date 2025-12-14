@@ -30,9 +30,9 @@ RESULTS_DIRECTORIES = [
     "chain_of_thought/results-grok-code-fast-1",
     "chain_of_thought/results-devstral-2512",
 
-    "temperatures/zero_shot/0.5/results-grok-code-fast-1",
     "temperatures/zero_shot/0.5/results-gpt-5.1",
     "temperatures/zero_shot/1.5/results-gpt-5.1",
+    "temperatures/zero_shot/0.5/results-grok-code-fast-1",
     "temperatures/zero_shot/0.5/results-devstral-2512",
     "temperatures/zero_shot/1.5/results-devstral-2512",
 
