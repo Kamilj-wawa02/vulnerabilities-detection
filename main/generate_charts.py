@@ -87,7 +87,33 @@ def model_name_from_dir(path: str) -> str:
     return os.path.basename(path).replace("results-", "")
 
 
-def generate_strategy_chart():
+def customize_bars(width, x, i, label, values, color, rotate_labels=True):
+    bars = plt.bar(
+        x + i * width,
+        values,
+        width,
+        label=label,
+        color=color
+    )
+
+    labels = [f"{v:.3f}" if v != 0 else "" for v in values]
+    plt.bar_label(
+        bars,
+        labels=labels,
+        rotation=30 if rotate_labels else 0,
+        padding=2,
+        fontsize=8,
+        color="gray"
+    )
+
+
+def add_top_margin():
+    ax = plt.gca()
+    ymax = ax.get_ylim()[1]
+    ax.set_ylim(top=ymax * 1.1)
+
+
+def prepare_strategy_chart():
     strategies = list(PROMPTING_STRATEGIES.keys())
     models = [
         m for m in PROMPTING_STRATEGIES_MODEL_ORDER
@@ -111,13 +137,7 @@ def generate_strategy_chart():
 
     for i, strategy in enumerate(strategies):
         values = [f1_scores[strategy].get(m, 0) for m in models]
-        plt.bar(
-            x + i * width,
-            values,
-            width,
-            label=strategy,
-            color=PROMPTING_STRATEGIES_COLORS.get(strategy, "gray")
-        )
+        customize_bars(width, x, i, strategy, values, PROMPTING_STRATEGIES_COLORS.get(strategy, "gray"), True)
 
     plt.xticks(x + width, models, rotation=30, ha="right")
     plt.ylabel("F1 score")
@@ -125,9 +145,10 @@ def generate_strategy_chart():
     plt.title("F1 score comparison across prompting strategies")
     plt.legend()
     plt.tight_layout()
+    add_top_margin()
 
 
-def generate_temperature_chart():
+def prepare_temperature_chart():
     temperatures = ["0.5", "1.0", "1.5"]
 
     models = [
@@ -138,7 +159,6 @@ def generate_temperature_chart():
             for d in dirs
         )
     ]
-
 
     f1_scores = defaultdict(dict)
     for temp, dirs in TEMPERATURE_EXPERIMENTS.items():
@@ -164,13 +184,7 @@ def generate_temperature_chart():
             else:
                 colors.append(base)
 
-        plt.bar(
-            x + i * width,
-            values,
-            width,
-            label=f"Temperature {temp}",
-            color=colors
-        )
+        customize_bars(width, x, i, f"Temperature {temp}", values, colors, False)
 
     plt.xticks(x + width, models, rotation=0)
     plt.ylabel("F1 score")
@@ -178,15 +192,16 @@ def generate_temperature_chart():
     plt.title("Effect of temperature on F1 score (zero-shot)")
     plt.legend()
     plt.tight_layout()
+    add_top_margin()
 
 
 if __name__ == "__main__":
     print("Generating strategy charts...")
-    generate_strategy_chart()
+    prepare_strategy_chart()
     plt.show(block=False)
 
     print("Generating temperature charts...")
-    generate_temperature_chart()
+    prepare_temperature_chart()
     plt.show(block=True)
 
     print("\nFinished!")
