@@ -15,11 +15,11 @@ from time import sleep
 #
 # Models available at: https://openrouter.ai/models
 
-MODEL = "openai/gpt-5.1"
+MODEL = "mistralai/devstral-2512"
 START_INDEX = 0
 END_INDEX = -1
 STRATEGY = "zero_shot"      # options: "zero_shot", "role_based", "chain_of_thought"
-TEMPERATURE = None          # Must be from 0.0 to 2.0 (defaults to 1.0), set to None to not include in the payload 
+TEMPERATURE = 0.5           # Must be from 0.0 to 2.0 (defaults to 1.0), set to None to not include in the payload 
 
 DEBUG = False
 DEBUG_PROMPTS = True

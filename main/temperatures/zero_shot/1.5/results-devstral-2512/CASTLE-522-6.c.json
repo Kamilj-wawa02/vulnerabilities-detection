@@ -1,0 +1,42 @@
+{
+  "id": "gen-1765728477-C4vKSMDVXXFdIZRlCXGY",
+  "provider": "Chutes",
+  "model": "mistralai/devstral-2512",
+  "object": "chat.completion",
+  "created": 1765728477,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```json\n{\n  \"vulnerable\": true,\n  \"cwe\": 732\n}\n```\n\nNotes:\n- The program writes directly to `/etc/passwd` with no credentials, permissions checks, or sanitization.\n- Passwords are stored as cleartext in `shadow` (but code writes only to passwd).\n- Direct file system write vulnerability without proper isolation or validation meets **CWE-732:**\n  \u201cIncorrect Permission Assignment for Critical Resource.\u201d",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 358,
+    "completion_tokens": 101,
+    "total_tokens": 459,
+    "cost": 0.0001143,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 70,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 5.37e-05,
+      "upstream_inference_completions_cost": 6.06e-05
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0
+    }
+  }
+}
