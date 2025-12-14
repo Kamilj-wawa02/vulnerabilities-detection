@@ -4,7 +4,7 @@ from typing import List, Dict
 cm = importlib.import_module("calculate_metrics")
 
 FIELDS = [
-    "f1", "precision", "recall",
+    "f1", "accuracy", "precision", "recall",
     # "TP", "TN", "FP", "FN",
     # "total",
     # "correct_format_responses",

@@ -138,6 +138,7 @@ def evaluate(true_values: Dict[str, Dict[str, Any]], predictions: Dict[str, Dict
     precision = TP / (TP + FP) if (TP + FP) else 0
     recall = TP / (TP + FN) if (TP + FN) else 0
     f1 = 2 * precision * recall / (precision + recall) if (precision + recall) else 0
+    accuracy = (TP + TN) / (TP + TN + FP + FN) if (TP + TN + FP + FN) else 0
     average_cost = total_cost / total if total else 0.0
 
     return {
@@ -148,6 +149,7 @@ def evaluate(true_values: Dict[str, Dict[str, Any]], predictions: Dict[str, Dict
         "precision": precision,
         "recall": recall,
         "f1": f1,
+        "accuracy": accuracy,
         "total": total,
         "correct_format_responses": correct_format_responses,
         "wrong_format_responses": wrong_format_responses,
