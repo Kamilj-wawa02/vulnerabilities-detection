@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765715668-j2IPNdTNycSYSc8z2aJ7",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765715668,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 256\n}",
+        "refusal": null,
+        "reasoning": "First, the task is to examine the code snippet for security vulnerabilities. I need to return ONLY a JSON object in the format:\n\n\n## Examining code snippet  \n- The task is to analyze a code snippet for security vulnerabilities.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER) fields.\n\n## Examining code snippet  \n- The code is a C program that inserts a username and password into an SQLite database after validation.  \n- It creates a table with username and password fields, both VARCHAR(32).  \n- Username validation ensures only alphabetic characters, while password allows alphabetic characters and digits.  \n- Input is read via fgets, with newlines removed before validation and insertion.  \n- The program uses prepared statements with placeholders and binding for the INSERT, preventing SQL injection.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to examine the code snippet for security vulnerabilities. I need to return ONLY a JSON object in the format:\n\n\n## Examining code snippet  \n- The task is to analyze a code snippet for security vulnerabilities.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER) fields.\n\n## Examining code snippet  \n- The code is a C program that inserts a username and password into an SQLite database after validation.  \n- It creates a table with username and password fields, both VARCHAR(32).  \n- Username validation ensures only alphabetic characters, while password allows alphabetic characters and digits.  \n- Input is read via fgets, with newlines removed before validation and insertion.  \n- The program uses prepared statements with placeholders and binding for the INSERT, preventing SQL injection."
+          },
+          {
+            "id": "rs_3607cb94-67e1-04cc-4599-ab85a62ef6ea",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 823,
+    "completion_tokens": 536,
+    "total_tokens": 1359,
+    "cost": 0.00093404,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 192,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00013004,
+      "upstream_inference_completions_cost": 0.000804
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 519,
+      "image_tokens": 0
+    }
+  }
+}

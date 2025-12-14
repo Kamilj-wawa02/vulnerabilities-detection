@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765716537-SHNkbGbS8QT7JBITPe5y",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765716537,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 674\n}",
+        "refusal": null,
+        "reasoning": "First, the task is to examine the code snippet for security vulnerabilities. I need to return ONLY a JSON object in the format:\n\n\n## Examining code snippet  \n- The task is to analyze a code snippet for potential security vulnerabilities.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER) fields, without additional text.\n\n## Examining code snippet  \n- The code generates a Fibonacci series, taking an integer n from user input and printing the first n numbers, ensuring n is positive.  \n- It uses scanf(\"%9d\", &n) for input, which reads up to 9 digits but may leave extra characters in the buffer if input exceeds this.  \n- For large n, the recursive Fibonacci function could cause stack overflow due to deep recursion, especially around n=1000 or more.  \n- The exponential time complexity of recursion (fibonacci(n) calls fibonacci(n-1) and fibonacci(n-2)) makes it inefficient for large inputs, like n=50.  \n- While %9d limits input length, it doesn't fully prevent issues if n exceeds INT_MAX, potentially leading to undefined behavior.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to examine the code snippet for security vulnerabilities. I need to return ONLY a JSON object in the format:\n\n\n## Examining code snippet  \n- The task is to analyze a code snippet for potential security vulnerabilities.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER) fields, without additional text.\n\n## Examining code snippet  \n- The code generates a Fibonacci series, taking an integer n from user input and printing the first n numbers, ensuring n is positive.  \n- It uses scanf(\"%9d\", &n) for input, which reads up to 9 digits but may leave extra characters in the buffer if input exceeds this.  \n- For large n, the recursive Fibonacci function could cause stack overflow due to deep recursion, especially around n=1000 or more.  \n- The exponential time complexity of recursion (fibonacci(n) calls fibonacci(n-1) and fibonacci(n-2)) makes it inefficient for large inputs, like n=50.  \n- While %9d limits input length, it doesn't fully prevent issues if n exceeds INT_MAX, potentially leading to undefined behavior."
+          },
+          {
+            "id": "rs_cf7c98ca-111c-1e4e-0be8-bbbdcd387944",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 398,
+    "completion_tokens": 893,
+    "total_tokens": 1291,
+    "cost": 0.00138454,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 192,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 4.504e-05,
+      "upstream_inference_completions_cost": 0.0013395
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 876,
+      "image_tokens": 0
+    }
+  }
+}

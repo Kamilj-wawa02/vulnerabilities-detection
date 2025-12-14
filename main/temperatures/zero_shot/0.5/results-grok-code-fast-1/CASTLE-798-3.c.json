@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765717219-B2fl4Kn5Bl2cjFMoTDQu",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765717219,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"vulnerable\": true, \"cwe\": 798}",
+        "refusal": null,
+        "reasoning": "First, the task is to examine the code snippet for security vulnerabilities. I need to return ONLY a JSON object in the specified format: {\"vulnerable\": true or false, \"cwe\": CODE_NUMBER}\n\n\n## Reviewing code snippet  \n- The task is to analyze a code snippet for security vulnerabilities.  \n- The output must be a JSON object in the format: {\"vulnerable\": true or false, \"cwe\": CODE_NUMBER}.\n\n## Reviewing code snippet  \n- The code is a C program using MySQL to connect to a database and fetch tokens.  \n- It includes headers like `<mysql/mysql.h>`, `<stdio.h>`, and `<stdlib.h>` for MySQL operations and basic I/O.  \n\n## Examining security issues  \n- Hardcoded credentials (server, user, password, database) are visible in the source code, risking exposure (CWE-798: Use of Hard-coded Credentials).  \n- No error handling for `mysql_store_result`; if it fails and returns NULL, `mysql_num_fields(res)` could crash the program.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to examine the code snippet for security vulnerabilities. I need to return ONLY a JSON object in the specified format: {\"vulnerable\": true or false, \"cwe\": CODE_NUMBER}\n\n\n## Reviewing code snippet  \n- The task is to analyze a code snippet for security vulnerabilities.  \n- The output must be a JSON object in the format: {\"vulnerable\": true or false, \"cwe\": CODE_NUMBER}.\n\n## Reviewing code snippet  \n- The code is a C program using MySQL to connect to a database and fetch tokens.  \n- It includes headers like `<mysql/mysql.h>`, `<stdio.h>`, and `<stdlib.h>` for MySQL operations and basic I/O.  \n\n## Examining security issues  \n- Hardcoded credentials (server, user, password, database) are visible in the source code, risking exposure (CWE-798: Use of Hard-coded Credentials).  \n- No error handling for `mysql_store_result`; if it fails and returns NULL, `mysql_num_fields(res)` could crash the program."
+          },
+          {
+            "id": "rs_3e8b0ee5-acc5-ec93-1624-f11889fb9bc9",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 619,
+    "completion_tokens": 642,
+    "total_tokens": 1261,
+    "cost": 0.00105224,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 192,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 8.924e-05,
+      "upstream_inference_completions_cost": 0.000963
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 629,
+      "image_tokens": 0
+    }
+  }
+}

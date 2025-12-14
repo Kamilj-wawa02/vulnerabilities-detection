@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765715769-toDVWEGFqbDRdnQyPqlV",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765715769,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 257\n}",
+        "refusal": null,
+        "reasoning": "First, the task is to examine the code snippet and determine if it contains a security vulnerability. I need to return ONLY a JSON object in this format:\n\n\n## Reviewing task details  \n- The task is to analyze a code snippet and identify any security vulnerabilities.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE) fields.  \n\n## Evaluating code snippet  \n- Need to check for common security issues like injection, XSS, or buffer overflows.  \n- Will assess if the code handles inputs safely and follows secure coding practices.\n\n## Examining code implementation  \n- The code is a C program that adds a user to /etc/passwd, reading username and password from stdin.  \n- It appends entries to /etc/passwd in a format including the password in plain text, which is insecure.  \n\n## Assessing security risks  \n- Writing to /etc/passwd is dangerous, as it should only be modified by root, risking privilege escalation.  \n- Storing passwords in plain text violates modern security, aligning with CWE-257 for recoverable password storage.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to examine the code snippet and determine if it contains a security vulnerability. I need to return ONLY a JSON object in this format:\n\n\n## Reviewing task details  \n- The task is to analyze a code snippet and identify any security vulnerabilities.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE) fields.  \n\n## Evaluating code snippet  \n- Need to check for common security issues like injection, XSS, or buffer overflows.  \n- Will assess if the code handles inputs safely and follows secure coding practices.\n\n## Examining code implementation  \n- The code is a C program that adds a user to /etc/passwd, reading username and password from stdin.  \n- It appends entries to /etc/passwd in a format including the password in plain text, which is insecure.  \n\n## Assessing security risks  \n- Writing to /etc/passwd is dangerous, as it should only be modified by root, risking privilege escalation.  \n- Storing passwords in plain text violates modern security, aligning with CWE-257 for recoverable password storage."
+          },
+          {
+            "id": "rs_fa546f0f-afa5-d7ac-c919-2ff274b70af2",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 536,
+    "completion_tokens": 1248,
+    "total_tokens": 1784,
+    "cost": 0.00194464,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 192,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 7.264e-05,
+      "upstream_inference_completions_cost": 0.001872
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 1231,
+      "image_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765715511-NsYGARWIZDV11rnpkMLH",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765715511,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"vulnerable\": false, \"cwe\": 0}",
+        "refusal": null,
+        "reasoning": "First, the task is to examine the code snippet for security vulnerabilities. I need to return ONLY a JSON object in the specified format: {\"vulnerable\": true or false, \"cwe\": CODE_NUMBER}\n\n\n## Examining task details  \n- The goal is to analyze a code snippet for security vulnerabilities.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER) fields.  \n\n## Reviewing code snippet  \n- The code provided is incomplete, missing the actual content to analyze.  \n- Without the code, determining vulnerabilities or CWE codes isn't possible yet.\n\n## Reviewing code snippet\n- The code includes stdio.h and stdlib.h, and defines a struct \"test\" with members: double a, char symbol, char pointer, and char null.\n- In main, it allocates memory for struct test using malloc, checks for allocation failure, and sets p->a to 0.\n\n## Analyzing potential vulnerabilities\n- The code properly frees memory after use, with no access after free, ruling out use-after-free vulnerabilities.\n- Other struct members (symbol, pointer, null) are uninitialized, but this isn't a security issue since the program ends after freeing.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to examine the code snippet for security vulnerabilities. I need to return ONLY a JSON object in the specified format: {\"vulnerable\": true or false, \"cwe\": CODE_NUMBER}\n\n\n## Examining task details  \n- The goal is to analyze a code snippet for security vulnerabilities.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER) fields.  \n\n## Reviewing code snippet  \n- The code provided is incomplete, missing the actual content to analyze.  \n- Without the code, determining vulnerabilities or CWE codes isn't possible yet.\n\n## Reviewing code snippet\n- The code includes stdio.h and stdlib.h, and defines a struct \"test\" with members: double a, char symbol, char pointer, and char null.\n- In main, it allocates memory for struct test using malloc, checks for allocation failure, and sets p->a to 0.\n\n## Analyzing potential vulnerabilities\n- The code properly frees memory after use, with no access after free, ruling out use-after-free vulnerabilities.\n- Other struct members (symbol, pointer, null) are uninitialized, but this isn't a security issue since the program ends after freeing."
+          },
+          {
+            "id": "rs_b80e6410-8896-5886-3b0f-1fa7548c81ac",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 351,
+    "completion_tokens": 943,
+    "total_tokens": 1294,
+    "cost": 0.00143862,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 2.412e-05,
+      "upstream_inference_completions_cost": 0.0014145
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 930,
+      "image_tokens": 0
+    }
+  }
+}

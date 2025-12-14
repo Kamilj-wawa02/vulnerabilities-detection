@@ -27,6 +27,7 @@ RESULTS_DIRECTORIES = [
     "role_based/results-devstral-2512",
     "chain_of_thought/results-grok-code-fast-1",
     "chain_of_thought/results-devstral-2512",
+    "temperatures/zero_shot/0.5/results-grok-code-fast-1",
     "legacy/role_based/results-gpt-5.1",
     "legacy/role_based/results-grok-code-fast-1",
     "legacy/role_based/results-claude-sonnet-4.5"

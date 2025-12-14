@@ -15,13 +15,15 @@ from time import sleep
 #
 # Models available at: https://openrouter.ai/models
 
-MODEL = "mistralai/devstral-2512"
+MODEL = "x-ai/grok-code-fast-1"
 START_INDEX = 0
 END_INDEX = -1
-STRATEGY = "chain_of_thought"  # options: "zero_shot", "role_based", "chain_of_thought"
+STRATEGY = "zero_shot"  # options: "zero_shot", "role_based", "chain_of_thought"
+TEMPERATURE = 1.5 # Must be from 0.0 to 2.0 (defaults to 1.0), set to None to not include in the payload 
 
 DEBUG = False
 DEBUG_PROMPTS = True
+DEBUG_PAYLOADS = True
 
 JSON_FORMAT_REQUIREMENT = """
 Return ONLY a JSON object in the following format, and nothing else:
@@ -102,8 +104,13 @@ def send_request(prompt, api_key):
         ]
     }
 
+    if TEMPERATURE is not None:
+        if TEMPERATURE < 0 or TEMPERATURE > 2:
+            raise ValueError("Temperature must be between 0 and 2")
+        payload["temperature"] = TEMPERATURE
+
     if DEBUG:
-        return debug_prompt(prompt)
+        return debug_prompt(prompt, payload)
     else:
         response = requests.post(url=API_URL, headers=headers, json=payload)
 
@@ -113,9 +120,12 @@ def send_request(prompt, api_key):
         return response.json()
 
 
-def debug_prompt(prompt):
+def debug_prompt(prompt, payload):
     if DEBUG_PROMPTS:
         print(f'[DEBUG] Prompt: \n{prompt}')
+    if DEBUG_PAYLOADS:
+        print(f'[DEBUG] Payload: \n{json.dumps(payload, indent=2)}')
+    
     return {
         "id": "ID",
         "model": MODEL + ":debug",
@@ -123,7 +133,7 @@ def debug_prompt(prompt):
             {
                 "message": {
                     "role": "assistant",
-                    "content": "RESULT"
+                    "content": "RESPONSE_HERE"
                 }
             }
         ],

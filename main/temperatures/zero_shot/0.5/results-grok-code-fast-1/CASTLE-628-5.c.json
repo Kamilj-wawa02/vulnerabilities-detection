@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765716392-Ud4klCH2TRkq0lg3sqRR",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765716392,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 120\n}",
+        "refusal": null,
+        "reasoning": "First, the task is to examine the code snippet and determine if it contains a security vulnerability. Return ONLY a JSON object in the format:\n\n\n## Examining code for vulnerabilities  \n- The task is to analyze a code snippet for potential security issues.  \n- Need to determine if it contains a vulnerability and identify the relevant CWE code if present.  \n- Will check for common security flaws like injection attacks, buffer overflows, or improper input validation.  \n- Outcome will be a JSON object stating whether it's vulnerable and, if so, the CWE number.\n\n## Analyzing URL decoder behavior\n- The code snippet shows a URL decoder handling percent-encoded characters, like replacing '+' with spaces.\n- It processes an example URL with encoded script tags, potentially decoding to malicious content like XSS payloads.\n\n## Investigating function call error\n- The function call url_decode(decodedUrl, url) seems swapped; src (source) should be url, and dest (destination) should be decodedUrl.\n- This likely results in decoding an empty string into the URL buffer, suggesting a typo in the code.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to examine the code snippet and determine if it contains a security vulnerability. Return ONLY a JSON object in the format:\n\n\n## Examining code for vulnerabilities  \n- The task is to analyze a code snippet for potential security issues.  \n- Need to determine if it contains a vulnerability and identify the relevant CWE code if present.  \n- Will check for common security flaws like injection attacks, buffer overflows, or improper input validation.  \n- Outcome will be a JSON object stating whether it's vulnerable and, if so, the CWE number.\n\n## Analyzing URL decoder behavior\n- The code snippet shows a URL decoder handling percent-encoded characters, like replacing '+' with spaces.\n- It processes an example URL with encoded script tags, potentially decoding to malicious content like XSS payloads.\n\n## Investigating function call error\n- The function call url_decode(decodedUrl, url) seems swapped; src (source) should be url, and dest (destination) should be decodedUrl.\n- This likely results in decoding an empty string into the URL buffer, suggesting a typo in the code."
+          },
+          {
+            "id": "rs_8191b901-97b0-223a-8a06-b1f5c8598a7e",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 653,
+    "completion_tokens": 799,
+    "total_tokens": 1452,
+    "cost": 0.00129454,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 192,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 9.604e-05,
+      "upstream_inference_completions_cost": 0.0011985
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 782,
+      "image_tokens": 0
+    }
+  }
+}

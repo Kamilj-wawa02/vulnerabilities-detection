@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765711725-NEODFSCxMpXhL1GoDc2w",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765711725,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 22\n}",
+        "refusal": null,
+        "reasoning": "First, the task is to examine the code snippet for a security vulnerability and return ONLY a JSON object in the format:\n\n\n## Evaluating code security  \n- The task is to analyze a code snippet for potential security vulnerabilities.  \n- The output must be a JSON object indicating if the code is vulnerable and the corresponding CWE code number.\n\n## Evaluating code security  \n- The program takes a file path and search term as inputs, validating both before processing.  \n- It uses system() to execute a grep command, potentially risking command injection if inputs are not properly sanitized.  \n\n## Checking input validation  \n- The search term (argv[2]) is validated by isValidQuery, allowing only alphanumeric characters, preventing command injection via special characters.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to examine the code snippet for a security vulnerability and return ONLY a JSON object in the format:\n\n\n## Evaluating code security  \n- The task is to analyze a code snippet for potential security vulnerabilities.  \n- The output must be a JSON object indicating if the code is vulnerable and the corresponding CWE code number.\n\n## Evaluating code security  \n- The program takes a file path and search term as inputs, validating both before processing.  \n- It uses system() to execute a grep command, potentially risking command injection if inputs are not properly sanitized.  \n\n## Checking input validation  \n- The search term (argv[2]) is validated by isValidQuery, allowing only alphanumeric characters, preventing command injection via special characters."
+          },
+          {
+            "id": "rs_83c3e8e5-ea15-e7e6-99d1-eb99b24e284c",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 745,
+    "completion_tokens": 590,
+    "total_tokens": 1335,
+    "cost": 0.00099944,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 192,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00011444,
+      "upstream_inference_completions_cost": 0.000885
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 573,
+      "image_tokens": 0
+    }
+  }
+}

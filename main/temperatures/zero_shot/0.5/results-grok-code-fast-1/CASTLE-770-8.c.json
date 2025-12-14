@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765716994-d9h3HvXsBe1KnIkEtaVo",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765716994,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 400\n}",
+        "refusal": null,
+        "reasoning": "First, the task is to examine the code snippet and determine if it contains a security vulnerability. I need to return ONLY a JSON object in the format:\n\n\n## Evaluating Code Security  \n- The task is to analyze a code snippet for potential security vulnerabilities.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE) fields.\n\n## Evaluating Code Security  \n- The code is a TCP server using fork to handle multiple clients, with a maximum of 5 workers (MAX_WORKERS).  \n- It echoes back received data and reads into a buffer of size 1024, null-terminating after reading.  \n\n## Checking Buffer Overflow Risk  \n- The buffer handles up to 1023 bytes plus a null terminator, and read() processes data in chunks, preventing overflow.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to examine the code snippet and determine if it contains a security vulnerability. I need to return ONLY a JSON object in the format:\n\n\n## Evaluating Code Security  \n- The task is to analyze a code snippet for potential security vulnerabilities.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE) fields.\n\n## Evaluating Code Security  \n- The code is a TCP server using fork to handle multiple clients, with a maximum of 5 workers (MAX_WORKERS).  \n- It echoes back received data and reads into a buffer of size 1024, null-terminating after reading.  \n\n## Checking Buffer Overflow Risk  \n- The buffer handles up to 1023 bytes plus a null terminator, and read() processes data in chunks, preventing overflow."
+          },
+          {
+            "id": "rs_a5afa447-1ada-e3c7-1aa9-a530aa8fc804",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1008,
+    "completion_tokens": 694,
+    "total_tokens": 1702,
+    "cost": 0.00120804,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 192,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00016704,
+      "upstream_inference_completions_cost": 0.001041
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 677,
+      "image_tokens": 0
+    }
+  }
+}

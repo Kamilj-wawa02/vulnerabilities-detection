@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765715898-mFDgvn8lmisvvGrbqNIZ",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765715898,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 617\n}",
+        "refusal": null,
+        "reasoning": "First, the task is to examine the code snippet and determine if it contains a security vulnerability. I need to return ONLY a JSON object in the specified format: {\"vulnerable\": true or false, \"cwe\": CODE_NUMBER}\n\n\n## Examining Code Snippet  \n- The task involves analyzing a code snippet to identify potential security vulnerabilities.  \n- The output must be a JSON object in a specific format: {\"vulnerable\": true or false, \"cwe\": CODE_NUMBER}.\n\n## Examining Code Snippet  \n- The function `safeSqrt` uses an `assert(a >= 0)` to check for non-negative inputs, but `assert` is only active in debug mode and ignored in release mode.  \n- In release mode, if `a` is negative (e.g., -2.7), the function returns 0 via an `if (a < 0)` check, bypassing the `assert`.  \n- The `sqrt` function from `<math.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to examine the code snippet and determine if it contains a security vulnerability. I need to return ONLY a JSON object in the specified format: {\"vulnerable\": true or false, \"cwe\": CODE_NUMBER}\n\n\n## Examining Code Snippet  \n- The task involves analyzing a code snippet to identify potential security vulnerabilities.  \n- The output must be a JSON object in a specific format: {\"vulnerable\": true or false, \"cwe\": CODE_NUMBER}.\n\n## Examining Code Snippet  \n- The function `safeSqrt` uses an `assert(a >= 0)` to check for non-negative inputs, but `assert` is only active in debug mode and ignored in release mode.  \n- In release mode, if `a` is negative (e.g., -2.7), the function returns 0 via an `if (a < 0)` check, bypassing the `assert`.  \n- The `sqrt` function from `<math."
+          },
+          {
+            "id": "rs_58d99b28-bdf1-b74d-586f-b2e9d28ff570",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 373,
+    "completion_tokens": 728,
+    "total_tokens": 1101,
+    "cost": 0.00113204,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 192,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 4.004e-05,
+      "upstream_inference_completions_cost": 0.001092
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 711,
+      "image_tokens": 0
+    }
+  }
+}

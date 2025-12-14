@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765714264-Y20Mh8RKYFRq7S7GjXhp",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765714264,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"vulnerable\": true, \"cwe\": 476}",
+        "refusal": null,
+        "reasoning": "First, the task is to examine the code snippet and determine if it contains a security vulnerability. I must return ONLY a JSON object in the specified format: {\"vulnerable\": true or false, \"cwe\": CODE_NUMBER}\n\n\n## Evaluating code snippet  \n- The task is to analyze a code snippet for potential security vulnerabilities.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER) fields.\n\n## Evaluating code snippet  \n- The code includes `getIntPtr()`, which allocates memory for an int and returns the pointer.  \n- `checkIntPtr(int* p)` checks if the pointer address is odd using `p % 2 == 1`.  \n- In `main`, it allocates memory, checks if the pointer is odd, and if so, prints \"Failed to allocate memory\" and exits.  \n- If not odd, it assigns 7 to the pointer, prints it, and frees the memory.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to examine the code snippet and determine if it contains a security vulnerability. I must return ONLY a JSON object in the specified format: {\"vulnerable\": true or false, \"cwe\": CODE_NUMBER}\n\n\n## Evaluating code snippet  \n- The task is to analyze a code snippet for potential security vulnerabilities.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER) fields.\n\n## Evaluating code snippet  \n- The code includes `getIntPtr()`, which allocates memory for an int and returns the pointer.  \n- `checkIntPtr(int* p)` checks if the pointer address is odd using `p % 2 == 1`.  \n- In `main`, it allocates memory, checks if the pointer is odd, and if so, prints \"Failed to allocate memory\" and exits.  \n- If not odd, it assigns 7 to the pointer, prints it, and frees the memory."
+          },
+          {
+            "id": "rs_f80340ba-078a-44f6-30db-f1f995ee2150",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 369,
+    "completion_tokens": 579,
+    "total_tokens": 948,
+    "cost": 0.00090774,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 192,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 3.924e-05,
+      "upstream_inference_completions_cost": 0.0008685
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 566,
+      "image_tokens": 0
+    }
+  }
+}

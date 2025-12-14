@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765715272-hrh7EaEBxXtfCaPEIYsC",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765715272,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"vulnerable\": true, \"cwe\": 415}",
+        "refusal": null,
+        "reasoning": "First, the task is to examine the code snippet and determine if it contains a security vulnerability. I need to return ONLY a JSON object in the format:\n\n\n## Examining code security  \n- The task is to analyze a code snippet for security vulnerabilities.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (code) fields.\n\n## Examining code security  \n- The code snippet includes memory management with malloc and free in the main function.  \n- It sets *a = 5, calls square(a) which computes b = *a * *a, frees a, and prints the result.  \n- A pointer p is set to &b, making p point to the local variable b.  \n- The swap function exchanges pointers, potentially causing a to point to &b and p to point to freed memory.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to examine the code snippet and determine if it contains a security vulnerability. I need to return ONLY a JSON object in the format:\n\n\n## Examining code security  \n- The task is to analyze a code snippet for security vulnerabilities.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (code) fields.\n\n## Examining code security  \n- The code snippet includes memory management with malloc and free in the main function.  \n- It sets *a = 5, calls square(a) which computes b = *a * *a, frees a, and prints the result.  \n- A pointer p is set to &b, making p point to the local variable b.  \n- The swap function exchanges pointers, potentially causing a to point to &b and p to point to freed memory."
+          },
+          {
+            "id": "rs_d9027aaa-deab-e6b8-29a5-1afa9834e0cd",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 432,
+    "completion_tokens": 798,
+    "total_tokens": 1230,
+    "cost": 0.00124884,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 192,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 5.184e-05,
+      "upstream_inference_completions_cost": 0.001197
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 785,
+      "image_tokens": 0
+    }
+  }
+}

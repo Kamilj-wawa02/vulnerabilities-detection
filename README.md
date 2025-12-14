@@ -18,6 +18,7 @@ These results include verification of the CWE field in the model's response to e
 | role_based/devstral-2512 | 0.396 | 0.418 | 0.376 | 1 | 92162 | 0.017 | 0.0001 |
 | chain_of_thought/grok-code-fast-1 | 0.609 | 0.629 | 0.591 | 3 | 453224 | 0.498 | 0.0020 |
 | chain_of_thought/devstral-2512 | 0.418 | 0.463 | 0.380 | 0 | 92985 | 0.017 | 0.0001 |
+| temperatures/zero_shot/0.5/grok-code-fast-1 | 0.623 | 0.634 | 0.612 | 5 | 405818 | 0.431 | 0.0017 |
 | legacy/role_based/gpt-5.1 | 0.612 | 0.631 | 0.593 | 0 | 176084 | 1.020 | 0.0041 |
 | legacy/role_based/grok-code-fast-1 | 0.566 | 0.587 | 0.547 | 11 | 502636 | 0.569 | 0.0023 |
 | legacy/role_based/claude-sonnet-4.5 | 0.567 | 0.551 | 0.584 | 1 | 111695 | 0.413 | 0.0017 |
@@ -40,6 +41,7 @@ These results do not include verification of the CWE field, focusing solely on w
 | role_based/devstral-2512 | 0.766 | 0.644 | 0.946 | 1 | 92162 | 0.017 | 0.0001 |
 | chain_of_thought/grok-code-fast-1 | 0.804 | 0.722 | 0.906 | 3 | 453224 | 0.498 | 0.0020 |
 | chain_of_thought/devstral-2512 | 0.762 | 0.668 | 0.887 | 0 | 92985 | 0.017 | 0.0001 |
+| temperatures/zero_shot/0.5/grok-code-fast-1 | 0.798 | 0.717 | 0.898 | 5 | 405818 | 0.431 | 0.0017 |
 | legacy/role_based/gpt-5.1 | 0.822 | 0.731 | 0.940 | 0 | 176084 | 1.020 | 0.0041 |
 | legacy/role_based/grok-code-fast-1 | 0.815 | 0.712 | 0.953 | 11 | 502636 | 0.569 | 0.0023 |
 | legacy/role_based/claude-sonnet-4.5 | 0.801 | 0.674 | 0.987 | 1 | 111695 | 0.413 | 0.0017 |

@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765716467-xew7YVhri4PlKrW5nX1D",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765716467,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 120\n}",
+        "refusal": null,
+        "reasoning": "The code is a URL decoder in C. It decodes percent-encoded characters and replaces '+' with spaces.\n\n\n## Examining code functionality  \n- The code implements a URL decoder in C, focusing on handling percent-encoded characters.  \n- It replaces '+' characters with spaces and decodes sequences like \"%3C\" into their corresponding characters.  \n\n## Analyzing example input  \n- The provided URL contains an encoded XSS payload: \"%3C%3Cscript%3Escript%20%3Ealert(1)%3C/script\".  \n- This suggests the decoder will process malicious scripts, potentially revealing security implications.\n\n## Investigating decoded output  \n- The decoded URL results in: \"<<script>script >alert(1)</script ></script>>\", resembling a nested script tag with an alert function.  \n- This output suggests an attempt to inject malicious script content, typical in XSS attacks.  \n\n## Assessing security risks  \n- The URL decoder doesn't check for buffer overflows, assuming the destination (char[1024]) can handle any input, which could be risky with large encoded strings.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "The code is a URL decoder in C. It decodes percent-encoded characters and replaces '+' with spaces.\n\n\n## Examining code functionality  \n- The code implements a URL decoder in C, focusing on handling percent-encoded characters.  \n- It replaces '+' characters with spaces and decodes sequences like \"%3C\" into their corresponding characters.  \n\n## Analyzing example input  \n- The provided URL contains an encoded XSS payload: \"%3C%3Cscript%3Escript%20%3Ealert(1)%3C/script\".  \n- This suggests the decoder will process malicious scripts, potentially revealing security implications.\n\n## Investigating decoded output  \n- The decoded URL results in: \"<<script>script >alert(1)</script ></script>>\", resembling a nested script tag with an alert function.  \n- This output suggests an attempt to inject malicious script content, typical in XSS attacks.  \n\n## Assessing security risks  \n- The URL decoder doesn't check for buffer overflows, assuming the destination (char[1024]) can handle any input, which could be risky with large encoded strings."
+          },
+          {
+            "id": "rs_dffa1bcd-59ed-8644-df55-9b2d559c3adc",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "I1qEMTexxSvqqTvcyhLpejk4CGNfqKWtgYIvXYVyTBROd625fhMjMVHD4PtUwnFfFwMl9PXPWUVb6GGh1+J2i8abP0+dOHlmsby4zFnUo4Q+pckif2+ZullRTMyH7u/TyZBdStIn+OKKVveEOUXUrHgGpyu1goGy2uLSkPB3xb7qNJRBwkQ9PR6q9vP9mW+wi7krHgVYe+1UWN93WLkQM0zv1q+jyAidf1p+xHfqUtY13m3Cn0Dob8A//jaYDpSIpLCGoKYSXYfvIFf1TO15q0VJPuTO/jUeUOye350nWnlfF/V8HXzqconMu/XqcSev9rvsDGDnxzkcWw2RhhskRj80WiCArR8Y7Fl0xHqz5ekO4u0DBAbFG2dODo/GVF8j1e08bJazBkF9M73mB1VSDvlefV8l1qfn4XYvZ6gjQIDDXOToc/+CpvtcxsSg4yofUuaHNAS8rhSwAPNnzRermwUF+cBwJvyJTEKurNjr3jVcs2TDRjDOp42KKcS9DfLhu3njqIRXJRy4+dg8JKosOhfus5ta8Gowrbe7Xh2wb5lfMY9lCfVUS4pAFfKaE9Ep5AOR2IZtXLLNnQMLQAaQbkaTRM3Hh0vB6SeD8oQUAPWKsqXhl7gIFK0MhUnPQhgxeWZcE/0UIVHJPJiR+ulotQyPvISQZTnPOD/zbTqK1Tbh1Vg1iW//E3zjx1+GHwaNrg94c24Xgv1frhh+fwI5FaVmivhwAlZJldbAVh3PaBx04mcMaaJi5D1GGIp1XxhvzWIzEpUjZoUcfd/KJh2ldZt/fZW7HHaxdQFhDQSMwT5Klpn95n3YSnpVo3lqdbya/4Ck3oW9CTngQLAdZ4tDcX+eCVdLonmkby7YIQratYAMIRYaR2/FhQAan547GIEx9iNEq+smnBj7Uf5BpYC+y3DENeFW0AmbIOU1gX48NY0IWBQ74+hiZV1/MykEkFAnHIRCkUx2VPvebzPin/1zI+eWCJcmP8yheLgmURmCNQJHjaDpYVaUmaihVkJIKPp68JfItLkkHnRVWm55C+tkF9N69gSF6kla2z0q5LeF88CupoqwWlrzDNgL8/6Oi2qLfnyga8VlqC9ySXMrsDJNVvbx7RROisCBG9xtcgwnWjsFpsHSMmmsZkjfyt8YtuOmrbxXbd8qZNJLOpeFU+kzU4zA/kBcrVOxfN26swofKredEPxPtsuTMYV7xeShOsbR+N5VYYz/IVnD/HwJPn5xiCYSQLJ8Ss/jS+TXh8t2jG/PcNUTC37hMBedUUkUG6F2CJTD4BkdOwyUYGqmwJTCLKHDC9Taw/FTJWJoNxtnDMqgs+Czfc+yn2w5zv+0uziZ31RM2zHOLY42Ndo5hhCkd9fokNQjJ0fgAeSK5Fd9z7q0KMuOs6FeWXCbleBUYuoqFJ8/aXZFvxF5aUA9Qz/+dwf859h4moEFuRtpN7OOotNJ2PNM8qkkVxX9jEcP+udUdNUBB3zdWqRWHbVPkQ9/QNKbBfMTi+6aMsVAs7v8AgwtctZn9YkSd4jsh/4z2lseTbqv/kySkXr6UJPUrGHM3V53BKFS2DqLMEEYwy5oW2f4hfGahN0yh7iZOTU7S+m2RJuG4nk/PzdPHreRl632YP1l/4L8byr/JJTOPCMexOiNnfswhPzOe2z/a1jA26sJs72qAcoXmOUKUo+HOtPV4Etc/cUs7/NCcXNqJLDjc7wBxWzy2mRGInxYUqo6XM0wrHppQPmW5/v/011rXDH9oCwRLd/xy4ioxjtUFrOfr3tleVUODQ1n8hoMx3NpWBS1FO3Qwj6kzSFwkeYQuQZEXGgkqN8WfpJcK023ZWkESCDS99IK5qn2H+FXJLvZha+pg8llPuZ18vXYb2OIPYRyHlsMfkFxN9f5ufdJ8/Q0KbZ6HjI7v6Oa5YecWgofFjjWAh3Im6dCvft9ARdV6cjw17c8OeT6Q8vszaF8uXqGwTkILehw1ZfPxJ13TB5UXrdwfI8k63PAqbAOTNUheipbxCP+w3Wj9GjJJ4YUy6FOAqLbhqMzsx1+5MpNuZMXyzOJSlt17Hmai0Il8Xm+CA97Z8Cym37aF4q9XHVjngDBT9MM/BvR0tRh8qwHmjv671hjr5/zaH1y1VQ3AGvDu6wOE5Ai8en538d7GyvbMIAmUBpsaLcJbOMxZtQWIOUm322jAe4/okLsgCuDhpcJnE7FRWx/2PQNXrMncRNvJqKO21XtFQxpXacXUp7NEEoNKLBPn0hoXZDQYwhRl6dS+BNXcrjCRvaAVIt47NFh1sdvUncqEKaN+avTlETYdtgzNzJ3ZL+L+FnHvW9I2cchP9rL2SFx/8CSAkE7FajRYu8m9AG8KhF2zpW2QWGx9HGNQqpi4ftmFdW1+EC2HkCs585U3YDgecgG8iuIhJ+Up6/KX966Qff/kBy4WR2chK9Zb3F9M1aORleg4AexlVdpW57wWHqru55qAtmEOQeEgNykDeB/VDeeVY+qB74bWgHId6N6qkDpnzb7k7yIErnPFPADKHO9WdpqhX47XykI1okOH3VeIybYASWRv7uTkX+EXH0c8R9g604fTfpD/5HTWRDdjwO/l59OQEyvtZgMkq4uM7nLc/9CBcf+yOj+FfzMLAfcWzQe0WqTOiaIN2f+62MWHU12xwQdi+wmufE820HbRRIfo8uiaZ86MPf6yOyT+oOhzdI8BDJEU1JLg88T1vZHtCmOH+7JvZErJMmG4/U+z9ekmiz9iW1W0eXZ5xdGmARoHyciPLob39tt2mRiOcKd5ZwU5ykSrBJ0P7wtL0HVSRS9SKXrhuEtXB1UhP15H5XeXUaIwcu/Si+JLHuAFkpd277euPNKNOjrJXZfRRfmTKsg8rtITooOViMO2weFM3O/FF6P2i7f2zTYRmnwKjc6iP7BOs0XU2GSU2E5SUzj10EEDQzhzBHth5JJRo/d07b87hsC+EGnzjkeptvQtVCuW/1leB1mFHuubzRpcNatSmXFAtLk/gMHM/BRY/T7C8iG04Dk2IruiTtcZKpEO0QpjC77TneRDTkRiZqtoM+gswgZ+PzunftnoMsCHtSb+yskJHdDlVwhuuTtxHegl1K5tZYKMrr2IoO1UV3EtKp6nYBgoOqoPGmupBfH4Nlg3dlup598d1d0MUhS6Pp5BGw704uFTvaM9QO47w6Wa8GQFzSecBRKDEPdwcHqnrAAFTxQn1jDqFVDUnBDmABIuxBm9NopyegRSfQV77PcK4xmfnof9lcB5V/42RvbJEIGQGiEOFmWjw3Lzv/RhOA1sNRuPyPwGUPUkdrEXdgFs3tMZ/rZolOKmsCaNzU/6CTEe1YM+Fkv4hLxUr367U6MQwSflFSOyWyOuLOSeVq6f7eUiJD4XOxjLSva8LE45o4zaML/A7eGRYtgJTxID1HOFmQQkE4xv8tgp8IyLoZORnqurBaGZiWEfQa7yNE7rirnSoy0Qfg+WuPclC1+JH8OHxy3NN0miQySt7/BMMKG89uSbYWzRx3HZI8ynYwchEjgtj29tUUIHjWV3uzUoqC9Cy8Jf9vegGNRG7IlGJlK4VKxj49WiR0J0XXEf9zgYCg+SXNubI82m11xOyXWOq/1AEZD6983/NjUIXpFtmZk0nIFVopnV/SAHpPpljVv9o+mH1VGN6jT3teggGeGC5+pdQJsfKVZIJboBYoIbhaGktx8JNGA0msrkej0Ah8ZuWvuq98InM/md05pkXLSyZgDfJZ0s5FCXp3qaaXYXfOQm4okwKPT0K49yL3JOHXs/bxdG2Y1ywjSg4/sUKyRr2pDAn8f6MODCvoJsOugtDqtkXYG2g8m+R2NF+2RmPDOtNMwDLmrDrltqDO+UgO5q6UoRR7W2QtDFHFkT245qbwC+b3+BYz4FDqemCN5ug/m/y/HAdLbVCb3u6ZJuxmIrUk30gKMPx7O3m62BXc8u2mVl/2njxmVXtGyYDVTAw4GaVgJFrleRe4aXlfAmRLEIdImWuIUQ3HmwzS7CN0/X/BrfCJTTzheNWTCzUeM3kyn2SaRwBTLrbAS6fHhVm/vRtYiXb6KkbZrzYyBPpd9TcmCgTtPEgjHyaw+ZBUcItbPwaotl14LwJSt5EHfujmfHk3bVA/W5eWjvDNw9Tl9DuSmSBfYAXQDqlSRTv6Y8+14V1mNEBGNnwDWXgiFmOz350kd/uRXxJjBPKdTptHlj9kVa1zEKZG2SLxI9xYYAK/v8XBgb4qFudz1emlB/4h9jLepdMyBCN1gYjRfvcyqWQCGxdSbbTymczHFGhMASNYeuNlWAnmOB1d+C1f7EyTv88pJ3/mhgyFtukzGBdPNe34EuUJz9i8r/qH9mNRnL6KS39Xo9mdvyz34e57/HR9mRTklHem1+qZ02MJ+S8uoCoIQr/h54Dk0SvMHlCyB9G95rU7fDbMNe59+vQ7KEBeIu1m10XRDxWAjac5+kQ3TEq4mwfpzKwkO1zqbyUqc2hrtRhv+3vBgL+oM3doV6yvR0vfniTyYig"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 649,
+    "completion_tokens": 791,
+    "total_tokens": 1440,
+    "cost": 0.00128174,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 192,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 9.524e-05,
+      "upstream_inference_completions_cost": 0.0011865
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 774,
+      "image_tokens": 0
+    }
+  }
+}

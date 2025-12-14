@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765712792-28a5ut3F67SUW50tAjQV",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765712792,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 134\n}",
+        "refusal": null,
+        "reasoning": "First, the task is to examine the code snippet for security vulnerabilities and return ONLY a JSON object in the format:\n\n\n## Examining Code Security  \n- The task is to analyze a C code snippet for security vulnerabilities.  \n- The output must be a JSON object specifying if the code is vulnerable and the corresponding CWE code number.\n\n## Analyzing Code Behavior  \n- The code uses sscanf to parse a command-line argument as an integer, limited to 9 digits.  \n- It constructs a format string with snprintf, combining a \"%\" prefix and the parsed id, resulting in something like \"%1$d\\n\" for id=1.  \n\n## Checking for Vulnerabilities  \n- The format string \"%1$d\\n\" is used in printf with the id, printing the first argument followed by a newline, which seems safe.  \n- However, constructing format strings dynamically with user input, like id, could potentially lead to format string vulnerabilities if not handled carefully.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to examine the code snippet for security vulnerabilities and return ONLY a JSON object in the format:\n\n\n## Examining Code Security  \n- The task is to analyze a C code snippet for security vulnerabilities.  \n- The output must be a JSON object specifying if the code is vulnerable and the corresponding CWE code number.\n\n## Analyzing Code Behavior  \n- The code uses sscanf to parse a command-line argument as an integer, limited to 9 digits.  \n- It constructs a format string with snprintf, combining a \"%\" prefix and the parsed id, resulting in something like \"%1$d\\n\" for id=1.  \n\n## Checking for Vulnerabilities  \n- The format string \"%1$d\\n\" is used in printf with the id, printing the first argument followed by a newline, which seems safe.  \n- However, constructing format strings dynamically with user input, like id, could potentially lead to format string vulnerabilities if not handled carefully."
+          },
+          {
+            "id": "rs_04881429-fd67-b43c-2c48-5e6c8628f3b1",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 397,
+    "completion_tokens": 791,
+    "total_tokens": 1188,
+    "cost": 0.00123134,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 192,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 4.484e-05,
+      "upstream_inference_completions_cost": 0.0011865
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 774,
+      "image_tokens": 0
+    }
+  }
+}

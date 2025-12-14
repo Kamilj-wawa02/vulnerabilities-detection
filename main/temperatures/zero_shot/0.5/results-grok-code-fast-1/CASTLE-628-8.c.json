@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765716438-QJHDQJjmkXe7Ce43D23Y",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765716438,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 119\n}",
+        "refusal": null,
+        "reasoning": "The code snippet is a URL decoder. It takes a URL-encoded string and decodes it.\n\n\n## Examining URL decoding\n\n- The code snippet focuses on a URL decoder that transforms URL-encoded strings.\n- The url_decode function handles the conversion by processing the input string and writing to a destination. \n- It specifically looks for '%' followed by two hexadecimal characters for decoding.\n\n## Examining URL decoding\n\n- The function decodes % followed by two hexadecimal digits, or copies the % if invalid.\n- It replaces '+' with a space and copies other characters directly.\n- In the main function, it decodes a URL with encoded script tags, like \"%3C\" to \"<\".\n- The decoded result includes potential script injection, such as \"<script>script >alert(1)</script </script>>\".\n\n## Checking for vulnerabilities\n\n- The function lacks dest buffer length checking, risking overflow if src is large.\n- In the main function, the input fits within the 1024-char dest, avoiding overflow here.\n\n## Checking for vulnerabilities  \n- URL decoding can enable XSS if the output is used in HTML without proper escaping, though the code here only prints the result, avoiding direct vulnerability.  \n- The main function's example decodes to script tags, which could be exploited in XSS if inserted into a web page, but the code itself isn't inherently vulnerable.  \n\n## Analyzing decoding logic  \n- The url_decode function checks for '%' followed by hexadecimal digits using isxdigit, which is part of ctype.h, to ensure valid decoding.  \n- If the input string ends with '%' or an incomplete sequence like '%x', it may attempt to access memory beyond the string, potentially causing undefined behavior.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "The code snippet is a URL decoder. It takes a URL-encoded string and decodes it.\n\n\n## Examining URL decoding\n\n- The code snippet focuses on a URL decoder that transforms URL-encoded strings.\n- The url_decode function handles the conversion by processing the input string and writing to a destination. \n- It specifically looks for '%' followed by two hexadecimal characters for decoding.\n\n## Examining URL decoding\n\n- The function decodes % followed by two hexadecimal digits, or copies the % if invalid.\n- It replaces '+' with a space and copies other characters directly.\n- In the main function, it decodes a URL with encoded script tags, like \"%3C\" to \"<\".\n- The decoded result includes potential script injection, such as \"<script>script >alert(1)</script </script>>\".\n\n## Checking for vulnerabilities\n\n- The function lacks dest buffer length checking, risking overflow if src is large.\n- In the main function, the input fits within the 1024-char dest, avoiding overflow here.\n\n## Checking for vulnerabilities  \n- URL decoding can enable XSS if the output is used in HTML without proper escaping, though the code here only prints the result, avoiding direct vulnerability.  \n- The main function's example decodes to script tags, which could be exploited in XSS if inserted into a web page, but the code itself isn't inherently vulnerable.  \n\n## Analyzing decoding logic  \n- The url_decode function checks for '%' followed by hexadecimal digits using isxdigit, which is part of ctype.h, to ensure valid decoding.  \n- If the input string ends with '%' or an incomplete sequence like '%x', it may attempt to access memory beyond the string, potentially causing undefined behavior."
+          },
+          {
+            "id": "rs_598f40e8-ac39-d438-df8f-0a95e721edc2",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 649,
+    "completion_tokens": 880,
+    "total_tokens": 1529,
+    "cost": 0.00141524,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 192,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 9.524e-05,
+      "upstream_inference_completions_cost": 0.00132
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 863,
+      "image_tokens": 0
+    }
+  }
+}

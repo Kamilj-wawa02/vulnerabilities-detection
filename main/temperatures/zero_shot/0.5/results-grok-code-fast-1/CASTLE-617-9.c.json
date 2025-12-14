@@ -1,0 +1,57 @@
+{
+  "id": "gen-1765716052-x06SiWdYe2ghF9Orotbv",
+  "provider": "xAI",
+  "model": "x-ai/grok-code-fast-1",
+  "object": "chat.completion",
+  "created": 1765716052,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": false,\n  \"cwe\": 0\n}",
+        "refusal": null,
+        "reasoning": "First, the task is to examine the code snippet for security vulnerabilities. I need to return ONLY a JSON object in this format:\n\n\n## Evaluating code snippet  \n- The task involves analyzing a provided code snippet for security vulnerabilities.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER) fields.\n\n## Examining code behavior  \n- The code initializes a double variable `d` to 3.14 and enters a while loop checking if `d < 0`.  \n- Since 3.14 is greater than 0, the loop never executes, and the assert statement inside it is skipped.  \n- The code then prints the final value of `d`, which remains 3.14, and exits.  \n- Given the loop doesn't run, the assert statement poses no risk, even in release mode where asserts are typically disabled.",
+        "reasoning_details": [
+          {
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "First, the task is to examine the code snippet for security vulnerabilities. I need to return ONLY a JSON object in this format:\n\n\n## Evaluating code snippet  \n- The task involves analyzing a provided code snippet for security vulnerabilities.  \n- The output must be a JSON object with \"vulnerable\" (true/false) and \"cwe\" (CODE_NUMBER) fields.\n\n## Examining code behavior  \n- The code initializes a double variable `d` to 3.14 and enters a while loop checking if `d < 0`.  \n- Since 3.14 is greater than 0, the loop never executes, and the assert statement inside it is skipped.  \n- The code then prints the final value of `d`, which remains 3.14, and exits.  \n- Given the loop doesn't run, the assert statement poses no risk, even in release mode where asserts are typically disabled."
+          },
+          {
+            "id": "rs_c57abaaf-d5b0-66ec-a3ff-15562d03b111",
+            "format": "xai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "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"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 321,
+    "completion_tokens": 762,
+    "total_tokens": 1083,
+    "cost": 0.00116112,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 256,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 1.812e-05,
+      "upstream_inference_completions_cost": 0.001143
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 745,
+      "image_tokens": 0
+    }
+  }
+}
