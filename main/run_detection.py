@@ -15,10 +15,10 @@ from time import sleep
 #
 # Models available at: https://openrouter.ai/models
 
-MODEL = "anthropic/claude-sonnet-4.5"
+MODEL = "mistralai/devstral-2512"
 START_INDEX = 0
 END_INDEX = -1
-STRATEGY = "role_based"  # options: "zero_shot", "role_based", "chain_of_thought"
+STRATEGY = "chain_of_thought"  # options: "zero_shot", "role_based", "chain_of_thought"
 
 DEBUG = False
 DEBUG_PROMPTS = True

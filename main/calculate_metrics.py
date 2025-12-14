@@ -2,17 +2,19 @@ import os
 import json
 from typing import Dict, Any
 
-# RESULTS_DIR = "zero_shot/results-gpt-5.1"
+RESULTS_DIR = "zero_shot/results-gpt-5.1"
 # RESULTS_DIR = "zero_shot/results-grok-code-fast-1"
 # RESULTS_DIR = "zero_shot/results-claude-sonnet-4.5"
+# RESULTS_DIR = "zero_shot/results-devstral-2512"
 
 # RESULTS_DIR = "role_based/results-gpt-5.1"
 # RESULTS_DIR = "role_based/results-grok-code-fast-1"
 # RESULTS_DIR = "role_based/results-claude-sonnet-4.5"
+# RESULTS_DIR = "role_based/results-devstral-2512"
 
 # RESULTS_DIR = "chain_of_thought/results-grok-code-fast-1"
+# RESULTS_DIR = "chain_of_thought/results-devstral-2512"
 
-RESULTS_DIR = "role_based/results-claude-sonnet-4.5"
 
 BENCHMARK_JSON_PATH = "../data/CASTLE-C250.json"
 LOG_ERRORS = True

@@ -20,10 +20,16 @@ RESULTS_DIRECTORIES = [
     "zero_shot/results-gpt-5.1",
     "zero_shot/results-grok-code-fast-1",
     "zero_shot/results-claude-sonnet-4.5",
+    "zero_shot/results-devstral-2512",
     "role_based/results-gpt-5.1",
     "role_based/results-grok-code-fast-1",
     "role_based/results-claude-sonnet-4.5",
-    "chain_of_thought/results-grok-code-fast-1"
+    "role_based/results-devstral-2512",
+    "chain_of_thought/results-grok-code-fast-1",
+    "chain_of_thought/results-devstral-2512",
+    "legacy/role_based/results-gpt-5.1",
+    "legacy/role_based/results-grok-code-fast-1",
+    "legacy/role_based/results-claude-sonnet-4.5"
 ]
 
 def format_metrics_row(model_name: str, metrics: Dict[str, float], fields: List[str]) -> str:
@@ -47,18 +53,20 @@ def print_markdown_table_header(fields: List[str]):
 
 
 if __name__ == "__main__":
-    print_markdown_table_header(FIELDS)
-
     cm.LOG_ERRORS = False
-    for results_dir in RESULTS_DIRECTORIES:
-        cm.RESULTS_DIR = results_dir
-        MODEL_NAME = results_dir.replace("results-", "")
-        
-        true_values = cm.load_true_values()
-        predictions = cm.load_model_results()
+    for use_cwe_check in [True, False]:
+        cwe_check_preposition = "with" if use_cwe_check else "without"
+        print(f'\nResults {cwe_check_preposition} CWE check')
+        print_markdown_table_header(FIELDS)
 
-        metrics_with_cwe_check = cm.evaluate(true_values, predictions, check_cwe=True)
-        metrics_without_cwe_check = cm.evaluate(true_values, predictions, check_cwe=False)
+        for results_dir in RESULTS_DIRECTORIES:
+            cm.RESULTS_DIR = results_dir
+            MODEL_NAME = results_dir.replace("results-", "")
+            
+            true_values = cm.load_true_values()
+            predictions = cm.load_model_results()
 
-        # print(format_metrics_row(MODEL_NAME + " (with CWE)", metrics_with_cwe_check, FIELDS))
-        print(format_metrics_row(MODEL_NAME + " (without CWE)", metrics_without_cwe_check, FIELDS))
+            metrics_with_cwe_check = cm.evaluate(true_values, predictions, check_cwe=use_cwe_check)
+            metrics_without_cwe_check = cm.evaluate(true_values, predictions, check_cwe=use_cwe_check)
+
+            print(format_metrics_row(MODEL_NAME, metrics_without_cwe_check, FIELDS))

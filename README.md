@@ -2,41 +2,41 @@
 
 ## Overview
 
-### OLD
-
-| Model | f1 | precision | recall | TP | TN | FP | FN | correct_format_responses | wrong_format_responses | total_prompt_tokens | total_completion_tokens | total_tokens | total_cost | average_cost_per_sample |
-|------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
-| zero_shot/gpt-5.1 (with CWE) | 0.652 | 0.724 | 0.593 | 89 | 66 | 34 | 61 | 250 | 0 | 80129 | 79786 | 159915 | 0.898 | 0.0036 |
-| zero_shot/grok-code-fast-1 (with CWE) | 0.627 | 0.652 | 0.604 | 90 | 51 | 48 | 59 | 248 | 2 | 129007 | 327828 | 456835 | 0.507 | 0.0020 |
-| zero_shot/claude-sonnet-4.5 (with CWE) | 0.592 | 0.603 | 0.582 | 85 | 37 | 56 | 61 | 239 | 11 | 96520 | 6209 | 102729 | 0.383 | 0.0015 |
-| role_based/gpt-5.1 (with CWE) | 0.612 | 0.631 | 0.593 | 89 | 48 | 52 | 61 | 250 | 0 | 84629 | 91455 | 176084 | 1.020 | 0.0041 |
-| role_based/grok-code-fast-1 (with CWE) | 0.566 | 0.587 | 0.547 | 81 | 34 | 57 | 67 | 239 | 11 | 133127 | 369509 | 502636 | 0.569 | 0.0023 |
-| role_based/claude-sonnet-4.5 (with CWE) | 0.567 | 0.551 | 0.584 | 87 | 29 | 71 | 62 | 249 | 1 | 105218 | 6477 | 111695 | 0.413 | 0.0017 |
-| chain_of_thought/grok-code-fast-1 (with CWE) | 0.609 | 0.629 | 0.591 | 88 | 46 | 52 | 61 | 247 | 3 | 131568 | 321656 | 453224 | 0.498 | 0.0020 |
-
 ### Results with CWE field check
 
 | Model | f1 | precision | recall | wrong_format_responses | total_tokens | total_cost | average_cost_per_sample |
 |------|------|------|------|------|------|------|------|
-| zero_shot/gpt-5.1 (with CWE) | 0.652 | 0.724 | 0.593 | 0 | 159915 | 0.898 | 0.0036 |
-| zero_shot/grok-code-fast-1 (with CWE) | 0.627 | 0.652 | 0.604 | 2 | 456835 | 0.507 | 0.0020 |
-| zero_shot/claude-sonnet-4.5 (with CWE) | 0.592 | 0.603 | 0.582 | 11 | 102729 | 0.383 | 0.0015 |
-| role_based/gpt-5.1 (with CWE) | 0.642 | 0.657 | 0.627 | 0 | 168715 | 0.962 | 0.0038 |
-| role_based/grok-code-fast-1 (with CWE) | 0.605 | 0.601 | 0.610 | 12 | 439345 | 0.478 | 0.0019 |
-| role_based/claude-sonnet-4.5 (with CWE) | 0.575 | 0.564 | 0.587 | 0 | 110170 | 0.409 | 0.0016 |
-| chain_of_thought/grok-code-fast-1 (with CWE) | 0.609 | 0.629 | 0.591 | 3 | 453224 | 0.498 | 0.0020 |
+| zero_shot/gpt-5.1 | 0.652 | 0.724 | 0.593 | 0 | 159915 | 0.898 | 0.0036 |
+| zero_shot/grok-code-fast-1 | 0.627 | 0.652 | 0.604 | 2 | 456835 | 0.507 | 0.0020 |
+| zero_shot/claude-sonnet-4.5 | 0.592 | 0.603 | 0.582 | 11 | 102729 | 0.383 | 0.0015 |
+| zero_shot/devstral-2512 | 0.404 | 0.451 | 0.367 | 0 | 89277 | 0.016 | 0.0001 |
+| role_based/gpt-5.1 | 0.642 | 0.657 | 0.627 | 0 | 168715 | 0.962 | 0.0038 |
+| role_based/grok-code-fast-1 | 0.605 | 0.601 | 0.610 | 12 | 439345 | 0.478 | 0.0019 |
+| role_based/claude-sonnet-4.5 | 0.575 | 0.564 | 0.587 | 0 | 110170 | 0.409 | 0.0016 |
+| role_based/devstral-2512 | 0.396 | 0.418 | 0.376 | 1 | 92162 | 0.017 | 0.0001 |
+| chain_of_thought/grok-code-fast-1 | 0.609 | 0.629 | 0.591 | 3 | 453224 | 0.498 | 0.0020 |
+| chain_of_thought/devstral-2512 | 0.418 | 0.463 | 0.380 | 0 | 92985 | 0.017 | 0.0001 |
+| legacy/role_based/gpt-5.1 | 0.612 | 0.631 | 0.593 | 0 | 176084 | 1.020 | 0.0041 |
+| legacy/role_based/grok-code-fast-1 | 0.566 | 0.587 | 0.547 | 11 | 502636 | 0.569 | 0.0023 |
+| legacy/role_based/claude-sonnet-4.5 | 0.567 | 0.551 | 0.584 | 1 | 111695 | 0.413 | 0.0017 |
 
 ### Results without CWE field check (binary classification only)
 
 | Model | f1 | precision | recall | wrong_format_responses | total_tokens | total_cost | average_cost_per_sample |
 |------|------|------|------|------|------|------|------|
-| zero_shot/gpt-5.1 (without CWE) | 0.824 | 0.791 | 0.860 | 0 | 159915 | 0.898 | 0.0036 |
-| zero_shot/grok-code-fast-1 (without CWE) | 0.799 | 0.732 | 0.879 | 2 | 456835 | 0.507 | 0.0020 |
-| zero_shot/claude-sonnet-4.5 (without CWE) | 0.805 | 0.708 | 0.932 | 11 | 102729 | 0.383 | 0.0015 |
-| role_based/gpt-5.1 (without CWE) | 0.815 | 0.737 | 0.913 | 0 | 168715 | 0.962 | 0.0038 |
-| role_based/grok-code-fast-1 (without CWE) | 0.825 | 0.709 | 0.986 | 12 | 439345 | 0.478 | 0.0019 |
-| role_based/claude-sonnet-4.5 (without CWE) | 0.809 | 0.685 | 0.987 | 0 | 110170 | 0.409 | 0.0016 |
-| chain_of_thought/grok-code-fast-1 (without CWE) | 0.804 | 0.722 | 0.906 | 3 | 453224 | 0.498 | 0.0020 |
+| zero_shot/gpt-5.1 | 0.824 | 0.791 | 0.860 | 0 | 159915 | 0.898 | 0.0036 |
+| zero_shot/grok-code-fast-1 | 0.799 | 0.732 | 0.879 | 2 | 456835 | 0.507 | 0.0020 |
+| zero_shot/claude-sonnet-4.5 | 0.805 | 0.708 | 0.932 | 11 | 102729 | 0.383 | 0.0015 |
+| zero_shot/devstral-2512 | 0.764 | 0.667 | 0.893 | 0 | 89277 | 0.016 | 0.0001 |
+| role_based/gpt-5.1 | 0.815 | 0.737 | 0.913 | 0 | 168715 | 0.962 | 0.0038 |
+| role_based/grok-code-fast-1 | 0.825 | 0.709 | 0.986 | 12 | 439345 | 0.478 | 0.0019 |
+| role_based/claude-sonnet-4.5 | 0.809 | 0.685 | 0.987 | 0 | 110170 | 0.409 | 0.0016 |
+| role_based/devstral-2512 | 0.766 | 0.644 | 0.946 | 1 | 92162 | 0.017 | 0.0001 |
+| chain_of_thought/grok-code-fast-1 | 0.804 | 0.722 | 0.906 | 3 | 453224 | 0.498 | 0.0020 |
+| chain_of_thought/devstral-2512 | 0.762 | 0.668 | 0.887 | 0 | 92985 | 0.017 | 0.0001 |
+| legacy/role_based/gpt-5.1 | 0.822 | 0.731 | 0.940 | 0 | 176084 | 1.020 | 0.0041 |
+| legacy/role_based/grok-code-fast-1 | 0.815 | 0.712 | 0.953 | 11 | 502636 | 0.569 | 0.0023 |
+| legacy/role_based/claude-sonnet-4.5 | 0.801 | 0.674 | 0.987 | 1 | 111695 | 0.413 | 0.0017 |
 
 ## All statistics
 
