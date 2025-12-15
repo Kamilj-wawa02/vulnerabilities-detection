@@ -33,10 +33,16 @@ PROMPTING_STRATEGIES_MODEL_ORDER = [
     "devstral-2512",
 ]
 
+# PROMPTING_STRATEGIES_COLORS = {
+#     "Zero-shot": "tab:blue",
+#     "Role-based": "tab:green",
+#     "Chain-of-thought": "tab:cyan",
+# }
+
 PROMPTING_STRATEGIES_COLORS = {
-    "Zero-shot": "tab:blue",
-    "Role-based": "tab:green",
-    "Chain-of-thought": "tab:cyan",
+    "Zero-shot": (83 / 255, 64 / 255, 95 / 255),
+    "Role-based": (91 / 255, 129 / 255, 144 / 255),
+    "Chain-of-thought": (208 / 255, 170 / 255, 169 / 255),
 }
 
 TEMPERATURE_EXPERIMENTS = {
@@ -64,6 +70,18 @@ MODEL_COLORS = {
     "grok-code-fast-1": (0/255, 0/255, 0/255),      # xAI – black
     "claude-sonnet-4.5": (255/255, 165/255, 0/255), # Anthropic – orange
     "devstral-2512": (128/255, 0/255, 128/255),     # Mistral/Devstral – purple
+}
+
+# TEMPERATURE_COLORS = {
+#     "0.5": "tab:blue",
+#     "1.0": "tab:green",
+#     "1.5": "tab:red",
+# }
+
+TEMPERATURE_COLORS = {
+    "0.5": (53 / 255, 80 / 255, 112 / 255),
+    "1.0": (143 / 255, 116 / 255, 160 / 255),
+    "1.5": (229 / 255, 107 / 255, 111 / 255),
 }
 
 
@@ -148,7 +166,7 @@ def prepare_strategy_chart():
     add_top_margin()
 
 
-def prepare_temperature_chart():
+def prepare_temperature_chart(use_model_colors: bool = True):
     temperatures = ["0.5", "1.0", "1.5"]
 
     models = [
@@ -175,14 +193,17 @@ def prepare_temperature_chart():
         values = [f1_scores[temp].get(m, 0) for m in models]
 
         colors = []
-        for m in models:
-            base = MODEL_COLORS.get(m, (0.5, 0.5, 0.5))
-            if temp == "0.5":
-                colors.append(darken(base))
-            elif temp == "1.5":
-                colors.append(lighten(base))
-            else:
-                colors.append(base)
+        if not use_model_colors:
+            colors = TEMPERATURE_COLORS.get(temp, "gray")
+        else:
+            for m in models:
+                base = MODEL_COLORS.get(m, (0.5, 0.5, 0.5))
+                if temp == "0.5":
+                    colors.append(darken(base))
+                elif temp == "1.5":
+                    colors.append(lighten(base))
+                else:
+                    colors.append(base)
 
         customize_bars(width, x, i, f"Temperature {temp}", values, colors, False)
 
@@ -196,12 +217,12 @@ def prepare_temperature_chart():
 
 
 if __name__ == "__main__":
-    print("Generating strategy charts...")
+    print("Generating strategy chart...")
     prepare_strategy_chart()
     plt.show(block=False)
 
-    print("Generating temperature charts...")
-    prepare_temperature_chart()
+    print("Generating temperature chart...")
+    prepare_temperature_chart(False)
     plt.show(block=True)
 
     print("\nFinished!")
