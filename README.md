@@ -77,7 +77,7 @@ Models that had non-zero wrong_format_responses encountered the following issues
 
 ### Temperature variants comparison using the F1 score
 
-![Temperature variants comparison using the F1 score](charts/temperatures_F1_score_comparison/temperatures_V3_F1_score_comparison.svg)
+![Temperature variants comparison using the F1 score](charts/temperatures_F1_score_comparison/temperatures_V4_F1_score_comparison.svg)
 
 ## Sample prompts
 

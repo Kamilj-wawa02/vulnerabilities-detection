@@ -153,7 +153,7 @@ def prepare_strategy_chart():
     x = np.arange(len(models))
     width = 0.25
 
-    plt.figure()
+    plt.figure(figsize=(7, 5))
 
     for i, strategy in enumerate(strategies):
         values = [f1_scores[strategy].get(m, 0) for m in models]
@@ -189,7 +189,7 @@ def prepare_temperature_chart(use_model_colors: bool = True):
     x = np.arange(len(models))
     width = 0.25
 
-    plt.figure()
+    plt.figure(figsize=(7, 5))
 
     for i, temp in enumerate(temperatures):
         values = [f1_scores[temp].get(m, 0) for m in models]
