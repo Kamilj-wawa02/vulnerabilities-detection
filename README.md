@@ -69,6 +69,16 @@ Models that had non-zero wrong_format_responses encountered the following issues
   the code snippet was not vulnerable (the model was supposed to maintain the requested response format
   at all times, therefore such response is incorrect).
 
+## Charts
+
+### Prompting strategies comparison using the F1 score
+
+![Prompting strategies comparison using the F1 score](charts\prompt_strategies_F1_score_comparison\prompt_strategies_full_F1_score_comparison.svg)
+
+### Temperature variants comparison using the F1 score
+
+![Temperature variants comparison using the F1 score](charts\temperatures_F1_score_comparison\temperatures_V3_F1_score_comparison.svg)
+
 ## Sample prompts
 
 ### Zero-shot prompting
