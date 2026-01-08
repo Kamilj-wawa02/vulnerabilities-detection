@@ -1,0 +1,57 @@
+{
+  "id": "gen-1767878468-aEiQx2oU816xwwabitJ3",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1767878468,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 457\n}",
+        "refusal": null,
+        "reasoning": "**Analyzing code vulnerability**\n\nI\u2019m trying to determine if this code snippet has a security vulnerability. The code uses `char buffer[8]` where I\u2019m pointing an `int*` to it and then copying \"!\" into the buffer. This means the first two bytes get initialized, but the rest remain uninitialized, which leads to undefined behavior when dereferencing `intPtr`. There\u2019s definitely a potential info leak since reading uninitialized memory is a vulnerability. I think it fits CWE-457 and should be flagged as vulnerable.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing code vulnerability**\n\nI\u2019m trying to determine if this code snippet has a security vulnerability. The code uses `char buffer[8]` where I\u2019m pointing an `int*` to it and then copying \"!\" into the buffer. This means the first two bytes get initialized, but the rest remain uninitialized, which leads to undefined behavior when dereferencing `intPtr`. There\u2019s definitely a potential info leak since reading uninitialized memory is a vulnerability. I think it fits CWE-457 and should be flagged as vulnerable."
+          },
+          {
+            "id": "rs_0127def1687e6c7101695faf4503788194ab597239117cd493",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpX69Kyxuc0wIRC-kTAu0_KQqtl-jdBy4BUTxlfSpiWZb_esPA0zxPrJd67DXOgF9dUTdAqiqmcJzQm7QqWE6Pbgu2tzreouJ1yJqHr5HAdtYXldBkE_q0hHL2Mj-HGE9CamHdBUyChNRLqChL_nRyYFqDBDaDJSigvvjKUuPBZvEDMdS45e-uq2PF6siSlQyqDNXG6CMo7JBkVUIRjlhV-XEXPbmJQbsA-MImRJZRSsEO7YwhrSPiw2pHl85dv1WXGowfk9S4NlHhw9RM_FMpRZY6C-6AcDwxO-Btfl66vULnuzWfInu_XQMQYfRvQgCoSSsX_JWPn4rwETchz4sPTcVIG0ISHOF9iW10xUR-In32nKkzWBEAvhGE-kieLdqff9DyOl08aXbEHLHx767_gjTrEaBb5zrPnylu71TT-8eLW-TGYJSHbW9I6W3vFkAYxcjng0fLuMxAZrZItbsVcgprpQFU8ACZHmo7l4TwqNce1Q3l7WBJ3YjgE2P8_FVcFzsous8XGSWhWOw-xlWksGpgUZtpjTJ4TvX2phZCXfD6_-e34Nj0pwMglkJzwPCGtOHCM4GJQX7KuhDe93jDwaW8Jq7ExTszfkeCeXmdEVZNrC24p0YmNBcwQ3C2BTgMwtyf9udUUFaLwahE_5kkgUZZQbUHjBcCgJqTb2rGk-KrqRr0c5hl_0ltN8Gw5_vnFNJPCyMydt4WHaB9agho4cC9WEKBkUuUeT0BE0Kc006c-7LN8QxWnljh2bL-2VGN-fs1TkjKGkruN4LgsLiK3eXkE-FViooCTxN27IDU-7_I5T4nYMO-QbqiRoCmcV0n5mM8XthAlG3Rydv7TEzw7ULRexN8KNf_yMDlLvd058iH_iX8VqjaatQxxFl6iQSHUiVBMe-g3OwMFRi0QWt-qjDjagGMvUOC4Hz3C1haubSRQ5TCoQmvmcFtHjv2YV0GNwFbczb7bZBvFyr5UE-DJNQQ28LiD51OIzppEL7a1OA-VrhWzd4qTzMAB8d7PsTMA4Qtqrzte22fEDNhCSzPXAe6LhaxTaCfiWO8Ai5F3wZqtsupFA7KVXWsQsAmqwKqw8qAXE4XpBS7jfIB481xe-AzLc5OtzbGzaSEpddyi3vfPmE-6vkDNmXBsODut3DCbSKvfbQZcIIBuLnImz2vrDQsbM0bl593uJcftQ-_WBycc4wygzktFJaIRYrsJmM1pSuYXE1fgx1pq8_iaK10MiXHh_JPgbCFPeSLSUYkw1qGLPEFJlyBYylnpI2niHLRWCura2A2nDvFcPERqOGPFWtL6KqByej3WjwAVDFegttxKMQ2zDN_h4LPb0AgQvxnLhrxcQdES4akenfsvzfJEjA_6qoZRkV0tUxkJh1o4-dq0eHb8ww1HHC-AJZUgaVHogzMnNqHSUZRZV-HP5tqokp8VZ8f-rehext1rWWlPAnqUY8KZRFNp5WkzSVS5Hi5pQlaD1wb-BPivTAPLWnpglqc_qVH3IUdGs1wHk5eClBQ4C2iUiJduG5HHDY6ZQhgEY2No1sg9oDi1XdtgiG7KIDPSlOtDtlNYUR6vyOCKXFDKRQlGuahqZelgKlLP_QuDZsY_8-4Bnzo2iM8krmGCKK8zbg7SuGHtxb85krjdvcR9UTe8l78NS9H6KrslEJiip8FdiXJbAkClFopqSFWeFjYEUiNhpKshCpa5DfKzU2Af4cJhAn7BSuZgSiniUc1t2dyExPbfwd-cmBimFqyLezj5VxtBtLpRgZkkyJ3qI9zkJsiRLpBKhW_GNZFtS8ePb5mq92SoHf5GlgUpXPm6epBtzP4ecI-6N4Tta5plrfA97nx6BWVQ107gpmsDFm7Zmu76CJriEXyYfusPJ8y5o12iZ1Q-DhRc9vjL908yxuB_X5g60JmhquIhJ-WKcxOPXddv91SjmOZKqDx5zsdcJKpLy0dHE8cOBdHDPbyLj0gHXomlmmQEZ5nrt5-L0Y5VewP9ODU9MLaquFAVuqbmHxbMgucz241WkcPLfN6Io9EDsMO7AGsg5ZCmBVl6ntCG2WoF874u8QIu51lEnZ7xK0iLxcp3Zb55NhDz_vxs7oz0o82IcyVwrj4ypMgLNbfCENEATbvpVLoIOIqwHsuuWr0-oy31_0XmPb1D1JbTqHTC5s="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 139,
+    "completion_tokens": 231,
+    "total_tokens": 370,
+    "cost": 0.00248375,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00017375,
+      "upstream_inference_completions_cost": 0.00231
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 207,
+      "image_tokens": 0
+    }
+  }
+}

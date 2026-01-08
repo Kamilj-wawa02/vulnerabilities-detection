@@ -1,0 +1,57 @@
+{
+  "id": "gen-1767875964-zTKXYSj6wR872DKVMGIc",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1767875964,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 125\n}",
+        "refusal": null,
+        "reasoning": "**Identifying vulnerabilities**\n\nI need to determine the vulnerability in the C code, where `int nondet[2*10000+3]` creates an array of 20003 elements. The first loop correctly writes to `nondet[0..20000]`, but the second loop attempts to print values from `nondet[i]` for `i` from 0 to 40000, which causes out-of-bounds reads from `nondet[20003..40000]`. This results in a buffer over-read and undefined behavior, which indicates a security vulnerability linked to CWE-125, related to out-of-bounds reads. So, I\u2019ll return this in JSON format.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying vulnerabilities**\n\nI need to determine the vulnerability in the C code, where `int nondet[2*10000+3]` creates an array of 20003 elements. The first loop correctly writes to `nondet[0..20000]`, but the second loop attempts to print values from `nondet[i]` for `i` from 0 to 40000, which causes out-of-bounds reads from `nondet[20003..40000]`. This results in a buffer over-read and undefined behavior, which indicates a security vulnerability linked to CWE-125, related to out-of-bounds reads. So, I\u2019ll return this in JSON format."
+          },
+          {
+            "id": "rs_0b6164885f9c15fe01695fa57d1b5881939bd8ac46bd5b276a",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpX6WCw7ZaDSULmbf-w4oPgRqc3DVW_C9Nte5ntNQe7mpA-0rshmv66sC8vxazdxwuDGQ0yME5ylcS61-OMHEytYQQoeJG3QWk-hlGvEIQb8WudQi7TGfdrtNGTwUfnaIinlaaS9Mzbt6BtciqQxsbfKo6rwMqCgnlb0IyyO1WrwKWxnvKkSgbgFOO1kHVKY91TxWvDr0cndNdH56-GEQHEZxG9AABXcqe7qvIrPO67BmGP9BWRoBwXapfQpUCM5MoC5Cb2ZFDiqJJIMQBMAj7JudpALRYMBB9pVtEpI2irKboOHJccm913zu6xMn6v7ivKLD6HDEvH7K-XJvp6N7GMBG0-VVuaDLl-nyrVarFpKaVxjQc_tAhz5e9DoQ58tCdgKB8GVkYpI-ipOfqBVy5EaM-xH1DkadHpffH9YDvMnzhZHi4YrhyVcHZCbXkADJ55VEuSNJVtHMnwAQYTDBkj2Sq2sQyOo7yOBER2b3W2xJJUE8s1FeI0mGBgJqylTUpwbd2N8rY3PKyJ0iF8eqKbYboxrGrWjK5N3Ujy5YPvIFka5N_2OoXB_SBhMBHEl9cAuj4lqAt6_4_VTWBZ0lDA3SVTGiBMY4rpFTkXxkAPmYlqsK9RH_6TD41yY7noeZ_cU789uuv7Me8mvNpXYDqEaUDQ3nZmNNmR1IIx2nDRkR0bd6FYdIlzOqcKQN04e7RtIgFyHMKag5JZmMLRw3o2ZIZ6kXlmc7I5_50JcgE7SC5hW0NBdMPfT3EaQlIzjYRUrpSKRmeAW2gjbW20K98zaCb6HxQ2aWhcIGOR1gLPRTv0Niop8VpFaEGQIc5pZlC2czL_dYZR7PHsrcgplTmKmFYornQqZi64d3jM74VZvMebviIhNT-tDItYM6zkM_KDJm9lBfHKY2Psw07Tkno6XlZM3y2Pc-e0Oire3z0c5pCYjgInImqWgCzyuXMeyddv5pIFgLLJY-RKQAFIQM3F0g7Mrg9I7EJUPPVYiJu8FuCROvlvJHZR50tAV2EiE2T-akyMKfyvQKdRxvfpDsLYyBS1irzVnBcnfn9nr9ji5887M3MtcZMmJEwORD24uPbh4glqtJEpf1HDVzcIknoo0pcCS0Lt94qLYuYopg6vVm9fxE4SIVWGkkgPU5nM-DMltcF9BAiyGlEFKbHDGJd9ZgPl81j0vI3Fm-VSBeFQh90dWUfgeAJyMBxzi2qcGTgJv9ZODQWhbUxez-sZgCQzB1dPvUOfectCEEsG8hK34eHuGgjw4aC8rH23CVjSo4v3g4UD9ZIetdUaI18r5JYs-nG1hAR5-Sj-Fjg9F3yrJajJKxUj_iHA2LKRr12qWFx2wbQCGpAHwf5RpQYSiSl28mL41f6fN2_fnptAXO669ApBZU="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 144,
+    "total_tokens": 293,
+    "cost": 0.00162625,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00018625,
+      "upstream_inference_completions_cost": 0.00144
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 120,
+      "image_tokens": 0
+    }
+  }
+}

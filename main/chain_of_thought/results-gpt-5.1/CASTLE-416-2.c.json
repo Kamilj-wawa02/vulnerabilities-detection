@@ -1,0 +1,57 @@
+{
+  "id": "gen-1767876733-3VL8YCyAQqQUxXX269GC",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1767876733,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 416\n}",
+        "refusal": null,
+        "reasoning": "**Analyzing code vulnerability**\n\nI need to analyze this code step by step. It first allocates memory for an integer and assigns it a value of 5. Then, there\u2019s a check for whether that value is greater than 20. If true, it sets another pointer to point to the original integer. The function `negate` modifies the value and frees the memory. \n\nThis results in a use-after-free situation when dereferencing the pointer, which can lead to undefined behavior. So, it's vulnerable due to CWE-416: Use After Free.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing code vulnerability**\n\nI need to analyze this code step by step. It first allocates memory for an integer and assigns it a value of 5. Then, there\u2019s a check for whether that value is greater than 20. If true, it sets another pointer to point to the original integer. The function `negate` modifies the value and frees the memory. \n\nThis results in a use-after-free situation when dereferencing the pointer, which can lead to undefined behavior. So, it's vulnerable due to CWE-416: Use After Free."
+          },
+          {
+            "id": "rs_061024ab085c38ac01695fa87e71bc8194a534a5f3832ff18e",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpX6iEe6zXE8LJxaiuevFJgigaM85-th78fDd1v1vZaf8yCbH7GCSAOYSkXxFrHhC9WVZNCBp_ctIduDbD3zwArVPKiGNXMUlbCx4HvgPlDFTlRY1Yij6rYItv9wRqa5OVAlWlNXexk_KedQQ_2S4-yrQ8mMyDO3N4yjFWorcJyeYk23WujJCaxQfutAKLFoJsta1iscOWnZ1u82F8kli1AAkXRKowEZENHDqOvrrAaljIREuUkbCxDZSMZ2upSh1CzILnU_2xOEItdospMSU5KFAuxHzKuktuDZJvBAMUPhaft4UA9ER83GqvbP3gbqOM0IdX7HmNowqY2B9eLZ0GD9v9GjvhsMFF7c2qutluyundXGgr3Js3L8fg6BOEZtirnAuLuMCGF3Nay-nnecpcW_FD3mzwgmCIAlxrkeuOYXBizJSWZBPK8wMHn9ocSgYysbMc41rZOQi7sZA_ZUg-kiD5nOVDto_-qYwCrRMEdkU3I5_iciBonF2Gpytb4Iz6J0-UxctlNXSAjvThyInFQffaDSelboT_gaBeJCa3TuNfvL4vRSX9vnxftNYdtnlnzwZPTaQvQTe0KgRNeqr-9UzRC5oWfJeGFCEHPObVJ6ZcyM-0yB84Hls_lo2Xrf_99bAO30c_ufWiFxejy54_VZMrGWs4tr4RSsqxkBmlv_jsTA-P_Z9Y54uj_lOklpy8SuK7s2NSwRxnNgj_RXMV1pHfZJs4Npd_6TmOwyugPsC__FLC_TlwyT5C9QsIovdYQrm3Z412bHWXCSiDxfbCmfpJ7lgqFz3m7xQ_GTs__R-kZy7-80uDQNqyVDTdsOE06XmbrqDjxYJtKo3QEx8zjgOXcGwwM9lmY2Ygv1x__aetyE-mgidhGjT7WprdXreGPpRBhhkdvzNkcJWB12mLkcdg4KlrVL7yphgr1QTvyd4DZUBNpojbDXr8uMO8oHtximpUyvqGJia9vFgdNhAqHWmOzbMmk9Lh-_lbw7sVYe9rwy1KowIrpgvNWk-HB_LWJBugxnvUGdTW8_XSIVfJvuVZs_er6EPqLju5tdxOeb9DuWmQsC6otbLLXZ8Vfq-Srr4aohSW16BfaRkyzbr-o8deQxp5XZPFt459XtWArVibPta5Iq4i42eQIgXKzzMsu35LkF6H42y9A7YQyU2QeWwBGvxFxFsEej6IJL6ba07p7JNRHwC3ls7Xh-R4depZCcbduz82HzX0L3ADGys3oZdD4L_6f9oPY0hRMXwTWPNKeWETNXpG9DRZ0p7-XZlwSwIwrK7DQ_yQH4BpqHHfgZkfL6MFK5H1qQNfmFSQenD78t5e79cr3-pl6oNAaouUp0UfDG0HXRY8f4ZPC4ppEJmNvZAJzvy1gtDyXZybqCKNrkcWYJDPf9JNlYC25EOMIn85GwZoX4eqiScLiVj-4fQO-dI5iIU8k3KUyIQJbbEes6-vE2f3RbIH5SB_trYY6PxwQdVXSYmXkgPb8CGZNpx2Pk0lStKSs3lN_UWb_K89TsJfk4Luk9Jsho9pgaEa8XUxenv38UwWWGMC6VYxlQriHLVVsrYaVe4bCfpN2kqOXHjc49sxCj5iKdfMzlL7zlfFZ9IXjIyPOZxoz6f4-5ukcVWfvQsCoCVS4OA2BjQVX4o="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 242,
+    "completion_tokens": 202,
+    "total_tokens": 444,
+    "cost": 0.0023225,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0003025,
+      "upstream_inference_completions_cost": 0.00202
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 178,
+      "image_tokens": 0
+    }
+  }
+}

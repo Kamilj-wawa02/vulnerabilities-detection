@@ -1,0 +1,57 @@
+{
+  "id": "gen-1767878376-XuCrw2Oq6Xkyd0ac34K0",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1767878376,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 338\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating code vulnerability**\n\nI need to determine if the code is vulnerable. It re-seeds `srand` with the time, which is predictable. Using `rand` for a \"Trusted value\" is problematic in security contexts; it leads to predictable RNG, falling into the category of CWE-338: Use of Cryptographically Weak PRNG. They label it a \"Trusted value,\" but functionally, it does present a vulnerability due to using `srand(time(NULL))` and `rand`. So, yes, it's truly vulnerable. I\u2019ll format the response in JSON only.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating code vulnerability**\n\nI need to determine if the code is vulnerable. It re-seeds `srand` with the time, which is predictable. Using `rand` for a \"Trusted value\" is problematic in security contexts; it leads to predictable RNG, falling into the category of CWE-338: Use of Cryptographically Weak PRNG. They label it a \"Trusted value,\" but functionally, it does present a vulnerability due to using `srand(time(NULL))` and `rand`. So, yes, it's truly vulnerable. I\u2019ll format the response in JSON only."
+          },
+          {
+            "id": "rs_0d1a9bbb319a3d9301695faee906288195acf80249199504cd",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpX67tcu1ee8PSCp28UQEOv_O61EF5A_lhLstJyX87q3V47j-MN2WPgOpURotfKWWM0z6FTtENSOLIU_FPqerzbFbiI3QLauvnuIyIofYyyubWt4TVMlTY6KXuSriydKg52xjwTnYUp6f4ME_0bBxKj1472-yqwBHmxejOJASBtevao1u9kQqv16YG-zA0-8BWCWpWBYor9TjSHXQMrMnhNmFjehlFdtuqSP0ph3Fvcf5IkxlaepG1i4UySNRqlaabrbUCDMxoHe5btSrkknx5R_6kUaqo7vo52kif8MOR5rABKcHdDF_HWaDlk2PYkh3g-eI49YOO95jjCAJXaJLulLw1W5Qll-cGqsQmCfbRJdfWPv4go50gLBFpH8A95uDiljkE-suSMZFNUxvbvNHe9-M09Gjnjs5tJ_eQ2-4cx2C9DjbXTI3-t5bma0cgZ91AiFO8xUvpDw5zdCobkm2bniFmbS12H5Gj3jpxabCJd7QCdDRvcJNcqqTWPyZXahW9r079M5K_4gmmLDrPMlek2YuSd0tVsEXDvkySLgxs1Ao9LYUR2sKLwyag7x1CtAt1zBrcb2KbIo4Oibsrll2vC0rEOpZZ-X2pDK1ZP_6M7cUD5T6Kda-6uwjPNZxAYC58baVS3GWKb8GQU333z5uMJI_su98AcnBfrwAAD6-fjYdW3D5D0DopNoPJBaMkPyP49_jPbCGxlPSoxFui2ypzsCDroBiqcWYXy7Morhg-HKT4UYCoSaHfTz-PL1m4Xr7hBjz6YZRAfOaw1j9fpiMp1_7mJzDNav_U6PjkdqG-yxzQGk-4trRUlBGPPbjBJE6vIsZV9BR-gtrXpw6hz3r5FyMei5KrmwG3Pb0g3_1-qY4wegrI_x6BTt4TFDzzLlnrDZK9uy5ceYArHfm8QYlcdk6bNghS3fhtjW6MBQGW6TdJQC9r95rlzLy4VQM41U3rY0ibP9CLEyK_1sL9xLYv6yZ8ZrKg8Nj426nmoFTGFLi0x_erOBWJlY3ge_D3l6KZnqVbawsSrMZrjWo4eyPChDcFLKC9WXjRJSjlfEsxP66OrMZuchobzcJdo3FYnwjfBeJ9kCisZs8AU16NgAgbinM6t6MBGRdWr5inqzKOEZF1mvV_Od9kbZvHV8lVM3mgGs0kQowPlOL0s-erTxYWpXjt-J1_KJB5XX66p3EHO_Os5k6frW3TJiY55gi_40x4kPnU22QAsq1H8G66IcaV6oJzNqMntb00tOW5v0-P4RNKpIEgnsWsj0leZuftrbOKT3Dq3KlKafFgcUmTXBE0c5fu2r9VWR1jv0J8deehjN884mDqCEUikIIl0E3_g1TpUgN-"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 140,
+    "completion_tokens": 110,
+    "total_tokens": 250,
+    "cost": 0.001275,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.000175,
+      "upstream_inference_completions_cost": 0.0011
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 86,
+      "image_tokens": 0
+    }
+  }
+}

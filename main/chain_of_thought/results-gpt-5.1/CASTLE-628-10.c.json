@@ -1,0 +1,57 @@
+{
+  "id": "gen-1767877711-RQawT51rw8sFY1kDfJWS",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1767877711,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 457\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating potential vulnerabilities**\n\nI'm analyzing the use of sprintf with %02x and controlled bytes from a hash in this code. While there's a concern about CWE-120 due to assumed limits not being validated, in practice, it seems safe since the hash length is 32 for SHA-256. However, if someone modified the code to use SHA-512, it could cause an overflow. Given the context, I'd say it\u2019s not vulnerable for its intended use but I should explore other issues like uninitialized digest in case of early returns.**Identifying stack memory issues**\n\nI'm looking into the use of char digest[65] in main and the potential issue with the sha256 function. If sha256 fails and doesn't write to digest, printing it could lead to undefined behavior, exposing uninitialized memory. This is definitely a subtle bug that can lead to information leakage. If any OpenSSL function errors out, it could return without initializing the outputBuffer. So, yes, this seems like a real vulnerability related to uninitialized variables; I'd categorize it under CWE-457 for security purposes.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating potential vulnerabilities**\n\nI'm analyzing the use of sprintf with %02x and controlled bytes from a hash in this code. While there's a concern about CWE-120 due to assumed limits not being validated, in practice, it seems safe since the hash length is 32 for SHA-256. However, if someone modified the code to use SHA-512, it could cause an overflow. Given the context, I'd say it\u2019s not vulnerable for its intended use but I should explore other issues like uninitialized digest in case of early returns.**Identifying stack memory issues**\n\nI'm looking into the use of char digest[65] in main and the potential issue with the sha256 function. If sha256 fails and doesn't write to digest, printing it could lead to undefined behavior, exposing uninitialized memory. This is definitely a subtle bug that can lead to information leakage. If any OpenSSL function errors out, it could return without initializing the outputBuffer. So, yes, this seems like a real vulnerability related to uninitialized variables; I'd categorize it under CWE-457 for security purposes."
+          },
+          {
+            "id": "rs_000c488ae6123a8301695fac504f888197911d2e69ca749fa1",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpX6xjWkRtFAMVa2fM_QvuSl-Ko0sltsR2WMN42ZyZHssjNszfqNK5eqDBHo41IXKsENLHcpTBI3w5SI-iI9vmDvV0l2WuJXiL-kZcwQcPDB802Ky0dV8Oa2ctwB_75g5BL4I3m85mDpO5JHTAEh0rvNvAVAQ1X0v8Ty2Wz9vc6zl8exhkot8pGA1DvQPGMafK8OX69M_ZYevG8QjtwysDCUSdKa2w1gXg0AdsKB-b9h3VzVOBlFKCkL-UnqCWa0VvdyMy2oORgAF3NTfEMEAZ3EAEjyMYNLfXxQ5S4EeVN5n6BJN_PWkb_gwI4rRctPVPFX7X3__brIOQI6Wiknl41NMz6TEW4wljQPVnhS0d_9IUjNfOKS29HatpLiF_jwN1VMn323jBFSFFjl4eLxJpckR6kViAreLz86DusJ7Ng44lfLU1xhJO3Jgv-wpu5TICUFHvmrq4Ad7OWFyaaisjrtXPD05QZRrYPRrA-wbcyATV4iZm41f_pFP-3DAnOFcWZ3St-8cbfwMgnXqQJD1w8J3STGtogzo9grA_9D48Aq-5c6OU-E-4eaRAFXvNKhe2TvptTqi_brZknC0KZVDY-bZi8BdjVKA1bHtHODAq_P6q3PLR2ujY2o5OgEKQBdWFi1tY0esl92DfCUDPEwOIlZ1kezzw3pwyFgf62XQ3wp4OM2q_ZZ2wLhPl_RUG9qSURkSrGQ18ZKXjr1jHVrGYFi6kBnqX0jBQz7a6oJP2n49oYgWuvQi9JTNartgyRh6AJYPJpZVBu3w20TgXdobxl3NFXIT4R0L81L6dXoX4ncEufV_RpxMKOT0cFIy6_No0qIzyrTTN5GLMTKOi183M6UNAKZWOohmHkr_p_KijBDmCVAK_9lZwvZ7gYE71o9q3WlPbc-2UDPD_W8KH-17dvGqFM38rMJnGRtfcgP68f_GmJ6gIzUSjH8xzOCnDjf_WgxfyQHc9Q7EsBkfaYfZfhdCCSNiZAf5kKGwf-vysk5O3ZJBRcDqudX6pHiaUzcpGBo7U1YMy1CqKDKV7DbT7KnKf1jZGwFckqDU74DWrRqOxgBpQ7_WDkR2ZhdidUkCV9ztiLzSikN7SPAts3Bfk_cv2DlJohnqAebGYcQW2xuoXvTrhNrGYeqNrr24N6REDokQ1LoX_MbFmV65nmw6_oKMPu8uNhE6SY3hkrvMKFt-f9Ql-im1yi5JxeLFTyDyqobnLxkhiBvQejgUUmepMGOs4EQR3KXhIYLXT6x7uq5AEWBLZYeJHI4c9tKzWIoe9JLj3oUrbRdeMDuJHuXA1p7650hAbrW0xUkiaY7EwdPxPNAYkBkbS8btFrSzB9CQBk5dFtTHjkX-hpqbexT2RAzKdin1Mnyxj5sFYaVrnrzdovwUlsOYTMKHyhAlyQh-ddYnSbGlgusHYosniSJ35-Em-TEyf0mDWf0P0EVYb7a-8aABS1Hv9-jwtUVmg6ptOTA97jMeka1GTfHgmxcaUGyGD8c05e7rlPtGZ5vo89J9kGE8eXcJkpstEhlmi_bKCleHXrX3OXUK7PMDtYQWzrJhL9QXA_3RAJNzQwgTCXeOIRY07xq00OnbA_JamxxvTwCsTMqGxXnpROXO_Jle7GXoSlDx1LKQ6cMH5tZfv9kuBqNQJokv2GM6PPrMVbXkBla-2pLs9DM0RexHMLdC43LcXpvmhmab_tort_QmhLXBGLra_mcGHWmIMXGfot3JuKXlBcm2kt1vMk3ckQanos6PC_1ckd8RJEXQ_Ekz0HGyuCtqm-jOs1mKTKkUtt9XLru7stNAR-caO0cdaUXFV8UpGMPeYLeSrcG7D1WXcxDY45DgWoxWerawQdIK6m8DEsanQljX1H_7NFZNACkSxV_zV5NvGw6Kt0D0tTcGLjesqml4HDDVLYhwGIzh39G4jf-QR80gHGcMeStBWF6MLz8ORhBlpv6aqvwbzdIIaAaH8Ed_69HxRHXrmIWb-wFLHzxahpQrv4zBGqh5hkZRgnFTkqHaQuGwu7pHY6U1W3zHrtN1f9s03lZpmzeTnWRQ5HDvHL7XiF8kMMHdJUl5F8A0nfrtKDSB-RxjbQEv7W-sPjG_4mog3r2Clmd-kAwMmiIZ0hYAqw3sMC5D6Axz5lr0oJyN-hTg3PwIemlIzChA5FwrDOUDexn5X64wBI5b-87-7VvfyiOMq_mBI7Okxydn_js9Tg7vIyNyVh-DyFhj_vUSK2aCdCnePFH6RD30eiRw22YAYIDXNO7ZjHkXPHTWkB1c5wNsH9ECbws-KWfnXQqPRvx1h_jMffDZwucnlVtiMeMsweePNHlVGeGoZCjDZ8XCiA-I5WgqoA33o-IWuQcbIX_QHB_qDFFVlq7wlsM36ymjheaG6NIa3rgOVGQSOAxi8n17ayJCLpD1QBZYShSdKeJcViGq_R0e6lIUV0zl9p_gVhzoze1xFAhQ5t9XOODicMQI3a6ZC4CYVFTi6D8-zi2vx2e7RIsYAHUWrNzaFO2sEA87g-pfiM3ltV53LT91LOLi0WJT1n8nncpTk_x6Zy8hG9JG-31h0wOkZPGBtqly9edxFgyF0yul8W5Rjdlu-zG4QldI_B3jv0aP3Q3c5OJ5eu705_KwjTttAN7xXB_34kHaDgSqPKz1bgae8_yviwK15p4VCF2UknnzIiNRAISZ_sJjR51rmQxTpuSeDGjJnwkKLsfLJCJu1gs3Hw2Y5-glCpGXc4qBZSF15f-uNT54w0sen-oEz6xni32IMNVs7btQMB1v2phHVPSSbwKOJYGmdswFo14RNsIrM6E2daVoh6Ne8321eKcBcDsgA0Qsc4i-B-3_y2c5xorN5i2Zxo1L9VaibeoSAg-hxPXHQ2IL_5knRI3qxDBFkPhmAeDGu-BZqRhrwxZEyVhECHjbJGqzwZ6LKq9kBHy1fXeExzWV2nYC6mT3wCcOP1KzzIfFsb8DCDuBLEW2YYFSi-f9ipwo6dqfxCF3SMMC7tOXByWLN_lVqYkmJgVYrmU-SLVpdWrsDvbiucLeZWyqwvJ-by4GaQXQq5WuoaQ4Jn47GRp2aWvEePuoNY0fCOZmdQGfLUAlEUlByOuq1ABB3i54q2ah0f5_uJm0lj997vl_GoNxxKgEThP0Ngv-SJlDMbpyPYrhqWNUCqTeOBJO3aJmzm6UJqxa0AhBgajggbQpLpLq-iY5SPkr6Smck_kMUMZxcGreTOF8Z1bFdPk6O1PJUG042cypgs3qF9Macat9I0Z78gvk4k0Qj-gKFpNa1s9R31H_0u8O2dvnEvkE9dAR9TPJb_SEoDyu2uUUiEWlEUfRoKLWo_p7RUsWw6Cgbhl2ecWKf_7Uu90F1np8TbdeTG5ZKALQbsGY1X-7D1rwz0QsMTxSdlApHXUIeUDPmoCqbgKVkETnAHap8pVEXxSZQG4bjiQI9mqtpze22OrNcvf-PkAmQ4b_ohHaRczzEssK6b_J2gdxsDMpxgE2V-wp3HIqxqynOlRUeNcSJ8bwoVJ9hC5CtDx1yTrN3dK5ymHAJVAhEmJya1opC42xNxWfCUO5AZDnJxU3-iYKB1GO0Q8J7tAdmaBWKti4B_zHTyEbh2Q5bGAHMLQMLdWpUy5cqKWDCVLEXFiZxOVCg_EpHINcXKf9C0CCRVD27gqdgfjyK_nxrE5TohlEF8-0GNU43q8VoTrZH5kAaPC395oHHR3cXchW6fMPJsqgudqzIXK5MU7TFDjgP9meLSoX93wa-Pn4rq-BZ3ArULVynVWVXh35Fst5iYbgp8GlxuT8_jlGLY20vXQelJHIgj1SAddyE8gtvZj_Z7_tvCe3RnZkWq94AGxxh7D30kt-v2OHPvbekqRl4ue_etICh9GCdrqnI_KoHpOVEJQ221Mon9bIKsRyzY5_-r3XnDXTav7z44C_93_cCEDg7MvK2GD2H7HX3D8totvsaoiN9PsKIwe4ko6KSZEQutgpvHetG8-s3KTp_W15rV0sPmOr4UBAOTPC2fwERYv7169MLTAMI2zcHAq1jZV1BV5KeKP113Le21t4cNCyBasZibZ1GGN8HillfysfsiYmKhS6Es84mrB7_3CTirFlXykHSkSb0uHCnhbbOe4CHNsmjANqRGH4JqGko8zSFE9wmwMsLGU7W6gzWGw5BbtE30k2DSZBojRyoPwThmpHXUKEG3pQQhQohvkYGWGOJhp0PUS0AbXSZDKQ870l6uHNX4iK3BjD_Z6Aq197dsEr16TlZd41MnH2l8Hww7XfrcMg-apaiyuwOZrgwR4Q9qnHQ9PPNhnbEBgBuMrhrl0HKTd9CbhOM6V8rOxCM8K25JRxcUgngmBcxn1BRZAePDjOjM-Sz7kRmE1LfJacjeF-si_lygbCJelSCxjkBH95VgAzRp0tSGe79JYrjPKpgRsOkCM0J1pwestUwnlzr2UJR_MrhTkRMqfMP3D_L2ccjX6torMOAn07FUNzMFqJGwoKh4k8UFvGl7rp29prmczl7tQIaqevc1Hj2Wg-70vW3IzDLlFCISDslfTNyjeJViGqevf-z10nEB7Yp"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 483,
+    "completion_tokens": 672,
+    "total_tokens": 1155,
+    "cost": 0.00732375,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00060375,
+      "upstream_inference_completions_cost": 0.00672
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 648,
+      "image_tokens": 0
+    }
+  }
+}

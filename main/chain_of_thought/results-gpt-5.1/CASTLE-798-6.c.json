@@ -1,0 +1,57 @@
+{
+  "id": "gen-1767878230-EtMcVcEWOWvYHL191kk8",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1767878230,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 287\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating authentication vulnerabilities**\n\nI need to think through the code step-by-step but present it in JSON format. The code hashes a password using SHA-256, but the verification logic incorrectly compares the original password to a static hash string. The comparison logic is inverted, so it accepts any password other than the specific hash, allowing an authentication bypass. This seems to be a case of CWE-303 (Incorrect implementation of authentication algorithm) or CWE-305 (Authentication Bypass). It\u2019s definitely a business logic error.**Analyzing authentication vulnerabilities**\n\nIt looks like there's no buffer overflow since the function `sha256_hash_string` uses `sprintf` into a 65-character buffer, which is sufficient for a SHA-256 hash of 32 bytes. However, the main vulnerability is an authentication bypass; it incorrectly compares a plaintext password to the hash, allowing almost any password. This fits the CWE-303 classification (Incorrect Implementation of Authentication Algorithm), but I think CWE-287 (Improper Authentication) is simplest. I\u2019ll structure the output in JSON: `\"vulnerable\": true, \"cwe\": 287`.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating authentication vulnerabilities**\n\nI need to think through the code step-by-step but present it in JSON format. The code hashes a password using SHA-256, but the verification logic incorrectly compares the original password to a static hash string. The comparison logic is inverted, so it accepts any password other than the specific hash, allowing an authentication bypass. This seems to be a case of CWE-303 (Incorrect implementation of authentication algorithm) or CWE-305 (Authentication Bypass). It\u2019s definitely a business logic error.**Analyzing authentication vulnerabilities**\n\nIt looks like there's no buffer overflow since the function `sha256_hash_string` uses `sprintf` into a 65-character buffer, which is sufficient for a SHA-256 hash of 32 bytes. However, the main vulnerability is an authentication bypass; it incorrectly compares a plaintext password to the hash, allowing almost any password. This fits the CWE-303 classification (Incorrect Implementation of Authentication Algorithm), but I think CWE-287 (Improper Authentication) is simplest. I\u2019ll structure the output in JSON: `\"vulnerable\": true, \"cwe\": 287`."
+          },
+          {
+            "id": "rs_096ec96369750a1c01695fae570af08195b4f96d8edaa17606",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpX65im-L3Bf1EaQB2AYczd2WDIZaaf4Rkqh7nCQ3lVty3nbrR8MbjXMHo_uVsbYkM8vDy6r8gPjxUcwVqUZaGGgMsqVPBPO5Hq2RKbsMr18nBn8tre74-tSyz6xD3PTJRUFvxLjYGLvwI2Nuz_yUasq8jmShVf7PWjav-FCmAQwk6-fnYLcaqGJFa8DWhkphIxHYZ9R8WgZ0PK3c620yrok_DjV0AdXXIfrS7AyNELOWFd12vxfFjaw93zEiEb-AYgfL04xHWH7PW0YTyKWbE3n8xukzoaOhqZY15E6avOQnifOhAOmy61Ve2uJ9-y3-AIQ2GkUEP7Tc7rjrLPWWMz1ZRvs4vsIs5u4JqpvM81xeWwbBG3WLes2LbthYQTkGsjLL6kfPNy95Rn_R7SbiUV6gEZXq7IhsAT3vySkpbGNNOyTvPCqhfmPY0_4U1DoFXPCdgkx2nn_hMlzIa6MBQuOuV2qrE0WnXykl5wAAmQ-nwEPL2EWsoaGda-hL1kqsDwf_RTPJ8LiPLQkEh4CwDYQphsuEhtv8K1Qq8ul3vHglVwiSCJ9I8rpL5EZemv88Py1-CjDn_qABkA0l6xX6tI8sMCN54EGPRR3mc4OEoxygEYk5mqCzfAubrXJ4Uevz2deZDCDx7PE8ELPkOTd4V8WY2LTZf-FL7Qm1L-tU2DN_aOKkLEzpJc59sZkhMSjAIH6FeRBmRiSWp5z6UuesRnadh57l_0SUMcecnf5c9-n-5hbl8R7CVPvwR317sDii_368o3nf2ZvknxBkRrtw7aVtQr8SiZ1xddlL-Vs41vBxesWUl8seXQfFdGhsVebGVuq4B7sfGm8ue2_BO6EIFb-Mg1j2DnBPIAaoolEZOuOJt1awMC33_hLT91EuXiRMQHGmqMRf1xdMJIJRDRrGs9psDhJMIoQW566jU7wYFu5vTHI_0Zfu40UWjQZrxvleJEioIlwfMaXuok3RTwIb5A-QAduPV2biTDPXxmP7GqK0RAfBIrUFmYEIoV9b0cIbM6Gq8E0diXWhYiGnluWeWf_EXUkmBWcWkE1Vx9IsOofiDx5dXylW-OLQtAJcocNLnh-s7ZF9_Ahug67EkJ33bakYyuTbohF0106FBBbeQn91D8yE75fvykdL1vv7j_r6LoI0J6TO6J4-Zy9VTgR8TUHDS_aNu8m3cDbg0K96I1Uhw1hLaU_XOso_fxUHYdjD86SWqcwJa-1xY8GlAOiomeugmmb1KA4uIXAGStDSUC7-WpVEUz_TKGEtWQRa4_X1rl8M0NGtQq7qGD8agZcSZKGzSMtElTfub0SziUX1526NRtIDgXI5Pve1kTR71GjCnsa14M267iPoyjwEQF5HWWwxn9O-EbPEqBCIheUJp_uH2He1xFHdw8Oo0SV31hbup6uJn_5ZA6A6WNaMEAD7Fn5h1a0nhQ2Zu-WJuwWR91_HXAvK5PBziidDdmgECdKVQQ2yinfgFssyKH_0TXvFcPlME1Evt1zomOYaGHTTV_J3q-xSgYN4xa9-inpQe568OSeYRyCm8RgAzeEEI9e1J9S-GgzUW5UEUs1CjYZX-pew3NPvOUL6LxoMeae-iAZXUNvt5ObrBikZyK7lOEBdBVaxElJDViKgb-z5GFd6poAulfOilYC7FWQsOCbYheBfdymtExGMt3OI0vKIyOAUFiquwW9Isy2eFb52OIaLhnaGpbMS8XPcSr_m0iE2W9BUUnMAQNF17DChc1_EVPcEVi6qJyFtdy5meyolcEbR-I1R_-yZiMRAzNe4v-66NXqzZnT2H8ury-ovxlohPxSeIvFWHwbmaZg5nrLlwTnQNEFXpykF7xCrhZK8OfI_QBh7gR3GqU9b8Xy5hL0jvqifvn9LO2EErzKASeE1ZuxX46HYzR4SX4p-E9IVX36fvjLezLilMjpbGJx8GIuhk8L4H7Sj5P9YPB1saT7hKY2LBbdmVKFE_8Jn8L0pF_WSjoDvVATxcHB7RMYaT2sz_3Kx62Fuk-8JadwC21XnNEt0YHD-d7KLzkq7d3G4YbT6MoE0E8TltE-DZJv3HGGASBqYIEnGrRWcfhs8PbXfxk1EVDmjORn1fITv3wGzcFYJ_at9hev3mclKv9jbaSag8eVwbSlHiILx9Zq8xLi03BqWOuV7N-lH2DRdCaOYlnU7yoVkNPvFRQJpJcgw_RQrfejR9cdNlWsK2bFlXnhmVLP0OFuc1V__jsnPMB9tGU1TT8YjpPsyWUBkS1Cyp4AIZ9m6K8WnV4aFnsy4LvntuLI-6rDDX2lAbnfrKS1mChVOQQYqKSJmbBNxGdvX-GNY8IfCVcOjS-_kiKNSzQYfte2rpGzfolHvP039jGXSzwNNHa2jnb1KetHjnhKUgRHONhaB42L53_u7CpbhmkcVFIO-YegIoht796uyEXuFMKY7ulFgyFzf-M3vQK1sPiyTenMh5ACZxQpA03VXv16uwe2P2j0v_mg8BeqdLqPw8GkpQ9c7VsgzaWi1Gt9RWLQS7DhuogUS67Ap9lAfQXySnPU9Ynge9u8Jp30l_Bfs8VJ7jg-V41KXzS--rJD6lzaOknqpGk-YvoPvZKLMX9Bn60GcPj_EqGWZDSPnmdn70jnKu-deID3L3q-nV5PvJR43PDy-Kme5UGXfkxwccapaXbSC8VYi1HAkf4VaOqdQBA-n8PAzq5EHV7epEqzza61GeFmhojrk4bpqhGkVAIV7YPFv5rTLq4Q-DxCuJjP_AL6rkPFjuPjtcGaOOUFd6duFqk6y_l1dAcWqIstotXXjgNIfhw7M5EFCUaYpOaKvlc6A4_D-i8Q3LksQEVj1-dMl9PZGGPO3BX1tQFaS1CNGdUk6mgxQzl2z84PynFM-wXRpP6ODX3enHQYiKHc_sGhG2iGI3inUuRGgYr44yTZ_EYREKUokOkTG_dTuRcLzO2ru7aHGJKtN6vaI_dkmZvesJ1jTWrtyU3XJ68ho5Xl8SPNx6ItcgV_qJSWb3LCliEGWIi60v6RGnDvoR8AK_DK7Stewmcc14hlGmpJwGoVq5-HkqijF6g6TKNX51vJP3wv4htN753Ce1R4tOApXKrUCHo1txOXdJ5hK3g-WavvO39VtPtYI2cYg="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 568,
+    "completion_tokens": 386,
+    "total_tokens": 954,
+    "cost": 0.00457,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00071,
+      "upstream_inference_completions_cost": 0.00386
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 362,
+      "image_tokens": 0
+    }
+  }
+}

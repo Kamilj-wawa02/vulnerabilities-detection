@@ -1,0 +1,57 @@
+{
+  "id": "gen-1767877559-6486FAcwrForkp7yiswp",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1767877559,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 617\n}",
+        "refusal": null,
+        "reasoning": "**Identifying vulnerabilities**\n\nThe remote user can crash the server by sending \"-2\\n\", which makes it vulnerable (true) and corresponds to CWE 617. I'm also considering potential issues like atoi overflow, but the main concern seems to be the reachable assert. There was a previous question related to the command `// echo \"-2\" | nc localhost 8080`, confirming this vulnerability. I\u2019ll return the JSON response as: {\"vulnerable\": true, \"cwe\": 617}.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying vulnerabilities**\n\nThe remote user can crash the server by sending \"-2\\n\", which makes it vulnerable (true) and corresponds to CWE 617. I'm also considering potential issues like atoi overflow, but the main concern seems to be the reachable assert. There was a previous question related to the command `// echo \"-2\" | nc localhost 8080`, confirming this vulnerability. I\u2019ll return the JSON response as: {\"vulnerable\": true, \"cwe\": 617}."
+          },
+          {
+            "id": "rs_01ed54ce92aad24c01695fabb8c34c8194af744184187897d9",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpX6vD5-uO7TzD_Jed0vgzRBIs-tG_RtRruT0VzsspH-8b9RhbcDLJ0XYDPxURxCypTu9isuJFmXaaFmCDFAQ7gTCOWXrAdDs1vYHPEwLfQeiLMk77y1_KdxtDEKzZNDV2EO8YdQPEUe6ib0o5nWmopUbXOsiXyJlEXR5BpGcxgZzl7J8JLS8Nc4xiamv5vKufylkRiNKf2KKkn9btAMgTQCpzzOb16iGUeRB-ybc52eva-7vR29NYzG3GJIcP-ckarW_PaR68P05i9JaWvim9BpQowVU5bRq3vck2P0uvjp3Q6APFTHHXhhSQWJt78YarqXB09rx7FghJZ3o2552EHuEUC14xPaxSSUHDblsAur703koWCk0oOvzukoKMZ9oHj9HjCkIqLPJjjVNMyviMkx0WosbuNSunk3tLG33H7WiGw72jV6eCGNoDK5DgYpgvF6e0U3wqlrNdhJQESdXBVWOizkSOpMbExLqmUvs9Qhrkt3pp8CWH29_4m8NRJTmBiDrWGSm-Glxuttfzbcta-ImY_7nUCB2M4XNOnieaxoq73gqAGp0DW1-EGHFGiw5GlzqssUsD5WZPPG-jq2RrjlqPNr9cCO_ig6NmTkMJbLxYt7Ou8GtDKrik_IXpM_yM1lpXFaW_lH79q6R8qOcPBGYRUekaFMDIwpr5xwGieiTYeVM-Yjx3r89lJEE1QYHQa0J_lZiOWiPGZubnlOGweKG2vFG-44d9BkDzD4IJ6nIFBBhYUPGIQzCf1u56stddhaDmMpuhgAMdinBFibcat9Z2AZNAljO-_iwSwixrQuZCZuJt_62cqHlafkFDezryZ87-90g1i2IDeG5LsVtHyUZAwwpSU5g4s0qMpY9_YDyblTvfBTSY9kfgOYT_CIvMdRXOeBgIJbK84qkndZa6dWZBMio0i5dPi0N-q2a0Y3o1nH9OOsc79LviwGLfEppqpeHCgL6HmmsbACpE84dmIjHvKBrX9sm7NCJd7nbYn78SD-6v7lKntP8Fht8zGhCBPVgw9j3s2CGeDTLvxiWV_6NEI3DjVjxtLz5DqyyK1pgaPAWdn4FK3gP7252fvfdVykZuPaiekEea6xLCeWtq-6RjOD0TGTwIYp2FdJ47lZ2sDWQ0zRDDtrKSDmbxy-qdyH4Y9TJ1wpLAko1_LmTazYKlPAW94R6yiudD5dUaprQH6PN5aytKj-i-C2blTpuxOO-yeYl8OqwIrC_fGFSeRM7kUifLApVmff7BsgDTODxacAQ2NuPIYdOlRQTEZ14MTNsZRp_rqpOdrdRJTswPPAz6oEhgqu89Ywf_Ate9YYkvLSFTxry6JDrH0Ce_FcE1oD6W-2IZZRV5Mei0PQXRd7SGn1c2l2GzFQdmpPhUus7-8-DcLPaRCNEm6Uf6iMr2HO9GcjXWk1MZpj6ICaxK557ZAAke-cnEgrO-4CnWspNyMv0ns2kCzaIJunRSwQF3deiVUV7HfZFJ-qSiR75Ki5oFEepnGJS9MrXvaRD07wtErls6w9ua3DQy9YaH3vXCrzh6HIi2iqF2YaPzUg3bgNpzhuGR2EwfA2ccvKWgjHnarO15sRBNa5SLYn4OXJRekabYhwzGn5R4ijodbAQHxpKvDf63yAoU6UAQo6mUVSzyOXGI47sCgyQWLSz3-20cvLDN0dYijg9hOMLX1IDCGgwpbZLyh4ftZZ8rsMPmXGmBhIyYxL3ZgwT7xfzwcdtYD0Ap4zuaQC1byJrqjAIDD5lEgXhTBSAVfQN3j7EFzQ0emPJ0dKl9b2VTSLIY7_8OBO9wN27kJGI6VHvlmWpIr8hRtxY0abhyOt1QwkBR5x8crxv8ifnG4yve3ipWD7dmL2toDkJUYvKdRvscqIdn-pXfPg9oKzZmrEIzOnw1CraApSIsyS2om9Zl92QKRALov0-q77y4do5SIvz1TClUi86PZnzM-_5ba5vi5jTmVmHgkwJI_vHX4I-lotzITiMLtomjMv7mR4F6lw0aka7-pJQGA-FhhvqQbky5OYLDRAUrM26a0n5bMRfKkAmDwGHFPLGyFutCFb3qC7Z4KDYT3ORajHfZVoIGimjTIf22P5TZdx579tSUA2yvsHxwXl-XoyZbkRzgWu4vvNlUJ1E_qjjcSot3ztD1IpQc3ow0m5Vhn0D4KOJ8vU0XLeYP-Mr97cb5VIxSe8QBRTyYhQsfgdsJ79ygcL4SI6xI6LVih6ERD3mF1yukWPGUz5bEEwjKFbTKz4MeNHm9gWDKH41L4-Lbh9wgHi4YuNk9YtDNL5W-D0vsHWrT47fHoqe7v-p-F9GvAdGHQo7zM3d7HxTh4uqD2hDmcFkeMevozx6YkB8r-9xrHbPQ7Ny-Y9YO69CbDZG1zy-M8LL5ytKXUyYK8keTjdQtoF6oROesje0mtO0rx85UIq5c80aVzMXoZqam0BiIWbfK4PbwRyhmW3-OFQwRjPsnX12rsL1b31d3wy0gVBfkbqcKhbsRGkO1tmqYYTyTpIqDTK6qk1qLrv5o_VhMkoWLbesCdTTyR7OydGbmSaE="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 631,
+    "completion_tokens": 318,
+    "total_tokens": 949,
+    "cost": 0.00396875,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00078875,
+      "upstream_inference_completions_cost": 0.00318
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 294,
+      "image_tokens": 0
+    }
+  }
+}

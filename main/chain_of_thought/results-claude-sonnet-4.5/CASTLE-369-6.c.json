@@ -1,0 +1,43 @@
+{
+  "id": "gen-1767874821-mJbDmEsD5MZ95PZuWuRg",
+  "provider": "Google",
+  "model": "anthropic/claude-sonnet-4.5",
+  "object": "chat.completion",
+  "created": 1767874821,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "I need to analyze this code for security vulnerabilities.\n\nLet me trace through the execution:\n1. `a = 123`, `b = 12`\n2. The printf statement calculates: `a / (fibonacci(b) - sqr(b))`\n3. `sqr(12) = 12 * 12 = 144`\n4. `fibonacci(12)` needs to be calculated:\n   - fibonacci(12) = 144 (the 12th Fibonacci number)\n5. So the denominator is: `144 - 144 = 0`\n6. This results in division by zero: `123 / 0`\n\nDivision by zero is undefined behavior in C and represents a security vulnerability as it can cause:\n- Program crashes\n- Denial of service\n- Unpredictable behavior\n\nThis is a CWE-369 (Divide By Zero) vulnerability.\n\n{\n  \"vulnerable\": true,\n  \"cwe\": 369\n}",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 228,
+    "completion_tokens": 227,
+    "total_tokens": 455,
+    "cost": 0.004089,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.000684,
+      "upstream_inference_completions_cost": 0.003405
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "gen-1767875989-xXNBTN9Q5UQpPfF6Pptm",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1767875989,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 125\n}",
+        "refusal": null,
+        "reasoning": "**Identifying vulnerabilities**\n\nI need to analyze a code snippet for vulnerabilities. It seems we allocate 9 Country structs, but `getNumberOfCountries` returns 99, leading to an out-of-bounds read when the main loop accesses countries[0..98]. This is a buffer over-read issue, classifying it as CWE-125 (Out-of-bounds Read), which indicates a vulnerability.\n\nAdditionally, while using `strncpy`, I notice it handles a 4-character copy of the string \"HUN\" appropriately, so there's no buffer overflow there. The main issue lies in the incorrect count, suggesting the JSON should note the vulnerability as true and indicate CWE-125.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying vulnerabilities**\n\nI need to analyze a code snippet for vulnerabilities. It seems we allocate 9 Country structs, but `getNumberOfCountries` returns 99, leading to an out-of-bounds read when the main loop accesses countries[0..98]. This is a buffer over-read issue, classifying it as CWE-125 (Out-of-bounds Read), which indicates a vulnerability.\n\nAdditionally, while using `strncpy`, I notice it handles a 4-character copy of the string \"HUN\" appropriately, so there's no buffer overflow there. The main issue lies in the incorrect count, suggesting the JSON should note the vulnerability as true and indicate CWE-125."
+          },
+          {
+            "id": "rs_09779d9189aa764801695fa595a45c819688dc31515c7460d9",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpX6Wblhm4yjQMKSWMGMjDjrVIDUbz8RoE5dv1yukWZ8cWZzJS5j6ixl2t_j_1f8bitApx554cI7igy8Ao0QPxMuyRk3Uh1x1Bjeg0eWnw09A1jX362c_Vg6hfW_7Oqhziy9i4KCQmmgLg9t5EkwCZpUdt0uaJwCroQorh4mhqSk4qcAfYImVKYG6VjmaxzeEsVfMea0aBm_ny4Vocym8qX72aM5Hwk4d0ykmuqRGu5-L8d4TtuW2dTC3zvfh5Aae8tA2kwOUfiHWc5GfDyMmri3kJsUripdjm-1frInlNEY1_zWK-T7zdo-qE68BYJENtJalTMQb3oc-xtuAuxgiLiYkKsvYPyZPxFD_MCEq_ta0X9iMJ1ngapfqojUl2sZrRUQRiHCG3XsF9DEHtLOLewJoLbxAy9yieoK7RTdJliInalaLAoD1c9jmfLqhqHXg33CUbx1X9kU9XzmVxyHShDUs7qE9wkD1y3LAsnsbRZRAorZ6fMa0D29-yhxLtOW9JVK4JfjdHjBDy4-_TzLPQfCvkR4ZEwEeHwZXeChJDbSc6JBkT3YIjeRg0sg8TWGJ3z1F7_nNBi6FKlRl_nw4rnym2AVgekigh7psHQXlox85O3hsZDV2OOIgoelgyDrZnQWvp8Wd15MdjXdkteB6Ix5uONsRfl6Jeh25orwcS4_RsZwYeG7UJTOziJNt-_1ubB-LeG5PaspvG2_VU-vqfJeQJDssweqA-n09qxvZ-6OTHxiyBu8C5CHcnan1INOxNOYpnZJZKmPaXvW85mFMbA0WxGswrqEfWOqdIM3kiY0Uyi6n_QgNmFyu70XghUQsh0v8teXr6uDmzkwwuXm4GDRVPa9kqzShUtCJ_NN5PXGk1lg_gPuS1_CRueFvtvU7gQsFHHvGpOi5_2-e-Gliez-ucabKArPltTj7D6LFQ76lzanF9-1ogTUs2286WVOKOH6EEdMbyIQVyAQPyjmBFZUoG6Zn3wqbwRg4436xw58ymWL-GA2LXZFaSDhcf8DnRADr62nMvoPixS48Yb7oAQprzQGRG8TMW7qO5DIFCDotfovGz1ynzp8bcpIdrDTcHQIP-DsTdFeIw7-u4t8VtUQ--b0fPZv-zzU1yBwWHWxfWCPFK3V1u58Fji-cbxXBvt2CtQm989U5eDqPvObuqv8jvyxJdurEhRu-DsXp5Rj57Igv2Q0yW4JLQD3LBDcfc761UYX6SJL2LH1dhRlKStQ_rLX1zTY1-mVEKR7I9Wmb9owmuzVWTVS0JacS_VBKTGLon-PzOQU5IPPYfJEoDX3Bke_VgNmQkBJIHKWdzbIIuZ8JIYj_dp-LvsDmsEGw7BSk1OnELFKqa0-AA_w7z2r18wjwsTI91mKTpRNPpBqcHuWxAuCHRhVvQlOkAEl0h0PcUL9V8JjQpnDLSIHVWvHKDzfABAw5EU8WD4ZijrBWxGGvhR4HnlTzq407TsezK4JQ3guIKyBXVlwhByxjGxy8nYcubgzLZr79qU9HwLsXc1vg0VfSKUn8KQE2CB84sltcHALbuZsFGwOhVsFhCWaQmwk_mGiQ_p4nI8XW6UgWsDFk6Gs3On8DtzKhyoOfMi7wkyupIp9VnH_V5Pqgj3WlIY2eqAsaJV2QxXyueagiDjbVXPfPUtt2ZvyOa5GMJYzphd2rX5BlXeShc3XeEPsc7Mjg9oGi-Vx8nKCS3jT35dS5xIXvEoWrBWRSytkVmvT7LcVh6trArsL50XgFb02WbHsvhqYjjHXp_blaIFe1_WNCS2zQTN_ygLKcRMhN1Cwik0rA7k_UxdZDQgY0QvTCP3cpk9xHnSn7PhtIWJOtmP1a87JLM0MaN8p98or_UHzHlfoMKoxewIfXjeZMU0860SmmfWUy_NKbEhVCiruqfJaAJo-dOz16EBE_PsAIKoFDCDiuSP4lEP3u-EtFQymkgk4CM0IABBQojdmvr4-aikNFxoJfOtw_NraY5FyPvv_KRaMx7bYNf73cWbjcNHSthGw=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 507,
+    "completion_tokens": 249,
+    "total_tokens": 756,
+    "cost": 0.00312375,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00063375,
+      "upstream_inference_completions_cost": 0.00249
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 225,
+      "image_tokens": 0
+    }
+  }
+}

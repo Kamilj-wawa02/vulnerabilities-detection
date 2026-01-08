@@ -1,0 +1,57 @@
+{
+  "id": "gen-1767876376-jDxXOb4IreKhkMDwCgvT",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1767876376,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 125\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating potential vulnerability**\n\nI'm looping through the input using `sscanf`, which reads hex values. However, I'm not checking the length of `key_hex`, which could lead to problems if it doesn't have 32 digits. If it\u2019s shorter, there\u2019s a risk of reading past the terminating NUL, resulting in an out-of-bounds read. This is concerning for undefined behavior and potential information leakage, aligning with CWE-125 for out-of-bounds reads. Overall, I see this as a significant vulnerability.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating potential vulnerability**\n\nI'm looping through the input using `sscanf`, which reads hex values. However, I'm not checking the length of `key_hex`, which could lead to problems if it doesn't have 32 digits. If it\u2019s shorter, there\u2019s a risk of reading past the terminating NUL, resulting in an out-of-bounds read. This is concerning for undefined behavior and potential information leakage, aligning with CWE-125 for out-of-bounds reads. Overall, I see this as a significant vulnerability."
+          },
+          {
+            "id": "rs_0995bb6720b5594c01695fa718fde88197bd62761c6c47bf53",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpX6cjEuPwrXG26if4P_PmsqyIdLVSlov9YlpzvPbfh0hv2fQQwA0JoFOsVesnocAvCR0aOff9_XfcyREMEqkR1LtpwOLwhxyNbOUmnK6oLZOql331b6scG-CqfjzdQfVi5A4YxY9XE1d8YgI38Ei6ruKTWI2iM0mpTlTGx-aqG-bxd2WCt8Dx-lg1UVs7PDjzi-8NKsSXuaE0La968Wg27QTB9coV_FY7iCHksK0C7geu1p1S8UyHJiKVW1b5H8XJJtjJy9WzjpAYRodBQhTC-LdmHcpVMv4W-4Wp1sPx6pkQBNANZMLKYC9whbucsZGiDEhNzO_BQknP_Uo4v85NJfA7ePx8kCJzURRhCy3uJIp-WyKChXd_pL1sdNSPgIqEZ4YcP_dFxgAezSbfEA5g2IY3M4LmfVIiOYhPk9f4CByP-wuf4ovQqm0o6Di6i2IpOXKPzr4yAR4QqTDV99BXIyqsVd5vjRFTmqDJPFLfzrIPcZKkJ0XoCsznCo-dCqkpfNBqFCJs2MbYU-Tu0jikirWr_c2jfRkSvZwKDDkwCJaBQJm4JaWGqi1BY9jm7SFDgblALT2FIyhvtoBpyyVsNi1TyJTUvkc0L-TeO3jeczuDxZ446eqgQ4Kdb46WCbE6oloEDfalDck8fb4VAThBg0ij0bEyc4kjax4Oj-vQt95kq0FeY7KAYmJqQ6NfSvSYZXsRSsWOtX3mDKt0sJEZLVwrQx7xmDdTKtDViE12qG-4KSYQAYxrkBrGi_6BraRJvi7NYOhyTEk4MDQBrg1PDmxvqSGzkCzd_Atc3Nl7hrx8a1_zERu2eWaETHeML61ATk9P5SvD_Bnf8nrIBczYhdOGsWlv4IKOIdtE8doUoqtxTFXSgNIt7fsIBmdhx3_tNsCEnXm_vmAfsZCk5PiXhujZLmbzuB3SdRwpdK2zU_krhkHmXwRUbRd5VPoVBUdXgn5UOFxOCm90G-Byl1WeBI72IjC1zfc_4_b8ynafK_h0bEqX0TLDVJfr-ON2g0qfQW4x13aqkwQCCdKmmMUWrkUFRaG0v0cm6KauhonJSpq95C0fOjcIS1ec9SchdYBvQyCDxo50UrKPWhUemJnDxYab9iMH4sjPDsmIQspoWgOMgKOGmzG1OtNVVpHsCbVzGnTRUJjKTKYsAYn1LJ53mttW-_VTlAG8pMu2Y9o4NXBHVaCNgB6SjVNa0I2XEt-DVf7a1LTArI0_hC_3mfjW1Gf52CicmCZWc7C7LTvthp-8zzjk1FlIZxoo1t6I24SA8gdHd-HAIYrKpn9X5L-iqGCnPeEyQ0BIXY6KTOiMarH9lecit7PX0-aY_28NGNqPBSGAebPuy7uO3ldUY-tTVkWJXZfykshqmGZcIeLk8f387yiQdO-PXL3e7NUDEpjeRGRusumNR9fmVaJ4DpMI9CeWxWLC_MQcADSCmEk0vdOCWjEa8omprScHO5wsISmRqWQCOvHmz75ENgnEWI5emWpVlqIjKfAzv5R9xG22Lb6USOzV2quap5vPwAl-lSW3Hy-0JcroMvmZLefKKwPmpqm-YI7-0u2mZyxAoRx3wV7l_f1wA9w6eaf6f87KfnkXB6moTxF-Au2j6UAUhzMkVRa4t3hIuWxdPstGSgxpGx_zV3BI62eavpEn4Z7Bzfau5mFkVSJrRovPgYxm00ah9jmSkdtqAuATcqOBlcvd41f1R8R3OBUK5S4fx6qyAGIfOFlsLGFs5ElPaZJhYYByoYtoH3iE8Q12aay298gu_1VgTCdmUuITkw0Lh_-rG1-YjvXFEo9EK1U37d6XRJovOWCNHECJwVyy_nSy03CYxnj-56CR-BiSFB4ek1Zi5Aem8nxGGBFF3yJC-ZOfwJ_ryhg7nT-gpEYE-UjeoTCpIAccPJEXLUeqhKYqv11-AmqpTIvubgPPogDma351DdOHfnBXwtbY4_Tq7h-g-MRE-uLQmcU6-Bi8SWJh0ldUrMizX3g3yNPH9G4D_ieZcquIFBYKzhJQ8XtiLgYpj-MGJODcB9CprRsLUqSmjXa4_UYfyAGV8p4a5Szqgc1LW2A-RHTA39--55MpSn5GkRMTr42DkNNlN63wK2Oj7c8stQH8AR6x9lk2y7JPXYZDc5rrMqoeJhhIfgRvg-2-nWWkcusPUGvm5tNuP1Vp3kPWEQub_iGGl_Ww03jgcWtWM8zO4Gs0SPRm6CBXcUwU1d4scWdPsdDGp2WfEBI2HHa9md2GWhrG1065aSaCBwXqI3ujNOYwDE4-Xc6qHppw1K9LAKViQzxfRQTd9oPyW9D7mzv_pV39mmTUR33JY2Ucr43YVLf4xvLzru_O3WxTeFG2HLH7Z1XTb5KTJDwXKa5u0RLYDfLDoJreKcHpPBrkImbx5ucJbaaHqb87NM-Z7VYdJykq4z7YTP-xBv0KUIeZBNe6M7IRrw1lwMbNUKZI7NOP5L8nadbGT-DbunqNfFQbDfSsS8ibK43J57fzqctQ3Qw9IUu4VT82ZgLVEPbgBHdf2BGM_FE5hIiWjPvNDGRwCAjIEfot4IDhfYTMnsYKVMi0HSbDVtJuOPbZAZqPcvWecyJghhHXwwfPEjLJJHnGXspLZXUZkM9ixZMH8V9YrGGtmllzjAgG4lfXnG0Qv4ISnpVjnM016sJKp2mbmTXwSDyr2O5AvHHrWDiw1ElIAAGqpi-rlUMOUOraindck7gNWqw6c6Qi_bFEGIijMMyYeIEh2Xco1RXqWjf1ZXJ26fWAJm9LktFEqXaQ8joa1HXTxMp-hS-ham1LlqQk1MH26Yfj70w-AXNXwvrTGoe60OTvN2fXv-efnH7o36xrMwIDhG6r8Ll0jhFT4AfdBKSoNG6PrwcYUL2rtcFCI14J1lLj28wCwS0qJGzws1Y_pN2wpMpsd293hc1rQnX-4B0Ac4P_fABo0srKom0EFwAkjaPeZK4MK8521OfLOqxKuTBWjS9FyUGTG8Lf1C5BmZT_oC9Be1eEO4X84IegowC2bkWMU9sgcgkfj3TbOPJif-yScMMlCXHRAMZxzgcXMgSOw5OEKYNZwSIwBrZFzw-s9W1Hodzv"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 649,
+    "completion_tokens": 424,
+    "total_tokens": 1073,
+    "cost": 0.00505125,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00081125,
+      "upstream_inference_completions_cost": 0.00424
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 400,
+      "image_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "gen-1767877979-3iLontBxoqV2B4Pz0hBY",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1767877980,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": false,\n  \"cwe\": 0\n}",
+        "refusal": null,
+        "reasoning": "**Analyzing vulnerabilities**\n\nI need to assess the potential vulnerabilities here. There's a missing bind/listen, which suggests a logical bug. Security-wise, if there's a fork without handling SIGCHLD, it could lead to zombie processes, impacting reliability. The issue of accepting on an unbound socket is undefined behavior. After the fork, it's okay if the child immediately closes the client socket, but there might be a file descriptor leak if the server socket isn't closed in the child. Overall, it seems not vulnerable, so I should return JSON with vulnerable set to false and code \"0\".",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing vulnerabilities**\n\nI need to assess the potential vulnerabilities here. There's a missing bind/listen, which suggests a logical bug. Security-wise, if there's a fork without handling SIGCHLD, it could lead to zombie processes, impacting reliability. The issue of accepting on an unbound socket is undefined behavior. After the fork, it's okay if the child immediately closes the client socket, but there might be a file descriptor leak if the server socket isn't closed in the child. Overall, it seems not vulnerable, so I should return JSON with vulnerable set to false and code \"0\"."
+          },
+          {
+            "id": "rs_0ecd34d6bc144bf401695fad5c834881979776538b18b86b88",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpX61kqzWYZ9rI90HpIFEHnPyhiN2K2VtWyp7DNv3l_WU_6RHHHEMwQhh8yAbthea_i2mAFKp3MWm65nHyTQYuA-W-oWxbk18m6X_d_vtYVYNPzyv5Lei3pYUhRPIXhPabRh1g24Tz1cicmYWZDK12MF-f-0uKSsKdWQTCpaRORCc5RE9qhqRq-LBeMML0yC_oh0lNBvMFixzv8nUlwROGcTAF7FFoB20MVJd63hdcRkkj-hO-HCJyYO2dZM8bA8NqV0k54NVE-55PSy1o2RyjCsgR7r58t9sRd-e7uzPZd-dbAF9sFebCrpdigaeqUJ0xSbVWYFq_umyVo5y7xyaJyOZ1TMsNXpdS8D0osE6hr69_p0gd4pZR3iTxfKfwVrY0YGq6odRM-1oOC3JuM5Ia4DyCH-1Jz7m5aCy3hYoGCCvtDTmJWGcrpajoIcpCM0w-0hSUW7x_JQkPxnRjoVJmNEc3KE8sHcKL78tGFIfn7CQdKmoZhxMDcOQucQIPtgZEjtMsrmlVEb2kTyX6--rQwBt5EC16Pe7uTG0Ym5shbNZY8HQRuNnj73ycTQYLBLqF34vjEEF5AM4NXUIYzYILfq39AhyX9mIoMfCrC6L-FIuCfkqH_V7a2yytSlTB5MxZ7ZHNeH4dSvilOtbCTaTixWKHMXyTg6nqwPKWqZWiUIVqEl6peA6ZpR7ngDnMuFalZoR7CfuMg1L8HF-saRGpWVPmNbKpuFgAsBvVYnBKc4GK4R-RgGAxIaYU_tO0Dog_uShUCHEAKOVWGK2lZp_OYVZViGFa76Xu0fbZtwLpkmwKriOMHpCGezdI2oZRReziCaV_PiAevuCJh0okHLMBdNuo90ym0OxSlkUk7PZtOzppGp_UBl-29Y8iFG5h-ZC0BivbfCEu3zmyRXzu6lxw83qixqbzrkyyH3TM2x1XFF8CxmgJAZPKLdcPZOr-f-WPoA_sb1OFFLWahzcXxO1zW9ajkQYwzAY6m7AdrZJFX-MZtQ2VrefetCbIp9vtAPnxTRaW3cMbMs4lNfz1hb2XnWuxeniddBs880RDUlL-nXW8cRdt23G4uJOUAQPADvOua5xF6v6n6wuPoDtUnwDXk_-KZ-tbOSamLq8oNyoR9-Y6ge34vivJIhgem-bAZmV24BOynMQYLk1YAVDaUGiFdsTz92lLPP8RG3aIePuwtTWbDWX0zSZZAUz7btASPBf-Y5UWdR06WgwrkFiKWCUj2yIg7KZ3SBBGxp8wIxcV8Xu4m716MdVJ-ae42k-dXTsWlWy9psU3SQBYdB8eDnTVLLPAYSkZj6PiDZZ7HzAldS-DVKUm33tPz5pYxKNeJoI1kkeVb62ygvDXsrFC3_jymkHoUYVb8JpFwvKL0poKlhL02gv3F2Ninyi1FJ8glKQsNy2IX7WiGBZ4_Y34MBqw1ilKaiqlFiI3fBMY_2XvZAeb9t8QuMwuO1Q7lqAuaiKH6v4waxj_flh7LdOZH6_Nmu78Lp-pBFWfkzbo0pEHIIuza14U6fKD9HDwU5gPKqGVIJUL1W4HKOEqnG72El62_0hyvEYeAO5fzQr3TIOEpw9F5u_CscTPTmevUuBFX8zVzgjxq1Zx0Hpe0vqnAyWAQhw1LgFcwMoSKj7lsBH7nvLJz3PKoCEjf9kgqJTcCTTBBjTeyYIR7dqhzpSMn_Vk2oM7iVT-ebbzT8b2u4GvvN558-8TRX058HuQQlaKVvdbwnmo5AHPNiGcH-DCNDQFWaMpUTOcnv0Tn1NfIhiDPFkgtiw1hGhmvG2U3UyvYZ5VuTztOgUKIHVC5UDTYVr4-_c_56bP9Q1kZZplNW4J41r2qjdQ9hq2yj3VBthsQ-Q11Zoiy_pouMRNxqVTzW8L3a2QZVGGxJ2UgBIOFHrqk4_8J7AuWJdCaUMFr0BeiAwOC4jp8BrHSxSMjOnjqEJ_eXyU0sary8oSM-5-JcOlFkTOgw4="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 282,
+    "completion_tokens": 202,
+    "total_tokens": 484,
+    "cost": 0.0023725,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0003525,
+      "upstream_inference_completions_cost": 0.00202
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 178,
+      "image_tokens": 0
+    }
+  }
+}

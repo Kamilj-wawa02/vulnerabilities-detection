@@ -1,0 +1,57 @@
+{
+  "id": "gen-1767878305-eNOrybXB6vuVMjyTxvAK",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1767878305,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 457\n}",
+        "refusal": null,
+        "reasoning": "**Detecting vulnerabilities**\n\nI need to analyze some code for vulnerabilities. I noticed that there's an issue with an unused variable, `ciphertext_len`, and a potential information leak since the code prints the full buffer, which might include uninitialized data. This seems to tie into CWE-457 for the use of uninitialized variables. While the key and IV are read from a file in a safe manner, relying on a static IV could be a cryptographic misuse. So, I'm concluding that there's a vulnerability present, specifically CWE-457.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Detecting vulnerabilities**\n\nI need to analyze some code for vulnerabilities. I noticed that there's an issue with an unused variable, `ciphertext_len`, and a potential information leak since the code prints the full buffer, which might include uninitialized data. This seems to tie into CWE-457 for the use of uninitialized variables. While the key and IV are read from a file in a safe manner, relying on a static IV could be a cryptographic misuse. So, I'm concluding that there's a vulnerability present, specifically CWE-457."
+          },
+          {
+            "id": "rs_03a7b97bc3aabbf401695faea279048195b8724dc375c3d4bf",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpX66oNVmUahODh6_9VzIxVvSRd3A9nSiAAZ00ezV7n4yh5Nra7EqKhBQrQjQmHEeh0DyOl43KZJFyrx7NUYA_DFIGa8dQS5NJeiNE7e4QQ64YdjzwiQbJWo00oDbjCt5FbuE40duWFbjHVEy4idrWesz3WpbOX9LCYK36r3-6qPFb81OsY3tMB7diKUn4uWOLPmz3KhNg54YrFzZkbzka5yomTKLz3bqe3Q7KZ7TL359LPa-wz14C80m4XxDKKiR7JQ_ZaJGZ5uw8f6cYUzul8t7wQKChO3dMXxCM85Is1X57NRA7QN-QYI0mFs3EYkapoCjE4U8GAr8XFFFJh6eNa3oR9Z2L1CBGQtyUG_scB2iZf8GJfBunJOClI1upYMpwqeIIqB5DweozAhlTgWwaRFudX6QdIL6GBuVUguNXia58sxtCGM7ASe1jxDukq3rgXvGOw82ILGyiWb1HqReUCEdfSeRxApN2kChafT10U6bpLseh2UEhb34Ly8OSV3-g74Z0tEP4TLiywsvSUZVUFb5y8SJVvccNwqaq2i-ekmm_PKT4mXeMjwKIXYSFs-QR_nN32vdyNNmbDnqz3YXTrMjrb2SmuHGnKTNwql9e1CvnpHeMjT7kIEuzsrYKx6X7bD3rX2xvIKIX_fquSFTsuOanFOnSCyXF0-FD9IgLyIJtJ7XAQ6kCDzdbGx16AFFy6bYWnyN37dMfFIzCCz8KYZ10TOpe82AspZ5ddlf7PFTYy-hLHjGbaQQn3Td27qFs3EU6TI9fYbQIu2bVhS-_cTN2EdIfttK36F1d2hc-YjmvXesIjfW9Cj2IqbV1JG1cNj-UyBWbYNyo1C1eKkGTT5DdzUXzNwdlYcjtRmhtrqVyUnamc1Ney10ST4shm3LCvnFA2hu2RiSueygGJCa3XfCdY9G75UmE51oB2Ga7QNZTUC4hEfle9jDnm2uVzcN4JxBAnFm5ewY-w4yHHle4_4FpTgSuR4HM5a_oU6vY6DEk99aVHRAj2cpbWeISV_z_c6ZSmTe2Wj1RQRkbRvXdYexayI4vzijhyP8vIMwgkx2aNJ8ZTh-LlDVv8l9R3lsor1vzlCwWGakhjV7nvHnE1pk-XbNKAZQHXGH9fy0-MEJQif2xw94m-3BkesWdD_0XFbdm0g5F0PFf1j46eivSYI01gYWaJxe1DoeC0LIkO-wQzZtGnyT0JAUggCL5tyXCJe1l-H61JR2bXfenIskM9iZ-jiBmp6EIA876RtAWOHGwRFJK4uV_IWOBXF1IdT9MECQXHb2vx65ml0oGbPSK6KaqTtyQ-dTsv8z2mqtmFxXTRrypnpTwTQis3B5PpJtQWXIFDfTWdhL4BVCJVdmd3qyld4YONf459MLqWx0itDHFAOcKd4unoGSa_Gk9AydgBTVdo0bTBIPRDf39Lx0jMjnet6fNsjFj2USNOPIEJjwPsPdVFJHzmWUO7rRpcNyWrpObFEyXYNpJAjZGNZkXJXDw_VkpQIv8ldJaYU-xm0S23Z_xCSvOwWeqk86uXW_WdQGDjLjQ6hJy29pZHllBjUxQTi0I7EqSvhOz8bMsjrQcLKnT0SAEim4OPcojDOtvm2IPU1DYmVvPFE9PzzgHvY9B14OXT67cVnIYM4T89rLRUu5URkPt8CIqD656pwj1fJM8afLB3bNTYIJxuJgxA72gt2Z3h6qURde_Oe8RGKNJOQEGHBhA0t2U6_Fc_AG5if-kUwwJsKWHvlqLVf-e72t4GvPVt3jSW5firtnXvzrLTXRHotVqPOaOprJRQgbg63bWq2-iJ1FAWVAyOhqLSxoEh8EqLGWcU08hdsgX_paZdxer7auquZUcKGDoghPaqeCD"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 873,
+    "completion_tokens": 191,
+    "total_tokens": 1064,
+    "cost": 0.00300125,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00109125,
+      "upstream_inference_completions_cost": 0.00191
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 167,
+      "image_tokens": 0
+    }
+  }
+}

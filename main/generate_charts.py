@@ -21,7 +21,9 @@ PROMPTING_STRATEGIES = {
         "role_based/results-devstral-2512",
     ],
     "Chain-of-thought": [
+        "chain_of_thought/results-gpt-5.1",
         "chain_of_thought/results-grok-code-fast-1",
+        "chain_of_thought/results-claude-sonnet-4.5",
         "chain_of_thought/results-devstral-2512",
     ],
 }

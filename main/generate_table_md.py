@@ -29,6 +29,8 @@ RESULTS_DIRECTORIES = [
 
     "chain_of_thought/results-grok-code-fast-1",
     "chain_of_thought/results-devstral-2512",
+    "chain_of_thought/results-gpt-5.1",
+    "chain_of_thought/results-claude-sonnet-4.5",
 
     "temperatures/zero_shot/0.5/results-gpt-5.1",
     "temperatures/zero_shot/1.5/results-gpt-5.1",

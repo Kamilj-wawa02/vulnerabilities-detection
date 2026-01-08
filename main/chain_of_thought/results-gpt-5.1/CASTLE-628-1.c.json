@@ -1,0 +1,57 @@
+{
+  "id": "gen-1767877601-DIBeP3mVtMq0VwCcOLW2",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1767877601,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": false,\n  \"cwe\": 0\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating file handling bug**\n\nI need to check if the file handling is secure. There's a bug in the way the function parameters are set; it looks like I\u2019m mixing filename and text. The filename becomes \"Hello, ...\" which won't work for fopen. The format string usage for fprintf looks safe, but I wonder about possible path traversal vulnerabilities. The filename comes from a constant, so it\u2019s not user-controlled. Overall, I don't think it's vulnerable. I could set CWE to null or 0 as needed.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating file handling bug**\n\nI need to check if the file handling is secure. There's a bug in the way the function parameters are set; it looks like I\u2019m mixing filename and text. The filename becomes \"Hello, ...\" which won't work for fopen. The format string usage for fprintf looks safe, but I wonder about possible path traversal vulnerabilities. The filename comes from a constant, so it\u2019s not user-controlled. Overall, I don't think it's vulnerable. I could set CWE to null or 0 as needed."
+          },
+          {
+            "id": "rs_0ce1b3432ad7dfe501695fabe1f47c8197ab1067ba07c844c9",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpX6vq0-P2DgkRo1f3bKp_Q7VuCvVGlQAfS2noHuVeALSGimKeszhzl_I-O3smJTQMrxJlSrSHovPQjKfYs8kDrdD-Ydj35rzxnlQYoClHQH1QZiH2RH1rJcv3wgmFGOMeBRp7t06zA5K7w7yS-QXoaMxxWPRM_Zfln9q2DJqOayL9x3zghWzvWUiOA8THnUUnHzESgDz6kpaFtsO6BDQgcL8ykvsjCY402pXhc4wtr1lfHezSXopxQGYAa7l98QGdOHc-VpbOGPmPXF6JbtLa_K3Aguwj_KGby4b2Tj0W2VoCco1LORMMSWL0pO9XaC0E8qOsNrsAbevvbI0TUyEv0jxKJJDuk2NGH3znvY7UazHbrxHlpRdzfC61jR9X1H5c76h6_jzWt7M_jU4Usa2IBTXZuyROvZimuXeNqL6hka5WXCj5RgakEXhiro9LYGDs5QLE6Aa44Bv4AGZHLMESQoZPu2yR3NZCYJpgplW4xc2n8RbCI2xHl0dXYdpSVJJvre6AUG1U2f_8kv8vgrVjLEA9XGD6UOQSdqHmUqmWy__LaG38J6HOXk1O5IYgoZi9BaNxy0eWVJMbzy2DLPFdmjnMPevhCIy5_4TydCBXe3jqUE60Kd9pA4fG2pszjDHH1Eabw41rORAdbS-WHvkA0Q8ElL7Camcw_Yr9seWWrLJxrV3twKkkAcrgGjbMYZL1PhpySTtpxR_PVMxTUEvZHV174kDBM_Qd0eatwQE3cS2gK1SjiC4bb7KiX8Rg3dZVghYAtmEW95tnEAP76I4HtJkBsLkompEZ6jn9FbKNk4rBSn_V_WDKBwV5xjr8PGZ3TuLS9_b3uHm1BhS7iTchz-tQxGhnSVxuUy4e4LAAa00czxmrN9uaOiTF1OXJbdoyBhlNvqMguv5pWNLU820X_MHgyJ_by3pgKN42jv-ZVr8G8w5ULDF7nEbS6sjnhCEDQonYlQwkjavPEuKvIGPxqAZZvnZsY1fCuAoz-4Vj7MYJadb_Ks9KHpcGyuFcoqFO1fLb6ld7ztp1RAqlZrOyLjT-ALFpLcLrEu6ReoPIgQiUD0ZCpnpvWEBx4OIHfnrkDGI50u6fZ59cOuyBdfscZrBw6H31EQAE0vWlBMNuROyPYqcLt3fe51aiMjEr5zyWjpY7N2fG_0vWBPR5S6_Z8w-HbyQfdYZUDpuGlrEIt31tkwUXNl1YB1VaOxEGZ5Gz0cGthv8fBgWhyiz-y85YA1LWm7F97ngzzh0dSwo0AAejt8kq9LB2n8uPdZEE_OeX8JcvM69Vnw_UEWNjt8h5B3RI9F_HLrWDRVtSM0xNiyd1ug_2nM4lNXVsnkD7aMdSvqcthfGMLxM8zCCvmMn9DnGSGn4Ptejnfo17n6mUMyqsKKbCBJiMprXP0tWuR9sSWK2-OKnJbWAigq1uGYjmeGxe2Wqtc33ibJ4THQKkz4gwGjuR1x-z8KRZSoW0AzcH989QbEL9yY_fsPJjEvZW6q_2c0qPFw89lP7bd9KrQLKrVcajt9W92By7cpCaz_VaJYciUtHteasxhKetL3VjUo4CiwQVIosw3tGf8bf4nQJVO3xJ2tk635oIpC_j_LIgTRfZmeKERmU3_f2SQqVtqDBwlxkVzcyKFZoskBjuteJmfly-uOO6tSncmp2nXA9PAK6cRHdaPwkP7-8nYa7pfkHlzQpJHfgD5Za5lymjyfioeAl2tloZPeyn_oCREMDSXdLxtlK1gsfq7hu-gPkJtm9WZSmPb9zN1J63a-DvMrClJRwmr7VR2NrpPA7avpojKCYF5hIzOERwy4cZmJE8Tw4Z-L683_04OVaVK2IJZTbFhVfKMNrAtdrXOYqKtut6x03oajQUL3JXHuRu6qotEaCtdwyv7j0DTIQtHqFLtueP0cUTtPIwPVIx09Jo8egz-Z0WSyS8kraxEGQu7GN8x9EY3u06c3b1b32fVHxL7WX41FS8O0fkX1Ws0E1IdPiCJBlJzkCXBrYm708etvw7QyAqo78yCDG6P3Bmvr7xcSgz81ydTUVoR5sD9DFPnTLLEvnnRdDaVqJxplsVXcS_FoFb7mAcPPu-rVdfvZVijCjDptQgCBrvBAD3mnRLesoMm0MefLVu0C0LT5OX3ve9IbuJNA=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 202,
+    "completion_tokens": 250,
+    "total_tokens": 452,
+    "cost": 0.0027525,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0002525,
+      "upstream_inference_completions_cost": 0.0025
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 226,
+      "image_tokens": 0
+    }
+  }
+}

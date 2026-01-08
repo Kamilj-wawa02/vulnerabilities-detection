@@ -1,0 +1,57 @@
+{
+  "id": "gen-1767877821-HYlQcS2h9VLJkI4aVWAz",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1767877821,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 761\n}",
+        "refusal": null,
+        "reasoning": "**Identifying memory issues**\n\nI need to check my handling of memory allocation. When I malloc 8 ints, I store the pointer in buf and then increment it, which means the pointer now points to the second int. However, if I try to free(buf), that's an invalid free and leads to undefined behavior. It seems like this might be a security vulnerability linked to CWE-761, which is about freeing a pointer not at the start of the buffer. So yeah, this is indeed a vulnerability.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying memory issues**\n\nI need to check my handling of memory allocation. When I malloc 8 ints, I store the pointer in buf and then increment it, which means the pointer now points to the second int. However, if I try to free(buf), that's an invalid free and leads to undefined behavior. It seems like this might be a security vulnerability linked to CWE-761, which is about freeing a pointer not at the start of the buffer. So yeah, this is indeed a vulnerability."
+          },
+          {
+            "id": "rs_058c64cc7af395cc01695facbe4308819690e3330f41928e83",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpX6zDDin9AN88pCxpsQJpAK-s1C83iKWjQBs8YpnpNou4oApLQVZWpcmbKsM7fqLO-fQ_u9ZCfdJmEOiJ0a8r9ws138ZDiRO29RDsnr0gj9dGbWJiiyAtaDrWW7XWyU7IZAgR1OD0-ZZfmlXA6Fp0islPyYIZmFqNS4W-Ml18VmKPg4X_K2N5OGWqCTLl2Fs1zKpU3AamBG_nZrRxQ5sz4VOTRHFZE44BhxCMCPFApimTQxTME6-1qJfnzhCMAv2KrPmd509XDDZJYGvB2E77ckXYmyX7N8k3I0Zj6cJY1ZypJHDDikwpWVDZKmOjxLdvRGIo-kBbiu50IOlGIMQrIg6OJYp1jRP5MgE4EOwkvymOy2giJiKVg26LcZ8Wni-lBSJgg7WHSz4TZSLP-JLPXG4mC7Z_VGo_tzJKbXy__JrOQhjTscbfkRRyZo3eZm6LTnkv12XHoZY45nl-EHsxssHtSDCULGki3RXn2xDzO994A9pCGB_Ev9cJ5FeiThlh_pWKVEuIGpttS-c57o658XZXPBZ__vS7nD7Z7U2JQ6a3fe8eHmDnGm7mSBDZZHBFPNIrpYChYVopmT1YLpVno9c2j_9zhNM6qxfZ19u_AOEV9ISGrD3D2U9aORPxrKgR26bviJ7hB1RvD7jEFfWHIMiOTw2PkfAvLV2QmmJc-QQ4uXxhB-NsqeC_ZuV6t-yWdYX8qRX4OJlgyGamcdZH5wns6C5VZQiE0FUvwGtxO5yLn2I5Xb5YKhUQfratA4H48z4cvRneBs1IM1gTaEmw38Rb1o0EWc7T_Kyg1Hw2Qb0knLcedJDnm-MiMUXGiygo4xyVDTvnGjiG2AfG7XQ6E_pHGypNJBmjurXErFbO4wHYSHiHbTbbDe1yc8j8lwlbd9TOHPwwudmzaxjAPg4RsnlbIVYbqide-DX59wp2XXcA0Ieu_XgNanRFCuNQicYezPxvRlnlCcYzIWtryBlZ85B2MHbOtRUAdm0WWlEdt3ITRN3YQnRE05pZRwW1SmL7dkJvfVoGsA-REqN37YZ19sTJoFxsQlHU46Uhp53YtGLlvkHeTdDVbplvbmEvYNQcDAX3-CiC597mzzvxgtEzeZBEAjiu3KCR_ToB4q0TcyoMM9XQPdiB9YzrDxDaUppyE-d9nZUDNujFOxAjq6lhRefFyFIro1IMasgluILVT_C--N7fLzDt6XNxBiVicgfgUx0jRxw8JLAARUPNaU7zECyo8ENfzkW-OXjBbR9_DLpP294a4HnIwEbB8zHdhu8dHY61nMONDooBnnR5x2aT2ho3Gjg3BsASN9IrlavKEt5-HmXMd4SYKortO7ZWLndBlbWSH0YEWDdK15Py8g7fy-f3mOD_TrbWXO0cZwkrAr1WqGXaa0IBmGxYgtmYkvehGPOl"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 127,
+    "total_tokens": 274,
+    "cost": 0.00145375,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00018375,
+      "upstream_inference_completions_cost": 0.00127
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 103,
+      "image_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "gen-1767877518-gZPlcP54yElpbfxklbJH",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1767877518,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 617\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating code vulnerability**\n\nI need to check if there's a security vulnerability in the code. It uses `assert(a >= 0);`, followed by a check that returns 0 if `a < 0`. The problem is that assertions can be compiled out in release builds, which doesn't necessarily make it secure. I suspect there might be a vulnerability related to CWE-617, reachable assertions. Although `a` comes from a constant in main, the function is generic and could pose risks if the library is exposed. So, yes, I would classify this as vulnerable due to CWE-617.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating code vulnerability**\n\nI need to check if there's a security vulnerability in the code. It uses `assert(a >= 0);`, followed by a check that returns 0 if `a < 0`. The problem is that assertions can be compiled out in release builds, which doesn't necessarily make it secure. I suspect there might be a vulnerability related to CWE-617, reachable assertions. Although `a` comes from a constant in main, the function is generic and could pose risks if the library is exposed. So, yes, I would classify this as vulnerable due to CWE-617."
+          },
+          {
+            "id": "rs_08b2eb0a0fc3ec6b01695fab8eafb481948da459d60ca1ab95",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpX6uUv7Rw4Xuk1serRXNPgMn1kw9VQkEchjvNCNi_BUSYRqoeLXXzig4xeuU3TFZXU-DTGBqk_j8vsc4ARXY9omYNsGw1vDwM370B3ynLb19OSz4YqJEX18_RQwl2pIJ6p-_przgbAD-_836rR1REMLgGOQMOH9GWUYMTz1SkzPx_0YcJCbSwC6tU97OQTc6tyc0MRhv2vciqVlxK_Kugv7uoNqpQ2qpTw1kvhEhKFIkQFhfClu9gPkzKqKvgKHsb6DjRvRLsUmfMWW1w3qDTTILKE-L_Lutp9T2vEn52c8rwZcztR4HiRws8BANmbbKOdDKkUcZL9_3WbfeMMhveVx0rEKa_5FVeFuTGhdPDayvlS0arUCS_QmvQWonCJ48VKmKaYGZr8CiTDrNVxOs3TDvzVrWOZKftU__aJgYp0PeJK0m2YLTmH0A3RA5UmLeUlAS0jcqZmsZQxLLSKcgO-HioZvzqS1IslNtz3trUMZAx45ohjUqT7g27t6WsH5z9cxtz-aOvboRJU5R6OrDercMO3u-FLuug65I5kfeAezlyg7DBEg9ajbKYB7Cq2EZqqeG-HxI0DJyepPFi78gHS-IWIOQGmT5Y8KnsB_bxQY6rRh_g6NIaMGAwBLVPJycymJSg9eseeboF4Pbfo2BlwKPDDBNeT9z_eOcShuth-44I2qz1SbuWld2U3F9FxkdbgOax3FeOvIyCDRqFboRybebY_YUDNmg6mWnro9AYAuITiUnq2y_DGshDv_azSlLtWW3b_ud7n3yFsspQig_4yhHV9zsCez1AE9ZUyGjmMx-8FO-3cqASEA3ZL7nWMIwY08H0dm6jac5JNX99HzkYfu8Qj12X4M6WKpBGt7XqvbAVzDjdzX2mWYVQfYqSW3M_PdstU4GjMB1SIBNXyvdT2a-Kkm0HUI9pucR3IYpAKcWbi4td5AIYeArFzp22xpt0-a4ADgpDuup-VHEVmuOlv5NEN8qJjdlFqek0N_ms3etja1sfW-GL_PL1mWsbi-o3EujjJBdCUtc54ZjysyZTWTPcWTjwhpJGnEK2JtDZ1c72bbfLrEblghF45bR3yi6AWuqGIev_tSwqaun0nzhiX4H9h4wczV-gY8ixXTTpUhpKfRv5xIF-3Fv_KbPF-X2nYxLwlGOsbopx5rO08jVxffyvHMFEtoKLfE3B63d8Euz3g9CTXGPoGmQztkAfncL4nrIX-K27NCueC44FGyP0PIfefDJF8VoUcGCtz5cGR_qNZRwWej2YhhLf5ebUwEWsYO1UfOMivqQBOWoD8VlImfbhyPMMHg_HLsIgpnFtqYSpab7PQLuf-sozPUdyP9qcU0mIgJmmumdpLfYYR2JDx3IuZJC0Rh7LBnHjib_v-om_evAhBX-xKARGFp0GbwFoaqjjLC5hVAcn8NuhcEDjNnayxzOA6GZj9Cx83Tyjr9ba2uK_ebrKndz2zIn5GP_Q_2_HdrBTjGU94Jv1U8iDlN3ods-l8kqdb3xOISXvfyH1DGDvOnSvspgB8mPDenJWtdQp"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 197,
+    "completion_tokens": 142,
+    "total_tokens": 339,
+    "cost": 0.00166625,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00024625,
+      "upstream_inference_completions_cost": 0.00142
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 118,
+      "image_tokens": 0
+    }
+  }
+}

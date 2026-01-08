@@ -1,0 +1,57 @@
+{
+  "id": "gen-1767876546-bumRGDm2iqm9A6aGOb8z",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1767876546,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 772\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating memory management issues**\n\nI need to examine the code for the `createCleanBuffer` function. It checks if the size is less than or equal to zero, returning NULL if true, and then allocates memory. It also checks if data is less than zero, which can result in a memory leak without freeing the allocated memory. This might not be a typical security vulnerability but falls under CWE-772. While the leak isn\u2019t critical for a short-lived program, it could be problematic in a library.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating memory management issues**\n\nI need to examine the code for the `createCleanBuffer` function. It checks if the size is less than or equal to zero, returning NULL if true, and then allocates memory. It also checks if data is less than zero, which can result in a memory leak without freeing the allocated memory. This might not be a typical security vulnerability but falls under CWE-772. While the leak isn\u2019t critical for a short-lived program, it could be problematic in a library."
+          },
+          {
+            "id": "rs_0b0900d10c64c9e801695fa7c377388194805dd4f5da6a49a6",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpX6fJTrvzz70Xr7DCCa60XAM0Aaf-8fpuPL715R3A4H6B52KB0vrZSfMY2-taJGTtXfmSFnZbyf2Buvb4vwMqUMuHNb4_0y9jx2_K9Xm-tSH38OESNeZibY5OZrmhl436EhX7YGxCpbKtaJ0O7w6pcswxzinVmCKWprQCkZhJX1SzZkeQsYkFM7I22LLdL52SWjcbmRoL5nuJRBNlBFgM5rXdRw9eH-bmwJ82lqtDwNLE9PZEevR_kIpsA-1KzCon5_LBcNn4xW-oQgW4gIAebQKykvBU90s8F21haZiT2HZHhKazCCEU_GkvP-3jv1n45XjI8NlugOvEoMMAYxxcNR2MzxZTd7PXIlHi99ciU1pN4jCH1-qxmJxcyNtZ8j1sQ_4p9XX6G-cozs4k3bI-55ujIsno--AyGbTTm-T2c-0bIL6uw6QurdbDSNDSXovvF1Wd2Otzu0bTLpo5xh2smxv2YPwiSzDKiYjtLEhJ1TcGeyOov1QhU-qd49zPDWK-QJHyNXAbgex2iAiVzsh1s5hOuLZtfruJSzKuAyjGqxyFCQxLsaLXmKlq1EuN7adqW7SVr_OGC3--_Txkac_bV42yUC3yog95Bu9UXblaA_HhQd6lXNJL1i5QxZ8jo5XfQMAao7CD8PmMsKgKIN2ZKw5W5cTiAdwc7tmrJWWwdepVOhgQUDAt0M50eUl8eEjsOD4jihT3MIJM6eTpDrQxfAl8krO4EnvkmrSHILZ39lyfYJc0HfTyK9QD8Dm4m2uUW7qvCQaB9ZpEZl1MIRKxqkEq5dZAAGvs4PNbSxi4gfsapEJkqVAEMc4BDn-tpohMoLNETpDy2Hh9Xv2K7WprkhKxMloihCV44jhfWkJTwQCkFbMGJj-_TQxhH3rAOx7RlUIwgikA76foO8segduwoM32zOkov5rxwn9sdBY-1lIdVTLdWoZHuPpFcQnYP0ApPmwgHxYIRz6XId-X4K1VeaMyTYV612lL3fNAMiAOJj2b6uPTGIgmYZ_Y-TR-sZzbWx3tV7iuomAsaM4Cn047S3-47RfRW-V5mQyDWUzSdhOjkaw7xGefMlmYxlyXu10OuQ-P8OQM-Ny0CcuA6F5z5I6pP_Wf-e1mVVPwC9VIS2v4r9CNR5JDFJVXJOMK7DxpoLJIXy0c6FfumzWKi6Xf5miNzULb7QjcrsNju5dbAWG8gcYHLXNQaopWAN3WVncIOr8oUfjmPQxgIL2-TpVR5znz9J7RCrFeQ9Ze1EZ5fuCt4fTuTloUvQoTWlM1Jvi1tpUO20Majlp1fWLHEepC7f1dTRVQjPsr4lN4g4yAZlOjjBswXovQ535zh6X5R7PDFdd9AkU34J2fq-8NPvAdwWwfwLgMs-G-oUg6RV4jlJS0jBaeoSC9LSYbMOwKCIBHoNMgL9MFnQ6-ZcNCaKjaFT7wqTmgLQ7gahSnkw4MwFJrLTMtRASt5tyDTgy-xMB7wOcTTCL9dJ5l4nu8JThObuolgAcbZF0MsYo-U7VUeDqyRG21J4BSeg7bn_JORWqjqBi0exl5OvCNI6kQn4Rae3-83OTAdqXEgYBX1gZH7HErlD2v7Di7oY2fK4oI1R6gxMz4p6f2mrMC4_5VXLqZAUh-2pUmn6WlqdZorcZ-a4N_4JzhRxOLftt4aux5SFsUAb-RuP_Ptg9TNShqxcOrDY-cql0a_lTCL8NcWizGSTWf8SCVaUQfvbbV0NHqGPHXpNWbOlYWaHqpSno6VrtIdz6OiPV4ATuJAT2xgz5Z40arEEdxJDza0r43EQwUgcoFpXOtkPzLbc6T0gV6Q63hMN0pdxQT-wQYtUGbKM3tXjcwT_Dkinhs1oJwTEasrSS-4OWDjBrH9GvJ2T2M_Ualhl1TQEgOZZPfKAR6E2Jb-GWtHlpJaVt9m6PFFYPA41EQA5bu556lsYkKO--jhyNoHdXEEnmaa50WJyUPyOedxaLLauuxFgXpFY4zDRgpVubRazfRYG6xNHeXdE2SSJP51BO1k7XLdLiqUmpKSpxM1rGJALFGw-6mf_OthSNjl1w7dfKpfti1fB5CD0msTaH-NusGRno7NungN_Y-bZRVKaJR5HibquV6GC5yxf0MN9H2_7Bfliop6si3DR9ZTgJSmT1Om2ecxeljFPOa1aMy8RSFsaZGI80jnb0M7QK6pyH2XSC1eljb3y2Rnlyytxek1GwccqXLYcMpBpWWvGG3DOaIbsU="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 255,
+    "completion_tokens": 247,
+    "total_tokens": 502,
+    "cost": 0.00278875,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00031875,
+      "upstream_inference_completions_cost": 0.00247
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 223,
+      "image_tokens": 0
+    }
+  }
+}

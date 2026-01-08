@@ -1,0 +1,57 @@
+{
+  "id": "gen-1767878172-gDHCQxVsRs9eeU4Vvlnw",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1767878172,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": false,\n  \"cwe\": 0\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating potential vulnerabilities**\n\nI'm analyzing the code to see if any vulnerabilities exist. It uses `#define INT_MAX 255`, which shadows the standard macro. The array is initialized with a size of 300, and accessing indices 0 to 254 is valid. However, accessing `a[INT_MAX]` is fine since it's within the array's bounds. While the redefinition could be confusing, it doesn't introduce a vulnerability per se. So I conclude that there isn't a vulnerability and set the CWE code to 0.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating potential vulnerabilities**\n\nI'm analyzing the code to see if any vulnerabilities exist. It uses `#define INT_MAX 255`, which shadows the standard macro. The array is initialized with a size of 300, and accessing indices 0 to 254 is valid. However, accessing `a[INT_MAX]` is fine since it's within the array's bounds. While the redefinition could be confusing, it doesn't introduce a vulnerability per se. So I conclude that there isn't a vulnerability and set the CWE code to 0."
+          },
+          {
+            "id": "rs_0109ed129a5a4e9d01695fae1d55bc819795d93372e94e2940",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpX64lJ13EwtRhqGNMVUJahgXC-PCLyaREkwZZzGZhgPuVgwj_pzoRlToovSM-y9-9A4RLLUunwBdDOqatcngib6K1T1jSA_z1Sd3D9KJJK5Nxk8ZCMhLc6DdhsE3t0NEJy652ymnfZik0Ob5sI46wDZoxl-RziBTTc4eFQ3_WEQMN0FryW0ueSqbg2PYbb9_alLwbCB4gsTFnb0CVH__Um643nzmodbLDC0RRaeMihxMfEt-75XxSDJOVVZR0kdDuSt4je_iX_PQaqDO-u4HNH_8kbPlvo0Z0hp29a4siizx5U_dI_xne2WxWhR6fUtlesv8t8jCtP60CndxvcQOXylKFyI537l0-G78lmW_t3mxzHJo1aDXRoIgyazX7MLuAh1d5L5zfTmDa5BH4NKZakH50wLb3s_mvk7S7kHa5hpRNxvpYvxqjj4UJYS_UFumNEVkrEipWYvkN9iBS_rJafKDx--1tyWoeKX_ELV-Q_2b8jx7DCnkC9hx-CLzaqBvfT1txfrskbHjbknXs4gn0B6_0wERlyq5Oxv0GeqSKshsfbdYxWWGQcWzM88FZdfQ23WRLUKfJGc3GZSNMaqTfce1C0BgTEha9rgntkC45Qx0DxS-ON2Yc3UIVrKmoj7wMhzqPNVOtX_D0h2kTv7Sz1G95wNpf0esLv_y70-622FrIeZEfxBKM8rA-PuGC8bQef3r6djnuRqdowlKuyO857ZGkDdODUEQ3J5ewP_4j9vXh5T31IPSLKDZudH1pzBzbM-GzloymWsokUUs2tSwSW3uRU4kkNvYnU_ajXJAgBX-Vc3H8BhUePe3DHY8A6iLnbrMLEbpPxd3h6Z1Ky8xCAhK8b-C_q74_qE4nDnRBWcbQ3qZ_atM4DYjoPR8rO7BXCGa0s_6_DSQjH5v-jIKQlEPebosdu0CbqprDmXHSUpnJPNlgRMgY8zd44kbtdjd_ramtItkEp6WQcuopErkg74AgEfJpjg_NvEDZzzuSdqUbZvxKjDyfLlExAsxnIhhYwr2PqCTh-A8W7hHKGQ9lZxo3fMeOy1yheLadu-XAtNsW_WqlnZpc4WDGKx7KOmYObIijFYR3TxfkHM9SIKA2jUmRgHXLpwGYSkjwxnOmG1jA6ZV5GIJH5j_Ri-6xctc9s0IylkQsAP1F_ktFB9sACHQff42SZcm2BA2sfX-Q-y3OxAXo7wTHFNfDveoJA8NLG9tuUxta0t17MpvjXGceopHroqfISPMY2g9rKwMpAjsaGEExUJXGIUFNvfn-HRR7O3QvhbzJ5LSS8Fx6wzyTDR_9Wyh0pbE_rsIfKKaPrztf_Q-pbTvThN38YbMx2yx2_9pKUflWmAEov2IvtMZnTJSChcxvbG5FJzdekL_94e6c3s1DDSd1-cR5Zv6wX-y2B6Mk9jh7pLfFLA0e3K5YAcJ4XMQxnl5svLyE_P7EAAgiolibRGQJlcT829alStLGQLlHkSDbjcgAmgrcJkxmkDQaoQU0n4noKumX3FUFDjFPM29CI1y7-FT_UvBiSLQDJuxYrNRRy_msVgXYlJRp6gKPJzN5rXARmYiDRs9M_D2xViB_VnUOT6CjyZRmwWKIujIJvQaVkOq-kj2QIbbSofPKrZqH_tGqFhoI4sWT0-_MvnPy7rkDnDk-67nGPq2iHJvgiSrjzI5lvqXg3vRVm4ETF556AARxxduGkdU_8gG1EoWxQOzzwNm3OEHZ7idZP6vDlW9Nf8fIG3NNNMTsetoncAy0GMvJJCkdhbsjyGfxXXFa2Wywkq5uU3mImqB2aekXwlzEfsGM1PPF3AYzOoVkCLT_7_0ruLn5QZmYWV0t-WVqg4KVK5CJWB5lzHGDyYfb12nb2WwIoK64AKCqfCLCEbuHqhJzhrXNpx60QEmLQbyQ53Orn2W5G9vzdvyZtaZz0TcXskv341dZXDGDJvubFBTCJG5xdHmk_M_GOyG6xc3n-LnNMAwJfBH4hM8My06jtxiSaCAqywXvjk9XvufazLN6IQZf5i8wqCEOWXMBLNA="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 182,
+    "completion_tokens": 250,
+    "total_tokens": 432,
+    "cost": 0.0027275,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.0002275,
+      "upstream_inference_completions_cost": 0.0025
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 226,
+      "image_tokens": 0
+    }
+  }
+}

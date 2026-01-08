@@ -1,0 +1,57 @@
+{
+  "id": "gen-1767877367-oqL0lYnCThOdXL8nA2s6",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1767877367,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 256\n}",
+        "refusal": null,
+        "reasoning": "**Identifying security vulnerabilities**\n\nI see that storing a password in a plaintext config file is a security vulnerability. The `auth` function uses direct string comparison, which seems fine, and `getString` employs `fgets`, making it safe. However, if an attacker can modify `config.txt`, they could bypass authentication. This relates more to CWE-732 or CWE-256. Ultimately, the main issue is the passwords stored in plaintext, so I'll go with CWE-256 as the most relevant classification.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying security vulnerabilities**\n\nI see that storing a password in a plaintext config file is a security vulnerability. The `auth` function uses direct string comparison, which seems fine, and `getString` employs `fgets`, making it safe. However, if an attacker can modify `config.txt`, they could bypass authentication. This relates more to CWE-732 or CWE-256. Ultimately, the main issue is the passwords stored in plaintext, so I'll go with CWE-256 as the most relevant classification."
+          },
+          {
+            "id": "rs_0acf654dab018b2501695faaf89294819087f25d8cf96303ab",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpX6sGrY76qt3lDPaEcwlEZ3LwsUurb7KmfclP0CqnJGvtcYISMh7NP8CFFzX81z41txxOQTO6iqV72975yKUwwnvvnbRekEF6hQtfQ0RVOsVSYsHbrIyYNE70w_AXL0cavat9iwwGNByJT1tcfF4Nqh-6gjYzcK8tphYx7HNv6ZStKZh4Lf1HNsQDZLFs6Kszn-IusDDFyeB9zWbbruG3d93mINj7A0MuCAWx4iA4yIU5-t0xG58Zd95w9MfKYbq3QmUoBo1IoMmUAETEOJd1kuKO0_DZo1sxCm8_5UATygrDB3LYqzAfJ7-HAwnhVmc8oZIfREFZ5IA4gI_p3G3AMLpk--V24ya7hBAe2KYrqsc76oYfgFne28GNOYRyfedUAPcF7TKQAwh3uwg0PfrBRjMAqrc9yON_wGH5Z8kl2OjaPoNjDB5E1nRMV8jj5IskhPGRT_9fJA-isAModUMt3w19KccnoJiv7XF_PzSp6aOuDIbOwpPEd0gkPx2NZJ-BZEmL2dYGNyS2s5deHG9vlU0lycYd2mj3stt2gFN_0wshkNPcf_3GqaOFn88OHiKB9nRXGxWLzmIbEspEytGc4ynLUAFZg_14PEWoy9_FbgZS69336ZByzLydLg_Y3uwLxq0sHl3FfuSOq2cxp2qUnaSQWcE_nr1U95KevdZ_Iq62Jmpw1ZcpJ8Di2O_mzkljQvjoIyN4vwH1fGp9fexVjUIrDJv1pW1XtGRtUUZhYU00Tz-b4rqg67VtFMNBQtBGabIZK8L53_fqi-aD1QdW7CH_UuTnHnIoxPTEp-kUvQatb__RegA4V3SWEPisdmP-tHCAuoywINjpjO7TlTf4kdl-36BQNxYAYHKuzcGA1iwzjvSyiDbGBIMUbnTv_T_aGKMzlogf6uz1cGIwh44KN0ZqIanlyZPScOY1TF5dQmIBrY6jUrINLaCjyOn9Xqx-cc8X873GBEX2ceA1U4RFF6F_GUFa3sw1kVsJPerSITLsy92lfI5nhpOcucfdH1reIr4mevCN6r80Gk8jP14ajfS5OwoYpne1UqBmhYqzsmEEY6OsfzZoTIA7RUwqpjfZ7stTQ06lHpNNhL4Cwcmwm8x2Og2655I1M3A0nfcOpA1eo5IwpcmTM9pPVx0Oboj2EMFytSeio216Alor4BBl_JoVIgcyswk8acTVhaHV7u6hS7cY2Yt8-FiIZeLVLZSoHQWtjgk99n7FJvsltHsbofMyY48eEkLiX20rEqMMmRYAInv0q79CXVm4qCee7YpE11qVFLyaj4eHwdqqN3T0gjC7amExp6ntcDDopYLvi1eDuyKMbGiaB65ba5zAW6woKX6usKGTQ__gnMUhYMS3gJy1-gJzMCGB4Kw6Fu1Yl2IwyG3vRwcMLyb9OPDkoBJj3KoEn90VxcP5p6f5yVvjvkf2K3NL0K6r3fiI146Y7H7DDpSl-_tYcbeR45yjeUXdjZOYGw4bQZHmrYyLe35mQqeimk6N_xfchYbyTuGSIOoiY2JzgtqKkConawr0UlCqJjF1p3ZRi9CcNor8i444QNDUPUgXtTUFQLe4cAQ95GXw4eq3mV18jrLIxv0hf0ODXKr2oJO3SjuaLr9zHovTQFHcUkthdRHgMMMwcSxZ7d5ikJTV9yLw3LBnhouZoOQH4K1oK8YDvltqDiSzN8wwqy54XgHqhFo3zYrxKAlcH6B3RFVUrMFYfv2sGuIglILTwKbALO3bcmc_qJqseYchoAEHA4KFR2aJb1vjrR5DDDxsvt_9mGJvOzNjGGhHyLSQA5ov_MeY6yziZ2cavTv8-wNUoAzhxkhoUdh8xEJ1e01u26uBumXapOTGX8s_0nTKyULiyp0bkJI75dVwGsmB0JO2PHlvqOaAEfgpOnnrd1QZk91Csz17idCWtprpI3haPK3bFF91JdZbDG3Wy06D52TumYyI5W3FYmD9ZFGnqpipCoFZJUlITOsLa87iQgcCblRgSosyOKWvSbpH_cgjaVqOZ8JPUm-k5q0vEXKU1UNs5GmX_skOegZ-BL57N1nILFvK6p32ZHKpSud0vjYKfHXB0wxx0RHsd-s8eHtk1PHerr8PaziDI4so6HSZKYLjDBVdJAALEOEFTDGi5dxSn9Qt9qZVCcye66U_M-yCpVc8R40nPzd6oEGsw_t9SD-6EFnaMY4t_tvLVU-EHZaRwZi1UonWhJzCPTZd4XdKNUSpi1LkyG79dL9OmSen62Hw93BL9o4Y1XZY_InK0oLE9IOp5_oacAmOXj7Shye2MGeCfJN1hDs3pqLNueqKO5_iWbI0LaijD6dEuIjAhm0ahG_N2DpXDRMYZBoM5pwNkD1QXksuI1Qt0RqLOs5_rXkNfwsVgR6DUy-AwwQKCZcnCkOBjY66qzvxNk1QOGqPVSVLUA6tK6wYUq5ilfPl7LjnS_7_U1qT9QK0ruDyHkzero0OxfhFg0uqHpajYyb9jI2ZvIrMKDyfpEvCc1AQZ3yfBSyblqaixevPUZ99CDa8dQkyKvGFeyLKpH57IX12kFTWsMyV8jTWD5yOh0zvhiA4y4VafgBbtSDCZcGTJ0rcETs_yQT68LIG4tdpmISEEEA06gY8Pk0JHILSBoPtcZcuxF92Mp1wU9xeis_ENfOGre8o6659bnFsLRBYsXVhXTx3Q5LZL9GyFh9wEB2q0OgRP3hdT2pBTwAw5tRJimKq9lwUKDEK2R8hvkPOO-aMTOr9M7ifB16aUlDFhngNVTc8XqII4KgUVJ5v33G_HN1KKW-us_jhF-15T9e_9CiDrUvztGTA8OGJWpo78U9RElz5nEtXsuWBl9ko6BAiThstC_mkTeBtU2Z1eLa8uCdWozjgQ8oeO_802L7hBMQsDIaMshrSMRGAQqJ3-6SDikhe6aQ_VVCIRGkZDJCeJQdwtQGBuU800W18cLWjgP-5P9TscI9E8KITY_g8xVltaJ159qULaHxsMOjrd6N2N6ONbpony01plW1PB9wCgi4NBGlWahw-A28oV_fFQpMPdFwAX_sVEbu-RLSzAgwWVaLW7cddeIJ3Ba6hpEFotEH2HCDtOMUTqe_0W-x3TpcJQmaOF1W66JLhpfk3fyWVih7HOJSUDc8NzF3b215WNkInR3I8w-xiTFInKlI9X3PH6SRi6fkgGVTS09glTzdfkWf44kmhR8f1h5maIgnM4SwgLolHhaBHTugvdviIXEuWak6WVtSv_CQaHjqf1PHiDVawLV7aB-Ot6RXwNWzZdfBCySCQWCnLtNc9XeXb0KxpxBmNramlvM0w_qMJwLk9rH0rgqkdqVmSI3WsF0Zs4fEhkDE1PmgJz7Pn5g_o_GJOH-VZm3IumDILMyEjJQAAyFjOtP8LXpH_Suj5OL59PR7zR_l8RD6goxJ0XhJMzhiz4GA0pdSgC7Dk2o1Ouk02PkqnOJg099ov_1mn1QEIRfKCcasRKikQGTOnUydTG3piKa3QTFrMIQvyoCGrXDvhw-6mqe9nXsMSjn_9HUAdYHm-4apoWw5iE95xFcGu1pqNllZdvGdBNLV_UnpMlZ7SvShF5F6HEZqwtdC4Bd3-NtYNvGtEViq3JObKr9VwqYEXAdq8eTerKlfx-Lu871WnYahkAuWaS5kPxI64Z-A08cxrO6_wwpvJi9Lw59-BkRFQMbwbXqzN5dGqTRzoNxS_Ct3Teab2-KM3vxS-QqmSAInFYlvwBXSI7CiC3a1TAu3sEomETvB8vQ=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1009,
+    "completion_tokens": 494,
+    "total_tokens": 1503,
+    "cost": 0.00620125,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00126125,
+      "upstream_inference_completions_cost": 0.00494
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 470,
+      "image_tokens": 0
+    }
+  }
+}

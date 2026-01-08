@@ -1,0 +1,57 @@
+{
+  "id": "gen-1767877827-WMj7ZPL8Byf7pGBPpYzb",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1767877827,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 761\n}",
+        "refusal": null,
+        "reasoning": "**Analyzing pointer issues**\n\nI'm looking at some C code. I allocate an integer pointer for 10 integers and fill it. Then I create a pointer to that pointer (`int** p = &a`). Inside a loop, I print values and increment the pointer `p`. After the loop, `a` ends up pointing to the ninth integer due to the increment. When calling `free(a)`, there's a problem because I'm not freeing the original pointer, which leads to undefined behavior and potential security risks related to invalid memory freeing. This falls under CWE-761.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Analyzing pointer issues**\n\nI'm looking at some C code. I allocate an integer pointer for 10 integers and fill it. Then I create a pointer to that pointer (`int** p = &a`). Inside a loop, I print values and increment the pointer `p`. After the loop, `a` ends up pointing to the ninth integer due to the increment. When calling `free(a)`, there's a problem because I'm not freeing the original pointer, which leads to undefined behavior and potential security risks related to invalid memory freeing. This falls under CWE-761."
+          },
+          {
+            "id": "rs_09485478a20be43d01695facc3e22c81979b6b4144fc1550cf",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpX6zI5EuZAXRdBp-Xvuy2pfAXbqWEAhRWkbkqZxIxwB7K7mo3oPdCIO1G37-qJozmSI1bIPa_1xSz7NJ7S8RRbzusOhYq7ybQ_80CoAIFcgDfel_0noiotUHAJbhnp9Kr4j7ALexzOt06BDk30UYFPKwgnbHCXhMdOsWwfnx3v38vQRCNQTE2sQDi_cgthlwgctFdPLiKKEzudef1Ybr_F3aHAHcA-UByznorPAUQryqnLKwG-9PJ2jrVrzl7WQf_3oF1kZfH_sJtGXJlsvj1L-9PH_XnZJ35ejV58G5igW2P_5hiMLetMZJfyVgGfFSb68y32RtHoU-rgG1mAVuwQuXab_XC-I9nvazvqFazghLr32ALcDcPTv2ZYGf6a3o9tvt-TSiiEcnpgmSjrSBvUMwV4Cb-4WVbLyumyvy1sg3kfvsCpbkbpre7f4S0MDYD5F94i37DN28FhYd3Xefjjkcn3iGCzn0QpaKXhOrncVUpOSGDAdKDmYR8SQdbV-lJ7OSsfgn7wklz2OkcqlOVJUGNcGRiGwQG0VMKi7w5deDCGQX6cefA4pz_suZmh6LWZYYgeg1wxUT-ZpPFhEVwWdCYoDkhSVt5X4hARDzQJnL4UTTmOJqMesUAqgfmSGGI0nRn1nagXcdVI6_M0bcH7VzFQqW5xK5eApsaiLSMSezRt2B5f4zC61rQoHtoMEKhrvAAb7yMAMDYkM-NoPPLw22dEwsJ7NlGIBq5-fn4E61etwAfCjUHnkZ4kFYNaSMGoX_SByC6KXK0CvKxSiSbs5iltoXypknFjlySymuyOYSY-FicqQilkoSUJjanxvsCH3KzeQgznTlXHbZ5y3nU-H7niT1V83kQh27ln95NPHDMlrni8ISvdgRXNx6rd-9_NOqY53tpVTNaxMxtxfXYCe0uNLWCc1ZL3sk0YwC-iyFSzzmkwrwlfLNKZep5_uJQ5ZGJNxtFazyQmBiywnZoy62vvFBclAYKOs61Nvf6CI1buTF1fO7NDvNiGKYi4YPJ6U1RBDCs35yuzCa4iRKi9IUBoht5xBSISS8B3RV5B0ZAdB6buhI90AR4MoEGZVq38pleYfR_DRXpUeae2xL9qkjjSobxT0VpsO-qy5u7cF2F0x4MSYlikIstNmpcJ9rV2B5HYQNnZbsQ920Jj_QJRo0i_W5iIEiICNxqFobPhxgICIBUWmjSjWXd1q3Fj4f2DfbXOPnZNAVfpNLlL6VOrfEsPrt8K_FRb745VqUJbXMb9jsrLlGZZ0r4TqFM_ea9S8vHSDFw46qksEcG067DfKKDb2nLBWd3i2Iy3Po_3wdNHQFNGwprO13cZqTskpH9xr3rkiPiC0sXuRTwiLOcpg3MPYZ22WuSS28dMhD2ADYZ312fMTub5Vc7gQyjGdJk4hrGQu2zi4iuJI2tm5IgjfD9QZYmhmCjdBXVjqA4g29hUH3XtNZbxz_otEpEXLKj5e_Sg_-r--bKtxakwNvUDZjBg7ZW_60O0CSxJAlp4P85dc0siIUnmWVXuhPnZznIcavwxDcOBFhZfd46qPvpBfXpOgN_tXIMqpptnlFw6Qhn3CDmsHaZemSyCjK3MFpmTnfYhofnMnx639m_jafZ2gzsQJUbSShYuFwdbHwpHOhJgR_k4YQsRPzoIGNkejdriZDAJXkaDjIhXlfBwstl2ElvRNrn4flEu2znXIsdoYnPrAP3GRq2NFWgguu10kSI5Aj6BuJNghUWY-b5ppWsEFl0kg=="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 231,
+    "completion_tokens": 201,
+    "total_tokens": 432,
+    "cost": 0.00229875,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00028875,
+      "upstream_inference_completions_cost": 0.00201
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 177,
+      "image_tokens": 0
+    }
+  }
+}

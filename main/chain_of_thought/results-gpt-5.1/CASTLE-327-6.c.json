@@ -1,0 +1,57 @@
+{
+  "id": "gen-1767876320-tUA3wyoC6TaWlwUiGrLn",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1767876320,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 327\n}",
+        "refusal": null,
+        "reasoning": "**Evaluating security vulnerability**\n\nI need to check for security vulnerabilities, particularly with the use of MD5 for HMAC. Using weak algorithms fits under CWE-327, which involves risky cryptographic practices. The code otherwise looks fine; it reads the hex key safely and uses HMAC correctly, though there's a minor concern with the NULL third parameter for HMAC(). In OpenSSL 1.1.1, it returns a static buffer, but since there\u2019s only one call, it\u2019s not a vulnerability. So yes, this is vulnerable due to CWE-327.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Evaluating security vulnerability**\n\nI need to check for security vulnerabilities, particularly with the use of MD5 for HMAC. Using weak algorithms fits under CWE-327, which involves risky cryptographic practices. The code otherwise looks fine; it reads the hex key safely and uses HMAC correctly, though there's a minor concern with the NULL third parameter for HMAC(). In OpenSSL 1.1.1, it returns a static buffer, but since there\u2019s only one call, it\u2019s not a vulnerability. So yes, this is vulnerable due to CWE-327."
+          },
+          {
+            "id": "rs_0f704b65865ce45801695fa6e0a36c8197870ad2ac842f3d94",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpX6blZn3yYJTYfOLqhLoBJc1l9dnNw3gaSSEHMa6faZh5h3948jvK9qxOizruazOtu2hDmnp4u4rz4NaVOhiNkH3vx3D7XyvkmC5ArRYiubvyCt9bpaXeJnHxw0Su6J_SKCAOyUoOlE94w7FuWZieiOcGMAohsiw_3vOEkRSrRZgY0YCe3T8hYhApGmv9l-CV3CibV3zCfAHJ4w_pfmcCRaUsKfybCxt1azHaanW3iCqM-CAtuUQLF21gJosjJKCkAUpfS6j3HCv4QN2XUNPB8H4OwCZrzS-zjFqEH3CHKn6-0R4dEozZSi2TkSE7ClXjGzLawRjGk4S6XYoHHBr4b5V514ybCS5Xc9sNdH8FoEQg-Q5P1_ASLz1GZXhGkMbwepbIIEarg4H7Ey9HkXdE01XezzFqPv5K0QB6VVME0rqL5MFDJjNFepqR9iJzEb4laK04QoigyFM9-1xs1VNg1x91rkdrye2pVQstTr2NfYcPdI7bQxrZajGx4nDi11qVDspeN_hTJR3xb0eVp5rLCO3-EI_IEfn9ju1yz8JTlTYDB8uN0CbLaQisr8chP0i6fgJkOhX7WuAHe-ju2PTon03S67ZLeGyJUzzrwwVHnrSj01Iocq6Eb_Tf4NmOiR2ZGzly3etUdSs5E-xoHmBYkRuJ--ptrN0wEt4kGO_YdaboQBWF6fYCRt385J_6A4oRiXv1M4vBkn7bc1JMSm-o58FlwkTmF_hkQgUUXsHxXeRaBV6IaUjHAUu2vIobcFQ8VEbQmRVB6m5GDmRB8uPy8YRzYJoTQtyPayJCMupK4tZboJ7VKQR8lZUXRPiBXSrJKkq2u6JL6x6OGfMs71PrItlmsAFVnGLmjRNc--MckLpZ5-dxoRWo6umKhNhz7T0Um0o1dAc9zn8ePGa-_EOFxb-e3UB8HDYS5oud32Va_jBmJ7dti1CXr2Oc75JEGwxflvu8TaUDzbiopvpeEHeXVz7ASAJfEj82LZrPeKeTK7fe0Co0rUBvHMFJ6SpSSuWbNgK2QzXVTnYHwpeDSZJ-CJA4ssEhdQtX7T3I7z1_IwZMqSU42ZEs1AWM9Tfq0kFRMZwJGRLboz1-y46I9evuiI_PosuZf4r8FXiQxxvUYleDL4rzaY6RYOvDSiW4lEMx8A6AUR_Hibu7bO8ONuYMi_oFmmgXzo-5vZtmuLpKe4QCzgohdnF1JCSF5AjofOb3egI4VtW0eh5mHmlMPIGdjCkKrDm5DC0b_0mTVBaAjoU1VUFTd1P8OKCXUnjqPkxPdr71WHLUXyYLFmQy1WnMVXxspFE6IhmtbjGjPHI4X4I6SQyiqdXrfmx_wd4rOiOi3VsSaVVWwSKBilv0ITgF49AcRPX157wdFM14v27hvBsRk0PwxEA8hHSnlMKZFgtdWn4LnawZ4RamfqGoCTCZaGHBggcd7AWT8YnRhBfc45pVulHDfr0ELtL0lVzLF07KqcKsPd3gXqhaMDexhzrF_IWXxPs_-OhGr94cchL4utBQAypcDfYCaCXJOFGssA3498qe796_xoGf8Qyl9g5OmyQzqhRAfgpFiGxyWikD7WCwM5lmN6Z0uoTdwLYIf5sFVIpI"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 664,
+    "completion_tokens": 156,
+    "total_tokens": 820,
+    "cost": 0.00239,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00083,
+      "upstream_inference_completions_cost": 0.00156
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 132,
+      "image_tokens": 0
+    }
+  }
+}

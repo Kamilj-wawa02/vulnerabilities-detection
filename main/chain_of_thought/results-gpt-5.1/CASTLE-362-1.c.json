@@ -1,0 +1,57 @@
+{
+  "id": "gen-1767876388-umkm3RbmgUkwtZERp5kt",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1767876388,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": false,\n  \"cwe\": 0\n}",
+        "refusal": null,
+        "reasoning": "**Assessing security vulnerabilities**\n\nI'm reviewing the code for any security vulnerabilities. It's a simple pthreads implementation that involves casting long to void* and back, which is technically undefined behavior. However, since on LP64 (Linux x86_64) the sizes align, I think it should be fine. The use of mutex seems correct, and while there are no checks for pthread_create return, that's more about robustness. Overall, there are no vulnerabilities, so I'll choose CWE identifier 0, even if it's not a real one.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Assessing security vulnerabilities**\n\nI'm reviewing the code for any security vulnerabilities. It's a simple pthreads implementation that involves casting long to void* and back, which is technically undefined behavior. However, since on LP64 (Linux x86_64) the sizes align, I think it should be fine. The use of mutex seems correct, and while there are no checks for pthread_create return, that's more about robustness. Overall, there are no vulnerabilities, so I'll choose CWE identifier 0, even if it's not a real one."
+          },
+          {
+            "id": "rs_0a714d3fc8020d2601695fa724abb88194b2a1eef9bb65ec63",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpX6cq8v1aylkj3qaWcXW48r_5-EsgRjrcno_k8b2A-b8D5o72fJn_xkMn98tUxjjv8ZGI2BNSR68uMDHF7pXAGdZYvX69X6zpHNFYG8SvQxz4urGB64qfvjY3lh8QEj_RIeNB5bleGOM5QZhHnVVsIaF3DdQbF_im-DYhWlVwT1x_-vYLjK4repX16j1uVmkRLiym2HopcILXmEnOyR-wEOGkP4T78pMYybhwvpNyqVfC5N1OJOcmxl-0ApyJOWD-89MQEfgB2LaMIouFtzVYkvAY78D7Mryl69sZRRmIz5QcFaqMEg7atsiS5ZLr07Du8C30cbVyVPkpKw-JtyndT0Xq1d2ks_A3oy6kM4DEhnZnfRyon6Ow6HMn72DQ7nRMjxjDx7I2xNyRpYSuB02fWGR4k70CM1ziW9nPlIEqOqx0NHgH5cYlhAu7xt_7fyCh0Jj6Qr-dyOPHj2JzmhHFwd_8FUbt6wyDEAFAo5BpHVw-h3jH-vOeSZZmEtNgT2SnKj547Gv0nyEb6ncVKjARI3IQjhhBMBbL3FlotsS5J1C8w7m8egB31lprCp-3ktsJKgnfXT8WdEHawpXlojl52X8ApHvhw2WxlUXQrDSAEJ2vNjliOagILQf1hUIJKA_vHZ3Fuie5zV4MEpTCQ68g84A7M8fI9GoJGEPPJtiBN52tfVXeXRSx7fm9I_Sr139buSa9aJZ5jIa4WSiiyS5rumLa5mNy5DaBwgltWONodKs9kPiYezVqz-jx9crmJ1cNEQCjRFLYiT14Ad77i2TUNCuSjoco6EBdSv5wNlpFSYElOXNZJq6G7ScGYF1O0Penbw6zIlBW2N8vGRTwK867zC0jgLyvxpnp97-BpHfWSxR4-DHm5EHGuokCxXnKZpH0_7JN-e4zZuiYvoixMw3-YWTdTr-IDMLSICsOWMooYRIZbandmvVAtRvpm2TadSkJUCmiVY1_GXJAUBb-ms8Npt3H1awrvKsDTKRq9CSdR0SlUU7JwAnrrDn6sO1S27RDFADd7d2UYJnsiW8KvcJgomTtSe49euCxCIg4jYXhzKWL9kBrmsF0Khh-cBU3Vah4f1DfgVLP8-plCNNjbP3bg6qJ_c1OjTrQAWX8KJPG-aN3iEiJW8oXc5QdMT0jrW4DhKMvjzr7fGaSMIPivuVLARphH5ETeGVZCuFmkiGvxy1F7VhGFh_WPnA_98aRfBlvFSFzUycfc_HXKvVmgWOQ016IuzXbWRq6tL_NhvdJOYUzul_1BAhpjmJoPCBrNfQatIHV9wr4pXmHJ1L09RGvUvQcf4jRlZOBbw3c3dfDzygwD-0jrPmInJdmb3HSP6H_I9RMfdUGsjIkt-ZVoF-b0vCTsWmxECIHqENrISHb--CWhkVX8NePampPu0wodJOg5rCW-CO7G7NP7PaYcHUzy-rkWo_WCYtzq44UwR7M-OSvZM3Eml7g4q18JFambRJM3O4NvxvL2R2W_1rE4cZlDl_sra2dDhTJBFA17sDNmR4R5pR24Bu0PKtbKbiVFVt6VWcIb0qnEtjz8c_WOuZHy2ha9sR40PcvaQmU1m2teVe4wy3qYgUmpLGXfCseZjyuAITKefXZ8hYfo4dtZZXkz7AkhjD5d1ZTyHv2sGtHoKnGWIIbvqlQkOyzLhiDlT_ajrte48Cqc_bOSqS7yeF1Vb0SI2sjWsp1LqWwZjGrq-4eq3iXWYJukIL7xVrF0MCQK8FQG6AQJgLmj5xxDLBxmCgSqKMT5veKyt1lvofyzKrrAeo="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 369,
+    "completion_tokens": 191,
+    "total_tokens": 560,
+    "cost": 0.00237125,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00046125,
+      "upstream_inference_completions_cost": 0.00191
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 167,
+      "image_tokens": 0
+    }
+  }
+}

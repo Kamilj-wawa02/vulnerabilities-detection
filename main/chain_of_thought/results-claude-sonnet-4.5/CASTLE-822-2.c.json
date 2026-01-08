@@ -1,0 +1,43 @@
+{
+  "id": "gen-1767875172-44eOZGeRsDNYvjKwtjuP",
+  "provider": "Google",
+  "model": "anthropic/claude-sonnet-4.5",
+  "object": "chat.completion",
+  "created": 1767875172,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Let me analyze this code step by step:\n\n1. Memory allocation: `ptr` is allocated with `malloc(sizeof(int))`\n2. A backup pointer `x` is created pointing to the allocated memory\n3. `ptr` is then reassigned to point to `arr[1]` (a stack variable)\n4. `process(ptr)` is called - this operates on `arr[1]`\n5. `free(ptr)` is called - this attempts to free `arr[1]`, which is on the stack\n6. `free(x)` is called - this frees the originally allocated memory\n\nThe critical vulnerability is at line `free(ptr)`. At this point, `ptr` points to `arr[1]`, which is a stack-allocated array element. Calling `free()` on memory that wasn't allocated with `malloc()`, `calloc()`, or `realloc()` results in undefined behavior and is a memory management error.\n\nThis is CWE-762: Mismatched Memory Management Routines (attempting to free memory not allocated from heap).\n\n{\n  \"vulnerable\": true,\n  \"cwe\": 762\n}",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 274,
+    "completion_tokens": 263,
+    "total_tokens": 537,
+    "cost": 0.004767,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.000822,
+      "upstream_inference_completions_cost": 0.003945
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0
+    }
+  }
+}

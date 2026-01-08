@@ -1,0 +1,57 @@
+{
+  "id": "gen-1767876741-XeLhs5QqcS9QzDQ5nRbg",
+  "provider": "OpenAI",
+  "model": "openai/gpt-5.1",
+  "object": "chat.completion",
+  "created": 1767876741,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"vulnerable\": true,\n  \"cwe\": 416\n}",
+        "refusal": null,
+        "reasoning": "**Identifying vulnerabilities**\n\nI need to determine if a vulnerability exists by examining the code involving malloc and pointers. If memory allocation fails, I free the resources. The critical issue arises when I use the `swap` function after `free(a)`. This leads to a use-after-free vulnerability as `b` ends up pointing to freed memory. Moreover, I should only free `a` once, which is valid after swapping. The main concern here is the use-after-free vulnerability, classified under CWE-416. I need to create a JSON response indicating that the vulnerability is true with the code number 416.",
+        "reasoning_details": [
+          {
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.summary",
+            "summary": "**Identifying vulnerabilities**\n\nI need to determine if a vulnerability exists by examining the code involving malloc and pointers. If memory allocation fails, I free the resources. The critical issue arises when I use the `swap` function after `free(a)`. This leads to a use-after-free vulnerability as `b` ends up pointing to freed memory. Moreover, I should only free `a` once, which is valid after swapping. The main concern here is the use-after-free vulnerability, classified under CWE-416. I need to create a JSON response indicating that the vulnerability is true with the code number 416."
+          },
+          {
+            "id": "rs_0699b471a2e9968e01695fa885aacc81909e4be91184df714e",
+            "format": "openai-responses-v1",
+            "index": 0,
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABpX6iLPhlG0-1lDMg8dljFDAH7SPmTdn30ZIdLP70NmWyCi3CSoGchVBzLcOnYa0EG0OXdqXRH47OtaJ4v8akGMMrZqDLmFy3xGw5w1Yn8RLKZk9RnQew5jUOQnrCV4EuCkIm-uPJskCigWom0ehQHk5bNrv39dRHys6TGWccPH7UTUZ3qIQ9P-IDRU1rm5uwlMScR9Y-NvliWBTQCxXMMgcUnHUbtsbVjlMLJ1uY03JlJ29lcbYtFx_Fce8mPgJycYkj9GG2PlRY78efEq81dho-RVQBDCyYh2jPAwYFV2w4bwVST_pVbNbGHc8kxEuk7VXKyrdOq5lW9z8njq4kaoYc1wW_qVwG8t2_txI5KUkhQ_YWCXHNVO4uxDxxozWeHDbiS0bo0jpp-P3O7l_-FipeMrNH4YLDuBpwHNGoNMw7gNqdZhIyLWUfaMSy1vtumhKJODBc_T4ey_m-_cEn75G11qS1VIP6EP60LA9XEzK5JNFx8Ip-5u7QRRkm_IgFlA4yalRlsmrqWwWg4E8UN1pvuQnzphlYHZbtOMDKyletoDXMGw_oojgg5_cNWqotJSQuefMhm3JRL-RsvbfxJ71MvgKd-Njek1kF03938hHi8RhYRjakeONfQWsY18yNUExwF2i5kc7KasKDqMwRA3qtxnnD5wYei43h0GEysbw7GUuBLpphMeIUtpZh8g3Es9PlxrcauQEFDEwLaW-m4Qmi1fkORsSJcCbKtYKCoUa3iqAL5MR-NDERxou1-urQ-ZVFSSuZYHKLlfiieucilYOU4cDJtVVFQNoH6DXXjZ5Vj3EknbwJq_moEXoq4WrKKPTKxtcWvVKs3n2NmAET0mACBvQtbWdTBNzHQh1XK-8a-YQIcJ4b_GsgA5cMHNCb1oYwTqQnTtz4rh1TXt_Pf0gJOkwTB1c8Jn2nASkoXVu1Akymd7J3tfdPr-PZjn5j9qgwGMACmtlhlij7EVD6LwYrMAvJZVkhlKfPhuLvWvmBNRdfaiiP7-5_8zgbqkir5acng8OLHKNDDAJ2jlPP3ipWhKOOV44VgMzvJYzPlIOyn_o5KXZ359F9kgXDjqMYJDEvbTwx8MJdKB1wPDHSaWMn1CuLfUj3yuuFaejVxfcZCuUFlAVeCEQ31eqHMZSHFeKf7bVTYnlwbHKQ1kmGSslNTC1677viPK9Ac_xzyXgUz3tZLnz7oKofljRRnKFH3qkmP0Nb6h-TvMA5aujET2l_DJ-ZRTX1QfuBA4FoxT4a-dxptMEfITA43KzdozOWzVVRgSo4ioFF6XeZT5k56U3ts9KqenXjX6j6OcA0FZHAv1RPxLgxOmHQPQ8AfYzUYDJSOlwh1oBvoRQRISNX2KKeLNYfB3Uv5lrFXAE6TdPzT24ArNOYUsgkybd35-LTckEZE-ZVdb5Pnw56gK6X9vs_yBXfrweOSKsS-uUynguYHLs0oLaxg_fjI2fHMTxC4VD9WhPI_3H3qCuheqCgsJRj_8d9Icn6i4n313WdNnK5MIllz0aLPUaxHdN6sh6DDJNpsG4wo9Dwv2tSGyot27Qt36iFvlkpYrwwuNPNckXpHvMrPB2XRQEIsoIJPce8L6xrxybFOzMac3MMWOInIdPGAKw5R9_hsnGJJcEUtui-f6in4aJolA2FZzYgmpxNIH4-xpSy7xJvLRNuHJu6jtqUbro0zLn8WN5znLaeXNRACP4T66Wsd1SEKyV8LZBBSIFUlBctzOzZFLy1lNIKFLvT04mTHIxXOOlY87zDsfAqoj__eggRU8oFzjzOD038VQHP__CXDsZYeROTJF6LaMkheTald5FTajzVDC5QCPQ-4jdbNM8txb7zQRfZTaz-8J7vKjkbAKl0h-a747uoNMntkSTSpUgbDwVNFCCcE3Cj7zDc="
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 275,
+    "completion_tokens": 235,
+    "total_tokens": 510,
+    "cost": 0.00269375,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": null,
+      "upstream_inference_prompt_cost": 0.00034375,
+      "upstream_inference_completions_cost": 0.00235
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 211,
+      "image_tokens": 0
+    }
+  }
+}
