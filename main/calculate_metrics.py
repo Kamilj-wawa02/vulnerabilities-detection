@@ -85,6 +85,62 @@ def load_model_results() -> Dict[str, Dict[str, Any]]:
     return results
 
 
+# CASTLE Score metrics - Top 25 CWE ranking (MITRE)
+# Source: https://cwe.mitre.org/top25/archive/2024/2024_top25_list
+CWE_TOP_25 = {
+    "79": 1,
+    "787": 2,
+    "89": 3,
+    "352": 4,
+    "22": 5,
+    "125": 6,
+    "78": 7,
+    "416": 8,
+    "862": 9,
+    "434": 10,
+    "94": 11,
+    "20": 12,
+    "77": 13,
+    "287": 14,
+    "269": 15,
+    "502": 16,
+    "200": 17,
+    "863": 18,
+    "918": 19,
+    "119": 20,
+    "476": 21,
+    "798": 22,
+    "190": 23,
+    "400": 24,
+    "306": 25,
+}
+BMAX = 5
+
+
+def cwe_bonus(cwe: str) -> int:
+    rank = CWE_TOP_25.get(str(cwe), float("inf"))
+
+    if rank <= 25:
+        return BMAX - ((rank - 1) // BMAX)
+    
+    return 0
+
+
+def castle_score(true_v, true_cwe, pred_v, pred_cwe):
+    findings = 1 if pred_v else 0
+
+    # Correct vulnerability detection
+    if true_v and pred_v and pred_cwe == true_cwe:
+        return 5 - (findings - 1) + cwe_bonus(pred_cwe)
+
+    # Correct non-vulnerable detection
+    if not true_v and not pred_v:
+        return 2
+
+    # Other cases
+    return -findings
+
+
 def evaluate(true_values: Dict[str, Dict[str, Any]], predictions: Dict[str, Dict[str, Any]], check_cwe: bool = True) -> Dict[str, Any]:
     TP = TN = FP = FN = 0
     total = 0
@@ -95,6 +151,8 @@ def evaluate(true_values: Dict[str, Dict[str, Any]], predictions: Dict[str, Dict
     total_completion_tokens = 0
     total_tokens = 0
     total_cost = 0.0
+
+    castle_total = 0
 
     for name, true_data in true_values.items():
         if name not in predictions:
@@ -124,6 +182,8 @@ def evaluate(true_values: Dict[str, Dict[str, Any]], predictions: Dict[str, Dict
         true_cwe = true_data["cwe"]
         pred_v = content["vulnerable"]
         pred_cwe = content["cwe"]
+
+        castle_total += castle_score(true_v, true_cwe, pred_v, pred_cwe)
 
         if check_cwe and (pred_v and true_v and pred_cwe != true_cwe):
             pred_v = False
@@ -159,7 +219,9 @@ def evaluate(true_values: Dict[str, Dict[str, Any]], predictions: Dict[str, Dict
         "total_completion_tokens": total_completion_tokens,
         "total_tokens": total_tokens,
         "total_cost": total_cost,
-        "average_cost_per_sample": average_cost
+        "average_cost_per_sample": average_cost,
+        "CASTLE_score": castle_total,
+        "CASTLE_avg": castle_total / total if total else 0
     }
 
 

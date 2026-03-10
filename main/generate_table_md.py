@@ -13,7 +13,8 @@ FIELDS = [
     # "total_completion_tokens",
     "total_tokens",
     "total_cost",
-    "average_cost_per_sample"
+    "average_cost_per_sample",
+    "CASTLE_score"
 ]
 
 RESULTS_DIRECTORIES = [

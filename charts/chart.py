@@ -1,45 +1,45 @@
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
-# Dane: wszystkie instancje, sumowanie per model
-data = [
-    # model, wrong_format_responses
-    ("gpt-5.1", [0,0,0,0]),                 # zero-shot, temperatures, chain_of_thought, legacy
-    ("grok-code-fast-1", [2,12,3,5,11]),    # zero-shot, role-based, chain_of_thought, temperatures, legacy
-    ("claude-sonnet-4.5", [11,0,17,1]),     # zero-shot, role-based, chain_of_thought, legacy
-    ("devstral-2512", [0,1,0,0,15])         # zero-shot, role-based, chain_of_thought, temperatures x2
-]
+# # Dane: wszystkie instancje, sumowanie per model
+# data = [
+#     # model, wrong_format_responses
+#     ("gpt-5.1", [0,0,0,0]),                 # zero-shot, temperatures, chain_of_thought, legacy
+#     ("grok-code-fast-1", [2,12,3,5,11]),    # zero-shot, role-based, chain_of_thought, temperatures, legacy
+#     ("claude-sonnet-4.5", [11,0,17,1]),     # zero-shot, role-based, chain_of_thought, legacy
+#     ("devstral-2512", [0,1,0,0,15])         # zero-shot, role-based, chain_of_thought, temperatures x2
+# ]
 
-# Sumowanie wrong format responses
-models = []
-wrong_format_totals = []
-for model, counts in data:
-    models.append(model)
-    wrong_format_totals.append(sum(counts))
+# # Sumowanie wrong format responses
+# models = []
+# wrong_format_totals = []
+# for model, counts in data:
+#     models.append(model)
+#     wrong_format_totals.append(sum(counts))
 
-# Kolory przyjazne dla osób z daltonizmem (Paul Tol)
-colors = ["#4477AA", "#EE6677", "#228833", "#CCBB44"]  # niebieski, czerwony, zielony, żółty
+# # Kolory przyjazne dla osób z daltonizmem (Paul Tol)
+# colors = ["#4477AA", "#EE6677", "#228833", "#CCBB44"]  # niebieski, czerwony, zielony, żółty
 
-plt.figure(figsize=(9,6))
-bars = plt.bar(models, wrong_format_totals, color=colors, edgecolor="black")
+# plt.figure(figsize=(9,6))
+# bars = plt.bar(models, wrong_format_totals, color=colors, edgecolor="black")
 
-# Dodanie wartości nad słupkami
-for bar, value in zip(bars, wrong_format_totals):
-    plt.text(
-        bar.get_x() + bar.get_width()/2,
-        bar.get_height() + 0.5,
-        str(value),
-        ha="center",
-        va="bottom",
-        fontsize=10
-    )
+# # Dodanie wartości nad słupkami
+# for bar, value in zip(bars, wrong_format_totals):
+#     plt.text(
+#         bar.get_x() + bar.get_width()/2,
+#         bar.get_height() + 0.5,
+#         str(value),
+#         ha="center",
+#         va="bottom",
+#         fontsize=10
+#     )
 
-plt.ylabel("Total wrong format responses")
-plt.xlabel("Model")
-plt.title("Wrong format responses per model (sum across prompt techniques)\nIncludes CWE verification")
-plt.ylim(0, max(wrong_format_totals) + 5)
-plt.grid(axis="y", linestyle="--", alpha=0.5)
-plt.tight_layout()
-plt.show()
+# plt.ylabel("Total wrong format responses")
+# plt.xlabel("Model")
+# plt.title("Wrong format responses per model (sum across prompt techniques)\nIncludes CWE verification")
+# plt.ylim(0, max(wrong_format_totals) + 5)
+# plt.grid(axis="y", linestyle="--", alpha=0.5)
+# plt.tight_layout()
+# plt.show()
 
 
 
@@ -113,72 +113,73 @@ plt.show()
 
 
 
-#==================================================
+# ==================================================
 # Koszt_vs_skutecznosc_modeli_LLM
-#==================================================
-# import matplotlib.pyplot as plt
+# ==================================================
+import matplotlib.pyplot as plt
 
-# # Dane
-# data = [
-#     # model, prompting, f1, cost
-#     ("gpt-5.1", "zero-shot", 0.652, 0.0036),
-#     ("grok-code-fast-1", "zero-shot", 0.627, 0.0020),
-#     ("claude-sonnet-4.5", "zero-shot", 0.592, 0.0015),
-#     ("devstral-2512", "zero-shot", 0.404, 0.0001),
+# Dane
+data = [
+    # model, prompting, f1, cost
+    ("gpt-5.1", "zero-shot", 0.652, 0.0036),
+    ("grok-code-fast-1", "zero-shot", 0.627, 0.0020),
+    ("claude-sonnet-4.5", "zero-shot", 0.592, 0.0015),
+    ("devstral-2512", "zero-shot", 0.404, 0.0001),
 
-#     ("gpt-5.1", "role-based", 0.642, 0.0038),
-#     ("grok-code-fast-1", "role-based", 0.605, 0.0019),
-#     ("claude-sonnet-4.5", "role-based", 0.575, 0.0016),
-#     ("devstral-2512", "role-based", 0.396, 0.0001),
+    ("gpt-5.1", "role-based", 0.642, 0.0038),
+    ("grok-code-fast-1", "role-based", 0.605, 0.0019),
+    ("claude-sonnet-4.5", "role-based", 0.575, 0.0016),
+    ("devstral-2512", "role-based", 0.396, 0.0001),
 
-#     ("gpt-5.1", "chain-of-thought", 0.655, 0.0037),
-#     ("grok-code-fast-1", "chain-of-thought", 0.609, 0.0020),
-#     ("claude-sonnet-4.5", "chain-of-thought", 0.562, 0.0015),
-#     ("devstral-2512", "chain-of-thought", 0.418, 0.0001),
-# ]
+    ("gpt-5.1", "chain-of-thought", 0.655, 0.0037),
+    ("grok-code-fast-1", "chain-of-thought", 0.609, 0.0020),
+    ("claude-sonnet-4.5", "chain-of-thought", 0.562, 0.0015),
+    ("devstral-2512", "chain-of-thought", 0.418, 0.0001),
+]
 
-# # Mapowanie kolorów na modele
-# model_colors = {
-#     "gpt-5.1": "tab:blue",
-#     "grok-code-fast-1": "tab:orange",
-#     "claude-sonnet-4.5": "tab:green",
-#     "devstral-2512": "tab:red"
-# }
+# Mapowanie kolorów na modele
+model_colors = {
+    "gpt-5.1": "tab:blue",
+    "grok-code-fast-1": "tab:orange",
+    "claude-sonnet-4.5": "tab:green",
+    "devstral-2512": "tab:red"
+}
 
-# # Mapowanie markerów na techniki promptowania
-# prompt_markers = {
-#     "zero-shot": "o",
-#     "role-based": "s",
-#     "chain-of-thought": "^"
-# }
+# Mapowanie markerów na techniki promptowania
+prompt_markers = {
+    "zero-shot": "o",
+    "role-based": "s",
+    "chain-of-thought": "^"
+}
 
-# plt.figure(figsize=(10, 6))
+plt.figure(figsize=(10, 6))
 
-# for model, prompting, f1, cost in data:
-#     plt.scatter(
-#         cost,
-#         f1,
-#         color=model_colors[model],
-#         marker=prompt_markers[prompting],
-#         s=90,
-#         edgecolors="black"
-#     )
+for model, prompting, f1, cost in data:
+    plt.scatter(
+        cost,
+        f1,
+        color=model_colors[model],
+        marker=prompt_markers[prompting],
+        s=90,
+        edgecolors="black"
+    )
 
-# # Legendy (oddzielne)
-# for model, color in model_colors.items():
-#     plt.scatter([], [], color=color, label=model)
+# Legendy (oddzielne)
+for model, color in model_colors.items():
+    plt.scatter([], [], color=color, label=model)
 
-# for prompting, marker in prompt_markers.items():
-#     plt.scatter([], [], color="black", marker=marker, label=prompting)
+for prompting, marker in prompt_markers.items():
+    plt.scatter([], [], color="black", marker=marker, label=prompting)
 
-# plt.xlabel("Average cost per sample [USD]")
-# plt.ylabel("F1-score")
+plt.xlabel("Average cost per sample [USD]")
+plt.ylabel("F1-score")
 # plt.title("Koszt vs skuteczność modeli LLM\nF1-score vs average_cost_per_sample")
+plt.title("Cost vs effectiveness of LLM models\nF1-score vs average cost per sample")
 
-# plt.grid(True, linestyle="--", alpha=0.6)
-# plt.legend(title="Model / Prompting", loc="lower right")
-# plt.tight_layout()
-# plt.show()
+plt.grid(True, linestyle="--", alpha=0.6)
+plt.legend(title="Model / Prompting", loc="lower right")
+plt.tight_layout()
+plt.show()
 
 
 
