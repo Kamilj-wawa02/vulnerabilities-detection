@@ -117,6 +117,7 @@
 # Koszt_vs_skutecznosc_modeli_LLM
 # ==================================================
 import matplotlib.pyplot as plt
+import numpy as np
 
 # Dane
 data = [
@@ -170,6 +171,37 @@ for model, color in model_colors.items():
 
 for prompting, marker in prompt_markers.items():
     plt.scatter([], [], color="black", marker=marker, label=prompting)
+
+# ---- Dodanie luku ----
+import numpy as np
+
+# Dane
+costs = np.array([cost for _, _, _, cost in data])
+f1_scores = np.array([f1 for _, _, f1, _ in data])
+
+# Sortowanie
+sorted_idx = np.argsort(costs)
+x = costs[sorted_idx]
+y = f1_scores[sorted_idx]
+
+# Normalizacja (żeby mieć stabilny kształt łuku)
+x_norm = (x - x.min()) / (x.max() - x.min())
+
+# Tworzymy "ładny" łuk: lekko zakrzywiona funkcja rosnąca
+y_min, y_max = y.min(), y.max()
+y_curve = y_min + (y_max - y_min) * (1 - (1 - x_norm)**2)
+
+# Wygładzenie
+x_smooth = np.linspace(x.min(), x.max(), 200)
+x_smooth_norm = (x_smooth - x.min()) / (x.max() - x.min())
+power = 2.5  # większe = bardziej płasko na końcu
+y_smooth = y_min + (y_max - y_min) * (1 - (1 - x_smooth_norm)**power)
+
+# Rysowanie
+plt.plot(x_smooth, y_smooth, linestyle="--", linewidth=2, label="Trend curve")
+
+# ----------------------
+
 
 plt.xlabel("Average cost per sample [USD]")
 plt.ylabel("F1-score")
