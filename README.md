@@ -5,6 +5,10 @@
 Our article has been added to this repository [here](LLM_Vulnerability_Detection_on_the_CASTLE_Benchmark_Effects_of_Prompting_and_Temperature_Jablkowski_Borkowski_Sawicki.pdf).
 It provides an in-depth analysis of the results, discussing the impact of different prompting strategies and temperature settings on the performance of various language models in vulnerability detection tasks.
 
+## Poster
+
+A poster summarizing our work has been added to this repository [here](Poster-LLM_Vulnerability_Detection_on_the_CASTLE_Benchmark_Effects_of_Prompting_and_Temperature_Jablkowski_Borkowski_Sawicki.pdf).
+
 ## Overview
 
 ### Results with CWE field check
