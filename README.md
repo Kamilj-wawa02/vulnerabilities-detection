@@ -171,10 +171,8 @@ int main() {
 }
 ```
 
-## TODO - **all done**
+## Article
 
-- chain-of-thought and zero-shot
-- testing a cheaper model
-- temperature variants
-- add analysis without CWE
-- article: chapter on used technologies
+Our article has been added to this repository at [this file](LLM_Vulnerability_Detection_on_the_CASTLE_Benchmark_Effects_of_Prompting_and_Temperature_Jablkowski_Borkowski_Sawicki.pdf).
+
+. It provides an in-depth analysis of the results, discussing the impact of different prompting strategies and temperature settings on the performance of various language models in vulnerability detection tasks.
